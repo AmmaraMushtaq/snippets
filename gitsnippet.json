@@ -1,0 +1,194 @@
+{
+	"Git Resources": {
+	  "prefix": "git_resources",
+	  "body": [
+		"Resource",
+		"Online",
+		"",
+		"Official Website",
+		"",
+		"Download",
+		"",
+		"GitCheatSheet ",
+		"",
+		"Git cheat sheet, extended edition prepared [.svg]",
+		"",
+		"Git Quick Reference [.pdf]",
+		"",
+		"Git Cheat Sheet In Chinese"
+	  ],
+	  "description": "Git Resources"
+	},
+	"Related Version Control Systems": {
+	  "prefix": "git_related",
+	  "body": [
+		"Bazaar: https://bazaar.canonical.com/",
+		"CVS: https://www.nongnu.org/cvs/",
+		"SVN: https://subversion.apache.org/"
+	  ],
+	  "description": "Related Version Control Systems"
+	},
+	"Git Useful Commands": {
+		"prefix": "git_useful_commands",
+		"body": [
+		  "Useful Commands",
+		  "Finding Regressions",
+		  "git bisect start",
+		  "git bisect good $id",
+		  "// $id is the last working version",
+		  "git bisect bad $id",
+		  "// $id is a broken version",
+		  "git bisect bad/good",
+		  "// to mark it as bad or good",
+		  "git bisect visualize",
+		  "// to launch gitk and mark it",
+		  "git bisect reset",
+		  "// once you're done",
+		  "Check for Errors and Cleanup Repository",
+		  "git fsck",
+		  "git gc --prune",
+		  "Search Working Directory for foo()",
+		  "git grep \"foo()\""
+		],
+		"description": "Useful Git Commands"
+	  },
+	  "Create Git Repository": {
+		"prefix": "git_create_repo",
+		"body": [
+		  "From existing directory",
+		  "cd project_dir",
+		  "git init",
+		  "git add .",
+		  "git_clone_repo",
+		  "From other repository",
+		  "git clone existing_dir new_dir",
+		  "git clone git://github.com/user/repo.git",
+		  "git clone https://github.com/user/repo.git"
+
+		],
+		"description": "Create a Git repository from an existing directory"
+	  },
+	  "Branching and Tagging": {
+		"prefix": "git_branch_tag",
+		"body": [
+		  "List branches",
+		  "git branch",
+		  "Switch to branch",
+		  "git checkout ${1:branch}",
+		  "Create new branch",
+		  "git branch ${2:new}",
+		  "Create branch from existing",
+		  "git branch ${3:new} ${4:existing}",
+		  "Delete branch",
+		  "git branch -d ${5:branch}",
+		  "Tag current commit",
+		  "git tag ${6:tagname}",
+		],
+		"description": "Git commands for branching and tagging"
+	  },
+	  "Local Changes": {
+		"prefix": "git_local_changes",
+		"body": [
+		  "Changed in working directory",
+		  "git status",
+		  "Tracked file changes",
+		  "git diff",
+		  "Add changed files",
+		  "git add ",
+		  "Remove file",
+		  "git rm ",
+		  "git rm  -r",
+		  "// (recursive under directory)",
+		  "See files ready for commit",
+		  "git diff --cached",
+		  "Commit changes",
+		  "git commit",
+		  "git commit -m ",
+		  "git commit -a -m ",
+		  "// (tracked files only, auto add)",
+		  "Change last commit",
+		  "git commit --amend",
+		  "Revert changes to file",
+		  "git checkout -- ",
+		  "Revert changes (new commit)",
+		  "git revert HEAD",
+		  "Return to last committed state",
+		  "git reset --hard HEAD"
+		],
+		"description": "Git commands for handling local changes"
+	  },
+	  "Commit History": {
+		"prefix": "git_commit_history",
+		"body": [
+		  "Show all commits",
+		  "git log",
+		  "Short Format",
+		  "git log --pretty=short",
+		  "Patches",
+		  "git log -p",
+		  "Show file commits",
+		  "git log ",
+		  "Show directory commits",
+		  "git log ",
+		  "Stats",
+		  "git log --stat",
+		  "Who changed file",
+		  "git blame "
+		],
+		"description": "Git commands for viewing commit history"
+	  },
+	  "Merge and Rebase": {
+		"prefix": "git_merge_rebase",
+		"body": [
+		  "Merge branch into current",
+		  "git merge ",
+		  "Rebase into branch",
+		  "git rebase ",
+		  "git rebase ",
+		  "Abort rebase",
+		  "git rebase --abort",
+		  "Merge tool to solve conflicts",
+		  "git mergetool",
+		  "To view the merge conflicts",
+		  "git diff",
+		  "complete conflict diff",
+		  "git diff --base ",
+		  "// against base file",
+		  "git diff --ours ",
+		  "// against your changes",
+		  "git diff --theirs ",
+		  "// against other changes",
+		  "To discard conflicting patch",
+		  "git reset --hard",
+		  "git rebase --skip",
+		  "After resolving conflicts",
+		  "git add ${8:conflicting_file}",
+		  "// do for all resolved files",
+		  "git rebase --continue"
+		],
+		"description": "Git commands for merging and rebasing"
+	  },
+	  "Remote Update / Publish": {
+		"prefix": "git_remote_publish",
+		"body": [
+		  "List remotes",
+		  "git remote -v",
+		  "Show information",
+		  "git remote show ${1:remote}",
+		  "Add remote",
+		  "git remote add ${2:name} ${3:path/url}",
+		  "Fetch changes",
+		  "git fetch ${4:remote}",
+		  "Fetch + merge",
+		  "git pull ${5:remote} ${6:branch}",
+		  "Publish local to remote",
+		  "git push ${7:remote} ${8:branch}",
+		  "Delete remote branch",
+		  "git push ${9:remote} :${10:branch}",
+		  "Publish tags",
+		  "git push ${11:origin/upstream} --tags"
+		],
+		"description": "Git commands for remote updates and publishing"
+	  },
+  }
+  
