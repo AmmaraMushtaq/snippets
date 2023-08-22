@@ -1,0 +1,3170 @@
+{
+	"Python Resources": {
+		"prefix": "python_resources",
+		"body": [
+			"Resource",
+			"Online",
+			"Official Website",
+			"PythonForBeginners.com",
+			"Download",
+			"Python Quick Reference Card [.pdf]",
+			"Python 2.6 Quick Reference",
+			"Related",
+			"Django"
+		],
+		"description": "Python resources and related technologies"
+	},
+	"Official Website": {
+		"prefix": "pywebsite",
+		"body": [
+		  "Official Website",
+		 
+		],
+		"description": "Link to PythonForBeginners Official Website"
+	  },
+	  "PythonForBeginners.com": {
+		"prefix": "PythonForBeginners.com",
+		"body": [
+		 
+		 
+		],
+		"description": "Link to PythonForBeginners.com"
+	  },
+	  "Python Quick Reference Card": {
+		"prefix": "Python Quick Reference Card [.pdf]",
+		"body": [
+		 
+		 
+		],
+		"description": "Python Quick Reference Card [.pdf]"
+	  },
+	  "Python 2.6 Quick Reference": {
+		"prefix": "Python 2.6 Quick Reference",
+		"body": [
+		 
+		 
+		],
+		"description": "Python 2.6 Quick Reference"
+	  },
+	  "Django": {
+		"prefix": "Django",
+		"body": [
+		 
+		 
+		],
+		"description": "Django"
+	  },
+	"Random Functions": {
+		"prefix": "Python random_functions",
+		"body": [
+			"random",
+			"random.seed",
+			"state = random.getstate()",
+			"random.setstate()",
+			"random.jumpahead()",
+			"random.getrandbits()",
+			"random.randrange()",
+			"random.randint()",
+			"random.choice()",
+			"random.shuffle()",
+			"random.sample()",
+			"random.random()",
+			"random.uniform()",
+			"random.triangular()",
+			"random.betavariate()",
+			"random.expovariate()",
+			"random.gammavariate)",
+			"random.gauss()",
+			"random.lognormvariate()",
+			"random.normalvariate()",
+			"random.vonmisesvariate()",
+			"random.paretovariate()",
+			"random.weibullvariate()"
+		],
+		"description": "Python Random Module Functions"
+	},
+	
+	"seed()": {
+		"prefix": "Pythonseed",
+		"body": [
+			"import random",
+
+			"# Seed the random number generator",
+			"random.seed(42)",
+			
+			"# Generate some random numbers",
+			"random_num1 = random.randint(1, 100)",
+			"random_num2 = random.uniform(0, 1)",
+			"random_num3 = random.choice(['apple', 'banana', 'orange'])",
+			
+			"print('Random Number 1:', random_num1)",
+			"print('Random Number 2:', random_num2)",
+			"print('Random Choice:', random_num3)"
+		],
+		"description": "seed() - Initialize the random number generator"
+	  },
+	  "getstate()": {
+		"prefix": "Pythongetstate",
+		"body": [
+		
+"random.seed(42)",
+
+"# Get the current state of the random number generator",
+"original_state = random.getstate()",
+
+"# Generate some random numbers",
+"random_num1 = random.randint(1, 100)",
+"random_num2 = random.uniform(0, 1)",
+"random_num3 = random.choice(['apple', 'banana', 'orange'])",
+
+"print('Original Random Number 1:', random_num1)",
+"print('Original Random Number 2:', random_num2)",
+"print('Original Random Choice:', random_num3)",
+
+"# Restore the state of the random number generator",
+"random.setstate(original_state)",
+
+"# Generate random numbers using the restored state",
+"random_num4 = random.randint(1, 100)",
+"random_num5 = random.uniform(0, 1)",
+"random_num6 = random.choice(['apple', 'banana', 'orange'])",
+
+"print('Restored Random Number 1:', random_num4)",
+"print('Restored Random Number 2:', random_num5)",
+"print('Restored Random Choice:', random_num6)"
+		],
+		"description": "getstate() - Return an object capturing the current internal state of the generator"
+	  },
+	  "setstate()": {
+		"prefix": "Pythonsetstate",
+		"body": [
+			"random.seed(42)",
+
+"# Get the current state of the random number generator",
+"original_state = random.getstate()",
+
+"# Generate some random numbers",
+"random_nums_original = [random.randint(1, 100) for _ in range(5)]",
+"print('Original Random Numbers:', random_nums_original)",
+
+"# Simulate some changes, like shuffling",
+"random.shuffle(random_nums_original)",
+"print('Shuffled Random Numbers:', random_nums_original)",
+
+"# Restore the original state of the random number generator",
+"random.setstate(original_state)",
+
+"# Generate random numbers using the restored state",
+"random_nums_restored = [random.randint(1, 100) for _ in range(5)]",
+"print('Restored Random Numbers:', random_nums_restored)"
+		],
+		"description": "setstate() - Restore the internal state of the generator from an object"
+	  },
+	  "jumpahead()": {
+		"prefix": "Pythonjumpahead",
+		"body": [
+			"random.seed(42)",
+
+"# Generate random numbers",
+"random_nums_before_jump = [random.randint(1, 100) for _ in range(5)]",
+"print('Random Numbers Before Jump:', random_nums_before_jump)",
+
+"# Jump ahead in the random number sequence",
+"jump_steps = 10",
+"random.jumpahead(jump_steps)",
+
+"# Generate random numbers after jumping ahead",
+"random_nums_after_jump = [random.randint(1, 100) for _ in range(5)]",
+"print('Random Numbers After Jump:', random_nums_after_jump)"
+		],
+		"description": "jumpahead() - Change the internal state of the generator in a jump-ahead fashion"
+	  },
+	  "getrandbits()": {
+		"prefix": "Pythongetrandbits",
+		"body": [
+			"random_bits = random.getrandbits(10)",
+"print('Random Bits (10 bits):', bin(random_bits))",
+
+"# Generate 5 random bits",
+"random_bits_5 = random.getrandbits(5)",
+"print('Random Bits (5 bits):', bin(random_bits_5))"
+		],
+		"description": "getrandbits() - Generate an integer with k random bits"
+	  },
+	  "randrange()": {
+		"prefix": "Pythonrandrange",
+		"body": [
+			"random_num1 = random.randrange(10)",
+"print('Random Number (0-9):', random_num1)",
+
+"# Generate a random even number between 0 (inclusive) and 20 (exclusive)",
+"random_even = random.randrange(0, 20, 2)",
+"print('Random Even Number (0-18):', random_even)",
+
+"# Generate a random number between 5 (inclusive) and 50 (exclusive) with a step of 5",
+"random_multiple_of_5 = random.randrange(5, 50, 5)",
+"print('Random Multiple of 5 (5-45):', random_multiple_of_5)"
+		],
+		"description": "randrange() - Return a randomly selected element from range(start, stop, step)"
+	  },
+	  "randint()": {
+		"prefix": "Pythonrandint",
+		"body": [
+			"random_num1 = random.randint(1, 10)",
+"print('Random Number (1-10):', random_num1)",
+
+"# Generate a random integer between -50 and -30 (inclusive)",
+"random_num2 = random.randint(-50, -30)",
+"print('Random Number (-50 to -30):', random_num2)"
+		],
+		"description": "randint() - Return a random integer N such that a <= N <= b"
+	  },
+	  "choice()": {
+		"prefix": "Pythonchoice",
+		"body": [
+			"fruits = ['apple', 'banana', 'orange', 'grape', 'kiwi']",
+
+"# Choose a random fruit from the list",
+"random_fruit = random.choice(fruits)",
+"print('Random Fruit:', random_fruit)"
+		],
+		"description": "choice() - Return a random element from a non-empty sequence"
+	  },
+	  "shuffle()": {
+		"prefix": "Pythonshuffle",
+		"body": [
+			"import random",
+
+"cards = ['Ace', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King']",
+
+"# Shuffle the deck of cards",
+"random.shuffle(cards)",
+
+"print('Shuffled Cards:', cards)"
+		],
+		"description": "shuffle() - Shuffle the sequence x in place"
+	  },
+	  "sample()": {
+		"prefix": "Pythonsample",
+		"body": [
+			"import random",
+
+"colors = ['red', 'blue', 'green', 'yellow', 'orange', 'purple']",
+
+"# Generate a random sample of 3 colors without replacement",
+"random_colors = random.sample(colors, 3)",
+"print('Random Sample of Colors:', random_colors)"
+		],
+		"description": "sample() - Return a k length list of unique elements chosen from the population sequence"
+	  },
+	  "random()": {
+		"prefix": "Pythonrandom",
+		"body": [
+			"import random",
+
+"# Generate a random floating-point number between 0.0 and 1.0",
+"random_num = random.random()",
+"print('Random Number:', random_num)"
+		],
+		"description": "random() - Return a random float in the range [0.0, 1.0)"
+	  },
+	  "uniform()": {
+		"prefix": "Pythonuniform",
+		"body": [
+			"import random",
+
+"# Generate a random floating-point number between 2.5 and 5.5",
+"random_num = random.uniform(2.5, 5.5)",
+"print('Random Number:', random_num)"
+		],
+		"description": "uniform() - Return a random float N such that a <= N <= b"
+	  },
+	  "triangular()": {
+		"prefix": "Pythontriangular",
+		"body": [
+			"random_num1 = random.triangular(0, 10)",
+			"random_num2 = random.triangular(0, 10, 5)",
+			"random_num3 = random.triangular(0, 10, 8)",
+			
+			"print('Random Number 1:', random_num1)",
+			"print('Random Number 2:', random_num2)",
+			"print('Random Number 3:', random_num3)"
+		],
+		"description": "triangular() - Return a random float in the interval [low, high] or [mode, high] depending on the mode argument"
+	  },
+	  "betavariate()": {
+		"prefix": "Pythonbetavariate",
+		"body": [
+			"alpha = 2.0",
+"beta = 5.0",
+"random_num1 = random.betavariate(alpha, beta)",
+"random_num2 = random.betavariate(alpha, beta)",
+"random_num3 = random.betavariate(alpha, beta)",
+
+"print('Random Number 1:', random_num1)",
+"print('Random Number 2:', random_num2)",
+"print('Random Number 3:', random_num3)"
+		],
+		"description": "betavariate() - Return a random float in the beta distribution"
+	  },
+	  "expovariate()": {
+		"prefix": "Pythonexpovariate",
+		"body": [
+			"lambd = 0.5  # Rate parameter",
+"random_num1 = random.expovariate(lambd)",
+"random_num2 = random.expovariate(lambd)",
+"random_num3 = random.expovariate(lambd)",
+
+"print('Random Number 1:', random_num1)",
+"print('Random Number 2:', random_num2)",
+"print('Random Number 3:', random_num3)"
+		],
+		"description": "expovariate() - Return a random float in the exponential distribution"
+	  },
+	  "gammavariate()": {
+		"prefix": "Pythongammavariate",
+		"body":[
+			"lpha = 2.0  # Shape parameter",
+"beta = 1.5   # Scale parameter",
+"random_num1 = random.gammavariate(alpha, beta)",
+"random_num2 = random.gammavariate(alpha, beta)",
+"random_num3 = random.gammavariate(alpha, beta)",
+
+"print('Random Number 1:', random_num1)",
+"print('Random Number 2:', random_num2)",
+"print('Random Number 3:', random_num3)"
+		],
+		"description": "gammavariate() - Return a random float in the gamma distribution"
+	  },
+	  "gauss()": {
+		"prefix": "Pythongauss",
+		"body": [
+			"mu = 0     # Mean",
+"sigma = 1  # Standard deviation",
+"random_num1 = random.gauss(mu, sigma)",
+"random_num2 = random.gauss(mu, sigma)",
+"random_num3 = random.gauss(mu, sigma)",
+
+"print('Random Number 1:', random_num1)",
+"print('Random Number 2:', random_num2)",
+"print('Random Number 3:', random_num3)"
+		],
+		"description": "gauss() - Return a random float in the Gaussian distribution"
+	  },
+	  "lognormvariate()": {
+		"prefix": "Pythonlognormvariate",
+		"body": [
+			"mu = 0     # Mean of the natural logarithm of the distribution",
+"sigma = 1  # Standard deviation of the natural logarithm of the distribution",
+"random_num1 = random.lognormvariate(mu, sigma)",
+"random_num2 = random.lognormvariate(mu, sigma)",
+"random_num3 = random.lognormvariate(mu, sigma)",
+
+"print('Random Number 1:', random_num1)",
+"print('Random Number 2:', random_num2)",
+"print('Random Number 3:', random_num3)"
+		],
+		"description": "lognormvariate() - Return a random float in the log-normal distribution"
+	  },
+	  "normalvariate()": {
+		"prefix": "Pythonnormalvariate",
+		"body": [
+			"mu = 0     # Mean",
+"sigma = 1  # Standard deviation",
+"random_num1 = random.normalvariate(mu, sigma)",
+"random_num2 = random.normalvariate(mu, sigma)",
+"random_num3 = random.normalvariate(mu, sigma)",
+
+"print('Random Number 1:', random_num1)",
+"print('Random Number 2:', random_num2)",
+"print('Random Number 3:', random_num3)"
+		],
+		"description": "normalvariate() - Return a random float in the normal distribution"
+	  },
+	  "vonmisesvariate()": {
+		"prefix": "Pythonvonmisesvariate",
+		"body": [
+			"mu = 0     # Mean direction (in radians)",
+"kappa = 2  # Concentration parameter",
+"random_num1 = random.vonmisesvariate(mu, kappa)",
+"random_num2 = random.vonmisesvariate(mu, kappa)",
+"random_num3 = random.vonmisesvariate(mu, kappa)",
+
+"print('Random Number 1:', random_num1)",
+"print('Random Number 2:', random_num2)",
+"print('Random Number 3:', random_num3)"
+		],
+		"description": "vonmisesvariate() - Return a random float in the von Mises distribution"
+	  },
+	  "paretovariate()": {
+		"prefix": "paretovariate",
+		"body": [
+			"alpha = 2.0  # Shape parameter",
+"random_num1 = random.paretovariate(alpha)",
+"random_num2 = random.paretovariate(alpha)",
+"random_num3 = random.paretovariate(alpha)",
+
+"print('Random Number 1:', random_num1)",
+"print('Random Number 2:', random_num2)",
+"print('Random Number 3:', random_num3)"
+		],
+		"description": "paretovariate() - Return a random float in the Pareto distribution"
+	  },
+	  "weibullvariate()": {
+		"prefix": "Pythonweibullvariate",
+		"body":[
+			"alpha = 2.0  # Shape parameter",
+"beta = 1.0   # Scale parameter",
+"random_num1 = random.weibullvariate(alpha, beta)",
+"random_num2 = random.weibullvariate(alpha, beta)",
+"random_num3 = random.weibullvariate(alpha, beta)",
+
+"print('Random Number 1:', random_num1)",
+"print('Random Number 2:', random_num2)",
+"print('Random Number 3:', random_num3)"
+		],
+		"description": "weibullvariate() - Return a random float in the Weibull distribution"
+	  },
+	"Class Special Methods": {
+		"prefix": "Python class_special_methods",
+		"body": [
+			"class ${1:ClassName}:",
+			"  __new__(cls):",
+			"",
+			"  __lt__(self, other):",
+			"",
+			"  __init__(self${5:, *args, **kwargs}):",
+			"",
+			"  __le__(self, other):",
+			"",
+			"  __del__(self):",
+			"",
+			"  __gt__(self, other):",
+			"",
+			"  __repr__(self):",
+			"",
+			"  __ge__(self, other):",
+			"",
+			"  __str__(self):",
+			"",
+			"  __eq__(self, other):",
+			"",
+			"  __cmp__(self, other):",
+			"",
+			"  __ne__(self, other):",
+			"",
+			"  __index__(self):",
+			"",
+			"  __nonzero__(self):",
+			"",
+			"  __hash__(self):",
+			"",
+			"  __getattr__(self, name):",
+			"",
+			"  __getattribute__(self, name):",
+			"",
+			"  __setattr__(self, name, attr):",
+			"",
+			"  __delattr__(self, name):",
+			"",
+			"  __call__(self${23:, *args, **kwargs}):"
+		],
+		"description": "Python Class Special Methods"
+	},
+	"String Methods": {
+		"prefix": " Pythonstring_methods",
+		"body": [
+			"capitalize()",
+			"center(width[, fillchar])",
+			"count(sub[, start[, end]])",
+			"decode",
+			"encode([encoding[, errors]])",
+			"endswith(suffix[, start[, end]])",
+			"expandtabs([tabsize])",
+			"find(sub[, start[, end]])",
+			"format(*args, **kwargs)",
+			"index(sub[, start[, end]])",
+			"isalnum()",
+			"isalpha()",
+			"isdigit()",
+			"islower()",
+			"isspace()",
+			"istitle()",
+			"isupper()",
+			"join(iterable)",
+			"ljust(width[, fillchar])",
+			"lower()",
+			"lstrip([chars])",
+			"partition(sep)",
+			"replace(old, new[, count])",
+			"rfind(sub[, start[, end]])",
+			"rindex(sub[, start[, end]])",
+			"rjust(width[, fillchar])",
+			"rpartition(sep)",
+			"rsplit([sep[, maxsplit]])",
+			"rstrip([chars])",
+			"split([sep[, maxsplit]])",
+			"splitlines([keepends])",
+			"startswith(prefix[, start[, end]])",
+			"strip([chars])",
+			"swapcase",
+			"title()",
+			"translate(table[, deletechars])",
+			"upper()",
+			"zfill(width)",
+			"isnumeric()",
+			"isdecimal()"
+		],
+		"description": "Python String Methods"
+	},
+	"capitalize()": {
+		"prefix": "Pythoncapitalize",
+		"body":[
+			"text = 'hello, world!'",
+"capitalized_text = text.capitalize()",
+"print(capitalized_text)"
+		],
+		"description": "capitalize() - Return a capitalized version of the string"
+	  },
+	  "center()": {
+		"prefix": "Pythoncenter",
+		"body": [
+			"text = 'Hello'",
+"centered_text = text.center(15, '*')",
+"print(centered_text)"
+		],
+		"description": "center() - Return a centered string of specified width"
+	  },
+	  "count()": {
+		"prefix": "Pythoncount",
+		"body":[
+			"text = 'Hello, how are you? How's everything going?",
+"substring = 'How'",
+"count = text.count(substring)",
+"print('Count of '', substring, '':', count)"
+		],
+		"description": "count() - Return the number of occurrences of sub in the string"
+	  },
+	  "decode()": {
+		"prefix": "Pythondecode",
+		"body": [
+			"bytes_data = b'Hello, world!'",
+"decoded_text = bytes_data.decode('utf-8')",
+"print(decoded_text)"
+		],
+		"description": "decode() - Decode the string"
+	  },
+	  "encode()": {
+		"prefix": "Pythonencode",
+		"body": [
+			"text = 'Hello, world!'",
+"encoded_bytes = text.encode('utf-8')",
+"print(encoded_bytes)"
+		],
+		"description": "encode() - Encode the string"
+	  },
+	  "endswith()": {
+		"prefix": "Pythonendswith",
+		"body": [
+			"text = 'Hello, world!'",
+"suffix1 = 'world!'",
+"suffix2 = 'Python'",
+
+"result1 = text.endswith(suffix1)",
+"result2 = text.endswith(suffix2)",
+
+"print('Ends with '', suffix1, '':', result1)",
+"print('Ends with '', suffix2, '':', result2)"
+		],
+		"description": "endswith() - Return True if the string ends with the specified suffix"
+	  },
+	  "expandtabs()": {
+		"prefix": "Pythonexpandtabs",
+		"body": [
+			"text = 'Hello\tworld!\t\tHow\tare\tyou?'",
+"expanded_text = text.expandtabs(4)",
+"print(expanded_text)"
+		],
+		"description": "expandtabs() - Return a copy of the string with tabs replaced by spaces"
+	  },
+	  "find()": {
+		"prefix": "Pythonfind",
+		"body": [
+			"text = 'Hello, world!'",
+"substring = 'world'",
+"index = text.find(substring)",
+
+"print('Index of '', substring, '':', index)"
+		],
+		"description": "find() - Return the lowest index of sub in the string"
+	  },
+	  "format()": {
+		"prefix": "Pythonformat",
+		"body": [
+			"name = 'Alice'",
+"age = 30",
+"message = 'Hello, my name is {} and I am {} years old.'.format(name, age)",
+"print(message)",
+		],
+		"description": "format() - Return a formatted version of the string"
+	  },
+	  "index()": {
+		"prefix": "Pythonindex",
+		"body": [
+			"text = 'Hello, world!'",
+"substring = 'world'",
+"index = text.index(substring)",
+
+"print('Index of '', substring, '':', index)"
+		],
+		"description": "index() - Like find(), but raise ValueError if sub not found"
+	  },
+	  "isalnum()": {
+		"prefix": "Pythonisalnum",
+		"body":[
+			"text1 = 'Hello123'",
+"text2 = 'Hello 123'",
+"text3 = 'Hello!'",
+"text4 = '123'",
+
+"result1 = text1.isalnum()",
+"result2 = text2.isalnum()",
+"result3 = text3.isalnum()",
+"result4 = text4.isalnum()",
+
+"print('Is 'Hello123' alphanumeric:', result1)",
+"print('Is 'Hello 123' alphanumeric:', result2)",
+"print('Is 'Hello!' alphanumeric:', result3)",
+"print('Is '123' alphanumeric:', result4)"
+
+
+		],
+		"description": "isalnum() - Return True if all characters in the string are alphanumeric"
+	  },
+	  "isalpha()": {
+		"prefix": "Pythonisalpha",
+		"body": [
+			"text1 = 'Hello'",
+"text2 = 'Hello123'",
+"text3 = '123'",
+
+"result1 = text1.isalpha()",
+"result2 = text2.isalpha()",
+"result3 = text3.isalpha()",
+
+"print('Is 'Hello' alphabetic:', result1)",
+"print('Is 'Hello123' alphabetic:', result2)",
+"print('Is '123' alphabetic:', result3)"
+		],
+		"description": "isalpha() - Return True if all characters in the string are alphabetic"
+	  },
+	  "isdigit()": {
+		"prefix": "Pythonisdigit",
+		"body": [
+			"text1 = '12345'",
+"text2 = '123abc'",
+"text3 = 'abc'",
+
+"result1 = text1.isdigit()",
+"result2 = text2.isdigit()",
+"result3 = text3.isdigit()",
+
+"print('Is '12345' composed of digits:', result1)",
+"print('Is '123abc' composed of digits:', result2)",
+"print('Is 'abc' composed of digits:', result3)"
+		],
+		"description": "isdigit() - Return True if all characters in the string are digits"
+	  },
+	  "islower()": {
+		"prefix": "Pythonislower",
+		"body": [
+			"text1 = 'hello'",
+"text2 = 'Hello'",
+"text3 = '123'",
+
+"result1 = text1.islower()",
+"result2 = text2.islower()",
+"result3 = text3.islower()",
+
+"print('Is 'hello' all lowercase:', result1)",
+"print('Is 'Hello' all lowercase:', result2)",
+"print('Is '123' all lowercase:', result3)"
+		],
+		"description": "islower() - Return True if all cased characters in the string are lowercase"
+	  },
+	  "isspace()": {
+		"prefix": "Pythonisspace",
+		"body": [
+			"text1 = '   '",
+"text2 = '   Hello   '",
+"text3 = 'Hello'",
+"text4 = '",
+
+"result1 = text1.isspace()",
+"result2 = text2.isspace()",
+"result3 = text3.isspace()",
+"result4 = text4.isspace()",
+
+"print('Is '   ' all whitespace:', result1)",
+"print('Is '   Hello   ' all whitespace:', result2)",
+"print('Is 'Hello' all whitespace:', result3)",
+"print('Is '' all whitespace:', result4)"
+		],
+		"description": "isspace() - Return True if all characters in the string are whitespace"
+	  },
+	  "istitle()": {
+		"prefix": "Pythonistitle",
+		"body": [
+			"text1 = 'Hello World'",
+"text2 = 'Hello world'",
+"text3 = 'Hello, World'",
+"text4 = '123 Title Case'",
+
+"result1 = text1.istitle()",
+"result2 = text2.istitle()",
+"result3 = text3.istitle()",
+"result4 = text4.istitle()",
+
+"print('Is 'Hello World' in title case:', result1)",
+"print('Is 'Hello world' in title case:', result2)",
+"print('Is 'Hello, World' in title case:', result3)",
+"print('Is '123 Title Case' in title case:', result4)"
+		],
+		"description": "istitle() - Return True if the string is a titlecased string"
+	  },
+	  "isupper()": {
+		"prefix": "Pythonisupper",
+		"body": [
+			"text1 = 'Hello World'",
+"text2 = 'Hello world'",
+"text3 = 'hello World'",
+"text4 = '123 Hello World'",
+
+"result1 = text1.istitle()",
+"result2 = text2.istitle()",
+"result3 = text3.istitle()",
+"result4 = text4.istitle()",
+
+"print('Is 'Hello World' in title case:', result1)",
+"print('Is 'Hello world' in title case:', result2)",
+"print('Is 'hello World' in title case:', result3)",
+"print('Is '123 Hello World' in title case:', result4)"
+		],
+		"description": "isupper() - Return True if all cased characters in the string are uppercase"
+	  },
+	  "join()": {
+		"prefix": "Pythonjoin",
+		"body": [
+			"words = ['Hello', 'world', 'how', 'are', 'you']",
+"separator = ' '",
+
+"sentence = separator.join(words)",
+"print(sentence)"
+		],
+		"description": "join() - Concatenate a list of strings with the string as a separator"
+	  },
+	  "ljust()": {
+		"prefix": "Pythonljust",
+		"body": [
+			"text = 'Hello'",
+"width = 10",
+
+"justified_text = text.ljust(width, '*')",
+"print(justified_text)"
+		],
+		"description": "ljust() - Return the string left-justified in a field of width"
+	  },
+	  "lower()": {
+		"prefix": "Pythonlower",
+		"body":[
+			"text = 'Hello World'",
+"lowercase_text = text.lower()",
+"print(lowercase_text)"
+		],
+		"description": "lower() - Return a lowercased version of the string"
+	  },
+	  "lstrip()": {
+		"prefix": "Pythonlstrip",
+		"body": [
+			"text = 'Hello, world!'",
+"stripped_text = text.lstrip()",
+"print(stripped_text)"
+		],
+		"description": "lstrip() - Return a copy of the string with leading whitespace removed"
+	  },
+	  "partition()": {
+		"prefix": "Pythonpartition",
+		"body": [
+			"text = 'apple,banana,cherry'",
+			"separator = ','",
+			
+			"part1, sep, part2 = text.partition(separator)",
+			"print('Part 1:', part1)",
+			"print('Separator:', sep)",
+			"print('Part 2:', part2)"
+		],
+		"description": "partition() - Split the string at the first occurrence of sep"
+	  },
+	  "replace()": {
+		"prefix": "Pythonreplace",
+		"body": [
+			"text = 'Hello, world! How are you?'",
+"old_substring = 'world'",
+"new_substring = 'Python'",
+
+"new_text = text.replace(old_substring, new_substring)",
+"print(new_text)"
+		],
+		"description": "replace() - Return a copy of the string with all occurrences of old replaced by new"
+	  },
+	  "rfind()": {
+		"prefix": "Pythonrfind",
+		"body": [
+			"text = 'Hello, world! How are you? How's everything going?'",
+"substring = 'How'",
+"index = text.rfind(substring)",
+
+"print('Last occurrence of '', substring, '' starts at index:', index)"
+		],
+		"description": "rfind() - Return the highest index of sub in the string"
+	  },
+	  "rindex()": {
+		"prefix": "Pythonrindex",
+		"body":[
+			"text = 'Hello, world! How are you? How's everything going?'",
+"substring = 'How'",
+"index = text.rindex(substring)",
+
+"print('Last occurrence of '', substring, '' starts at index:', index)"
+		],
+		"description": "rindex() - Like rfind(), but raise ValueError if sub not found"
+	  },
+	  "rjust()": {
+		"prefix": "Pythonrjust",
+		"body": [
+			"text = 'Hello'",
+"width = 10",
+
+"justified_text = text.rjust(width, '*')",
+"print(justified_text)"
+		],
+		"description": "rjust() - Return the string right-justified in a field of width"
+	  },
+	  "rpartition()": {
+		"prefix": "Pythonrpartition",
+		"body": [
+			"text = 'apple,banana,cherry'",
+"separator = ','",
+
+"part1, sep, part2 = text.rpartition(separator)",
+"print('Part 1:', part1)",
+"print('Separator:', sep)",
+"print('Part 2:', part2)"
+		],
+		"description": "rpartition() - Split the string at the last occurrence of sep"
+	  },
+	  "rsplit()": {
+		"prefix": "Pythonrsplit",
+		"body": [
+			"text = 'apple,banana,cherry,grape'",
+"separator = ','",
+
+"substrings = text.rsplit(separator)",
+"print(substrings)"
+		],
+		"description": "rsplit() - Return a list of the words in the string, using sep as the delimiter string"
+	  },
+	  "rstrip()": {
+		"prefix": "Pythonrstrip",
+		"body": [
+			"text = 'Hello, world!  '",
+"stripped_text = text.rstrip()",
+"print(stripped_text)"
+		],
+		"description": "rstrip() - Return a copy of the string with trailing whitespace removed"
+	  },
+	  "split()": {
+		"prefix": "Pythonsplit",
+		"body": [
+			"text = 'apple,banana,cherry,grape'",
+"separator = ','",
+
+"substrings = text.split(separator)",
+"print(substrings)"
+		],
+		"description": "split() - Return a list of the words in the string, using sep as the delimiter string"
+	  },
+	  "splitlines()": {
+		"prefix": "Pythonsplitlines",
+		"body": [
+			"text = 'Line 1\nLine 2\r\nLine 3\rLine 4'",
+"lines = text.splitlines()",
+
+"print(lines)"
+		],
+		"description": "splitlines() - Return a list of the lines in the string, breaking at line boundaries"
+	  },
+	  "startswith()": {
+		"prefix": "Pythonstartswith",
+		"body": [
+			"text = 'Hello, world!'",
+"prefix1 = 'Hello'",
+"prefix2 = 'Hi'",
+
+"result1 = text.startswith(prefix1)",
+"result2 = text.startswith(prefix2)",
+
+"print('Starts with '', prefix1, '':', result1)",
+"print('Starts with '', prefix2, '':', result2)"
+		],
+		"description": "startswith() - Return True if the string starts with the specified prefix"
+	  },
+	  "strip()": {
+		"prefix": "Pythonstrip",
+		"body": [
+			"text = 'Hello, world! '",
+"stripped_text = text.strip()",
+"print(stripped_text)"
+		],
+		"description": "strip() - Return a copy of the string with leading and trailing whitespace removed"
+	  },
+	  "swapcase()": {
+		"prefix": "Pythonswapcase",
+		"body":[
+			"text = 'Hello, World!'",
+"swapped_text = text.swapcase()",
+"print(swapped_text)"
+		],
+		"description": "swapcase() - Return a string with uppercase characters converted to lowercase and vice versa"
+	  },
+	  "title()": {
+		"prefix": "Pythontitle",
+		"body":[
+			"text = 'hello, world! how are you?'",
+"title_text = text.title()",
+"print(title_text)"
+		],
+		"description": "title() - Return a titlecased version of the string"
+	  },
+	  "translate()": {
+		"prefix": "Pythontranslate",
+		"body": [
+			"text = 'Hello, world!'",
+"translation_table = str.maketrans('el', 'XY')",
+
+"translated_text = text.translate(translation_table)",
+"print(translated_text)"
+		],
+		"description": "translate() - Return a string where some specified characters are replaced with the character described in a dictionary"
+	  },
+	  "upper()": {
+		"prefix": "Pythonupper",
+		"body": [
+			"text = 'Hello, World!'",
+"uppercase_text = text.upper()",
+"print(uppercase_text)"
+		],
+		"description": "upper() - Return an uppercased version of the string"
+	  },
+	  "zfill()": {
+		"prefix": "Pythonzfill",
+		"body": [
+			"number = '42'",
+"width = 5",
+
+"padded_number = number.zfill(width)",
+"print(padded_number)"
+		],
+		"description": "zfill() - Return a numeric string left filled with zeros in a string of width"
+	  },
+	  "isnumeric()": {
+		"prefix": "Pythonisnumeric",
+		"body": [
+			"text1 = '12345'",
+"text2 = '123.45'",
+"text3 = '½'",
+"text4 = 'abc123'",
+
+"result1 = text1.isnumeric()",
+"result2 = text2.isnumeric()",
+"result3 = text3.isnumeric()",
+"result4 = text4.isnumeric()",
+
+"print('Is '12345' composed of numeric characters:', result1)",
+"print('Is '123.45' composed of numeric characters:', result2)",
+"print('Is '½' composed of numeric characters:', result3)",
+"print('Is 'abc123' composed of numeric characters:', result4)"
+		],
+		"description": "isnumeric() - Return True if all characters in the string are numeric characters"
+	  },
+	  "isdecimal()": {
+		"prefix": "Pythonisdecimal",
+		"body": [
+			"text1 = '12345'",
+"text2 = '123.45'",
+"text3 = '½'",
+"text4 = 'abc123'",
+
+"result1 = text1.isdecimal()",
+"result2 = text2.isdecimal()",
+"result3 = text3.isdecimal()",
+"result4 = text4.isdecimal()",
+
+"print('Is '12345' composed of decimal characters:', result1)",
+"print('Is '123.45' composed of decimal characters:', result2)",
+"print('Is '½' composed of decimal characters:', result3)",
+"print('Is 'abc123' composed of decimal characters:', result4)"
+		],
+		"description": "isdecimal() - Return True if all characters in the string are decimal characters"
+	  },
+	"Formatting Operations": {
+		"prefix": "Python string_formatting_operations",
+		"body": [
+			"'d'",
+			"Signed integer decimal.",
+			"'i'",
+			"Signed integer decimal.",
+			"'o'",
+			"Signed octal value.",
+			"'u'",
+			"Obsolete type – it is identical to 'd'.",
+			"'x'",
+			"Signed hexadecimal (lowercase).",
+			"'X'",
+			"Signed hexadecimal (uppercase).",
+			"'e'",
+			"Floating point exponential format (lowercase).",
+			"'E'",
+			"Floating point exponential format (uppercase).",
+			"'f'",
+			"Floating point decimal format.",
+			"'F'",
+			"Floating point decimal format.",
+			"'g'",
+			"Floating point format. Uses lowercase exponential format if exponent is less than -4 or not less than precision, decimal format otherwise.",
+			"'G'",
+			"Floating point format. Uses uppercase exponential format if exponent is less than -4 or not less than precision, decimal format otherwise.",
+			"'c'",
+			"Single character (accepts integer or single character string).",
+			"'r'",
+			"String (converts any Python object using repr()).",
+			"'s'",
+			"String (converts any Python object using str()).",
+			"'%'",
+			"No argument is converted, results in a '%' character in the result."
+		],
+		"description": "Python String Formatting Operations"
+	},
+	"File Handling": {
+		"prefix": "python_file_handling",
+		"body": [
+			"Methods",
+			"    close()",
+			"    flush()",
+			"    fileno()",
+			"    isatty()",
+			"    next()",
+			"    read(size)",
+			"    readline(size)",
+			"    readlines(sizehint)",
+			"    seek(offset [whence])",
+			"    tell()",
+			"    truncate([size])",
+			"    write(str)",
+			"    writelines(sequence)",
+			"    ",
+			"     attributes",
+			"    closed",
+			"    encoding",
+			"    errors",
+			"    mode",
+			"    name",
+			"    newlines",
+			"    softspace",
+			""
+		],
+		"description": "Python File Handling: Methods, Attributes, and Concepts"
+	},
+	"close()": {
+		"prefix": "Pythonclose",
+		"body":[
+			"file = open('example.txt', 'r')",
+"content = file.read()",
+"print(content)",
+"file.close()  # Closing the file after reading its content"
+		],
+		"description": "close() - Close the file"
+	  },
+	  "flush()": {
+		"prefix": "Pythonflush",
+		"body":[
+			"file = open('output.txt', 'w')",
+"file.write('Hello, world!')",
+"file.flush()  # Flush the data to the file immediately",
+"file.close()"
+		],
+		"description": "flush() - Flush the internal buffer"
+	  },
+	  "fileno()": {
+		"prefix": "Pythonfileno",
+		"body": [
+			"file = open('example.txt', 'r')",
+"file_descriptor = file.fileno()",
+"print('File Descriptor:', file_descriptor)",
+"file.close()"
+		],
+		"description": "fileno() - Return the integer file descriptor"
+	  },
+	  "isatty()": {
+		"prefix": "Pythonisatty",
+		"body": [
+			"import sys",
+
+"if sys.stdin.isatty():",
+   " print('stdin is connected to a terminal')",
+"else:",
+   " print('stdin is not connected to a terminal')",
+
+"if sys.stdout.isatty():",
+    "print('stdout is connected to a terminal')",
+"else:",
+   " print('stdout is not connected to a terminal')"
+		],
+		"description": "isatty() - Return True if the file is connected to a tty-like device"
+	  },
+	  "next()": {
+		"prefix": "Pythonnext",
+		"body": [
+			"numbers = iter([1, 2, 3, 4, 5])",
+"print(next(numbers))  # Output: 1",
+"print(next(numbers))  # Output: 2",
+"print(next(numbers))  # Output: 3"
+		],
+		"description": "next() - Retrieve the next line from the file"
+	  },
+	  "read()": {
+		"prefix": "Pythonread",
+		"body":[
+			"file = open('example.txt', 'r')",
+"content = file.read()",
+"print(content)",
+"file.close()"
+		],
+		"description": "read() - Read at most size bytes from the file"
+	  },
+	  "readline()": {
+		"prefix": "Pythonreadline",
+		"body": [
+			"file = open('example.txt', 'r')",
+"line1 = file.readline()",
+"line2 = file.readline()",
+"print('Line 1:', line1)",
+"print('Line 2:', line2)",
+"file.close()"
+		],
+		"description": "readline() - Read and return the next line from the file"
+	  },
+	  "readlines()": {
+		"prefix": "Pythonreadlines",
+		"body": [
+			"file = open('example.txt', 'r')",
+"lines = file.readlines()",
+"print(lines)",
+"file.close()"
+		],
+		"description": "readlines() - Read and return a list of lines from the file"
+	  },
+	  "xreadlines()": {
+		"prefix": "Pythonxreadlines",
+		"body": [
+			"file = open('example.txt', 'r')",
+"lines = file.readlines()  # Read all lines at once",
+"for line in lines:",
+   " print(line)",
+"file.close()"
+		],
+		"description": "xreadlines() - Return an iterator over the lines of the file"
+	  },
+	  "seek()": {
+		"prefix": "Pythonseek",
+		"body": [
+			"file = open('example.txt', 'r')",
+"file.seek(10)  # Move the pointer to the 10th byte from the beginning",
+"content = file.read()",
+"print(content)",
+"file.close()"
+		],
+		"description": "seek() - Change the file position to the given offset"
+	  },
+	  "tell()": {
+		"prefix": "Pythontell",
+		"body": [
+			"file = open('example.txt', 'r')",
+"position = file.tell()",
+"print('Current position:', position)",
+
+"content = file.read(10)  # Read 10 bytes from the current position",
+"position = file.tell()",
+"print('New position:', position)",
+
+"file.close()"
+		],
+		"description": "tell() - Return the current file position"
+	  },
+	  "truncate()": {
+		"prefix": "Pythontruncate",
+		"body":[
+
+		],
+		"description": "truncate() - Resize the file to the given size"
+	  },
+	  "write()": {
+		"prefix": "Pythonwrite",
+		"body": [
+			"file = open('example.txt', 'r+')",
+"file.truncate(20)  # Set the file size to 20 bytes",
+"file.close()"
+		],
+		"description": "write() - Write a string to the file"
+	  },
+	  "writelines()": {
+		"prefix": "Pythonwritelines",
+		"body":[
+			"lines = ['Line 1\n', 'Line 2\n', 'Line 3\n']",
+
+"with open('output.txt', 'w') as file:",
+   " file.writelines(lines)",
+		],
+		"description": "writelines() - Write a list of lines to the file"
+	  },
+	  "closed": {
+		"prefix": "Pythonclosed",
+		"body": [
+			"file = open('example.txt', 'r')",
+"print('Is the file closed?', file.closed)",
+
+"file.close()",
+"print('Is the file closed?', file.closed)"
+		],
+		"description": "closed - Return True if the file is closed"
+	  },
+	  "encoding": {
+		"prefix": "Pythonencoding",
+		"body": [
+			"file = open('example.txt', 'r')",
+"print('Is the file closed?', file.closed)",
+
+"file.close()",
+"print('Is the file closed?', file.closed)"
+		],
+		"description": "encoding - Return the encoding of the file"
+	  },
+	  "errors": {
+		"prefix": "Pythonerrors",
+		"body": [
+			"text = 'Hello, 世界!'",
+"encoded = text.encode('ascii', errors='replace')",
+"print(encoded.decode('ascii'))",
+
+"encoded = text.encode('ascii', errors='ignore')",
+"print(encoded.decode('ascii'))"
+
+		],
+		"description": "errors - Return the error handling scheme of the file"
+	  },
+	  "mode": {
+		"prefix": "Pythonmode",
+		"body": [
+			"with open('example.txt', 'r') as file:",
+   " content = file.read()",
+    "print(content)",
+
+"# Writing to a file",
+"with open('output.txt', 'w') as file:",
+    "file.write('Hello, world!')",
+
+"# Appending to a file",
+"with open('output.txt', 'a') as file:",
+    "file.write('\nAppended line')"
+		],
+		"description": "mode - Return the mode of the file"
+	  },
+	  "name": {
+		"prefix": "Pythonname",
+		"body": [
+			"file = open('example.txt', 'r')",
+"print('File name:', file.name)",
+
+"file.close()"
+		],
+		"description": "name - Return the name of the file"
+	  },
+	  "newlines": {
+		"prefix": "Pythonnewlines",
+		"body": [
+			"file = open('example.txt', 'r')",
+"content = file.read()",
+"print('Newline characters encountered:', repr(file.newlines))",
+"file.close()"
+		],
+		"description": "newlines - Return a strings containing all line ending conventions used in the file"
+	  },
+	  "softspace": {
+		"prefix": "Pythonsoftspace",
+		"body": [
+			"print 'Hello',  # A space will be added before the comma-separated value",
+"print 'world'   # No space will be added before 'world'"
+		],
+		"description": "softspace - Return a Boolean that indicates whether a space character needs to be printed before another value when using the print statement"
+	  },
+
+	"Sys Variables": {
+		"prefix": "python_sys_variables",
+		"body": [
+			"import sys",
+			"",
+			"# Command line args",
+			"sys.argv",
+			"",
+			"# Linked C modules",
+			"sys.builtin_module_names",
+			"",
+			"# Native byte order",
+			"sys.byteorder",
+			"",
+			"# Signal check frequency",
+			"sys.check_interval",
+			"",
+			"# Root directory",
+			"sys.exec_prefix",
+			"",
+			"# Name of executable",
+			"sys.executable",
+			"",
+			"# Exit function name",
+			"sys.exitfunc",
+			"",
+			"# Loaded modules",
+			"sys.modules",
+			"",
+			"# Search path",
+			"sys.path",
+			"",
+			"# Current platform",
+			"sys.platform",
+			"",
+			"# File objects for I/O",
+			"sys.stdin",
+			"sys.stdout",
+			"sys.stderr",
+			"",
+			"# Python version info",
+			"sys.version_info",
+			"",
+			"# Version number",
+			"sys.winver",
+			""
+		],
+		"description": "Python sys Module Variables and Descriptions"
+	},
+	"sys.argv Usage": {
+		"prefix": "Python sys_argv",
+		"body": [
+			"import sys",
+			"",
+			"script_name = sys.argv[0]",
+			"arg1 = sys.argv[1]",
+			"arg2 = sys.argv[2]",
+			"arg3 = sys.argv[3]",
+			"arg4 = sys.argv[4]"
+		],
+		"description": "Usage of sys.argv in Python"
+	},
+	"Set & Mapping": {
+		"prefix": "Python set_mapping",
+		"body": [
+			"Set Types",
+			"len(s)",
+			"x in s",
+			"x not in s",
+			"isdisjoint(other)",
+			"issubset(others)",
+			"issuperset",
+			"union(other...)",
+			"intersection(other, ...)",
+			"difference(other...)",
+			"symmetric_difference(other)",
+			"copy()",
+			"update()",
+			"intersection_update()",
+			"difference_update()",
+			"symmetric_difference_update()",
+			"add(elem)",
+			"remove()",
+			"discard(elem)",
+			"pop()",
+			"clear()",
+			"Mapping Types",
+			"len(d)",
+			"d[key]",
+			"d[key] = value",
+			"del d[key]",
+			"key in d",
+			"key not in d",
+			"iter(d)",
+			"clear()",
+			"copy()",
+			"fromkeys(seq[, value])",
+			"get(key[, default])",
+			"has_key(key)", // Deprecated in Python 2, removed in Python 3
+			"items()",
+			"iteritems()",
+			"iterkeys()",
+			"itervalues()",
+			"keys()",
+			"pop(key[, default])",
+			"popitem()",
+			"setdefault(key[, default])",
+			"update([other])",
+			"values()"
+		],
+		"description": "Set and Mapping Types in Python"
+	},
+	"isdisjoint()": {
+		"prefix": "Pythonisdisjoint",
+		"body": [
+			"set1 = {1, 2, 3, 4}",
+"set2 = {5, 6, 7}",
+"set3 = {3, 8, 9}"
+,
+"result1 = set1.isdisjoint(set2)",
+"result2 = set1.isdisjoint(set3)",
+
+"print('set1 and set2 are disjoint:', result1)",
+"print('set1 and set3 are disjoint:', result2)"
+		],
+		"description": "isdisjoint() - Return True if the set has no elements in common with the specified iterable"
+	  },
+	  "issubset()": {
+		"prefix": "Pythonissubset",
+		"body": [
+			"set1 = {1, 2, 3}",
+"set2 = {1, 2, 3, 4, 5}",
+"set3 = {2, 4, 6}",
+
+"result1 = set1.issubset(set2)",
+"result2 = set1.issubset(set3)",
+
+"print('set1 is a subset of set2:', result1)",
+"print('set1 is a subset of set3:', result2)"
+		],
+		"description": "issubset() - Return True if all elements of the set are contained in the specified iterable(s)"
+	  },
+	  "issuperset()": {
+		"prefix": "Pythonissuperset",
+		"body": ["set1 = {1, 2, 3, 4, 5}",
+		"set2 = {1, 2, 3}",
+		"set3 = {2, 4, 6}",
+		
+		"result1 = set1.issuperset(set2)",
+		"result2 = set1.issuperset(set3)",
+		
+		"print('set1 is a superset of set2:', result1)",
+		"print('set1 is a superset of set3:', result2)"],
+		"description": "issuperset() - Return True if the set contains all elements of the specified iterable"
+	  },
+	  "union()": {
+		"prefix": "Pythonunion",
+		"body": [
+			"set1 = {1, 2, 3}",
+"set2 = {3, 4, 5}",
+"set3 = {5, 6, 7}",
+
+"# Performing union operation",
+"result = set1.union(set2)",
+"print('Union of set1 and set2:', result)",
+
+"combined = set1.union(set2, set3)",
+"print('Union of set1, set2, and set3:', combined)"
+		],
+		"description": "union() - Return a new set with elements from the set and all specified iterables"
+	  },
+	  "intersection()": {
+		"prefix": "Pythonintersection",
+		"body": [
+			"set1 = {1, 2, 3, 4}",
+"set2 = {3, 4, 5, 6}",
+"set3 = {4, 6, 7, 8}",
+
+"# Performing intersection operation",
+"result = set1.intersection(set2)",
+"print('Intersection of set1 and set2:', result)",
+
+"common_elements = set1.intersection(set2, set3)",
+"print('Common elements in set1, set2, and set3:', common_elements)"
+		],
+		"description": "intersection() - Return a new set with elements common to the set and all specified iterables"
+	  },
+	  "difference()": {
+		"prefix": "Pythondifference",
+		"body": [
+			"set1 = {1, 2, 3, 4}",
+"set2 = {3, 4, 5, 6}",
+"set3 = {4, 6, 7, 8}",
+
+"# Performing difference operation",
+"result = set1.difference(set2)",
+"print('Difference between set1 and set2:', result)",
+
+"unique_elements = set1.difference(set2, set3)",
+"print('Unique elements in set1 compared to set2 and set3:', unique_elements)"
+		],
+		"description": "difference() - Return a new set with elements in the set that are not in the specified iterables"
+	  },
+	  "symmetric_difference()": {
+		"prefix": "Pythonsymmetric_difference",
+		"body":[
+			"set1 = {1, 2, 3, 4}",
+"set2 = {3, 4, 5, 6}",
+
+"# Performing symmetric difference operation",
+"result = set1.symmetric_difference(set2)",
+"print('Symmetric difference between set1 and set2:', result)"
+		],
+		"description": "symmetric_difference() - Return a new set with elements in either the set or the specified iterables, but not both"
+	  },
+	  "copy()": {
+		"prefix": "Pythoncopy",
+		"body":[
+			"original_set = {['a'], ['b']}",
+"copied_set = original_set.copy()",
+
+"original_set[0].append('c')  # Modifying an element in the original set",
+
+"print('Original set:', original_set)",
+"print('Copied set:', copied_set)"
+		],
+		"description": "copy() - Return a shallow copy of the set"
+	  },
+	  "update()": {
+		"prefix": "Pythonupdate",
+		"body": [
+			"set1 = {1, 2, 3}",
+"set2 = {3, 4, 5}",
+
+"set1.update(set2)  # Adding elements from set2 to set1",
+
+"print('Updated set:', set1)"
+		],
+		"description": "update() - Update the set with elements from the set and all specified iterables"
+	  },
+	  "intersection_update()": {
+		"prefix": "Pythonintersection_update",
+		"body": [
+
+			"set1 = {1, 2, 3, 4}",
+"set2 = {3, 4, 5, 6}",
+
+"set1.intersection_update(set2)  # Keeping elements that are common to both sets",
+
+"print('Updated set:', set1)"
+		],
+		"description": "intersection_update() - Update the set with elements common to the set and all specified iterables"
+	  },
+	  "difference_update()": {
+		"prefix": "Pythondifference_update",
+		"body":[
+			"set1 = {1, 2, 3, 4, 5}",
+"set2 = {3, 4, 5, 6}",
+
+"set1.difference_update(set2)  # Removing elements present in set2",
+
+"print('Updated set:', set1)"
+		],
+		"description": "difference_update() - Update the set with elements in the set that are not in the specified iterables"
+	  },
+	  "symmetric_difference_update()": {
+		"prefix": "Pythonsymmetric_difference_update",
+		"body": [
+			"set1 = {1, 2, 3, 4}",
+"set2 = {3, 4, 5, 6}",
+
+"set1.symmetric_difference_update(set2)  # Updating set1 with the symmetric difference",
+
+"print('Updated set:', set1)"
+		],
+		"description": "symmetric_difference_update() - Update the set with elements in either the set or the specified iterables, but not both"
+	  },
+	  "add()": {
+		"prefix": "Pythonadd",
+		"body": [
+			"fruits = {'apple', 'banana', 'cherry'}",
+"fruits.add('orange')  # Adding a new element",
+
+"print('Updated set:', fruits)"
+		],
+		"description": "add() - Add an element to the set"
+	  },
+	  "remove()": {
+		"prefix": "Pythonremove",
+		"body": [
+			"fruits = {'apple', 'cherry'}",
+
+"try:",
+    "fruits.remove('banana')",
+"except KeyError as e:",
+   " print('Error:', e)"
+		],
+		"description": "remove() - Remove the specified element from the set; raises KeyError if the element is not found"
+	  },
+	  "discard()": {
+		"prefix": "Pythondiscard",
+		"body": [
+			"fruits = {'apple', 'cherry'}",
+"fruits.discard('banana')  # No error, no change to the set",
+
+"print('Updated set:', fruits)"
+		],
+		"description": "discard() - Remove the specified element from the set if it exists; does nothing if the element is not found"
+	  },
+	  "pop()": {
+		"prefix": "Pythonpop",
+		"body": [
+			"empty_set = set()",
+
+"try:",
+    "empty_set.pop()",
+"except KeyError as e:",
+    "print('Error:', e)"
+		],
+		"description": "pop() - Remove and return an arbitrary element from the set; raises KeyError if the set is empty"
+	  },
+	  "clear()": {
+		"prefix": "Pythonclear",
+		"body": [
+			"fruits = {'apple', 'banana', 'cherry'}",
+"fruits.clear()  # Removing all elements",
+
+"print('Updated set:', fruits)"
+		],
+		"description": "clear() - Remove all elements from the set"
+	  },
+	 
+	  "fromkeys()": {
+		"prefix": "Pythonfromkeys",
+		"body":[" keys = ['name', 'age', 'gender']",
+		"default_value = 'unknown'",
+		
+		"person = dict.fromkeys(keys, default_value)",
+		"print('Person dictionary:', person),"],
+		"description": "fromkeys() - Create a new dictionary with keys from seq and values set to value"
+	  },
+	  "get()": {
+		"prefix": "Pythonget",
+		"body": [
+			"person = {'name': 'Alice', 'age': 30, 'gender': 'female'}",
+
+"name = person.get('name', 'Unknown')",
+"city = person.get('city', 'Unknown')",
+
+"print('Name:', name)",
+"print('City:', city)"
+		],
+		"description": "get() - Return the value for key if key is in the dictionary, else default"
+	  },
+	  "items()": {
+		"prefix": "Pythonitems",
+		"body":[
+			"person = {'name': 'Alice', 'age': 30, 'gender': 'female'}",
+
+"name = person.get('name', 'Unknown')",
+"city = person.get('city', 'Unknown')",
+
+"print('Name:', name)",
+"print('City:', city)"
+		],
+		"description": "items() - Return a list of the dictionary's (key, value) pairs"
+	  },
+	  "iteritems()": {
+		"prefix": "Pythoniteritems",
+		"body": [
+			"person = {'name': 'Alice', 'age': 30, 'gender': 'female'}",
+
+"for key, value in person.items():",
+    "print(f'Key: {key}, Value: {value}')"
+		],
+		"description": "iteritems() - Return an iterator over the dictionary's (key, value) pairs"
+	  },
+	  "iterkeys()": {
+		"prefix": "Pythoniterkeys",
+		"body": [
+			"person = {'name': 'Alice', 'age': 30, 'gender': 'female'}",
+
+"for key in person.keys():",
+   " print('Key:', key)"
+		],
+		"description": "iterkeys() - Return an iterator over the dictionary's keys"
+	  },
+	  "itervalues()": {
+		"prefix": "Pythonitervalues",
+		"body": [
+			"person = {'name': 'Alice', 'age': 30, 'gender': 'female'}",
+
+"for value in person.values():",
+    "print('Value:', value)"
+		],
+		"description": "itervalues() - Return an iterator over the dictionary's values"
+	  },
+	  "keys()": {
+		"prefix": "Pythonkeys",
+		"body": [
+			"person = {'name': 'Alice', 'age': 30, 'gender': 'female'}",
+
+"keys_view = person.keys()",
+
+"print('Keys view:', keys_view)"
+		],
+		"description": "keys() - Return a list of the dictionary's keys"
+	  },
+	  "popTypes()": {
+		"prefix": "Pythonpop",
+		"body": [
+			"person = {'name': 'Alice', 'age': 30, 'gender': 'female'}",
+
+"key, value = person.popitem()",
+
+"print('Removed key:', key)",
+"print('Removed value:', value)",
+"print('Updated dictionary:', person)"
+		],
+		"description": "pop() - Remove the specified key and return its associated value; raises KeyError if key is not found"
+	  },
+	  "popitem()": {
+		"prefix": "Pythonpopitem",
+		"body": [
+			"person = {'name': 'Alice', 'age': 30, 'gender': 'female'}",
+
+"key, value = person.popitem()",
+
+"print('Removed key:', key)",
+"print('Removed value:', value)",
+"print('Updated dictionary:', person)"
+		],
+		"description": "popitem() - Remove and return a (key, value) pair from the dictionary; raises KeyError if the dictionary is empty"
+	  },
+	  "setdefault()": {
+		"prefix": "Pythonsetdefault",
+		"body": [
+			"person = {'name': 'Alice', 'age': 30}",
+
+"name = person.setdefault('name', 'Unknown')",
+"city = person.setdefault('city', 'Unknown')",
+
+"print('Name:', name)",
+"print('City:', city)",
+"print('Updated dictionary:', person)"
+		],
+		"description": "setdefault() - If key is in the dictionary, return its value. If not, insert key with a value of default and return default"
+	  },
+	  "updateTypes()": {
+		"prefix": "Pythonupdate",
+		"body": [
+			"person = {'name': 'Alice', 'age': 30}",
+"additional_info = {'city': 'New York', 'occupation': 'Engineer'}",
+
+"person.update(additional_info)",
+
+"print('Updated dictionary:', person)"
+		],
+		"description": "update() - Update the dictionary with items from other; overwriting existing keys"
+	  },
+	  "values()": {
+		"prefix": "Pythonvalues",
+		"body":[
+			"person = {'name': 'Alice', 'age': 30, 'gender': 'female'}",
+
+"values_view = person.values()",
+
+"print('Values view:', values_view)"
+		],
+		"description": "values() - Return a list of the dictionary's values"
+	  },
+	"Date Time": {
+		"prefix": "python_datetime",
+		"body": [
+			"replaced = d.replace(year, month, day)",
+			"timetuple = ()",
+			"toordinal =()",
+			"weekday = ()",
+			"isoweekday = ()",
+			"isocalendar = ()",
+			"isoformat =()",
+			"str = ()",
+			"ctime =  ()",
+			"strftime = ()",
+			"",
+			"# Datetime Object",
+			"date = ()",
+			"time = ()",
+			"timetz = ()",
+			"replaced = (year month day hour, minute)",
+			"astimezone = (timezone.utc)",
+			"utcoffset = ()",
+			"dst =()",
+			"tzname =()",
+			"timetuple = ()",
+			"utctimetuple = ()",
+			"toordinal = ()",
+			"weekday = ()",
+			"isoweekday = ()",
+			"isocalendar = ()",
+			"isoformat = ()",
+			"str = ()",
+			"ctime = ()",
+			"strftime = ('%Y-%m-%d %H:%M:%S')",
+			"",
+			"# Time Object",
+			"t = time(12, 30, 45, 0)",
+			"replaced = (hour, minute, second)",
+			"isoformat = ()",
+			"str = (t)",
+			"strftime = ('%H:%M:%S')",
+			"utcoffset = ()",
+			"dst = ()",
+			"tzname = ()"
+		],
+		"description": "Datetime Module in Python"
+	},
+	"replace((year, month, day))": {
+		"prefix": "Pythonreplace",
+		"body": [
+			"from datetime import datetime",
+
+			"dt = datetime(2023, 7, 30, 15, 45, 30)",
+			
+			"new_dt = dt.replace(year=2024, month=8)",
+			
+			"print('Original datetime:', dt)",
+			"print('Modified datetime:', new_dt)"
+		],
+		"description": "replace((year, month, day)) - Return a date with new values for year, month, and day"
+	  },
+	  "timetuple()": {
+		"prefix": "Pythontimetuple",
+		"body": [
+			"from datetime import datetime",
+
+"dt = datetime(2023, 7, 30, 15, 45, 30)",
+
+"time_tuple = dt.timetuple()",
+
+"print('Datetime:', dt)",
+"print('Time tuple:', time_tuple)"
+		],
+		"description": "timetuple() - Return a named tuple with tm_year, tm_mon, tm_mday, tm_hour, tm_min, tm_sec, tm_wday, tm_yday, and tm_isdst fields"
+	  },
+	  "toordinal()": {
+		"prefix": "Pythontoordinal",
+		"body":[
+			"from datetime import datetime",
+
+"dt = datetime(2023, 7, 30)",
+
+"ordinal_number = dt.toordinal()",
+
+"print('Datetime:', dt)",
+"print('Ordinal number:', ordinal_number)"
+		],
+		"description": "toordinal() - Return the proleptic Gregorian ordinal of the date"
+	  },
+	  "weekday()": {
+		"prefix": "Pythonweekday",
+		"body": [],
+		"description": "weekday() - Return the day of the week as an integer (0 for Monday, 6 for Sunday)"
+	  },
+	  "isoweekday()": {
+		"prefix": "Pythonisoweekday",
+		"body":[
+			"from datetime import datetime",
+
+"dt = datetime(2023, 7, 30)  # A Saturday",
+
+"weekday_number = dt.isoweekday()",
+
+"print('Datetime:', dt)",
+"print('ISO weekday number:', weekday_number)"
+		],
+		"description": "isoweekday() - Return the ISO day of the week as an integer (1 for Monday, 7 for Sunday)"
+	  },
+	  "isocalendar()": {
+		"prefix": "Pythonisocalendar",
+		"body": [
+			"from datetime import datetime",
+
+"dt = datetime(2023, 7, 30)  # A Saturday",
+
+"iso_year, iso_week, iso_weekday = dt.isocalendar()",
+
+"print('Datetime:', dt)",
+"print('ISO year:', iso_year)",
+"print('ISO week:', iso_week)",
+"print('ISO weekday:', iso_weekday)"
+		],
+		"description": "isocalendar() - Return a named tuple with year, week number, and weekday fields according to ISO 8601"
+	  },
+	  "isoformat()": {
+		"prefix": "Pythonisoformat",
+		"body": [
+			"from datetime import datetime",
+
+"dt = datetime(2023, 7, 30, 15, 45, 30)",
+
+"iso_string = dt.isoformat()",
+
+"print('Datetime:', dt)",
+"print('ISO format:', iso_string)"
+		],
+		"description": "isoformat() - Return a string representation of the date in ISO 8601 format"
+	  },
+	  "__str__()": {
+		"prefix": "Python__str__",
+		"body": [
+			"class Person:",
+   " def __init__(self, name, age):",
+       " self.name = name",
+        "self.age = age",
+
+    "def __str__(self):",
+        "return f'Name: {self.name}, Age: {self.age}'",
+
+"person = Person('Alice', 30)",
+"print(person)  # This will call the __str__() method"
+		],
+		"description": "__str__() - Return a string representation of the date in the form 'YYYY-MM-DD'"
+	  },
+	  "ctime()": {
+		"prefix": "Pythonctime",
+		"body": [
+			"import time",
+
+			"current_time = time.time()  # Get the current time in seconds since the epoch",
+			"human_readable_time = time.ctime(current_time)",
+			
+			"print('Current time:', human_readable_time)"
+		],
+		"description": "ctime() - Return a string representation of the date in the form 'Day Mon DD HH:MM:SS YYYY'"
+	  },
+	  "strftime()": {
+		"prefix": "Pythonstrftime",
+		"body":[
+			"from datetime import datetime",
+
+"dt = datetime(2023, 7, 30, 15, 45, 30)",
+
+"formatted_string = dt.strftime('%Y-%m-%d %H:%M:%S')",
+
+"print('Datetime:', dt)",
+"print('Formatted string:', formatted_string)"
+		],
+		"description": "strftime() - Return a string representation of the date according to the given format"
+	  },
+	  "date()": {
+		"prefix": "Pythondate",
+		"body": [
+			"from datetime import datetime",
+
+"dt = datetime(2023, 7, 30, 15, 45, 30)",
+
+"date_only = dt.date()",
+
+"print('Datetime:', dt)",
+"print('Date only:', date_only)"
+		],
+		"description": "date() - Return the date part of the datetime as a date object"
+	  },
+	  "time()": {
+		"prefix": "Pythontime",
+		"body": [
+			"import time",
+
+"current_time = time.time()",
+
+"print('Current time:', current_time)"
+		],
+		"description": "time() - Return the time part of the datetime as a time object"
+	  },
+	  "timetz()": {
+		"prefix": "Pythontimetz",
+		"body": [
+			"from datetime import datetime",
+
+"dt = datetime(2023, 7, 30, 15, 45, 30, tzinfo=None)  # Note: tzinfo=None means no time zone",
+
+"time_with_tz = dt.timetz()",
+
+"print('Datetime:', dt)",
+"print('Time with time zone:', time_with_tz)"
+		],
+		"description": "timetz() - Return the time part of the datetime as a time object with timezone info"
+	  },
+	  "replace([year[, month[, day[, hour[, minute[, second[, microsecond[, tzinfo]]]]]]]])": {
+		"prefix": "Pythonreplace",
+		"body":[
+			"from datetime import datetime",
+
+			"dt = datetime(2023, 7, 30, 15, 45, 30)",
+			
+			"new_dt = dt.replace(year=2024, month=8)",
+			
+			"print('Original datetime:', dt)",
+			"print('Modified datetime:', new_dt)"
+		],
+		"description": "replace() - Return a datetime with new values for specified components"
+	  },
+	  "astimezone()": {
+		"prefix": "Pythonastimezone",
+		"body": [
+			"from datetime import datetime",
+"import pytz",
+
+"dt = datetime(2023, 7, 30, 15, 45, 30)",
+"original_timezone = pytz.timezone('UTC')",
+"target_timezone = pytz.timezone('America/New_York')",
+
+"dt_utc = original_timezone.localize(dt)",
+"dt_ny = dt_utc.astimezone(target_timezone)",
+
+"print('Original datetime (UTC):', dt_utc)",
+"print('Datetime in New York:', dt_ny)"
+		],
+		"description": "astimezone(tz) - Return a datetime with a different timezone"
+	  },
+	  "utcoffset()": {
+		"prefix": "Pythonutcoffset",
+		"body": [
+			"from datetime import datetime, timedelta, tzinfo",
+
+"class CustomTimeZone(tzinfo):",
+ "def utcoffset(self, dt):",
+        "# Define the UTC offset here (e.g., UTC+03:00)",
+        "return timedelta(hours=3)",
+
+   " def dst(self, dt):",
+        "# Define daylight saving time offset here (if applicable)",
+        "return timedelta(0)",
+
+   " def tzname(self, dt):",
+       " # Define the time zone name here",
+        "return 'Custom Time Zone'",
+
+"dt = datetime(2023, 7, 30, tzinfo=CustomTimeZone())",
+
+"print('Datetime in custom time zone:', dt)",
+"print('UTC offset:', dt.utcoffset())"
+		],
+		"description": "utcoffset() - Return the time difference between UTC and local time"
+	  },
+	  "dst()": {
+		"prefix": "Pythondst",
+		"body": [
+			"from datetime import datetime, timedelta, tzinfo",
+
+"class CustomTimeZone(tzinfo):",
+   " def utcoffset(self, dt):",
+       " # Define the UTC offset here (e.g., UTC+03:00)",
+        "return timedelta(hours=3)",
+
+    "def dst(self, dt):",
+        "# Define daylight saving time offset here (if applicable)",
+        "# For example, return timedelta(hours=1) during DST",
+        "return timedelta(hours=1) if self._is_dst(dt) else timedelta(0)",
+
+    "def tzname(self, dt):",
+        "# Define the time zone name here",
+       " return 'Custom Time Zone'",
+
+    "def _is_dst(self, dt):",
+        "# Define your custom DST rules here",
+        "# For example, check if the date is within DST period",
+       " # In this example, DST is assumed during April to October",
+        "return dt.month >= 4 and dt.month <= 10",
+
+"dt = datetime(2023, 7, 30, tzinfo=CustomTimeZone())",
+
+"print('Datetime in custom time zone:', dt)",
+"print('DST offset:', dt.dst())"
+		],
+		"description": "dst() - Return the daylight saving time adjustment"
+	  },
+	  "tzname()": {
+		"prefix": "Pythontzname",
+		"body": [
+			"from datetime import datetime, timedelta, tzinfo",
+
+"class CustomTimeZone(tzinfo):",
+    "def utcoffset(self, dt):",
+       " # Define the UTC offset here (e.g., UTC+03:00)",
+        "return timedelta(hours=3)",
+
+    "def dst(self, dt):",
+       " # Define daylight saving time offset here (if applicable)",
+        "# For example, return timedelta(hours=1) during DST",
+       " return timedelta(hours=1) if self._is_dst(dt) else timedelta(0)",
+
+    "def tzname(self, dt):",
+        "# Define the time zone name here",
+       " return 'Custom Time Zone (DST)' if self._is_dst(dt) else 'Custom Time Zone'",
+
+    "def _is_dst(self, dt):",
+       " # Define your custom DST rules here",
+        "# For example, check if the date is within DST period",
+        "# In this example, DST is assumed during April to Octobe",
+        "return dt.month >= 4 and dt.month <= 10",
+
+"dt = datetime(2023, 7, 30, tzinfo=CustomTimeZone())",
+
+"print('Datetime in custom time zone:', dt)",
+"print('Time zone name:', dt.tzname())"
+		],
+		"description": "tzname() - Return a pair of strings representing the time zone's standard and daylight saving time names"
+	  },
+	  "timetupletime()": {
+		"prefix": "Pythontimetuple",
+		"body": [
+			"from datetime import datetime",
+
+"dt = datetime(2023, 7, 30, 15, 45, 30)",
+
+"time_tuple = dt.timetuple()",
+
+"print('Datetime:', dt)",
+"print('Time tuple:', time_tuple)"
+		],
+		"description": "timetuple() - Return a named tuple with tm_year, tm_mon, tm_mday, tm_hour, tm_min, tm_sec, tm_wday, tm_yday, and tm_isdst fields"
+	  },
+	  "utctimetuple()": {
+		"prefix": "Pythonutctimetuple",
+		"body": [
+			"from datetime import datetime",
+
+"dt = datetime(2023, 7, 30, 15, 45, 30)",
+
+"utc_time_tuple = dt.utctimetuple()",
+
+"print('Datetime:', dt)",
+"print('UTC Time tuple:', utc_time_tuple)"
+		],
+		"description": "utctimetuple() - Return a named tuple similar to timetuple(), but for UTC"
+	  },
+	  "toordinaltime()": {
+		"prefix": "Pythontoordinal",
+		"body": [
+			"from datetime import date",
+
+"d = date(2023, 7, 30)",
+
+"ordinal = d.toordinal()",
+
+"print('Date:', d)",
+"print('Ordinal:', ordinal)"
+		],
+		"description": "toordinal() - Return the proleptic Gregorian ordinal of the date"
+	  },
+	  "weekdaytime()": {
+		"prefix": "Pythonweekday",
+		"body": [
+			"from datetime import date",
+
+"d = date(2023, 7, 30)",
+
+"day_of_week = d.weekday()",
+
+"print('Date:', d)",
+"print('Day of the week (0 = Monday, 6 = Sunday):', day_of_week)"
+		],
+		"description": "weekday() - Return the day of the week as an integer (0 for Monday, 6 for Sunday)"
+	  },
+	  "isoweekdaytime()": {
+		"prefix": "Pythonisoweekday",
+		"body": [
+			"from datetime import date",
+
+"d = date(2023, 7, 30)",
+
+"iso_day_of_week = d.isoweekday()",
+
+"print('Date:', d)",
+"print('ISO day of the week (1 = Monday, 7 = Sunday):', iso_day_of_week)"
+		],
+		"description": "isoweekday() - Return the ISO day of the week as an integer (1 for Monday, 7 for Sunday)"
+	  },
+	  "isocalendartime()": {
+		"prefix": "Pythonisocalendar",
+		"body": [
+			"from datetime import date",
+
+"d = date(2023, 7, 30)",
+
+"iso_calendar_info = d.isocalendar()",
+
+"print('Date:', d)",
+"print('ISO calendar information (year, week number, weekday):', iso_calendar_info)"
+		],
+		"description": "isocalendar() - Return a named tuple with year, week number, and weekday fields according to ISO 8601"
+	  },
+	  "isoformattime()": {
+		"prefix": "Pythonisoformat",
+		"body": [
+			"from datetime import datetime",
+
+"dt = datetime(2023, 7, 30, 15, 45, 30)",
+
+"iso_formatted = dt.isoformat()",
+
+"print('Datetime:', dt)",
+"print('ISO formatted:', iso_formatted)"
+		],
+		"description": "isoformat() - Return a string representation of the datetime in ISO 8601 format"
+	  },
+	  "__str__time()": {
+		"prefix": "Python__str__",
+		"body":[
+			"from datetime import time",
+
+"t = time(15, 45, 30)",
+
+"str_representation = str(t)",
+
+"print('Time:', t)",
+"print('String representation:', str_representation)"
+		],
+		"description": "__str__() - Return a string representation of the datetime"
+	  },
+	  "ctimetime()": {
+		"prefix": "Pythonctime",
+		"body": [
+			"from datetime import datetime",
+
+"dt = datetime(2023, 7, 30, 15, 45, 30)",
+
+"ctime_string = dt.ctime()",
+
+"print('Datetime:', dt)",
+"print('ctime representation:', ctime_string)"
+		],
+		"description": "ctime() - Return a string representation of the datetime in the form 'Day Mon DD HH:MM:SS YYYY'"
+	  },
+	  "strftimetime()": {
+		"prefix": "Pythonstrftime",
+		"body": [
+			"from datetime import datetime",
+
+"dt = datetime(2023, 7, 30, 15, 45, 30)",
+
+"formatted_string = dt.strftime('%Y-%m-%d %H:%M:%S')",
+
+"print('Datetime:', dt)",
+"print('Formatted string:', formatted_string)"
+		],
+		"description": "strftime() - Return a string representation of the datetime according to the given format"
+	  },
+	  "replace Object()": {
+		"prefix": "Pythonreplace",
+		"body": [
+			"original_text = 'Hello, world! Hello, universe!'",
+"new_text = original_text.replace('Hello', 'Hi')",
+
+"print('Original text:', original_text)",
+"print('New text:', new_text)"
+		],
+		"description": "replace() - Return a time with new values for specified components"
+	  },
+	  "isoformat Object()": {
+		"prefix": "Pythonisoformat",
+		"body": [
+			"from datetime import date",
+
+"d = date(2023, 7, 30)",
+
+"iso_formatted = d.isoformat()",
+
+"print('Date:', d)",
+"print('ISO formatted:', iso_formatted)"
+		],
+		"description": "isoformat() - Return a string representation of the time in ISO 8601 format"
+	  },
+	  "__str__() Object": {
+		"prefix": "Python__str__",
+		"body": [
+			"class Person:",
+    "def __init__(self, name, age):",
+       " self.name = name",
+        "self.age = age",
+
+   " def __str__(self):",
+        "return f'Person(name={self.name}, age={self.age})'",
+
+"person = Person('Alice', 30)",
+
+"print(person)  # Output: Person(name=Alice, age=30)"
+		],
+		"description": "__str__() - Return a string representation of the time"
+	  },
+	  "strftime Object()": {
+		"prefix": "Pythonstrftime",
+		"body":[
+			"from datetime import datetime",
+
+"dt = datetime(2023, 7, 30, 15, 45, 30)",
+
+"formatted_string = dt.strftime('%Y-%m-%d %H:%M:%S')",
+
+"print('Datetime:', dt)",
+"print('Formatted string:', formatted_string)"
+		],
+		"description": "strftime() - Return a string representation of the time according to the given format"
+	  },
+	  "utcoffset() Object": {
+		"prefix": "Pythonutcoffset",
+		"body": [
+			"from datetime import tzinfo, timedelta, datetime",
+
+"class CustomTimeZone(tzinfo):",
+   " def utcoffset(self, dt):",
+       " # Define the UTC offset for your custom time zone",
+        "# This example uses a fixed offset of 5 hours and 30 minutes",
+       " return timedelta(hours=5, minutes=30)",
+
+"dt = datetime(2023, 7, 30, tzinfo=CustomTimeZone())",
+
+"utc_offset = dt.utcoffset()",
+
+"print('Datetime:', dt)",
+"print('UTC Offset:', utc_offset)"
+		],
+		"description": "utcoffset() - Return the time difference between UTC and local time"
+	  },
+	  
+	"Date Formatting": {
+		"prefix": "python_date_formatting",
+		"body": [
+			"# Date Formatting",
+			"%a - Abbreviated weekday (Sun)",
+			"%A - Weekday (Sunday)",
+			"%b - Abbreviated month name (Jan)",
+			"%B - Month name (January)",
+			"%c - Date and time",
+			"%d - Day (leading zeros) (01 to 31)",
+			"%H - 24 hour (leading zeros) (00 to 23)",
+			"%I - 12 hour (leading zeros) (01 to 12)",
+			"%j - Day of year (001 to 366)",
+			"%m - Month (01 to 12)",
+			"%M - Minute (00 to 59)",
+			"%p - AM or PM",
+			"%S - Second (00 to 61?)",
+			"%U - Week number1 (00 to 53)",
+			"%w - Weekday2 (0 to 6)",
+			"%W - Week number3 (00 to 53)",
+			"%x - Date",
+			"%X - Time",
+			"%y - Year without century (00 to 99)",
+			"%Y - Year (2008)",
+			"%Z - Time zone (GMT)",
+			"%% - A literal \"%\" character (%)"
+		],
+		"description": "Date Formatting Directives in Python"
+	},
+	"Array Methods": {
+		"prefix": "python_array_methods",
+		"body": [
+			"# Array Methods",
+			"append(x)",
+			"buffer_info()",
+			"byteswap()",
+			"count(x)",
+			"extend(iterable)",
+			"fromfile(f,n)",
+			"fromlist(list)",
+			"fromstring(s)",
+			"fromunicode(s)",
+			"index(x)",
+			"insert(i,x)",
+			"pop([i])",
+			"remove(x)",
+			"reverse()",
+			"tofile(f)",
+			"tolist()",
+			"tostring()",
+			"tounicode()"
+		],
+		"description": "Array Methods in Python"
+	},
+	"append(x)": {
+		"prefix": "Pythonappend",
+		"body": [
+			"my_list = [1, 2, 3]",
+"my_list.append(4)",
+
+"print('Original list:', my_list)"
+		],
+		"description": "append(x) - Append new item x to the end of the array"
+	  },
+	  "buffer_info()": {
+		"prefix": "Pythonbuffer_info",
+		"body":[
+			"data = bytearray([1, 2, 3, 4, 5])",
+"buf = memoryview(data)",
+
+"info = buf.buffer_info()",
+
+"print('Buffer address:', info[0])",
+"print('Buffer length:', info[1])"
+		],
+		"description": "buffer_info() - Return a tuple representing the address and size of the array's buffer"
+	  },
+	  "byteswap()": {
+		"prefix": "Pythonbyteswap",
+		"body": [
+			"import numpy as np",
+
+"# Create a numpy array with integer data",
+"original_array = np.array([0x01020304], dtype=np.uint32)",
+
+"# Swap the byte order using byteswap()",
+"swapped_array = original_array.byteswap()",
+
+"print('Original array:', original_array)",
+"print('Swapped array:', swapped_array)"
+		],
+		"description": "byteswap() - Byteswap all the items of the array"
+	  },
+	  "count(x)": {
+		"prefix": "Pythoncount",
+		"body": [
+			"my_list = [1, 2, 2, 3, 2, 4, 2, 5]",
+"element_to_count = 2",
+
+"count = my_list.count(element_to_count)",
+
+"print(f'The element {element_to_count} appears {count} times in the list.')"
+		],
+		"description": "count(x) - Return the number of occurrences of x in the array"
+	  },
+	  "extend(iterable)": {
+		"prefix": "Pythonextend",
+		"body":[
+			"my_list = [1, 2, 3]",
+"additional_elements = [4, 5, 6]",
+
+"my_list.extend(additional_elements)",
+
+"print('Extended list:', my_list)"
+		],
+		"description": "extend(iterable) - Extend array by appending elements from the iterable"
+	  },
+	  "fromfile(f,n)": {
+		"prefix": "Pythonfromfile",
+		"body": [
+			"import numpy as np",
+
+"# Create a binary file with some data",
+"with open('data.bin', 'wb') as file:",
+    "data = np.array([1.0, 2.0, 3.0, 4.0], dtype=np.float64)",
+    "data.tofile(file)",
+
+"# Read data from the file into an ndarray",
+"loaded_data = np.fromfile('data.bin', dtype=np.float64)",
+
+"print('Loaded data:', loaded_data)"
+		],
+		"description": "fromfile(f, n) - Read n items from the file object f and append them to the end of the array"
+	  },
+	  "fromlist(list)": {
+		"prefix": "Pythonfromlist",
+		"body": [
+			"import numpy as np",
+
+"my_list = [1, 2, 3, 4, 5]",
+"my_array = np.array([])  # Create an empty numpy array",
+
+"my_array.fromlist(my_list)",
+
+"print('Numpy array:', my_array)"
+		],
+		"description": "fromlist(list) - Append items from the list to the end of the array"
+	  },
+	  "fromstring(s)": {
+		"prefix": "Pythonfromstring",
+		"body":[
+			"import numpy as np",
+
+"binary_string = b'\"x01\"x00\"x02\"x00\"x03\"x00\"x04\"x00'",
+"my_array = np.frombuffer(binary_string, dtype=np.uint16)",
+
+"print('Numpy array:', my_array)"
+		],
+		"description": "fromstring(s) - Appends items from the string s to the end of the array"
+	  },
+	  "fromunicode(s)": {
+		"prefix": "Pythonfromunicode",
+		"body": [
+			"import numpy as np",
+
+"binary_string = b'\"x01\"x00\"x02\"x00\"x03\"x00\"x04\"x00'",
+"my_array = np.frombuffer(binary_string, dtype=np.uint16)",
+
+"print('Numpy array:', my_array)"
+		],
+		"description": "fromunicode(s) - Appends items from the Unicode string s to the end of the array"
+	  },
+	  "index(x)": {
+		"prefix": "Pythonindex",
+		"body": [
+			"my_list = [10, 20, 30, 20, 40]",
+"element_to_find = 20",
+
+"index = my_list.index(element_to_find)",
+
+"print(f'The element {element_to_find} is at index {index}.')"
+		],
+		"description": "index(x) - Return the index of the first occurrence of x in the array"
+	  },
+	  "insert(i,x)": {
+		"prefix": "Pythoninsert",
+		"body": [
+			"my_list = [1, 2, 3, 4]",
+"index_to_insert = 2",
+"element_to_insert = 10",
+
+"my_list.insert(index_to_insert, element_to_insert)"
+
+		],
+		"description": "insert(i, x) - Insert a new item x at position i"
+	  },
+	  "pop([i])": {
+		"prefix": "Pythonpop",
+		"body":[
+			"my_list = [10, 20, 30, 40, 50]",
+
+"# Remove and return the element at index 2",
+"popped_element = my_list.pop(2)",
+
+"print('Popped element:', popped_element)",
+"print('Updated list:', my_list)"
+		],
+		"description": "pop([i]) - Remove and return the item at position i. If i is omitted, the last item is removed and returned"
+	  },
+	  "remove(x)": {
+		"prefix": "Pythonremove",
+		"body": [
+			"my_list = [10, 20, 30, 20, 40]",
+"element_to_remove = 20",
+
+"my_list.remove(element_to_remove)",
+
+"print('Updated list:', my_list)"
+		],
+		"description": "remove(x) - Remove the first occurrence of x from the array"
+	  },
+	  "reverse()": {
+		"prefix": "Pythonreverse",
+		"body": [
+			"my_list = [1, 2, 3, 4, 5]",
+
+			"my_list.reverse()",
+			
+			"print('Reversed list:', my_list)"	
+		],
+		"description": "reverse() - Reverse the order of the items in the array"
+	  },
+	  "tofile(f)": {
+		"prefix": "Pythontofile",
+		"body": [
+			"import numpy as np",
+
+"my_array = np.array([1, 2, 3, 4, 5], dtype=np.int32)",
+
+"# Write the array data to a binary file",
+"with open('output.bin', 'wb') as file:",
+    "my_array.tofile(file)",
+
+"print('Array data written to 'output.bin'.')"
+		],
+		"description": "tofile(f) - Write all items (as machine values) to the file object f"
+	  },
+	  "tolist()": {
+		"prefix": "Pythontolist",
+		"body": [
+			"import numpy as np",
+
+"my_array = np.array([1, 2, 3, 4, 5], dtype=np.int32)",
+
+"# Convert numpy array to Python list",
+"my_list = my_array.tolist()",
+
+"print('Numpy array:', my_array)",
+"print('Python list:', my_list)"
+		],
+		"description": "tolist() - Convert the array to a list"
+	  },
+	  "tostring()": {
+		"prefix": "Pythontostring",
+		"body": [
+			"import numpy as np",
+
+"my_array = np.array([1, 2, 3, 4, 5], dtype=np.int32)",
+
+"# Convert numpy array data to binary string",
+"binary_string = my_array.tostring()",
+
+"print('Binary string:', binary_string)"
+		],
+		"description": "tostring() - Convert the array to a string"
+	  },
+	  "tounicode()": {
+		"prefix": "tounicode",
+		"body":[
+			
+		],
+		"description": "tounicode() - Convert the array to a Unicode string"
+	  },
+	"Indexes and Slices": {
+		"prefix": "python_indexes_slices",
+		"body": [
+			"# Indexes and Slices",
+			"a=[0,1,2,3,4,5]",
+			"len(a)",
+			"a[0]",
+			"a[5]",
+			"a[-1]",
+			"a[-2]",
+			"a[1:]",
+			"a[:5]",
+			"a[:-2]",
+			"a[1:3]",
+			"a[1:-1]",
+			"# Shallow copy of a",
+			"b=a[:]"
+		],
+		"description": "Index and Slice Operations on a List in Python"
+	},
+	"OS Variables": {
+		"prefix": "python_os_variables",
+		"body": [
+			"# OS Variables",
+			"altsep",
+			"curdir",
+			"defpath",
+			"devnull",
+			"extsep",
+			"linesep",
+			"name",
+			"pardir",
+			"pathsep",
+			"sep"
+		],
+		"description": "OS Variables in Python"
+	},
+	"Math Functions": {
+		"prefix": "python_math_functions",
+		"body": [
+			"# Math Functions",
+			"ceil(x)",
+			"copysign(x, y)",
+			"fabs(x)",
+			"factorial(x)",
+			"floor(x)",
+			"fmod(x, y)",
+			"frexp(x)",
+			"fsum(iterable)",
+			"isinf(x)",
+			"isnan(x)",
+			"ldexp(x, i)",
+			"modf(x)",
+			"trunc(x)",
+			"# Power and Logarithmic Functions",
+			"exp(x)",
+			"log(x, [base])",
+			"log1p(x)",
+			"log10(x)",
+			"pow(x, y)",
+			"sqrt(x)",
+			"# Trigonometric Functions",
+			"acos(x)",
+			"asin(x)",
+			"atan(x)",
+			"atan2(y, x)",
+			"cos(x)",
+			"hypot(x, y)",
+			"sin(x)",
+			"tan(x)",
+			"# Angular Conversion",
+			"degrees(x)",
+			"radians(x)",
+			"# Angular Conversion",
+			"degrees(x)",
+			"radians(x)",
+			"# Hyperbolic Functions",
+			"acosh(x)",
+			"asinh(x)",
+			"atanh(x)",
+			"cosh(x)",
+			"sinh(x)",
+			"tanh(x)",
+		],
+		"description": "Math Functions in Python"
+	},
+	"ceil(x)": {
+		"prefix": "Pythonceil",
+		"body": [
+			"import math",
+
+"x = 5.3",
+"rounded_up_value = math.ceil(x)",
+
+"print('Original value:', x)",
+"print('Rounded up value:', rounded_up_value)"
+		],
+		"description": "ceil(x) - Return the ceiling of x, the smallest integer greater than or equal to x"
+	  },
+	  "copysign(x,y)": {
+		"prefix": "Pythoncopysign",
+		"body": [
+			"import math",
+
+"x = 10.0",
+"y = -5.0",
+
+"result = math.copysign(x, y)",
+
+"print('x:', x)",
+"print('y:', y)",
+"print('Result:', result)"
+		],
+		"description": "copysign(x, y) - Return x with the sign of y"
+	  },
+	  "fabs(x)": {
+		"prefix": "Pythonfabs",
+		"body":[
+			"import math",
+
+"x = -5.6",
+"absolute_value = math.fabs(x)",
+
+"print('Original value:', x)",
+"print('Absolute value:', absolute_value)"
+		],
+		"description": "fabs(x) - Return the absolute value of x"
+	  },
+	  "factorial(x)": {
+		"prefix": "Pythonfactorial",
+		"body": [
+			"import math",
+
+"x = 5",
+"factorial_value = math.factorial(x)",
+
+"print(f'The factorial of {x} is {factorial_value}')"
+		],
+		"description": "factorial(x) - Return x factorial as an integer"
+	  },
+	  "floor(x)": {
+		"prefix": "Pythonfloor",
+		"body": [
+			"import math",
+
+"x = 5.8",
+"rounded_down_value = math.floor(x)",
+
+"print('Original value:', x)",
+"print('Rounded down value:', rounded_down_value)"
+		],
+		"description": "floor(x) - Return the floor of x, the largest integer less than or equal to x"
+	  },
+	  "fmod(x,y)": {
+		"prefix": "Pythonfmod",
+		"body": [
+			"import math",
+
+"x = 10.5",
+"y = 3.2",
+
+"remainder = math.fmod(x, y)",
+
+"print(f'The remainder of {x} / {y} is {remainder}')"
+		],
+		"description": "fmod(x, y) - Return the remainder of dividing x by y"
+	  },
+	  "frexp(x)": {
+		"prefix": "Pythonfrexp",
+		"body": [
+			"import math",
+
+			"x = 123.456",
+			
+			"mantissa, exponent = math.frexp(x)",
+			
+			"print(f'Original number: {x}')",
+			"print(f'Mantissa: {mantissa}')",
+			"print(f'Exponent: {exponent}')"
+		],
+		"description": "frexp(x) - Return the mantissa and exponent of x as the pair (m, e)"
+	  },
+	  "fsum(iterable)": {
+		"prefix": "Pythonfsum",
+		"body": [
+			"import math",
+
+"numbers = [0.1, 0.2, 0.3]",
+"sum_result = math.fsum(numbers)",
+
+"print('Numbers:', numbers)",
+"print('Sum using fsum:', sum_result)"
+		],
+		"description": "fsum(iterable) - Return an accurate floating point sum of values in the iterable"
+	  },
+	  "isinf(x)": {
+		"prefix": "Pythonisinf",
+		"body":[
+			"import math",
+
+"positive_inf = float('inf')",
+"negative_inf = float('-inf')",
+"regular_number = 42",
+
+"print('Is positive_inf infinity?', math.isinf(positive_inf))",
+"print('Is negative_inf infinity?', math.isinf(negative_inf))",
+"print('Is regular_number infinity?', math.isinf(regular_number))"
+		],
+		"description": "isinf(x) - Return True if x is a positive or negative infinity, False otherwise"
+	  },
+	  "isnan(x)": {
+		"prefix": "Pythonisnan",
+		"body": [
+			"import math",
+
+"nan_value = float('nan')",
+"regular_number = 42",
+
+"print('Is nan_value NaN?', math.isnan(nan_value))",
+"print('Is regular_number NaN?', math.isnan(regular_number))"
+		],
+		"description": "isnan(x) - Return True if x is a NaN (not a number), False otherwise"
+	  },
+	  "ldexp(x,i)": {
+		"prefix": "Pythonldexp",
+		"body": [
+			"import math",
+
+"x = 0.625",
+"i = 3",
+
+"scaled_value = math.ldexp(x, i)",
+
+"print(f'{x} * (2 ** {i}) =', scaled_value)"
+		],
+		"description": "ldexp(x, i) - Return x * (2**i)"
+	  },
+	  "modf(x)": {
+		"prefix": "Pythonmodf",
+		"body": [
+			"import math",
+
+"x = 123.456",
+
+"fractional_part, integer_part = math.modf(x)",
+
+"print(f'Original number: {x}')",
+"print(f'Fractional part: {fractional_part}')",
+"print(f'Integer part: {integer_part}')"
+		],
+		"description": "modf(x) - Return the fractional and integer parts of x as the pair (fract, int)"
+	  },
+	  "trunc(x)": {
+		"prefix": "Pythontrunc",
+		"body":[
+			"import math",
+
+"x = 5.8",
+"truncated_value = math.trunc(x)",
+
+"print('Original value:', x)",
+"print('Truncated value:', truncated_value)"
+		],
+		"description": "trunc(x) - Return the truncated value of x (truncate towards zero)"
+	  },
+	  "exp(x)": {
+		"prefix": "Pythonexp",
+		"body":[
+			"import math",
+
+"x = 2",
+"exponential_value = math.exp(x)",
+
+"print(f'The exponential value of {x} is {exponential_value}')"
+		],
+		"description": "exp(x) - Return the exponential value of x"
+	  },
+	  "log(x[,base])": {
+		"prefix": "Pythonlog",
+		"body": [
+			"import math",
+
+"x = 10",
+"natural_logarithm = math.log(x)",
+"base_2_logarithm = math.log(x, 2)",
+
+"print(f'The natural logarithm of {x} is {natural_logarithm}')",
+"print(f'The base 2 logarithm of {x} is {base_2_logarithm}')"
+		],
+		"description": "log(x[, base]) - Return the natural logarithm of x to the specified base (default is e)"
+	  },
+	  "log1p(x)": {
+		"prefix": "Pythonlog1p",
+		"body":[
+			"import math",
+
+"x = 0.5",
+"logarithm_result = math.log1p(x)",
+
+"print(f'The natural logarithm of (1 + {x}) is {logarithm_result}')"
+		],
+		"description": "log1p(x) - Return the natural logarithm of 1+x (accurate for small x)"
+	  },
+	  "log10(x)": {
+		"prefix": "Pythonlog10",
+		"body": [
+			"import math",
+
+"x = 100",
+"logarithm_result = math.log10(x)",
+
+"print(f'The base 10 logarithm of {x} is {logarithm_result}')"
+		],
+		"description": "log10(x) - Return the base-10 logarithm of x"
+	  },
+	  "pow(x,y)": {
+		"prefix": "Pythonpow",
+		"body": [
+			"x = 2",
+"y = 3",
+
+"result = pow(x, y)",
+
+"print(f'{x} raised to the power of {y} is {result}')"
+		],
+		"description": "pow(x, y) - Return x raised to the power y"
+	  },
+	  "sqrt(x)": {
+		"prefix": "Pythonsqrt",
+		"body": [
+			"import math",
+
+"x = 25",
+"square_root = math.sqrt(x)",
+
+"print(f'The square root of {x} is {square_root}')"
+		],
+		"description": "sqrt(x) - Return the square root of x"
+	  },
+	  "acos(x)": {
+		"prefix": "Pythonacos",
+		"body": [
+			"import math",
+
+"x = 0.5",
+"angle_in_radians = math.acos(x)",
+
+"print(f'The arccosine of {x} is {angle_in_radians} radians')"
+		],
+		"description": "acos(x) - Return the arc cosine of x in radians"
+	  },
+	  "asin(x)": {
+		"prefix": "Pythonasin",
+		"body": [
+			"import math",
+
+"x = 0.5",
+"angle_in_radians = math.asin(x)",
+
+"print(f'The arcsine of {x} is {angle_in_radians} radians')"
+		],
+		"description": "asin(x) - Return the arc sine of x in radians"
+	  },
+	  "atan(x)": {
+		"prefix": "Pythonatan",
+		"body":[
+			"import math",
+
+"x = 1",
+"angle_in_radians = math.atan(x)",
+
+"print(f'The arctangent of {x} is {angle_in_radians} radians')"
+		],
+		"description": "atan(x) - Return the arc tangent of x in radians"
+	  },
+	  "atan2(y,x)": {
+		"prefix": "Pythonatan2",
+		"body": [
+			"import math",
+
+"x = 1",
+"y = 1",
+"angle_in_radians = math.atan2(y, x)",
+
+"print(f'The arctangent of {y}/{x} is {angle_in_radians} radians')"
+		],
+		"description": "atan2(y, x) - Return the arc tangent of y/x in radians"
+	  },
+	  "cos(x)": {
+		"prefix": "Pythoncos",
+		"body": [
+			"import math",
+
+"x = math.pi / 3  # 60 degrees in radians",
+"cosine_value = math.cos(x)",
+
+"print(f'The cosine of {x} radians is {cosine_value}')"
+		],
+		"description": "cos(x) - Return the cosine of x in radians"
+	  },
+	  "hypot(x,y)": {
+		"prefix": "Pythonhypot",
+		"body": [
+			"import math",
+
+"x = 3",
+"y = 4",
+"hypotenuse_length = math.hypot(x, y)",
+
+"print(f'The length of the hypotenuse of the triangle is {hypotenuse_length}')"
+		],
+		"description": "hypot(x, y) - Return the Euclidean norm, sqrt(x*x + y*y)"
+	  },
+	  "sin(x)": {
+		"prefix": "Pythonsin",
+		"body":[
+			"import math",
+
+"x = math.pi / 6  # 30 degrees in radians",
+"sine_value = math.sin(x)",
+
+"print(f'The sine of {x} radians is {sine_value}')"
+		],
+		"description": "sin(x) - Return the sine of x in radians"
+	  },
+	  "tan(x)": {
+		"prefix": "Pythontan",
+		"body": [
+			"import math",
+
+"tangent_value = math.tan(x)"
+		],
+		"description": "tan(x) - Return the tangent of x in radians"
+	  },
+	  "degrees(x)": {
+		"prefix": "Pythondegrees",
+		"body": [
+			"import math",
+
+"x = math.pi  # 180 degrees in radians",
+"angle_in_degrees = math.degrees(x)",
+
+"print(f'{x} radians is equal to {angle_in_degrees} degrees')"
+		],
+		"description": "degrees(x) - Convert angle x from radians to degrees"
+	  },
+	  "radians(x)": {
+		"prefix": "Pythonradians",
+		"body": [
+			"import math",
+
+"x = 180  # 180 degrees",
+"angle_in_radians = math.radians(x)",
+
+"print(f'{x} degrees is equal to {angle_in_radians} radians')"
+		],
+		"description": "radians(x) - Convert angle x from degrees to radians"
+	  },
+	  "acosh(x)": {
+		"prefix": "Pythonacosh",
+		"body": [
+			"import math",
+
+"x = 2",
+"result = math.acosh(x)",
+
+"print(f'The inverse hyperbolic cosine of {x} is {result}')"
+		],
+		"description": "acosh(x) - Return the inverse hyperbolic cosine of x"
+	  },
+	  "asinh(x)": {
+		"prefix": "Pythonasinh",
+		"body": [
+			"import math",
+
+"x = 2",
+"result = math.asinh(x)",
+
+"print(f'The inverse hyperbolic sine of {x} is {result}')"
+		],
+		"description": "asinh(x) - Return the inverse hyperbolic sine of x"
+	  },
+	  "atanh(x)": {
+		"prefix": "Pythonatanh",
+		"body": [
+			"import math",
+
+"x = 0.5",
+"result = math.atanh(x)",
+
+"print(f'The inverse hyperbolic tangent of {x} is {result}')"
+		],
+		"description": "atanh(x) - Return the inverse hyperbolic tangent of x"
+	  },
+	  "cosh(x)": {
+		"prefix": "Pythoncosh",
+		"body": [
+			"import math",
+
+"x = 2",
+"hyperbolic_cosine = math.cosh(x)",
+
+"print(f'The hyperbolic cosine of {x} is {hyperbolic_cosine}')"
+		],
+		"description": "cosh(x) - Return the hyperbolic cosine of x"
+	  },
+	  "sinh(x)": {
+		"prefix": "Pythonsinh",
+		"body": [
+			"import math",
+
+"x = 1.5",
+"hyperbolic_sine = math.sinh(x)",
+
+"print(f'The hyperbolic sine of {x} is {hyperbolic_sine}')"
+		],
+		"description": "sinh(x) - Return the hyperbolic sine of x"
+	  },
+	  "tanh(x)": {
+		"prefix": "Pythontanh",
+		"body": [
+			"import math",
+
+"x = 0.8",
+"hyperbolic_tangent = math.tanh(x)",
+
+"print(f'The hyperbolic tangent of {x} is {hyperbolic_tangent}')"
+		],
+		"description": "tanh(x) - Return the hyperbolic tangent of x"
+	  },
+	"Math Constants": {
+		"prefix": "python_math_constants",
+		"body": [
+			"# Mathematical Constants",
+			"math.pi  # π = 3.141592...",
+			"math.e   # e = 2.718281..."
+		],
+		"description": "Mathematical Constants in Python"
+	}
+}

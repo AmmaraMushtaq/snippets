@@ -6957,7 +6957,11 @@
       "mysqli::warning_count"
     ],
     "description": "List of MySQLi class methods and properties"
-  },"mysqli::affected_rows": {
+  },
+  
+ 
+ 
+  "mysqli::affected_rows": {
 	"prefix": "phpmysqli::affected_rows",
 	"body": [
 		"mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);",
