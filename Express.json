@@ -1,0 +1,132 @@
+{
+	"Express": {
+		"prefix": "Express",
+		"body": [
+			"Application",
+			"Request",
+			"Response",
+			"Router",
+			"Middleware",
+			
+		],
+		"description": "Express"
+	},
+
+	"Application": {
+		"prefix": "Express Application",
+		"body": [
+			"express()",
+			"application settings",
+			"app.set()",
+			"app.get()",
+			"app.enable()",
+			"app.disable()",
+			"app.enabled()",
+			"app.disabled()",
+			"app.use()",
+			"app.engine()",
+			"app.param()",
+			"application routing",
+			"app.all()",
+			"app.route()",
+			"app.locals",
+			"app.render()",
+			"app.listen()",
+			
+		],
+		"description": "Application"
+	},
+	"Request": {
+		"prefix": "Express Request",
+		"body": [
+
+			"req.params","req.query",
+			"req.param()",
+			"req.route",
+			"req.cookies",
+			"req.signedCookies",
+			"req.get()",
+			"req.accepts()",
+			"req.acceptsCharset()",
+			"req.acceptsLanguage()",
+			"req.is()",
+			"req.ip",
+			"req.ips",
+			"req.path",
+			"req.host",
+			"req.fresh",
+			"req.stale",
+			"req.xhr",
+			"req.protocol",
+			"req.secure",
+			"req.subdomains",
+			"req.originalUrl",
+			
+		],
+		"description": " Express Request"
+	},
+	"Response": {
+		"prefix": "Express Response",
+		"body": [
+
+			"res.status()","res.set()",
+			"res.get()",
+			"res.cookie()",
+			"res.clearCookie()",
+			"res.redirect()",
+			"res.location()",
+			"res.send()",
+			"res.json()",
+			"res.jsonp()",
+			"res.type()",
+			"res.format()",
+			"res.attachment()",
+			"res.sendfile()",
+			"res.download()",
+			"res.links()",
+			"res.locals",
+			"res.render()",
+			
+		],
+		"description": " Express Response"
+	},
+	"Router": {
+		"prefix": "Express Router",
+		"body": [
+			
+			"Router()",
+		    "router.use()",
+			"router.param()",
+			"router.route()",
+			"router.VERB()",
+			
+		],
+		"description": " Express Router"
+	},
+	"Middleware": {
+		"prefix": "Express Middleware",
+		"body": [
+			
+
+			"bodyParser()",
+			"compress()",
+			"cookieParser()",
+			"cookieSession()",
+			"csrf()",
+		    "errorhandler()",
+			"methodOverride()",
+			"morgan()",
+			"responseTime()",
+			"favicon()",
+			"directory()",
+			"serveStatic()",
+			"timeout()",
+			"vhost()",
+		    "session()",
+			
+		],
+		"description": " Express Middleware"
+	},
+	
+	
+}
