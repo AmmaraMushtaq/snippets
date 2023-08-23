@@ -1,0 +1,230 @@
+{
+	"Nest": {
+		"prefix": "Nest",
+		"body": [
+			"OVERVIEW",
+			"FUNDAMENTALS",
+			"TECHNIQUES",
+			"SECURITY",
+			"GRAPHQL",
+			"WEBSOCKETS",
+			"MICROSERVICES",
+			"STANDALONE APPS",
+			"CLI",
+			"OPENAPI",
+			"RECIPES",
+			"FAQ",
+			"NEWDEVTOOLS",
+			"MIGRATION GUIDE",
+			"OFFICIAL COURSES",
+			"DISCOVER"
+		],
+		"description": "Nest"
+	},
+	"OVERVIEW": {
+		"prefix": "Nest OVERVIEW",
+		"body": [
+			"First steps",
+			"Controllers",
+			"Providers",
+			"Modules",
+			"Middleware",
+			"Exception filters",
+			"Pipes",
+			"Guards",
+			"Interceptors",
+			"Custom decorators"
+		],
+		"description": "Nest OVERVIEW"
+	},
+	"FUNDAMENTALS": {
+		"prefix": "Nest FUNDAMENTALS",
+		"body": [
+			"Custom providers",
+			"Asynchronous providers",
+			"Dynamic modules",
+			"Injection scopes",
+			"Circular dependency",
+			"Module reference",
+			"Lazy-loading modules",
+			"Execution context",
+			"Lifecycle events",
+			"Platform agnosticism",
+			"Testing"
+		],
+		"description": "  FUNDAMENTALS"
+	},
+	"TECHNIQUES": {
+		"prefix": "Nest TECHNIQUES",
+		"body": [
+			"Configuration",
+			"Database",
+			"Mongo",
+			"Validation",
+			"Caching",
+			"Serialization",
+			"Versioning",
+			"Task scheduling",
+			"Queues",
+			"Logging",
+			"Cookies",
+			"Events",
+			"Compression",
+			"File upload",
+			"Streaming files",
+			"HTTP module",
+			"Model-View-Controller",
+			"Performance (Fastify)",
+			"Server-Sent Events"
+		],
+		"description": " Nest TECHNIQUES"
+	},
+	"SECURITY": {
+		"prefix": "Nest SECURITY",
+		"body": [
+			"Authentication",
+			"Authorization",
+			"Encryption and Hashing",
+			"Helmet",
+			"CORS",
+			"CSRF Protection",
+			"Rate limiting"
+		],
+		"description": " Nest SECURITY"
+	},
+	"GRAPHQL": {
+		"prefix": "Nest GRAPHQL",
+		"body": [
+			"Quick start",
+			"Resolvers",
+			"Mutations",
+			"Subscriptions",
+			"Scalars",
+			"Directives",
+			"Interfaces",
+			"Unions and Enums",
+			"Field middleware",
+			"Mapped types",
+			"Plugins",
+			"Complexity",
+			"Extensions",
+			"CLI Plugin",
+			"Generating SDL",
+			"Sharing models",
+			"Other features",
+			"Federation",
+			"Migration guide"
+		],
+		"description": " Nest GRAPHQL"
+	},
+	"WEBSOCKETSL": {
+		"prefix": "Nest WEBSOCKETSL",
+		"body": [
+			"Gateways",
+			"Exception filters",
+			"Pipes",
+			"Guards",
+			"Interceptors",
+			"Adapters"
+		],
+		"description": " Nest WEBSOCKETSL"
+	},
+	"MICROSERVICES": {
+		"prefix": "Nest MICROSERVICES",
+		"body": [
+			"Overview",
+			"Redis",
+			"MQTT",
+			"NATS",
+			"RabbitMQ",
+			"Kafka",
+			"gRPC",
+			"Custom transporters",
+			"Exception filters",
+			"Pipes",
+			"Guards",
+			"Interceptors"
+		],
+		"description": " Nest MICROSERVICES"
+	},
+	"CLI": {
+		"prefix": "Nest CLI",
+		"body": [
+			"Overview",
+			"Workspaces",
+			"Libraries",
+			"Usage",
+			"Scripts"
+		],
+		"description": " Nest CLI"
+	},
+	"OPENAPI": {
+		"prefix": "Nest OPENAPI",
+		"body": [
+			"Introduction",
+			"Types and Parameters",
+			"Operations",
+			"Security",
+			"Mapped Types",
+			"Decorators",
+			"CLI Plugin",
+			"Other features",
+			"Migration guide"
+		],
+		"description": " Nest OPENAPI"
+	},
+	"RECIPES": {
+		"prefix": "Nest RECIPES",
+		"body": [
+			"REPL",
+			"CRUD generator",
+			"SWC (fast compiler)",
+			"Passport (auth)",
+			"Hot reload",
+			"MikroORM",
+			"TypeORM",
+			"Mongoose",
+			"Sequelize",
+			"Router module",
+			"Swagger",
+			"Health checks",
+			"CQRSCompodoc",
+			"Prisma",
+			"Serve static",
+			"Commander",
+			"Async local storage",
+			"Automock"
+		],
+		"description": " Nest RECIPES"
+	},
+	"FAQ": {
+		"prefix": "Nest FAQ",
+		"body": [
+			"Serverless",
+			"HTTP adapter",
+			"Global path prefix",
+			"Raw body",
+			"Hybrid application",
+			"HTTPS & multiple servers",
+			"Request lifecycle",
+			"Common errors",
+			"Examples"
+		],
+		"description": " Nest FAQ"
+	},
+	"DEVTOOLS": {
+		"prefix": "Nest DEVTOOLS",
+		"body": [
+			"Overview",
+			"CI/CD integration"
+		],
+		"description": " Nest DEVTOOLS"
+	},
+	"DISCOVER": {
+		"prefix": "Nest DISCOVER",
+		"body": [
+			"Who is using Nest?"
+		],
+		"description": " Nest DISCOVER"
+	}
+}
