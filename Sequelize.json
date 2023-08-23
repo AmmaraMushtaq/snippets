@@ -1,0 +1,78 @@
+{
+	"Sequelize": {
+		"prefix": "Sequelize",
+		"body": [
+			"Introduction",
+			"Getting Started",
+			"Core Concepts",
+			"Advanced Association Concepts",
+			"Other topics",
+			"Moved"
+		],
+		"description": "Sequelize"
+	},
+	"Core Concepts": {
+		"prefix": "Sequelize Core Concepts",
+		"body": [
+			"Model Basics",
+			"Model Instances",
+			"Model Querying - Basics",
+			"Model Querying - Finders",
+			"Getters, Setters & Virtuals",
+			"Validations & Constraints",
+			"Raw Queries",
+			"Associations",
+			"Paranoid"
+			
+		],
+		"description": "Sequelize Core Concepts"
+	},
+	"Advanced Association Concepts": {
+		"prefix": "Sequelize Advanced Association Concepts",
+		"body": [
+			"Eager Loading",
+			"Creating with Associations",
+			"Advanced M:N Associations",
+			"Association Scopes"
+		],
+		"description": "  Advanced Association Concepts"
+	},
+	"TOther topics": {
+		"prefix": "Sequelize TOther topics",
+		"body": [
+			"Other Data Types",
+			"Using sequelize in AWS Lambda",
+			"Connection Pool",
+			"Constraints & Circularities",
+			"Dialect-Specific Things",
+			"Extending Data Types",
+			"Hooks",
+			"Indexes",
+			"Working with Legacy Tables",
+			"Legal Notice",
+			"Migrations",
+			"Naming Strategies",
+			"Optimistic Locking",
+			"Query Interface",
+			"Read Replication",
+			"Resources",
+			"Scopes",
+			"Sub Queries",
+			"Transactions",
+			"TypeScript",
+			"Upgrade to v6"
+		],
+		"description": " Sequelize TOther topics"
+	},
+	"Moved": {
+		"prefix": "Sequelize Moved",
+		"body": [
+			"Associations",
+			"Data Types",
+			"Models Definition",
+			"Models Usage",
+			"Querying"
+		],
+		"description": " Sequelize Moved"
+	}
+}
