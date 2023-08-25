@@ -56,7 +56,7 @@
 		"description": "Create an Express application"
 	  },
 	  "app.set()": {
-		"prefix": "app.set",
+		"prefix": "express app.set",
 		"body": [
 			"app.set('trust proxy', function (ip) {",
 				"if (ip === '127.0.0.1' || ip === '123.123.123.123') return true // trusted IPs",
@@ -66,7 +66,7 @@
 		"description": "Set application settings"
 	  },
 	  "app.get()": {
-		"prefix": "app.get",
+		"prefix": "express app.get",
 		"body": [
 			"app.get('/', function (req, res) {",
 				"res.send('GET request to homepage')",
@@ -75,7 +75,7 @@
 		"description": "Define a route for GET requests"
 	  },
 	  "app.enable()": {
-		"prefix": "app.enable",
+		"prefix": "express app.enable",
 		"body": [
 			"app.enable('trust proxy')",
 "app.get('trust proxy')"
@@ -83,7 +83,7 @@
 		"description": "Enable an application setting"
 	  },
 	  "app.disable()": {
-		"prefix": "app.disable",
+		"prefix": "express app.disable",
 		"body": [
 			"app.disable('trust proxy')",
 "app.get('trust proxy')"
@@ -91,7 +91,7 @@
 		"description": "Disable an application setting"
 	  },
 	  "app.enabled()": {
-		"prefix": "app.enabled",
+		"prefix": "express app.enabled",
 		"body": [
 			"var engines = require('consolidate')",
 "app.engine('haml', engines.haml)",
@@ -100,7 +100,7 @@
 		"description": "Check if an application setting is enabled"
 	  },
 	  "app.disabled()": {
-		"prefix": "app.disabled",
+		"prefix": "express app.disabled",
 		"body": [
 			"app.disabled('trust proxy')",
 "// => true",
@@ -111,7 +111,7 @@
 		"description": "Check if an application setting is disabled"
 	  },
 	  "app.use()": {
-		"prefix": "app.use",
+		"prefix": "express app.use",
 		"body": [
 			"app.use(function (req, res, next) {",
 				"console.log('Time: %d', Date.now())",
@@ -121,7 +121,7 @@
 		"description": "Use middleware functions"
 	  },
 	  "app.engine()": {
-		"prefix": "app.engine",
+		"prefix": "express app.engine",
 		"body": [
 			"app.get('title')",
 "// => undefined",
@@ -133,7 +133,7 @@
 		"description": "Register a template engine"
 	  },
 	  "app.param()": {
-		"prefix": "app.param",
+		"prefix": "express app.param",
 		"body": [
 			"app.param(function (param, validator) {",
 				"return function (req, res, next, val) {",
@@ -152,7 +152,7 @@
 		"description": "Define middleware for route parameters"
 	  },
 	  "app.all()": {
-		"prefix": "app.all",
+		"prefix": "express app.all",
 		"body": [
 			"app.all('/secret', function (req, res, next) {",
 				"console.log('Accessing the secret section ...')",
@@ -162,7 +162,7 @@
 		"description": "Define a route that matches all HTTP methods"
 	  },
 	  "app.route()": {
-		"prefix": "app.route",
+		"prefix": "express app.route",
 		"body": [
 			"var app = express()",
 
@@ -181,7 +181,7 @@
 		"description": "Create a route handler using a Router instance"
 	  },
 	  "app.locals": {
-		"prefix": "app.locals",
+		"prefix": "express app.locals",
 		"body": [
 			"app.locals.title = 'My App'",
 "app.locals.strftime = require('strftime')",
@@ -190,7 +190,7 @@
 		"description": "Set properties on the app's local variables"
 	  },
 	  "app.render()": {
-		"prefix": "app.render",
+		"prefix": "express app.render",
 		"body": [
 			"app.put('/', function (req, res) {",
 				"res.send('PUT request to homepage')",
@@ -199,7 +199,7 @@
 		"description": "Render a view and send the rendered HTML to the client"
 	  },
 	  "app.listen()": {
-		"prefix": "app.listen",
+		"prefix": "express app.listen",
 		"body": [
 			"app.listen = function () {",
 				"var server = http.createServer(this)",
@@ -238,7 +238,7 @@
 		"description": " Express Request"
 	},
 	"req.params": {
-		"prefix": "req.params",
+		"prefix": "express req.params",
 		"body": [
 			"const express = require('express');",
 			"const app = express();",
@@ -255,7 +255,7 @@
 		"description": "Access route parameters"
 	  },
 	  "req.query": {
-		"prefix": "req.query",
+		"prefix": "express req.query",
 		"body": [
 			"var qs = require('qs')",
 "app.setting('query parser', function (str) {",
@@ -265,7 +265,7 @@
 		"description": "Access query string parameters"
 	  },
 	  "req.param()": {
-		"prefix": "req.param",
+		"prefix": "express req.param",
 		"body":[
 			"app.get('/user/:userId', (req, res) => {",
 				"const userId = req.params.userId;",
@@ -275,7 +275,7 @@
 		"description": "Access request parameters"
 	  },
 	  "req.route": {
-		"prefix": "req.route",
+		"prefix": "express req.route",
 		"body": [
 			"app.get('/user/:id?', function userIdHandler (req, res) {",
 				"console.log(req.route)",
@@ -285,7 +285,7 @@
 		"description": "Access route information"
 	  },
 	  "req.cookies": {
-		"prefix": "req.cookies",
+		"prefix": "express req.cookies",
 		"body": [
 			"const express = require('express');",
 "const cookieParser = require('cookie-parser');",
@@ -316,7 +316,7 @@
 		"description": "Access signed cookies"
 	  },
 	  "req.signedCookies": {
-		"prefix": "req.signedCookies",
+		"prefix": "express req.signedCookies",
 		"body": [
 			"const express = require('express');",
 "const cookieParser = require('cookie-parser');",
@@ -347,7 +347,7 @@
 		"description": "Access cookies signed with the secret"
 	  },
 	  "req.get()": {
-		"prefix": "req.get",
+		"prefix": "express req.get",
 		"body": [
 			"const express = require('express');",
 "const app = express();",
@@ -369,7 +369,7 @@
 		"description": "Get the value of an HTTP request header"
 	  },
 	  "req.accepts()": {
-		"prefix": "req.accepts",
+		"prefix": "express req.accepts",
 		"body": [
 			"const express = require('express');",
 			"const app = express();",
@@ -392,7 +392,7 @@
 		"description": "Check if the requested MIME type is acceptable"
 	  },
 	  "req.acceptsCharset()": {
-		"prefix": "req.acceptsCharset",
+		"prefix": "express req.acceptsCharset",
 		"body": [
 			"const express = require('express');",
 "const app = express();",
@@ -413,7 +413,7 @@
 		"description": "Check if the requested charset is acceptable"
 	  },
 	  "req.acceptsLanguage()": {
-		"prefix": "req.acceptsLanguage",
+		"prefix": "express req.acceptsLanguage",
 		"body": [
 			"const express = require('express');",
 			"const app = express();",
@@ -436,7 +436,7 @@
 		"description": "Check if the requested language is acceptable"
 	  },
 	  "req.is()": {
-		"prefix": "req.is",
+		"prefix": "express req.is",
 		"body":[
 			"const express = require('express');",
 			"const app = express();",
@@ -466,7 +466,7 @@
 		"description": "Check the request type"
 	  },
 	  "req.ip": {
-		"prefix": "req.ip",
+		"prefix": "express req.ip",
 		"body": [
 			"const express = require('express');",
 			"const app = express();",
@@ -483,7 +483,7 @@
 		"description": "Get the remote IP address of the request"
 	  },
 	  "req.ips": {
-		"prefix": "req.ips",
+		"prefix": "express req.ips",
 		"body": [
 			"const express = require('express');",
 "const app = express();",
@@ -500,7 +500,7 @@
 		"description": "Get the list of IP addresses from the 'X-Forwarded-For' header"
 	  },
 	  "req.path": {
-		"prefix": "req.path",
+		"prefix": "express req.path",
 		"body": [
 			"const express = require('express');",
 "const app = express();",
@@ -519,7 +519,7 @@
 		"description": "Get the path portion of the request URL"
 	  },
 	  "req.host": {
-		"prefix": "req.host",
+		"prefix": "express req.host",
 		"body": [
 			"const express = require('express');",
 "const app = express();",
@@ -537,7 +537,7 @@
 		"description": "Get the hostname of the request"
 	  },
 	  "req.fresh": {
-		"prefix": "req.fresh",
+		"prefix": "express req.fresh",
 		"body": [
 			"const express = require('express');",
 "const app = express();",
@@ -559,7 +559,7 @@
 		"description": "Check if the request is 'fresh'"
 	  },
 	  "req.stale": {
-		"prefix": "req.stale",
+		"prefix": "express req.stale",
 		"body": [
 			"const express = require('express');",
 "const app = express();",
@@ -581,7 +581,7 @@
 		"description": "Check if the request is 'stale'"
 	  },
 	  "req.xhr": {
-		"prefix": "req.xhr",
+		"prefix": "express req.xhr",
 		"body": [
 			"const express = require('express');",
 "const app = express();",
@@ -602,7 +602,7 @@
 		"description": "Check if the request was made with XMLHttpRequest"
 	  },
 	  "req.protocol": {
-		"prefix": "req.protocol",
+		"prefix": "express req.protocol",
 		"body": [
 			"const express = require('express');",
 "const app = express();",
@@ -619,7 +619,7 @@
 		"description": "Get the protocol of the request"
 	  },
 	  "req.secure": {
-		"prefix": "req.secure",
+		"prefix": "express req.secure",
 		"body": [
 			"const express = require('express');",
 "const app = express();",
@@ -636,7 +636,7 @@
 		"description": "Check if the request is secure (HTTPS)"
 	  },
 	  "req.subdomains": {
-		"prefix": "req.subdomains",
+		"prefix": "express req.subdomains",
 		"body": [
 			"const express = require('express');",
 "const app = express();",
@@ -653,7 +653,7 @@
 		"description": "Get the subdomains of the request"
 	  },
 	  "req.originalUrl": {
-		"prefix": "req.originalUrl",
+		"prefix": "express req.originalUrl",
 		"body": [
 			"const express = require('express');",
 "const app = express();",
@@ -695,7 +695,7 @@
 		"description": " Express Response"
 	},
 	"res.status()": {
-		"prefix": "res.status",
+		"prefix": "express res.status",
 		"body": [
 			"const express = require('express');",
 "const app = express();",
@@ -717,7 +717,7 @@
 		"description": "Sets the HTTP response status code"
 	  },
 	  "res.set()": {
-		"prefix": "res.set",
+		"prefix": "express res.set",
 		"body": [
 			"const express = require('express');",
 "const app = express();",
@@ -738,7 +738,7 @@
 		"description": "Sets an HTTP response header"
 	  },
 	  "res.get()": {
-		"prefix": "res.get",
+		"prefix": "express res.get",
 		"body": [
 			"const express = require('express');",
 "const app = express();",
@@ -763,7 +763,7 @@
 		"description": "Gets an HTTP request header"
 	  },
 	  "res.cookie()": {
-		"prefix": "res.cookie",
+		"prefix": "express res.cookie",
 		"body": [
 			"const express = require('express');",
 "const app = express();",
@@ -783,7 +783,7 @@
 		"description": "Sets an HTTP response cookie"
 	  },
 	  "res.clearCookie()": {
-		"prefix": "res.clearCookie",
+		"prefix": "express res.clearCookie",
 		"body": [
 			"const express = require('express');",
 "const app = express();",
@@ -803,7 +803,7 @@
 		"description": "Clears an HTTP response cookie"
 	  },
 	  "res.redirect()": {
-		"prefix": "res.redirect",
+		"prefix": "express res.redirect",
 		"body": [
 			"const express = require('express');",
 "const app = express();",
@@ -820,7 +820,7 @@
 		"description": "Redirects the client to a different URL"
 	  },
 	  "res.location()": {
-		"prefix": "res.location",
+		"prefix": "express res.location",
 		"body": [
 			"const express = require('express');",
 "const app = express();",
@@ -838,7 +838,7 @@
 		"description": "Sets the response Location HTTP header"
 	  },
 	  "res.send()": {
-		"prefix": "res.send",
+		"prefix": "express res.send",
 		"body": [
 			"const express = require('express');",
 "const app = express();",
@@ -867,7 +867,7 @@
 		"description": "Sends an HTTP response"
 	  },
 	  "res.json()": {
-		"prefix": "res.json",
+		"prefix": "express res.json",
 		"body": [
 			"const express = require('express');",
 "const app = express();",
@@ -889,7 +889,7 @@
 		"description": "Sends a JSON response"
 	  },
 	  "res.jsonp()": {
-		"prefix": "res.jsonp",
+		"prefix": "express res.jsonp",
 		"body": [
 			"const express = require('express');",
 "const app = express();",
@@ -911,7 +911,7 @@
 		"description": "Sends a JSONP response"
 	  },
 	  "res.type()": {
-		"prefix": "res.type",
+		"prefix": "express res.type",
 		"body": [
 			"const express = require('express');",
 "const app = express();",
@@ -943,7 +943,7 @@
 		"description": "Sets the Content-Type of the response"
 	  },
 	  "res.format()": {
-		"prefix": "res.format",
+		"prefix": "express res.format",
 		"body": [
 			"const express = require('express');",
 "const app = express();",
@@ -974,7 +974,7 @@
 		"description": "Sets the response type based on the accept header"
 	  },
 	  "res.attachment()": {
-		"prefix": "res.attachment",
+		"prefix": "express res.attachment",
 		"body": [
 			"const express = require('express');",
 "const app = express();",
@@ -994,7 +994,7 @@
 		"description": "Sets the Content-Disposition header to 'attachment'"
 	  },
 	  "res.sendfile()": {
-		"prefix": "res.sendfile",
+		"prefix": "express res.sendfile",
 		"body": [
 			"const express = require('express');",
 "const app = express();",
@@ -1014,7 +1014,7 @@
 		"description": "Sends a file as an octet stream"
 	  },
 	  "res.download()": {
-		"prefix": "res.download",
+		"prefix": "express res.download",
 		"body": [
 			"const express = require('express');",
 "const app = express();",
@@ -1034,7 +1034,7 @@
 		"description": "Sends a file as an attachment"
 	  },
 	  "res.links()": {
-		"prefix": "res.links",
+		"prefix": " express res.links",
 		"body": [
 			"const express = require('express');",
 "const app = express();",
@@ -1056,7 +1056,7 @@
 		"description": "Sends Link headers"
 	  },
 	  "res.locals": {
-		"prefix": "res.locals",
+		"prefix": "express res.locals",
 		"body": [
 			"const express = require('express');",
 "const app = express();",
@@ -1079,7 +1079,7 @@
 		"description": "An object that contains response local variables"
 	  },
 	  "res.render()": {
-		"prefix": "res.render",
+		"prefix": "express res.render",
 		"body":[
 			"app.get('/', (req, res) => {",
 				"const pageTitle = 'Home';",
@@ -1105,7 +1105,7 @@
 		"description": " Express Router"
 	},
 	"Router()": {
-		"prefix": "Router",
+		"prefix": "express Router",
 		"body": [
 			"const express = require('express');",
 "const app = express();",
@@ -1128,7 +1128,7 @@
 		"description": "Creates an instance of Express.js Router"
 	  },
 	  "router.use()": {
-		"prefix": "router.use",
+		"prefix": "express router.use",
 		"body": [
 			"router.use('/restricted', requireAuthentication); // Middleware only for routes under /main/restricted",
 "router.get('/restricted/resource', (req, res) => {",
@@ -1138,7 +1138,7 @@
 		"description": "Mounts a middleware function on the router"
 	  },
 	  "router.param()": {
-		"prefix": "router.param",
+		"prefix": "express router.param",
 		"body": [
 			"const express = require('express');",
 			"const app = express();",
@@ -1166,7 +1166,7 @@
 		"description": "Defines a parameter middleware on the router"
 	  },
 	  "router.route()": {
-		"prefix": "router.route",
+		"prefix": "express router.route",
 		"body": [
 			"const express = require('express');",
 			"const app = express();",
@@ -1192,7 +1192,7 @@
 		"description": "Creates a route handler for a specific path on the router"
 	  },
 	  "router.VERB()": {
-		"prefix": "router.VERB",
+		"prefix": "express router.VERB",
 		"body": [
 			"const express = require('express');",
 			"const app = express();",
@@ -1243,7 +1243,7 @@
 		"description": " Express Middleware"
 	},
 	"bodyParser()": {
-		"prefix": "bodyParser",
+		"prefix": " express bodyParser",
 		"body":[
 			"const express = require('express');",
 "const bodyParser = require('body-parser');",
@@ -1269,7 +1269,7 @@
 		"description": "Parses incoming request bodies in JSON and URL-encoded formats"
 	  },
 	  "compress()": {
-		"prefix": "compress",
+		"prefix": "express compress",
 		"body": [
 			"const express = require('express');",
 "const compression = require('compression');",
@@ -1290,7 +1290,7 @@
 		"description": "Compresses HTTP responses"
 	  },
 	  "cookieParser()": {
-		"prefix": "cookieParser",
+		"prefix": "express cookieParser",
 		"body": [
 			"const express = require('express');",
 			"const cookieParser = require('cookie-parser');",
@@ -1315,7 +1315,7 @@
 		"description": "Parses cookies in the request headers"
 	  },
 	  "cookieSession()": {
-		"prefix": "cookieSession",
+		"prefix": "express cookieSession",
 		"body": [
 			"const express = require('express');",
 			"const cookieSession = require('cookie-session');",
@@ -1347,7 +1347,7 @@
 		"description": "Stores session data in cookies"
 	  },
 	  "csrf()": {
-		"prefix": "csrf",
+		"prefix": "express csrf",
 		"body": [
 			"const express = require('express');",
 			"const csrf = require('csurf');",
@@ -1383,7 +1383,7 @@
 		"description": "Implements Cross-Site Request Forgery protection"
 	  },
 	  "errorhandler()": {
-		"prefix": "errorhandler",
+		"prefix": "express errorhandler",
 		"body": [
 			"const express = require('express');",
 			"const errorhandler = require('errorhandler');",
@@ -1407,7 +1407,7 @@
 		"description": "Handles errors and displays a stack trace"
 	  },
 	  "methodOverride()": {
-		"prefix": "methodOverride",
+		"prefix": "express methodOverride",
 		"body": [
 			"const express = require('express');",
 			"const methodOverride = require('method-override');",
@@ -1440,7 +1440,7 @@
 		"description": "Simulates HTTP PUT and DELETE methods"
 	  },
 	  "morgan()": {
-		"prefix": "morgan",
+		"prefix": "express morgan",
 		"body":[
 			"const express = require('express');",
 			"const morgan = require('morgan');",
@@ -1461,7 +1461,7 @@
 		"description": "Logs HTTP requests"
 	  },
 	  "responseTime()": {
-		"prefix": "responseTime",
+		"prefix": "express responseTime",
 		"body":[
 			"const express = require('express');",
 			"const responseTime = require('response-time');",
@@ -1482,7 +1482,7 @@
 		"description": "Measures response time"
 	  },
 	  "favicon()": {
-		"prefix": "favicon",
+		"prefix": "express favicon",
 		"body": [
 			"const express = require('express');",
 			"const favicon = require('serve-favicon');",
@@ -1504,7 +1504,7 @@
 		"description": "Serves a favicon"
 	  },
 	  "directory()": {
-		"prefix": "directory",
+		"prefix": "express directory",
 		"body": [
 			"const express = require('express');",
 			"const path = require('path');",
@@ -1525,7 +1525,7 @@
 		"description": "Serves directory listings"
 	  },
 	  "serveStatic()": {
-		"prefix": "serveStatic",
+		"prefix": "express serveStatic",
 		"body": [
 			"const serveStatic = require('serve-static');",
 			"const path = require('path');",
@@ -1546,7 +1546,7 @@
 		"description": "Serves static files"
 	  },
 	  "timeout()": {
-		"prefix": "timeout",
+		"prefix": "express timeout",
 		"body": [
 			"const express = require('express');",
 
@@ -1574,7 +1574,7 @@
 		"description": "Sets a timeout for requests"
 	  },
 	  "vhost()": {
-		"prefix": "vhost",
+		"prefix": "express vhost",
 		"body":[
 			"const express = require('express');",
 "const vhost = require('vhost');",
