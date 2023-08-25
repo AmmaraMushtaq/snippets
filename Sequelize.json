@@ -28,48 +28,159 @@
 		"description": "Sequelize Core Concepts"
 	},
 	"Model Basics": {
-		"prefix": "model_basics",
-		"body": "// Basic model definition in Sequelize\n// ...",
+		"prefix": "Sequelize model_basics",
+		"body": [
+			"const { Sequelize, DataTypes } = require('sequelize');",
+"const sequelize = new Sequelize('sqlite::memory:');",
+
+"const User = sequelize.define('User', {",
+  "// Model attributes are defined here",
+  "firstName: {",
+    "type: DataTypes.STRING,",
+    "allowNull: false",
+  "},",
+ " lastName: {",
+    "type: DataTypes.STRING",
+    "// allowNull defaults to true",
+ " }",
+"}, {",
+  "// Other model options go here",
+"});",
+
+"// `sequelize.define` also returns the model",
+"console.log(User === sequelize.models.User); // true"
+		],
 		"description": "Basic model definition in Sequelize"
 	  },
 	  "Model Instances": {
-		"prefix": "model_instances",
-		"body": "// Creating and working with model instances\n// ...",
+		"prefix": " Sequelize model_instances",
+		"body": [
+			"const { Sequelize, Model, DataTypes } = require('sequelize');",
+"const sequelize = new Sequelize('sqlite::memory:');",
+
+"const User = sequelize.define('user', {",
+  "name: DataTypes.TEXT,",
+ " favoriteColor: {",
+    "type: DataTypes.TEXT,",
+    "defaultValue: 'green'",
+ " },",
+  "age: DataTypes.INTEGER,",
+ " cash: DataTypes.INTEGER",
+"});",
+
+"(async () => {",
+  "await sequelize.sync({ force: true });",
+  "// Code here",
+"})();"
+		],
 		"description": "Creating and working with model instances"
 	  },
 	  "Model Querying - Basics": {
-		"prefix": "model_querying_basics",
-		"body": "// Basic querying with Sequelize models\n// ...",
+		"prefix": " Sequelize model_querying_basics",
+		"body": [
+			"const user = await User.create({",
+				"username: 'alice123',",
+				"isAdmin: true",
+			  "}, { fields: ['username'] });",
+			  "// let's assume the default of isAdmin is false",
+			  "console.log(user.username); // 'alice123'",
+			  "console.log(user.isAdmin); // false"
+		],
 		"description": "Basic querying with Sequelize models"
 	  },
 	  "Model Querying - Finders": {
-		"prefix": "model_querying_finders",
-		"body": "// Using finders to retrieve data with Sequelize\n// ...",
+		"prefix": " Sequelize model_querying_finders",
+		"body":[
+			"const project = await Project.findOne({ where: { title: 'My Title' } });",
+"if (project === null) {",
+  "console.log('Not found!');",
+"} else {",
+  "console.log(project instanceof Project); // true",
+ " console.log(project.title); // 'My Title'",
+"}"
+		],
 		"description": "Using finders to retrieve data with Sequelize"
 	  },
 	  "Getters, Setters & Virtuals": {
-		"prefix": "getters_setters_virtuals",
-		"body": "// Defining getters, setters, and virtual fields in Sequelize\n// ...",
+		"prefix": " Sequelize getters_setters_virtuals",
+		"body": [
+			"const User = sequelize.define('user', {",
+				"// Let's say we wanted to see every username in uppercase, even",
+				"// though they are not necessarily uppercase in the database itself",
+				"username: {",
+				 " type: DataTypes.STRING,",
+				  "get() {",
+					"const rawValue = this.getDataValue('username');",
+					"return rawValue ? rawValue.toUpperCase() : null;",
+				  "}",
+				"}",
+			  "});"
+		],
 		"description": "Defining getters, setters, and virtual fields in Sequelize"
 	  },
 	  "Validations & Constraints": {
-		"prefix": "validations_constraints",
-		"body": "// Adding validations and constraints to Sequelize models\n// ...",
+		"prefix": "Sequelize validations_constraints",
+		"body": [
+			"const { Sequelize, Op, Model, DataTypes } = require('sequelize');",
+"const sequelize = new Sequelize('sqlite::memory:');",
+
+"const User = sequelize.define('user', {",
+  "username: {",
+    "type: DataTypes.TEXT,",
+    "allowNull: false,",
+   " unique: true",
+  "},",
+  "hashedPassword: {",
+    "type: DataTypes.STRING(64),",
+    "validate: {",
+      "is: /^[0-9a-f]{64}$/i",
+    "}",
+  "}",
+"});",
+
+"(async () => {",
+  "await sequelize.sync({ force: true });",
+ " // Code here",
+"})();"
+		],
 		"description": "Adding validations and constraints to Sequelize models"
 	  },
 	  "Raw Queries": {
-		"prefix": "raw_queries",
-		"body": "// Executing raw SQL queries with Sequelize\n// ...",
+		"prefix": "Sequelize raw_queries",
+		"body":[
+			"const [results, metadata] = await sequelize.query('UPDATE users SET y = 42 WHERE x = 12');",
+"// Results will be an empty array and metadata will contain the number of affected rows.",
+"const { QueryTypes } = require('sequelize');",
+"const users = await sequelize.query('SELECT * FROM `users`', { type: QueryTypes.SELECT });",
+"// We didn't need to destructure the result here - the results were returned directly"
+		],
 		"description": "Executing raw SQL queries with Sequelize"
 	  },
 	  "Associations": {
-		"prefix": "associations",
-		"body": "// Defining and working with model associations in Sequelize\n// ...",
+		"prefix": " Sequelize associations",
+		"body": [
+			"const A = sequelize.define('A', /* ... */);",
+"const B = sequelize.define('B', /* ... */);",
+
+"A.hasOne(B); // A HasOne B",
+"A.belongsTo(B); // A BelongsTo B",
+"A.hasMany(B); // A HasMany B",
+"A.belongsToMany(B, { through: 'C' });"
+		],
 		"description": "Defining and working with model associations in Sequelize"
 	  },
 	  "Paranoid": {
-		"prefix": "paranoid",
-		"body": "// Using paranoid mode to implement soft deletes in Sequelize\n// ...",
+		"prefix": " Sequelizeparanoid",
+		"body": [
+			"class Post extends Model {}",
+"Post.init({ /* attributes here */ }, {",
+  "sequelize,",
+ " paranoid: true,",
+
+ " // If you want to give a custom name to the deletedAt column",
+  "deletedAt: 'destroyTime'",
+"});"
+		],
 		"description": "Using paranoid mode to implement soft deletes in Sequelize"
 	  },
 	"Advanced Association Concepts": {
@@ -83,28 +194,95 @@
 		"description": "  Advanced Association Concepts"
 	},
 	"Eager Loading": {
-		"prefix": "eager_loading",
-		"body": "// Eager loading associations in Sequelize queries\n// ...",
+		"prefix": "Sequelize eager_loading",
+		"body": [
+			"const User = sequelize.define('user', { name: DataTypes.STRING }, { timestamps: false });",
+"const Task = sequelize.define('task', { name: DataTypes.STRING }, { timestamps: false });",
+"const Tool = sequelize.define('tool', {",
+  "name: DataTypes.STRING,",
+  "size: DataTypes.STRING",
+"}, { timestamps: false });",
+"User.hasMany(Task);",
+"Task.belongsTo(User);",
+"User.hasMany(Tool, { as: 'Instruments' });"
+		],
 		"description": "Eager loading associations in Sequelize queries"
 	  },
 	  "Creating with Associations": {
-		"prefix": "creating_with_associations",
-		"body": "// Creating records with associated data using Sequelize\n// ...",
+		"prefix": "Sequelize creating_with_associations",
+		"body": [
+			"class Product extends Model {}",
+"Product.init({",
+  "title: Sequelize.STRING",
+"}, { sequelize, modelName: 'product' });",
+"class User extends Model {}",
+"User.init({",
+ " firstName: Sequelize.STRING,",
+  "lastName: Sequelize.STRING",
+"}, { sequelize, modelName: 'user' });",
+"class Address extends Model {}",
+"Address.init({",
+  "type: DataTypes.STRING,",
+  "line1: Sequelize.STRING,",
+ " line2: Sequelize.STRING,",
+  "city: Sequelize.STRING,",
+  "state: Sequelize.STRING,",
+  "zip: Sequelize.STRING,",
+"}, { sequelize, modelName: 'address' });",
+
+"// We save the return values of the association setup calls to use them later",
+"Product.User = Product.belongsTo(User);",
+"User.Addresses = User.hasMany(Address);",
+"// Also works for `hasOne`"
+		],
 		"description": "Creating records with associated data using Sequelize"
 	  },
 	  "Advanced M:N Associations": {
-		"prefix": "advanced_mn_associations",
-		"body": "// Defining advanced many-to-many associations in Sequelize\n// ...",
+		"prefix": " Sequelizeadvanced_mn_associations",
+		"body": [
+			"const User = sequelize.define('user', {",
+				"username: DataTypes.STRING,",
+				"points: DataTypes.INTEGER",
+			  "}, { timestamps: false });",
+			  "const Profile = sequelize.define('profile', {",
+				"name: DataTypes.STRING",
+			 " }, { timestamps: false });"
+		],
 		"description": "Defining advanced many-to-many associations in Sequelize"
 	  },
 	  "Association Scopes": {
-		"prefix": "association_scopes",
-		"body": "// Using association scopes to customize queries in Sequelize\n// ...",
+		"prefix": "Sequelize association_scopes",
+		"body":[
+			"const Foo = sequelize.define('foo', { name: DataTypes.STRING });",
+"const Bar = sequelize.define('bar', { status: DataTypes.STRING });",
+"Foo.hasMany(Bar, {",
+    "scope: {",
+       " status: 'open'",
+    "},",
+    "as: 'openBars'",
+"});",
+"await sequelize.sync();",
+"const myFoo = await Foo.create({ name: 'My Foo' });"
+		],
 		"description": "Using association scopes to customize queries in Sequelize"
 	  },
 	  "Polymorphic Associations": {
-		"prefix": "polymorphic_associations",
-		"body": "// Implementing polymorphic associations in Sequelize\n// ...",
+		"prefix": "Sequelize polymorphic_associations",
+		"body": [
+			"const image = await Image.create({ url: 'https://placekitten.com/408/287' });",
+"const comment = await image.createComment({ content: 'Awesome!' });",
+
+"console.log(comment.commentableId === image.id); // true",
+
+
+"console.log(comment.commentableType); ",
+
+"const associatedCommentable = await comment.getCommentable();",
+
+
+"const isDeepEqual = require('deep-equal');",
+"console.log(isDeepEqual(image, commentable)); // true"
+		],
 		"description": "Implementing polymorphic associations in Sequelize"
 	  },
 	"TOther topics": {
@@ -135,78 +313,257 @@
 		"description": " Sequelize TOther topics"
 	},
 	"Other Data Types": {
-		"prefix": "other_data_types",
-		"body": "// Defining and using other data types in Sequelize models\n// ...",
+		"prefix": "Sequelize other_data_types",
+		"body": [
+			"DataTypes.RANGE(DataTypes.INTEGER)    // int4range",
+"DataTypes.RANGE(DataTypes.BIGINT)     // int8range",
+"DataTypes.RANGE(DataTypes.DATE)       // tstzrange",
+"DataTypes.RANGE(DataTypes.DATEONLY)   // daterange",
+"DataTypes.RANGE(DataTypes.DECIMAL)    // numrange"
+		],
 		"description": "Defining and using other data types in Sequelize models"
 	  },
 	  "Using Sequelize in AWS Lambda": {
-		"prefix": "aws_lambda",
-		"body": "// Using Sequelize in AWS Lambda functions\n// ...",
+		"prefix": "Sequelize aws_lambda",
+		"body": [
+			"const { Sequelize } = require('sequelize');",
+
+"let sequelize = null;",
+
+"async function loadSequelize() {",
+ " const sequelize = new Sequelize(/* (...) */, {",
+	"await sequelize.authenticate();",
+
+	"return sequelize;",
+  "}",
+  
+ " module.exports.handler = async function (event, callback) {",
+
+	"if (!sequelize) {",
+	  "sequelize = await loadSequelize();",
+	"} else {",
+	 
+	  "sequelize.connectionManager.initPools();",
+  
+	 " if (sequelize.connectionManager.hasOwnProperty('getConnection')) {",
+		"delete sequelize.connectionManager.getConnection;",
+	  "}",
+	"}",
+  
+	"try {",
+	  "return await doSomethingWithSequelize(sequelize);",
+	"} finally {",
+	  
+	 " await sequelize.connectionManager.close();",
+	"}",
+  "};"
+		],
 		"description": "Using Sequelize in AWS Lambda functions"
 	  },
 	  "Connection Pool": {
-		"prefix": "connection_pool",
-		"body": "// Configuring and using a connection pool in Sequelize\n// ...",
+		"prefix": "Sequelize connection_pool",
+		"body": [
+			"const sequelize = new Sequelize(/* ... */, {",
+				"// ...",
+				"pool: {",
+				 " max: 5,",
+				  "min: 0,",
+				  "acquire: 30000,",
+				 " idle: 10000",
+				"}",
+			 " });"
+		],
 		"description": "Configuring and using a connection pool in Sequelize"
 	  },
 	  "Constraints & Circularities": {
-		"prefix": "constraints_circularities",
-		"body": "// Handling constraints and circularities in Sequelize models\n// ...",
+		"prefix": "Sequelize constraints_circularities",
+		"body": [
+			"const { Sequelize, Model, DataTypes } = require('sequelize');",
+
+"class Document extends Model {}",
+"Document.init({",
+    "author: DataTypes.STRING",
+"}, { sequelize, modelName: 'document' });",
+
+"class Version extends Model {}",
+"Version.init({",
+ " timestamp: DataTypes.DATE",
+"}, { sequelize, modelName: 'version' });",
+
+"Document.hasMany(Version); // This adds documentId attribute to version",
+"Document.belongsTo(Version, {",
+ " as: 'Current',",
+  "foreignKey: 'currentVersionId'",
+"}); "
+		],
 		"description": "Handling constraints and circularities in Sequelize models"
 	  },
 	  "Dialect-Specific Things": {
-		"prefix": "dialect_specific",
-		"body": "// Dealing with dialect-specific behaviors in Sequelize\n// ...",
+		"prefix": "Sequelize dialect_specific",
+		"body": [
+			"const sequelize = new Sequelize('database', 'username', 'password', {",
+				"dialect: 'mysql',",
+				"dialectOptions: {",
+				 " // Your mysql2 options here",
+				"}",
+			  "})"
+		],
 		"description": "Dealing with dialect-specific behaviors in Sequelize"
 	  },
 	  "Extending Data Types": {
-		"prefix": "extending_data_types",
-		"body": "// Extending Sequelize's data types for custom functionality\n// ...",
+		"prefix": "Sequelize extending_data_types",
+		"body": [
+			"const { Sequelize, DataTypes, Utils } = require('Sequelize');",
+"createTheNewDataType();",
+"const sequelize = new Sequelize('sqlite::memory:');",
+
+"function createTheNewDataType() {",
+
+  "class SOMETYPE extends DataTypes.ABSTRACT {",
+   
+    "toSql() {",
+     " return 'INTEGER(11) UNSIGNED ZEROFILL'",
+    "}",
+
+   " validate(value, options) {",
+      "return (typeof value === 'number') && (!Number.isNaN(value));",
+   " }",
+
+    "sanitize(value) {",
+     
+      "return value < 0 ? 0 : Math.round(value);",
+   " }",
+
+    
+    "_stringify(value) {",
+     " return value.toString();",
+    "}",
+    "static parse(value) {",
+     " return Number.parseInt(value);",
+    "}",
+ " }"
+
+		],
 		"description": "Extending Sequelize's data types for custom functionality"
 	  },
 	  "Hooks": {
-		"prefix": "hooks",
+		"prefix": " Sequelize hooks",
 		"body": "// Using hooks to add functionality to Sequelize operations\n// ...",
 		"description": "Using hooks to add functionality to Sequelize operations"
 	  },
 	  "Indexes": {
-		"prefix": "indexes",
-		"body": "// Defining and using indexes in Sequelize models\n// ...",
+		"prefix": "Sequelize indexes",
+		"body": [
+			"const User = sequelize.define('User', { /* attributes */ }, {",
+			"indexes: [",
+			 
+			  "{",
+				"unique: true,",
+				"fields: ['email']",
+			  "},",
+		  
+			  
+			 " {",
+				"fields: ['data'],",
+				"using: 'gin',",
+				"operator: 'jsonb_path_ops'",
+			  "},",
+		  
+			 " {",
+				"name: 'public_by_author',",
+				"fields: ['author', 'status'],",
+				"where: {",
+				  "status: 'public'",
+				"}",
+			  "},",
+		  
+			  "{",
+				"name: 'title_index',",
+				"using: 'BTREE',",
+				"fields: [",
+				"  'author',",
+				 " {",
+					"name: 'title',",
+					"collate: 'en_US',",
+					"order: 'DESC',",
+					"length: 5",
+				 " }",
+				"]",
+			  "}",
+			"]",
+		  "});"
+		],
 		"description": "Defining and using indexes in Sequelize models"
 	  },
 	  "Working with Legacy Tables": {
-		"prefix": "legacy_tables",
-		"body": "// Integrating Sequelize with legacy database tables\n// ...",
+		"prefix": "Sequelize legacy_tables",
+		"body": [
+			"class User extends Model {}",
+"User.init({",
+ 
+"}, {",
+  "modelName: 'user',",
+ " tableName: 'users',",
+ " sequelize,",
+"});"
+		],
 		"description": "Integrating Sequelize with legacy database tables"
 	  },
 	  "Legal Notice": {
-		"prefix": "legal_notice",
+		"prefix": "Sequelize legal_notice",
 		"body": "// Including legal notice and licensing information in Sequelize\n// ...",
 		"description": "Including legal notice and licensing information in Sequelize"
 	  },
 	  "Migrations": {
-		"prefix": "migrations",
-		"body": "// Managing database migrations with Sequelize\n// ...",
+		"prefix": "Sequelize migrations",
+		"body": ["const User = sequelize.define('user', { username: Sequelize.STRING }, {",
+			"underscored: true",
+		"  });",
+		 " const Task = sequelize.define('task', { title: Sequelize.STRING }, {",
+			"underscored: true",
+		 " });",
+		  "User.hasMany(Task);",
+		  "Task.belongsTo(User);,"],
 		"description": "Managing database migrations with Sequelize"
 	  },
 	  "Naming Strategies": {
-		"prefix": "naming_strategies",
+		"prefix": " Sequelize naming_strategies",
 		"body": "// Customizing naming strategies for Sequelize models\n// ...",
 		"description": "Customizing naming strategies for Sequelize models"
 	  },
 	  "Optimistic Locking": {
-		"prefix": "optimistic_locking",
+		"prefix": "Sequelize optimistic_locking",
 		"body": "// Implementing optimistic locking with Sequelize\n// ...",
 		"description": "Implementing optimistic locking with Sequelize"
 	  },
 	  "Query Interface": {
-		"prefix": "query_interface",
-		"body": "// Using Sequelize's query interface for custom queries\n// ...",
+		"prefix": "Sequelize query_interface",
+		"body": [
+			"const { Sequelize, DataTypes } = require('sequelize');",
+"const sequelize = new Sequelize(/* ... */);",
+"const queryInterface = sequelize.getQueryInterface();"
+		],
 		"description": "Using Sequelize's query interface for custom queries"
 	  },
 	  "Read Replication": {
-		"prefix": "read_replication",
-		"body": "// Setting up and using read replication with Sequelize\n// ...",
+		"prefix": "Sequelize read_replication",
+		"body":[
+			"const sequelize = new Sequelize('database', null, null, {",
+				"dialect: 'mysql',",
+				"port: 3306,",
+				"replication: {",
+				  "read: [",
+					"{ host: '8.8.8.8', username: 'read-1-username', password: process.env.READ_DB_1_PW },",
+					"{ host: '9.9.9.9', username: 'read-2-username', password: process.env.READ_DB_2_PW }",
+				 " ],",
+				  "write: { host: '1.1.1.1', username: 'write-username', password: process.env.WRITE_DB_PW }",
+				"},",
+				"pool: { // If you want to override the options used for the read/write pool you can do so here",
+				  "max: 20,",
+				  "idle: 30000",
+				"},",
+			 " })"
+		],
 		"description": "Setting up and using read replication with Sequelize"
 	  },
 	  "Resources": {
@@ -215,27 +572,152 @@
 		"description": "Referencing resources and tutorials for Sequelize development"
 	  },
 	  "Scopes": {
-		"prefix": "scopes",
-		"body": "// Defining and using scopes in Sequelize models\n// ...",
+		"prefix": "Sequelizescopes",
+		"body": [
+			"class Project extends Model {}",
+"Project.init({",
+ 
+"}, {",
+  "defaultScope: {",
+    "where: {",
+     " active: true",
+    "}",
+ " },",
+ " scopes: {",
+    "deleted: {",
+     " where: {",
+       " deleted: true",
+      "}",
+   " },",
+   " activeUsers: {",
+      "include: [",
+        "{ model: User, where: { active: true } }",
+      "]",
+    "},",
+   " random() {",
+      "return {",
+      "  where: {",
+          "someNumber: Math.random()",
+       " }",
+     " }",
+    "},",
+    "accessLevel(value) {",
+      "return {",
+       " where: {",
+         " accessLevel: {",
+           " [Op.gte]: value",
+         " }",
+        "}",
+      "}",
+    "},",
+    "sequelize,",
+   " modelName: 'project'",
+ " }",
+"});"
+		],
 		"description": "Defining and using scopes in Sequelize models"
 	  },
 	  "Sub Queries": {
-		"prefix": "sub_queries",
-		"body": "// Working with sub queries in Sequelize\n// ...",
+		"prefix": "Sequelizesub_queries",
+		"body": [
+			"const Post = sequelize.define('post', {",
+				"content: DataTypes.STRING",
+			"}, { timestamps: false });",
+			
+			"const Reaction = sequelize.define('reaction', {",
+				"type: DataTypes.STRING",
+			"}, { timestamps: false });",
+			
+			"Post.hasMany(Reaction);",
+			"Reaction.belongsTo(Post);"
+		],
 		"description": "Working with sub queries in Sequelize"
 	  },
+	  
 	  "Transactions": {
-		"prefix": "transactions",
-		"body": "// Managing transactions in Sequelize for data consistency\n// ...",
-		"description": "Managing transactions in Sequelize for data consistency"
+		"prefix": "Sequelizetransactions",
+		"body": [
+			"Unmanaged transactions",
+			"Managed transactions"
+		],
+		"description": " transactions in Sequelize for data consistency"
+	  },
+	  "Unmanaged transactions": {
+		"prefix": "SequelizeUnmanaged transactions",
+		"body": [
+			"const t = await sequelize.transaction();",
+
+"try {",
+ " const user = await User.create({",
+    "firstName: 'Bart',",
+    "lastName: 'Simpson'",
+  "}, { transaction: t });",
+
+  "await user.addSibling({",
+    "firstName: 'Lisa',",
+    "lastName: 'Simpson'",
+  "}, { transaction: t });",
+
+ " await t.commit();",
+
+"} catch (error) {",
+
+"  await t.rollback();",
+
+"}"
+		],
+		"description": " Unmanaged transactions in Sequelize for data consistency"
+	  },
+	  "Managed transactions": {
+		"prefix": "SequelizeManaged transactions",
+		"body": [
+			"try {",
+
+				"const result = await sequelize.transaction(async (t) => {",
+			  
+				  "const user = await User.create({",
+					"firstName: 'Abraham',",
+					"lastName: 'Lincoln'",
+				  "}, { transaction: t });",
+			  
+				  "await user.setShooter({",
+					"firstName: 'John',",
+					"lastName: 'Boothe'",
+				  "}, { transaction: t });",
+			  
+				  "return user;",
+			  
+				"});",
+			  
+			  "} catch (error) {",
+			  
+			  "}"
+		],
+		"description": " Managed transactions in Sequelize for data consistency"
 	  },
 	  "TypeScript": {
-		"prefix": "typescript",
-		"body": "// Using Sequelize with TypeScript for strong typing\n// ...",
+		"prefix": "Sequelizetypescript",
+		"body": [
+			"import { Model, Optional } from 'sequelize';",
+
+"type UserAttributes = {",
+ " id: number,",
+  "name: string,",
+ 
+"};",
+
+"type UserCreationAttributes = Optional<UserAttributes, 'id'>;",
+
+"class User extends Model<UserAttributes, UserCreationAttributes> {",
+  "declare id: number;",
+  "declare name: string;",
+ 
+"}"
+		],
 		"description": "Using Sequelize with TypeScript for strong typing"
 	  },
 	  "Upgrade to v6": {
-		"prefix": "upgrade_v6",
+		"prefix": "Sequelizeupgrade_v6",
 		"body": "// Guidelines for upgrading to Sequelize v6\n// ...",
 		"description": "Guidelines for upgrading to Sequelize v6"
 	  },
