@@ -37,6 +37,56 @@
 		],
 		"description": "Nest OVERVIEW"
 	},
+	"First steps": {
+		"prefix": "first_steps",
+		"body": "// Begin your journey here...",
+		"description": "Getting started with web development"
+	  },
+	  "Controllers": {
+		"prefix": "controllers",
+		"body": "class ${1:ControllerName} {\n  ${2:// Controller methods}\n}",
+		"description": "Create controller classes"
+	  },
+	  "Providers": {
+		"prefix": "providers",
+		"body": "class ${1:ProviderName} {\n  ${2:// Provider methods}\n}",
+		"description": "Implement provider classes"
+	  },
+	  "Modules": {
+		"prefix": "modules",
+		"body": "@Module({\n  imports: [],\n  controllers: [],\n  providers: [],\n})\nclass ${1:ModuleName} {}\n",
+		"description": "Define application modules"
+	  },
+	  "Middleware": {
+		"prefix": "middleware",
+		"body": "function ${1:middlewareName}(${2:req}, ${3:res}, ${4:next}) {\n  ${5:// Middleware logic}\n  ${6:next()};\n}",
+		"description": "Create custom middleware"
+	  },
+	  "Exception filters": {
+		"prefix": "exception_filters",
+		"body": "@Catch(${1:ExceptionType})\nexport class ${2:ExceptionFilterName} implements ExceptionFilter {\n  catch(exception: ${1:ExceptionType}, host: ArgumentsHost) {\n    ${3://// Handle exception}\n  }\n}",
+		"description": "Implement exception filters"
+	  },
+	  "Pipes": {
+		"prefix": "pipes",
+		"body": "@Pipe()\nexport class ${1:PipeName} implements PipeTransform {\n  transform(value: any, metadata: ArgumentMetadata) {\n    ${2://// Transform value}\n    return value;\n  }\n}",
+		"description": "Create custom pipes"
+	  },
+	  "Guards": {
+		"prefix": "guards",
+		"body": "@Guard()\nexport class ${1:GuardName} implements CanActivate {\n  canActivate(context: ExecutionContext): boolean | Promise<boolean> | Observable<boolean> {\n    ${2://// Guard logic}\n    return true;\n  }\n}",
+		"description": "Implement route guards"
+	  },
+	  "Interceptors": {
+		"prefix": "interceptors",
+		"body": "@Interceptor()\nexport class ${1:InterceptorName} implements NestInterceptor {\n  intercept(context: ExecutionContext, call$: Observable<any>): Observable<any> {\n    ${2:// Interceptor logic}\n    return call$;\n  }\n}",
+		"description": "Create custom interceptors"
+	  },
+	  "Custom decorators": {
+		"prefix": "decorators",
+		"body": "export const ${1:DecoratorName} = createParamDecorator((${2:data}, ${3:req}) => {\n  ${4:// Decorator logic}\n  return ${5:data};\n});",
+		"description": "Define custom decorators"
+	  },
 	"FUNDAMENTALS": {
 		"prefix": "Nest FUNDAMENTALS",
 		"body": [
@@ -54,6 +104,61 @@
 		],
 		"description": "  FUNDAMENTALS"
 	},
+	"Custom providers": {
+		"prefix": "custom_providers",
+		"body": "import { Injectable } from '@nestjs/common';\n\n@Injectable()\nclass ${1:CustomProvider} {\n  ${2:constructor(private ${3:dependency}: ${4:DependencyType}) {}}\n}",
+		"description": "Create custom providers"
+	  },
+	  "Asynchronous providers": {
+		"prefix": "async_providers",
+		"body": "import { Injectable } from '@nestjs/common';\n\n@Injectable()\nclass ${1:AsyncProvider} {\n  constructor() {}\n  async ${2:provideAsync}() {\n    ${3://// Asynchronous logic}\n    return ${4:result};\n  }\n}",
+		"description": "Implement asynchronous providers"
+	  },
+	  "Dynamic modules": {
+		"prefix": "dynamic_modules",
+		"body": "@Module({\n  imports: [${1:DynamicModule}],\n  controllers: [],\n  providers: [],\n  exports: [],\n})\nclass ${2:AppModule} {}\n",
+		"description": "Create dynamic modules"
+	  },
+	  "Injection scopes": {
+		"prefix": "injection_scopes",
+		"body": "@Injectable({ scope: Scope.${1:TRANSIENT} })\nclass ${2:ScopedProvider} {}\n",
+		"description": "Define injection scopes"
+	  },
+	  "Circular dependency": {
+		"prefix": "circular_dependency",
+		"body": "// Address circular dependency",
+		"description": "Resolve circular dependencies"
+	  },
+	  "Module reference": {
+		"prefix": "module_reference",
+		"body": "import { ModuleRef } from '@nestjs/core';\n\n@Controller()\nclass ${1:ControllerName} {\n  constructor(private readonly ${2:moduleRef}: ModuleRef) {}\n}",
+		"description": "Access the module reference"
+	  },
+	  "Lazy-loading modules": {
+		"prefix": "lazy_loading",
+		"body": "const moduleFactory = await import('${1:ModulePath}');\nconst ${2:ModuleClassName} = moduleFactory.${3:ModuleClassName};\nconst module = await this.applicationRef.bootstrap(${2:ModuleClassName});\n",
+		"description": "Lazy-load modules"
+	  },
+	  "Execution context": {
+		"prefix": "execution_context",
+		"body": "import { ExecutionContext } from '@nestjs/common';\n\nfunction ${1:customDecorator}() {\n  return (context: ExecutionContext) => {\n    const request = context.switchToHttp().getRequest();\n    ${2://// Decorator logic}\n  };\n}\n",
+		"description": "Access the execution context"
+	  },
+	  "Lifecycle events": {
+		"prefix": "lifecycle_events",
+		"body": "@OnModuleInit()\nasync onModuleInit() {\n  ${1:// Initialization logic}\n}\n\n@OnModuleDestroy()\nasync onModuleDestroy() {\n  ${2://// Cleanup logic}\n}",
+		"description": "Use lifecycle events"
+	  },
+	  "Platform agnosticism": {
+		"prefix": "platform_agnostic",
+		"body": "// Write platform-agnostic code",
+		"description": "Ensure platform agnosticism"
+	  },
+	  "Testing": {
+		"prefix": "testing",
+		"body": "import { Test, TestingModule } from '@nestjs/testing';\n\ndescribe('${1:TestSuiteName}', () => {\n  let ${2:app}: TestingModule;\n\n  beforeAll(async () => {\n    ${2:app} = await Test.createTestingModule({\n      imports: [],\n      controllers: [],\n      providers: [],\n    }).compile();\n  });\n\n  it('should be defined', () => {\n    expect(${2:app}).toBeDefined();\n  });\n});",
+		"description": "Write tests using TestingModule"
+	  },
 	"TECHNIQUES": {
 		"prefix": "Nest TECHNIQUES",
 		"body": [
@@ -79,6 +184,106 @@
 		],
 		"description": " Nest TECHNIQUES"
 	},
+	"Configuration": {
+		"prefix": "configuration",
+		"body": "// Configuration settings\nconst ${1:config} = {\n  ${2:key}: ${3:value},\n};",
+		"description": "Define configuration settings"
+	  },
+	  "Database": {
+		"prefix": "database",
+		"body": "// Database connection\nconst ${1:dbConnection} = ${2:await} connectToDatabase();",
+		"description": "Connect to the database"
+	  },
+	  "Mongo": {
+		"prefix": "mongo",
+		"body": "// MongoDB connection\nconst ${1:mongoConnection} = ${2:await} connectToMongoDB();",
+		"description": "Connect to MongoDB"
+	  },
+	  "Validation": {
+		"prefix": "validation",
+		"body": "// Validation schema\nconst ${1:validationSchema} = ${2:createValidationSchema}();",
+		"description": "Create validation schema"
+	  },
+	  "Caching": {
+		"prefix": "caching",
+		"body": "// Cache data\nconst ${1:cachedData} = ${2:cache}.get(${3:key}) || ${4:fetchData}();",
+		"description": "Cache data"
+	  },
+	  "Serialization": {
+		"prefix": "serialization",
+		"body": "// Serialize data\nconst ${1:serializedData} = ${2:serialize}(${3:data});",
+		"description": "Serialize data"
+	  },
+	  "Versioning": {
+		"prefix": "versioning",
+		"body": "// API versioning\napp.use('/api/${1:version}', ${2:apiRoutes});",
+		"description": "Implement API versioning"
+	  },
+	  "Task scheduling": {
+		"prefix": "task_scheduling",
+		"body": "// Schedule tasks\n${1:scheduler}.scheduleJob('${2:pattern}', ${3:taskFunction});",
+		"description": "Schedule tasks"
+	  },
+	  "Queues": {
+		"prefix": "queues",
+		"body": "// Queue tasks\n${1:queue}.add('${2:taskName}', ${3:taskData});",
+		"description": "Add tasks to queues"
+	  },
+	  "Logging": {
+		"prefix": "logging",
+		"body": "// Log messages\n${1:logger}.info('${2:message}');",
+		"description": "Log messages"
+	  },
+	  "Cookies": {
+		"prefix": "cookies",
+		"body": "// Set cookie\nres.cookie('${1:cookieName}', '${2:cookieValue}');",
+		"description": "Set cookies in the response"
+	  },
+	  "Events": {
+		"prefix": "events",
+		"body": "// Emit event\n${1:eventEmitter}.emit('${2:eventName}', ${3:eventData});",
+		"description": "Emit events"
+	  },
+	  "Compression": {
+		"prefix": "compression",
+		"body": "// Enable compression\napp.use(${1:compression}());",
+		"description": "Enable response compression"
+	  },
+	  "File upload": {
+		"prefix": "file_upload",
+		"body": "// Handle file upload\n${1:uploadMiddleware}(${2:req}, ${3:res}, ${4:next});",
+		"description": "Handle file uploads"
+	  },
+	  "Streaming files": {
+		"prefix": "streaming_files",
+		"body": "// Stream file to response\n${1:fileStream}.pipe(${2:response});",
+		"description": "Stream files in responses"
+	  },
+	  "HTTP module": {
+		"prefix": "http_module",
+		"body": "// Create HTTP server\nconst ${1:httpServer} = ${2:createServer}(${3:requestListener});",
+		"description": "Create an HTTP server"
+	  },
+	  "Session": {
+		"prefix": "session",
+		"body": "// Manage user sessions\napp.use(${1:session}({\n  secret: '${2:secretKey}',\n  resave: ${3:false},\n  saveUninitialized: ${4:false},\n}));",
+		"description": "Manage user sessions"
+	  },
+	  "Model-View-Controller": {
+		"prefix": "mvc",
+		"body": "// Model\nconst ${1:model} = ${2:createModel}();\n\n// Controller\nconst ${3:controller} = ${4:createController}(${1:model});\n\n// View\nconst ${5:view} = ${6:createView}(${1:model});",
+		"description": "Implement Model-View-Controller (MVC) architecture"
+	  },
+	  "Performance (Fastify)": {
+		"prefix": "fastify_performance",
+		"body": "// Create Fastify server\nconst ${1:fastify} = require('fastify')();\n\n// Add routes\n${1:fastify}.get('/', (request, reply) => {\n  reply.send('${2:Hello, Fastify!}');\n});",
+		"description": "Optimize performance using Fastify"
+	  },
+	  "Server-Sent Events": {
+		"prefix": "sse",
+		"body": "// Enable Server-Sent Events\napp.get('/sse', (req, res) => {\n  res.setHeader('Content-Type', 'text/event-stream');\n  res.setHeader('Cache-Control', 'no-cache');\n\n  ${1:sendEvents}(req, res);\n});",
+		"description": "Implement Server-Sent Events"
+	  },
 	"SECURITY": {
 		"prefix": "Nest SECURITY",
 		"body": [
@@ -92,6 +297,41 @@
 		],
 		"description": " Nest SECURITY"
 	},
+	"Authentication": {
+		"prefix": "authentication",
+		"body": "// Authenticate user\n${1:authenticate}(${2:req}, ${3:res}, ${4:next});",
+		"description": "Authenticate user"
+	  },
+	  "Authorization": {
+		"prefix": "authorization",
+		"body": "// Authorize user\n${1:authorize}(${2:req}, ${3:res}, ${4:next});",
+		"description": "Authorize user"
+	  },
+	  "Encryption and Hashing": {
+		"prefix": "encryption_hashing",
+		"body": "// Encrypt data\nconst ${1:encryptedData} = ${2:encrypt}(${3:data}, '${4:encryptionKey}');\n\n// Hash password\nconst ${5:hashedPassword} = ${6:hashPassword}('${7:password}');",
+		"description": "Encrypt data and hash passwords"
+	  },
+	  "Helmet": {
+		"prefix": "helmet",
+		"body": "// Enable Helmet middleware\napp.use(${1:helmet}());",
+		"description": "Enable Helmet middleware for security headers"
+	  },
+	  "CORS": {
+		"prefix": "cors",
+		"body": "// Enable CORS\napp.use(${1:cors}());",
+		"description": "Enable Cross-Origin Resource Sharing"
+	  },
+	  "CSRF Protection": {
+		"prefix": "csrf",
+		"body": "// Enable CSRF protection\napp.use(${1:csrf}());",
+		"description": "Enable Cross-Site Request Forgery protection"
+	  },
+	  "Rate limiting": {
+		"prefix": "rate_limiting",
+		"body": "// Implement rate limiting\napp.use(${1:rateLimit}({\n  windowMs: ${2:60000},\n  max: ${3:100},\n}));",
+		"description": "Implement rate limiting to prevent abuse"
+	  },
 	"GRAPHQL": {
 		"prefix": "Nest GRAPHQL",
 		"body": [
@@ -117,6 +357,101 @@
 		],
 		"description": " Nest GRAPHQL"
 	},
+	"Quick start": {
+		"prefix": "quick_start",
+		"body": "// Quick start with GraphQL\nconst { ${1:graphql}, ${2:buildSchema} } = require('graphql');\n\nconst schema = ${3:buildSchema}(`\n  type Query {\n    hello: String\n  }\n`);\n\nconst root = {\n  hello: () => 'Hello, world!'\n};",
+		"description": "Quick start with GraphQL"
+	  },
+	  "Resolvers": {
+		"prefix": "resolvers",
+		"body": "// Define resolvers\nconst resolvers = {\n  Query: {\n    ${1:fieldName}: () => {\n      return ${2:result};\n    }\n  }\n};",
+		"description": "Define GraphQL resolvers"
+	  },
+	  "Mutations": {
+		"prefix": "mutations",
+		"body": "// Define mutations\nconst resolvers = {\n  Mutation: {\n    ${1:mutationName}: (_, args) => {\n      const { ${2:inputData} } = args;\n      // Perform mutation logic\n      return ${3:result};\n    }\n  }\n};",
+		"description": "Define GraphQL mutations"
+	  },
+	  "Subscriptions": {
+		"prefix": "subscriptions",
+		"body": "// Define subscriptions\nconst resolvers = {\n  Subscription: {\n    ${1:subscriptionName}: {\n      subscribe: () => ${2:asyncIterator},\n      resolve: payload => payload\n    }\n  }\n};",
+		"description": "Define GraphQL subscriptions"
+	  },
+	  "Scalars": {
+		"prefix": "scalars",
+		"body": "// Define custom scalar\nconst ${1:MyScalar} = new GraphQLScalarType({\n  name: '${1:MyScalar}',\n  description: 'Custom scalar description',\n  serialize: value => value,\n  parseValue: value => value,\n  parseLiteral: ast => ast.value\n});",
+		"description": "Define custom GraphQL scalar type"
+	  },
+	  "Directives": {
+		"prefix": "directives",
+		"body": "// Define custom directive\nconst ${1:MyDirective}Directive = new GraphQLDirective({\n  name: '${1:myDirective}',\n  description: 'Custom directive description',\n  locations: [DirectiveLocation.${2:FIELD_DEFINITION}],\n  args: {\n    ${3:argName}: { type: GraphQL${4:Type} }\n  }\n});",
+		"description": "Define custom GraphQL directive"
+	  },
+	  "Interfaces": {
+		"prefix": "interfaces",
+		"body": "// Define interface\nconst ${1:MyInterface} = new GraphQLInterfaceType({\n  name: '${1:MyInterface}',\n  description: 'Interface description',\n  fields: {\n    ${2:field}: { type: GraphQL${3:Type} }\n  }\n});",
+		"description": "Define GraphQL interface"
+	  },
+	  "Unions and Enums": {
+		"prefix": "unions_enums",
+		"body": "// Define union\nconst ${1:MyUnion} = new GraphQLUnionType({\n  name: '${1:MyUnion}',\n  description: 'Union description',\n  types: [GraphQL${2:Type}, GraphQL${3:Type}]\n});\n\n// Define enum\nconst ${4:MyEnum} = new GraphQLEnumType({\n  name: '${4:MyEnum}',\n  description: 'Enum description',\n  values: {\n    ${5:VALUE1}: { value: '${5:value1}' },\n    ${6:VALUE2}: { value: '${6:value2}' }\n  }\n});",
+		"description": "Define GraphQL union and enum"
+	  },
+	  "Field middleware": {
+		"prefix": "field_middleware",
+		"body": "// Define field middleware\nconst ${1:fieldMiddleware} = async (resolve, root, args, context, info) => {\n  // Apply middleware logic before field resolution\n  const result = await resolve(root, args, context, info);\n  // Apply middleware logic after field resolution\n  return result;\n};",
+		"description": "Define field middleware for GraphQL fields"
+	  },
+	  "Mapped types": {
+		"prefix": "mapped_types",
+		"body": "// Define mapped types\nconst ${1:MappedType}Type = new GraphQL${2:Type}({\n  name: '${1:MappedType}Type',\n  description: 'Mapped type description',\n  fields: {\n    ${3:field}: { type: GraphQL${4:Type} }\n  }\n});",
+		"description": "Define GraphQL mapped type"
+	  },
+	  "Plugins": {
+		"prefix": "plugins",
+		"body": "// Define and use GraphQL plugin\nconst ${1:myPlugin} = {\n  requestDidStart: () => ({\n    willSendResponse: () => {\n      // Perform plugin logic\n    }\n  })\n};\n\nconst server = new ApolloServer({\n  typeDefs,\n  resolvers,\n  plugins: [${1:myPlugin}]\n});",
+		"description": "Define and use GraphQL plugins"
+	  },
+	  "Complexity": {
+		"prefix": "complexity",
+		"body": "// Implement complexity analysis\nconst complexityPlugin = {\n  requestDidStart: () => ({\n    didResolveOperation: ({ request, document }) => {\n      const complexity = getComplexity(document, request.variables);\n      if (complexity > ${1:maxComplexity}) {\n        throw new Error(`Query is too complex: ${complexity}. Maximum allowed complexity: ${1:maxComplexity}.`);\n      }\n    }\n  })\n};",
+		"description": "Implement complexity analysis for queries"
+	  },
+	  "Extensions": {
+		"prefix": "extensions",
+		"body": "// Define and use GraphQL extension\nclass ${1:MyExtension} extends GraphQLExtension {\n  // Implement extension methods\n  requestDidStart() {}\n  parsingDidStart() {}\n  validationDidStart() {}\n  executionDidStart() {}\n  willSendResponse() {}\n}\n\nconst server = new ApolloServer({\n  typeDefs,\n  resolvers,\n  extensions: [() => new ${1:MyExtension}()]\n});",
+		"description": "Define and use GraphQL extensions"
+	  },
+	  "CLI Plugin": {
+		"prefix": "cli_plugin",
+		"body": "// Define CLI plugin\nconst ${1:myCLIPlugin} = {\n  name: '${1:my-cli-plugin}',\n  version: '1.0.0',\n  register: async (cli) => {\n    // Implement CLI commands and logic\n  }\n};\n\nmodule.exports = ${1:myCLIPlugin};",
+		"description": "Define a CLI plugin for GraphQL"
+	  },
+	  "Generating SDL": {
+		"prefix": "generating_sdl",
+		"body": "// Generate GraphQL SDL from schema\nconst sdl = printSchema(schema);\nconsole.log(sdl);",
+		"description": "Generate GraphQL SDL from schema"
+	  },
+	  "Sharing models": {
+		"prefix": "sharing_models",
+		"body": "// Share models between GraphQL and database\nconst ${1:User} = sequelize.define('user', {\n  // Define user fields\n});\n\nconst typeDefs = gql`\n  type ${1:User} {\n    // Define user fields\n  }\n`;",
+		"description": "Share models between GraphQL and database"
+	  },
+	  "Other features": {
+		"prefix": "other_features",
+		"body": "// Implement other GraphQL features\n// ...",
+		"description": "Implement other GraphQL features"
+	  },
+	  "Federation": {
+		"prefix": "federation",
+		"body": "// Implement Apollo Federation\nconst { ApolloServer } = require('apollo-server');\nconst { buildFederatedSchema } = require('@apollo/federation');\n\nconst typeDefs = ...;\nconst resolvers = ...;\n\nconst server = new ApolloServer({\n  schema: buildFederatedSchema([{ typeDefs, resolvers }])\n});",
+		"description": "Implement Apollo Federation for microservices"
+	  },
+	  "Migration guide": {
+		"prefix": "migration_guide",
+		"body": "// Migration guide for GraphQL\n// ...",
+		"description": "Migration guide for GraphQL"
+	  },
 	"WEBSOCKETSL": {
 		"prefix": "Nest WEBSOCKETSL",
 		"body": [
@@ -129,6 +464,42 @@
 		],
 		"description": " Nest WEBSOCKETSL"
 	},
+	"Gateways": {
+		"prefix": "gateways",
+		"body": "// Define gateway\nclass ${1:GatewayName}Gateway {\n  // Implement gateway logic\n}",
+		"description": "Define gateway for backend"
+	  },
+	  "Exceptionfilters": {
+		"prefix": "exception_filters",
+		"body": "// Define exception filter\n@Catch(${1:HttpException})\nclass ${2:HttpExceptionFilter} implements ExceptionFilter {\n  catch(exception: ${1:HttpException}, host: ArgumentsHost) {\n    const response = host.switchToHttp().getResponse();\n    // Handle exception and send response\n  }\n}",
+		"description": "Define exception filter for backend"
+	  },
+	  "Pipes": {
+		"prefix": "pipes",
+		"body": "// Define pipe\n@Pipe()\nclass ${1:MyPipe} implements PipeTransform {\n  transform(value: any, metadata: ArgumentMetadata) {\n    // Transform and validate input value\n    return value;\n  }\n}",
+		"description": "Define pipe for backend"
+	  },
+	  "Guards": {
+		"prefix": "guards",
+		"body": "// Define guard\n@Injectable()\nclass ${1:AuthGuard} implements CanActivate {\n  canActivate(context: ExecutionContext): boolean {\n    // Implement guard logic\n    return true;\n  }\n}",
+		"description": "Define guard for backend"
+	  },
+	  "Interceptors": {
+		"prefix": "interceptors",
+		"body": "// Define interceptor\n@Injectable()\nclass ${1:LoggingInterceptor} implements NestInterceptor {\n  intercept(context: ExecutionContext, next: CallHandler): Observable<any> {\n    // Intercept request and response\n    return next.handle();\n  }\n}",
+		"description": "Define interceptor for backend"
+	  },
+	  "Adapters": {
+		"prefix": "adapters",
+		"body": "// Define adapter\nclass ${1:AdapterName}Adapter {\n  // Implement adapter methods\n}",
+		"description": "Define adapter for backend"
+	  },
+	  "Other backend concepts": {
+		"prefix": "other_backend_concepts",
+		"body": "// Implement other backend concepts\n// ...",
+		"description": "Implement other backend concepts"
+	  },
+	
 	"MICROSERVICES": {
 		"prefix": "Nest MICROSERVICES",
 		"body": [
@@ -147,6 +518,67 @@
 		],
 		"description": " Nest MICROSERVICES"
 	},
+	"Overview": {
+		"prefix": "overview",
+		"body": "// Overview of messaging and communication concepts\n// ...",
+		"description": "Overview of messaging and communication concepts"
+	  },
+	  "Redis": {
+		"prefix": "redis",
+		"body": "// Using Redis for messaging\n// ...",
+		"description": "Using Redis for messaging"
+	  },
+	  "MQTT": {
+		"prefix": "mqtt",
+		"body": "// Using MQTT for messaging\n// ...",
+		"description": "Using MQTT for messaging"
+	  },
+	  "NATS": {
+		"prefix": "nats",
+		"body": "// Using NATS for messaging\n// ...",
+		"description": "Using NATS for messaging"
+	  },
+	  "RabbitMQ": {
+		"prefix": "rabbitmq",
+		"body": "// Using RabbitMQ for messaging\n// ...",
+		"description": "Using RabbitMQ for messaging"
+	  },
+	  "Kafka": {
+		"prefix": "kafka",
+		"body": "// Using Kafka for messaging\n// ...",
+		"description": "Using Kafka for messaging"
+	  },
+	  "gRPC": {
+		"prefix": "grpc",
+		"body": "// Using gRPC for communication\n// ...",
+		"description": "Using gRPC for communication"
+	  },
+	  "Custom transporters": {
+		"prefix": "custom_transporters",
+		"body": "// Implementing custom transporters\n// ...",
+		"description": "Implementing custom transporters"
+	  },
+	  "Exception filters": {
+		"prefix": "exception_filters",
+		"body": "// Define exception filter\n@Catch(${1:HttpException})\nclass ${2:HttpExceptionFilter} implements ExceptionFilter {\n  catch(exception: ${1:HttpException}, host: ArgumentsHost) {\n    const response = host.switchToHttp().getResponse();\n    // Handle exception and send response\n  }\n}",
+		"description": "Define exception filter for messaging"
+	  },
+	  "Pipes": {
+		"prefix": "pipes",
+		"body": "// Define pipe\n@Pipe()\nclass ${1:MyPipe} implements PipeTransform {\n  transform(value: any, metadata: ArgumentMetadata) {\n    // Transform and validate input value\n    return value;\n  }\n}",
+		"description": "Define pipe for messaging"
+	  },
+	  "Guards": {
+		"prefix": "guards",
+		"body": "// Define guard\n@Injectable()\nclass ${1:AuthGuard} implements CanActivate {\n  canActivate(context: ExecutionContext): boolean {\n    // Implement guard logic\n    return true;\n  }\n}",
+		"description": "Define guard for messaging"
+	  },
+	  "Interceptors": {
+		"prefix": "interceptors",
+		"body": "// Define interceptor\n@Injectable()\nclass ${1:LoggingInterceptor} implements NestInterceptor {\n  intercept(context: ExecutionContext, next: CallHandler): Observable<any> {\n    // Intercept request and response\n    return next.handle();\n  }\n}",
+		"description": "Define interceptor for messaging"
+	  },
+	
 	"CLI": {
 		"prefix": "Nest CLI",
 		"body": [
@@ -158,6 +590,31 @@
 		],
 		"description": " Nest CLI"
 	},
+	"Overview": {
+		"prefix": "overview",
+		"body": "// Overview of workspace and library concepts\n// ...",
+		"description": "Overview of workspace and library concepts"
+	  },
+	  "Workspaces": {
+		"prefix": "workspaces",
+		"body": "// Setting up and using workspaces\n// ...",
+		"description": "Setting up and using workspaces"
+	  },
+	  "Libraries": {
+		"prefix": "libraries",
+		"body": "// Creating and managing libraries\n// ...",
+		"description": "Creating and managing libraries"
+	  },
+	  "Usage": {
+		"prefix": "usage",
+		"body": "// Using workspaces and libraries in projects\n// ...",
+		"description": "Using workspaces and libraries in projects"
+	  },
+	  "Scripts": {
+		"prefix": "scripts",
+		"body": "// Defining and running scripts\n// ...",
+		"description": "Defining and running scripts in projects"
+	  },
 	"OPENAPI": {
 		"prefix": "Nest OPENAPI",
 		"body": [
@@ -173,6 +630,51 @@
 		],
 		"description": " Nest OPENAPI"
 	},
+	"Introduction": {
+		"prefix": "introduction",
+		"body": "// Introduction to GraphQL\n// ...",
+		"description": "Introduction to GraphQL"
+	  },
+	  "Types and Parameters": {
+		"prefix": "types_parameters",
+		"body": "// GraphQL types and parameters\n// ...",
+		"description": "GraphQL types and parameters"
+	  },
+	  "Operations": {
+		"prefix": "operations",
+		"body": "// Performing operations in GraphQL\n// ...",
+		"description": "Performing operations in GraphQL"
+	  },
+	  "Security": {
+		"prefix": "security",
+		"body": "// Security considerations in GraphQL\n// ...",
+		"description": "Security considerations in GraphQL"
+	  },
+	  "Mapped Types": {
+		"prefix": "mapped_types",
+		"body": "// Using mapped types in GraphQL\n// ...",
+		"description": "Using mapped types in GraphQL"
+	  },
+	  "Decorators": {
+		"prefix": "decorators",
+		"body": "// Applying decorators in GraphQL\n// ...",
+		"description": "Applying decorators in GraphQL"
+	  },
+	  "CLI Plugin": {
+		"prefix": "cli_plugin",
+		"body": "// Working with the GraphQL CLI plugin\n// ...",
+		"description": "Working with the GraphQL CLI plugin"
+	  },
+	  "Other features": {
+		"prefix": "other_features",
+		"body": "// Exploring other features of GraphQL\n// ...",
+		"description": "Exploring other features of GraphQL"
+	  },
+	  "Migration guide": {
+		"prefix": "migration_guide",
+		"body": "// Migrating to new GraphQL versions\n// ...",
+		"description": "Migrating to new GraphQL versions"
+	  },
 	"RECIPES": {
 		"prefix": "Nest RECIPES",
 		"body": [
@@ -197,6 +699,101 @@
 		],
 		"description": " Nest RECIPES"
 	},
+	"REPL": {
+		"prefix": "repl",
+		"body": "// Working with Node.js REPL\n// ...",
+		"description": "Working with Node.js REPL"
+	  },
+	  "CRUD generator": {
+		"prefix": "crud_generator",
+		"body": "// Generating CRUD operations\n// ...",
+		"description": "Generating CRUD operations"
+	  },
+	  "SWC (fast compiler)": {
+		"prefix": "swc_compiler",
+		"body": "// Using SWC compiler for fast compilation\n// ...",
+		"description": "Using SWC (fast compiler)"
+	  },
+	  "Passport (auth)": {
+		"prefix": "passport_auth",
+		"body": "// Implementing authentication with Passport\n// ...",
+		"description": "Implementing authentication with Passport"
+	  },
+	  "Hot reload": {
+		"prefix": "hot_reload",
+		"body": "// Enabling hot reloading in Node.js\n// ...",
+		"description": "Enabling hot reloading in Node.js"
+	  },
+	  "MikroORM": {
+		"prefix": "mikro_orm",
+		"body": "// Using MikroORM for database operations\n// ...",
+		"description": "Using MikroORM for database operations"
+	  },
+	  "TypeORM": {
+		"prefix": "typeorm",
+		"body": "// Working with TypeORM for database tasks\n// ...",
+		"description": "Working with TypeORM for database tasks"
+	  },
+	  "Mongoose": {
+		"prefix": "mongoose",
+		"body": "// Using Mongoose for MongoDB interactions\n// ...",
+		"description": "Using Mongoose for MongoDB interactions"
+	  },
+	  "Sequelize": {
+		"prefix": "sequelize",
+		"body": "// Integrating Sequelize ORM in Node.js\n// ...",
+		"description": "Integrating Sequelize ORM in Node.js"
+	  },
+	  "Router module": {
+		"prefix": "router_module",
+		"body": "// Creating and using router modules\n// ...",
+		"description": "Creating and using router modules"
+	  },
+	  "Swagger": {
+		"prefix": "swagger",
+		"body": "// Adding Swagger documentation to API\n// ...",
+		"description": "Adding Swagger documentation to API"
+	  },
+	  "Health checks": {
+		"prefix": "health_checks",
+		"body": "// Implementing health checks in Node.js\n// ...",
+		"description": "Implementing health checks in Node.js"
+	  },
+	  "CQRS": {
+		"prefix": "cqrs",
+		"body": "// Applying CQRS pattern in Node.js\n// ...",
+		"description": "Applying CQRS pattern in Node.js"
+	  },
+	  "Compodoc": {
+		"prefix": "compodoc",
+		"body": "// Generating documentation using Compodoc\n// ...",
+		"description": "Generating documentation using Compodoc"
+	  },
+	  "Prisma": {
+		"prefix": "prisma",
+		"body": "// Using Prisma ORM for database operations\n// ...",
+		"description": "Using Prisma ORM for database operations"
+	  },
+	  "Serve static": {
+		"prefix": "serve_static",
+		"body": "// Serving static files in Node.js\n// ...",
+		"description": "Serving static files in Node.js"
+	  },
+	  "Commander": {
+		"prefix": "commander",
+		"body": "// Building command-line applications with Commander\n// ...",
+		"description": "Building command-line applications with Commander"
+	  },
+	  "Async local storage": {
+		"prefix": "async_local_storage",
+		"body": "// Managing async local storage in Node.js\n// ...",
+		"description": "Managing async local storage in Node.js"
+	  },
+	  "Automock": {
+		"prefix": "automock",
+		"body": "// Automocking dependencies in Node.js tests\n// ...",
+		"description": "Automocking dependencies in Node.js tests"
+	  },
 	"FAQ": {
 		"prefix": "Nest FAQ",
 		"body": [
@@ -212,6 +809,51 @@
 		],
 		"description": " Nest FAQ"
 	},
+	"Serverless": {
+		"prefix": "serverless",
+		"body": "// Setting up a Serverless application\n// ...",
+		"description": "Setting up a Serverless application"
+	  },
+	  "HTTP adapter": {
+		"prefix": "http_adapter",
+		"body": "// Creating an HTTP adapter for Serverless\n// ...",
+		"description": "Creating an HTTP adapter for Serverless"
+	  },
+	  "Global path prefix": {
+		"prefix": "global_path_prefix",
+		"body": "// Configuring a global path prefix in Serverless\n// ...",
+		"description": "Configuring a global path prefix in Serverless"
+	  },
+	  "Raw body": {
+		"prefix": "raw_body",
+		"body": "// Accessing the raw request body in Serverless\n// ...",
+		"description": "Accessing the raw request body in Serverless"
+	  },
+	  "Hybrid application": {
+		"prefix": "hybrid_app",
+		"body": "// Building a hybrid Serverless application\n// ...",
+		"description": "Building a hybrid Serverless application"
+	  },
+	  "HTTPS & multiple servers": {
+		"prefix": "https_multiple_servers",
+		"body": "// Using HTTPS and multiple servers in Serverless\n// ...",
+		"description": "Using HTTPS and multiple servers in Serverless"
+	  },
+	  "Request lifecycle": {
+		"prefix": "request_lifecycle",
+		"body": "// Understanding the request lifecycle in Serverless\n// ...",
+		"description": "Understanding the request lifecycle in Serverless"
+	  },
+	  "Common errors": {
+		"prefix": "common_errors",
+		"body": "// Handling common errors in Serverless applications\n// ...",
+		"description": "Handling common errors in Serverless applications"
+	  },
+	  "Examples": {
+		"prefix": "examples",
+		"body": "// Practical examples of Serverless applications\n// ...",
+		"description": "Practical examples of Serverless applications"
+	  },
 	"DEVTOOLS": {
 		"prefix": "Nest DEVTOOLS",
 		"body": [

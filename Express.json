@@ -6,7 +6,7 @@
 			"Request",
 			"Response",
 			"Router",
-			"Middleware",
+			"Middleware"
 			
 		],
 		"description": "Express"
@@ -31,11 +31,183 @@
 			"app.route()",
 			"app.locals",
 			"app.render()",
-			"app.listen()",
+			"app.listen()"
 			
 		],
 		"description": "Application"
 	},
+	"express()": {
+		"prefix": "express",
+		"body":[
+			"var options = {",
+				"dotfiles: 'ignore',",
+				"etag: false,",
+				"extensions: ['htm', 'html'],",
+				"index: false,",
+				"maxAge: '1d',",
+				"redirect: false,",
+				"setHeaders: function (res, path, stat) {",
+				 " res.set('x-timestamp', Date.now())",
+				"}",
+			  "}",
+			  
+			 " app.use(express.static('public', options))"
+		],
+		"description": "Create an Express application"
+	  },
+	  "app.set()": {
+		"prefix": "app.set",
+		"body": [
+			"app.set('trust proxy', function (ip) {",
+				"if (ip === '127.0.0.1' || ip === '123.123.123.123') return true // trusted IPs",
+				"else return false",
+			  "})"
+		],
+		"description": "Set application settings"
+	  },
+	  "app.get()": {
+		"prefix": "app.get",
+		"body": [
+			"app.get('/', function (req, res) {",
+				"res.send('GET request to homepage')",
+			  "})"
+		],
+		"description": "Define a route for GET requests"
+	  },
+	  "app.enable()": {
+		"prefix": "app.enable",
+		"body": [
+			"app.enable('trust proxy')",
+"app.get('trust proxy')"
+		],
+		"description": "Enable an application setting"
+	  },
+	  "app.disable()": {
+		"prefix": "app.disable",
+		"body": [
+			"app.disable('trust proxy')",
+"app.get('trust proxy')"
+		],
+		"description": "Disable an application setting"
+	  },
+	  "app.enabled()": {
+		"prefix": "app.enabled",
+		"body": [
+			"var engines = require('consolidate')",
+"app.engine('haml', engines.haml)",
+"app.engine('html', engines.hogan)"
+		],
+		"description": "Check if an application setting is enabled"
+	  },
+	  "app.disabled()": {
+		"prefix": "app.disabled",
+		"body": [
+			"app.disabled('trust proxy')",
+"// => true",
+
+"app.enable('trust proxy')",
+"app.disabled('trust proxy')"
+		],
+		"description": "Check if an application setting is disabled"
+	  },
+	  "app.use()": {
+		"prefix": "app.use",
+		"body": [
+			"app.use(function (req, res, next) {",
+				"console.log('Time: %d', Date.now())",
+				"next()",
+			 " })"
+		],
+		"description": "Use middleware functions"
+	  },
+	  "app.engine()": {
+		"prefix": "app.engine",
+		"body": [
+			"app.get('title')",
+"// => undefined",
+
+"app.set('title', 'My Site')",
+"app.get('title')",
+"// => My Site"
+		],
+		"description": "Register a template engine"
+	  },
+	  "app.param()": {
+		"prefix": "app.param",
+		"body": [
+			"app.param(function (param, validator) {",
+				"return function (req, res, next, val) {",
+				  "if (validator(val)) {",
+					"next()",
+				  "} else {",
+					"next('route')",
+				  "}",
+				"}",
+			 " })",
+			  
+			 " app.param('id', function (candidate) {",
+				"return !isNaN(parseFloat(candidate)) && isFinite(candidate)",
+			 " })"
+		],
+		"description": "Define middleware for route parameters"
+	  },
+	  "app.all()": {
+		"prefix": "app.all",
+		"body": [
+			"app.all('/secret', function (req, res, next) {",
+				"console.log('Accessing the secret section ...')",
+				"next() // pass control to the next handler",
+			  "})"
+		],
+		"description": "Define a route that matches all HTTP methods"
+	  },
+	  "app.route()": {
+		"prefix": "app.route",
+		"body": [
+			"var app = express()",
+
+"app.route('/events')",
+ " .all(function (req, res, next) {",
+    "// runs for all HTTP verbs first",
+    "// think of it as route specific middleware!",
+ " })",
+ " .get(function (req, res, next) {",
+    "res.json({})",
+  "})",
+  ".post(function (req, res, next) {",
+   " // maybe add a new event...",
+  "})"
+		],
+		"description": "Create a route handler using a Router instance"
+	  },
+	  "app.locals": {
+		"prefix": "app.locals",
+		"body": [
+			"app.locals.title = 'My App'",
+"app.locals.strftime = require('strftime')",
+"app.locals.email = 'me@myapp.com'"
+		],
+		"description": "Set properties on the app's local variables"
+	  },
+	  "app.render()": {
+		"prefix": "app.render",
+		"body": [
+			"app.put('/', function (req, res) {",
+				"res.send('PUT request to homepage')",
+			  "})"
+		],
+		"description": "Render a view and send the rendered HTML to the client"
+	  },
+	  "app.listen()": {
+		"prefix": "app.listen",
+		"body": [
+			"app.listen = function () {",
+				"var server = http.createServer(this)",
+			"return server.listen.apply(server, arguments)",
+			 " }"
+		],
+		"description": "Start the Express application to listen on a port"
+	  },
 	"Request": {
 		"prefix": "Express Request",
 		"body": [
@@ -60,11 +232,443 @@
 			"req.protocol",
 			"req.secure",
 			"req.subdomains",
-			"req.originalUrl",
+			"req.originalUrl"
 			
 		],
 		"description": " Express Request"
 	},
+	"req.params": {
+		"prefix": "req.params",
+		"body": [
+			"const express = require('express');",
+			"const app = express();",
+			
+			"app.get('/users/:userId', (req, res) => {",
+				"const userId = req.params.userId;",
+				"res.send(`User ID: ${userId}`);",
+			"});",
+			
+			"app.listen(3000, () => {",
+				"console.log('Server is running on port 3000');",
+			"});"
+		],
+		"description": "Access route parameters"
+	  },
+	  "req.query": {
+		"prefix": "req.query",
+		"body": [
+			"var qs = require('qs')",
+"app.setting('query parser', function (str) {",
+  "return qs.parse(str, { /* custom options */ })",
+"})"
+		],
+		"description": "Access query string parameters"
+	  },
+	  "req.param()": {
+		"prefix": "req.param",
+		"body":[
+			"app.get('/user/:userId', (req, res) => {",
+				"const userId = req.params.userId;",
+				"res.send(`User ID: ${userId}`);",
+			"});"
+		],
+		"description": "Access request parameters"
+	  },
+	  "req.route": {
+		"prefix": "req.route",
+		"body": [
+			"app.get('/user/:id?', function userIdHandler (req, res) {",
+				"console.log(req.route)",
+				"res.send('GET')",
+			 " })"
+		],
+		"description": "Access route information"
+	  },
+	  "req.cookies": {
+		"prefix": "req.cookies",
+		"body": [
+			"const express = require('express');",
+"const cookieParser = require('cookie-parser');",
+
+"const app = express();",
+"app.use(cookieParser());",
+
+"app.get('/setcookie', (req, res) => {",
+    "// Set a cookie named 'username'",
+    "res.cookie('username', 'john-doe', { maxAge: 900000, httpOnly: true });",
+    "res.send('Cookie has been set');",
+"});",
+
+"app.get('/getcookie', (req, res) => {",
+   " // Retrieve the value of the 'username' cookie",
+    "const username = req.cookies.username;",
+    "if (username) {",
+        "res.send(`Username: ${username}`);",
+    "} else {",
+        "res.send('Username cookie not found');",
+    "}",
+"});",
+
+"app.listen(3000, () => {",
+    "console.log('Server is running on port 3000');",
+"});"
+		],
+		"description": "Access signed cookies"
+	  },
+	  "req.signedCookies": {
+		"prefix": "req.signedCookies",
+		"body": [
+			"const express = require('express');",
+"const cookieParser = require('cookie-parser');",
+
+"const app = express();",
+"app.use(cookieParser('your-secret-key'));",
+
+"app.get('/setcookie', (req, res) => {",
+    "// Set a signed cookie named 'username'",
+   " res.cookie('username', 'john-doe', { signed: true, maxAge: 900000, httpOnly: true });",
+   " res.send('Signed cookie has been set');",
+"});",
+
+"app.get('/getcookie', (req, res) => {",
+    "// Retrieve the value of the signed 'username' cookie",
+    "const username = req.signedCookies.username;",
+   " if (username) {",
+        "res.send(`Signed Username: ${username}`);",
+    "} else {",
+        "res.send('Signed Username cookie not found');",
+   " }",
+"});",
+
+"app.listen(3000, () => {",
+    "console.log('Server is running on port 3000');",
+"});"
+		],
+		"description": "Access cookies signed with the secret"
+	  },
+	  "req.get()": {
+		"prefix": "req.get",
+		"body": [
+			"const express = require('express');",
+"const app = express();",
+
+"app.get('/example', (req, res) => {",
+    "// Retrieve the value of the 'user-agent' header",
+   " const userAgent = req.get('user-agent');",
+    
+    "// Retrieve the value of the 'accept-language' header",
+   " const acceptLanguage = req.get('accept-language');",
+    
+   " res.send(`User-Agent: ${userAgent}\nAccept-Language: ${acceptLanguage}`);",
+"});",
+
+"app.listen(3000, () => {",
+    "console.log('Server is running on port 3000');",
+"});" 
+		],
+		"description": "Get the value of an HTTP request header"
+	  },
+	  "req.accepts()": {
+		"prefix": "req.accepts",
+		"body": [
+			"const express = require('express');",
+			"const app = express();",
+			
+			"app.get('/data', (req, res) => {",
+			  "// Check if the client accepts JSON or XML",
+			  "if (req.accepts('json')) {",
+				"res.json({ message: 'This is JSON data' });",
+			 " } else if (req.accepts('xml')) {",
+				"res.send('<data>This is XML data</data>');",
+			  "} else {",
+				"res.status(406).send('Not Acceptable');",
+			 " }",
+			"});",
+			
+			"app.listen(3000, () => {",
+			  "console.log('Server is running on port 3000');",
+			"});"
+		],
+		"description": "Check if the requested MIME type is acceptable"
+	  },
+	  "req.acceptsCharset()": {
+		"prefix": "req.acceptsCharset",
+		"body": [
+			"const express = require('express');",
+"const app = express();",
+
+"app.get('/data', (req, res) => {",
+  "// Check if the client can accept UTF-8 encoding",
+  "if (req.acceptsCharset('utf-8')) {",
+    "res.send('Data in UTF-8 encoding');",
+ " } else {",
+    "res.send('Unsupported character encoding');",
+  "}",
+"});",
+
+"app.listen(3000, () => {",
+  "console.log('Server is running on port 3000');",
+"});"
+		],
+		"description": "Check if the requested charset is acceptable"
+	  },
+	  "req.acceptsLanguage()": {
+		"prefix": "req.acceptsLanguage",
+		"body": [
+			"const express = require('express');",
+			"const app = express();",
+			
+			"app.get('/greeting', (req, res) => {",
+			  "// Check if the client accepts English or French",
+			  "if (req.acceptsLanguage('en')) {",
+				"res.send('Hello!');",
+			  "} else if (req.acceptsLanguage('fr')) {",
+				"res.send('Bonjour!');",
+			  "} else {",
+				"res.send('Unsupported language');",
+			  "}",
+			"});",
+			
+			"app.listen(3000, () => {",
+			  "console.log('Server is running on port 3000');",
+			"});"
+		],
+		"description": "Check if the requested language is acceptable"
+	  },
+	  "req.is()": {
+		"prefix": "req.is",
+		"body":[
+			"const express = require('express');",
+			"const app = express();",
+			
+			"// Middleware to parse JSON and form data",
+			"app.use(express.json());",
+			"app.use(express.urlencoded({ extended: false }));",
+			
+			"app.post('/upload', (req, res) => {",
+			  "// Check if the request's content type is JSON",
+			  "if (req.is('json')) {",
+				"// Handle JSON content",
+				"res.json({ message: 'Received JSON data' });",
+			 " } else if (req.is('urlencoded')) {",
+				"// Handle URL-encoded form data",
+				"res.send('Received URL-encoded form data');",
+			  "} else {",
+				"// Unsupported content type",
+				"res.status(400).send('Unsupported content type');",
+			  "}",
+			"});",
+			
+			"app.listen(3000, () => {",
+			  "console.log('Server is running on port 3000');",
+			"});"
+		],
+		"description": "Check the request type"
+	  },
+	  "req.ip": {
+		"prefix": "req.ip",
+		"body": [
+			"const express = require('express');",
+			"const app = express();",
+			
+			"app.get('/', (req, res) => {",
+			  "const clientIP = req.ip;",
+			 " res.send(`Your IP address is: ${clientIP}`);",
+			"});",
+			
+			"app.listen(3000, () => {",
+			 " console.log('Server is running on port 3000');",
+			"});"
+		],
+		"description": "Get the remote IP address of the request"
+	  },
+	  "req.ips": {
+		"prefix": "req.ips",
+		"body": [
+			"const express = require('express');",
+"const app = express();",
+
+"app.get('/', (req, res) => {",
+  "const clientIPs = req.ips;",
+  "res.send(`IP addresses in the chain: ${clientIPs.join(', ')}`);",
+"});",
+
+"app.listen(3000, () => {",
+  "console.log('Server is running on port 3000');",
+"});"
+		],
+		"description": "Get the list of IP addresses from the 'X-Forwarded-For' header"
+	  },
+	  "req.path": {
+		"prefix": "req.path",
+		"body": [
+			"const express = require('express');",
+"const app = express();",
+
+"app.get('/users/:id', (req, res) => {",
+ " const userId = req.params.id;",
+  "const requestPath = req.path;",
+
+  "res.send(`Requested user ID: ${userId}\nPath: ${requestPath}`);",
+"});",
+
+"app.listen(3000, () => {",
+  "console.log('Server is running on port 3000');",
+"});"
+		],
+		"description": "Get the path portion of the request URL"
+	  },
+	  "req.host": {
+		"prefix": "req.host",
+		"body": [
+			"const express = require('express');",
+"const app = express();",
+
+"app.get('/', (req, res) => {",
+ " const hostName = req.host;",
+
+  "res.send(`Host name: ${hostName}`);",
+"});",
+
+"app.listen(3000, () => {",
+  "console.log('Server is running on port 3000');",
+"});"
+		],
+		"description": "Get the hostname of the request"
+	  },
+	  "req.fresh": {
+		"prefix": "req.fresh",
+		"body": [
+			"const express = require('express');",
+"const app = express();",
+
+"app.get('/resource', (req, res) => {",
+ " // Check if the resource is fresh",
+  "if (req.fresh) {",
+   " res.status(304).send(); // Respond with a 'Not Modified' status",
+  "} else {",
+    "// Send the updated resource",
+    "res.status(200).send('This is the updated resource');",
+  "}",
+"});",
+
+"app.listen(3000, () => {",
+ " console.log('Server is running on port 3000');",
+"});"
+		],
+		"description": "Check if the request is 'fresh'"
+	  },
+	  "req.stale": {
+		"prefix": "req.stale",
+		"body": [
+			"const express = require('express');",
+"const app = express();",
+
+"app.get('/resource', (req, res) => {",
+  "// Check if the resource is stale",
+ " if (req.stale) {",
+    "// Send the updated resource",
+   " res.status(200).send('This is the updated resource');",
+ " } else {",
+    "res.status(304).send(); // Respond with a 'Not Modified' status",
+ " }",
+"});",
+
+"app.listen(3000, () => {",
+ " console.log('Server is running on port 3000');",
+"});"
+		],
+		"description": "Check if the request is 'stale'"
+	  },
+	  "req.xhr": {
+		"prefix": "req.xhr",
+		"body": [
+			"const express = require('express');",
+"const app = express();",
+
+"app.get('/data', (req, res) => {",
+  "if (req.xhr) {",
+    "// Handle XHR (AJAX) request",
+    "res.json({ message: 'This is an XHR request' });",
+  "} else {",
+   " res.send('This is a regular request');",
+ " }",
+"});",
+
+"app.listen(3000, () => {",
+  "console.log('Server is running on port 3000');",
+"});"
+		],
+		"description": "Check if the request was made with XMLHttpRequest"
+	  },
+	  "req.protocol": {
+		"prefix": "req.protocol",
+		"body": [
+			"const express = require('express');",
+"const app = express();",
+
+"app.get('/', (req, res) => {",
+ " const protocol = req.protocol;",
+  "res.send(`The protocol used is: ${protocol}`);",
+"});",
+
+"app.listen(3000, () => {",
+  "console.log('Server is running on port 3000');",
+"});"
+		],
+		"description": "Get the protocol of the request"
+	  },
+	  "req.secure": {
+		"prefix": "req.secure",
+		"body": [
+			"const express = require('express');",
+"const app = express();",
+
+"app.get('/', (req, res) => {",
+  "const isSecure = req.secure;",
+  "res.send(`Is the connection secure? ${isSecure}`);",
+"});",
+
+"app.listen(3000, () => {",
+  "console.log('Server is running on port 3000');",
+"});"
+		],
+		"description": "Check if the request is secure (HTTPS)"
+	  },
+	  "req.subdomains": {
+		"prefix": "req.subdomains",
+		"body": [
+			"const express = require('express');",
+"const app = express();",
+
+"app.get('/', (req, res) => {",
+ " const subdomains = req.subdomains;",
+  "res.send(`Subdomains: ${subdomains.join(', ')}`);",
+"});",
+
+"app.listen(3000, () => {",
+  "console.log('Server is running on port 3000');",
+"});"
+		],
+		"description": "Get the subdomains of the request"
+	  },
+	  "req.originalUrl": {
+		"prefix": "req.originalUrl",
+		"body": [
+			"const express = require('express');",
+"const app = express();",
+
+"app.get('/test', (req, res) => {",
+  "const originalUrl = req.originalUrl;",
+  "res.send(`Original URL: ${originalUrl}`);",
+"});",
+
+"{app.listen(3000, () => {}",
+  "console.log('Server is running on port 3000');",
+"});"
+		],
+		"description": "Get the original URL of the request"
+	  },
 	"Response": {
 		"prefix": "Express Response",
 		"body": [
@@ -85,11 +689,408 @@
 			"res.download()",
 			"res.links()",
 			"res.locals",
-			"res.render()",
+			"res.render()"
 			
 		],
 		"description": " Express Response"
 	},
+	"res.status()": {
+		"prefix": "res.status",
+		"body": [
+			"const express = require('express');",
+"const app = express();",
+
+"app.get('/success', (req, res) => {",
+  "// Set the response status to 200 (OK)",
+  "res.status(200).send('Success');",
+"});",
+
+"app.get('/notfound', (req, res) => {",
+  "// Set the response status to 404 (Not Found)",
+ " res.status(404).send('Not Found');",
+"});",
+
+"app.listen(3000, () => {",
+  "console.log('Server is running on port 3000');",
+"});"
+		],
+		"description": "Sets the HTTP response status code"
+	  },
+	  "res.set()": {
+		"prefix": "res.set",
+		"body": [
+			"const express = require('express');",
+"const app = express();",
+
+"app.get('/headers', (req, res) => {",
+ " // Set response headers using res.set()",
+  "res.set('Content-Type', 'text/html');",
+ " res.set('Cache-Control', 'no-cache');",
+
+ " // Send a response",
+  "res.send('<h1>Response Headers Set</h1>');",
+"});",
+
+"app.listen(3000, () => {",
+  "console.log('Server is running on port 3000');",
+"});"
+		],
+		"description": "Sets an HTTP response header"
+	  },
+	  "res.get()": {
+		"prefix": "res.get",
+		"body": [
+			"const express = require('express');",
+"const app = express();",
+
+"app.get('/headers', (req, res) => {",
+  "// Set response headers",
+  "res.set('Content-Type', 'text/html');",
+ " res.set('Cache-Control', 'no-cache');",
+
+  "// Retrieve the value of a response header using res.get()",
+  "const contentType = res.get('Content-Type');",
+  "const cacheControl = res.get('Cache-Control');",
+
+  "// Send a response with the retrieved header values",
+  "res.send(`<p>Content-Type: ${contentType}</p><p>Cache-Control: ${cacheControl}</p>`);",
+"});",
+
+"app.listen(3000, () => {",
+"  console.log('Server is running on port 3000');",
+"});"
+		],
+		"description": "Gets an HTTP request header"
+	  },
+	  "res.cookie()": {
+		"prefix": "res.cookie",
+		"body": [
+			"const express = require('express');",
+"const app = express();",
+
+"app.get('/set-cookie', (req, res) => {",
+  "// Set a cookie using res.cookie()",
+  "res.cookie('username', 'john_doe', { maxAge: 3600000, httpOnly: true });",
+
+  "// Send a response",
+  "res.send('Cookie has been set');",
+"});",
+
+"app.listen(3000, () => {",
+  "console.log('Server is running on port 3000');",
+"});"
+		],
+		"description": "Sets an HTTP response cookie"
+	  },
+	  "res.clearCookie()": {
+		"prefix": "res.clearCookie",
+		"body": [
+			"const express = require('express');",
+"const app = express();",
+
+"app.get('/clear-cookie', (req, res) => {",
+ " // Clear a cookie using res.clearCookie()",
+ " res.clearCookie('username');",
+
+  "// Send a response",
+ " res.send('Cookie has been cleared');",
+"});",
+
+"app.listen(3000, () => {",
+  "console.log('Server is running on port 3000');",
+"});"
+		],
+		"description": "Clears an HTTP response cookie"
+	  },
+	  "res.redirect()": {
+		"prefix": "res.redirect",
+		"body": [
+			"const express = require('express');",
+"const app = express();",
+
+"app.get('/redirect-example', (req, res) => {",
+  "// Redirect to a different URL",
+ " res.redirect('https://www.example.com');",
+"});",
+
+"app.listen(3000, () => {",
+  "console.log('Server is running on port 3000');",
+"});"
+		],
+		"description": "Redirects the client to a different URL"
+	  },
+	  "res.location()": {
+		"prefix": "res.location",
+		"body": [
+			"const express = require('express');",
+"const app = express();",
+
+"app.get('/set-location', (req, res) => {",
+  "// Set the 'Location' header",
+ " res.location('https://www.example.com');",
+  "res.status(301).send('Redirecting...');",
+"});",
+
+"app.listen(3000, () => {",
+ " console.log('Server is running on port 3000');",
+"});"
+		],
+		"description": "Sets the response Location HTTP header"
+	  },
+	  "res.send()": {
+		"prefix": "res.send",
+		"body": [
+			"const express = require('express');",
+"const app = express();",
+
+"// Sending a simple string response",
+"app.get('/string', (req, res) => {",
+  "res.send('Hello, World!');",
+"});",
+
+"// Sending HTML response",
+"app.get('/html', (req, res) => {",
+  "const htmlContent = '<h1>Welcome to my website</h1>';",
+  "res.send(htmlContent);",
+"});",
+
+"// Sending JSON response",
+"app.get('/json', (req, res) => {",
+ " const jsonData = { message: 'Hello, JSON!' };",
+  "res.send(jsonData);",
+"});",
+
+"app.listen(3000, () => {",
+  "console.log('Server is running on port 3000');",
+"});"
+		],
+		"description": "Sends an HTTP response"
+	  },
+	  "res.json()": {
+		"prefix": "res.json",
+		"body": [
+			"const express = require('express');",
+"const app = express();",
+
+"app.get('/user', (req, res) => {",
+  "const userData = {",
+    "id: 1,",
+   " username: 'john_doe',",
+    "email: 'john@example.com'",
+  "};",
+
+  "res.json(userData);",
+"});",
+
+"app.listen(3000, () => {",
+  "console.log('Server is running on port 3000');",
+"});"
+		],
+		"description": "Sends a JSON response"
+	  },
+	  "res.jsonp()": {
+		"prefix": "res.jsonp",
+		"body": [
+			"const express = require('express');",
+"const app = express();",
+
+"app.get('/user', (req, res) => {",
+  "const userData = {",
+    "id: 1,",
+    "username: 'john_doe',",
+    "email: 'john@example.com'",
+  "};",
+
+  "res.jsonp(userData);",
+"});",
+
+"app.listen(3000, () => {",
+ " console.log('Server is running on port 3000');",
+"});"
+		],
+		"description": "Sends a JSONP response"
+	  },
+	  "res.type()": {
+		"prefix": "res.type",
+		"body": [
+			"const express = require('express');",
+"const app = express();",
+
+"app.get('/json', (req, res) => {",
+  "// Set the Content-Type header to JSON",
+  "res.type('json');",
+  
+  "const jsonData = {",
+    "message: 'This is a JSON response'",
+  "};",
+
+  "res.json(jsonData);",
+"});",
+
+"app.get('/html', (req, res) => {",
+  "// Set the Content-Type header to HTML",
+  "res.type('html');",
+  
+  "const htmlData = '<h1>This is an HTML response</h1>';",
+
+  "res.send(htmlData);",
+"});",
+
+"app.listen(3000, () => {",
+ " console.log('Server is running on port 3000');",
+"});"
+		],
+		"description": "Sets the Content-Type of the response"
+	  },
+	  "res.format()": {
+		"prefix": "res.format",
+		"body": [
+			"const express = require('express');",
+"const app = express();",
+
+"app.get('/', (req, res) => {",
+  "// Use res.format() to handle different response formats",
+  "res.format({",
+    "'text/plain': () => {",
+      "res.send('This is a plain text response');",
+    "},",
+    "'text/html': () => {",
+     " res.send('<h1>This is an HTML response</h1>');",
+   " },",
+    "'application/json': () => {",
+      "res.json({ message: 'This is a JSON response' });",
+   " },",
+    "default: () => {",
+      "// Handle cases where the client's preferred format is not supported",
+      "res.status(406).send('Not Acceptable');",
+    "}",
+  "});",
+"});",
+
+"app.listen(3000, () => {",
+  "console.log('Server is running on port 3000');",
+"});"
+		],
+		"description": "Sets the response type based on the accept header"
+	  },
+	  "res.attachment()": {
+		"prefix": "res.attachment",
+		"body": [
+			"const express = require('express');",
+"const app = express();",
+
+"app.get('/download', (req, res) => {",
+ " // Set the Content-Disposition header using res.attachment()",
+  "res.attachment('my-file.txt');",
+
+  "// Send some content as the response",
+  "res.send('This is the content of the downloaded file.');",
+"});",
+
+"app.listen(3000, () => {",
+  "console.log('Server is running on port 3000');",
+"});"
+		],
+		"description": "Sets the Content-Disposition header to 'attachment'"
+	  },
+	  "res.sendfile()": {
+		"prefix": "res.sendfile",
+		"body": [
+			"const express = require('express');",
+"const app = express();",
+
+"// Serve static files from the 'public' directory",
+"app.use(express.static('public'));",
+
+"app.get('/download', (req, res) => {",
+  "// Send a specific file using res.sendFile()",
+  "res.sendFile('path/to/my-file.txt');",
+"});",
+
+"app.listen(3000, () => {",
+  "console.log('Server is running on port 3000');",
+"});"
+		],
+		"description": "Sends a file as an octet stream"
+	  },
+	  "res.download()": {
+		"prefix": "res.download",
+		"body": [
+			"const express = require('express');",
+"const app = express();",
+
+"// Serve static files from the 'downloads' directory",
+"app.use(express.static('downloads'));",
+
+"app.get('/download', (req, res) => {",
+  "// Trigger a file download using res.download()",
+  "res.download('path/to/my-file.pdf', 'custom-file-name.pdf');",
+"});",
+
+"app.listen(3000, () => {",
+ " console.log('Server is running on port 3000');",
+"});"
+		],
+		"description": "Sends a file as an attachment"
+	  },
+	  "res.links()": {
+		"prefix": "res.links",
+		"body": [
+			"const express = require('express');",
+"const app = express();",
+
+"app.get('/', (req, res) => {",
+  "const links = [",
+    "{ rel: 'stylesheet', href: 'https://example.com/styles.css' },",
+    "{ rel: 'alternate', href: 'https://example.com/rss.xml', type: 'application/rss+xml' }",
+ " ];",
+
+ " res.links(links);",
+  "res.send('Hello, Express!');",
+"});",
+
+"app.listen(3000, () => {",
+  "console.log('Server is running on port 3000');",
+"});"
+		],
+		"description": "Sends Link headers"
+	  },
+	  "res.locals": {
+		"prefix": "res.locals",
+		"body": [
+			"const express = require('express');",
+"const app = express();",
+
+"// Middleware to set a global variable",
+"app.use((req, res, next) => {",
+ " res.locals.currentUser = 'John';",
+  "next();",
+"});",
+
+"app.get('/', (req, res) => {",
+ " // The value set in res.locals is available in the view template",
+  "res.render('index', { pageTitle: 'Home' });",
+"});",
+
+"app.listen(3000, () => {",
+  "console.log('Server is running on port 3000');",
+"});"
+		],
+		"description": "An object that contains response local variables"
+	  },
+	  "res.render()": {
+		"prefix": "res.render",
+		"body":[
+			"app.get('/', (req, res) => {",
+				"const pageTitle = 'Home';",
+				"const currentUser = 'John';",
+			  
+				"// Render the view template and send it as the response",
+				"res.render('index', { pageTitle, currentUser });",
+			  "});"
+		],
+		"description": "Renders a view and sends the HTML response"
+	  },
 	"Router": {
 		"prefix": "Express Router",
 		"body": [
@@ -98,11 +1099,125 @@
 		    "router.use()",
 			"router.param()",
 			"router.route()",
-			"router.VERB()",
+			"router.VERB()"
 			
 		],
 		"description": " Express Router"
 	},
+	"Router()": {
+		"prefix": "Router",
+		"body": [
+			"const express = require('express');",
+"const app = express();",
+"const router = express.Router();",
+
+"router.get('/', (req, res) => {",
+  "res.send('This is the home page');",
+"});",
+
+"router.get('/about', (req, res) => {",
+  "res.send('This is the about page');",
+"});",
+
+"app.use('/main', router);",
+
+"app.listen(3000, () => {",
+  "console.log('Server is running on port 3000');",
+"});"
+		],
+		"description": "Creates an instance of Express.js Router"
+	  },
+	  "router.use()": {
+		"prefix": "router.use",
+		"body": [
+			"router.use('/restricted', requireAuthentication); // Middleware only for routes under /main/restricted",
+"router.get('/restricted/resource', (req, res) => {",
+ " res.send('Restricted resource');",
+"});"
+		],
+		"description": "Mounts a middleware function on the router"
+	  },
+	  "router.param()": {
+		"prefix": "router.param",
+		"body": [
+			"const express = require('express');",
+			"const app = express();",
+			"const router = express.Router();",
+			
+			"// Middleware function to handle user ID parameter",
+			"router.param('id', (req, res, next, id) => {",
+			  "// Perform operations related to the user ID, such as fetching user data from a database",
+			  "console.log('Fetching user with ID:', id);",
+			  "req.user = { id, name: 'John Doe' }; // Simulated user data",
+			 " next(); // Call next to move to the next middleware or route handler",
+			"});",
+			
+			"// Route handler that uses the user ID parameter",
+			"router.get('/users/:id', (req, res) => {",
+			  "const user = req.user; // User data from the middleware",
+			  "res.send(`User ID: ${user.id}, Name: ${user.name}`);",
+			"});",
+			"app.use('/api', router);",
+			
+			"app.listen(3000, () => {",
+			  "console.log('Server is running on port 3000');",
+			"});"
+		],
+		"description": "Defines a parameter middleware on the router"
+	  },
+	  "router.route()": {
+		"prefix": "router.route",
+		"body": [
+			"const express = require('express');",
+			"const app = express();",
+			"const router = express.Router();",
+			
+			"// Define a route handler using router.route()",
+			"router.route('/users')",
+			  ".get((req, res) => {",
+				"// Logic to fetch and send a list of users",
+				"res.send('List of users');",
+			 " })",
+			  ".post((req, res) => {",
+				"// Logic to create a new user",
+				"res.send('New user created');",
+			 " });",
+			
+			"app.use('/api', router);",
+			
+			"app.listen(3000, () => {",
+			 " console.log('Server is running on port 3000');",
+			"});"
+		],
+		"description": "Creates a route handler for a specific path on the router"
+	  },
+	  "router.VERB()": {
+		"prefix": "router.VERB",
+		"body": [
+			"const express = require('express');",
+			"const app = express();",
+			"const router = express.Router();",
+			
+			"// Define a route handler for the GET request",
+			"router.get('/users', (req, res) => {",
+			  "// Logic to fetch and send a list of users",
+			 " res.send('List of users');",
+			"});",
+			
+			"// Define a route handler for the POST request",
+			"router.post('/users', (req, res) => {",
+			  "// Logic to create a new user",
+			  "res.send('New user created');",
+			"});",
+			
+			"app.use('/api', router);",
+			
+			"app.listen(3000, () => {",
+			  "console.log('Server is running on port 3000');",
+			"});"
+		],
+		"description": "Defines a route handler for a specific HTTP VERB on the router"
+	  },
 	"Middleware": {
 		"prefix": "Express Middleware",
 		"body": [
@@ -122,11 +1237,377 @@
 			"serveStatic()",
 			"timeout()",
 			"vhost()",
-		    "session()",
-			
+		    "session()"
+		
 		],
 		"description": " Express Middleware"
 	},
+	"bodyParser()": {
+		"prefix": "bodyParser",
+		"body":[
+			"const express = require('express');",
+"const bodyParser = require('body-parser');",
+
+"const app = express();",
+
+"// Parse JSON bodies for Content-Type: application/json",
+"app.use(bodyParser.json());",
+
+"// Parse URL-encoded bodies for Content-Type: application/x-www-form-urlencoded",
+"app.use(bodyParser.urlencoded({ extended: true }));",
+
+"app.post('/data', (req, res) => {",
+  "// Access parsed request body",
+ " const data = req.body;",
+ " res.send(data);",
+"});",
+
+"app.listen(3000, () => {",
+ " console.log('Server is running on port 3000');",
+"});"
+		] ,
+		"description": "Parses incoming request bodies in JSON and URL-encoded formats"
+	  },
+	  "compress()": {
+		"prefix": "compress",
+		"body": [
+			"const express = require('express');",
+"const compression = require('compression');",
+
+"const app = express();",
+
+"// Enable response compression",
+"app.use(compression());",
+
+"app.get('/', (req, res) => {",
+ " res.send('Hello, Express with Compression!');",
+"});",
+
+"app.listen(3000, () => {",
+  "console.log('Server is running on port 3000');",
+"});"
+		],
+		"description": "Compresses HTTP responses"
+	  },
+	  "cookieParser()": {
+		"prefix": "cookieParser",
+		"body": [
+			"const express = require('express');",
+			"const cookieParser = require('cookie-parser');",
+			
+			"const app = express();",
+			
+			"// Use the cookie-parser middleware",
+			"app.use(cookieParser());",
+			
+			"app.get('/', (req, res) => {",
+			  "// Get a specific cookie value",
+			 " const username = req.cookies.username;",
+			
+			 " // Send the cookie value in the response",
+			  "res.send(`Hello, ${username || 'Guest'}!`);",
+			"});",
+			
+			"app.listen(3000, () => {",
+			 " console.log('Server is running on port 3000');",
+			"});"
+		],
+		"description": "Parses cookies in the request headers"
+	  },
+	  "cookieSession()": {
+		"prefix": "cookieSession",
+		"body": [
+			"const express = require('express');",
+			"const cookieSession = require('cookie-session');",
+			
+			"const app = express();",
+			
+			"// Use the cookie-session middleware",
+			"app.use(cookieSession({",
+			  "name: 'session',",
+			 " keys: ['key1', 'key2'],",
+			 " maxAge: 24 * 60 * 60 * 1000, // 1 day",
+			"}));",
+			
+			"app.get('/', (req, res) => {",
+			  "// Store a value in the session",
+			 " req.session.username = 'Alice';",
+			
+			 " // Retrieve the value from the session",
+			 " const username = req.session.username;",
+			
+			  "// Send the session value in the response",
+			  "res.send(`Hello, ${username || 'Guest'}!`);",
+			"});",
+			
+			"app.listen(3000, () => {",
+			 " console.log('Server is running on port 3000');",
+			"});"
+		],
+		"description": "Stores session data in cookies"
+	  },
+	  "csrf()": {
+		"prefix": "csrf",
+		"body": [
+			"const express = require('express');",
+			"const csrf = require('csurf');",
+			
+			"const app = express();",
+			
+			"// Use the csrf middleware",
+			"app.use(csrf({ cookie: true }));",
+			
+			"app.get('/', (req, res) => {",
+			  "// Generate a CSRF token and send it to the client",
+			  "res.cookie('XSRF-TOKEN', req.csrfToken());",
+			  
+			  "// Render a form that includes the CSRF token",
+			 " res.send(`",
+				"<form method='post' action='/submit'>",
+				 " <input type='hidden' name='_csrf' value='${req.csrfToken()}'>",
+				 " <input type='text' name='data'>",
+				  "<button type='submit'>Submit</button>",
+				"</form>",
+			  "`);",
+			"});",
+			
+			"app.post('/submit', (req, res) => {",
+			 " // Verify the CSRF token before processing the request",
+			  "res.send('Form submitted successfully!');",
+			"});",
+			
+			"app.listen(3000, () => {",
+			  "console.log('Server is running on port 3000');",
+			"});"
+		],
+		"description": "Implements Cross-Site Request Forgery protection"
+	  },
+	  "errorhandler()": {
+		"prefix": "errorhandler",
+		"body": [
+			"const express = require('express');",
+			"const errorhandler = require('errorhandler');",
+			
+			"const app = express();",
+			
+			"// Use the errorhandler middleware only in development environment",
+			"if (process.env.NODE_ENV === 'development') {",
+			  "app.use(errorhandler());",
+			"}",
+			
+			"app.get('/', (req, res) => {",
+			  "// Simulate an error for demonstration purposes",
+			  "throw new Error('Oops, something went wrong!');",
+			"});",
+			
+			"app.listen(3000, () => {",
+			  "console.log('Server is running on port 3000');",
+			"});"
+		],
+		"description": "Handles errors and displays a stack trace"
+	  },
+	  "methodOverride()": {
+		"prefix": "methodOverride",
+		"body": [
+			"const express = require('express');",
+			"const methodOverride = require('method-override');",
+			
+			"const app = express();",
+			
+			"// Use the method-override middleware",
+			"app.use(methodOverride('_method'));",
+			
+			"app.use(express.urlencoded({ extended: true }));",
+			
+			"app.get('/', (req, res) => {",
+			  "'res.send(`'",
+				"<form method='POST' action='/resource/123?_method=DELETE'>",
+				 " <button type='submit'>Delete Resource</button>",
+				"</form>",
+			  "`);",
+			"});",
+			
+			"app.delete('/resource/:id', (req, res) => {",
+			  "const resourceId = req.params.id;",
+			 " // Perform deletion logic here",
+			 " res.send(`Resource ${resourceId} deleted`);",
+			"});",
+			
+			"app.listen(3000, () => {",
+			  "console.log('Server is running on port 3000');",
+			"});"
+		],
+		"description": "Simulates HTTP PUT and DELETE methods"
+	  },
+	  "morgan()": {
+		"prefix": "morgan",
+		"body":[
+			"const express = require('express');",
+			"const morgan = require('morgan');",
+			
+			"const app = express();",
+			
+			"// Use the morgan middleware with the 'combined' format",
+			"app.use(morgan('combined'));",
+			
+			"app.get('/', (req, res) => {",
+			  "res.send('Hello, World!');",
+			"});",
+			
+			"app.listen(3000, () => {",
+			  "console.log('Server is running on port 3000');",
+			"});"
+		],
+		"description": "Logs HTTP requests"
+	  },
+	  "responseTime()": {
+		"prefix": "responseTime",
+		"body":[
+			"const express = require('express');",
+			"const responseTime = require('response-time');",
+			
+			"const app = express();",
+			
+			"// Use the responseTime middleware",
+			"app.use(responseTime());",
+			
+			"app.get('/', (req, res) => {",
+			  "res.send('Hello, World!');",
+			"});",
+			
+			"app.listen(3000, () => {",
+			  "console.log('Server is running on port 3000');",
+			"});"
+		],
+		"description": "Measures response time"
+	  },
+	  "favicon()": {
+		"prefix": "favicon",
+		"body": [
+			"const express = require('express');",
+			"const favicon = require('serve-favicon');",
+			"const path = require('path');",
+			
+			"const app = express();",
+			
+			"// Serve the favicon from the 'public' directory",
+			"app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));",
+			
+			"app.get('/', (req, res) => {",
+			 " res.send('Hello, World!');",
+			"});",
+			
+			"app.listen(3000, () => {",
+			  "console.log('Server is running on port 3000');",
+			"});"
+		],
+		"description": "Serves a favicon"
+	  },
+	  "directory()": {
+		"prefix": "directory",
+		"body": [
+			"const express = require('express');",
+			"const path = require('path');",
+			
+			"const app = express();",
+			
+			"// Serve static files from the 'public' directory",
+			"app.use(express.static(path.join(__dirname, 'public')));",
+			
+			"app.get('/', (req, res) => {",
+			  "res.send('Hello, World!');",
+			"});",
+			
+			"app.listen(3000, () => {",
+			  "console.log('Server is running on port 3000');",
+			"});"
+		],
+		"description": "Serves directory listings"
+	  },
+	  "serveStatic()": {
+		"prefix": "serveStatic",
+		"body": [
+			"const serveStatic = require('serve-static');",
+			"const path = require('path');",
+			
+			"const app = express();",
+			
+			"// Serve static files using the serve-static middleware",
+			"app.use(serveStatic(path.join(__dirname, 'public')));",
+			
+			"app.get('/', (req, res) => {",
+			  "res.send('Hello, World!');",
+			"});",
+			
+			"app.listen(3000, () => {",
+			 " console.log('Server is running on port 3000');",
+			"});"
+		],
+		"description": "Serves static files"
+	  },
+	  "timeout()": {
+		"prefix": "timeout",
+		"body": [
+			"const express = require('express');",
+
+"const app = express();",
+
+"// Apply the timeout middleware with a specified timeout value (in milliseconds)",
+"app.use(express.timeout(5000)); // 5000 milliseconds (5 seconds)",
+
+"app.get('/slow', (req, res) => {",
+ " // Simulate a slow request that takes longer than the specified timeout",
+  "setTimeout(() => {",
+    "res.send('Slow request completed.');",
+  "}, 6000); // 6000 milliseconds (6 seconds)",
+"});",
+
+"app.get('/fast', (req, res) => {",
+ " // Respond immediately to a fast request",
+  "res.send('Fast request completed.');",
+"});",
+
+"app.listen(3000, () => {",
+  "console.log('Server is running on port 3000');",
+"});"
+		],
+		"description": "Sets a timeout for requests"
+	  },
+	  "vhost()": {
+		"prefix": "vhost",
+		"body":[
+			"const express = require('express');",
+"const vhost = require('vhost');",
+
+"const app = express();",
+
+"// Create sub-applications for different virtual hosts",
+"const app1 = express();",
+"app1.get('/', (req, res) => {",
+  "res.send('Hello from Virtual Host 1');",
+"});",
+
+"const app2 = express();",
+"app2.get('/', (req, res) => {",
+ " res.send('Hello from Virtual Host 2');",
+"});",
+
+"// Use the vhost middleware to assign sub-applications to different hostnames",
+"app.use(vhost('host1.com', app1));",
+"app.use(vhost('host2.com', app2));",
+
+"app.listen(3000, () => {",
+  "console.log('Server is running on port 3000');",
+"});"
+		],
+		"description": "Routes requests based on the hostname"
+	  },
+	  "session()": {
+		"prefix": "session",
+		"body": [],
+		"description": "Routes requests based on the hostname"
+	  }
+	
 	
 	
 }

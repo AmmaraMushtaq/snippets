@@ -27,6 +27,51 @@
 		],
 		"description": "Sequelize Core Concepts"
 	},
+	"Model Basics": {
+		"prefix": "model_basics",
+		"body": "// Basic model definition in Sequelize\n// ...",
+		"description": "Basic model definition in Sequelize"
+	  },
+	  "Model Instances": {
+		"prefix": "model_instances",
+		"body": "// Creating and working with model instances\n// ...",
+		"description": "Creating and working with model instances"
+	  },
+	  "Model Querying - Basics": {
+		"prefix": "model_querying_basics",
+		"body": "// Basic querying with Sequelize models\n// ...",
+		"description": "Basic querying with Sequelize models"
+	  },
+	  "Model Querying - Finders": {
+		"prefix": "model_querying_finders",
+		"body": "// Using finders to retrieve data with Sequelize\n// ...",
+		"description": "Using finders to retrieve data with Sequelize"
+	  },
+	  "Getters, Setters & Virtuals": {
+		"prefix": "getters_setters_virtuals",
+		"body": "// Defining getters, setters, and virtual fields in Sequelize\n// ...",
+		"description": "Defining getters, setters, and virtual fields in Sequelize"
+	  },
+	  "Validations & Constraints": {
+		"prefix": "validations_constraints",
+		"body": "// Adding validations and constraints to Sequelize models\n// ...",
+		"description": "Adding validations and constraints to Sequelize models"
+	  },
+	  "Raw Queries": {
+		"prefix": "raw_queries",
+		"body": "// Executing raw SQL queries with Sequelize\n// ...",
+		"description": "Executing raw SQL queries with Sequelize"
+	  },
+	  "Associations": {
+		"prefix": "associations",
+		"body": "// Defining and working with model associations in Sequelize\n// ...",
+		"description": "Defining and working with model associations in Sequelize"
+	  },
+	  "Paranoid": {
+		"prefix": "paranoid",
+		"body": "// Using paranoid mode to implement soft deletes in Sequelize\n// ...",
+		"description": "Using paranoid mode to implement soft deletes in Sequelize"
+	  },
 	"Advanced Association Concepts": {
 		"prefix": "Sequelize Advanced Association Concepts",
 		"body": [
@@ -37,6 +82,31 @@
 		],
 		"description": "  Advanced Association Concepts"
 	},
+	"Eager Loading": {
+		"prefix": "eager_loading",
+		"body": "// Eager loading associations in Sequelize queries\n// ...",
+		"description": "Eager loading associations in Sequelize queries"
+	  },
+	  "Creating with Associations": {
+		"prefix": "creating_with_associations",
+		"body": "// Creating records with associated data using Sequelize\n// ...",
+		"description": "Creating records with associated data using Sequelize"
+	  },
+	  "Advanced M:N Associations": {
+		"prefix": "advanced_mn_associations",
+		"body": "// Defining advanced many-to-many associations in Sequelize\n// ...",
+		"description": "Defining advanced many-to-many associations in Sequelize"
+	  },
+	  "Association Scopes": {
+		"prefix": "association_scopes",
+		"body": "// Using association scopes to customize queries in Sequelize\n// ...",
+		"description": "Using association scopes to customize queries in Sequelize"
+	  },
+	  "Polymorphic Associations": {
+		"prefix": "polymorphic_associations",
+		"body": "// Implementing polymorphic associations in Sequelize\n// ...",
+		"description": "Implementing polymorphic associations in Sequelize"
+	  },
 	"TOther topics": {
 		"prefix": "Sequelize TOther topics",
 		"body": [
@@ -64,6 +134,111 @@
 		],
 		"description": " Sequelize TOther topics"
 	},
+	"Other Data Types": {
+		"prefix": "other_data_types",
+		"body": "// Defining and using other data types in Sequelize models\n// ...",
+		"description": "Defining and using other data types in Sequelize models"
+	  },
+	  "Using Sequelize in AWS Lambda": {
+		"prefix": "aws_lambda",
+		"body": "// Using Sequelize in AWS Lambda functions\n// ...",
+		"description": "Using Sequelize in AWS Lambda functions"
+	  },
+	  "Connection Pool": {
+		"prefix": "connection_pool",
+		"body": "// Configuring and using a connection pool in Sequelize\n// ...",
+		"description": "Configuring and using a connection pool in Sequelize"
+	  },
+	  "Constraints & Circularities": {
+		"prefix": "constraints_circularities",
+		"body": "// Handling constraints and circularities in Sequelize models\n// ...",
+		"description": "Handling constraints and circularities in Sequelize models"
+	  },
+	  "Dialect-Specific Things": {
+		"prefix": "dialect_specific",
+		"body": "// Dealing with dialect-specific behaviors in Sequelize\n// ...",
+		"description": "Dealing with dialect-specific behaviors in Sequelize"
+	  },
+	  "Extending Data Types": {
+		"prefix": "extending_data_types",
+		"body": "// Extending Sequelize's data types for custom functionality\n// ...",
+		"description": "Extending Sequelize's data types for custom functionality"
+	  },
+	  "Hooks": {
+		"prefix": "hooks",
+		"body": "// Using hooks to add functionality to Sequelize operations\n// ...",
+		"description": "Using hooks to add functionality to Sequelize operations"
+	  },
+	  "Indexes": {
+		"prefix": "indexes",
+		"body": "// Defining and using indexes in Sequelize models\n// ...",
+		"description": "Defining and using indexes in Sequelize models"
+	  },
+	  "Working with Legacy Tables": {
+		"prefix": "legacy_tables",
+		"body": "// Integrating Sequelize with legacy database tables\n// ...",
+		"description": "Integrating Sequelize with legacy database tables"
+	  },
+	  "Legal Notice": {
+		"prefix": "legal_notice",
+		"body": "// Including legal notice and licensing information in Sequelize\n// ...",
+		"description": "Including legal notice and licensing information in Sequelize"
+	  },
+	  "Migrations": {
+		"prefix": "migrations",
+		"body": "// Managing database migrations with Sequelize\n// ...",
+		"description": "Managing database migrations with Sequelize"
+	  },
+	  "Naming Strategies": {
+		"prefix": "naming_strategies",
+		"body": "// Customizing naming strategies for Sequelize models\n// ...",
+		"description": "Customizing naming strategies for Sequelize models"
+	  },
+	  "Optimistic Locking": {
+		"prefix": "optimistic_locking",
+		"body": "// Implementing optimistic locking with Sequelize\n// ...",
+		"description": "Implementing optimistic locking with Sequelize"
+	  },
+	  "Query Interface": {
+		"prefix": "query_interface",
+		"body": "// Using Sequelize's query interface for custom queries\n// ...",
+		"description": "Using Sequelize's query interface for custom queries"
+	  },
+	  "Read Replication": {
+		"prefix": "read_replication",
+		"body": "// Setting up and using read replication with Sequelize\n// ...",
+		"description": "Setting up and using read replication with Sequelize"
+	  },
+	  "Resources": {
+		"prefix": "resources",
+		"body": "// Referencing resources and tutorials for Sequelize development\n// ...",
+		"description": "Referencing resources and tutorials for Sequelize development"
+	  },
+	  "Scopes": {
+		"prefix": "scopes",
+		"body": "// Defining and using scopes in Sequelize models\n// ...",
+		"description": "Defining and using scopes in Sequelize models"
+	  },
+	  "Sub Queries": {
+		"prefix": "sub_queries",
+		"body": "// Working with sub queries in Sequelize\n// ...",
+		"description": "Working with sub queries in Sequelize"
+	  },
+	  "Transactions": {
+		"prefix": "transactions",
+		"body": "// Managing transactions in Sequelize for data consistency\n// ...",
+		"description": "Managing transactions in Sequelize for data consistency"
+	  },
+	  "TypeScript": {
+		"prefix": "typescript",
+		"body": "// Using Sequelize with TypeScript for strong typing\n// ...",
+		"description": "Using Sequelize with TypeScript for strong typing"
+	  },
+	  "Upgrade to v6": {
+		"prefix": "upgrade_v6",
+		"body": "// Guidelines for upgrading to Sequelize v6\n// ...",
+		"description": "Guidelines for upgrading to Sequelize v6"
+	  },
 	"Moved": {
 		"prefix": "Sequelize Moved",
 		"body": [
