@@ -39,52 +39,166 @@
 	},
 	"First steps": {
 		"prefix": "first_steps",
-		"body": "// Begin your journey here...",
+		"body": [
+
+		],
 		"description": "Getting started with web development"
 	  },
 	  "Controllers": {
-		"prefix": "controllers",
-		"body": "class ${1:ControllerName} {\n  ${2:// Controller methods}\n}",
+		"prefix": "Nest controllers",
+		"body": [
+			"import { Controller, Get, Post, Body } from '@nestjs/common';",
+"import { UserService } from './user.service';",
+"import { CreateUserDto } from './dto/create-user.dto';",
+
+"@Controller('users')",
+"export class UserController {",
+  "constructor(private readonly userService: UserService) {}",
+
+  "@Get()",
+  "findAll() {",
+   " return this.userService.findAll();",
+  "}",
+  "@Post()",
+  "create(@Body() createUserDto: CreateUserDto) {",
+    "return this.userService.create(createUserDto);",
+  "}",
+"}"
+		],
 		"description": "Create controller classes"
 	  },
 	  "Providers": {
-		"prefix": "providers",
-		"body": "class ${1:ProviderName} {\n  ${2:// Provider methods}\n}",
+		"prefix": "Nest providers",
+		"body": [
+			"import { Injectable, Inject } from '@nestjs/common';",
+			"import { UserService } from './user.service';",
+			
+			"@Injectable()",
+			"export class UserController {",
+			  "constructor(@Inject(UserService) private readonly userService: UserService) {}",
+			"}"
+		],
 		"description": "Implement provider classes"
 	  },
 	  "Modules": {
-		"prefix": "modules",
-		"body": "@Module({\n  imports: [],\n  controllers: [],\n  providers: [],\n})\nclass ${1:ModuleName} {}\n",
+		"prefix": "Nest modules",
+		"body":[
+			"import { Module } from '@nestjs/common';",
+			"import { CatsController } from './cats.controller';",
+			"import { CatsService } from './cats.service';",
+			
+			"@Module({",
+			  "controllers: [CatsController],",
+			  "providers: [CatsService],",
+			  "exports: [CatsService]",
+			"})"
+		],
 		"description": "Define application modules"
 	  },
 	  "Middleware": {
-		"prefix": "middleware",
-		"body": "function ${1:middlewareName}(${2:req}, ${3:res}, ${4:next}) {\n  ${5:// Middleware logic}\n  ${6:next()};\n}",
+		"prefix": "Nest middleware",
+		"body": [
+			"import { MiddlewareConsumer, Module } from '@nestjs/common';",
+			"import { LoggerMiddleware } from './logger.middleware';",
+			"import { UserController } from './user.controller';",
+			
+			"@Module({",
+			  "controllers: [UserController],",
+			"})",
+			"export class UserModule {",
+			  "configure(consumer: MiddlewareConsumer) {",
+				"consumer.apply(LoggerMiddleware).forRoutes('users');",
+			 " }",
+			"}"
+		],
 		"description": "Create custom middleware"
 	  },
 	  "Exception filters": {
-		"prefix": "exception_filters",
-		"body": "@Catch(${1:ExceptionType})\nexport class ${2:ExceptionFilterName} implements ExceptionFilter {\n  catch(exception: ${1:ExceptionType}, host: ArgumentsHost) {\n    ${3://// Handle exception}\n  }\n}",
+		"prefix": "Nest exception_filters",
+		"body": [
+			"async findAll() {",
+				"try {",
+				  "await this.service.findAll()",
+				"} catch (error) { ",
+				  "throw new HttpException({",
+					"status: HttpStatus.FORBIDDEN,",
+					"error: 'This is a custom message',",
+				  "}, HttpStatus.FORBIDDEN, {",
+					"cause: error",
+				  "});",
+				"}",
+			  "}"
+		],
 		"description": "Implement exception filters"
 	  },
 	  "Pipes": {
-		"prefix": "pipes",
-		"body": "@Pipe()\nexport class ${1:PipeName} implements PipeTransform {\n  transform(value: any, metadata: ArgumentMetadata) {\n    ${2://// Transform value}\n    return value;\n  }\n}",
+		"prefix": "Nest pipes",
+		"body":[
+			"ValidationPipe",
+"ParseIntPipe",
+"ParseFloatPipe",
+"ParseBoolPipe",
+"ParseArrayPipe",
+"ParseUUIDPipe",
+"ParseEnumPipe",
+"DefaultValuePipe",
+"ParseFilePipe"
+		],
 		"description": "Create custom pipes"
 	  },
 	  "Guards": {
-		"prefix": "guards",
-		"body": "@Guard()\nexport class ${1:GuardName} implements CanActivate {\n  canActivate(context: ExecutionContext): boolean | Promise<boolean> | Observable<boolean> {\n    ${2://// Guard logic}\n    return true;\n  }\n}",
+		"prefix": "Nest guards",
+		"body": [
+			"import { Injectable, CanActivate, ExecutionContext } from '@nestjs/common';",
+"import { Observable } from 'rxjs';",
+
+"@Injectable()",
+"export class AuthGuard implements CanActivate {",
+  "canActivate(",
+   " context: ExecutionContext,",
+  "): boolean | Promise<boolean> | Observable<boolean> {",
+   " const request = context.switchToHttp().getRequest();",
+    "return validateRequest(request);",
+ " }",
+"}"
+		],
 		"description": "Implement route guards"
 	  },
 	  "Interceptors": {
-		"prefix": "interceptors",
-		"body": "@Interceptor()\nexport class ${1:InterceptorName} implements NestInterceptor {\n  intercept(context: ExecutionContext, call$: Observable<any>): Observable<any> {\n    ${2:// Interceptor logic}\n    return call$;\n  }\n}",
+		"prefix": "Nest interceptors",
+		"body": [
+			"import { Injectable, NestInterceptor, ExecutionContext, CallHandler } from '@nestjs/common';",
+"import { Observable } from 'rxjs';",
+"import { tap } from 'rxjs/operators';",
+
+"@Injectable()",
+"export class LoggingInterceptor implements NestInterceptor {",
+  "intercept(context: ExecutionContext, next: CallHandler): Observable<any> {",
+    "console.log('Before...');",
+
+   " const now = Date.now();",
+    "return next",
+      ".handle()",
+      ".pipe(",
+       " tap(() => console.log(`After... ${Date.now() - now}ms`)),",
+      ");",
+  "}",
+"}"
+		],
 		"description": "Create custom interceptors"
 	  },
 	  "Custom decorators": {
-		"prefix": "decorators",
-		"body": "export const ${1:DecoratorName} = createParamDecorator((${2:data}, ${3:req}) => {\n  ${4:// Decorator logic}\n  return ${5:data};\n});",
+		"prefix": "Nest decorators",
+		"body": [
+			"import { createParamDecorator, ExecutionContext } from '@nestjs/common';",
+
+"export const User = createParamDecorator(",
+  "(data: unknown, ctx: ExecutionContext) => {",
+   " const request = ctx.switchToHttp().getRequest();",
+    "return request.user;",
+ " },",
+");"
+		],
 		"description": "Define custom decorators"
 	  },
 	"FUNDAMENTALS": {
@@ -105,58 +219,122 @@
 		"description": "  FUNDAMENTALS"
 	},
 	"Custom providers": {
-		"prefix": "custom_providers",
-		"body": "import { Injectable } from '@nestjs/common';\n\n@Injectable()\nclass ${1:CustomProvider} {\n  ${2:constructor(private ${3:dependency}: ${4:DependencyType}) {}}\n}",
+		"prefix": "Nest custom_providers",
+		"body": [
+			"Value providers",
+			"Class providers",
+			"Factory providers",
+			"Non-service based providers",
+			"Export custom provider"
+		],
 		"description": "Create custom providers"
 	  },
 	  "Asynchronous providers": {
-		"prefix": "async_providers",
-		"body": "import { Injectable } from '@nestjs/common';\n\n@Injectable()\nclass ${1:AsyncProvider} {\n  constructor() {}\n  async ${2:provideAsync}() {\n    ${3://// Asynchronous logic}\n    return ${4:result};\n  }\n}",
+		"prefix": "Nest async_providers",
+		"body": [
+			"{",
+				"provide: 'ASYNC_CONNECTION',",
+				"useFactory: async () => {",
+				 " const connection = await createConnection(options);",
+				  "return connection;",
+				"},",
+			 " }"
+		],
 		"description": "Implement asynchronous providers"
 	  },
 	  "Dynamic modules": {
-		"prefix": "dynamic_modules",
-		"body": "@Module({\n  imports: [${1:DynamicModule}],\n  controllers: [],\n  providers: [],\n  exports: [],\n})\nclass ${2:AppModule} {}\n",
+		"prefix": "Nest dynamic_modules",
+		"body": [
+			"import { Module } from '@nestjs/common';",
+"import { UsersService } from './users.service';",
+
+"@Module({",
+  "providers: [UsersService],",
+  "exports: [UsersService],",
+"})",
+"export class UsersModule {}"
+		],
 		"description": "Create dynamic modules"
 	  },
 	  "Injection scopes": {
-		"prefix": "injection_scopes",
-		"body": "@Injectable({ scope: Scope.${1:TRANSIENT} })\nclass ${2:ScopedProvider} {}\n",
+		"prefix": "Nest injection_scopes",
+		"body": [
+			"Usage",
+		"Controller scope",
+		"Scope hierarchy",
+		"Request provider",
+		"Inquirer provider"
+	],
 		"description": "Define injection scopes"
 	  },
 	  "Circular dependency": {
-		"prefix": "circular_dependency",
-		"body": "// Address circular dependency",
+		"prefix": "Nest circular_dependency",
+		"body": [
+			"Forward reference",
+			"ModuleRef class alternative",
+			"Module forward reference"
+		],
 		"description": "Resolve circular dependencies"
 	  },
 	  "Module reference": {
-		"prefix": "module_reference",
-		"body": "import { ModuleRef } from '@nestjs/core';\n\n@Controller()\nclass ${1:ControllerName} {\n  constructor(private readonly ${2:moduleRef}: ModuleRef) {}\n}",
+		"prefix": "Nest module_reference",
+		"body": [
+			"Retrieving instances",
+			"Resolving scoped providers",
+			"Registering REQUEST provider",
+			"Getting current sub-tree",
+			"Instantiating custom classes dynamically"
+
+		],
 		"description": "Access the module reference"
 	  },
 	  "Lazy-loading modules": {
-		"prefix": "lazy_loading",
-		"body": "const moduleFactory = await import('${1:ModulePath}');\nconst ${2:ModuleClassName} = moduleFactory.${3:ModuleClassName};\nconst module = await this.applicationRef.bootstrap(${2:ModuleClassName});\n",
+		"prefix": "Nest lazy_loading",
+		"body": [
+			"const { LazyModule } = await import('./lazy.module');",
+"const moduleRef = await this.lazyModuleLoader.load(() => LazyModule);",
+"Load 'LazyModule' attempt: 1",
+"time: 2.379ms",
+"Load 'LazyModule' attempt: 2",
+"time: 0.294ms",
+"Load 'LazyModule' attempt: 3",
+"time: 0.303ms"
+		],
 		"description": "Lazy-load modules"
 	  },
 	  "Execution context": {
-		"prefix": "execution_context",
-		"body": "import { ExecutionContext } from '@nestjs/common';\n\nfunction ${1:customDecorator}() {\n  return (context: ExecutionContext) => {\n    const request = context.switchToHttp().getRequest();\n    ${2://// Decorator logic}\n  };\n}\n",
+		"prefix": "Nest execution_context",
+		"body": [
+			"Current application context",
+			"Host handler arguments",
+			"ExecutionContext class"
+		],
 		"description": "Access the execution context"
 	  },
 	  "Lifecycle events": {
-		"prefix": "lifecycle_events",
-		"body": "@OnModuleInit()\nasync onModuleInit() {\n  ${1:// Initialization logic}\n}\n\n@OnModuleDestroy()\nasync onModuleDestroy() {\n  ${2://// Cleanup logic}\n}",
+		"prefix": "Nest lifecycle_events",
+		"body": [
+			"Usage",
+			"Asynchronous initialization",
+			"Application shutdown"
+		],
 		"description": "Use lifecycle events"
 	  },
 	  "Platform agnosticism": {
-		"prefix": "platform_agnostic",
+		"prefix": "Nest platform_agnostic",
 		"body": "// Write platform-agnostic code",
 		"description": "Ensure platform agnosticism"
 	  },
 	  "Testing": {
-		"prefix": "testing",
-		"body": "import { Test, TestingModule } from '@nestjs/testing';\n\ndescribe('${1:TestSuiteName}', () => {\n  let ${2:app}: TestingModule;\n\n  beforeAll(async () => {\n    ${2:app} = await Test.createTestingModule({\n      imports: [],\n      controllers: [],\n      providers: [],\n    }).compile();\n  });\n\n  it('should be defined', () => {\n    expect(${2:app}).toBeDefined();\n  });\n});",
+		"prefix": "Nest testing",
+		"body": [
+			"Installation",
+			"Unit testing",
+			"Testing utilities",
+			"Auto mocking",
+			"End-to-end testing",
+			"Overriding globally registered enhancers"
+		],
 		"description": "Write tests using TestingModule"
 	  },
 	"TECHNIQUES": {
@@ -185,107 +363,266 @@
 		"description": " Nest TECHNIQUES"
 	},
 	"Configuration": {
-		"prefix": "configuration",
-		"body": "// Configuration settings\nconst ${1:config} = {\n  ${2:key}: ${3:value},\n};",
+		"prefix": "Nest configuration",
+		"body": [
+			"Installation",
+			"Getting started",
+			"Custom env file path",
+			"Disable env variables loading",
+			"Use module globally",
+			"Custom configuration files"
+		],
 		"description": "Define configuration settings"
 	  },
 	  "Database": {
-		"prefix": "database",
-		"body": "// Database connection\nconst ${1:dbConnection} = ${2:await} connectToDatabase();",
+		"prefix": "Nest database",
+		"body": [
+			"TypeORM Integration",
+			"Repository pattern",
+			"Relations",
+			"Auto-load entities",
+			"Separating entity definition",
+			"TypeORM Transactions",
+			"Subscribers",
+			"Migrations",
+			"Multiple databases",
+			"Testing",
+			"Async configuration",
+			"Custom DataSource Factory"
+		],
 		"description": "Connect to the database"
 	  },
 	  "Mongo": {
 		"prefix": "mongo",
-		"body": "// MongoDB connection\nconst ${1:mongoConnection} = ${2:await} connectToMongoDB();",
+		"body": [
+			
+		],
 		"description": "Connect to MongoDB"
 	  },
 	  "Validation": {
-		"prefix": "validation",
-		"body": "// Validation schema\nconst ${1:validationSchema} = ${2:createValidationSchema}();",
+		"prefix": "Nest validation",
+		"body": [
+			"ValidationPipe",
+"ParseIntPipe",
+"ParseBoolPipe",
+"ParseArrayPipe",
+"ParseUUIDPipe"
+		],
 		"description": "Create validation schema"
 	  },
 	  "Caching": {
-		"prefix": "caching",
-		"body": "// Cache data\nconst ${1:cachedData} = ${2:cache}.get(${3:key}) || ${4:fetchData}();",
+		"prefix": "Nest caching",
+		"body": [
+			"In-memory cache",
+			"Interacting with the Cache store",
+			"Customize caching",
+			"Use module globally"
+		],
 		"description": "Cache data"
 	  },
 	  "Serialization": {
-		"prefix": "serialization",
-		"body": "// Serialize data\nconst ${1:serializedData} = ${2:serialize}(${3:data});",
+		"prefix": "Nest serialization",
+		"body": [
+			"Exclude properties",
+			"Expose properties",
+			"Transform"
+		],
 		"description": "Serialize data"
 	  },
 	  "Versioning": {
-		"prefix": "versioning",
-		"body": "// API versioning\napp.use('/api/${1:version}', ${2:apiRoutes});",
+		"prefix": "Nest versioning",
+		"body": [
+			"URI Versioning Type",
+			"Header Versioning Type",
+			"Media Type Versioning Type",
+			"Custom Versioning Type",
+			"Controller versions",
+			"Route versions",
+			"Multiple versions",
+			"Global default version",
+			"Middleware versioning"
+		],
 		"description": "Implement API versioning"
 	  },
 	  "Task scheduling": {
-		"prefix": "task_scheduling",
-		"body": "// Schedule tasks\n${1:scheduler}.scheduleJob('${2:pattern}', ${3:taskFunction});",
+		"prefix": "Nest task_scheduling",
+		"body": [
+			"import { Module } from '@nestjs/common';",
+"import { ScheduleModule } from '@nestjs/schedule';",
+
+"@Module({",
+ " imports: [",
+    "ScheduleModule.forRoot()",
+ " ],",
+"})",
+"export class AppModule {}"
+		],
 		"description": "Schedule tasks"
 	  },
 	  "Queues": {
-		"prefix": "queues",
-		"body": "// Queue tasks\n${1:queue}.add('${2:taskName}', ${3:taskData});",
+		"prefix": "Nest queues",
+		"body": [
+			"import { Module } from '@nestjs/common';",
+"import { BullModule } from '@nestjs/bull';",
+
+"@Module({",
+ " imports: [",
+    "BullModule.forRoot({",
+      "redis: {",
+       " host: 'localhost',",
+       " port: 6379,",
+      "},",
+    "}),",
+  "],",
+"})"
+		],
 		"description": "Add tasks to queues"
 	  },
 	  "Logging": {
-		"prefix": "logging",
-		"body": "// Log messages\n${1:logger}.info('${2:message}');",
+		"prefix": "Nest logging",
+		"body": [
+			"Basic customization",
+			"Custom implementation",
+			"Extend built-in logger",
+			"Dependency injection",
+			"Using the logger for application logging"
+		],
 		"description": "Log messages"
 	  },
 	  "Cookies": {
-		"prefix": "cookies",
-		"body": "// Set cookie\nres.cookie('${1:cookieName}', '${2:cookieValue}');",
+		"prefix": "Nest cookies",
+		"body": [
+			"Use with Express (default)",
+			"Use with Fastify",
+			"Creating a custom decorator (cross-platform)"
+		],
 		"description": "Set cookies in the response"
 	  },
 	  "Events": {
-		"prefix": "events",
-		"body": "// Emit event\n${1:eventEmitter}.emit('${2:eventName}', ${3:eventData});",
+		"prefix": "Nest events",
+		"body": [
+			"Dispatching Events",
+			"Listening to Events"
+		],
 		"description": "Emit events"
 	  },
 	  "Compression": {
-		"prefix": "compression",
-		"body": "// Enable compression\napp.use(${1:compression}());",
+		"prefix": "Nest compression",
+		"body": [
+			"import compression from '@fastify/compress';",
+"// somewhere in your initialization file",
+"await app.register(compression);"
+		],
 		"description": "Enable response compression"
 	  },
 	  "File upload": {
-		"prefix": "file_upload",
-		"body": "// Handle file upload\n${1:uploadMiddleware}(${2:req}, ${3:res}, ${4:next});",
+		"prefix": "Nest file_upload",
+		"body": [
+			"@Post('upload')",
+"@UseInterceptors(FileInterceptor('file'))",
+"uploadFile(@UploadedFile() file: Express.Multer.File) {",
+ " console.log(file);",
+"}"
+		],
 		"description": "Handle file uploads"
 	  },
 	  "Streaming files": {
-		"prefix": "streaming_files",
-		"body": "// Stream file to response\n${1:fileStream}.pipe(${2:response});",
+		"prefix": "Nest streaming_files",
+		"body": [
+			"@Controller('file')",
+"export class FileController {",
+  "@Get()",
+  "getFile(@Res() res: Response) {",
+   " const file = createReadStream(join(process.cwd(), 'package.json'));",
+    "file.pipe(res);",
+  "}",
+"}"
+		],
 		"description": "Stream files in responses"
 	  },
 	  "HTTP module": {
-		"prefix": "http_module",
-		"body": "// Create HTTP server\nconst ${1:httpServer} = ${2:createServer}(${3:requestListener});",
+		"prefix": "Nest http_module",
+		"body":[
+			"import { catchError, firstValueFrom } from 'rxjs';",
+
+"@Injectable()",
+"export class CatsService {",
+  "private readonly logger = new Logger(CatsService.name);",
+  "constructor(private readonly httpService: HttpService) {}",
+
+  "async findAll(): Promise<Cat[]> {",
+    "const { data } = await firstValueFrom(",
+      "this.httpService.get<Cat[]>('http://localhost:3000/cats').pipe(",
+        "catchError((error: AxiosError) => {",
+          "this.logger.error(error.response.data);",
+         " throw 'An error happened!';",
+        "}),",
+      "),",
+    ");",
+    "return data;",
+  "}",
+"}"
+		],
 		"description": "Create an HTTP server"
 	  },
 	  "Session": {
-		"prefix": "session",
-		"body": "// Manage user sessions\napp.use(${1:session}({\n  secret: '${2:secretKey}',\n  resave: ${3:false},\n  saveUninitialized: ${4:false},\n}));",
+		"prefix": "Nest session",
+		"body": [
+			
+"import * as session from 'express-session';",
+"// somewhere in your initialization file",
+"app.use(",
+  "session({",
+    "secret: 'my-secret',",
+   " resave: false,",
+   " saveUninitialized: false,",
+ " }),",
+");"
+		],
 		"description": "Manage user sessions"
 	  },
 	  "Model-View-Controller": {
-		"prefix": "mvc",
-		"body": "// Model\nconst ${1:model} = ${2:createModel}();\n\n// Controller\nconst ${3:controller} = ${4:createController}(${1:model});\n\n// View\nconst ${5:view} = ${6:createView}(${1:model});",
+		"prefix": "Nest mvc",
+		"body": [
+			"import { Get, Controller, Render } from '@nestjs/common';",
+
+"@Controller()",
+"export class AppController {",
+  "@Get()",
+  "@Render('index')",
+ " root() {",
+   " return { message: 'Hello world!' };",
+  "}",
+"}"
+		],
 		"description": "Implement Model-View-Controller (MVC) architecture"
 	  },
 	  "Performance (Fastify)": {
-		"prefix": "fastify_performance",
-		"body": "// Create Fastify server\nconst ${1:fastify} = require('fastify')();\n\n// Add routes\n${1:fastify}.get('/', (request, reply) => {\n  reply.send('${2:Hello, Fastify!}');\n});",
+		"prefix": "Nest fastify_performance",
+		"body": [
+			"async function bootstrap() {",
+				"const app = await NestFactory.create<NestFastifyApplication>(",
+				  "AppModule,",
+				  "new FastifyAdapter(),",
+				");",
+				"await app.listen(3000, '0.0.0.0');",
+			  "}"
+			  
+		],
 		"description": "Optimize performance using Fastify"
 	  },
 	  "Server-Sent Events": {
-		"prefix": "sse",
-		"body": "// Enable Server-Sent Events\napp.get('/sse', (req, res) => {\n  res.setHeader('Content-Type', 'text/event-stream');\n  res.setHeader('Cache-Control', 'no-cache');\n\n  ${1:sendEvents}(req, res);\n});",
+		"prefix": "Nest sse",
+		"body": [
+			"@Sse('sse')",
+"sse(): Observable<MessageEvent> {",
+ " return interval(1000).pipe(map((_) => ({ data: { hello: 'world' } })));",
+"}"
+		],
 		"description": "Implement Server-Sent Events"
 	  },
 	"SECURITY": {
-		"prefix": "Nest SECURITY",
+		"prefix": "Nest Nest SECURITY",
 		"body": [
 			"Authentication",
 			"Authorization",
@@ -298,38 +635,91 @@
 		"description": " Nest SECURITY"
 	},
 	"Authentication": {
-		"prefix": "authentication",
-		"body": "// Authenticate user\n${1:authenticate}(${2:req}, ${3:res}, ${4:next});",
+		"prefix": "Nest authentication",
+		"body": [
+			"Creating an authentication module",
+			"Implementing the 'Sign in' endpoint"
+		],
 		"description": "Authenticate user"
 	  },
 	  "Authorization": {
-		"prefix": "authorization",
-		"body": "// Authorize user\n${1:authorize}(${2:req}, ${3:res}, ${4:next});",
+		"prefix": "Nest authorization",
+		"body": [
+			"Basic RBAC implementation",
+			"Claims-based authorization",
+			"Integrating CASL",
+			"Advanced: Implementing a PoliciesGuard"
+		],
 		"description": "Authorize user"
 	  },
 	  "Encryption and Hashing": {
-		"prefix": "encryption_hashing",
-		"body": "// Encrypt data\nconst ${1:encryptedData} = ${2:encrypt}(${3:data}, '${4:encryptionKey}');\n\n// Hash password\nconst ${5:hashedPassword} = ${6:hashPassword}('${7:password}');",
+		"prefix": "Nest encryption_hashing",
+		"body": [
+			"import { createDecipheriv } from 'crypto';",
+
+"const decipher = createDecipheriv('aes-256-ctr', key, iv);",
+"const decryptedText = Buffer.concat([",
+ " decipher.update(encryptedText),",
+  "decipher.final(),",
+"]);",
+"// hashing",
+"import * as bcrypt from 'bcrypt';",
+
+"const saltOrRounds = 10;",
+"const password = 'random_password';",
+"const hash = await bcrypt.hash(password, saltOrRounds);"
+		],
 		"description": "Encrypt data and hash passwords"
 	  },
 	  "Helmet": {
-		"prefix": "helmet",
-		"body": "// Enable Helmet middleware\napp.use(${1:helmet}());",
+		"prefix": "Nest helmet",
+		"body": [
+			"app.use(helmet({",
+				"crossOriginEmbedderPolicy: false,",
+				"contentSecurityPolicy: {",
+				  "directives: {",
+					"imgSrc: [`'self'`, 'data:', 'apollo-server-landing-page.cdn.apollographql.com'],",
+					"scriptSrc: [`'self'`, `https: 'unsafe-inline'`],",
+					"manifestSrc: [`'self'`, 'apollo-server-landing-page.cdn.apollographql.com'],",
+					"frameSrc: [`'self'`, 'sandbox.embed.apollographql.com'],",
+				  "},",
+				"},",
+			  "}));"
+		],
 		"description": "Enable Helmet middleware for security headers"
 	  },
 	  "CORS": {
-		"prefix": "cors",
-		"body": "// Enable CORS\napp.use(${1:cors}());",
+		"prefix": "Nest cors",
+		"body": [
+			"const app = await NestFactory.create(AppModule);",
+"app.enableCors();",
+"await app.listen(3000);"
+		],
 		"description": "Enable Cross-Origin Resource Sharing"
 	  },
 	  "CSRF Protection": {
-		"prefix": "csrf",
-		"body": "// Enable CSRF protection\napp.use(${1:csrf}());",
+		"prefix": "Nest csrf",
+		"body": [
+			"import * as csurf from 'csurf';",
+
+"// somewhere in your initialization file",
+"app.use(csurf());"
+
+		],
 		"description": "Enable Cross-Site Request Forgery protection"
 	  },
 	  "Rate limiting": {
-		"prefix": "rate_limiting",
-		"body": "// Implement rate limiting\napp.use(${1:rateLimit}({\n  windowMs: ${2:60000},\n  max: ${3:100},\n}));",
+		"prefix": "Nest rate_limiting",
+		"body": [
+			"@Module({",
+				"imports: [",
+				 " ThrottlerModule.forRoot({",
+					"ttl: 60,",
+					"limit: 10,",
+				  "}),",
+				"],",
+			  "})"
+		],
 		"description": "Implement rate limiting to prevent abuse"
 	  },
 	"GRAPHQL": {
@@ -358,102 +748,256 @@
 		"description": " Nest GRAPHQL"
 	},
 	"Quick start": {
-		"prefix": "quick_start",
+		"prefix": "Nest quick_start",
 		"body": "// Quick start with GraphQL\nconst { ${1:graphql}, ${2:buildSchema} } = require('graphql');\n\nconst schema = ${3:buildSchema}(`\n  type Query {\n    hello: String\n  }\n`);\n\nconst root = {\n  hello: () => 'Hello, world!'\n};",
 		"description": "Quick start with GraphQL"
 	  },
 	  "Resolvers": {
-		"prefix": "resolvers",
-		"body": "// Define resolvers\nconst resolvers = {\n  Query: {\n    ${1:fieldName}: () => {\n      return ${2:result};\n    }\n  }\n};",
+		"prefix": "Nest resolvers",
+		"body": [
+			"Code first",
+			"Object types"
+		],
 		"description": "Define GraphQL resolvers"
 	  },
 	  "Mutations": {
-		"prefix": "mutations",
-		"body": "// Define mutations\nconst resolvers = {\n  Mutation: {\n    ${1:mutationName}: (_, args) => {\n      const { ${2:inputData} } = args;\n      // Perform mutation logic\n      return ${3:result};\n    }\n  }\n};",
+		"prefix": "Nest mutations",
+		"body": [
+			"import { InputType, Field } from '@nestjs/graphql';",
+
+"@InputType()",
+"export class UpvotePostInput {",
+"  @Field()",
+ " postId: number;",
+"}"
+		],
 		"description": "Define GraphQL mutations"
 	  },
 	  "Subscriptions": {
-		"prefix": "subscriptions",
-		"body": "// Define subscriptions\nconst resolvers = {\n  Subscription: {\n    ${1:subscriptionName}: {\n      subscribe: () => ${2:asyncIterator},\n      resolve: payload => payload\n    }\n  }\n};",
+		"prefix": "Nest      subscriptions",
+		"body": [
+			"@Subscription(returns => Comment, {",
+				"name: 'commentAdded',",
+			  "})",
+			 " subscribeToCommentAdded() {",
+				"return pubSub.asyncIterator('commentAdded');",
+			  "}"
+		],
 		"description": "Define GraphQL subscriptions"
 	  },
 	  "Scalars": {
-		"prefix": "scalars",
-		"body": "// Define custom scalar\nconst ${1:MyScalar} = new GraphQLScalarType({\n  name: '${1:MyScalar}',\n  description: 'Custom scalar description',\n  serialize: value => value,\n  parseValue: value => value,\n  parseLiteral: ast => ast.value\n});",
+		"prefix": "Nest scalars",
+		"body": [
+			"import { Scalar, CustomScalar } from '@nestjs/graphql';",
+"import { Kind, ValueNode } from 'graphql';",
+
+"@Scalar('Date', (type) => Date)",
+"export class DateScalar implements CustomScalar<number, Date> {",
+"  description = 'Date custom scalar type';",
+
+ " parseValue(value: number): Date {",
+    "return new Date(value); // value from the client",
+ " }",
+
+ " serialize(value: Date): number {",
+   " return value.getTime(); // value sent to the client",
+  "}",
+
+  "parseLiteral(ast: ValueNode): Date {",
+    "if (ast.kind === Kind.INT) {",
+      "return new Date(ast.value);",
+    "}",
+    "return null;",
+  "}",
+"}"
+		],
 		"description": "Define custom GraphQL scalar type"
 	  },
 	  "Directives": {
-		"prefix": "directives",
-		"body": "// Define custom directive\nconst ${1:MyDirective}Directive = new GraphQLDirective({\n  name: '${1:myDirective}',\n  description: 'Custom directive description',\n  locations: [DirectiveLocation.${2:FIELD_DEFINITION}],\n  args: {\n    ${3:argName}: { type: GraphQL${4:Type} }\n  }\n});",
+		"prefix": "Nest directives",
+		"body": [
+			"export function upperDirectiveTransformer(",
+ " schema: GraphQLSchema,",
+  "directiveName: string,",
+") {",
+  "return mapSchema(schema, {",
+    "[MapperKind.OBJECT_FIELD]: (fieldConfig) => {",
+      "const upperDirective = getDirective(",
+        "schema,",
+        "fieldConfig,",
+        "directiveName,",
+      ")?.[0];",
+
+      "if (upperDirective) {",
+        "const { resolve = defaultFieldResolver } = fieldConfig;",
+
+      "  fieldConfig.resolve = async function (source, args, context, info) {",
+          "const result = await resolve(source, args, context, info);",
+          "if (typeof result === 'string') {",
+            "return result.toUpperCase();",
+          "}",
+         " return result;",
+        "};",
+       " return fieldConfig;"
+		],
 		"description": "Define custom GraphQL directive"
 	  },
 	  "Interfaces": {
-		"prefix": "interfaces",
-		"body": "// Define interface\nconst ${1:MyInterface} = new GraphQLInterfaceType({\n  name: '${1:MyInterface}',\n  description: 'Interface description',\n  fields: {\n    ${2:field}: { type: GraphQL${3:Type} }\n  }\n});",
+		"prefix": "Nest interfaces",
+		"body": [
+			"import { Field, ID, InterfaceType } from '@nestjs/graphql';",
+
+"@InterfaceType()",
+"export abstract class Character {",
+  "@Field((type) => ID)",
+  "id: string;",
+
+ " @Field()",
+  "name: string;",
+"}"
+		],
 		"description": "Define GraphQL interface"
 	  },
 	  "Unions and Enums": {
-		"prefix": "unions_enums",
-		"body": "// Define union\nconst ${1:MyUnion} = new GraphQLUnionType({\n  name: '${1:MyUnion}',\n  description: 'Union description',\n  types: [GraphQL${2:Type}, GraphQL${3:Type}]\n});\n\n// Define enum\nconst ${4:MyEnum} = new GraphQLEnumType({\n  name: '${4:MyEnum}',\n  description: 'Enum description',\n  values: {\n    ${5:VALUE1}: { value: '${5:value1}' },\n    ${6:VALUE2}: { value: '${6:value2}' }\n  }\n});",
+		"prefix": "Nest unions_enums",
+		"body": [
+			"import { Field, ObjectType } from '@nestjs/graphql';",
+
+"@ObjectType()",
+"export class Book {",
+ " @Field()",
+  "title: string;",
+"}"
+		],
 		"description": "Define GraphQL union and enum"
 	  },
 	  "Field middleware": {
-		"prefix": "field_middleware",
-		"body": "// Define field middleware\nconst ${1:fieldMiddleware} = async (resolve, root, args, context, info) => {\n  // Apply middleware logic before field resolution\n  const result = await resolve(root, args, context, info);\n  // Apply middleware logic after field resolution\n  return result;\n};",
+		"prefix": "Nest field_middleware",
+		"body": [
+			"import { FieldMiddleware, MiddlewareContext, NextFn } from '@nestjs/graphql';",
+
+"const loggerMiddleware: FieldMiddleware = async (",
+  "ctx: MiddlewareContext,",
+  "next: NextFn,",
+") => {",
+  "const value = await next();",
+ " console.log(value);",
+  "return value;",
+"};"
+		],
 		"description": "Define field middleware for GraphQL fields"
 	  },
 	  "Mapped types": {
-		"prefix": "mapped_types",
-		"body": "// Define mapped types\nconst ${1:MappedType}Type = new GraphQL${2:Type}({\n  name: '${1:MappedType}Type',\n  description: 'Mapped type description',\n  fields: {\n    ${3:field}: { type: GraphQL${4:Type} }\n  }\n});",
+		"prefix": "Nest mapped_types",
+		"body": [
+			"Partia",
+			"Pick",
+			"Omit",
+			"Intersection",
+			"Composition"
+		],
 		"description": "Define GraphQL mapped type"
 	  },
 	  "Plugins": {
-		"prefix": "plugins",
-		"body": "// Define and use GraphQL plugin\nconst ${1:myPlugin} = {\n  requestDidStart: () => ({\n    willSendResponse: () => {\n      // Perform plugin logic\n    }\n  })\n};\n\nconst server = new ApolloServer({\n  typeDefs,\n  resolvers,\n  plugins: [${1:myPlugin}]\n});",
+		"prefix": "Nest plugins",
+		"body": [
+			"Custom plugins",
+			"Using external plugins",
+			"Plugins with Mercurius"
+		],
 		"description": "Define and use GraphQL plugins"
 	  },
 	  "Complexity": {
-		"prefix": "complexity",
-		"body": "// Implement complexity analysis\nconst complexityPlugin = {\n  requestDidStart: () => ({\n    didResolveOperation: ({ request, document }) => {\n      const complexity = getComplexity(document, request.variables);\n      if (complexity > ${1:maxComplexity}) {\n        throw new Error(`Query is too complex: ${complexity}. Maximum allowed complexity: ${1:maxComplexity}.`);\n      }\n    }\n  })\n};",
+		"prefix": "Nest complexity",
+		"body": [
+			"Field-level complexity",
+			"Query/Mutation-level complexity"
+		],
 		"description": "Implement complexity analysis for queries"
 	  },
 	  "Extensions": {
-		"prefix": "extensions",
-		"body": "// Define and use GraphQL extension\nclass ${1:MyExtension} extends GraphQLExtension {\n  // Implement extension methods\n  requestDidStart() {}\n  parsingDidStart() {}\n  validationDidStart() {}\n  executionDidStart() {}\n  willSendResponse() {}\n}\n\nconst server = new ApolloServer({\n  typeDefs,\n  resolvers,\n  extensions: [() => new ${1:MyExtension}()]\n});",
+		"prefix": "Nest extensions",
+		"body": [
+			"Adding custom metadata",
+			"Using custom metadata"
+		],
 		"description": "Define and use GraphQL extensions"
 	  },
 	  "CLI Plugin": {
-		"prefix": "cli_plugin",
-		"body": "// Define CLI plugin\nconst ${1:myCLIPlugin} = {\n  name: '${1:my-cli-plugin}',\n  version: '1.0.0',\n  register: async (cli) => {\n    // Implement CLI commands and logic\n  }\n};\n\nmodule.exports = ${1:myCLIPlugin};",
+		"prefix": "Nest cli_plugin",
+		"body": [
+			
+		],
 		"description": "Define a CLI plugin for GraphQL"
 	  },
 	  "Generating SDL": {
 		"prefix": "generating_sdl",
-		"body": "// Generate GraphQL SDL from schema\nconst sdl = printSchema(schema);\nconsole.log(sdl);",
+		"body": [],
 		"description": "Generate GraphQL SDL from schema"
 	  },
 	  "Sharing models": {
-		"prefix": "sharing_models",
-		"body": "// Share models between GraphQL and database\nconst ${1:User} = sequelize.define('user', {\n  // Define user fields\n});\n\nconst typeDefs = gql`\n  type ${1:User} {\n    // Define user fields\n  }\n`;",
+		"prefix": "Nest sharing_models",
+		"body": [
+			"resolve: { // see: https://webpack.js.org/configuration/resolve/",
+		"alias: {",
+			"'@nestjs/graphql': path.resolve(__dirname, '../node_modules/@nestjs/graphql/dist/extra/graphql-model-shim')",
+		"}",
+	  "},"
+		],
 		"description": "Share models between GraphQL and database"
 	  },
 	  "Other features": {
-		"prefix": "other_features",
-		"body": "// Implement other GraphQL features\n// ...",
+		"prefix": "Nest other_features",
+		"body": [
+			"import { CanActivate, ExecutionContext, Injectable } from '@nestjs/common';",
+			"import { GqlExecutionContext } from '@nestjs/graphql';",
+			
+			"@Injectable()",
+			"export class AuthGuard implements CanActivate {",
+			  "canActivate(context: ExecutionContext): boolean {",
+				"const ctx = GqlExecutionContext.create(context);",
+				"return true;",
+			  "}",
+			"}"
+		],
 		"description": "Implement other GraphQL features"
 	  },
 	  "Federation": {
-		"prefix": "federation",
-		"body": "// Implement Apollo Federation\nconst { ApolloServer } = require('apollo-server');\nconst { buildFederatedSchema } = require('@apollo/federation');\n\nconst typeDefs = ...;\nconst resolvers = ...;\n\nconst server = new ApolloServer({\n  schema: buildFederatedSchema([{ typeDefs, resolvers }])\n});",
+		"prefix": "Nest federation",
+		"body": [
+			"import { Args, Query, Resolver, ResolveReference } from '@nestjs/graphql';",
+"import { UsersService } from './users.service';",
+
+"@Resolver('User')",
+"export class UsersResolver {",
+  "constructor(private usersService: UsersService) {}",
+
+ " @Query()",
+ " getUser(@Args('id') id: string) {",
+   " return this.usersService.findById(id);",
+  "}",
+
+ " @ResolveReference()",
+ " resolveReference(reference: { __typename: string; id: string }) {",
+    "return this.usersService.findById(reference.id);",
+  "}",
+"}"
+		],
 		"description": "Implement Apollo Federation for microservices"
 	  },
 	  "Migration guide": {
-		"prefix": "migration_guide",
-		"body": "// Migration guide for GraphQL\n// ...",
+		"prefix": "Nest migration_guide",
+		"body":[
+			"$ npm uninstall apollo-server-express",
+"$ npm install @apollo/server",
+"$ npm uninstall apollo-server-fastify",
+"$ npm install @apollo/server @as-integrations/fastify",
+"$ npm install @mercuriusjs/gateway"
+		],
 		"description": "Migration guide for GraphQL"
 	  },
 	"WEBSOCKETSL": {
-		"prefix": "Nest WEBSOCKETSL",
+		"prefix": "Nest Nest WEBSOCKETSL",
 		"body": [
 			"Gateways",
 			"Exception filters",
@@ -470,33 +1014,71 @@
 		"description": "Define gateway for backend"
 	  },
 	  "Exceptionfilters": {
-		"prefix": "exception_filters",
-		"body": "// Define exception filter\n@Catch(${1:HttpException})\nclass ${2:HttpExceptionFilter} implements ExceptionFilter {\n  catch(exception: ${1:HttpException}, host: ArgumentsHost) {\n    const response = host.switchToHttp().getResponse();\n    // Handle exception and send response\n  }\n}",
+		"prefix": "Nest exception_filters",
+		"body": [
+			"import { Catch, ArgumentsHost } from '@nestjs/common';",
+"import { BaseWsExceptionFilter } from '@nestjs/websockets';",
+
+"@Catch()",
+"export class AllExceptionsFilter extends BaseWsExceptionFilter {",
+  "catch(exception: unknown, host: ArgumentsHost) {",
+    "super.catch(exception, host);",
+  "}",
+"}"
+		],
 		"description": "Define exception filter for backend"
 	  },
 	  "Pipes": {
-		"prefix": "pipes",
-		"body": "// Define pipe\n@Pipe()\nclass ${1:MyPipe} implements PipeTransform {\n  transform(value: any, metadata: ArgumentMetadata) {\n    // Transform and validate input value\n    return value;\n  }\n}",
+		"prefix": "Nest pipes",
+		"body": [
+			"@UsePipes(new ValidationPipe())",
+"@SubscribeMessage('events')",
+"handleEvent(client: Client, data: unknown): WsResponse<unknown> {",
+  "const event = 'events';",
+ " return { event, data };",
+"}"
+		],
 		"description": "Define pipe for backend"
 	  },
 	  "Guards": {
-		"prefix": "guards",
-		"body": "// Define guard\n@Injectable()\nclass ${1:AuthGuard} implements CanActivate {\n  canActivate(context: ExecutionContext): boolean {\n    // Implement guard logic\n    return true;\n  }\n}",
+		"prefix": "Nest guards",
+		"body": [
+			"@UseGuards(AuthGuard)",
+"@SubscribeMessage('events')",
+"handleEvent(client: Client, data: unknown): WsResponse<unknown> {",
+  "const event = 'events';",
+  "return { event, data };",
+"}"
+		],
 		"description": "Define guard for backend"
 	  },
 	  "Interceptors": {
-		"prefix": "interceptors",
-		"body": "// Define interceptor\n@Injectable()\nclass ${1:LoggingInterceptor} implements NestInterceptor {\n  intercept(context: ExecutionContext, next: CallHandler): Observable<any> {\n    // Intercept request and response\n    return next.handle();\n  }\n}",
+		"prefix": "Nest interceptors",
+		"body": [
+			"@UseInterceptors(new TransformInterceptor())",
+"@SubscribeMessage('events')",
+"handleEvent(client: Client, data: unknown): WsResponse<unknown> {",
+"  const event = 'events';",
+  "return { event, data };",
+"}"
+		],
 		"description": "Define interceptor for backend"
 	  },
 	  "Adapters": {
-		"prefix": "adapters",
-		"body": "// Define adapter\nclass ${1:AdapterName}Adapter {\n  // Implement adapter methods\n}",
+		"prefix": "Nest adapters",
+		"body": [
+			"create"	,
+"bindClientConnect",
+"bindClientDisconnect",
+"bindMessageHandlers",
+"close"
+
+		],
 		"description": "Define adapter for backend"
 	  },
 	  "Other backend concepts": {
 		"prefix": "other_backend_concepts",
-		"body": "// Implement other backend concepts\n// ...",
+		"body": [],
 		"description": "Implement other backend concepts"
 	  },
 	
@@ -519,68 +1101,184 @@
 		"description": " Nest MICROSERVICES"
 	},
 	"Overview": {
-		"prefix": "overview",
-		"body": "// Overview of messaging and communication concepts\n// ...",
+		"prefix": "Nest overview",
+		"body": [
+			"import { NestFactory } from '@nestjs/core';",
+"import { Transport, MicroserviceOptions } from '@nestjs/microservices';",
+"import { AppModule } from './app.module';",
+
+"async function bootstrap() {",
+  "const app = await NestFactory.createMicroservice<MicroserviceOptions>(",
+   " AppModule,",
+    "{",
+     " transport: Transport.TCP,",
+    "},",
+ " );",
+  "await app.listen();",
+"}",
+"bootstrap();"
+		],
 		"description": "Overview of messaging and communication concepts"
 	  },
 	  "Redis": {
-		"prefix": "redis",
-		"body": "// Using Redis for messaging\n// ...",
+		"prefix": "Nest redis",
+		"body": [
+			"@Module({",
+				"imports: [",
+				 " ClientsModule.register([",
+					"{",
+					 " name: 'MATH_SERVICE',",
+					 " transport: Transport.REDIS,",
+					  "options: {",
+						"host: 'localhost',",
+						"port: 6379,",
+					 " }",
+					"},",
+				  "]),",
+				"]",
+				"...",
+			  "})"
+		],
 		"description": "Using Redis for messaging"
 	  },
 	  "MQTT": {
-		"prefix": "mqtt",
-		"body": "// Using MQTT for messaging\n// ...",
+		"prefix": "Nest mqtt",
+		"body": [
+			"const app = await NestFactory.createMicroservice<MicroserviceOptions>(AppModule, {",
+				"transport: Transport.MQTT,",
+				"options: {",
+				 " url: 'mqtt://localhost:1883',",
+				"},",
+			  "});"
+		],
 		"description": "Using MQTT for messaging"
 	  },
 	  "NATS": {
-		"prefix": "nats",
-		"body": "// Using NATS for messaging\n// ...",
+		"prefix": "Nestnats",
+		"body": [
+			"const app = await NestFactory.createMicroservice<MicroserviceOptions>(AppModule, {",
+				"transport: Transport.NATS,",
+				"options: {",
+				  "servers: ['nats://localhost:4222'],",
+				"},",
+			  "});"
+		],
 		"description": "Using NATS for messaging"
 	  },
 	  "RabbitMQ": {
-		"prefix": "rabbitmq",
-		"body": "// Using RabbitMQ for messaging\n// ...",
+		"prefix": "Nest rabbitmq",
+		"body": [
+			"const app = await NestFactory.createMicroservice<MicroserviceOptions>(AppModule, {",
+				"transport: Transport.RMQ,",
+				"options: {",
+				  "urls: ['amqp://localhost:5672'],",
+				  "queue: 'cats_queue',",
+				  "queueOptions: {",
+					"durable: false",
+				 " },",
+				"},",
+			  "});"
+		],
 		"description": "Using RabbitMQ for messaging"
 	  },
 	  "Kafka": {
-		"prefix": "kafka",
-		"body": "// Using Kafka for messaging\n// ...",
+		"prefix": "Nest kafka",
+		"body": [
+			"const app = await NestFactory.createMicroservice<MicroserviceOptions>(AppModule, {",
+				"transport: Transport.KAFKA,",
+				"options: {",
+				 " client: {",
+					"brokers: ['localhost:9092'],",
+				 " }",
+				"}",
+			  "});"
+		],
 		"description": "Using Kafka for messaging"
 	  },
 	  "gRPC": {
-		"prefix": "grpc",
-		"body": "// Using gRPC for communication\n// ...",
+		"prefix": "Nest grpc",
+		"body": [
+			"const app = await NestFactory.createMicroservice<MicroserviceOptions>(AppModule, {",
+				"transport: Transport.GRPC,",
+				"options: {",
+				  "package: 'hero',",
+				  "protoPath: join(__dirname, 'hero/hero.proto'),",
+				"},",
+			 " });"
+		],
 		"description": "Using gRPC for communication"
 	  },
 	  "Custom transporters": {
-		"prefix": "custom_transporters",
-		"body": "// Implementing custom transporters\n// ...",
+		"prefix": "Nest custom_transporters",
+		"body": [
+			"import { CustomTransportStrategy, Server } from '@nestjs/microservices';",
+
+"class GoogleCloudPubSubServer",
+  "extends Server",
+  "implements CustomTransportStrategy {",
+  
+  "listen(callback: () => void) {",
+    "callback();",
+  "}",
+
+ 
+ " close() {}",
+"}"
+		],
 		"description": "Implementing custom transporters"
 	  },
 	  "Exception filters": {
-		"prefix": "exception_filters",
-		"body": "// Define exception filter\n@Catch(${1:HttpException})\nclass ${2:HttpExceptionFilter} implements ExceptionFilter {\n  catch(exception: ${1:HttpException}, host: ArgumentsHost) {\n    const response = host.switchToHttp().getResponse();\n    // Handle exception and send response\n  }\n}",
+		"prefix": "Nest exception_filters",
+		"body": [
+			"import { Catch, RpcExceptionFilter, ArgumentsHost } from '@nestjs/common';",
+"import { Observable, throwError } from 'rxjs';",
+"import { RpcException } from '@nestjs/microservices';",
+
+"@Catch(RpcException)",
+"export class ExceptionFilter implements RpcExceptionFilter<RpcException> {",
+ " catch(exception: RpcException, host: ArgumentsHost): Observable<any> {",
+    "return throwError(() => exception.getError());",
+  "}",
+"}"
+		],
 		"description": "Define exception filter for messaging"
 	  },
 	  "Pipes": {
-		"prefix": "pipes",
-		"body": "// Define pipe\n@Pipe()\nclass ${1:MyPipe} implements PipeTransform {\n  transform(value: any, metadata: ArgumentMetadata) {\n    // Transform and validate input value\n    return value;\n  }\n}",
+		"prefix": "Nest pipes",
+		"body": [
+			"@UsePipes(new ValidationPipe())",
+"@MessagePattern({ cmd: 'sum' })",
+"accumulate(data: number[]): number {",
+  "return (data || []).reduce((a, b) => a + b);",
+"}"
+		],
 		"description": "Define pipe for messaging"
 	  },
 	  "Guards": {
-		"prefix": "guards",
-		"body": "// Define guard\n@Injectable()\nclass ${1:AuthGuard} implements CanActivate {\n  canActivate(context: ExecutionContext): boolean {\n    // Implement guard logic\n    return true;\n  }\n}",
+		"prefix": "Nest guards",
+		"body": [
+			"@UseGuards(AuthGuard)",
+"@MessagePattern({ cmd: 'sum' })",
+"accumulate(data: number[]): number {",
+  "return (data || []).reduce((a, b) => a + b);",
+"}"
+		],
 		"description": "Define guard for messaging"
 	  },
 	  "Interceptors": {
-		"prefix": "interceptors",
-		"body": "// Define interceptor\n@Injectable()\nclass ${1:LoggingInterceptor} implements NestInterceptor {\n  intercept(context: ExecutionContext, next: CallHandler): Observable<any> {\n    // Intercept request and response\n    return next.handle();\n  }\n}",
+		"prefix": "Nest interceptors",
+		"body": [
+			"@UseInterceptors(new TransformInterceptor())",
+"@MessagePattern({ cmd: 'sum' })",
+"accumulate(data: number[]): number {",
+  "return (data || []).reduce((a, b) => a + b);",
+"}"
+		],
 		"description": "Define interceptor for messaging"
 	  },
 	
 	"CLI": {
-		"prefix": "Nest CLI",
+		"prefix": "Nest Nest CLI",
 		"body": [
 			"Overview",
 			"Workspaces",
@@ -591,28 +1289,38 @@
 		"description": " Nest CLI"
 	},
 	"Overview": {
-		"prefix": "overview",
-		"body": "// Overview of workspace and library concepts\n// ...",
+		"prefix": "Nest overview",
+		"body": [
+			
+		],
 		"description": "Overview of workspace and library concepts"
 	  },
 	  "Workspaces": {
 		"prefix": "workspaces",
-		"body": "// Setting up and using workspaces\n// ...",
+		"body": [
+			
+		],
 		"description": "Setting up and using workspaces"
 	  },
 	  "Libraries": {
 		"prefix": "libraries",
-		"body": "// Creating and managing libraries\n// ...",
+		"body": [
+			
+		],
 		"description": "Creating and managing libraries"
 	  },
 	  "Usage": {
 		"prefix": "usage",
-		"body": "// Using workspaces and libraries in projects\n// ...",
+		"body": [
+			
+		],
 		"description": "Using workspaces and libraries in projects"
 	  },
 	  "Scripts": {
 		"prefix": "scripts",
-		"body": "// Defining and running scripts\n// ...",
+		"body": [
+			
+		],
 		"description": "Defining and running scripts in projects"
 	  },
 	"OPENAPI": {
@@ -631,47 +1339,129 @@
 		"description": " Nest OPENAPI"
 	},
 	"Introduction": {
-		"prefix": "introduction",
-		"body": "// Introduction to GraphQL\n// ...",
+		"prefix": "Nest introduction",
+		"body": [
+			"import { NestFactory } from '@nestjs/core';",
+"import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';",
+"import { AppModule } from './app.module';",
+
+"async function bootstrap() {",
+"  const app = await NestFactory.create(AppModule);",
+
+ " const config = new DocumentBuilder()",
+    ".setTitle('Cats example')",
+    ".setDescription('The cats API description')",
+   " .setVersion('1.0')",
+    ".addTag('cats')",
+   " .build();",
+  "const document = SwaggerModule.createDocument(app, config);",
+  "SwaggerModule.setup('api', app, document);",
+
+  "await app.listen(3000);",
+"}",
+"bootstrap();"
+		],
 		"description": "Introduction to GraphQL"
 	  },
 	  "Types and Parameters": {
-		"prefix": "types_parameters",
-		"body": "// GraphQL types and parameters\n// ...",
+		"prefix": "Nest types_parameters",
+		"body": [
+			"@Post()",
+"async create(@Body() createCatDto: CreateCatDto) {",
+  "this.catsService.create(createCatDto);",
+"}"
+		],
 		"description": "GraphQL types and parameters"
 	  },
 	  "Operations": {
-		"prefix": "operations",
-		"body": "// Performing operations in GraphQL\n// ...",
+		"prefix": "Nest operations",
+		"body": [
+			"@ApiHeader({",
+				"name: 'X-MyHeader',",
+				"description: 'Custom header',",
+			  "})",
+			 " @Controller('cats')",
+			 " export class CatsController {}"
+			  
+		],
 		"description": "Performing operations in GraphQL"
 	  },
 	  "Security": {
-		"prefix": "security",
-		"body": "// Security considerations in GraphQL\n// ...",
+		"prefix": "Nest security",
+		"body": [
+			"const options = new DocumentBuilder().addSecurity('basic', {",
+				"type: 'http',",
+				"scheme: 'basic',",
+			  "});"
+		],
 		"description": "Security considerations in GraphQL"
 	  },
 	  "Mapped Types": {
-		"prefix": "mapped_types",
-		"body": "// Using mapped types in GraphQL\n// ...",
+		"prefix": "Nest mapped_types",
+		"body": [
+			"import { ApiProperty } from '@nestjs/swagger';",
+
+"export class CreateCatDto {",
+ " @ApiProperty()",
+  "name: string;",
+
+  "@ApiProperty()",
+ " age: number;",
+
+  "@ApiProperty()",
+ " breed: string;",
+"}"
+		],
 		"description": "Using mapped types in GraphQL"
 	  },
 	  "Decorators": {
-		"prefix": "decorators",
-		"body": "// Applying decorators in GraphQL\n// ...",
+		"prefix": "Nest decorators",
+		"body": [
+			"import { ApiProperty } from '@nestjs/swagger';",
+
+"export class CreateCatDto {",
+  "@ApiProperty()",
+ " name: string;",
+
+  "@ApiProperty()",
+  "age: number;",
+
+  "@ApiProperty()",
+ " breed: string;",
+"}"
+		],
 		"description": "Applying decorators in GraphQL"
 	  },
 	  "CLI Plugin": {
-		"prefix": "cli_plugin",
-		"body": "// Working with the GraphQL CLI plugin\n// ...",
+		"prefix": "Nest cli_plugin",
+		"body": [
+			"export class CreateUserDto {",
+				"@ApiProperty()",
+				"email: string;",
+			  
+				"@ApiProperty()",
+				"password: string;",
+			  
+				"@ApiProperty({ enum: RoleEnum, default: [], isArray: true })",
+				"roles: RoleEnum[] = [];",
+			  
+				"@ApiProperty({ required: false, default: true })",
+				"isEnabled?: boolean = true;",
+			  "}"
+		],
 		"description": "Working with the GraphQL CLI plugin"
 	  },
 	  "Other features": {
-		"prefix": "other_features",
-		"body": "// Exploring other features of GraphQL\n// ...",
+		"prefix": "Nest other_features",
+		"body": [
+			"Global prefix",
+			"Global parameters",
+			"Multiple specifications"
+		],
 		"description": "Exploring other features of GraphQL"
 	  },
 	  "Migration guide": {
-		"prefix": "migration_guide",
+		"prefix": "Nest migration_guide",
 		"body": "// Migrating to new GraphQL versions\n// ...",
 		"description": "Migrating to new GraphQL versions"
 	  },
@@ -700,77 +1490,230 @@
 		"description": " Nest RECIPES"
 	},
 	"REPL": {
-		"prefix": "repl",
-		"body": "// Working with Node.js REPL\n// ...",
+		"prefix": "Nest repl",
+		"body":[ 
+			"import { repl } from '@nestjs/core';",
+		"import { AppModule } from './app.module';",
+		
+		"async function bootstrap() {",
+		 " await repl(AppModule);",
+		"}",
+		"bootstrap();"],
 		"description": "Working with Node.js REPL"
 	  },
 	  "CRUD generator": {
-		"prefix": "crud_generator",
-		"body": "// Generating CRUD operations\n// ...",
+		"prefix": "Nest crud_generator",
+		"body":[
+			
+		],
 		"description": "Generating CRUD operations"
 	  },
 	  "SWC (fast compiler)": {
-		"prefix": "swc_compiler",
-		"body": "// Using SWC compiler for fast compilation\n// ...",
+		"prefix": "Nest swc_compiler",
+		"body": [
+			"'compilerOptions': {",
+				"'builder': {",
+				  "'type': 'swc',",
+				 " 'options': {",
+					"'swcrcPath': 'infrastructure/.swcrc',",
+				  "}",
+				"}",
+			  "}"
+		],
 		"description": "Using SWC (fast compiler)"
 	  },
 	  "Passport (auth)": {
-		"prefix": "passport_auth",
-		"body": "// Implementing authentication with Passport\n// ...",
+		"prefix": "Nest passport_auth",
+		"body":[
+			"import { Module } from '@nestjs/common';",
+"import { UsersService } from './users.service';",
+
+"@Module({",
+ " providers: [UsersService],",
+  "exports: [UsersService],",
+"})",
+"export class UsersModule {}"
+		],
 		"description": "Implementing authentication with Passport"
 	  },
 	  "Hot reload": {
-		"prefix": "hot_reload",
-		"body": "// Enabling hot reloading in Node.js\n// ...",
+		"prefix": "Nest hot_reload",
+		"body": [
+			"declare const module: any;",
+
+"async function bootstrap() {",
+  "const app = await NestFactory.create(AppModule);",
+  "await app.listen(3000);",
+
+  "if (module.hot) {",
+   " module.hot.accept();",
+    "module.hot.dispose(() => app.close());",
+  "}",
+"}",
+"bootstrap();"
+		],
 		"description": "Enabling hot reloading in Node.js"
 	  },
 	  "MikroORM": {
-		"prefix": "mikro_orm",
-		"body": "// Using MikroORM for database operations\n// ...",
+		"prefix": "Nest mikro_orm",
+		"body": [
+			"@Module({",
+				"imports: [",
+				  "MikroOrmModule.forRoot({",
+					"entities: ['./dist/entities'],",
+					"entitiesTs: ['./src/entities'],",
+					"dbName: 'my-db-name.sqlite3',",
+					"type: 'sqlite',",
+				  "}),",
+				"],",
+				"controllers: [AppController],",
+				"providers: [AppService],",
+			  "})",
+			  "export class AppModule {}"
+		],
 		"description": "Using MikroORM for database operations"
 	  },
 	  "TypeORM": {
-		"prefix": "typeorm",
-		"body": "// Working with TypeORM for database tasks\n// ...",
+		"prefix": "Nest typeorm",
+		"body": [
+			"import { DataSource } from 'typeorm';",
+"import { Photo } from './photo.entity';",
+
+"export const photoProviders = [",
+ " {",
+    "provide: 'PHOTO_REPOSITORY',",
+   " useFactory: (dataSource: DataSource) => dataSource.getRepository(Photo),",
+    "inject: ['DATA_SOURCE'],",
+ " },",
+"];"
+		],
 		"description": "Working with TypeORM for database tasks"
 	  },
 	  "Mongoose": {
-		"prefix": "mongoose",
-		"body": "// Using Mongoose for MongoDB interactions\n// ...",
+		"prefix": "Nest mongoose",
+		"body": [
+			"import * as mongoose from 'mongoose';",
+
+"export const databaseProviders = [",
+ " {",
+   " provide: 'DATABASE_CONNECTION',",
+   " useFactory: (): Promise<typeof mongoose> =>",
+     " mongoose.connect('mongodb://localhost/nest'),",
+ " },",
+"];"
+		],
 		"description": "Using Mongoose for MongoDB interactions"
 	  },
 	  "Sequelize": {
-		"prefix": "sequelize",
-		"body": "// Integrating Sequelize ORM in Node.js\n// ...",
+		"prefix": "Nest sequelize",
+		"body": [
+			"import { Module } from '@nestjs/common';",
+"import { databaseProviders } from './database.providers';",
+
+"@Module({",
+  "providers: [...databaseProviders],",
+  "exports: [...databaseProviders],",
+"})",
+"export class DatabaseModule {}"
+		],
 		"description": "Integrating Sequelize ORM in Node.js"
 	  },
 	  "Router module": {
-		"prefix": "router_module",
-		"body": "// Creating and using router modules\n// ...",
+		"prefix": "Nest router_module",
+		"body": [
+			"@Module({",
+				"imports: [",
+				 " DashboardModule,",
+				  "RouterModule.register([",
+					"{",
+					 " path: 'dashboard',",
+					 " module: DashboardModule,",
+					"},",
+				  "]),",
+				"],",
+			  "})",
+			  "export class AppModule {}"
+		],
 		"description": "Creating and using router modules"
 	  },
 	  "Swagger": {
-		"prefix": "swagger",
-		"body": "// Adding Swagger documentation to API\n// ...",
+		"prefix": "Nest swagger",
+		"body": [
+			"import { NestFactory } from '@nestjs/core';",
+"import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';",
+"import { AppModule } from './app.module';",
+
+"async function bootstrap() {",
+  "const app = await NestFactory.create(AppModule);",
+
+ " const config = new DocumentBuilder()",
+    ".setTitle('Cats example')",
+    ".setDescription('The cats API description')",
+    ".setVersion('1.0')",
+    ".addTag('cats')",
+    ".build();",
+  "const document = SwaggerModule.createDocument(app, config);",
+  "SwaggerModule.setup('api', app, document);",
+
+  "await app.listen(3000);",
+"}",
+"bootstrap();"
+		],
 		"description": "Adding Swagger documentation to API"
 	  },
 	  "Health checks": {
-		"prefix": "health_checks",
-		"body": "// Implementing health checks in Node.js\n// ...",
+		"prefix": "Nest health_checks",
+		"body": [
+			"import { Module } from '@nestjs/common';",
+"import { TerminusModule } from '@nestjs/terminus';",
+
+"@Module({",
+  "imports: [TerminusModule]",
+"})",
+"export class HealthModule {}"
+		],
 		"description": "Implementing health checks in Node.js"
 	  },
 	  "CQRS": {
-		"prefix": "cqrs",
-		"body": "// Applying CQRS pattern in Node.js\n// ...",
+		"prefix": "Nest cqrs",
+		"body":[
+			"@Injectable()",
+"export class HeroesGameService {",
+  "constructor(private commandBus: CommandBus) {}",
+
+ " async killDragon(heroId: string, killDragonDto: KillDragonDto) {",
+    "return this.commandBus.execute(",
+     " new KillDragonCommand(heroId, killDragonDto.dragonId)",
+    ");",
+  "}",
+"}"
+		],
 		"description": "Applying CQRS pattern in Node.js"
 	  },
 	  "Compodoc": {
-		"prefix": "compodoc",
-		"body": "// Generating documentation using Compodoc\n// ...",
+		"prefix": "Nest compodoc",
+		"body": [
+			"import { Module } from '@nestjs/common';",
+"import { AppController } from './app.controller';",
+"import { AppService } from './app.service';",
+"import { ServeStaticModule } from '@nestjs/serve-static';",
+"import { join } from 'path';",
+
+"@Module({",
+  "imports: [",
+    "ServeStaticModule.forRoot({",
+     " rootPath: join(__dirname, '..', 'client'),",
+    "}),",
+  "],",
+ " controllers: [AppController],",
+ " providers: [AppService],",
+"})",
+"export class AppModule {}"
+		],
 		"description": "Generating documentation using Compodoc"
 	  },
 	  "Prisma": {
-		"prefix": "prisma",
+		"prefix": "Nest prisma",
 		"body": "// Using Prisma ORM for database operations\n// ...",
 		"description": "Using Prisma ORM for database operations"
 	  },
@@ -790,8 +1733,26 @@
 		"description": "Managing async local storage in Node.js"
 	  },
 	  "Automock": {
-		"prefix": "automock",
-		"body": "// Automocking dependencies in Node.js tests\n// ...",
+		"prefix": "Nest automock",
+		"body": [
+			"import { Injectable } from '@nestjs/core';",
+
+"@Injectable()",
+"export class CatsService {",
+  "constructor(",
+   " private logger: Logger,",
+    "private httpService: HttpService,",
+   " private catsDal: CatsDal,",
+ " ) {}",
+
+  "async getAllCats() {",
+    "const cats = await this.httpService.get('http://localhost:3000/api/cats');",
+    "this.logger.log('Successfully fetched all cats');",
+    
+    "this.catsDal.saveCats(cats);",
+  "}",
+"}"
+		],
 		"description": "Automocking dependencies in Node.js tests"
 	  },
 	"FAQ": {
@@ -810,42 +1771,125 @@
 		"description": " Nest FAQ"
 	},
 	"Serverless": {
-		"prefix": "serverless",
-		"body": "// Setting up a Serverless application\n// ...",
+		"prefix": "Nest serverless",
+		"body": [
+			"import * as express from 'express';",
+
+"async function bootstrap() {",
+ " const app = express();",
+  "app.get('/', (req, res) => res.send('Hello world!'));",
+  "await new Promise<void>((resolve) => app.listen(3000, resolve));",
+"}",
+"bootstrap();",
+
+"import { NestFactory } from '@nestjs/core';",
+"import { AppModule } from './app.module';",
+
+"async function bootstrap() {",
+ " const app = await NestFactory.create(AppModule, { logger: ['error'] });",
+ " await app.listen(3000);",
+"}",
+"bootstrap();",
+
+"// #3 Nest as a Standalone application (no HTTP server)",
+"import { NestFactory } from '@nestjs/core';",
+"import { AppModule } from './app.module';",
+"import { AppService } from './app.service';",
+
+"async function bootstrap() {",
+  "const app = await NestFactory.createApplicationContext(AppModule, {",
+    "logger: ['error'],",
+ " });",
+ " console.log(app.get(AppService).getHello());",
+"}",
+"bootstrap();",
+
+"// #4 Raw Node.js script",
+"async function bootstrap() {",
+  "console.log('Hello world!');",
+"}",
+"bootstrap();"
+		],
 		"description": "Setting up a Serverless application"
 	  },
 	  "HTTP adapter": {
-		"prefix": "http_adapter",
-		"body": "// Creating an HTTP adapter for Serverless\n// ...",
+		"prefix": "Nest http_adapter",
+		"body": [
+			"export class CatsService {",
+				"constructor(private adapterHost: HttpAdapterHost) {}",
+			  "}"
+		],
 		"description": "Creating an HTTP adapter for Serverless"
 	  },
 	  "Global path prefix": {
-		"prefix": "global_path_prefix",
-		"body": "// Configuring a global path prefix in Serverless\n// ...",
+		"prefix": "Nest global_path_prefix",
+		"body": [
+			"app.setGlobalPrefix('v1', {",
+				"exclude: [{ path: 'health', method: RequestMethod.GET }],",
+			 " });"
+		],
 		"description": "Configuring a global path prefix in Serverless"
 	  },
 	  "Raw body": {
-		"prefix": "raw_body",
-		"body": "// Accessing the raw request body in Serverless\n// ...",
+		"prefix": "Nest raw_body",
+		"body": [
+			"import { NestFactory } from '@nestjs/core';",
+"import type { NestExpressApplication } from '@nestjs/platform-express';",
+"import { AppModule } from './app.module';",
+
+"// in the 'bootstrap' function",
+"const app = await NestFactory.create<NestExpressApplication>(AppModule, {",
+  "rawBody: true,",
+"});",
+"await app.listen(3000);"
+		],
 		"description": "Accessing the raw request body in Serverless"
 	  },
 	  "Hybrid application": {
-		"prefix": "hybrid_app",
-		"body": "// Building a hybrid Serverless application\n// ...",
+		"prefix": "Nest hybrid_app",
+		"body": [
+			"const app = await NestFactory.create(AppModule);",
+"const microservice = app.connectMicroservice<MicroserviceOptions>({",
+  "transport: Transport.TCP,",
+"});",
+"await app.startAllMicroservices();",
+"await app.listen(3001);"
+		],
 		"description": "Building a hybrid Serverless application"
 	  },
 	  "HTTPS & multiple servers": {
-		"prefix": "https_multiple_servers",
-		"body": "// Using HTTPS and multiple servers in Serverless\n// ...",
+		"prefix": "Nest https_multiple_servers",
+		"body": [
+			"const httpsOptions = {",
+				"key: fs.readFileSync('./secrets/private-key.pem'),",
+				"cert: fs.readFileSync('./secrets/public-certificate.pem'),",
+			  "};",
+			 " const app = await NestFactory.create(AppModule, {",
+				"httpsOptions,",
+			  "});",
+			  "await app.listen(3000);"
+		],
 		"description": "Using HTTPS and multiple servers in Serverless"
 	  },
 	  "Request lifecycle": {
-		"prefix": "request_lifecycle",
-		"body": "// Understanding the request lifecycle in Serverless\n// ...",
+		"prefix": "Nest request_lifecycle",
+		"body": [
+			"@UseGuards(Guard1, Guard2)",
+"@Controller('cats')",
+"export class CatsController {",
+  "constructor(private catsService: CatsService) {}",
+
+ " @UseGuards(Guard3)",
+  "@Get()",
+  "getCats(): Cats[] {",
+    "return this.catsService.getCats();",
+  "}",
+"}"
+		],
 		"description": "Understanding the request lifecycle in Serverless"
 	  },
 	  "Common errors": {
-		"prefix": "common_errors",
+		"prefix": "Nest common_errors",
 		"body": "// Handling common errors in Serverless applications\n// ...",
 		"description": "Handling common errors in Serverless applications"
 	  },
