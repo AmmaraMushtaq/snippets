@@ -1,6 +1,6 @@
 {
 	" CSS": {
-		"prefix": "css",
+		"prefix": "Css",
 		"body": [
 			"Resource",
 			"",
@@ -26,7 +26,7 @@
 
 
 	" Resources": {
-		"prefix": "cssresources",
+		"prefix": "Resources",
 		"body": [
 			"Download",
 			"1:CSS in one page http://www.cheat-sheets.org/sites/css.su/",
@@ -65,7 +65,7 @@
 
 
 	" Page": {
-		"prefix": "csspage",
+		"prefix": "Page",
 		"body": [
 			"Content for Page Media",
 			"1:bookmark-label",
@@ -127,7 +127,7 @@
 		"description": "CSS page options"
 	},
 	"Box Model": {
-		"prefix": "cssboxmodel",
+		"prefix": "Boxmodel",
 		"body": [
 		"Margin",
 		"",
@@ -246,7 +246,7 @@
 		"description": "CSS boxmodel options"
 	},
 	"Selectors": {
-		"prefix": "cssselectors",
+		"prefix": "Selectors",
 		"body": [
 		"Basic Selectors",
 		"",
@@ -341,7 +341,7 @@
 		"description": "CSS Selectors options"
 	},
 		"Style": {
-			"prefix": "cssstyle",
+			"prefix": "Style",
 			"body": [
 				
 				"background",
@@ -428,7 +428,7 @@
 		},
 
 		"Elements": {
-			"prefix": "csselements",
+			"prefix": "Elements",
 			"body": [
 			"Hyperlink",
 			"",
@@ -516,7 +516,7 @@
 		
 		},
 		"CSS3 Box":{
-			"prefix": "cssCSS3box",
+			"prefix": "CSS3box",
 			"body": [
 			"Box",
 			"",
@@ -608,7 +608,7 @@
 		},
 
 		"Animation":{
-			"prefix": "cssanimation",
+			"prefix": "Animation",
 			"body": [
 			"Animation",
 			"",
@@ -663,7 +663,7 @@
 			"description": "CSS Animation Properties" 
 		},
 		"Miscellaneous":{
-			"prefix": "cssmiscellaneous",
+			"prefix": "Miscellaneous",
 			"body": [
 		"Print",
 		"",
