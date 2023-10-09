@@ -24,7 +24,7 @@
 	
 		]},
 	  "Resource": {
-		"prefix": "phpResource",
+		"prefix": "Resource",
 		"body": [
 		  " Online",
 		  "Official Website",
@@ -38,7 +38,7 @@
 		  
 		]},
 	"Math Functions": {
-	  "prefix": "phpmath",
+	  "prefix": "Math",
 	  "body": [
 		"abs()",
 		"acos()",
@@ -92,7 +92,7 @@
 	  "description": "Math functions"
 	},
 	"Math Constants": {
-	  "prefix": "phpmathconst",
+	  "prefix": "Mathconst",
 	  "body": [
 		"M_E",
 		"M_EULER",
@@ -115,59 +115,59 @@
 	  "description": "Math constants"
 	},
 	"abs()": {
-		"prefix": "phpabs",
+		"prefix": "Mathabs",
 		"body": ["https://www.php.net/manual/en/function.abs.php"],
 		"description": "abs() - Absolute value"
 	  },
 	  "acos()": {
-		"prefix": "phpacos",
+		"prefix": "Mathacos",
 		"body": "https://www.php.net/manual/en/function.acos.php",
 		"description": "acos() - Arc cosine"
 	  },
 	  "acosh()": {
-		"prefix": "phpacosh",
+		"prefix": "Mathacosh",
 		"body": [
 "https://www.php.net/manual/en/function.acosh.php"
 		],
 		"description": "acosh() - Inverse hyperbolic cosine"
 	  },
 	  "asin()": {
-		"prefix": "phpasin",
+		"prefix": "Mathasin",
 		"body": [
 "https://www.php.net/manual/en/function.asin.php"
 		],
 		"description": "asin() - Arc sine"
 	  },
 	  "asinh()": {
-		"prefix": "phpasinh",
+		"prefix": "Mathasinh",
 		"body": [
 "https://www.php.net/manual/en/function.asinh.php"
 		],
 		"description": "asinh() - Inverse hyperbolic sine"
 	  },
 	  "atan()": {
-		"prefix": "phpatan",
+		"prefix": "Mathatan",
 		"body": [
 "https://www.php.net/manual/en/function.atan.php"
 		],
 		"description": "atan() - Arc tangent"
 	  },
 	  "atan2()": {
-		"prefix": "phpatan2",
+		"prefix": "Mathatan2",
 		"body": [
 "https://www.php.net/manual/en/function.atan2.php"
 		],
 		"description": "atan2() - Arc tangent of two variables"
 	  },
 	  "atanh()": {
-		"prefix": "phpatanh",
+		"prefix": "Mathatanh",
 		"body": [
 			"https://www.php.net/manual/en/function.atanh.php"
 		],
 		"description": "atanh() - Inverse hyperbolic tangent"
 	  },
 	  "base_convert()": {
-		"prefix": "phpbase_convert",
+		"prefix": "Mathbaseconvert",
 		"body": [
 			"$hexadecimal = 'a37334';",
 "echo base_convert($hexadecimal, 16, 2)"
@@ -175,7 +175,7 @@
 		"description": "base_convert() - Convert a number between arbitrary bases"
 	  },
 	  "bindec()": {
-		"prefix": "phpbindec",
+		"prefix": "Mathbindec",
 		"body":[
 			"echo bindec('110011') . '\n';",
 "echo bindec('000110011') . '\n';",
@@ -185,7 +185,7 @@
 		"description": "bindec() - Binary to decimal"
 	  },
 	  "ceil()": {
-		"prefix": "phpceil",
+		"prefix": "Mathceil",
 		"body": [
 			"echo ceil(4.3);    // 5",
 "echo ceil(9.999);  // 10",
@@ -194,21 +194,21 @@
 		"description": "ceil() - Round fractions up"
 	  },
 	  "cos()": {
-		"prefix": "phpcos",
+		"prefix": "Mathcos",
 		"body": [
 			"echo cos(M_PI); // -1"
 		],
 		"description": "cos() - Cosine"
 	  },
 	  "cosh()": {
-		"prefix": "phpcosh",
+		"prefix": "Mathcosh",
 		"body": [
 			"https://www.php.net/manual/en/function.cosh.php"
 		],
 		"description": "cosh() - Hyperbolic cosine"
 	  },
 	  "decbin()": {
-		"prefix": "phpdecbin",
+		"prefix": "Mathdecbin",
 		"body": [
 			"echo decbin(12) . '\n';",
 "echo decbin(26);"
@@ -216,14 +216,14 @@
 		"description": "decbin() - Decimal to binary"
 	  },
 	  "dechex()": {
-		"prefix": "phpdechex",
+		"prefix": "Mathdechex",
 		"body": [
 			"https://www.php.net/manual/en/function.dechex.php"
 		],
 		"description": "dechex() - Decimal to hexadecimal"
 	  },
 	  "decoct()": {
-		"prefix": "phpdecoct",
+		"prefix": "Mathdecoct",
 		"body":[
 			"echo decoct(15) . '\n';",
 "echo decoct(264);"
@@ -231,7 +231,7 @@
 		"description": "decoct() - Decimal to octal"
 	  },
 	  "deg2rad()": {
-		"prefix": "phpdeg2rad",
+		"prefix": "Mathdeg2rad",
 		"body":[
 			"echo deg2rad(45); // 0.785398163397",
 "var_dump(deg2rad(45) === M_PI_4); // bool(true)"
@@ -239,7 +239,7 @@
 		"description": "deg2rad() - Convert degrees to radians"
 	  },
 	  "exp()": {
-		"prefix": "phpexp",
+		"prefix": "Mathexp",
 		"body": [
 			"echo exp(12) . '\n';",
 "echo exp(5.7);"
@@ -247,14 +247,14 @@
 		"description": "exp() - Exponential expression"
 	  },
 	  "expm1()": {
-		"prefix": "phpexpm1",
+		"prefix": "Mathexpm1",
 		"body": [
 			"https://www.php.net/manual/en/function.expm1.php"
 		],
 		"description": "expm1() - Exponential minus 1"
 	  },
 	  "floor()": {
-		"prefix": "phpfloor",
+		"prefix": "Mathfloor",
 		"body": [
 			"echo floor(4.3);   // 4",
 "echo floor(9.999); // 9",
@@ -263,7 +263,7 @@
 		"description": "floor() - Round fractions down"
 	  },
 	  "fmod()": {
-		"prefix": "phpfmod",
+		"prefix": "Mathfmod",
 		"body": [
 			"$x = 5.7;",
 "$y = 1.3;",
@@ -272,7 +272,7 @@
 		"description": "fmod() - Floating point remainder of division"
 	  },
 	  "getrandmax()": {
-		"prefix": "phpgetrandmax",
+		"prefix": "Mathgetrandmax",
 		"body": [
 			"echo mt_rand(), '\n';",
 "echo mt_rand(), '\n';",
@@ -282,7 +282,7 @@
 		"description": "getrandmax() - Largest value that can be returned by rand()"
 	  },
 	  "hexdec()": {
-		"prefix": "phphexdec",
+		"prefix": "Mathhexdec",
 		"body":[
 			"var_dump(hexdec('See'));",
 "var_dump(hexdec('ee'));",
@@ -294,28 +294,28 @@
 		"description": "hexdec() - Hexadecimal to decimal"
 	  },
 	  "hypot()": {
-		"prefix": "phphypot",
+		"prefix": "Mathhypot",
 		"body": ["https://www.php.net/manual/en/function.hypot.php"
 
 		],
 		"description": "hypot() - Calculate the length of the hypotenuse of a right-angle triangle"
 	  },
 	  "is_finite()": {
-		"prefix": "phpis_finite",
+		"prefix": "Mathisfinite",
 		"body": [
 			"https://www.php.net/manual/en/function.is-finite.php"
 		],
 		"description": "is_finite() - Check if a value is finite"
 	  },
 	  "is_infinite()": {
-		"prefix": "phpis_infinite",
+		"prefix": "Mathisinfinite",
 		"body": [
 			"https://www.php.net/manual/en/function.is-infinite.php"
 		],
 		"description": "is_infinite() - Check if a value is infinite"
 	  },
 	  "is_nan()": {
-		"prefix": "phpis_nan",
+		"prefix": "Mathisnan",
 		"body":[
 			"$nan = acos(8);",
 
@@ -324,35 +324,35 @@
 		"description": "is_nan() - Check if a value is NaN"
 	  },
 	  "lcg_value()": {
-		"prefix": "phplcg_value",
+		"prefix": "Mathlcgvalue",
 		"body": [
 			"https://www.php.net/manual/en/function.lcg-value.php"
 		],
 		"description": "lcg_value() - Combined linear congruential generator"
 	  },
 	  "log()": {
-		"prefix": "phplog",
+		"prefix": "Mathlog",
 		"body":[
 			"https://www.php.net/manual/en/function.log.php"
 		],
 		"description": "log() - Natural logarithm"
 	  },
 	  "log10()": {
-		"prefix": "phplog10",
+		"prefix": "Mathlog10",
 		"body": [
 			"https://www.php.net/manual/en/function.log10.php"
 		],
 		"description": "log10() - Base-10 logarithm"
 	  },
 	  "log1p()": {
-		"prefix": "phplog1p",
+		"prefix": "Mathlog1p",
 		"body": [
 			"https://www.php.net/manual/en/function.log1p.php"
 		],
 		"description": "log1p() - Natural logarithm of (1 + x)"
 	  },
 	  "max()": {
-		"prefix": "phpmax",
+		"prefix": "Mathmax",
 		"body":[
 			"echo max(2, 3, 1, 6, 7);  // 7",
 "echo max(array(2, 4, 5)); // 5",
@@ -372,7 +372,7 @@
 		"description": "max() - Find the highest value"
 	  },
 	  "min()": {
-		"prefix": "phpmin",
+		"prefix": "Mathmin",
 		"body": [
 			"echo min(2, 3, 1, 6, 7);  // 1",
 "echo min(array(2, 4, 5)); // 2",
@@ -393,7 +393,7 @@
 		"description": "min() - Find the lowest value"
 	  },
 	  "mt_getrandmax()": {
-		"prefix": "phpmt_getrandmax",
+		"prefix": "Mathmtgetrandmax",
 		"body":[
 			"function randomFloat($min = 0, $max = 1) {",
 				"return $min + mt_rand() / mt_getrandmax() * ($max - $min);",
@@ -405,7 +405,7 @@
 		"description": "mt_getrandmax() - Largest value that can be returned by mt_rand()"
 	  },
 	  "mt_rand()": {
-		"prefix": "phpmt_rand",
+		"prefix": "Mathmtrand",
 		"body":[
 			"echo mt_rand(), '\n';",
 "echo mt_rand(), '\n';",
@@ -415,12 +415,12 @@
 		"description": "mt_rand() - Generate a random integer using the Mersenne Twister algorithm"
 	  },
 	  "mt_srand()": {
-		"prefix": "phpmt_srand",
+		"prefix": "Mathmtsrand",
 		"body": "https://www.php.net/manual/en/function.mt-srand.php",
 		"description": "mt_srand() - Seed the Mersenne Twister random number generator"
 	  },
 	  "octdec()": {
-		"prefix": "phpoctdec",
+		"prefix": "Mathoctdec",
 		"body": [
 			"echo octdec('77') . '\n';",
 "echo octdec(decoct(45));"
@@ -428,7 +428,7 @@
 		"description": "octdec() - Octal to decimal"
 	  },
 	  "pi()": {
-		"prefix": "phppi",
+		"prefix": "Mathpi",
 		"body": [
 			"echo pi(); // 3.1415926535898",
 "echo M_PI; // 3.1415926535898"
@@ -436,7 +436,7 @@
 		"description": "pi() - Get the value of pi"
 	  },
 	  "pow()": {
-		"prefix": "phppow",
+		"prefix": "Mathpow",
 		"body": [
 			"var_dump(pow(2, 8)); // int(256)",
 "echo pow(-1, 20); // 1",
@@ -448,14 +448,14 @@
 		"description": "pow() - Exponential expression"
 	  },
 	  "rad2deg()": {
-		"prefix": "phprad2deg",
+		"prefix": "Mathrad2deg",
 		"body": [
 			"echo rad2deg(M_PI_4); // 45"
 		],
 		"description": "rad2deg() - Convert radians to degrees"
 	  },
 	  "rand()": {
-		"prefix": "phprand",
+		"prefix": "Mathrand",
 		"body": [
 			"echo rand(), '\n';",
 "echo rand(), '\n';",
@@ -465,14 +465,14 @@
 		"description": "rand() - Generate a random integer"
 	  },
 	  "round()": {
-		"prefix": "phpround",
+		"prefix": "Mathround",
 		"body": [
 			"https://www.php.net/manual/en/function.round.php"
 		],
 		"description": "round() - Rounds a floating-point number"
 	  },
 	  "sin()": {
-		"prefix": "phpsin",
+		"prefix": "Mathsin",
 		"body": [
 			"echo sin(deg2rad(60));  //  0.866025403 ...",
 "echo sin(60);           // -0.304810621 ..."
@@ -480,14 +480,14 @@
 		"description": "sin() - Sine"
 	  },
 	  "sinh()": {
-		"prefix": "phpsinh",
+		"prefix": "Mathsinh",
 		"body":[
 			"https://www.php.net/manual/en/function.sinh.php"
 		],
 		"description": "sinh() - Hyperbolic sine"
 	  },
 	  "sqrt()": {
-		"prefix": "phpsqrt",
+		"prefix": "Mathsqrt",
 		"body": [
 			"echo sqrt(9); // 3",
 "echo sqrt(10); // 3.16227766 ..."
@@ -495,21 +495,21 @@
 		"description": "sqrt() - Square root"
 	  },
 	  "srand()": {
-		"prefix": "phpsrand",
+		"prefix": "Mathsrand",
 		"body": [
 			"https://www.php.net/manual/en/function.srand.php"
 		],
 		"description": "srand() - Seed the random number generator"
 	  },
 	  "tan()": {
-		"prefix": "phptan",
+		"prefix": "Mathtan",
 		"body": [
 			"echo tan(M_PI_4); // 1"
 		],
 		"description": "tan() - Tangent"
 	  },
 	  "tanh()": {
-		"prefix": "phptanh",
+		"prefix": "Mathtanh",
 		"body": [
 			"echo tan(M_PI_4); // 1"
 		],
@@ -517,7 +517,7 @@
 	  },
 
 	"Misc. Functions": {
-		"prefix": "phpmiscfuncs",
+		"prefix": "Miscfuncs",
 		"body": [
 		  "connection_aborted()",
 		  "connection_status()",
@@ -551,28 +551,28 @@
 		"description": "Misc. Functions"
 	  },
 	  "connection_aborted()": {
-		"prefix": "connection_aborted",
+		"prefix": "Miscconnectionaborted",
 		"body": [
 			"https://www.php.net/manual/en/function.connection-aborted.php"
 		],
 		"description": "connection_aborted() - Check whether the client connection was aborted"
 	  },
 	  "connection_status()": {
-		"prefix": "connection_status",
+		"prefix": "Miscconnectionstatus",
 		"body": [
 			"https://www.php.net/manual/en/function.connection-status.php"
 		],
 		"description": "connection_status() - Returns the current connection status"
 	  },
 	  "connection_timeout()": {
-		"prefix": "connection_timeout",
+		"prefix": "Miscconnectiontimeout",
 		"body": [
 
 		],
 		"description": "connection_timeout() - Returns the current connection timeout value"
 	  },
 	  "constant()": {
-		"prefix": "constant",
+		"prefix": "Miscconstant",
 		"body": [
 			"enum Suit",
 "{",
@@ -589,7 +589,7 @@
 		"description": "constant() - Returns the value of a constant"
 	  },
 	  "define()": {
-		"prefix": "define",
+		"prefix": "Miscdefine",
 		"body": [
 			"var_dump(defined('__LINE__'));",
 "var_dump(define('__LINE__', 'test'));",
@@ -599,7 +599,7 @@
 		"description": "define() - Define a named constant"
 	  },
 	  "defined()": {
-		"prefix": "defined",
+		"prefix": "Miscdefined",
 		"body": [
 			"enum Suit",
 "{",
@@ -614,14 +614,14 @@
 		"description": "defined() - Check whether a constant is defined"
 	  },
 	  "die()": {
-		"prefix": "die",
+		"prefix": "Miscdie",
 		"body": [
 			"https://www.php.net/manual/en/function.die.php"
 		],
 		"description": "die() - Equivalent to exit() with a message"
 	  },
 	  "eval()": {
-		"prefix": "eval",
+		"prefix": "Misceval",
 		"body": [
 			"$string = 'cup';",
 "$name = 'coffee';",
@@ -633,7 +633,7 @@
 		"description": "eval() - Evaluate a string as PHP code"
 	  },
 	  "exit()": {
-		"prefix": "exit",
+		"prefix": "Miscexit",
 		"body": [
 			"$filename = '/path/to/data-file';",
 "$file = fopen($filename, 'r')",
@@ -642,7 +642,7 @@
 		"description": "exit() - Output a message and terminate the current script"
 	  },
 	  "get_browser()": {
-		"prefix": "get_browser",
+		"prefix": "Miscgetbrowser",
 		"body": [
 			"echo $_SERVER['HTTP_USER_AGENT'] . '\n\n';",
 
@@ -652,21 +652,21 @@
 		"description": "get_browser() - Get information about the capabilities of a browser"
 	  },
 	  "highlight_file()": {
-		"prefix": "highlight_file",
+		"prefix": "Mischighlightfile",
 		"body": [
 			"https://www.php.net/manual/en/function.highlight-file.php"
 		],
 		"description": "highlight_file() - Syntax highlighting of a file"
 	  },
 	  "highlight_string()": {
-		"prefix": "highlight_string",
+		"prefix": "Mischighlightstring",
 		"body": [
 			"highlight_string('<?php phpinfo(); ?>');"
 		],
 		"description": "highlight_string() - Syntax highlighting of a string"
 	  },
 	  "ignore_user_abort()": {
-		"prefix": "ignore_user_abort",
+		"prefix": "Miscignoreuserabort",
 		"body": [
 			"ignore_user_abort(true);",
 "set_time_limit(0);",
@@ -685,21 +685,21 @@
 		"description": "ignore_user_abort() - Set whether a client disconnect should abort the script"
 	  },
 	  "pack()": {
-		"prefix": "pack",
+		"prefix": "Miscpack",
 		"body": [
 			"$binarydata = pack('nvc*', 0x1234, 0x5678, 65, 66);"
 		],
 		"description": "pack() - Pack data into binary string"
 	  },
 	  "php_check_syntax()": {
-		"prefix": "php_check_syntax",
+		"prefix": "Miscchecksyntax",
 		"body": [
 
 		],
 		"description": "php_check_syntax() - Check the syntax of a PHP file"
 	  },
 	  "php_strip_whitespace()": {
-		"prefix": "php_strip_whitespace",
+		"prefix": "Miscstripwhitespace",
 		"body": [
 			"echo        php_strip_whitespace(__FILE__);",
 "do_nothing();"
@@ -707,14 +707,14 @@
 		"description": "php_strip_whitespace() - Return source with stripped comments and whitespace"
 	  },
 	  "show_source()": {
-		"prefix": "phpshow_source",
+		"prefix": "Miscshowsource",
 		"body": [
 			"https://www.php.net/manual/en/function.highlight-file.php"
 		],
 		"description": "show_source() - Alias of highlight_file()"
 	  },
 	  "sleep()": {
-		"prefix": "phpsleep",
+		"prefix": "Miscsleep",
 		"body": [
 			"echo date('h:i:s') . '\n';",
 
@@ -725,7 +725,7 @@
 		"description": "sleep() - Delay execution for a specified number of seconds"
 	  },
 	  "time_nanosleep()": {
-		"prefix": "phptime_nanosleep",
+		"prefix": "Misctimenanosleep",
 		"body": [
 			"if (time_nanosleep(0, 500000000)) {",
 				"echo 'Slept for half a second.\n';",
@@ -750,7 +750,7 @@
 		"description": "time_nanosleep() - Delay execution in seconds and nanoseconds"
 	  },
 	  "time_sleep_until()": {
-		"prefix": "phptime_sleep_until",
+		"prefix": "Misctimesleepuntil",
 		"body": [
 			"var_dump(time_sleep_until(time()-1));",
 
@@ -759,7 +759,7 @@
 		"description": "time_sleep_until() - Make the script sleep until the specified time"
 	  },
 	  "uniqid()": {
-		"prefix": "phpuniqid",
+		"prefix": "Miscuniqid",
 		"body": [
 			"printf('uniqid(): %s\r\n', uniqid());",
 
@@ -772,7 +772,7 @@
 		"description": "uniqid() - Generate a unique ID"
 	  },
 	  "unpack()": {
-		"prefix": "phpunpack",
+		"prefix": "Miscunpack",
 		"body": [
 			"$binarydata = '\"x04\"x00\"xa0\"x00';",
 "$array = unpack('c2chars/nint', $binarydata);",
@@ -781,7 +781,7 @@
 		"description": "unpack() - Unpack data from binary string"
 	  },
 	  "usleep()": {
-		"prefix": "phpusleep",
+		"prefix": "Miscusleep",
 		"body": [
 			"echo (new DateTime('now'))->format('H:i:s.v'), '\n';",
 
@@ -797,7 +797,7 @@
 	  },
 
 	  "Array Functions": {
-		"prefix": "phparrayfuncs",
+		"prefix": "Arrayfuncs",
 		"body": [
 			"array()",
 			"array_change_key_case()",
@@ -908,7 +908,7 @@
     "description": "List of PHP array constants"
   },
   "Array Functions array()": {
-    "prefix": "phparray",
+    "prefix": "Arrayarray",
     "body": [
 		"$fruits = array (",
 		"fruits => array('a' => 'orange', 'b' => 'banana', 'c' => 'apple'),",
@@ -919,14 +919,14 @@
     "description": "Create an array"
 },
 "array_change_key_case()": {
-    "prefix": "phparray_change_key_case",
+    "prefix": "Arraychangekeycase",
     "body": [
         "https://www.php.net/manual/en/function.array-change-key-case.php"
     ],
     "description": "Changes all keys in an array to lowercase or uppercase"
 },
 "array_chunk()": {
-    "prefix": "phparray_chunk",
+    "prefix": "Arraychunk",
     "body": [
        " $input_array = array('a', 'b', 'c', 'd', 'e');",
 "print_r(array_chunk($input_array, 2));",
@@ -935,7 +935,7 @@
     "description": "Split an array into chunks"
 },
 "array_combine()": {
-    "prefix": "phparray_combine",
+    "prefix": "Arraycombine",
     "body": [
 		"$a = array('green', 'red', 'yellow');",
 		"$b = array('avocado', 'apple', 'banana');",
@@ -946,7 +946,7 @@
     "description": "Creates an array by using one array for keys and another for its values"
 },
 "array_count_values()": {
-    "prefix": "phparray_count_values",
+    "prefix": "Arraycountvalues",
     "body": [
         "$array = array(1, 'hello', 1, 'world', 'hello');",
 "print_r(array_count_values($array));"
@@ -954,7 +954,7 @@
     "description": "Counts all the values of an array"
 },
 "array_diff()": {
-    "prefix": "phparray_diff",
+    "prefix": "Arraydiff",
     "body": [
        " $array1 = array('a' => 'green', 'red', 'blue', 'red');",
 "$array2 = array('b' => 'green', 'yellow', 'red');",
@@ -965,7 +965,7 @@
     "description": "Computes the difference of arrays"
 },
 "array_diff_assoc()": {
-    "prefix": "phparray_diff_assoc",
+    "prefix": "Arraydiffassoc",
     "body": [
        " function key_compare_func($a, $b)",
 "{",
@@ -980,14 +980,14 @@
     "description": "Computes the difference of arrays with additional index check"
 },
 "array_diff_key()": {
-    "prefix": "phparray_diff_key",
+    "prefix": "Arraydiffkey",
     "body": [
         "array_diff_key(${1:array1}, ${2:array2})"
     ],
     "description": "Computes the difference of arrays using keys for comparison"
 },
 "array_diff_uassoc()": {
-    "prefix": "phparray_diff_uassoc",
+    "prefix": "Arraydiffuassoc",
     "body": [
 		"function key_compare_func($a, $b)",
 		"{",
@@ -1002,7 +1002,7 @@
     "description": "Computes the difference of arrays with additional index check which is performed by a user-defined function"
 },
 "array_diff_ukey()": {
-    "prefix": "phparray_diff_ukey",
+    "prefix": "Arraydiffukey",
     "body": [
         "function key_compare_func($key1, $key2)",
 "{",
@@ -1022,7 +1022,7 @@
     "description": "Computes the difference of arrays using a callback function on the keys for comparison"
 },
 "array_fill()": {
-    "prefix": "phparray_fill",
+    "prefix": "Arrayfill",
     "body": [
        " $a = array_fill(-2, 4, 'pear');",
 "print_r($a);"
@@ -1030,7 +1030,7 @@
     "description": "Fill an array with values"
 },
 "array_filter()": {
-    "prefix": "phparray_filter",
+    "prefix": "Arrayfilter",
     "body": [
        " function odd($var)",
 "{",
@@ -1053,7 +1053,7 @@
     "description": "Filters elements of an array using a callback function"
 },
 "array_flip()": {
-    "prefix": "phparray_flip",
+    "prefix": "Arrayflip",
     "body": [
         "$input = array('a' => 1, 'b' => 1, 'c' => 2);",
 "$flipped = array_flip($input);",
@@ -1063,7 +1063,7 @@
     "description": "Exchanges all keys with their associated values in an array"
 },
 "array_intersect()": {
-    "prefix": "phparray_intersect",
+    "prefix": "Arrayintersect",
     "body": [
 		"$array1 = array('a' => 'green', 'red', 'blue');",
 		"$array2 = array('b' => 'green', 'yellow', 'red');",
@@ -1073,7 +1073,7 @@
     "description": "Computes the intersection of arrays"
 },
 "array_intersect_assoc()": {
-    "prefix": "phparray_intersect_assoc",
+    "prefix": "Arrayintersectassoc",
     "body": [
         "$array1 = array('a' => 'green', 'b' => 'brown', 'c' => 'blue', 'red');",
 "$array2 = array('a' => 'green', 'b' => 'yellow', 'blue', 'red');",
@@ -1083,7 +1083,7 @@
     "description": "Computes the intersection of arrays with additional index check"
 },
 "array_intersect_key()": {
-    "prefix": "phparray_intersect_key",
+    "prefix": "Arrayintersectkey",
     "body": [
         "$array1 = array('blue'  => 1, 'red'  => 2, 'green'  => 3, 'purple' => 4);",
 "$array2 = array('green' => 5, 'blue' => 6, 'yellow' => 7, 'cyan'   => 8);",
@@ -1093,7 +1093,7 @@
     "description": "Computes the intersection of arrays using keys for comparison"
 },
 "array_intersect_uassoc()": {
-    "prefix": "phparray_intersect_uassoc",
+    "prefix": "Arrayintersectuassoc",
     "body": [
 		"$array1 = array('a' => 'green', 'b' => 'brown', 'c' => 'blue', 'red');",
 		"$array2 = array('a' => 'GREEN', 'B' => 'brown', 'yellow', 'red');",
@@ -1103,7 +1103,7 @@
     "description": "Computes the intersection of arrays with additional index check, compares indexes by a callback function"
 },
 "array_intersect_ukey()": {
-    "prefix": "phparray_intersect_ukey",
+    "prefix": "Arrayintersectukey",
     "body": [
         "function key_compare_func($key1, $key2)",
 "{",
@@ -1123,7 +1123,7 @@
     "description": "Computes the intersection of arrays using"
 },
 "array_key_exists()": {
-    "prefix": "phparray_key_exists",
+    "prefix": "Arraykeyexists",
     "body": [
         "$search_array = array('first' => 1, 'second' => 4);",
 "if (array_key_exists('first', $search_array)) {",
@@ -1132,7 +1132,7 @@
     "description": "Checks if the given key or index exists in the array"
 },
 "array_keys()": {
-    "prefix": "phparray_keys",
+    "prefix": "Arraykeys",
     "body": [
 		"$array = array(0 => 100, 'color' => 'red');",
 		"print_r(array_keys($array));",
@@ -1147,7 +1147,7 @@
     "description": "Return all the keys or a subset of the keys of an array"
 },
 "array_map()": {
-    "prefix": "phparray_map",
+    "prefix": "Arraymap",
     "body": [
 		"function cube($n)",
 		"{",
@@ -1161,7 +1161,7 @@
     "description": "Applies a callback function to each element of an array"
 },
 "array_merge()": {
-    "prefix": "phparray_merge",
+    "prefix": "Arraymerge",
     "body": [
 		"$array1 = array('color' => 'red', 2, 4);",
 		"$array2 = array('a', 'b', 'color' => 'green', 'shape' => 'trapezoid', 4);",
@@ -1171,7 +1171,7 @@
     "description": "Merge one or more arrays"
 },
 "array_merge_recursive()": {
-    "prefix": "array_merge_recursive",
+    "prefix": "Arraymergerecursive",
     "body": [
        " $ar1 = array('color' => array('favorite' => 'red'), 5);",
 "$ar2 = array(10, 'color' => array('favorite' => 'green', 'blue'));",
@@ -1181,7 +1181,7 @@
     "description": "Merge two or more arrays recursively"
 },
 "array_multisort()": {
-    "prefix": "phparray_multisort",
+    "prefix": "Arraymultisort",
     "body": [
 		"$ar1 = array(10, 100, 100, 0);",
 		"$ar2 = array(1, 3, 2, 4);",
@@ -1193,7 +1193,7 @@
     "description": "Sort multiple or multi-dimensional arrays"
 },
 "array_pad()": {
-    "prefix": "phparray_pad",
+    "prefix": "Arraypad",
     "body": [
 		"$input = array(12, 10, 9);",
 
@@ -1206,7 +1206,7 @@
     "description": "Pad an array to a specified length with a value"
 },
 "array_pop()": {
-    "prefix": "phparray_pop",
+    "prefix": "Arraypop",
     "body": [
 		"$stack = array('orange', 'banana', 'apple', 'raspberry');",
 		"$fruit = array_pop($stack);",
@@ -1215,7 +1215,7 @@
     "description": "Pop the element off the end of the array"
 },
 "array_product()": {
-    "prefix": "phparray_product",
+    "prefix": "Arrayproduct",
     "body": [
 		"$a = array(2, 4, 6, 8);",
 		"echo 'product(a) = ' . array_product($a) . '\n';",
@@ -1224,7 +1224,7 @@
     "description": "Calculate the product of values in an array"
 },
 "array_push()": {
-    "prefix": "phparray_push",
+    "prefix": "Arraypush",
     "body": [
         "$stack = array('orange', 'banana');",
 "array_push($stack, 'apple', 'raspberry');",
@@ -1233,7 +1233,7 @@
     "description": "Push one or more elements onto the end of an array"
 },
 "array_rand()": {
-    "prefix": "phparray_rand",
+    "prefix": "Arrayrand",
     "body": [
 		"$input = array('Neo', 'Morpheus', 'Trinity', 'Cypher', 'Tank');",
 		"$rand_keys = array_rand($input, 2);",
@@ -1243,7 +1243,7 @@
     "description": "Pick one or more random keys out of an array"
 },
 "array_reduce()": {
-    "prefix": "phparray_reduce",
+    "prefix": "Arrayreduce",
     "body": [
        " function sum($carry, $item)",
 "{",
@@ -1267,7 +1267,7 @@
     "description": "Iteratively reduce the array to a single value using a callback function"
 },
 "array_reverse()": {
-    "prefix": "phparray_reverse",
+    "prefix": "Arrayreverse",
     "body": [
        " $input  = array('php', 4.0, array('green', 'red'));",
 "$reversed = array_reverse($input);",
@@ -1280,7 +1280,7 @@
     "description": "Return an array with elements in reverse order"
 },
 "array_search()": {
-    "prefix": "phparray_search",
+    "prefix": "Arraysearch",
     "body": [
 		"$array = array(0 => 'blue', 1 => 'red', 2 => 'green', 3 => 'red');",
 
@@ -1290,7 +1290,7 @@
     "description": "Searches the array for a given value and returns the corresponding key if successful"
 },
 "array_shift()": {
-    "prefix": "phparray_shift",
+    "prefix": "Arrayhift",
     "body": [
 		"$stack = array('orange', 'banana', 'apple', 'raspberry');",
 		"$fruit = array_shift($stack);",
@@ -1299,7 +1299,7 @@
     "description": "Shift an element off the beginning of the array"
 },
 "array_slice()": {
-    "prefix": "phparray_slice",
+    "prefix": "Arrayslice",
     "body": [
         "$input = array('a', 'b', 'c', 'd', 'e');",
 
@@ -1313,7 +1313,7 @@
     "description": "Extract a slice of the array"
 },
 "array_splice()": {
-    "prefix": "phparray_splice",
+    "prefix": "Arraysplice",
     "body": [
 		"$input = array('red', 'green', 'blue', 'yellow');",
 		"array_splice($input, 2);",
@@ -1334,7 +1334,7 @@
     "description": "Remove a portion of the array and replace it with something else"
 },
 "array_sum()": {
-    "prefix": "phparray_sum",
+    "prefix": "Arraysum",
     "body": [
        " $a = array(2, 4, 6, 8);",
 "echo 'sum(a) = ' . array_sum($a) . '\n';",
@@ -1345,7 +1345,7 @@
     "description": "Calculate the sum of values in an array"
 },
 "array_udiff()": {
-    "prefix": "phparray_udiff",
+    "prefix": "Arrayudiff",
     "body": [
 		"$array1 = array(new stdClass, new stdClass,",
                " new stdClass, new stdClass,",
@@ -1379,7 +1379,7 @@
 "print_r(array_udiff($array1, $array2, 'compare_by_area'));"
         ]},
 		"array_udiff_assoc()": {
-			"prefix": "phparray_udiff_assoc",
+			"prefix": "Arrayudiffassoc",
 			"body": [
 				"class cr {",1,
 					"private $priv_member;",
@@ -1409,7 +1409,7 @@
 			"description": "Computes the difference of arrays with additional index check, compares data and indexes by a callback function"
 		},
 		"array_udiff_uassoc()": {
-			"prefix": "phparray_udiff_uassoc",
+			"prefix": "Arrayudiffuassoc",
 			"body": [
 				"class cr {",
 					"private $priv_member;",
@@ -1439,7 +1439,7 @@
 			"description": "Computes the difference of arrays with additional index check, compares data and indexes by separate callback functions"
 		},
 		"array_uintersect()": {
-			"prefix": "phparray_uintersect",
+			"prefix": "Arrayuintersect",
 			"body": [
 				"$array1 = array('a' => 'green', 'b' => 'brown', 'c' => 'blue', 'red');",
 "$array2 = array('a' => 'GREEN', 'B' => 'brown', 'yellow', 'red');",
@@ -1449,7 +1449,7 @@
 			"description": "Computes the intersection of arrays with additional index check, compares data by a callback function"
 		},
 		"array_uintersect_assoc()": {
-			"prefix": "phparray_uintersect_assoc",
+			"prefix": "Arrayuintersectassoc",
 			"body": [
 				"$array1 = array('a' => 'green', 'b' => 'brown', 'c' => 'blue', 'red');",
 "$array2 = array('a' => 'GREEN', 'B' => 'brown', 'yellow', 'red');",
@@ -1459,7 +1459,7 @@
 			"description": "Computes the intersection of arrays with additional index check, compares data and indexes by a callback function"
 		},
 		"array_uintersect_uassoc()": {
-			"prefix": "phparray_uintersect_uassoc",
+			"prefix": "Arrayuintersectuassoc",
 			"body": [
 				"$array1 = array('a' => 'green', 'b' => 'brown', 'c' => 'blue', 'red');",
 "$array2 = array('a' => 'GREEN', 'B' => 'brown', 'yellow', 'red');",
@@ -1469,7 +1469,7 @@
 			"description": "Computes the intersection of arrays with additional index check, compares data and indexes by separate callback functions"
 		},
 		"array_unique()": {
-			"prefix": "phparray_unique",
+			"prefix": "Arrayunique",
 			"body": [
 				"$input = array('a' => 'green', 'red', 'b' => 'green', 'blue', 'red');",
 "$result = array_unique($input);",
@@ -1478,7 +1478,7 @@
 			"description": "Removes duplicate values from an array"
 		},
 		"array_unshift()": {
-			"prefix": "phparray_unshift",
+			"prefix": "Arrayunshift",
 			"body": [
 				"$queue = [",
 					"'orange',",
@@ -1491,7 +1491,7 @@
 			"description": "Prepend one or more elements to the beginning of an array"
 		},
 		"array_values()": {
-			"prefix": "phparray_values",
+			"prefix": "Arrayvalues",
 			"body": [
 				"$array = array('size' => 'XL', 'color' => 'gold');",
 "print_r(array_values($array));"
@@ -1499,7 +1499,7 @@
 			"description": "Return all the values of an array"
 		},
 		"array_walk()": {
-			"prefix": "phparray_walk",
+			"prefix": "Arraywalk",
 			"body": [
 				"$fruits = array('d' => 'lemon', 'a' => 'orange', 'b' => 'banana', 'c' => 'apple');",
 
@@ -1524,7 +1524,7 @@
 			"description": "Apply a user-defined function to every member of an array"
 		},
 		"array_walk_recursive()": {
-			"prefix": "phparray_walk_recursive",
+			"prefix": "Arraywalkrecursive",
 			"body": [
 				"$sweet = array('a' => 'apple', 'b' => 'banana');",
 "$fruits = array('sweet' => $sweet, 'sour' => 'lemon');",
@@ -1539,7 +1539,7 @@
 			"description": "Apply a user-defined function recursively to every member of an array"
 		},
 		"arsort()": {
-			"prefix": "phparsort",
+			"prefix": "Arrayarsort",
 			"body": [
 				"$fruits = array('d' => 'lemon', 'a' => 'orange', 'b' => 'banana', 'c' => 'apple');",
 "arsort($fruits);",
@@ -1550,7 +1550,7 @@
 			"description": "Sort an array in reverse order and maintain index association"
 		},
 		"asort()": {
-			"prefix": "phpasort",
+			"prefix": "Arrayasort",
 			"body": [
 				"$fruits = array('d' => 'lemon', 'a' => 'orange', 'b' => 'banana', 'c' => 'apple');",
 "asort($fruits);",
@@ -1561,7 +1561,7 @@
 			"description": "Sort an array and maintain index association"
 		},
 		"compact()": {
-			"prefix": "phpcompact",
+			"prefix": "Arraycompact",
 			"body": [
 				"$city  = 'San Francisco';",
 "$state = 'CA';",
@@ -1575,7 +1575,7 @@
 			"description": "Create an array containing variables and their values"
 		},
 		"count()": {
-			"prefix": "phpcount",
+			"prefix": "Arraycount",
 			"body": [
 				"$a[0] = 1;",
 "$a[1] = 3;",
@@ -1590,7 +1590,7 @@
 			"description": "Count all elements in an array or something in an object"
 		},
 		"current()": {
-			"prefix": "phpcurrent",
+			"prefix": "Arraycurrent",
 			"body": [
 				"$transport = array('foot', 'bike', 'car', 'plane');",
 "$mode = current($transport); // $mode = 'foot';",
@@ -1609,7 +1609,7 @@
 			"description": "Return the current element in an array"
 		},
 		"each()": {
-			"prefix": "phpeach",
+			"prefix": "Arrayeach",
 			"body": [
 			"$foo = array('bob', 'fred', 'jussi', 'jouni', 'egon', 'marliese');",
 "$bar = each($foo);",
@@ -1618,7 +1618,7 @@
 			"description": "Return the current key and value pair from an array and advance the array cursor"
 		},
 		"end": {
-			"prefix": "phpend",
+			"prefix": "Arrayend",
 			"body": [
 				"$fruits = array('apple', 'banana', 'cranberry');",
 				"echo end($fruits);" 
@@ -1626,7 +1626,7 @@
 			"description": "end() function"
 		  },
 		  "extract": {
-			"prefix": "phpextract",
+			"prefix": "Arrayextract",
 			"body": [
 			 
 
@@ -1641,7 +1641,7 @@
 			"description": "extract() function"
 		  },
 		  "in_array": {
-			"prefix": "phpin_array",
+			"prefix": "Arrayinarray",
 			"body": [
 				"$a = array(array('p', 'h'), array('p', 'r'), 'o');",
 
@@ -1660,7 +1660,7 @@
 			"description": "in_array() function"
 		  },
 		  "key": {
-			"prefix": "phpkey",
+			"prefix": "Arraykey",
 			"body": [
 			"$array = array(",
 				"'fruit1' => 'apple',",
@@ -1679,7 +1679,7 @@
 			"description": "key() function"
 		  },
 		  "krsort": {
-			"prefix": "phpkrsort",
+			"prefix": "Arraykrsort",
 			"body": [
 				"$fruits = array('d'=>'lemon', 'a'=>'orange', 'b'=>'banana', 'c'=>'apple');",
 			"krsort($fruits);",
@@ -1690,7 +1690,7 @@
 			"description": "krsort() function"
 		  },
 		  "ksort": {
-			"prefix": "phpksort",
+			"prefix": "Arrayksort",
 			"body": [
 				"$fruits = array('d'=>'lemon', 'a'=>'orange', 'b'=>'banana', 'c'=>'apple');",
 				"ksort($fruits);",
@@ -1701,7 +1701,7 @@
 			"description": "ksort() function"
 		  },
 		  "list": {
-			"prefix": "phplist",
+			"prefix": "Arraylist",
 			"body": [
 				"$info = array('coffee', 'brown', 'caffeine');",
 
@@ -1720,7 +1720,7 @@
 			"description": "list() function"
 		  },
 		  "natcasesort": {
-			"prefix": "phpnatcasesort",
+			"prefix": "Arraynatcasesort",
 			"body": [
 				"$array1 = $array2 = array('IMG0.png', 'img12.png', 'img10.png', 'img2.png', 'img1.png', 'IMG3.png');",
 
@@ -1735,7 +1735,7 @@
 			"description": "natcasesort() function"
 		  },
 		  "natsort": {
-			"prefix": "phpnatsort",
+			"prefix": "Arraynatsort",
 			"body": [
 				"$array1 = $array2 = array('img12.png', 'img10.png', 'img2.png', 'img1.png');",
 
@@ -1750,7 +1750,7 @@
 			"description": "natsort() function"
 		  },
 		  "next": {
-			"prefix": "phpnext",
+			"prefix": "Arraynext",
 			"body": [
 				"$transport = array('foot', 'bike', 'car', 'plane');",
 				"$mode = current($transport); // $mode = 'foot';",
@@ -1762,14 +1762,14 @@
 			"description": "next() function"
 		  },
 		  "pos": {
-			"prefix": "phppos",
+			"prefix": "Arraypos",
 			"body": [
 				"https://www.php.net/manual/en/function.pos.php"
 			],
 			"description": "pos() function"
 		  },
 		  "prev": {
-			"prefix": "phpprev",
+			"prefix": "Arrayprev",
 			"body": [
 			"$transport = array('foot', 'bike', 'car', 'plane');",
 				"$mode = current($transport); // $mode = 'foot';",
@@ -1781,7 +1781,7 @@
 			"description": "prev() function"
 		  },
 		  "range": {
-			"prefix": "phprange",
+			"prefix": "Arrayrange",
 			"body": [
 "foreach (range(0, 12) as $number) {",
    " echo $number;",
@@ -1808,7 +1808,7 @@
 			"description": "range() function"
 		  },
 		  "reset": {
-			"prefix": "phpreset",
+			"prefix": "Arrayreset",
 			"body": [
 			  
 			"$array = array('step one', 'step two', 'step three', 'step four');",
@@ -1826,7 +1826,7 @@
 			"description": "reset() function"
 		  },
 		  "rsort": {
-			"prefix": "phprsort",
+			"prefix": "Arrayrsort",
 			"body": [
 				"$fruits = array('lemon', 'orange', 'banana', 'apple');",
 				"rsort($fruits);",
@@ -1837,7 +1837,7 @@
 			"description": "rsort() function"
 		  },
 		  "shuffle": {
-			"prefix": "phpshuffle",
+			"prefix": "Arrayshuffle",
 			"body": [
 				"$numbers = range(1, 20);",
 				"shuffle($numbers);",
@@ -1848,14 +1848,14 @@
 			"description": "shuffle() function"
 		  },
 		  "sizeof": {
-			"prefix": "phpsizeof",
+			"prefix": "Arraysizeof",
 			"body": [
 				"https://www.php.net/manual/en/function.sizeof.php"
 			],
 			"description": "sizeof() function"
 		  },
 		  "sort": {
-			"prefix": "phpsort",
+			"prefix": "Arraysort",
 			"body": [
 				"$fruits = array('lemon', 'orange', 'banana', 'apple');",
 				"sort($fruits);",
@@ -1866,7 +1866,7 @@
 			"description": "sort() function"
 		  },
 		  "uasort": {
-			"prefix": "phpuasort",
+			"prefix": "Arrayuasort",
 			"body": [
 "function cmp($a, $b) {",
     "if ($a == $b) {",
@@ -1884,7 +1884,7 @@
 			"description": "uasort() function"
 		  },
 		  "uksort": {
-			"prefix": "phpuksort",
+			"prefix": "Arrayuksort",
 			"body": [
 				"function cmp($a, $b)",
 				"{",
@@ -1904,7 +1904,7 @@
 			"description": "uksort() function"
 		  },
 		  "usort": {
-			"prefix": "phpusort",
+			"prefix": "Arrayusort",
 			"body": [
 				"function cmp($a, $b)",
 				"{",
@@ -1927,7 +1927,7 @@
 
 
   "PHP Mail Functions": {
-    "prefix": "phpphp_mail_functions",
+    "prefix": "Mailfunctions",
     "body": [
       "ezmlm_hash()",
       "mail()"
@@ -1935,21 +1935,21 @@
     "description": "List of PHP mail functions"
   },
   "ezmlm_hash": {
-	"prefix": "phpezmlm_hash",
+	"prefix": "Mailmlmhash",
 	"body": [
 	 
 	],
 	"description": "ezmlm_hash() function"
   },
   "mail": {
-	"prefix": "phpmail",
+	"prefix": "Mail",
 	"body": [
 		"$text = str_replace('\n.', '\n..', $text);"
 	],
 	"description": "mail() function"
   },
   "XML Parser Functions": {
-    "prefix": "php_xml_parser_functions",
+    "prefix": "Xmlparserfunctions",
     "body": [
       "utf8_decode()",
       "utf8_encode()",
@@ -2011,7 +2011,7 @@
     "description": "List of XML Parser constants"
   },
   "utf8_decode": {
-	"prefix": "phputf8_decode",
+	"prefix": "XMLutf8decode",
 	"body": [
 		"$utf8_string = '\"x5A\"x6F\"xC3\"xAB';",
 		"$iso8859_1_string = utf8_decode($utf8_string);",
@@ -2029,7 +2029,7 @@
 	"description": "utf8_decode() function"
   },
   "utf8_encode": {
-	"prefix": "phputf8_encode",
+	"prefix": "XMLutf8encode",
 	"body": [
 		"$iso8859_1_string = '\"x5A\"x6F\"xEB';",
 		"$utf8_string = utf8_encode($iso8859_1_string);",
@@ -2038,43 +2038,43 @@
 	"description": "utf8_encode() function"
   },
   "xml_error_string": {
-	"prefix": "phpxml_error_string",
+	"prefix": "XMLerrorstring",
 	"body": [
 	  
 	  "https://www.php.net/manual/en/function.xml-error-string.php"
 	],
-	"description": "xml_error_string() function"
+	"description": "XMLerrorstringfunction"
   },
   "xml_get_current_byte_index": {
-	"prefix": "phpxml_get_current_byte_index",
+	"prefix": "XMLgetcurrentbyteindex",
 	"body": [
 	 "https://www.php.net/manual/en/function.xml-get-current-byte-index.php"
 	],
-	"description": "xml_get_current_byte_index() function"
+	"description": "XMLget_current_byte_index() function"
   },
   "xml_get_current_column_number": {
-	"prefix": "phpxml_get_current_column_number",
+	"prefix": "XMLgetcurrentcolumnnumber",
 	"body": [
 	 "https://www.php.net/manual/en/function.xml-get-current-column-number.php"
 	],
 	"description": "xml_get_current_column_number() function"
   },
   "xml_get_current_line_number": {
-	"prefix": "phpxml_get_current_line_number",
+	"prefix": "XMLgetcurrentlinenumber",
 	"body": [
 	  "https://www.php.net/manual/en/function.xml-get-current-line-number.php"
 	],
 	"description": "xml_get_current_line_number() function"
   },
   "xml_get_error_code": {
-	"prefix": "phpxml_get_error_code",
+	"prefix": "XMLgeterrorcode",
 	"body": [
 	 "https://www.php.net/manual/en/function.xml-get-error-code.php"
 	],
 	"description": "xml_get_error_code() function"
   },
   "xml_parse": {
-	"prefix": "phpxml_parse",
+	"prefix": "XMLparse",
 	"body": [
 		"$stream = fopen('large.xml', 'r');",
 		"$parser = xml_parser_create();",
@@ -2088,7 +2088,7 @@
 	"description": "xml_parse() function"
   },
   "xml_parse_into_struct": {
-	"prefix": "phpxml_parse_into_struct",
+	"prefix": "XMLparseintostruct",
 	"body": [
 		"$simple = '<para><note>simple note</note></para>';",
 		"$p = xml_parser_create();",
@@ -2102,84 +2102,84 @@
 	"description": "xml_parse_into_struct() function"
   },
   "xml_parser_create_ns": {
-	"prefix": "phpxml_parser_create_ns",
+	"prefix": "XMLparsercreatens",
 	"body": [
 	 "https://www.php.net/manual/en/function.xml-parser-create-ns.php"
 	],
 	"description": "xml_parser_create_ns() function"
   },
   "xml_parser_create": {
-	"prefix": "phpxml_parser_create",
+	"prefix": "XMLparsercreate",
 	"body": [
 	  "https://www.php.net/manual/en/function.xml-parser-create.php"
 	],
 	"description": "xml_parser_create() function"
   },
   "xml_parser_free": {
-	"prefix": "phpxml_parser_free",
+	"prefix": "XMLparserfree",
 	"body": [
 	  "https://www.php.net/manual/en/function.xml-parser-free.php"
 	],
 	"description": "xml_parser_free() function"
   },
   "xml_parser_get_option": {
-	"prefix": "phpxml_parser_get_option",
+	"prefix": "XMLparsergetoption",
 	"body": [
 	  "https://www.php.net/manual/en/function.xml-parser-get-option.php"
 	],
 	"description": "xml_parser_get_option() function"
   },
   "xml_parser_set_option": {
-	"prefix": "phpxml_parser_set_option",
+	"prefix": "XMLparsersetoption",
 	"body": [
 	 "https://www.php.net/manual/en/function.xml-parser-set-option.php"
 	],
 	"description": "xml_parser_set_option() function"
   },
   "xml_set_character_data_handler": {
-	"prefix": "phpxml_set_character_data_handler",
+	"prefix": "XMLsetcharacterdatahandler",
 	"body": [
 	 "https://www.php.net/manual/en/function.xml-set-character-data-handler.php"
 	],
 	"description": "xml_set_character_data_handler() function"
   },
   "xml_set_default_handler": {
-	"prefix": "phpxml_set_default_handler",
+	"prefix": "XMLsetdefaulthandler",
 	"body": [
 	 "https://www.php.net/manual/en/function.xml-set-default-handler.php"
 	],
 	"description": "xml_set_default_handler() function"
   },
   "xml_set_element_handler": {
-	"prefix": "phpxml_set_element_handler",
+	"prefix": "XMLsetelementhandler",
 	"body": [
 "https://www.php.net/manual/en/function.xml-set-element-handler.php"
 	],
 	"description": "xml_set_element_handler() function"
   },
   "xml_set_end_namespace_decl_handler": {
-	"prefix": "phpxml_set_end_namespace_decl_handler",
+	"prefix": "XMLsetendnamespacedeclhandler",
 	"body": [
 	  "https://www.php.net/manual/en/function.xml-set-end-namespace-decl-handler.php"
 	],
 	"description": "xml_set_end_namespace_decl_handler() function"
   },
   "xml_set_external_entity_ref_handler": {
-	"prefix": "phpxml_set_external_entity_ref_handler",
+	"prefix": "XMLsetexternalentityrefhandler",
 	"body": [
 	  "https://www.php.net/manual/en/function.xml-set-external-entity-ref-handler.php"
 	],
 	"description": "xml_set_external_entity_ref_handler() function"
   },
   "xml_set_notation_decl_handler": {
-	"prefix": "phpxml_set_notation_decl_handler",
+	"prefix": "XMLsetnotationdeclhandler",
 	"body": [
 	  "https://www.php.net/manual/en/function.xml-set-notation-decl-handler.php"
 	],
 	"description": "phpxml_set_notation_decl_handler() function"
   },
   "xml_set_object": {
-	"prefix": "phpxml_set_object",
+	"prefix": "XMLsetobject",
 	"body": [
 		"class XMLParser",
 		"{",
@@ -2229,35 +2229,35 @@
 	"description": "xml_set_object() function"
   },
   "xml_set_processing_instruction_handler": {
-	"prefix": "phpxml_set_processing_instruction_handler",
+	"prefix": "XMLsetprocessinginstructionhandler",
 	"body": [
 	 "https://www.php.net/manual/en/function.xml-set-processing-instruction-handler.php"
 	],
 	"description": "xml_set_processing_instruction_handler() function"
   },
   "xml_set_start_namespace_decl_handler": {
-	"prefix": "phpxml_set_start_namespace_decl_handler",
+	"prefix": "XMLsetstartnamespacedeclhandler",
 	"body": [
 	  "https://www.php.net/manual/en/function.xml-set-start-namespace-decl-handler.php"
 	],
 	"description": "xml_set_start_namespace_decl_handler() function"
   },
   "xml_set_unparsed_entity_decl_handler": {
-	"prefix": "phpxml_set_unparsed_entity_decl_handler",
+	"prefix": "XMLsetunparsedentitydeclhandler",
 	"body": [
 	  "https://www.php.net/manual/en/function.xml-set-unparsed-entity-decl-handler.php"
 	],
 	"description": "xml_set_unparsed_entity_decl_handler() function"
   },
   "addcslashes": {
-	"prefix": "phpaddcslashes",
+	"prefix": "Stringaddcslashes",
 	"body": [
 	 "$escaped = addcslashes($not_escaped, '\"0..\"37!@\"177..\"377');"
 	],
 	"description": "addcslashes() function"
   },
   "addslashes": {
-	"prefix": "phpaddslashes",
+	"prefix": "Stringaddslashes",
 	"body": [
 		"$str = 'O'Reilly?';",
 		"eval('echo '' . addslashes($str) . '';');"
@@ -2265,7 +2265,7 @@
 	"description": "addslashes() function"
   },
   "bin2hex": {
-	"prefix": "phpbin2hex",
+	"prefix": "Stringbin2hex",
 	"body": [
 		"$hex = bin2hex('Hello world!');",
 
@@ -2275,14 +2275,14 @@
 	"description": "bin2hex() function"
   },
   "chop": {
-	"prefix": "phpchop",
+	"prefix": "Stringchop",
 	"body": [
 	  "https://www.php.net/manual/en/function.chop.php"
 	],
 	"description": "chop() function"
   },
   "chr": {
-	"prefix": "phpchr",
+	"prefix": "Stringchr",
 	"body": [
 	"$str = 'The string ends in escape: ';",
 		"$str .= chr(27);" ,
@@ -2293,28 +2293,28 @@
 	"description": "chr() function"
   },
   "chunk_split": {
-	"prefix": "phpchunk_split",
+	"prefix": "Stringchunksplit",
 	"body": [
 	 "$new_string = chunk_split(base64_encode($data));"
 	],
 	"description": "chunk_split() function"
   },
   "convert_cyr_string": {
-	"prefix": "phpconvert_cyr_string",
+	"prefix": "Stringconvertcyrstring",
 	"body": [
 	 "https://www.php.net/manual/en/function.convert-cyr-string.php"
 	],
 	"description": "convert_cyr_string() function"
   },
   "convert_uudecode": {
-	"prefix": "phpconvert_uudecode",
+	"prefix": "Stringconvertuudecode",
 	"body": [
 		"echo convert_uudecode('+22!L;W9E(%!(4\"$`\n`');"
 	],
 	"description": "convert_uudecode() function"
   },
   "convert_uuencode": {
-	"prefix": "phpconvert_uuencode",
+	"prefix": "Stringconvertuuencode",
 	"body": [
 		"$some_string = 'test\ntext text\r\n';",
 
@@ -2323,7 +2323,7 @@
 	"description": "convert_uuencode() function"
   },
   "count_chars": {
-	"prefix": "phpcount_chars",
+	"prefix": "Stringcountchars",
 	"body": [
 		"$data = 'Two Ts and one F.';",
 
@@ -2333,7 +2333,7 @@
 	"description": "count_chars() function"
   },
   "crc32": {
-	"prefix": "phpcrc32",
+	"prefix": "Stringcrc32",
 	"body": [
 		"$checksum = crc32('The quick brown fox jumped over the lazy dog.');",
 		"printf('%u\n', $checksum);"
@@ -2341,7 +2341,7 @@
 	"description": "crc32() function"
   },
   "crypt": {
-	"prefix": "phpcrypt",
+	"prefix": "Stringcrypt",
 	"body": [
 		"$hashed_password = crypt('mypassword');",
 		"if (hash_equals($hashed_password, crypt($user_input, $hashed_password))) {",
@@ -2351,14 +2351,14 @@
 	"description": "crypt() function"
   },
   "echo": {
-	"prefix": "phpecho",
+	"prefix": "Stringecho",
 	"body": [
 	 "https://www.php.net/manual/en/function.echo.php"
 	],
 	"description": "echo statement"
   },
   "explode": {
-	"prefix": "phpexplode",
+	"prefix": "Stringexplode",
 	"body": [
 		"$str = 'one|two|three|four';",
 
@@ -2369,7 +2369,7 @@
 	"description": "explode() function"
   },
   "fprintf": {
-	"prefix": "phpfprintf",
+	"prefix": "Stringfprintf",
 	"body": [
 		"if (!($fp = fopen('date.txt', 'w'))) {",
 			"return;",
@@ -2380,28 +2380,28 @@
 	"description": "fprintf() function"
   },
   "get_html_translation_table": {
-	"prefix": "phpget_html_translation_table",
+	"prefix": "Stringgethtmltranslationtable",
 	"body": [
 	  "var_dump(get_html_translation_table(HTML_ENTITIES, ENT_QUOTES | ENT_HTML5));"
 	],
 	"description": "get_html_translation_table() function"
   },
   "hebrev": {
-	"prefix": "phphebrev",
+	"prefix": "Stringhebrev",
 	"body": [
 	  "https://www.php.net/manual/en/function.hebrev.php"
 	],
 	"description": "hebrev() function"
   },
   "hebrevc": {
-	"prefix": "phphebrevc",
+	"prefix": "Stringhebrevc",
 	"body": [
 	  "https://www.php.net/manual/en/function.hebrevc.php"
 	],
 	"description": "hebrevc() function"
   },
   "html_entity_decode": {
-	"prefix": "phphtml_entity_decode",
+	"prefix": "Stringhtmlentitydecode",
 	"body": [
 		"$orig = 'I'll \"walk\" the <b>dog</b> now';",
 
@@ -2416,7 +2416,7 @@
 	"description": "html_entity_decode() function"
   },
   "htmlentities": {
-	"prefix": "phphtmlentities",
+	"prefix": "Stringhtmlentities",
 	"body": [
 		"$str = '\"x8F!!!';",
 
@@ -2427,7 +2427,7 @@
 	"description": "htmlentities() function"
   },
   "htmlspecialchars_decode": {
-	"prefix": "phphtmlspecialchars_decode",
+	"prefix": "Stringhtmlspecialcharsdecode",
 	"body": [
 		"$str = '<p>this -&gt; &quot;</p>\n';",
 
@@ -2438,7 +2438,7 @@
 	"description": "htmlspecialchars_decode() function"
   },
   "htmlspecialchars": {
-	"prefix": "phphtmlspecialchars",
+	"prefix": "Stringhtmlspecialchars",
 	"body": [
 		"$new = htmlspecialchars('<a href='test'>Test</a>', ENT_QUOTES);",
 		"echo $new;" 
@@ -2446,7 +2446,7 @@
 	"description": "htmlspecialchars() function"
   },
   "implode": {
-	"prefix": "phpimplode",
+	"prefix": "Stringimplode",
 	"body": [
 		"$array = ['lastname', 'email', 'phone'];",
 		"var_dump(implode(',', $array));" ,
@@ -2458,14 +2458,14 @@
 	"description": "implode() function"
   },
   "join": {
-	"prefix": "phpjoin",
+	"prefix": "Stringjoin",
 	"body": [
 	  "https://www.php.net/manual/en/function.join.php"
 	],
 	"description": "join() function"
   },
   "levenshtein": {
-	"prefix": "phplevenshtein",
+	"prefix": "Stringlevenshtein",
 	"body": [
 		"$input = 'carrrot';",
 		"$words  = array('apple','pineapple','banana','orange',",
@@ -2482,7 +2482,7 @@
 	"description": "levenshtein() function"
   },
   "localeconv": {
-	"prefix": "phplocaleconv",
+	"prefix": "Stringlocaleconv",
 	"body": [
 		"if (false !== setlocale(LC_ALL, 'nl_NL.UTF-8@euro')) {",
 			"$locale_info = localeconv();",
@@ -2491,7 +2491,7 @@
 	"description": "localeconv() function"
   },
   "ltrim": {
-	"prefix": "phpltrim",
+	"prefix": "Stringltrim",
 	"body": [
 		"$text = '\t\tThese are a few words :) ...  ';",
 		"$binary = '\"x09Example string\"x0A';",
@@ -2517,7 +2517,7 @@
 	"description": "ltrim() function"
   },
   "md5": {
-	"prefix": "phpmd5",
+	"prefix": "Stringmd5",
 	"body": [
 		"$str = 'apple';",
 
@@ -2527,7 +2527,7 @@
 	"description": "md5() function"
   },
   "md5_file": {
-	"prefix": "phpmd5_file",
+	"prefix": "Stringmd5_file",
 	"body": [
 		"$file = 'php-5.3.0alpha2-Win32-VC9-x64.zip';",
 
@@ -2536,7 +2536,7 @@
 	"description": "md5_file() function"
   },
   "metaphone": {
-	"prefix": "phpmetaphone",
+	"prefix": "Stringmetaphone",
 	"body": [
 		"var_dump(metaphone('programming'));",
 		"var_dump(metaphone('programmer'));"
@@ -2544,7 +2544,7 @@
 	"description": "metaphone() function"
   },
   "money_format": {
-	"prefix": "phpmoney_format",
+	"prefix": "Stringmoney_format",
 	"body": [
 		"$number = 1234.56;",
 		"setlocale(LC_MONETARY, 'en_US');",
@@ -2563,7 +2563,7 @@
 	"description": "money_format() function"
   },
   "nl_langinfo": {
-	"prefix": "phpnl_langinfo",
+	"prefix": "Stringnl_langinfo",
 	"body": [
 		"var_dump(nl_langinfo(CODESET));",
 		"var_dump(nl_langinfo(YESEXPR));"
@@ -2571,14 +2571,14 @@
 	"description": "nl_langinfo() function"
   },
   "nl2br": {
-	"prefix": "phpnl2br",
+	"prefix": "Stringnl2br",
 	"body": [
 	 "echo nl2br('foo isn't\n bar');"
 	],
 	"description": "nl2br() function"
   },
   "number_format": {
-	"prefix": "phpnumber_format",
+	"prefix": "Stringnumber_format",
 	"body": [
 		"$number = 1234.56;",
 
@@ -2593,7 +2593,7 @@
 	"description": "number_format() function"
   },
   "ord": {
-	"prefix": "phpord",
+	"prefix": "Stringord",
 	"body": [
 		"$str = '\n';",
 		"if (ord($str) == 10) {",
@@ -2602,7 +2602,7 @@
 	"description": "phpord() function"
   },
   "parse_str": {
-	"prefix": "phpparse_str",
+	"prefix": "Stringparse_str",
 	"body": [
 		"parse_str('My Value=Something');",
 		"echo $My_Value; // Something",
@@ -2613,7 +2613,7 @@
 	"description": "parse_str() function"
   },
   "print": {
-	"prefix": "phpprint",
+	"prefix": "Stringprint",
 	"body": [
 		"print 'hello';",
 		"print('hello');",
@@ -2628,7 +2628,7 @@
 	"description": "print statement"
   },
   "printf": {
-	"prefix": "phpprintf",
+	"prefix": "Stringprintf",
 	"body": [
 		"$s = 'monkey';",
 		"$t = 'many monkeys';",
@@ -2645,7 +2645,7 @@
 	"description": "printf() function"
   },
   "quoted_printable_decode": {
-	"prefix": "phpquoted_printable_decode",
+	"prefix": "Stringquotedprintabledecode",
 	"body": [
 		"$encoded = quoted_printable_encode('Möchten Sie ein paar Äpfel?');",
 
@@ -2655,14 +2655,14 @@
 	"description": "quoted_printable_decode() function"
   },
   "quotemeta": {
-	"prefix": "phpquotemeta",
+	"prefix": "Stringquotemeta",
 	"body": [
 	  "var_dump(quotemeta('PHP is a popular scripting language. Fast, flexible, and pragmatic.'));"
 	],
 	"description": "quotemeta() function"
   },
   "rtrim": {
-	"prefix": "phprtrim",
+	"prefix": "Stringrtrim",
 	"body": [
 		"$text = '\t\tThese are a few words :) ...  ';",
 		"$binary = '\"x09Example string\"x0A';",
@@ -2687,7 +2687,7 @@
 	"description": "rtrim() function"
   },
   "setlocale": {
-	"prefix": "phpsetlocale",
+	"prefix": "Stringsetlocale",
 	"body": [
 		"setlocale(LC_ALL, 'nl_NL');",
 
@@ -2699,7 +2699,7 @@
 	"description": "setlocale() function"
   },
   "sha1": {
-	"prefix": "phpsha1",
+	"prefix": "Stringsha1",
 	"body": [
 		"$str = 'apple';",
 
@@ -2710,7 +2710,7 @@
 	"description": "sha1() function"
   },
   "sha1_file": {
-	"prefix": "phpsha1_file",
+	"prefix": "Stringsha1_file",
 	"body": [
 		"foreach(glob('/home/Kalle/myproject/*.php') as $ent)",
 		"{",
@@ -2724,7 +2724,7 @@
 	"description": "sha1_file() function"
   },
   "similar_text": {
-	"prefix": "phpsimilar_text",
+	"prefix": "Stringsimilar_text",
 	"body": [
 		"$sim = similar_text('bafoobar', 'barfoo', $perc);",
 		"echo 'similarity: $sim ($perc %)\n';",
@@ -2734,7 +2734,7 @@
 	"description": "similar_text() function"
   },
   "soundex": {
-	"prefix": "phpsoundex",
+	"prefix": "Stringsoundex",
 	"body": [
 		"soundex('Euler')       == soundex('Ellery');    // E460",
 		"soundex('Gauss')       == soundex('Ghosh');     // G200",
@@ -2746,7 +2746,7 @@
 	"description": "soundex() function"
   },
   "sprintf": {
-	"prefix": "phpsprintf",
+	"prefix": "Stringsprintf",
 	"body": [
 		"$format = 'The %s contains %d monkeys';",
 		"echo sprintf($format, $num, $location);"
@@ -2754,7 +2754,7 @@
 	"description": "sprintf() function"
   },
   "sscanf": {
-	"prefix": "phpsscanf",
+	"prefix": "Stringsscanf",
 	"body": [
 		"list($serial) = sscanf('SN/2350001', 'SN/%d');",
 		"$mandate = 'January 01 2000';",
@@ -2764,7 +2764,7 @@
 	"description": "sscanf() function"
   },
   "str_ireplace": {
-	"prefix": "phpstr_ireplace",
+	"prefix": "Stringstrireplace",
 	"body": [
 		"$bodytag = str_ireplace('%body%', 'black', '<body text=%BODY%>');",
 		"echo $bodytag; // <body text=black>"
@@ -2772,7 +2772,7 @@
 	"description": "str_ireplace() function"
   },
   "str_pad": {
-	"prefix": "phpstr_pad",
+	"prefix": "Stringstrpad",
 	"body": [
 		"$input = 'Alien';",
 		"echo str_pad($input, 10); "             ,        
@@ -2784,14 +2784,14 @@
 	"description": "str_pad() function"
   },
   "str_repeat": {
-	"prefix": "phpstr_repeat",
+	"prefix": "Stringstrrepeat",
 	"body": [
 	  "echo str_repeat('-=', 10);"
 	],
 	"description": "str_repeat() function"
   },
   "str_replace": {
-	"prefix": "phpstr_replace",
+	"prefix": "Stringstr_replace",
 	"body": [
 		"$bodytag = str_replace('%body%', 'black', '<body text='%body%'>');",
 
@@ -2810,14 +2810,14 @@
 	"description": "str_replace() function"
   },
   "str_rot13": {
-	"prefix": "phpstr_rot13",
+	"prefix": "Stringstrrot13",
 	"body": [
 	  "https://www.php.net/manual/en/function.str-rot13.php"
 	],
 	"description": "str_rot13() function"
   },
   "str_shuffle": {
-	"prefix": "phpstr_shuffle",
+	"prefix": "Stringstrshuffle",
 	"body": [
 		"$str = 'abcdef';",
 		"$shuffled = str_shuffle($str);",
@@ -2827,7 +2827,7 @@
 	"description": "str_shuffle() function"
   },
   "str_split": {
-	"prefix": "phpstr_split",
+	"prefix": "Stringstrsplit",
 	"body": [
 		"$str = 'Hello Friend';",
 
@@ -2840,7 +2840,7 @@
 	"description": "str_split() function"
   },
   "str_word_count": {
-	"prefix": "phpstr_word_count",
+	"prefix": "Stringstrwordcount",
 	"body": [
 		"$str = 'Hello fri3nd, you'relooking          good today!';",
 		
@@ -2854,7 +2854,7 @@
 	"description": "str_word_count() function"
   },
   "strcasecmp": {
-	"prefix": "phpstrcasecmp",
+	"prefix": "Stringstrcasecmp",
 	"body": [
 		"$var1 = 'Hello';",
 		"$var2 = 'hello';",
@@ -2865,14 +2865,14 @@
 	"description": "strcasecmp() function"
   },
   "strchr": {
-	"prefix": "phpstrchr",
+	"prefix": "Stringstrchr",
 	"body": [
 	 "https://www.php.net/manual/en/function.strchr.php"
 	],
 	"description": "strchr() function"
   },
   "strcmp": {
-	"prefix": "phpstrcmp",
+	"prefix": "Stringstrcmp",
 	"body": [
 		"$var1 = 'Hello';",
 		"$var2 = 'hello';",
@@ -2883,14 +2883,14 @@
 	"description": "strcmp() function"
   },
   "strcoll": {
-	"prefix": "phpstrcoll",
+	"prefix": "Stringstrcoll",
 	"body": [
 	  "https://www.php.net/manual/en/function.strcoll.php"
 	],
 	"description": "strcoll() function"
   },
   "strcspn": {
-	"prefix": "phpstrcspn",
+	"prefix": "Stringstrcspn",
 	"body": [
 		"$a = strcspn('abcd',  'apple');",
 		"$b = strcspn('abcd',  'banana');",
@@ -2909,7 +2909,7 @@
 	"description": "strcspn() function"
   },
   "strip_tags": {
-	"prefix": "phpstrip_tags",
+	"prefix": "Stringstriptags",
 	"body": [
 		"$text = '<p>Test paragraph.</p><!-- Comment --> <a href='#fragment'>Other text</a>';",
 		"echo strip_tags($text);",
@@ -2920,7 +2920,7 @@
 	"description": "strip_tags() function"
   },
   "stripcslashes": {
-	"prefix": "phpstripcslashes",
+	"prefix": "Stringstripcslashes",
 	"body": [
 		"var_dump(stripcslashes('I\"d have a coffee.\nNot a problem.') === I'd have a coffee.",
 		"Not a problem.'); // true"
@@ -2928,7 +2928,7 @@
 	"description": "stripcslashes() function"
   },
   "stripslashes": {
-	"prefix": "phpstripslashes",
+	"prefix": "Stringstripslashes",
 	"body": [
 		"$str = 'Is your name O\"reilly?';",
 
@@ -2937,7 +2937,7 @@
 	"description": "stripslashes() function"
   },
   "stripos": {
-	"prefix": "phpstripos",
+	"prefix": "Stringstripos",
 	"body": [
 		"$findme    = 'a';",
 		"$mystring1 = 'xyz';",
@@ -2958,7 +2958,7 @@
 	"description": "stripos() function"
   },
   "stristr": {
-	"prefix": "phpstristr",
+	"prefix": "Stringstristr",
 	"body": [
 		"$email = 'USER@EXAMPLE.com';",
 		"echo stristr($email, 'e'); // outputs ER@EXAMPLE.com",
@@ -2967,7 +2967,7 @@
 	"description": "stristr() function"
   },
   "strlen": {
-	"prefix": "phpstrlen",
+	"prefix": "Stringstrlen",
 	"body": [
 		"$str = 'abcdef';",
 		"echo strlen($str); // 6",
@@ -2978,7 +2978,7 @@
 	"description": "strlen() function"
   },
   "strnatcasecmp": {
-	"prefix": "phpstrnatcasecmp",
+	"prefix": "Stringstrnatcasecmp",
 	"body": [
 		"var_dump(strnatcasecmp('Apple', 'Banana'));",
 		"var_dump(strnatcasecmp('Banana', 'Apple'));",
@@ -2987,7 +2987,7 @@
 	"description": "strnatcasecmp() function"
   },
   "strnatcmp": {
-	"prefix": "phpstrnatcmp",
+	"prefix": "Stringstrnatcmp",
 	"body": [
 		"$arr1 = $arr2 = array('img12.png', 'img10.png', 'img2.png', 'img1.png');",
 		"echo 'Standard string comparison\n';",
@@ -3000,7 +3000,7 @@
 	"description": "strnatcmp() function"
   },
   "strncasecmp": {
-	"prefix": "phpstrncasecmp",
+	"prefix": "Stringstrncasecmp",
 	"body": [
 		"$var1 = 'Hello John';",
 		"$var2 = 'hello Doe';",
@@ -3010,7 +3010,7 @@
 	"description": "strncasecmp() function"
   },
   "strncmp": {
-	"prefix": "phpstrncmp",
+	"prefix": "Stringstrncmp",
 	"body": [
 		"$var1 = 'Hello John';",
 		"$var2 = 'Hello Doe';",
@@ -3020,7 +3020,7 @@
 	"description": "strncmp() function"
   },
   "strpbrk": {
-	"prefix": "phpstrpbrk",
+	"prefix": "Stringstrpbrk",
 	"body": [
 		"$text = 'This is a Simple text.';",
 
@@ -3031,7 +3031,7 @@
 	"description": "strpbrk() function"
   },
   "strpos": {
-	"prefix": "phpstrpos",
+	"prefix": "Stringstrpos",
 	"body": [
 		"$newstring = 'abcdef abcdef';",
 		"$pos = strpos($newstring, 'a', 1); // $pos = 7, not 0"
@@ -3039,7 +3039,7 @@
 	"description": "strpos() function"
   },
   "strrchr": {
-	"prefix": "phpstrrchr",
+	"prefix": "Stringstrrchr",
 	"body": [
 		"$dir = substr(strrchr($PATH, ':'), 1);",
 
@@ -3049,14 +3049,14 @@
 	"description": "strrchr() function"
   },
   "strrev": {
-	"prefix": "phpstrrev",
+	"prefix": "Stringstrrev",
 	"body": [
 	  "echo strrev('Hello world!'); // outputs '!dlrow olleH'"
 	],
 	"description": "strrev() function"
   },
   "strripos": {
-	"prefix": "phpstrripos",
+	"prefix": "Stringstrripos",
 	"body": [
 		"$haystack = 'ababcd';",
 		"$needle   = 'aB';",
@@ -3072,7 +3072,7 @@
 	"description": "strripos() function"
   },
   "strrpos": {
-	"prefix": "phpstrrpos",
+	"prefix": "Stringstrrpos",
 	"body": [
 		"$pos = strrpos($mystring, 'b');",
 		"if ($pos === false) { // note: three equal signs",
@@ -3081,7 +3081,7 @@
 	"description": "strrpos() function"
   },
   "strspn": {
-	"prefix": "phpstrspn",
+	"prefix": "Stringstrspn",
 	"body": [
 		"var_dump(strspn('foo', 'o'));",
 
@@ -3092,7 +3092,7 @@
 	"description": "strspn() function"
   },
   "strstr": {
-	"prefix": "phpstrstr",
+	"prefix": "Stringstrstr",
 	"body": [
 		"$email  = 'name@example.com';",
 		"$domain = strstr($email, '@');",
@@ -3104,7 +3104,7 @@
 	"description": "strstr() function"
   },
   "strtok": {
-	"prefix": "phpstrtok",
+	"prefix": "Stringstrtok",
 	"body": [
 		"$first_token  = strtok('/something', '/');",
 		"$second_token = strtok('/');",
@@ -3113,7 +3113,7 @@
 	"description": "strtok() function"
   },
   "strtolower": {
-	"prefix": "phpstrtolower",
+	"prefix": "Stringstrtolower",
 	"body": [
 		"$str = 'Mary Had A Little Lamb and She LOVED It So';",
 		"$str = strtolower($str);"
@@ -3121,7 +3121,7 @@
 	"description": "strtolower() function"
   },
   "strtoupper": {
-	"prefix": "phpstrtoupper",
+	"prefix": "strtoupper",
 	"body": [
 		"$str = 'Mary Had A Little Lamb and She LOVED It So';",
 		"$str = strtoupper($str);",
@@ -3130,14 +3130,14 @@
 	"description": "strtoupper() function"
   },
   "strtr": {
-	"prefix": "phpstrtr",
+	"prefix": "Stringstrtr",
 	"body": [
 	  "$addr = strtr($addr, 'äåö', 'aao');"
 	],
 	"description": "strtr() function"
   },
   "substr": {
-	"prefix": "phpsubstr",
+	"prefix": "Stringsubstr",
 	"body": [
 		"echo substr_compare('abcde', 'bc', 1, 2); // 0",
 		"echo substr_compare('abcde', 'de', -2, 2); // 0",
@@ -3150,7 +3150,7 @@
 	"description": "substr() function"
   },
   "substr_compare": {
-	"prefix": "phpsubstr_compare",
+	"prefix": "Stringsubstr_compare",
 	"body": [
 		"echo substr_compare('abcde', 'bc', 1, 2); // 0",
 		"echo substr_compare('abcde', 'de', -2, 2); // 0",
@@ -3163,7 +3163,7 @@
 	"description": "substr_compare() function"
   },
   "substr_count": {
-	"prefix": "phpsubstr_count",
+	"prefix": "Stringsubstr_count",
 	"body": [
 		"$text = 'This is a test';",
 		"echo strlen($text); // 14",
@@ -3183,7 +3183,7 @@
 	"description": "substr_count() function"
   },
   "substr_replace": {
-	"prefix": "phpsubstr_replace",
+	"prefix": "Stringsubstr_replace",
 	"body": [
 		"$input = array('A: XXX', 'B: XXX', 'C: XXX');",
 
@@ -3198,7 +3198,7 @@
 	"description": "substr_replace() function"
   },
   "trim": {
-	"prefix": "phptrim",
+	"prefix": "Stringtrim",
 	"body": [
 		"$text   = '\t\tThese are a few words :) ...  ';",
 		"$binary = '\"x09Example string\"x0A';",
@@ -3226,7 +3226,7 @@
 	"description": "trim() function"
   },
   "ucfirst": {
-	"prefix": "phpucfirst",
+	"prefix": "Stringucfirst",
 	"body": [
 		"$foo = 'hello world!';",
 		"$foo = ucfirst($foo);   "  ,        
@@ -3238,7 +3238,7 @@
 	"description": "ucfirst() function"
   },
   "ucwords": {
-	"prefix": "phpucwords",
+	"prefix": "Stringucwords",
 	"body": [
 		"$foo = 'hello|world!';",
 		"$bar = ucwords($foo); "    ,        
@@ -3248,7 +3248,7 @@
 	"description": "ucwords() function"
   },
   "vfprintf": {
-	"prefix": "phpvfprintf",
+	"prefix": "Stringvfprintf",
 	"body": [
 		"if (!($fp = fopen('date.txt', 'w')))",
 		"return;",
@@ -3258,21 +3258,21 @@
 	"description": "vfprintf() function"
   },
   "vprintf": {
-	"prefix": "phpvprintf",
+	"prefix": "Stringvprintf",
 	"body": [
 	 "https://www.php.net/manual/en/function.vprintf.php"
 	],
 	"description": "vprintf() function"
   },
   "vsprintf": {
-	"prefix": "phpvsprintf",
+	"prefix": "Stringvsprintf",
 	"body": [
 	  "print vsprintf('%04d-%02d-%02d', explode('-', '1988-8-1'));"
 	],
 	"description": "vsprintf() function"
   },
   "wordwrap": {
-	"prefix": "phpwordwrap",
+	"prefix": "Stringwordwrap",
 	"body": [
 		"$text = 'A very long woooooooooooord.';",
 		"$newtext = wordwrap($text, 8, '\n', true);",
@@ -3285,7 +3285,7 @@
   
   
   "String Functions": {
-    "prefix": "php_string_functions",
+    "prefix": "stringfunctions",
     "body": [
       "addcslashes()",
       "addslashes()",
@@ -3412,7 +3412,7 @@
     "description": "List of String constants"
   },
   "Zip Functions": {
-    "prefix": "php_zip_functions",
+    "prefix": "zipfunctions",
     "body": [
       "zip_close(zip)",
       "zip_entry_close(zip_entry)",
@@ -3428,42 +3428,42 @@
     "description": "List of Zip functions"
   },
   "zip_close": {
-	"prefix": "phpzip_close",
+	"prefix": "Zipclose",
 	"body": [
 	 "https://www.php.net/manual/en/function.zip-close.php"
 	],
-	"description": "zip_close() function"
+	"description": "Zipclosefunction"
   },
   "zip_entry_close": {
 	"prefix": "phpzip_entry_close",
 	"body": [
 	 "https://www.php.net/manual/en/function.zip-entry-close.php"
 	],
-	"description": "zip_entry_close() function"
+	"description": "Zipentryclosefunction"
   },
   "zip_entry_compressedsize": {
-	"prefix": "phpzip_entry_compressedsize",
+	"prefix": "Zipentrycompressedsize",
 	"body": [
 	  "https://www.php.net/manual/en/function.zip-entry-compressedsize.php"
 	],
-	"description": "zip_entry_compressedsize() function"
+	"description": "Zipentrycompressedsizefunction"
   },
   "zip_entry_compressionmethod": {
-	"prefix": "phpzip_entry_compressionmethod",
+	"prefix": "Zipentrycompressionmethod",
 	"body": [
 	  "https://www.php.net/manual/en/function.zip-entry-compressionmethod.php"
 	],
 	"description": "zip_entry_compressionmethod() function"
   },
   "zip_entry_filesize": {
-	"prefix": "phpzip_entry_filesize",
+	"prefix": "Zipentryfilesize",
 	"body": [
 	 "https://www.php.net/manual/en/function.zip-entry-filesize.php"
 	],
 	"description": "zip_entry_filesize() function"
   },
   "zip_entry_name": {
-	"prefix": "phpzip_entry_name",
+	"prefix": "Zipentryname",
 	"body": [
 	  "https://www.php.net/manual/en/function.zip-entry-name.php"
 	],
@@ -3474,32 +3474,32 @@
 	"body": [
 	  "https://www.php.net/manual/en/function.zip-entry-open.php"
 	],
-	"description": "zip_entry_open() function"
+	"description": "Zipentryopenfunction"
   },
   "zip_entry_read": {
 	"prefix": "phpzip_entry_read",
 	"body": [
 	  "https://www.php.net/manual/en/function.zip-entry-read.php"
 	],
-	"description": "zip_entry_read() function"
+	"description": "Zipentryreadfunction"
   },
   "zip_open": {
 	"prefix": "phpzip_open",
 	"body": [
 	  "https://www.php.net/manual/en/function.zip-open.php"
 	],
-	"description": "zip_open() function"
+	"description": "Zipopenfunction"
   },
   "zip_read": {
-	"prefix": "phpzip_read",
+	"prefix": "Zipread",
 	"body": [
 	  "https://www.php.net/manual/en/function.zip-read.php"
 	],
-	"description": "zip_read() function"
+	"description": "Zipreadfunction"
   },
   
   "Variable Handling Functions": {
-    "prefix": "php_variable_functions",
+    "prefix": "Variablefunctions",
     "body": [
       "boolval(var)",
       "debug_zval_dump(variable [, ...])",
@@ -3539,7 +3539,7 @@
     "description": "List of Variable Handling functions"
   },
   "boolval": {
-	"prefix": "phpboolval",
+	"prefix": "Variableboolval",
 	"body": [
 		"echo '0:        '.(boolval(0) ? 'true' : 'false').'\n';",
 		"echo '42:       '.(boolval(42) ? 'true' : 'false').'\n';",
@@ -3556,7 +3556,7 @@
 	"description": "boolval() function"
   },
   "debug_zval_dump": {
-	"prefix": "phpdebug_zval_dump",
+	"prefix": "Variabledebugzvaldump",
 	"body": [
 		"$var1 = 'Hello';",
 		"$var1 .= ' World';",
@@ -3567,14 +3567,14 @@
 	"description": "debug_zval_dump() function"
   },
   "doubleval": {
-	"prefix": "phpdoubleval",
+	"prefix": "Variabledoubleval",
 	"body": [
 	  "https://www.php.net/manual/en/function.doubleval.php"
 	],
 	"description": "doubleval() function"
   },
   "empty": {
-	"prefix": "phpempty",
+	"prefix": "Variableempty",
 	"body": [
 		"$var = 0;",
 
@@ -3589,7 +3589,7 @@
 	"description": "empty() function"
   },
   "floatval": {
-	"prefix": "phpfloatval",
+	"prefix": "Variablefloatval",
 	"body": [
 		"$var = 'The122.34343';",
 		"$float_value_of_var = floatval($var);",
@@ -3598,7 +3598,7 @@
 	"description": "floatval() function"
   },
   "get_defined_vars": {
-	"prefix": "phpget_defined_vars",
+	"prefix": "Variablegetdefinedvars",
 	"body": [
 		"$b = array(1, 1, 2, 3, 5, 8);",
 
@@ -3619,7 +3619,7 @@
 	"description": "get_defined_vars() function"
   },
   "get_resource_type": {
-	"prefix": "phpget_resource_type",
+	"prefix": "Variablegetresourcetype",
 	"body": [
 		"$fp = fopen('foo', 'w');",
 		"echo get_resource_type($fp) . '\n';",
@@ -3630,7 +3630,7 @@
 	"description": "get_resource_type() function"
   },
   "gettype": {
-	"prefix": "phpgettype",
+	"prefix": "Variablegettype",
 	"body": [
 		"$data = array(1, 1., NULL, new stdClass, 'foo');",
 
@@ -3640,14 +3640,14 @@
 	"description": "gettype() function"
   },
   "import_request_variables": {
-	"prefix": "phpimport_request_variables",
+	"prefix": "Variableimportrequestvariables",
 	"body": [
 	  "https://www.php.net/manual/en/function.import-request-variables.php"
 	],
 	"description": "import_request_variables() function"
   },
   "intval": {
-	"prefix": "phpintval",
+	"prefix": "Variableintval",
 	"body": [
 		"echo intval(42);   "    ,               
 		"echo intval(4.2);   "  ,                
@@ -3674,7 +3674,7 @@
 	"description": "intval() function"
   },
   "is_array": {
-	"prefix": "phpis_array",
+	"prefix": "Variableisarray",
 	"body": [
 		"$yes = array('this', 'is', 'an array');",
 
@@ -3688,7 +3688,7 @@
 	"description": "is_array() function"
   },
   "is_bool": {
-	"prefix": "phpis_bool",
+	"prefix": "Variableisbool",
 	"body": [
 		"$a = false;",
 		"$b = 0;",
@@ -3705,7 +3705,7 @@
 	"description": "is_bool() function"
   },
   "is_callable": {
-	"prefix": "phpis_callable",
+	"prefix": "Variableiscallable",
 	"body": [
 		"class Foo",
 		"{",
@@ -3720,14 +3720,14 @@
 	"description": "is_callable() function"
   },
   "is_double": {
-	"prefix": "phpis_double",
+	"prefix": "Variableisdouble",
 	"body": [
 	  "https://www.php.net/manual/en/function.is-double.php"
 	],
-	"description": "is_double() function"
+	"description": "Variableisdoublefunction"
   },
   "is_float": {
-	"prefix": "phpis_float",
+	"prefix": "Variableisfloat",
 	"body": [
 		"var_dump(is_float(27.25));",
 		"var_dump(is_float('abc'));",
@@ -3736,10 +3736,10 @@
 		"var_dump(is_float(1e7)); ",
 		"var_dump(is_float(true));"
 	],
-	"description": "is_float() function"
+	"description": "Variableisfloatfunction"
   },
   "is_int": {
-	"prefix": "phpis_int",
+	"prefix": "Variableisint",
 	"body": [
 		"$values = array(23, '23', 23.5, '23.5', null, true, false);",
 		"foreach ($values as $value) {",
@@ -3748,24 +3748,24 @@
 			"echo ') = ';",
 			"var_dump(is_int($value));"
 	],
-	"description": "is_int() function"
+	"description": "Variableisintfunction"
   },
   "is_integer": {
-	"prefix": "phpis_integer",
+	"prefix": "Variableisinteger",
 	"body": [
 	  "https://www.php.net/manual/en/function.is-integer.php"
 	],
 	"description": "is_integer() function"
   },
   "is_long": {
-	"prefix": "phpis_long",
+	"prefix": "Variableislong",
 	"body": [
 	  "https://www.php.net/manual/en/function.is-long.php"
 	],
 	"description": "is_long() function"
   },
   "is_null": {
-	"prefix": "phpis_null",
+	"prefix": "Variableisnull",
 	"body": [
 		"error_reporting(E_ALL);",
 
@@ -3775,7 +3775,7 @@
 	"description": "is_null() function"
   },
   "is_numeric": {
-	"prefix": "phpis_numeric",
+	"prefix": "Variableisnumeric",
 	"body": [
 		"$tests = [",
 			"' 42',",
@@ -3793,7 +3793,7 @@
 	"description": "is_numeric() function"
   },
   "is_object": {
-	"prefix": "is_object",
+	"prefix": "Variableisobject",
 	"body": [
 		"function get_students($obj)",
 		"{",
@@ -3814,23 +3814,23 @@
 	"description": "is_object() function"
   },
   "is_real": {
-	"prefix": "phpis_real",
+	"prefix": "Variableisreal",
 	"body": [
 	  "https://www.php.net/manual/en/function.is-real.php"
 	],
 	"description": "is_real() function"
   },
   "is_resource": {
-	"prefix": "phpis_resource",
+	"prefix": "Variableisresource",
 	"body": [
 		"$handle = fopen('php://stdout', 'w');",
 		"if (is_resource($handle)) {",
 			"echo '$handle is a resource';"
 	],
-	"description": "is_resource() function"
+	"description": "Variableresourcefunction"
   },
   "is_scalar": {
-	"prefix": "phpis_scalar",
+	"prefix": "Variableisscalar",
 	"body": [
 		"function show_var($var) ",
 		"{",
@@ -3846,7 +3846,7 @@
 		"show_var($pi);",
 		"show_var($proteins)"
 	],
-	"description": "is_scalar() function"
+	"description": "Variableisscalarfunction"
   },
   "is_string": {
 	"prefix": "phpis_string",
@@ -3858,7 +3858,7 @@
 			"echo '') = '';",
 			"echo var_dump(is_string($value));"
 	],
-	"description": "is_string() function"
+	"description": "Variableisstringfunction"
   },
   "isset": {
 	"prefix": "phpisset",
@@ -3874,7 +3874,7 @@
 	"description": "isset() function"
   },
   "print_r": {
-	"prefix": "phpprint_r",
+	"prefix": "Variableprintr",
 	"body": [
 		"$a = array ('a' => 'apple', 'b' => 'banana', 'c' => array ('x', 'y', 'z'));",
 		"print_r ($a);"
@@ -3882,7 +3882,7 @@
 	"description": "print_r() function"
   },
   "serialize": {
-	"prefix": "phpserialize",
+	"prefix": "Variableserialize",
 	"body": [
 		"$conn = odbc_connect('webdb', 'php', 'chicken');",
 		"$stmt = odbc_prepare($conn,",
@@ -3896,7 +3896,7 @@
 	"description": "serialize() function"
   },
   "settype": {
-	"prefix": "phpsettype",
+	"prefix": "Variablesettype",
 	"body": [
 		"$foo = '5bar'; // string",
 		"$bar = true;   // boolean",
@@ -3907,7 +3907,7 @@
 	"description": "settype() function"
   },
   "strval": {
-	"prefix": "phpstrval",
+	"prefix": "Variablestrval",
 	"body": [
 		"class StrValTest",
 		"{",
@@ -3923,7 +3923,7 @@
 	"description": "strval() function"
   },
   "unserialize": {
-	"prefix": "phpunserialize",
+	"prefix": "Variableunserialize",
 	"body": [
 		"$serialized_object='O:1:'a':1:{s:5:'value';s:3:'100';}';",
 
@@ -3934,7 +3934,7 @@
 	"description": "unserialize() function"
   },
   "unset": {
-	"prefix": "phpunset",
+	"prefix": "Variableunset",
 	"body": [
 		"function foo() ",
 		"{",
@@ -3947,15 +3947,15 @@
 	"description": "unset() function"
   },
   "var_dump": {
-	"prefix": "phpvar_dump",
+	"prefix": "Variablevardump",
 	"body": [
 		"$a = array(1, 2, array('a', 'b', 'c'));",
 		"var_dump($a);"
 	],
-	"description": "var_dump() function"
+	"description": "Variablevardumpfunction"
   },
   "var_export": {
-	"prefix": "phpvar_export",
+	"prefix": "Variablevarexport",
 	"body": [
 		"$a = array (1, 2, array ('a', 'b', 'c'));",
 		"var_export($a);"
@@ -3964,7 +3964,7 @@
   },
   
   "Filter Functions and Constants": {
-    "prefix": "php_filter_functions",
+    "prefix": "Filterfunctions",
     "body": [
       "filter_has_var(type, variable_name)",
       "filter_id(filtername)",
@@ -3997,21 +3997,21 @@
     "description": "List of Filter functions and constants"
   },
   "filter_has_var": {
-	"prefix": "phpfilter_has_var",
+	"prefix": "Filterhasvar",
 	"body": [
 	 "https://www.php.net/manual/en/function.filter-has-var.php"
 	],
 	"description": "filter_has_var() function"
   },
   "filter_id": {
-	"prefix": "phpfilter_id",
+	"prefix": "Filterid",
 	"body": [
 	 "https://www.php.net/manual/en/function.filter-id.php"
 	],
 	"description": "filter_id() function"
   },
   "filter_input": {
-	"prefix": "phpfilter_input",
+	"prefix": "Filterinput",
 	"body": [
 		"$search_html = filter_input(INPUT_GET, 'search', FILTER_SANITIZE_SPECIAL_CHARS);",
 		"$search_url = filter_input(INPUT_GET, 'search', FILTER_SANITIZE_ENCODED);",
@@ -4021,7 +4021,7 @@
 	"description": "filter_input() function"
   },
   "filter_input_array": {
-	"prefix": "phpfilter_input_array",
+	"prefix": "Filterinputarray",
 	"body": [
 		"$args = array(",
 		"'product_id'   => FILTER_SANITIZE_ENCODED,",
@@ -4050,14 +4050,14 @@
 	"description": "filter_input_array() function"
   },
   "filter_list": {
-	"prefix": "phpfilter_list",
+	"prefix": "Filterlist",
 	"body": [
 	  "print_r(filter_list());"
 	],
 	"description": "filter_list() function"
   },
   "filter_var_array": {
-	"prefix": "phpfilter_var_array",
+	"prefix": "Filtervararray",
 	"body": [
 		"$data = array(",
 		"'product_id'    => 'libgd<script>',",
@@ -4094,7 +4094,7 @@
 	"description": "filter_var_array() function"
   },
   "filter_var": {
-	"prefix": "phpfilter_var",
+	"prefix": "Filtervar",
 	"body": [
 		"var_dump(filter_var('bob@example.com', FILTER_VALIDATE_EMAIL));",
 		"var_dump(filter_var('http://example.com', FILTER_VALIDATE_URL, FILTER_FLAG_PATH_REQUIRED));"
@@ -4102,126 +4102,126 @@
 	"description": "filter_var() function"
   },
   "FILTER_CALLBACK": {
-	"prefix": "phpFILTER_CALLBACK",
+	"prefix": "FilterCALLBACK",
 	"body": [
 	  "https://www.php.net/manual/en/filter.constants.php#constant.filter-callback"
 	],
 	"description": "FILTER_CALLBACK constant"
   },
   "FILTER_SANITIZE_STRING": {
-	"prefix": "phpFILTER_SANITIZE_STRING",
+	"prefix": "FilterSANITIZESTRING",
 	"body": [
 	 "https://www.php.net/manual/en/filter.constants.php#constant.filter-sanitize-string"
 	],
 	"description": "FILTER_SANITIZE_STRING constant"
   },
   "FILTER_SANITIZE_STRIPPED": {
-	"prefix": "phpFILTER_SANITIZE_STRIPPED",
+	"prefix": "FilterSANITIZESTRIPPED",
 	"body": [
 	  "https://nodejs.org/api/crypto.html#crypto_class_cipher"
 	],
 	"description": "FILTER_SANITIZE_STRIPPED constant"
   },
   "FILTER_SANITIZE_ENCODED": {
-	"prefix": "phpFILTER_SANITIZE_ENCODED",
+	"prefix": "FilterSANITIZEENCODED",
 	"body": [
 	  "https://www.php.net/manual/en/filter.constants.php#constant.filter-sanitize-encoded"
 	],
 	"description": "FILTER_SANITIZE_ENCODED constant"
   },
   "FILTER_SANITIZE_SPECIAL_CHARS": {
-	"prefix": "phpFILTER_SANITIZE_SPECIAL_CHARS",
+	"prefix": "FilterSANITIZESPECIALCHARS",
 	"body": [
 	  "https://www.php.net/manual/en/filter.constants.php#constant.filter-sanitize-special-chars"
 	],
 	"description": "FILTER_SANITIZE_SPECIAL_CHARS constant"
   },
   "FILTER_SANITIZE_EMAIL": {
-	"prefix": "phpFILTER_SANITIZE_EMAIL",
+	"prefix": "FilterSANITIZEEMAIL",
 	"body": [
 	  "https://www.php.net/manual/en/filter.constants.php#constant.filter-sanitize-email"
 	],
 	"description": "FILTER_SANITIZE_EMAIL constant"
   },
   "FILTER_SANITIZE_URL": {
-	"prefix": "phpFILTER_SANITIZE_URL",
+	"prefix": "FilterSANITIZEURL",
 	"body": [
 	 "https://www.php.net/manual/en/filter.constants.php#constant.filter-sanitize-url"
 	],
 	"description": "FILTER_SANITIZE_URL constant"
   },
   "FILTER_SANITIZE_NUMBER_INT": {
-	"prefix": "phpFILTER_SANITIZE_NUMBER_INT",
+	"prefix": "FilterSANITIZENUMBERINT",
 	"body": [
 	 "https://www.php.net/manual/en/filter.constants.php#constant.filter-sanitize-number-int"
 	],
 	"description": "FILTER_SANITIZE_NUMBER_INT constant"
   },
   "FILTER_SANITIZE_NUMBER_FLOAT": {
-	"prefix": "phpFILTER_SANITIZE_NUMBER_FLOAT",
+	"prefix": "FilterSANITIZENUMBERFLOAT",
 	"body": [
 	  "https://www.php.net/manual/en/filter.constants.php#constant.filter-sanitize-number-float"
 	],
 	"description": "FILTER_SANITIZE_NUMBER_FLOAT constant"
   },
   "FILTER_SANITIZE_MAGIC_QUOTES": {
-	"prefix": "phpFILTER_SANITIZE_MAGIC_QUOTES",
+	"prefix": "FilterSANITIZEMAGICQUOTES",
 	"body": [
 	  "https://www.php.net/manual/en/filter.constants.php#constant.filter-sanitize-magic-quotes"
 	],
 	"description": "FILTER_SANITIZE_MAGIC_QUOTES constant"
   },
   "FILTER_UNSAFE_RAW": {
-	"prefix": "phpFILTER_UNSAFE_RAW",
+	"prefix": "FilterUNSAFERAW",
 	"body": [
 	 "https://www.php.net/manual/en/filter.constants.php#constant.filter-unsafe-raw"
 	],
 	"description": "FILTER_UNSAFE_RAW constant"
   },
   "FILTER_VALIDATE_INT": {
-	"prefix": "phpFILTER_VALIDATE_INT",
+	"prefix": "FilterVALIDATEINT",
 	"body": [
 	  "https://www.php.net/manual/en/filter.constants.php#constant.filter-validate-int"
 	],
-	"description": "FILTER_VALIDATE_INT constant"
+	"description": "FilterVALIDATEINTconstant"
   },
   "FILTER_VALIDATE_BOOLEAN": {
-	"prefix": "phpFILTER_VALIDATE_BOOLEAN",
+	"prefix": "FilterVALIDATEBOOLEAN",
 	"body": [
 	  "https://www.php.net/manual/en/filter.constants.php#constant.filter-validate-boolean"
 	],
 	"description": "FILTER_VALIDATE_BOOLEAN constant"
   },
   "FILTER_VALIDATE_FLOAT": {
-	"prefix": "phpFILTER_VALIDATE_FLOAT",
+	"prefix": "FilterVALIDATEFLOAT",
 	"body": [
 	  "https://www.php.net/manual/en/filter.constants.php#constant.filter-validate-float"
 	],
 	"description": "FILTER_VALIDATE_FLOAT constant"
   },
   "FILTER_VALIDATE_REGEXP": {
-	"prefix": "phpFILTER_VALIDATE_REGEXP",
+	"prefix": "FilterVALIDATEREGEXP",
 	"body": [
 	  "https://www.php.net/manual/en/filter.constants.php#constant.filter-validate-regexp"
 	],
 	"description": "FILTER_VALIDATE_REGEXP constant"
   },
   "FILTER_VALIDATE_URL": {
-	"prefix": "phpFILTER_VALIDATE_URL",
+	"prefix": "FilterVALIDATEURL",
 	"body": [
 	  "https://www.php.net/manual/en/filter.constants.php#constant.filter-validate-url"
 	],
 	"description": "FILTER_VALIDATE_URL constant"
   },
   "FILTER_VALIDATE_EMAIL": {
-	"prefix": "phpFILTER_VALIDATE_EMAIL",
+	"prefix": "FilterVALIDATEEMAIL",
 	"body": [
 	 "https://www.php.net/manual/en/filter.constants.php#constant.filter-validate-email"
 	],
 	"description": "FILTER_VALIDATE_EMAIL constant"
   },
   "FILTER_VALIDATE_IP": {
-	"prefix": "phpFILTER_VALIDATE_IP",
+	"prefix": "FilterVALIDATEIP",
 	"body": [
 	 "https://www.php.net/manual/en/filter.constants.php#constant.filter-validate-ip"
 	],
@@ -4229,7 +4229,7 @@
   },
   
   "FTP Functions and Constants": {
-    "prefix": "php_ftp_functions",
+    "prefix": "FTPfunctions",
     "body": [
       "ftp_alloc(ftp_stream, filesize [, &result])",
       "ftp_cdup(ftp_stream)",
@@ -4269,7 +4269,7 @@
     "description": "List of FTP functions and constants"
   },
   "ftp_alloc": {
-	"prefix": "phpftp_alloc",
+	"prefix": "FTPalloc",
 	"body": [
 		"$file = '/home/user/myfile';",
 
@@ -4286,7 +4286,7 @@
 		
 		"ftp_close($ftp);"
 	],
-	"description": "ftp_alloc() function"
+	"description": "FTPallocfunction"
   },
   "ftp_cdup": {
 	"prefix": "phpftp_cdup",
@@ -4309,10 +4309,10 @@
 		
 		"ftp_close($ftp);"
 	],
-	"description": "ftp_cdup() function"
+	"description": "FTPcdupfunction"
   },
   "ftp_chdir": {
-	"prefix": "phpftp_chdir",
+	"prefix": "FTPchdir",
 	"body": [
 		"$ftp = ftp_connect($ftp_server); ",
 
@@ -4338,7 +4338,7 @@
 	"description": "ftp_chdir() function"
   },
   "ftp_chmod": {
-	"prefix": "phpftp_chmod",
+	"prefix": "FTPchmod",
 	"body": [
 		"$file = 'public_html/index.php';",
 
@@ -4357,7 +4357,7 @@
 	"description": "ftp_chmod() function"
   },
   "ftp_close": {
-	"prefix": "phpftp_close",
+	"prefix": "FTPclose",
 	"body": [
 		"$ftp = ftp_connect($ftp_server);",
 
@@ -4370,7 +4370,7 @@
 	"description": "ftp_close() function"
   },
   "ftp_connect": {
-	"prefix": "phpftp_connect",
+	"prefix": "FTPconnect",
 	"body": [
 		"$ftp_server = 'ftp.example.com';",
 
@@ -4379,7 +4379,7 @@
 	"description": "ftp_connect() function"
   },
   "ftp_delete": {
-	"prefix": "phpftp_delete",
+	"prefix": "FTPdelete",
 	"body": [
 		"$file = 'public_html/old.txt';",
 
@@ -4398,7 +4398,7 @@
 	"description": "ftp_delete() function"
   },
   "ftp_exec": {
-	"prefix": "phpftp_exec",
+	"prefix": "FTPexec",
 	"body": [
 		"$command = 'ls -al >files.txt';",
 
@@ -4417,7 +4417,7 @@
 	"description": "ftp_exec() function"
   },
   "ftp_fget": {
-	"prefix": "phpftp_fget",
+	"prefix": "FTPfget",
 	"body": [
 		"$remote_file = 'somefile.txt';",
 		"$local_file = 'localfile.txt';",
@@ -4440,7 +4440,7 @@
 	"description": "ftp_fget() function"
   },
   "ftp_fput": {
-	"prefix": "phpftp_fput",
+	"prefix": "FTPfput",
 	"body": [
 		"$file = 'somefile.txt';",
 		"$fp = fopen($file, 'r');",
@@ -4461,7 +4461,7 @@
 	"description": "ftp_fput() function"
   },
   "ftp_get_option": {
-	"prefix": "phpftp_get_option",
+	"prefix": "FTPgetoption",
 	"body": [
 	  "// Get the timeout of the given FTP connection",
 "$timeout = ftp_get_option($ftp, FTP_TIMEOUT_SEC);"
@@ -4469,7 +4469,7 @@
 	"description": "ftp_get_option() function"
   },
   "ftp_get": {
-	"prefix": "phpftp_get",
+	"prefix": "FTPget",
 	"body": [
 		"$local_file = 'local.zip';",
 		"$server_file = 'server.zip';",
@@ -4486,10 +4486,10 @@
 		
 		"ftp_close($ftp);"
 	],
-	"description": "ftp_get() function"
+	"description": "FTPgetfunction"
   },
   "ftp_login": {
-	"prefix": "phpftp_login",
+	"prefix": "FTPlogin",
 	"body": [
 		"$ftp_server = 'ftp.example.com';",
 		"$ftp_user = 'foo';",
@@ -4508,7 +4508,7 @@
 	"description": "ftp_login() function"
   },
   "ftp_mdtm": {
-	"prefix": "phpftp_mdtm",
+	"prefix": "FTPmdtm",
 	"body": [
 		"$file = 'somefile.txt';",
 
@@ -4529,7 +4529,7 @@
 	"description": "ftp_mdtm() function"
   },
   "ftp_mkdir": {
-	"prefix": "phpftp_mkdir",
+	"prefix": "FTPmkdir",
 	"body": [
 		"$dir = 'www';",
 
@@ -4548,7 +4548,7 @@
 	"description": "ftp_mkdir() function"
   },
   "ftp_nb_continue": {
-	"prefix": "phpftp_nb_continue",
+	"prefix": "FTPnbcontinue",
 	"body": [
 		"$ret = ftp_nb_get($ftp, 'test', 'README', FTP_BINARY);",
 		"while ($ret == FTP_MOREDATA) {",
@@ -4563,7 +4563,7 @@
 	"description": "ftp_nb_continue() function"
   },
   "ftp_nb_fget": {
-	"prefix": "phpftp_nb_fget",
+	"prefix": "FTPnbfget",
 	"body": [
 		"$file = 'index.php';",
 		"$fp = fopen($file, 'w');",
@@ -4589,7 +4589,7 @@
 	"description": "ftp_nb_fget() function"
   },
   "ftp_nb_fput": {
-	"prefix": "phpftp_nb_fput",
+	"prefix": "FTPnbfput",
 	"body": [
 		"$file = 'index.php';",
 
@@ -4616,7 +4616,7 @@
 	"description": "ftp_nb_fput() function"
   },
   "ftp_nb_get": {
-	"prefix": "phpftp_nb_get",
+	"prefix": "FTPnbget",
 	"body": [
 		"ftp_set_option($ftp, FTP_AUTOSEEK, false);",
 
@@ -4629,7 +4629,7 @@
 	"description": "ftp_nb_get() function"
   },
   "ftp_nb_put": {
-	"prefix": "phpftp_nb_put",
+	"prefix": "FTPnbput",
 	"body": [
 		"$ret = ftp_nb_put($ftp, 'test.remote', 'test.local', FTP_BINARY);",
 		"while ($ret == FTP_MOREDATA) {",
@@ -4645,7 +4645,7 @@
 	"description": "ftp_nb_put() function"
   },
   "ftp_nlist": {
-	"prefix": "phpftp_nlist",
+	"prefix": "FTPnlist",
 	"body": [
 		"$ftp = ftp_connect($ftp_server);",
 
@@ -4658,7 +4658,7 @@
 	"description": "ftp_nlist() function"
   },
   "ftp_pasv": {
-	"prefix": "phpftp_pasv",
+	"prefix": "FTPpasv",
 	"body": [
 		"$file = 'somefile.txt';",
 		"$remote_file = 'readme.txt';",
@@ -4680,7 +4680,7 @@
 	"description": "ftp_pasv() function"
   },
   "ftp_put": {
-	"prefix": "phpftp_put",
+	"prefix": "FTPput",
 	"body": [
 		"$file = 'somefile.txt';",
 		"$remote_file = 'readme.txt';",
@@ -4700,7 +4700,7 @@
 	"description": "ftp_put() function"
   },
   "ftp_pwd": {
-	"prefix": "phpftp_pwd",
+	"prefix": "FTPpwd",
 	"body": [
 		"$ftp = ftp_connect($ftp_server);",
 
@@ -4722,7 +4722,7 @@
 	"description": "ftp_quit() function"
   },
   "ftp_raw": {
-	"prefix": "phpftp_raw",
+	"prefix": "FTPraw",
 	"body": [
 		"$ftp = ftp_connect('ftp.example.com');",
 
@@ -4732,7 +4732,7 @@
 	"description": "ftp_raw() function"
   },
   "ftp_rawlist": {
-	"prefix": "phpftp_rawlist",
+	"prefix": "FTPrawlist",
 	"body": [
 		"$ftp = ftp_connect($ftp_server);",
 
@@ -4747,7 +4747,7 @@
 	"description": "ftp_rawlist() function"
   },
   "ftp_rename": {
-	"prefix": "phpftp_rename",
+	"prefix": "FTPrename",
 	"body": [
 		"$old_file = 'somefile.txt.bak';",
 		"$new_file = 'somefile.txt';",
@@ -4767,7 +4767,7 @@
 	"description": "ftp_rename() function"
   },
   "ftp_rmdir": {
-	"prefix": "phpftp_rmdir",
+	"prefix": "FTPrmdir",
 	"body": [
 		"$dir = 'www/';",
 
@@ -4786,14 +4786,14 @@
 	"description": "ftp_rmdir() function"
   },
   "ftp_set_option": {
-	"prefix": "phpftp_set_option",
+	"prefix": "FTPsetoption",
 	"body": [
 	  "ftp_set_option($ftp, FTP_TIMEOUT_SEC, 10);"
 	],
 	"description": "ftp_set_option() function"
   },
   "ftp_site": {
-	"prefix": "phpftp_site",
+	"prefix": "FTPsite",
 	"body": [
 		"$ftp = ftp_connect('ftp.example.com');",
 		"if (!$ftp) die('Unable to connect to ftp.example.com');",
@@ -4808,7 +4808,7 @@
 	"description": "ftp_site() function"
   },
   "ftp_size": {
-	"prefix": "phpftp_size",
+	"prefix": "FTPsize",
 	"body": [
 		"$file = 'somefile.txt';",
 
@@ -4829,7 +4829,7 @@
 	"description": "ftp_size() function"
   },
   "ftp_ssl_connect": {
-	"prefix": "phpftp_ssl_connect",
+	"prefix": "FTPsslconnect",
 	"body": [
 		"$ftp = ftp_ssl_connect($ftp_server);",
 
@@ -4846,7 +4846,7 @@
 	"description": "ftp_ssl_connect() function"
   },
   "ftp_systype": {
-	"prefix": "phpftp_systype",
+	"prefix": "FTPsystype",
 	"body": [
 		"$ftp = ftp_connect('ftp.example.com');",
 		"ftp_login($ftp, 'user', 'password');",
@@ -4861,7 +4861,7 @@
   },
      
   "oop": {
-    "prefix": "php_oop",
+    "prefix": "Oop",
     "body": [
       "__construct()",
       "__destruct()",
@@ -4881,7 +4881,7 @@
     "description": "List of magic methods in OOP"
   },
   "__construct": {
-	"prefix": "php__construct",
+	"prefix": "Oopconstruct",
 	"body": [
 		"class Point {",
 			"protected int $x;",
@@ -4900,7 +4900,7 @@
 	"description": "Magic method __construct()"
   },
   "__destruct": {
-	"prefix": "php__destruct",
+	"prefix": "Oopdestruct",
 	"body": [
 		"class MyDestructableClass ",
 		"{",
@@ -4918,7 +4918,7 @@
 	"description": "Magic method __destruct()"
   },
   "__callStatic": {
-	"prefix": "php__callStatic",
+	"prefix": "OopcallStatic",
 	"body": [
 		"class MethodTest",
 		"{",
@@ -4943,7 +4943,7 @@
 	"description": "Magic method __callStatic()"
   },
   "__call": {
-	"prefix": "php__call",
+	"prefix": "Oopcall",
 	"body": [
 		"class MethodTest",
 		"{",
@@ -4968,35 +4968,35 @@
 	"description": "Magic method __call()"
   },
   "__get": {
-	"prefix": "php__get",
+	"prefix": "Oopget",
 	"body": [
 	  "https://www.php.net/manual/en/language.oop5.overloading.php#object.get"
 	],
 	"description": "Magic method __get()"
   },
   "__set": {
-	"prefix": "php__set",
+	"prefix": "Oopset",
 	"body": [
 	  "https://www.php.net/manual/en/language.oop5.overloading.php#object.set"
 	],
 	"description": "Magic method __set()"
   },
   "__isset": {
-	"prefix": "php__isset",
+	"prefix": "Oopisset",
 	"body": [
 	  "https://www.php.net/manual/en/language.oop5.overloading.php#object.isset"
 	],
 	"description": "Magic method __isset()"
   },
   "__unset": {
-	"prefix": "php__unset",
+	"prefix": "Oopunset",
 	"body": [
 	 "https://www.php.net/manual/en/language.oop5.overloading.php#object.unset"
 	],
 	"description": "Magic method __unset()"
   },
   "__sleep": {
-	"prefix": "php__sleep",
+	"prefix": "Oopsleep",
 	"body": [
 		"class Connection",
 		"{",
@@ -5028,7 +5028,7 @@
 	"description": "Magic method __sleep()"
   },
   "__wakeup": {
-	"prefix": "php__wakeup",
+	"prefix": "Oopwakeup",
 	"body": [
 		"class Connection",
 		"{",
@@ -5060,7 +5060,7 @@
 	"description": "Magic method __wakeup()"
   },
   "__toString": {
-	"prefix": "php__toString",
+	"prefix": "OoptoString",
 	"body": [
 		"class TestClass",
 		"{",
@@ -5083,7 +5083,7 @@
 	"description": "Magic method __toString()"
   },
   "__invoke": {
-	"prefix": "php__invoke",
+	"prefix": "Oopinvoke",
 	"body": [
 		"class CallableClass",
 		"{",
@@ -5099,7 +5099,7 @@
 	"description": "Magic method __invoke()"
   },
   "__set_state": {
-	"prefix": "php__set_state",
+	"prefix": "Oopsetstate",
 	"body": [
 		"class CallableClass",
 		"{",
@@ -5115,7 +5115,7 @@
 	"description": "Magic method __set_state()"
   },
   "__clone": {
-	"prefix": "php__clone",
+	"prefix": "Oopclone",
 	"body": [
 	  "https://www.php.net/manual/en/language.oop5.cloning.php#object.clone"
 	],
@@ -5123,7 +5123,7 @@
   },
 
   "Date/Time Functions": {
-    "prefix": "php_datetime_functions",
+    "prefix": "Datetimefunctions",
     "body": [
       "checkdate(month, day, year)",
       "date_default_timezone_get()",
@@ -5149,7 +5149,7 @@
     "description": "List of date/time functions in PHP"
   },
   "Date/Time Constants": {
-    "prefix": "php_datetime_constants",
+    "prefix": "Datetimeconstants",
     "body": [
       "DATE_ATOM",
       "DATE_COOKIE",
@@ -5165,7 +5165,7 @@
     "description": "List of date/time constants in PHP"
   },
   "checkdate": {
-	"prefix": "phpcheckdate",
+	"prefix": "Datetimecheckdate",
 	"body": [
 		"var_dump(checkdate(12, 31, 2000));",
 		"var_dump(checkdate(2, 29, 2001));"
@@ -5173,7 +5173,7 @@
 	"description": "checkdate() function"
   },
   "date_default_timezone_get": {
-	"prefix": "phpdate_default_timezone_get",
+	"prefix": "Datetimedefaulttimezoneget",
 	"body": [
 		"date_default_timezone_set('America/Los_Angeles');",
 		"echo date_default_timezone_get() . ' => ' . date('e') . ' => ' . date('T');"
@@ -5181,7 +5181,7 @@
 	"description": "date_default_timezone_get() function"
   },
   "date_default_timezone_set": {
-	"prefix": "phpdate_default_timezone_set",
+	"prefix": "Datetimedefaulttimezoneset",
 	"body": [
 		"date_default_timezone_set('America/Los_Angeles');",
 
@@ -5195,7 +5195,7 @@
 	"description": "date_default_timezone_set() function"
   },
   "date_sunrise": {
-	"prefix": "phpdate_sunrise",
+	"prefix": "Datetimesunrise",
 	"body": [
 		"$solstice = strtotime('2017-12-21');",
 		"var_dump(date_sunrise($solstice, SUNFUNCS_RET_STRING, 69.245833, -53.537222));"
@@ -5203,7 +5203,7 @@
 	"description": "date_sunrise() function"
   },
   "date_sunset": {
-	"prefix": "phpdate_sunset",
+	"prefix": "Datetimesunset",
 	"body": [
 		"$solstice = strtotime('2017-12-21');",
 		"var_dump(date_sunset($solstice, SUNFUNCS_RET_STRING, 69.245833, -53.537222));"
@@ -5211,14 +5211,14 @@
 	"description": "date_sunset() function"
   },
   "date": {
-	"prefix": "phpdate",
+	"prefix": "Date",
 	"body": [
 	 "echo date('l \t\"h\"e jS');"
 	],
 	"description": "date() function"
   },
   "getdate": {
-	"prefix": "phpgetdate",
+	"prefix": "Datetimegetdate",
 	"body": [
 		"$today = getdate();",
 		"print_r($today);"
@@ -5226,7 +5226,7 @@
 	"description": "getdate() function"
   },
   "gettimeofday": {
-	"prefix": "phpgettimeofday",
+	"prefix": "Datetimegettimeofday",
 	"body": [
 		"print_r(gettimeofday());",
 
@@ -5235,7 +5235,7 @@
 	"description": "gettimeofday() function"
   },
   "gmdate": {
-	"prefix": "phpgmdate",
+	"prefix": "Datetimegmdate",
 	"body": [
 		"echo date('M d Y H:i:s', mktime(0, 0, 0, 1, 1, 1998));",
 		"echo gmdate('M d Y H:i:s', mktime(0, 0, 0, 1, 1, 1998));"
@@ -5243,14 +5243,14 @@
 	"description": "gmdate() function"
   },
   "gmmktime": {
-	"prefix": "phpgmmktime",
+	"prefix": "Datetimegmmktime",
 	"body": [
 	  "echo 'July 1, 2000 is on a ' . date('l', gmmktime(0, 0, 0, 7, 1, 2000));"
 	],
 	"description": "gmmktime() function"
   },
   "gmstrftime": {
-	"prefix": "phpgmstrftime",
+	"prefix": "Datetimegmstrftime",
 	"body": [
 		"setlocale(LC_TIME, 'en_US');",
 		"echo strftime('%b %d %Y %H:%M:%S', mktime(20, 0, 0, 12, 31, 98)) . '\n';",
@@ -5259,7 +5259,7 @@
 	"description": "gmstrftime() function"
   },
   "idate": {
-	"prefix": "phpidate",
+	"prefix": "Datetimeidate",
 	"body": [
 		"$timestamp = strtotime('1st January 2004'); //1072915200",
 
@@ -5271,7 +5271,7 @@
 	"description": "idate() function"
   },
   "localtime": {
-	"prefix": "phplocaltime",
+	"prefix": "Datetimelocaltime",
 	"body": [
 		"$localtime = localtime();",
 	"$localtime_assoc = localtime(time(), true);",
@@ -5281,7 +5281,7 @@
 	"description": "localtime() function"
   },
   "microtime": {
-	"prefix": "phpmicrotime",
+	"prefix": "Datetimemicrotime",
 	"body": [
 		"$time_start = microtime(true);",
 
@@ -5296,7 +5296,7 @@
 	"description": "microtime() function"
   },
   "mktime": {
-	"prefix": "phpmktime",
+	"prefix": "Datetimemktime",
 	"body": [
 		"$lastday = mktime(0, 0, 0, 3, 0, 2000);",
 		"echo strftime('Last day in Feb 2000 is: %d', $lastday);",
@@ -5306,7 +5306,7 @@
 	"description": "mktime() function"
   },
   "strftime": {
-	"prefix": "phpstrftime",
+	"prefix": "Datetimestrftime",
 	"body": [
 		"setlocale(LC_TIME, 'C');",
 		"echo strftime('%A');",
@@ -5320,7 +5320,7 @@
 	"description": "strftime() function"
   },
   "strptime": {
-	"prefix": "phpstrptime",
+	"prefix": "Datetimestrptime",
 	"body": [
 		"$format = '%d/%m/%Y %H:%M:%S';",
 		"$strf = strftime($format);",
@@ -5332,7 +5332,7 @@
 	"description": "strptime() function"
   },
   "strtotime": {
-	"prefix": "phpstrtotime",
+	"prefix": "Datetimestrtotime",
 	"body": [
 		"$str = 'Not Good';",
 
@@ -5344,14 +5344,14 @@
 	"description": "strtotime() function"
   },
   "time": {
-	"prefix": "phptime",
+	"prefix": "Datetimetime",
 	"body": [
 	  "echo 'Now: '. time();"
 	],
 	"description": "time() function"
   },
   "Calendar Functions": {
-    "prefix": "php_calendar_functions",
+    "prefix": "Calendarfunctions",
     "body": [
       "cal_days_in_month(calendar, month, year)",
       "cal_from_jd(jd, calendar)",
@@ -5375,7 +5375,7 @@
     "description": "List of calendar functions in PHP"
   },
   "Calendar Constants": {
-    "prefix": "php_calendar_constants",
+    "prefix": "phpcalendarconstants",
     "body": [
       "CAL_GREGORIAN",
       "CAL_JULIAN",
@@ -5402,7 +5402,7 @@
     "description": "List of calendar constants in PHP"
   },
   "cal_days_in_month": {
-	"prefix": "phpcal_days_in_month",
+	"prefix": "Calendarcaldaysinmonth",
 	"body": [
 		"$number = cal_days_in_month(CAL_GREGORIAN, 8, 2003); // 31",
 		"echo 'There were {$number} days in August 2003';"
@@ -5410,7 +5410,7 @@
 	"description": "cal_days_in_month() function"
   },
   "cal_from_jd": {
-	"prefix": "phpcal_from_jd",
+	"prefix": "Calendarcalfromjd",
 	"body": [
 		"$today = unixtojd(mktime(0, 0, 0, 8, 16, 2003));",
 		"print_r(cal_from_jd($today, CAL_GREGORIAN));"
@@ -5418,22 +5418,22 @@
 	"description": "cal_from_jd() function"
   },
   "cal_info": {
-	"prefix": "phpcal_info",
+	"prefix": "Calendarcalinfo",
 	"body": [
 		"$info = cal_info(0);",
 		"print_r($info);"
 	],
-	"description": "cal_info() function"
+	"description": "Calendarcalinfofunction"
   },
   "cal_to_jd": {
-	"prefix": "phpcal_to_jd",
+	"prefix": "Calendarcaltojd",
 	"body": [
 	  "https://www.php.net/manual/en/function.frenchtojd.php"
 	],
 	"description": "cal_to_jd() function"
   },
   "easter_date": {
-	"prefix": "phpeaster_date",
+	"prefix": "Calendareasterdate",
 	"body": [
 		"echo date('M-d-Y', easter_date(1999));" ,      
 		"echo date('M-d-Y', easter_date(2000)); "   ,   
@@ -5442,7 +5442,7 @@
 	"description": "easter_date() function"
   },
   "easter_days": {
-	"prefix": "phpeaster_days",
+	"prefix": "Calendareasterdays",
 	"body": [
 		"echo easter_days(1999);  " ,     
 		"echo easter_days(1492); " ,      
@@ -5451,14 +5451,14 @@
 	"description": "easter_days() function"
   },
   "FrenchToJD": {
-	"prefix": "phpFrenchToJD",
+	"prefix": "CalendarFrenchToJD",
 	"body": [
 	  "https://www.php.net/manual/en/function.frenchtojd.php"
 	],
 	"description": "FrenchToJD() function"
   },
   "GregorianToJD": {
-	"prefix": "phpGregorianToJD",
+	"prefix": "CalendarGregorianToJD",
 	"body": [
 		"echo gregoriantojd(2, 31, 2018), PHP_EOL,",
 		"gregoriantojd(3,  3, 2018), PHP_EOL;"
@@ -5466,35 +5466,35 @@
 	"description": "GregorianToJD() function"
   },
   "JDDayOfWeek": {
-	"prefix": "phpJDDayOfWeek",
+	"prefix": "CalendarJDDayOfWeek",
 	"body": [
 	 "https://www.php.net/manual/en/function.jddayofweek.php"
 	],
 	"description": "JDDayOfWeek() function"
   },
   "JDMonthName": {
-	"prefix": "phpJDMonthName",
+	"prefix": "CalendarJDMonthName",
 	"body": [
 	  "https://www.php.net/manual/en/function.jdmonthname.php"
 	],
 	"description": "JDMonthName() function"
   },
   "JDToFrench": {
-	"prefix": "phpJDToFrench",
+	"prefix": "CalendarJDToFrench",
 	"body": [
 	  "https://www.php.net/manual/en/function.jdtofrench.php"
 	],
 	"description": "JDToFrench() function"
   },
   "JDToGregorian": {
-	"prefix": "phpJDToGregorian",
+	"prefix": "CalendarJDToGregorian",
 	"body": [
 	 "https://www.php.net/manual/en/function.jdtogregorian.php"
 	],
 	"description": "JDToGregorian() function"
   },
   "jdtojewish": {
-	"prefix": "phpjdtojewish",
+	"prefix": "Calendarjdtojewish",
 	"body": [
 		"$jd = gregoriantojd(10, 8, 2002);",
 		"echo jdtojewish($jd, true), PHP_EOL,",
@@ -5505,35 +5505,35 @@
 	"description": "jdtojewish() function"
   },
   "JDToJulian": {
-	"prefix": "phpJDToJulian",
+	"prefix": "CalendarJDToJulian",
 	"body": [
 	  "https://www.php.net/manual/en/function.jdtojulian.php"
 	],
 	"description": "JDToJulian() function"
   },
   "jdtounix": {
-	"prefix": "phpjdtounix",
+	"prefix": "Calendarjdtounix",
 	"body": [
 	 "https://www.php.net/manual/en/function.jdtounix.php"
 	],
 	"description": "jdtounix() function"
   },
   "JewishToJD": {
-	"prefix": "phpJewishToJD",
+	"prefix": "CalendarJewishToJD",
 	"body": [
 	 "https://www.php.net/manual/en/function.jewishtojd.php"
 	],
 	"description": "JewishToJD() function"
   },
   "JulianToJD": {
-	"prefix": "phpJulianToJD",
+	"prefix": "CalendarJulianToJD",
 	"body": [
 	  "https://www.php.net/manual/en/function.juliantojd.php"
 	],
 	"description": "JulianToJD() function"
   },
   "unixtojd": {
-	"prefix": "phpunixtojd",
+	"prefix": "Calendarunixtojd",
 	"body": [
 	  "https://www.php.net/manual/en/function.unixtojd.php"
 	],
@@ -5541,7 +5541,7 @@
   },
   
   "SimpleXML Functions": {
-    "prefix": "php_simplexml_functions",
+    "prefix": "SimpleXMLfunctions",
     "body": [
       "__construct([data], [options = 0], [data_is_url = false], [ns = \"\"], [is_prefix = false])",
       "addAttribute(name, value, [namespace = null])",
@@ -5562,7 +5562,7 @@
   },
   
   "__construct()": {
-    "prefix": "php__construct",
+    "prefix": "SimpleXMLconstruct",
     "body": [
 		"include 'example.php';",
 
@@ -5572,7 +5572,7 @@
     "description": "__construct() - Creates a new SimpleXMLElement object"
   },
   "addAttribute()": {
-    "prefix": "phpaddAttribute",
+    "prefix": "SimpleXMLaddAttribute",
     "body": [
 		"include 'example.php';",
  
@@ -5596,7 +5596,7 @@
     "description": "addAttribute() - Adds an attribute to the SimpleXMLElement"
   },
   "addChild()": {
-    "prefix": "phpaddChild",
+    "prefix": "SimpleXMLaddChild",
     "body": [
 		"include 'example.php';",
 
@@ -5620,7 +5620,7 @@
     "description": "addChild() - Adds a child element to the SimpleXMLElement"
   },
   "asXML()": {
-    "prefix": "phpasXML",
+    "prefix": "SimpleXMLasXML",
     "body": [
 		"$string = <<<XML",
 "<a>",
@@ -5641,7 +5641,7 @@
     "description": "asXML() - Return the SimpleXML data as XML or save to a file"
   },
   "attributes()": {
-    "prefix": "phpattributes",
+    "prefix": "SimpleXMLattributes",
     "body": [
 		"$string = <<<XML",
 "<a>",
@@ -5656,7 +5656,7 @@
     "description": "attributes() - Returns a SimpleXMLElement object with attributes"
   },
   "children()": {
-    "prefix": "phpchildren",
+    "prefix": "SimpleXMLchildren",
     "body": [
 		"$xml = new SimpleXMLElement(",
 "'<person>",
@@ -5686,7 +5686,7 @@
     "description": "children() - Returns a filtered list of children elements"
   },
   "getDocNamespaces()": {
-    "prefix": "phpgetDocNamespaces",
+    "prefix": "SimpleXMLgetDocNamespaces",
     "body": [
 		"$xml = <<<XML",
 "<?xml version='1.0' standalone='yes'?>",
@@ -5704,7 +5704,7 @@
     "description": "getDocNamespaces() - Returns namespaces declared in document"
   },
   "getName()": {
-    "prefix": "phpgetName",
+    "prefix": "SimpleXMLgetName",
     "body":[
 		"include 'example.php';",
 "$sxe = new SimpleXMLElement($xmlstr);",
@@ -5719,7 +5719,7 @@
     "description": "getName() - Gets the name of the XML element"
   },
   "getNamespace()": {
-    "prefix": "phpgetNamespace",
+    "prefix": "SimpleXMLgetNamespace",
     "body": [
 		"$xml = <<<XML",
 "<?xml version='1.0' standalone='yes'?>",
@@ -5737,7 +5737,7 @@
     "description": "getNamespace() - Gets namespaces for the document"
   },
   "registerXPathNamespace()": {
-    "prefix": "phpregisterXPathNamespace",
+    "prefix": "SimpleXMLregisterXPathNamespace",
     "body": [
 		
 "$sxe = new SimpleXMLElement($xml);",
@@ -5752,7 +5752,7 @@
     "description": "registerXPathNamespace() - Creates a prefix/ns context for the next XPath query"
   },
   "simplexml_import_dom()": {
-    "prefix": "phpsimplexml_import_dom",
+    "prefix": "SimpleXMLsimplexmlimportdom",
     "body":[
 		"$dom = new DOMDocument;",
 "$dom->loadXML('<books><book><title>blah</title></book></books>');",
@@ -5768,7 +5768,7 @@
     "description": "simplexml_import_dom() - Import a DOM node into SimpleXML"
   },
   "simplexml_load_file()": {
-    "prefix": "phpsimplexml_load_file",
+    "prefix": "SimpleXMLsimplexmlloadfile",
     "body": [
 		"if (file_exists('test.xml')) {",
 			"$xml = simplexml_load_file('test.xml');",
@@ -5781,7 +5781,7 @@
     "description": "simplexml_load_file() - Load XML file into SimpleXML"
   },
   "simplexml_load_string()": {
-    "prefix": "phpsimplexml_load_string",
+    "prefix": "SimpleXMLsimplexmlloadstring",
     "body": [
 		"$string = <<<XML",
 "<?xml version='1.0'?> ",
@@ -5802,7 +5802,7 @@
     "description": "simplexml_load_string() - Load XML string into SimpleXML"
   },
   "xpath()": {
-    "prefix": "phpxpath",
+    "prefix": "SimpleXMLxpath",
     "body": [
 		"$string = <<<XML",
 "<a>",
@@ -5834,7 +5834,7 @@
   },
 
   "Directory Functions": {
-    "prefix": "php_directory_functions",
+    "prefix": "Directoryfunctions",
     "body": [
       "chdir(directory)",
       "chroot(directory)",
@@ -5850,7 +5850,7 @@
   },
 
   "Directory Constants": {
-    "prefix": "php_directory_constants",
+    "prefix": "Directoryconstants",
     "body": [
       "DIRECTORY_SEPARATOR",
       "PATH_SEPARATOR"
@@ -5858,7 +5858,7 @@
     "description": "List of directory constants in PHP"
   },
   "chdir": {
-	"prefix": "phpchdir",
+	"prefix": "Directorychdir",
 	"body": [
 		"echo getcwd() . '\n';",
 
@@ -5869,7 +5869,7 @@
 	"description": "chdir() function"
   },
   "chroot": {
-	"prefix": "phpchroot",
+	"prefix": "Directorychroot",
 	"body": [
 		"chroot('/path/to/your/chroot/');",
 		"echo getcwd();"
@@ -5877,7 +5877,7 @@
 	"description": "chroot() function"
   },
   "dir": {
-	"prefix": "phpdir",
+	"prefix": "Directorydir",
 	"body": [
 		"$d = dir('/etc/php5');",
 		"echo 'Handle: ' . $d->handle . '\n';",
@@ -5890,7 +5890,7 @@
 	"description": "dir() function"
   },
   "closedir": {
-	"prefix": "phpclosedir",
+	"prefix": "Directoryclosedir",
 	"body": [
 		"$dir = '/etc/php5/';",
 
@@ -5902,7 +5902,7 @@
 	"description": "closedir() function"
   },
   "getcwd": {
-	"prefix": "phpgetcwd",
+	"prefix": "Directorygetcwd",
 	"body": [
 		"echo getcwd() . '\n';",
 
@@ -5913,7 +5913,7 @@
 	"description": "getcwd() function"
   },
   "opendir": {
-	"prefix": "phpopendir",
+	"prefix": "Directoryopendir",
 	"body": [
 		"$dir = '/etc/php5/';",
 
@@ -5927,7 +5927,7 @@
 	"description": "opendir() function"
   },
   "readdir": {
-	"prefix": "phpreaddir",
+	"prefix": "Directoryreaddir",
 	"body": [
 		"if ($handle = opendir('.')) {",
 			"while (false !== ($entry = readdir($handle))) {",
@@ -5940,14 +5940,14 @@
 	"description": "readdir() function"
   },
   "rewinddir": {
-	"prefix": "phprewinddir",
+	"prefix": "Directoryrewinddir",
 	"body": [
 	  "https://www.php.net/manual/en/function.rewinddir.php"
 	],
 	"description": "rewinddir() function"
   },
   "scandir": {
-	"prefix": "phpscandir",
+	"prefix": "Directoryscandir",
 	"body": [
 		"$dir    = '/tmp';",
 		"$files1 = scandir($dir);",
@@ -5960,7 +5960,7 @@
   },
   
   "Filesystem Functions": {
-    "prefix": "php_filesystem_functions",
+    "prefix": "Filesystemfunctions",
     "body": [
       "basename(path, [suffix])",
       "chgrp(filename, group)",
@@ -6062,7 +6062,7 @@
     "description": "List of filesystem constants in PHP"
   },
   "basename": {
-	"prefix": "phpbasename",
+	"prefix": "Filesystembasename",
 	"body": [
 		"echo '1) '.basename('/etc/sudoers.d', '.d').PHP_EOL;",
 		"echo '2) '.basename('/etc/sudoers.d').PHP_EOL;",
@@ -6074,7 +6074,7 @@
 	"description": "basename() function"
   },
   "chgrp": {
-	"prefix": "phpchgrp",
+	"prefix": "Filesystemchgrp",
 	"body": [
 		"$filename = 'shared_file.txt';",
 		"$format = '%s's Group ID @ %s: %d\n';",
@@ -6086,7 +6086,7 @@
 	"description": "chgrp() function"
   },
   "chmod": {
-	"prefix": "phpchmod",
+	"prefix": "Filesystemchmod",
 	"body": [
 		"chmod('/somedir/somefile', 755); " , 
 		"chmod('/somedir/somefile', 'u+rwx,go+rx');", 
@@ -6095,7 +6095,7 @@
 	"description": "chmod() function"
   },
   "chown": {
-	"prefix": "phpchown",
+	"prefix": "Filesystemchown",
 	"body": [
 		"$file_name= 'foo.php';",
 		"$path = '/home/sites/php.net/public_html/sandbox/' . $file_name ;",
@@ -6109,7 +6109,7 @@
 	"description": "chown() function"
   },
   "clearstatcache": {
-	"prefix": "phpclearstatcache",
+	"prefix": "Filesystemclearstatcache",
 	"body": [
 		"$file = 'output_log.txt';",
 
@@ -6133,7 +6133,7 @@
 	"description": "clearstatcache() function"
   },
   "copy": {
-	"prefix": "phpcopy",
+	"prefix": "Filesystemcopy",
 	"body": [
 		"$file = 'example.txt';",
 		"$newfile = 'example.txt.bak';",
@@ -6145,14 +6145,14 @@
 	"description": "copy() function"
   },
   "delete": {
-	"prefix": "phpdelete",
+	"prefix": "Filesystemdelete",
 	"body": [
 	 "https://www.php.net/manual/en/function.delete.php"
 	],
 	"description": "Delete (unlink) a file"
   },
   "dirname": {
-	"prefix": "phpdirname",
+	"prefix": "Filesystemdirname",
 	"body": [
 		"dirname('.');    // Will return '.'.",
 		"dirname('/');    // Will return `\" on Windows and '/' on *nix systems.",
@@ -6162,7 +6162,7 @@
 	"description": "dirname() function"
   },
   "disk_free_space": {
-	"prefix": "phpdisk_free_space",
+	"prefix": "Filesystemdiskfreespace",
 	"body": [
 		"$df = disk_free_space('/');",
 
@@ -6172,7 +6172,7 @@
 	"description": "disk_free_space() function"
   },
   "disk_total_space": {
-	"prefix": "phpdisk_total_space",
+	"prefix": "Filesystemdisktotalspace",
 	"body": [
 		"$ds = disk_total_space('/');",
 
@@ -6182,14 +6182,14 @@
 	"description": "disk_total_space() function"
   },
   "diskfreespace": {
-	"prefix": "phpdiskfreespace",
+	"prefix": "Filesystemdiskfreespace",
 	"body": [
 	  "https://www.php.net/manual/en/function.diskfreespace.php"
 	],
 	"description": "diskfreespace() function"
   },
   "fclose": {
-	"prefix": "phpfclose",
+	"prefix": "Filesystemfclose",
 	"body": [
 		"$handle = fopen('somefile.txt', 'r');",
 
@@ -6198,14 +6198,14 @@
 	"description": "fclose() function"
   },
   "feof": {
-	"prefix": "phpfeof",
+	"prefix": "Filesystemfeof",
 	"body": [
 	  "feof(${1:$handle})"
 	],
 	"description": "feof() function"
   },
   "fflush": {
-	"prefix": "phpfflush",
+	"prefix": "Filesystemfflush",
 	"body": [
 		"$filename = 'bar.txt';",
 
@@ -6219,7 +6219,7 @@
 	"description": "fflush() function"
   },
   "fgetc": {
-	"prefix": "phpfgetc",
+	"prefix": "Filesystemfgetc",
 	"body": [
 		"$fp = fopen('somefile.txt', 'r');",
 		"if (!$fp) {",
@@ -6232,7 +6232,7 @@
 	"description": "fgetc() function"
   },
   "fgetcsv": {
-	"prefix": "phpfgetcsv",
+	"prefix": "Filesystemfgetcsv",
 	"body": [
 		"$row = 1;",
 		"if (($handle = fopen('test.csv', 'r')) !== FALSE) {",
@@ -6249,7 +6249,7 @@
 	"description": "fgetcsv() function"
   },
   "fgets": {
-	"prefix": "phpfgets",
+	"prefix": "Filesystemfgets",
 	"body": [
 		"$fp = @fopen('/tmp/inputfile.txt', 'r');",
 		"if ($fp) {",
@@ -6265,7 +6265,7 @@
 	"description": "fgets() function"
   },
   "fgetss": {
-	"prefix": "phpfgetss",
+	"prefix": "Filesystemfgetss",
 	"body": [
 	"$str = <<<EOD",
 	"<html><body>",
@@ -6286,7 +6286,7 @@
 	"description": "fgetss() function"
   },
   "file": {
-	"prefix": "phpfile",
+	"prefix": "Filesystemfile",
 	"body": [
 		"$lines = file('http://www.example.com/');",
 
@@ -6299,7 +6299,7 @@
 	"description": "file() function"
   },
   "file_exists": {
-	"prefix": "phpfile_exists",
+	"prefix": "Filesystemfileexists",
 	"body": [
 		"$filename = '/path/to/foo.txt';",
 
@@ -6311,7 +6311,7 @@
 	"description": "file_exists() function"
   },
   "file_get_contents": {
-	"prefix": "phpfile_get_contents",
+	"prefix": "Filesystemfilegetcontents",
 	"body": [
 		"$homepage = file_get_contents('http://www.example.com/');",
 		"echo $homepage;"
@@ -6319,14 +6319,14 @@
 	"description": "file_get_contents() function"
   },
   "file_put_contents": {
-	"prefix": "phpfile_put_contents",
+	"prefix": "Filesystemfileputcontents",
 	"body": [
 	  
 	],
 	"description": "file_put_contents() function"
   },
   "fileatime": {
-	"prefix": "phpfileatime",
+	"prefix": "Filesystemfileatime",
 	"body": [
 		"$filename = 'somefile.txt';",
 		"if (file_exists($filename)) {",
@@ -6336,7 +6336,7 @@
 	"description": "fileatime() function"
   },
   "filectime": {
-	"prefix": "phpfilectime",
+	"prefix": "Filesystemfilectime",
 	"body": [
 		"$filename = 'somefile.txt';",
 		"if (file_exists($filename)) {",
@@ -6346,7 +6346,7 @@
 	"description": "filectime() function"
   },
   "filegroup": {
-	"prefix": "phpfilegroup",
+	"prefix": "Filesystemfilegroup",
 	"body": [
 		"$filename = 'index.php';",
 		"print_r(posix_getgrgid(filegroup($filename)));"
@@ -6354,7 +6354,7 @@
 	"description": "filegroup() function"
   },
   "fileinode": {
-	"prefix": "phpfileinode",
+	"prefix": "Filesystemfileinode",
 	"body": [
 		"$filename = 'index.php';",
 		"if (getmyinode() == fileinode($filename)) {",
@@ -6364,7 +6364,7 @@
 	"description": "fileinode() function"
   },
   "filemtime": {
-	"prefix": "phpfilemtime",
+	"prefix": "Filesystemfilemtime",
 	"body": [
 		"$filename = 'somefile.txt';",
 		"if (file_exists($filename)) {",
@@ -6374,7 +6374,7 @@
 	"description": "filemtime() function"
   },
   "fileowner": {
-	"prefix": "phpfileowner",
+	"prefix": "Filesystemfileowner",
 	"body": [
 		"$filename = 'index.php';",
 		"print_r(posix_getpwuid(fileowner($filename)));"
@@ -6382,7 +6382,7 @@
 	"description": "fileowner() function"
   },
   "fileperms": {
-	"prefix": "phpfileperms",
+	"prefix": "Filesystemfileperms",
 	"body": [
 		"echo substr(sprintf('%o', fileperms('/tmp')), -4);",
 		"echo substr(sprintf('%o', fileperms('/etc/passwd')), -4);"
@@ -6390,7 +6390,7 @@
 	"description": "fileperms() function"
   },
   "filesize": {
-	"prefix": "phpfilesize",
+	"prefix": "Filesystemfilesize",
 	"body": [
 		"$filename = 'somefile.txt';",
 		"echo $filename . ': ' . filesize($filename) . ' bytes';"
@@ -6398,7 +6398,7 @@
 	"description": "filesize() function"
   },
   "filetype": {
-	"prefix": "phpfiletype",
+	"prefix": "Filesystemfiletype",
 	"body": [
 		"echo filetype('/etc/passwd');",
 		"echo '\n';",
@@ -6407,7 +6407,7 @@
 	"description": "filetype() function"
   },
   "flock": {
-	"prefix": "phpflock",
+	"prefix": "Filesystemflock",
 	"body": [
 		"$fp = fopen('/tmp/lock.txt', 'r+');",
 
@@ -6419,7 +6419,7 @@
 	"description": "flock() function"
   },
   "fnmatch": {
-	"prefix": "phpfnmatch",
+	"prefix": "Filesystemfnmatch",
 	"body": [
 		"if (fnmatch('*gr[ae]y', $color)) {",
 			"echo 'some form of gray ...';",
@@ -6428,14 +6428,14 @@
 	"description": "fnmatch() function"
   },
   "fopen": {
-	"prefix": "phpfopen",
+	"prefix": "Filesystemfopen",
 	"body": [
 	  "$handle = fopen('c:\\folder\\resource.txt', 'r');"
 	],
 	"description": "fopen() function"
   },
   "fpassthru": {
-	"prefix": "phpfpassthru",
+	"prefix": "Filesystemfpassthru",
 	"body": [
 		"$name = './img/ok.png';",
 		"$fp = fopen($name, 'rb');",
@@ -6449,7 +6449,7 @@
 	"description": "fpassthru() function"
   },
   "fputcsv": {
-	"prefix": "phpfputcsv",
+	"prefix": "Filesystemfputcsv",
 	"body": [
 		"$list = array (",
 		"array('aaa', 'bbb', 'ccc', 'dddd'),",
@@ -6468,14 +6468,14 @@
 	"description": "fputcsv() function"
   },
   "fputs": {
-	"prefix": "phpfputs",
+	"prefix": "Filesystemfputs",
 	"body": [
 	  "https://www.php.net/manual/en/function.fputs.php"
 	],
 	"description": "fputs() function"
   },
   "fread": {
-	"prefix": "phpfread",
+	"prefix": "Filesystemfread",
 	"body": [
 		"$filename = '/usr/local/something.txt';",
 		"$handle = fopen($filename, 'r');",
@@ -6485,7 +6485,7 @@
 	"description": "fread() function"
   },
   "fscanf": {
-	"prefix": "phpfscanf",
+	"prefix": "Filesystemfscanf",
 	"body": [
 		"$handle = fopen('users.txt', 'r');",
 		"while ($userinfo = fscanf($handle, '%s\t%s\t%s\n')) {",
@@ -6496,7 +6496,7 @@
 	"description": "fscanf() function"
   },
   "fseek": {
-	"prefix": "phpfseek",
+	"prefix": "Filesystemfseek",
 	"body": [
 		"$fp = fopen('somefile.txt', 'r');",
 
@@ -6507,7 +6507,7 @@
 	"description": "fseek() function"
   },
   "fstat": {
-	"prefix": "phpfstat",
+	"prefix": "Filesystemfstat",
 	"body": [
 	  
 "$fp = fopen('/etc/passwd', 'r');",
@@ -6521,7 +6521,7 @@
 	"description": "fstat() function"
   },
   "ftell": {
-	"prefix": "phpftell",
+	"prefix": "Filesystemftell",
 	"body": [
 		"$fp = fopen('/etc/passwd', 'r');",
 		"$data = fgets($fp, 12);",
@@ -6533,7 +6533,7 @@
 	"description": "ftell() function"
   },
   "ftruncate": {
-	"prefix": "phpftruncate",
+	"prefix": "Filesystemftruncate",
 	"body": [
 		"$filename = 'lorem_ipsum.txt';",
 
@@ -6546,14 +6546,14 @@
 	"description": "ftruncate() function"
   },
   "fwrite": {
-	"prefix": "phpfwrite",
+	"prefix": "Filesystemfwrite",
 	"body": [
 	  "https://www.php.net/manual/en/function.fwrite.php"
 	],
 	"description": "fwrite() function"
   },
   "glob": {
-	"prefix": "phpglob",
+	"prefix": "Filesystemglob",
 	"body": [
 		"foreach (glob('*.txt') as $filename) {",
 			"echo '$filename size ' . filesize($filename) . '\n';"
@@ -6561,7 +6561,7 @@
 	"description": "glob() function"
   },
   "is_dir": {
-	"prefix": "phpis_dir",
+	"prefix": "Filesystemisdir",
 	"body": [
 		"var_dump(is_dir('a_file.txt'));",
 		"var_dump(is_dir('bogus_dir/abc'));",
@@ -6571,7 +6571,7 @@
 	"description": "is_dir() function"
   },
   "is_executable": {
-	"prefix": "phpis_executable",
+	"prefix": "Filesystemisexecutable",
 	"body": [
 		"$file = '/home/vincent/somefile.sh';",
 
@@ -6584,7 +6584,7 @@
 	"description": "is_executable() function"
   },
   "is_file": {
-	"prefix": "phpis_file",
+	"prefix": "Filesystemisfile",
 	"body": [
 		"var_dump(is_file('a_file.txt')) . '\n';",
 		"var_dump(is_file('/usr/bin/')) . '\n';"
@@ -6592,7 +6592,7 @@
 	"description": "is_file() function"
   },
   "is_link": {
-	"prefix": "phpis_link",
+	"prefix": "Filesystemislink",
 	"body": [
 		"$link = 'uploads';",
 
@@ -6602,10 +6602,10 @@
 			"symlink('uploads.php', $link);",
 		"}"
 	],
-	"description": "is_link() function"
+	"description": "Filesystemislinkfunction"
   },
   "is_readable": {
-	"prefix": "phpis_readable",
+	"prefix": "Filesystemisreadable",
 	"body": [
 		"$filename = 'test.txt';",
 		"if (is_readable($filename)) {",
@@ -6617,7 +6617,7 @@
 	"description": "is_readable() function"
   },
   "is_uploaded_file": {
-	"prefix": "phpis_uploaded_file",
+	"prefix": "Filesystemisuploadedfile",
 	"body": [
 		"if (is_uploaded_file($_FILES['userfile']['tmp_name'])) {",
 			"echo 'File '. $_FILES['userfile']['name'] .' uploaded successfully.\n';",
@@ -6631,7 +6631,7 @@
 	"description": "is_uploaded_file() function"
   },
   "is_writable": {
-	"prefix": "phpis_writable",
+	"prefix": "Filesystemiswritable",
 	"body": [
 		"$filename = 'test.txt';",
 		"if (is_writable($filename)) {",
@@ -6643,21 +6643,21 @@
 	"description": "is_writable() function"
   },
   "is_writeable": {
-	"prefix": "phpis_writeable",
+	"prefix": "Filesystemiswriteable",
 	"body": [
 	  "https://www.php.net/manual/en/function.is-writeable.php"
 	],
 	"description": "is_writeable() function"
   },
   "link": {
-	"prefix": "phplink",
+	"prefix": "Filesystemlink",
 	"body": [
 	 "https://www.php.net/manual/en/function.lchgrp.php"
 	],
 	"description": "link() function"
   },
   "linkinfo": {
-	"prefix": "phplinkinfo",
+	"prefix": "Filesystemlinkinfo",
 	"body": [
 		"$target = 'output.php';",
 		"$link = 'output.html';",
@@ -6668,7 +6668,7 @@
 	"description": "linkinfo() function"
   },
   "lstat": {
-	"prefix": "phplstat",
+	"prefix": "Filesystemlstat",
 	"body": [
 		"symlink('uploads.php', 'uploads');",
 
@@ -6677,14 +6677,14 @@
 	"description": "lstat() function"
   },
   "mkdir": {
-	"prefix": "phpmkdir",
+	"prefix": "Filesystemmkdir",
 	"body": [
 	  "mkdir('/path/to/my/dir', 0700);"
 	],
 	"description": "mkdir() function"
   },
   "move_uploaded_file": {
-	"prefix": "phpmove_uploaded_file",
+	"prefix": "Filesystemmove_uploaded_file",
 	"body": [
 		"$uploads_dir = '/uploads';",
 		"foreach ($_FILES['pictures']['error'] as $key => $error) {",
@@ -6696,7 +6696,7 @@
 	"description": "move_uploaded_file() function"
   },
   "parse_ini_file": {
-	"prefix": "phpparse_ini_file",
+	"prefix": "Filesystemparse_ini_file",
 	"body": [
 		"define('BIRD', 'Dodo bird');",
 
@@ -6709,14 +6709,14 @@
 	"description": "parse_ini_file() function"
   },
   "pathinfo": {
-	"prefix": "phppathinfo",
+	"prefix": "Filesystempathinfo",
 	"body": [
 	  "print_r(pathinfo('/some/path/.test'));"
 	],
 	"description": "pathinfo() function"
   },
   "pclose": {
-	"prefix": "phppclose",
+	"prefix": "Filesystempclose",
 	"body": [
 		"$handle = popen('/bin/ls', 'r');",
 		"pclose($handle);"
@@ -6724,14 +6724,14 @@
 	"description": "pclose() function"
   },
   "popen": {
-	"prefix": "phppopen",
+	"prefix": "Filesystempopen",
 	"body": [
 	  "$handle = popen('/bin/ls', 'r');"
 	],
 	"description": "popen() function"
   },
   "readfile": {
-	"prefix": "phpreadfile",
+	"prefix": "Filesystemreadfile",
 	"body": [
 		"$file = 'monkey.gif';",
 
@@ -6749,14 +6749,14 @@
 	"description": "readfile() function"
   },
   "readlink": {
-	"prefix": "phpreadlink",
+	"prefix": "Filesystemreadlink",
 	"body": [
 	  "echo readlink('/vmlinuz');"
 	],
 	"description": "readlink() function"
   },
   "realpath": {
-	"prefix": "phprealpath",
+	"prefix": "Filesystemrealpath",
 	"body": [
 		"chdir('/var/www/');",
 		"echo realpath('./../../etc/passwd') . PHP_EOL;",
@@ -6766,14 +6766,14 @@
 	"description": "realpath() function"
   },
   "rename": {
-	"prefix": "phprename",
+	"prefix": "Filesystemrename",
 	"body": [
 	  "rename('/tmp/tmp_file.txt', '/home/user/login/docs/my_file.txt');"
 	],
 	"description": "rename() function"
   },
   "rewind": {
-	"prefix": "phprewind",
+	"prefix": "Filesystemrewind",
 	"body": [
 		"$handle = fopen('output.txt', 'r+');",
 
@@ -6789,7 +6789,7 @@
 	"description": "rewind() function"
   },
   "rmdir": {
-	"prefix": "phprmdir",
+	"prefix": "Filesystemrmdir",
 	"body": [
 		"if (!is_dir('examples')) {",
 			"mkdir('examples');",
@@ -6800,14 +6800,14 @@
 	"description": "rmdir() function"
   },
   "set_file_buffer": {
-	"prefix": "phpset_file_buffer",
+	"prefix": "Filesystemsetfilebuffer",
 	"body": [
 	  "https://www.php.net/manual/en/function.set-file-buffer.php"
 	],
 	"description": "set_file_buffer() function"
   },
   "stat": {
-	"prefix": "phpstat",
+	"prefix": "Filesystemstat",
 	"body": [
 		"$stat = stat('C:\"php\"php.exe');",
 
@@ -6822,7 +6822,7 @@
 	"description": "stat() function"
   },
   "symlink": {
-	"prefix": "phpsymlink",
+	"prefix": "Filesystemsymlink",
 	"body": [
 		"$target = 'uploads.php';",
 		"$link = 'uploads';",
@@ -6833,7 +6833,7 @@
 	"description": "symlink() function"
   },
   "tempnam": {
-	"prefix": "phptempnam",
+	"prefix": "Filesystemtempnam",
 	"body": [
 		"$tmpfname = tempnam('/tmp', 'FOO');",
 
@@ -6847,7 +6847,7 @@
 	"description": "tempnam() function"
   },
   "tmpfile": {
-	"prefix": "phptmpfile",
+	"prefix": "Filesystemtmpfile",
 	"body": [
 		"$temp = tmpfile();",
 		"fwrite($temp, 'writing to tempfile');",
@@ -6858,7 +6858,7 @@
 	"description": "tmpfile() function"
   },
   "touch": {
-	"prefix": "phptouch",
+	"prefix": "Filesystemtouch",
 	"body": [
 		"if (touch($filename)) {",
 			"echo $filename . ' modification time has been changed to present time';",
@@ -6869,7 +6869,7 @@
 	"description": "touch() function"
   },
   "umask": {
-	"prefix": "phpumask",
+	"prefix": "Filesystemumask",
 	"body": [
 		"$old = umask(0);",
 		"chmod('/path/some_dir/some_file.txt', 0755);",
@@ -6882,7 +6882,7 @@
 	"description": "umask() function"
   },
   "unlink": {
-	"prefix": "phpunlink",
+	"prefix": "Filesystemunlink",
 	"body": [
 		"$fh = fopen('test.html', 'a');",
 		"fwrite($fh, '<h1>Hello world!</h1>');",
@@ -6893,7 +6893,7 @@
 	"description": "unlink() function"
   },
   "MySQLi Class": {
-    "prefix": "php_mysqli_class",
+    "prefix": "MySQLiclass",
     "body": [
       "mysqli::affected_rows",
       "mysqli::autocommit(mode)",
@@ -6962,7 +6962,7 @@
  
  
   "mysqli::affected_rows": {
-	"prefix": "phpmysqli::affected_rows",
+	"prefix": "MySQLiaffectedrows",
 	"body": [
 		"mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);",
 "$mysqli = new mysqli('localhost', 'my_user', 'my_password', 'world');",
@@ -6983,140 +6983,140 @@
 	"description": "mysqli::affected_rows property"
   },
   "mysqli::autocommit": {
-	"prefix": "phpmysqli::autocommit",
+	"prefix": "MySQLiautocommit",
 	"body": [
 	  "https://www.php.net/manual/en/mysqli-stmt.attr-get.php"
 	],
 	"description": "mysqli::autocommit() method"
   },
   "mysqli::change_user": {
-	"prefix": "phpmysqli::change_user",
+	"prefix": "MySQLichangeuser",
 	"body": [
 	 
 	],
 	"description": "mysqli::change_user() method"
   },
   "mysqli::character_set_name": {
-	"prefix": "phpmysqli::character_set_name",
+	"prefix": "MySQLicharactersetname",
 	"body": [
 	  "$${1:charset} = ${2:mysqli}::character_set_name();"
 	],
 	"description": "mysqli::character_set_name() method"
   },
   "mysqli::client_info": {
-	"prefix": "phpmysqli::client_info",
+	"prefix": "MySQLiclientinfo",
 	"body": [
 	  "$${1:client_info} = ${2:mysqli}::client_info;"
 	],
-	"description": "mysqli::client_info property"
+	"description": "MySQLiclientinfoproperty"
   },
   "mysqli::client_version": {
-	"prefix": "phpmysqli::client_version",
+	"prefix": "MySQLiclientversion",
 	"body": [
 	  "$${1:client_version} = ${2:mysqli}::client_version;"
 	],
 	"description": "mysqli::client_version property"
   },
   "mysqli::close": {
-	"prefix": "phpmysqli::close",
+	"prefix": "MySQLiclose",
 	"body": [
 	  "${1:mysqli}::close();"
 	],
 	"description": "mysqli::close() method"
   },
   "mysqli::commit": {
-	"prefix": "phpmysqli::commit",
+	"prefix": "MySQLicommit",
 	"body": [
 	  "${1:mysqli}::commit();"
 	],
 	"description": "mysqli::commit() method"
   },
   "mysqli::$connect_errno": {
-	"prefix": "phpmysqli::$connect_errno",
+	"prefix": "MySQLi$connecterrno",
 	"body": [
 	  "$${1:connect_errno} = ${2:mysqli}::$connect_errno;"
 	],
 	"description": "mysqli::$connect_errno property"
   },
   "mysqli::$connect_error": {
-	"prefix": "phpmysqli::$connect_error",
+	"prefix": "MySQLiconnecterror",
 	"body": [
 	  "$${1:connect_error} = ${2:mysqli}::$connect_error;"
 	],
 	"description": "mysqli::$connect_error property"
   },
   "mysqli::__construct": {
-	"prefix": "phpmysqli::__construct",
+	"prefix": "MySQLiconstruct",
 	"body": [
 	  "${1:mysqli}::__construct(${2:'host'}, ${3:'user'}, ${4:'password'}, ${5:'database'}, ${6:port}, ${7:socket});"
 	],
 	"description": "mysqli::__construct() constructor"
   },
   "mysqli::debug": {
-	"prefix": "phpmysqli::debug",
+	"prefix": "MySQLidebug",
 	"body": [
 	  "${1:mysqli}::debug(${2:'debug'});"
 	],
 	"description": "mysqli::debug() method"
   },
   "mysqli::dump_debug_info": {
-	"prefix": "phpmysqli::dump_debug_info",
+	"prefix": "MySQLidumpdebuginfo",
 	"body": [
 	  "${1:mysqli}::dump_debug_info();"
 	],
 	"description": "mysqli::dump_debug_info() method"
   },
   "mysqli::$errno": {
-	"prefix": "phpmysqli::$errno",
+	"prefix": "MySQLi$errno",
 	"body": [
 	  "$${1:errno} = ${2:mysqli}::$errno;"
 	],
 	"description": "mysqli::$errno property"
   },
   "mysqli::$error_list": {
-	"prefix": "phpmysqli::$error_list",
+	"prefix": "MySQLi$errorlist",
 	"body": [
 	  "$${1:error_list} = ${2:mysqli}::$error_list;"
 	],
 	"description": "mysqli::$error_list property"
   },
   "mysqli::$error": {
-	"prefix": "phpmysqli::$error",
+	"prefix": "MySQLi$error",
 	"body": [
 	  "$${1:error} = ${2:mysqli}::$error;"
 	],
 	"description": "mysqli::$error property"
   },
   "mysqli::$field_count": {
-	"prefix": "phpmysqli::$field_count",
+	"prefix": "MySQLi$fieldcount",
 	"body": [
 	  "$${1:field_count} = ${2:mysqli}::$field_count;"
 	],
 	"description": "mysqli::$field_count property"
   },
   "mysqli::get_charset": {
-	"prefix": "phpmysqli::get_charset",
+	"prefix": "MySQLigetcharset",
 	"body": [
 	  "${1:charset} = ${2:mysqli}::get_charset();"
 	],
 	"description": "mysqli::get_charset() method"
   },
   "mysqli::get_client_info": {
-	"prefix": "phpmysqli::get_client_info",
+	"prefix": "MySQLigetclientinfo",
 	"body": [
 	  "${1:client_info} = ${2:mysqli}::get_client_info();"
 	],
 	"description": "mysqli::get_client_info() method"
   },
   "mysqli_get_client_stats": {
-	"prefix": "phpmysqli_get_client_stats",
+	"prefix": "MySQLigetclientstats",
 	"body": [
 	  "$${1:client_stats} = mysqli_get_client_stats();"
 	],
 	"description": "mysqli_get_client_stats() function"
   },
   "mysqli_get_client_version": {
-	"prefix": "phpmysqli_get_client_version",
+	"prefix": "MySQLigetclientversion",
 	"body": [
 	  "$${1:client_version} = mysqli_get_client_version();"
 	],
@@ -7124,266 +7124,266 @@
   },
  
   "mysqli::$host_info": {
-	"prefix": "phpmysqli::$host_info",
+	"prefix": "MySQLi$hostinfo",
 	"body": [
 	  "$${1:host_info} = ${2:mysqli}::$host_info;"
 	],
 	"description": "mysqli::$host_info property"
   },
   "mysqli::$protocol_version": {
-	"prefix": "phpmysqli::$protocol_version",
+	"prefix": "MySQLi$protocolversion",
 	"body": [
 	  "$${1:protocol_version} = ${2:mysqli}::$protocol_version;"
 	],
 	"description": "mysqli::$protocol_version property"
   },
   "mysqli::$server_info": {
-	"prefix": "phpmysqli::$server_info",
+	"prefix": "MySQLi$serverinfo",
 	"body": [
 	  "$${1:server_info} = ${2:mysqli}::$server_info;"
 	],
 	"description": "mysqli::$server_info property"
   },
   "mysqli::$server_version": {
-	"prefix": "phpmysqli::$server_version",
+	"prefix": "MySQLi$serverversion",
 	"body": [
 	  "$${1:server_version} = ${2:mysqli}::$server_version;"
 	],
 	"description": "mysqli::$server_version property"
   },
   "mysqli::get_warnings": {
-	"prefix": "phpmysqli::get_warnings",
+	"prefix": "MySQLigetwarnings",
 	"body": [
 	  "${1:warnings} = ${2:mysqli}::get_warnings();"
 	],
 	"description": "mysqli::get_warnings() method"
   },
   "mysqli::$info": {
-	"prefix": "phpmysqli::$info",
+	"prefix": "MySQLi$info",
 	"body": [
 	  "$${1:info} = ${2:mysqli}::$info;"
 	],
 	"description": "mysqli::$info property"
   },
   "mysqli::init": {
-	"prefix": "phpmysqli::init",
+	"prefix": "MySQLiinit",
 	"body": [
 	  "$${1:init} = ${2:mysqli}::init();"
 	],
 	"description": "mysqli::init() method"
   },
   "mysqli::$insert_id": {
-	"prefix": "phpmysqli::$insert_id",
+	"prefix": "MySQLi$insertid",
 	"body": [
 	  "$${1:insert_id} = ${2:mysqli}::$insert_id;"
 	],
 	"description": "mysqli::$insert_id property"
   },
   "mysqli::kill": {
-	"prefix": "phpmysqli::kill",
+	"prefix": "MySQLikill",
 	"body": [
 	  "${1:success} = ${2:mysqli}::kill(${3:process_id});"
 	],
 	"description": "mysqli::kill() method"
   },
   "mysqli::more_results": {
-	"prefix": "phpmysqli::more_results",
+	"prefix": "MySQLimoreresults",
 	"body": [
 	  "${1:more_results} = ${2:mysqli}::more_results();"
 	],
 	"description": "mysqli::more_results() method"
   },
   "mysqli::multi_query": {
-	"prefix": "phpmysqli::multi_query",
+	"prefix": "MySQLimultiquery",
 	"body": [
 	  "${1:success} = ${2:mysqli}::multi_query(${3:query});"
 	],
 	"description": "mysqli::multi_query() method"
   },
   "mysqli::next_result": {
-	"prefix": "phpmysqli::next_result",
+	"prefix": "MySQLinextresult",
 	"body": [
 	  "${1:next_result} = ${2:mysqli}::next_result();"
 	],
 	"description": "mysqli::next_result() method"
   },
   "mysqli::options": {
-	"prefix": "phpmysqli::options",
+	"prefix": "MySQLioptions",
 	"body": [
 	  "${1:success} = ${2:mysqli}::options(${3:option}, ${4:value});"
 	],
 	"description": "mysqli::options() method"
   },
   "mysqli::ping": {
-	"prefix": "phpmysqli::ping",
+	"prefix": "MySQLiping",
 	"body": [
 	  "${1:success} = ${2:mysqli}::ping();"
 	],
 	"description": "mysqli::ping() method"
   },
   "mysqli::poll": {
-	"prefix": "phpmysqli::poll",
+	"prefix": "MySQLipoll",
 	"body": [
 	  "${1:success} = ${2:mysqli}::poll(${3:read}, ${4:error}, ${5:reject}, ${6:sec}, ${7:usec});"
 	],
 	"description": "mysqli::poll() method"
   },
   "mysqli::prepare": {
-	"prefix": "phpmysqli::prepare",
+	"prefix": "MySQLiprepare",
 	"body": [
 	  "$${1:stmt} = ${2:mysqli}::prepare(${3:query});"
 	],
 	"description": "mysqli::prepare() method"
   },
   "mysqli::query": {
-	"prefix": "phpmysqli::query",
+	"prefix": "MySQLiquery",
 	"body": [
 	  "$${1:result} = ${2:mysqli}::query(${3:query});"
 	],
 	"description": "mysqli::query() method"
   },
   "mysqli::real_connect": {
-	"prefix": "phpmysqli::real_connect",
+	"prefix": "MySQLirealconnect",
 	"body": [
 	  "${1:success} = ${2:mysqli}::real_connect(${3:host}, ${4:username}, ${5:passwd}, ${6:dbname}, ${7:port}, ${8:socket});"
 	],
 	"description": "mysqli::real_connect() method"
   },
   "mysqli::real_escape_string": {
-	"prefix": "phpmysqli::real_escape_string",
+	"prefix": "MySQLirealescapestring",
 	"body": [
 	  "$${1:escaped_string} = ${2:mysqli}::real_escape_string(${3:unescaped_string});"
 	],
 	"description": "mysqli::real_escape_string() method"
   },
   "mysqli::real_query": {
-	"prefix": "phpmysqli::real_query",
+	"prefix": "MySQLirealquery",
 	"body": [
 	  "${1:success} = ${2:mysqli}::real_query(${3:query});"
 	],
 	"description": "mysqli::real_query() method"
   },
   "mysqli::reap_async_query": {
-	"prefix": "phpmysqli::reap_async_query",
+	"prefix": "MySQLireapasyncquery",
 	"body": [
 	  "$${1:result} = ${2:mysqli}::reap_async_query();"
 	],
 	"description": "mysqli::reap_async_query() method"
   },
   "mysqli::refresh": {
-	"prefix": "phpmysqli::refresh",
+	"prefix": "MySQLirefresh",
 	"body": [
 	  "${1:success} = ${2:mysqli}::refresh(${3:options});"
 	],
 	"description": "mysqli::refresh() method"
   },
   "mysqli::rollback": {
-	"prefix": "phpmysqli::rollback",
+	"prefix": "MySQLirollback",
 	"body": [
 	  "${1:success} = ${2:mysqli}::rollback(${3:flags}, ${4:name});"
 	],
 	"description": "mysqli::rollback() method"
   },
   "mysqli::rpl_query_type": {
-	"prefix": "phpmysqli::rpl_query_type",
+	"prefix": "MySQLirplquerytype",
 	"body": [
 	  "$${1:type} = ${2:mysqli}::rpl_query_type(${3:query_type});"
 	],
 	"description": "mysqli::rpl_query_type() method"
   },
   "mysqli::select_db": {
-	"prefix": "phpmysqli::select_db",
+	"prefix": "MySQLiselectdb",
 	"body": [
 	  "${1:success} = ${2:mysqli}::select_db(${3:dbname});"
 	],
 	"description": "mysqli::select_db() method"
   },
   "mysqli::send_query": {
-	"prefix": "phpmysqli::send_query",
+	"prefix": "MySQLisendquery",
 	"body": [
 	  "${1:success} = ${2:mysqli}::send_query(${3:query});"
 	],
 	"description": "mysqli::send_query() method"
   },
   "mysqli::set_charset": {
-	"prefix": "phpmysqli::set_charset",
+	"prefix": "MySQLisetcharset",
 	"body": [
 	  "${1:success} = ${2:mysqli}::set_charset(${3:charset});"
 	],
 	"description": "mysqli::set_charset() method"
   },
   "mysqli::set_local_infile_default": {
-	"prefix": "phpmysqli::set_local_infile_default",
+	"prefix": "MySQLiset_localinfiledefault",
 	"body": [
 	  "${1:success} = ${2:mysqli}::set_local_infile_default();"
 	],
 	"description": "mysqli::set_local_infile_default() method"
   },
   "mysqli::set_local_infile_handler": {
-	"prefix": "phpmysqli::set_local_infile_handler",
+	"prefix": "MySQLisetlocalinfilehandler",
 	"body": [
 	  "${1:success} = ${2:mysqli}::set_local_infile_handler(${3:read_func});"
 	],
 	"description": "mysqli::set_local_infile_handler() method"
   },
   "mysqli::$sqlstate": {
-	"prefix": "phpmysqli::$sqlstate",
+	"prefix": "MySQLi$sqlstate",
 	"body": [
 	  "$${1:sqlstate} = ${2:mysqli}::$sqlstate;"
 	],
 	"description": "mysqli::$sqlstate property"
   },
   "mysqli::ssl_set": {
-	"prefix": "phpmysqli::ssl_set",
+	"prefix": "MySQLisslset",
 	"body": [
 	  "${1:success} = ${2:mysqli}::ssl_set(${3:key}, ${4:cert}, ${5:ca}, ${6:capath}, ${7:cipher});"
 	],
 	"description": "mysqli::ssl_set() method"
   },
   "mysqli::stat": {
-	"prefix": "phpmysqli::stat",
+	"prefix": "MySQListat",
 	"body": [
 	  "$${1:info} = ${2:mysqli}::stat();"
 	],
 	"description": "mysqli::stat() method"
   },
   "mysqli::stmt_init": {
-	"prefix": "phpmysqli::stmt_init",
+	"prefix": "MySQListmtinit",
 	"body": [
 	  "$${1:stmt} = ${2:mysqli}::stmt_init();"
 	],
 	"description": "mysqli::stmt_init() method"
   },
   "mysqli::store_result": {
-	"prefix": "phpmysqli::store_result",
+	"prefix": "MySQListoreresult",
 	"body": [
 	  "$${1:result} = ${2:mysqli}::store_result();"
 	],
 	"description": "mysqli::store_result() method"
   },
   "mysqli::$thread_id": {
-	"prefix": "phpmysqli::$thread_id",
+	"prefix": "MySQLi$threadid",
 	"body": [
 	  "$${1:thread_id} = ${2:mysqli}::$thread_id;"
 	],
 	"description": "mysqli::$thread_id property"
   },
   "mysqli::thread_safe": {
-	"prefix": "phpmysqli::thread_safe",
+	"prefix": "MySQLithreadsafe",
 	"body": [
 	  "$${1:safe} = ${2:mysqli}::thread_safe();"
 	],
 	"description": "mysqli::thread_safe() method"
   },
   "mysqli::use_result": {
-	"prefix": "phpmysqli::use_result",
+	"prefix": "MySQLiuseresult",
 	"body": [
 	  "$${1:result} = ${2:mysqli}::use_result();"
 	],
 	"description": "mysqli::use_result() method"
   },
   "mysqli::$warning_count": {
-	"prefix": "phpmysqli::$warning_count",
+	"prefix": "MySQLi$warningcount",
 	"body": [
 	  "$${1:count} = ${2:mysqli}::$warning_count;"
 	],
@@ -7391,7 +7391,7 @@
   },
 
   "MySQLi Stmt Class": {
-    "prefix": "php_mysqli_stmt_class",
+    "prefix": "mysqlistmtclass",
     "body": [
       "mysqli_stmt::affected_rows",
       "mysqli_stmt::attr_get(attr)",
@@ -7424,28 +7424,28 @@
     "description": "List of MySQLi Stmt class methods and properties"
   },
   "mysqli_stmt::$affected_rows": {
-	"prefix": "phpmysqli_stmt::$affected_rows",
+	"prefix": "MySQListmt$affectedrows",
 	"body": [
 	 "https://www.php.net/manual/en/mysqli-stmt.affected-rows.php"
 	],
 	"description": "mysqli_stmt::$affected_rows property"
   },
   "mysqli_stmt::attr_get": {
-	"prefix": "phpmysqli_stmt::attr_get",
+	"prefix": "MySQListmtattrget",
 	"body": [
 	  "https://www.php.net/manual/en/mysqli-stmt.attr-get.php"
 	],
 	"description": "mysqli_stmt::attr_get() method"
   },
   "mysqli_stmt::attr_set": {
-	"prefix": "phpmysqli_stmt::attr_set",
+	"prefix": "MySQListmtattrset",
 	"body": [
 	  "https://www.php.net/manual/en/mysqli-stmt.attr-set.php"
 	],
 	"description": "mysqli_stmt::attr_set() method"
   },
   "mysqli_stmt::bind_param": {
-	"prefix": "phpmysqli_stmt::bind_param",
+	"prefix": "MySQListmtbindparam",
 	"body": [
 		"mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);",
 		"$mysqli = new mysqli('localhost', 'my_user', 'my_password', 'world');",
@@ -7468,7 +7468,7 @@
 	"description": "mysqli_stmt::bind_param() method"
   },
   "mysqli_stmt::bind_result": {
-	"prefix": "phpmysqli_stmt::bind_result",
+	"prefix": "MySQListmtbindresult",
 	"body": [
 		"mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);",
 		"$mysqli = new mysqli('localhost', 'my_user', 'my_password', 'world');",
@@ -7484,14 +7484,14 @@
 	"description": "mysqli_stmt::bind_result() method"
   },
   "mysqli_stmt::close": {
-	"prefix": "phpmysqli_stmt::close",
+	"prefix": "MySQListmtclose",
 	"body": [
 	  "https://www.php.net/manual/en/mysqli-stmt.close.php"
 	],
 	"description": "mysqli_stmt::close() method"
   },
   "mysqli_stmt::data_seek": {
-	"prefix": "phpmysqli_stmt::data_seek",
+	"prefix": "MySQListmtdataseek",
 	"body": [
 		"mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);",
 		"$mysqli = new mysqli('localhost', 'my_user', 'my_password', 'world');",
@@ -7513,14 +7513,14 @@
 	"description": "mysqli_stmt::data_seek() method"
   },
   "mysqli_stmt::$errno": {
-	"prefix": "phpmysqli_stmt::$errno",
+	"prefix": "MySQListmt$errno",
 	"body": [
 	  "https://www.php.net/manual/en/mysqli-stmt.errno.php"
 	],
 	"description": "mysqli_stmt::$errno property"
   },
   "mysqli_stmt::$error_list": {
-	"prefix": "phpmysqli_stmt::$error_list",
+	"prefix": "MySQListmt$errorlist",
 	"body": [
 		"mysqli_query($link, 'CREATE TABLE myCountry LIKE Country');",
 		"mysqli_query($link, 'INSERT INTO myCountry SELECT * FROM Country');",
@@ -7544,7 +7544,7 @@
 	"description": "mysqli_stmt::$error_list property"
   },
   "mysqli_stmt::$error": {
-	"prefix": "phpmysqli_stmt::$error",
+	"prefix": "MySQListmt$error",
 	"body": [
 		"mysqli_query($link, 'INSERT INTO myCountry SELECT * FROM Country');",
 
@@ -7566,14 +7566,14 @@
 	"description": "mysqli_stmt::$error property"
   },
   "mysqli_stmt::execute": {
-	"prefix": "phpmysqli_stmt::execute",
+	"prefix": "MySQListmtexecute",
 	"body": [
 	  "https://www.php.net/manual/en/mysqli-stmt.execute.php"
 	],
 	"description": "mysqli_stmt::execute() method"
   },
   "mysqli_stmt::fetch": {
-	"prefix": "phpmysqli_stmt::fetch",
+	"prefix": "MySQListmtfetch",
 	"body": [
 		"$link = mysqli_connect('localhost', 'my_user', 'my_password', 'world');",
 
@@ -7602,7 +7602,7 @@
 	"description": "mysqli_stmt::fetch() method"
   },
   "mysqli_stmt::$field_count": {
-	"prefix": "phpmysqli_stmt::$field_count",
+	"prefix": "MySQListmt$fieldcount",
 	"body": [
 		"mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);",
 		"$mysqli = new mysqli('localhost', 'my_user', 'my_password', 'world');",
@@ -7619,14 +7619,14 @@
 	"description": "mysqli_stmt::$field_count property"
   },
   "mysqli_stmt::free_result": {
-	"prefix": "phpmysqli_stmt::free_result",
+	"prefix": "MySQListmtfreeresult",
 	"body": [
 	  "https://www.php.net/manual/en/mysqli-stmt.free-result.php"
 	],
 	"description": "mysqli_stmt::free_result() method"
   },
   "mysqli_stmt::get_result": {
-	"prefix": "phpmysqli_stmt::get_result",
+	"prefix": "MySQListmtgetresult",
 	"body": [
 		"mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);",
 		"$mysqli = new mysqli('localhost', 'my_user', 'my_password', 'world');",
@@ -7650,35 +7650,35 @@
 	"description": "mysqli_stmt::get_result() method"
   },
   "mysqli_stmt::get_warnings": {
-	"prefix": "phpmysqli_stmt::get_warnings",
+	"prefix": "MySQListmtgetwarnings",
 	"body": [
 	  "https://www.php.net/manual/en/mysqli-stmt.get-warnings.php"
 	],
 	"description": "mysqli_stmt::get_warnings() method"
   },
   "mysqli_stmt::$insert_id": {
-	"prefix": "phpmysqli_stmt::$insert_id",
+	"prefix": "MySQListmt$insertid",
 	"body": [
 	 "https://www.php.net/manual/en/mysqli-stmt.insert-id.php"
 	],
 	"description": "mysqli_stmt::$insert_id property"
   },
   "mysqli_stmt::more_results": {
-	"prefix": "phpmysqli_stmt::more_results",
+	"prefix": "MySQListmtmoreresults",
 	"body": [
 	  "https://www.php.net/manual/en/mysqli-stmt.more-results.php"
 	],
 	"description": "mysqli_stmt::more_results() method"
   },
   "mysqli_stmt::next_result": {
-	"prefix": "phpmysqli_stmt::next_result",
+	"prefix": "MySQListmtnextresult",
 	"body": [
 	  "https://www.php.net/manual/en/mysqli-stmt.next-result.php"
 	],
 	"description": "mysqli_stmt::next_result() method"
   },
   "mysqli_stmt::$num_rows": {
-	"prefix": "phpmysqli_stmt::$num_rows",
+	"prefix": "MySQListmt$numrows",
 	"body": [
 		"mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);",
 		"$mysqli = new mysqli('localhost', 'my_user', 'my_password', 'world');",
@@ -7694,7 +7694,7 @@
 	"description": "mysqli_stmt::$num_rows property"
   },
   "mysqli_stmt::$param_count": {
-	"prefix": "phpmysqli_stmt::$param_count",
+	"prefix": "MySQListmt$paramcount",
 	"body": [
 		"$link = mysqli_connect('localhost', 'my_user', 'my_password', 'world');",
 
@@ -7716,7 +7716,7 @@
 	"description": "mysqli_stmt::$param_count property"
   },
   "mysqli_stmt::prepare": {
-	"prefix": "phpmysqli_stmt::prepare",
+	"prefix": "MySQListmtprepare",
 	"body": [
 		"mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);",
 		"$mysqli = new mysqli('localhost', 'my_user', 'my_password', 'world');",
@@ -7739,21 +7739,21 @@
 	"description": "mysqli_stmt::prepare() method"
   },
   "mysqli_stmt::reset": {
-	"prefix": "phpmysqli_stmt::reset",
+	"prefix": "MySQListmtreset",
 	"body": [
 	  "https://www.php.net/manual/en/mysqli-stmt.reset.php"
 	],
 	"description": "mysqli_stmt::reset() method"
   },
   "mysqli_stmt::result_metadata": {
-	"prefix": "phpmysqli_stmt::result_metadata",
+	"prefix": "MySQListmtresultmetadata",
 	"body": [
 	  "https://www.php.net/manual/en/mysqli-stmt.result-metadata.php"
 	],
 	"description": "mysqli_stmt::result_metadata() method"
   },
   "mysqli_stmt::send_long_data": {
-	"prefix": "phpmysqli_stmt::send_long_data",
+	"prefix": "MySQListmtsendlongdata",
 	"body": [
 		"$stmt = $mysqli->prepare('INSERT INTO messages (message) VALUES (?)');",
 		"$null = NULL;",
@@ -7769,14 +7769,14 @@
 	"description": "mysqli_stmt::send_long_data() method"
   },
   "mysqli_stmt::$sqlstate": {
-	"prefix": "phpmysqli_stmt::$sqlstate",
+	"prefix": "MySQListmt$sqlstate",
 	"body": [
 	  "https://www.php.net/manual/en/mysqli-stmt.sqlstate.php"
 	],
 	"description": "mysqli_stmt::$sqlstate property"
   },
   "mysqli_stmt::store_result": {
-	"prefix": "phpmysqli_stmt::store_result",
+	"prefix": "MySQListmtstoreresult",
 	"body": [
 		"mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);",
 		"$mysqli = new mysqli('localhost', 'my_user', 'my_password', 'world');",
@@ -7793,7 +7793,7 @@
   },
 
   "MySQLi Result Class": {
-    "prefix": "php_mysqli_result_class",
+    "prefix": "MySQLiresultclass",
     "body": [
       "mysqli_result::current_field",
       "mysqli_result::data_seek(offset)",
@@ -7814,14 +7814,14 @@
     "description": "List of MySQLi Result class methods and properties"
   },
   "mysqli_result::$current_field": {
-	"prefix": "phpmysqli_result::$current_field",
+	"prefix": "MySQLiresult::$current_field",
 	"body": [
 	  "https://www.php.net/manual/en/mysqli-result.current-field.php"
 	],
 	"description": "mysqli_result::$current_field property"
   },
   "mysqli_result::data_seek": {
-	"prefix": "phpmysqli_result::data_seek",
+	"prefix": "MySQLiresultdataseek",
 	"body": [
 		"mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);",
 		"$mysqli = new mysqli('localhost', 'my_user', 'my_password', 'world');",
@@ -7838,7 +7838,7 @@
 	"description": "mysqli_result::data_seek() method"
   },
   "mysqli_result::fetch_all": {
-	"prefix": "phpmysqli_result::fetch_all",
+	"prefix": "MySQLiresultfetchall",
 	"body": [
 		"mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);",
 		"$mysqli = new mysqli('localhost', 'my_user', 'my_password', 'world');",
@@ -7852,7 +7852,7 @@
 	"description": "mysqli_result::fetch_all() method"
   },
   "mysqli_result::fetch_array": {
-	"prefix": "phpmysqli_result::fetch_array",
+	"prefix": "MySQLiresultfetcharray",
 	"body": [
 		"mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);",
 		"$mysqli = new mysqli('localhost', 'my_user', 'my_password', 'world');",
@@ -7872,7 +7872,7 @@
 	"description": "mysqli_result::fetch_array() method"
   },
   "mysqli_result::fetch_assoc": {
-	"prefix": "phpmysqli_result::fetch_assoc",
+	"prefix": "MySQLiresultfetchassoc",
 	"body": [
 		"mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);",
 		"$mysqli = new mysqli('localhost', 'my_user', 'my_password', 'world');",
@@ -7887,7 +7887,7 @@
 	"description": "mysqli_result::fetch_assoc() method"
   },
   "mysqli_result::fetch_field_direct": {
-	"prefix": "phpmysqli_result::fetch_field_direct",
+	"prefix": "MySQLiresultfetchfielddirect",
 	"body": [
 		"$mysqli = new mysqli('localhost', 'my_user', 'my_password', 'world');",
 
@@ -7916,7 +7916,7 @@
 	"description": "mysqli_result::fetch_field_direct() method"
   },
   "mysqli_result::fetch_field": {
-	"prefix": "phpmysqli_result::fetch_field",
+	"prefix": "MySQLiresultfetchfield",
 	"body": [
 		"$mysqli = new mysqli('localhost', 'my_user', 'my_password', 'world');",
 
@@ -7945,7 +7945,7 @@
 	"description": "mysqli_result::fetch_field() method"
   },
   "mysqli_result::fetch_fields": {
-	"prefix": "phpmysqli_result::fetch_fields",
+	"prefix": "MySQLiresultfetchfields",
 	"body": [
 		"$mysqli = new mysqli('localhost', 'my_user', 'my_password', 'world');",
 
@@ -7974,7 +7974,7 @@
 	"description": "mysqli_result::fetch_fields() method"
   },
   "mysqli_result::fetch_object": {
-	"prefix": "phpmysqli_result::fetch_object",
+	"prefix": "MySQLiresultfetchobject",
 	"body": [
 		"mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);",
 		"$mysqli = new mysqli(localhost, my_user, my_password, world);",
@@ -7989,7 +7989,7 @@
 	"description": "mysqli_result::fetch_object() method"
   },
   "mysqli_result::fetch_row": {
-	"prefix": "phpmysqli_result::fetch_row",
+	"prefix": "MySQLiresultfetchrow",
 	"body": [
 		"mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);",
 		"$mysqli = new mysqli('localhost', 'my_user', 'my_password', 'world');",
@@ -8004,7 +8004,7 @@
 	"description": "mysqli_result::fetch_row() method"
   },
   "mysqli_result::$field_count": {
-	"prefix": "phpmysqli_result::$field_count",
+	"prefix": "MySQLiresultfieldcount",
 	"body": [
 		"mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);",
 		"$mysqli = new mysqli('localhost', 'my_user', 'my_password', 'world');",
@@ -8018,7 +8018,7 @@
 	"description": "mysqli_result::$field_count property"
   },
   "mysqli_result::field_seek": {
-	"prefix": "phpmysqli_result::field_seek",
+	"prefix": "MySQLiresultfieldseek",
 	"body": [
 		"$mysqli = new mysqli('localhost', 'my_user', 'my_password', 'world');",
 
@@ -8046,21 +8046,21 @@
 	"description": "mysqli_result::field_seek() method"
   },
   "mysqli_result::free": {
-	"prefix": "phpmysqli_result::free",
+	"prefix": "MySQLiresultfree",
 	"body": [
 	  "https://www.php.net/manual/en/mysqli-result.free.php"
 	],
 	"description": "mysqli_result::free() method"
   },
   "mysqli_result::$lengths": {
-	"prefix": "phpmysqli_result::$lengths",
+	"prefix": "MySQLiresult$lengths",
 	"body": [
 	  "https://www.php.net/manual/en/mysqli-result.free.php"
 	],
 	"description": "mysqli_result::$lengths property"
   },
   "mysqli_result::$num_rows": {
-	"prefix": "phpmysqli_result::$num_rows",
+	"prefix": "MySQLiresult$numrows",
 	"body": [
 		"mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);",
 		"$mysqli = new mysqli('localhost', 'my_user', 'my_password', 'world');",
@@ -8075,7 +8075,7 @@
   },
 
   "MySQLi Driver Class": {
-    "prefix": "php_mysqli_driver_class",
+    "prefix": "MySQLidriverclass",
     "body": [
       "mysqli_driver::embedded_server_end()",
       "mysqli_driver::embedded_server_start([start, shutdown_options, error_handler])",
@@ -8090,21 +8090,21 @@
     "description": "List of MySQLi Driver class properties and methods"
   },
   "mysqli_driver::embedded_server_end": {
-	"prefix": "phpmysqli_driver::embedded_server_end",
+	"prefix": "MySQLidriverembeddedserverend",
 	"body": [
 	  "https://www.php.net/manual/en/mysqli-driver.embedded-server-end.php"
 	],
 	"description": "mysqli_driver::embedded_server_end() method"
   },
   "mysqli_driver::embedded_server_start": {
-	"prefix": "phpmysqli_driver::embedded_server_start",
+	"prefix": "MySQLidriverembeddedserverstart",
 	"body": [
 	 "https://www.php.net/manual/en/mysqli-driver.embedded-server-start.php"
 	],
 	"description": "mysqli_driver::embedded_server_start() method"
   },
   "mysqli_driver::$report_mode": {
-	"prefix": "phpmysqli_driver::$report_mode",
+	"prefix": "MySQLidriver$reportmode",
 	"body": [
 		"$driver = new mysqli_driver();",
 		"$driver->report_mode = MYSQLI_REPORT_ALL;",
@@ -8123,35 +8123,35 @@
 	"description": "mysqli_driver::$report_mode property"
   },
   "mysqli_driver::$client_info": {
-	"prefix": "phpmysqli_driver::$client_info",
+	"prefix": "MySQLidriver$clientinfo",
 	"body": [
 	  "https://www.php.net/manual/en/class.mysqli-driver.php"
 	],
 	"description": "mysqli_driver::$client_info property"
   },
   "mysqli_driver::$client_version": {
-	"prefix": "phpmysqli_driver::$client_version",
+	"prefix": "MySQLidriver$clientversion",
 	"body": [
 	  "https://www.php.net/manual/en/class.mysqli-driver.php"
 	],
 	"description": "mysqli_driver::$client_version property"
   },
   "mysqli_driver::$driver_version": {
-	"prefix": "phpmysqli_driver::$driver_version",
+	"prefix": "MySQLidriver$driverversion",
 	"body": [
 	  "https://www.php.net/manual/en/class.mysqli-driver.php"
 	],
 	"description": "mysqli_driver::$driver_version property"
   },
   "mysqli_driver::$embedded": {
-	"prefix": "phpmysqli_driver::$embedded",
+	"prefix": "MySQLidriver$embedded",
 	"body": [
 	  "https://www.php.net/manual/en/class.mysqli-driver.php"
 	],
 	"description": "mysqli_driver::$embedded property"
   },
   "mysqli_driver::$reconnect": {
-	"prefix": "phpmysqli_driver::$reconnect",
+	"prefix": "MySQLidriverreconnect",
 	"body": [
 	  "https://www.php.net/manual/en/class.mysqli-driver.php"
 	],
@@ -8159,7 +8159,7 @@
   },
 
   "MySQLi Warning Class": {
-    "prefix": "php_mysqli_warning_class",
+    "prefix": "MySQLiwarning_class",
     "body": [
       "mysqli_warning::__construct()",
       "mysqli_warning::next()",
@@ -8169,35 +8169,35 @@
     ],
     "description": "List of MySQLi Warning class properties and methods"
   },"mysqli_warning::__construct()": {
-	"prefix": "phpmysqli_warning::__construct()",
+	"prefix": "MySQLiwarningconstruct()",
 	"body": [
 	  "https://www.php.net/manual/en/mysqli-warning.construct.php"
 	],
 	"description": "mysqli_warning::__construct() method"
   },
   "mysqli_warning::next()": {
-	"prefix": "phpmysqli_warning::next()",
+	"prefix": "MySQLiwarningnext",
 	"body": [
 	  "https://www.php.net/manual/en/mysqli-warning.next.php"
 	],
 	"description": "mysqli_warning::next() method"
   },
   "mysqli_warning::$message": {
-	"prefix": "phpmysqli_warning::$message",
+	"prefix": "MySQLiwarning$message",
 	"body": [
 	  "https://www.php.net/manual/en/class.mysqli-warning.php"
 	],
 	"description": "mysqli_warning::$message property"
   },
   "mysqli_warning::$sqlstate": {
-	"prefix": "phpmysqli_warning::$sqlstate",
+	"prefix": "MySQLiwarning$sqlstate",
 	"body": [
 	 "https://www.php.net/manual/en/class.mysqli-warning.php"
 	],
 	"description": "mysqli_warning::$sqlstate property"
   },
   "mysqli_warning::$errno": {
-	"prefix": "phpmysqli_warning::$errno",
+	"prefix": "MySQLiwarning$errno",
 	"body": [
 	 "https://www.php.net/manual/en/class.mysqli-warning.php"
 	],
@@ -8207,7 +8207,7 @@
   
   
   "MySQL Constants": {
-    "prefix": "php_mysqli_constants",
+    "prefix": "MySQLiconstants",
     "body": [
       "MYSQLI_READ_DEFAULT_GROUP",
       "MYSQLI_READ_DEFAULT_FILE",
@@ -8298,7 +8298,7 @@
     "description": "List of MySQL Constants"
   },
   "debug_backtrace()": {
-	"prefix": "phpdebug_backtrace()",
+	"prefix": "Errordebugbacktrace",
 	"body": [
 		"function a_test($str)",
 		"{",
@@ -8315,14 +8315,14 @@
 	"description": "debug_backtrace() function"
   },
   "debug_print_backtrace()": {
-	"prefix": "phpdebug_print_backtrace()",
+	"prefix": "Errordebugprintbacktrace()",
 	"body": [
 	  "include 'include.php';"
 	],
 	"description": "debug_print_backtrace() function"
   },
   "error_get_last()": {
-	"prefix": "phperror_get_last()",
+	"prefix": "Errorgetlast",
 	"body": [
 		"echo $a;",
 		"print_r(error_get_last());"
@@ -8330,7 +8330,7 @@
 	"description": "error_get_last() function"
   },
   "error_log()": {
-	"prefix": "phperror_log()",
+	"prefix": "Errorlog",
 	"body": [
 		"if (!Ora_Logon($username, $password)) {",
 			"error_log('Oracle database not available!', 0);",
@@ -8347,7 +8347,7 @@
 	"description": "error_log() function"
   },
   "error_reporting()": {
-	"prefix": "phperror_reporting()",
+	"prefix": "Errorreporting",
 	"body": [
 		"error_reporting(0);",
 
@@ -8372,7 +8372,7 @@
 	"description": "error_reporting() function"
   },
   "restore_error_handler()": {
-	"prefix": "phprestore_error_handler()",
+	"prefix": "Errorrestoreerrorhandler()",
 	"body": [
 		"function unserialize_handler($errno, $errstr)",
 		"{",
@@ -8387,7 +8387,7 @@
 	"description": "restore_error_handler() function"
   },
   "restore_exception_handler()": {
-	"prefix": "phprestore_exception_handler()",
+	"prefix": "Errorrestoreexceptionhandler()",
 	"body": [
 	    "function exception_handler_1(Exception $e)",
     "{",
@@ -8408,14 +8408,14 @@
 	"description": "restore_exception_handler() function"
   },
   "set_error_handler()": {
-	"prefix": "phpset_error_handler()",
+	"prefix": "Errorseterrorhandler",
 	"body": [
 	  "https://www.php.net/manual/en/function.set-error-handler.php"
 	],
 	"description": "set_error_handler() function"
   },
   "set_exception_handler()": {
-	"prefix": "phpset_exception_handler()",
+	"prefix": "Errorsetexceptionhandler",
 	"body": [
 		"function exception_handler(Throwable $exception) {",
 			"echo 'Uncaught exception: ' , $exception->getMessage(), '\n';",
@@ -8429,7 +8429,7 @@
 	"description": "set_exception_handler() function"
   },
   "trigger_error()": {
-	"prefix": "phptrigger_error()",
+	"prefix": "Errortriggererror",
 	"body": [
 		"if ($divisor == 0) {",
 			"trigger_error('Cannot divide by zero', E_USER_ERROR);"
@@ -8437,14 +8437,14 @@
 	"description": "trigger_error() function"
   },
   "user_error()": {
-	"prefix": "phpuser_error()",
+	"prefix": "Errorusererror",
 	"body": [
 	 "https://www.php.net/manual/en/function.user-error.php"
 	],
 	"description": "user_error() function"
   },
   "Error Constants": {
-    "prefix": "php_error_constants",
+    "prefix": "Errorconstants",
     "body": [
       "E_ERROR",
       "E_WARNING",
@@ -8464,7 +8464,7 @@
     "description": "List of PHP Error Constants"
   },
   "HTTP Functions": {
-    "prefix": "php_http_functions",
+    "prefix": "HTTPfunctions",
     "body": [
       "header(string, replace = true, http_response_code = null);",
       "headers_list();",
@@ -8475,7 +8475,7 @@
     "description": "PHP HTTP Functions"
   },
   "header()": {
-	"prefix": "phpheader()",
+	"prefix": "HTTPheader()",
 	"body": [
 		"<?php",
 		"/* This will give an error. Note the output",
@@ -8486,7 +8486,7 @@
 	"description": "header() function"
   },
   "headers_list()": {
-	"prefix": "phpheaders_list()",
+	"prefix": "HTTPheaderslist",
 	"body": [
 		"setcookie('foo', 'bar');",
 
@@ -8500,7 +8500,7 @@
 	"description": "headers_list() function"
   },
   "headers_sent()": {
-	"prefix": "phpheaders_sent()",
+	"prefix": "HTTPheaderssent",
 	"body": [
 		"if (!headers_sent()) {",
 			"header('Location: http://www.example.com/');",
@@ -8525,7 +8525,7 @@
 	"description": "headers_sent() function"
   },
   "setcookie()": {
-	"prefix": "phpsetcookie()",
+	"prefix": "HTTPsetcookie",
 	"body": [
 		"$value = 'something from somewhere';",
 
@@ -8536,14 +8536,14 @@
 	"description": "setcookie() function"
   },
   "setrawcookie()": {
-	"prefix": "phpsetrawcookie()",
+	"prefix": "HTTPsetrawcookie",
 	"body": [
 	 "https://www.php.net/manual/en/function.setrawcookie.php"
 	],
 	"description": "setrawcookie() function"
   },
   "Libxml Functions and Constants": {
-    "prefix": "php_libxml_functions_constants",
+    "prefix": "Libxmlfunctionsconstants",
     "body": [
       "libxml_clear_errors();",
       "libxml_get_errors();",
@@ -8574,35 +8574,35 @@
     "description": "PHP Libxml Functions and Constants"
   }
   ,"libxml_clear_errors()": {
-	"prefix": "phplibxml_clear_errors()",
+	"prefix": "Libxmlclearerrors",
 	"body": [
 	"https://www.php.net/manual/en/function.libxml-clear-errors.php"
 	],
 	"description": "libxml_clear_errors() function"
   },
   "libxml_get_errors()": {
-	"prefix": "phplibxml_get_errors()",
+	"prefix": "Libxmlgeterrors",
 	"body": [
 	 "https://www.php.net/manual/en/function.libxml-get-errors.php"
 	],
 	"description": "libxml_get_errors() function"
   },
   "libxml_get_last_error()": {
-	"prefix": "phplibxml_get_last_error()",
+	"prefix": "Libxmlgetlasterror",
 	"body": [
 	  "https://www.php.net/manual/en/function.libxml-get-last-error.php"
 	],
 	"description": "libxml_get_last_error() function"
   },
   "libxml_set_streams_context()": {
-	"prefix": "phplibxml_set_streams_context()",
+	"prefix": "Libxmlsetstreamscontext",
 	"body": [
 	  
 	],
 	"description": "libxml_set_streams_context() function"
   },
   "libxml_use_internal_errors()": {
-	"prefix": "phplibxml_use_internal_errors()",
+	"prefix": "Libxmluseinternalerrors",
 	"body": [
 		"var_dump(libxml_use_internal_errors(true));",
 

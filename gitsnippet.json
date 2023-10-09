@@ -1,6 +1,26 @@
 {
+	"Git": {
+		"prefix": "Git",
+		"body": [
+		  "Resource",
+		  "Useful Commands",
+		  "",
+		  "Create Git",
+		  "",
+		  "Branching/Tagging",
+		  "",
+		  "Local Changes",
+		  "",
+		  "History",
+		  "",
+		  "Merge/Rebase",
+		  "",
+		  "Remote Update / Publish"
+		],
+		"description": "Git"
+	  },
 	"Git Resources": {
-	  "prefix": "git_resources",
+	  "prefix": "resources",
 	  "body": [
 		"Resource",
 		"Online",
@@ -20,7 +40,7 @@
 	  "description": "Git Resources"
 	},
 	"Related Version Control Systems": {
-	  "prefix": "git_related",
+	  "prefix": "Resourcesrelated",
 	  "body": [
 		"Bazaar: https://bazaar.canonical.com/",
 		"CVS: https://www.nongnu.org/cvs/",
@@ -29,7 +49,7 @@
 	  "description": "Related Version Control Systems"
 	},
 	"Git Useful Commands": {
-		"prefix": "git_useful_commands",
+		"prefix": "usefulcommands",
 		"body": [
 		  "Useful Commands",
 		  "Finding Regressions",
@@ -53,7 +73,7 @@
 		"description": "Useful Git Commands"
 	  },
 	  "Create Git Repository": {
-		"prefix": "git_create_repo",
+		"prefix": "createrepo",
 		"body": [
 		  "From existing directory",
 		  "cd project_dir",
@@ -69,7 +89,7 @@
 		"description": "Create a Git repository from an existing directory"
 	  },
 	  "Branching and Tagging": {
-		"prefix": "git_branch_tag",
+		"prefix": "branchtag",
 		"body": [
 		  "List branches",
 		  "git branch",
@@ -82,12 +102,12 @@
 		  "Delete branch",
 		  "git branch -d ${5:branch}",
 		  "Tag current commit",
-		  "git tag ${6:tagname}",
+		  "git tag ${6:tagname}"
 		],
 		"description": "Git commands for branching and tagging"
 	  },
 	  "Local Changes": {
-		"prefix": "git_local_changes",
+		"prefix": "localchanges",
 		"body": [
 		  "Changed in working directory",
 		  "git status",
@@ -118,7 +138,7 @@
 		"description": "Git commands for handling local changes"
 	  },
 	  "Commit History": {
-		"prefix": "git_commit_history",
+		"prefix": "commithistory",
 		"body": [
 		  "Show all commits",
 		  "git log",
@@ -138,7 +158,7 @@
 		"description": "Git commands for viewing commit history"
 	  },
 	  "Merge and Rebase": {
-		"prefix": "git_merge_rebase",
+		"prefix": "mergerebase",
 		"body": [
 		  "Merge branch into current",
 		  "git merge ",
@@ -169,7 +189,7 @@
 		"description": "Git commands for merging and rebasing"
 	  },
 	  "Remote Update / Publish": {
-		"prefix": "git_remote_publish",
+		"prefix": "remotepublish",
 		"body": [
 		  "List remotes",
 		  "git remote -v",
@@ -189,6 +209,6 @@
 		  "git push ${11:origin/upstream} --tags"
 		],
 		"description": "Git commands for remote updates and publishing"
-	  },
+	  }
   }
   

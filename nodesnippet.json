@@ -28,13 +28,13 @@
 			"File",
 			"",
 			"3rd Party",
-			"",
+			""
 			
 
 		]},
 
 	"JavaScript Resources": {
-	  "prefix": "noderesources",
+	  "prefix": "Resources",
 	  "body": [
 		"Resource",
 		"Online",
@@ -47,7 +47,7 @@
 	  "description": "JavaScript resources"
 	},
 	"Net": {
-		"prefix": "nodenet",
+		"prefix": "Net",
 		"body": [
 		  "net",
 		  "net.createServer([options], [connectionListener])",
@@ -206,7 +206,7 @@
 		"description": "Net functions and classes"
 	  },
 	  "JavaScript Basics": {
-		"prefix": "nodejs_basics",
+		"prefix": "Basics",
 		"body": [
 		  "Global Objects",
 		  "",
@@ -298,12 +298,12 @@
 	  "",
       "util.pump(readableStream, writableStream, callback)",
 	  "",
-      "util.inherits(constructor, superConstructor)",
+      "util.inherits(constructor, superConstructor)"
 		],
 		"description": "Basic JavaScript concepts and global objects"
 	  },
 	  "code": {
-		"prefix": "nodecode",
+		"prefix": "Code",
 		"body": [
 		  "Executing JS",
 		  "",
@@ -385,14 +385,14 @@
 		  "",
 		  "assert.doesNotThrow(block,[error], [message])",
 		  "",
-		  "assert.ifError)",
+		  "assert.ifError)"
 
 
 		],
 		"description": "Node.js VM module methods"
 	  },
 	  "Node.js Modules": {
-		"prefix": "node_modules",
+		"prefix": "Modules",
 		"body": [
 		  "Modules",
 		  "",
@@ -459,7 +459,7 @@
 		"description": "Common topics related to Node.js modules and module loading"
 	  },
 	  "Node.js Text, Path, and QueryString": {
-		"prefix": "node_text_path_querystring",
+		"prefix": "Text",
 		"body": [
 		  "Text",
 		  "",
@@ -560,7 +560,7 @@
 		"description": "Common methods in Node.js for Text, Path, and QueryString processing"
 	  },
 	  "Node.js System": {
-		"prefix": "nodeSystem",
+		"prefix": "System",
 		"body": [
 			"Zlib",
 			"",
@@ -718,13 +718,13 @@
 	  "",
       "Event: 'disconnect'",
 	  "",
-      "Event: 'exit'",
+      "Event: 'exit'"
 
 		],
 		"description": "Methods and classes in the Node.js zlib module"
 	  },
 	  "Node.js Buffer Class": {
-		"prefix": "node_buffer",
+		"prefix": "Buffer",
 		"body": [
 		  "Buffer",
 		  "",
@@ -887,7 +887,7 @@
 		"description": "Methods and properties in the Node.js Buffer class"
 	  },
 	  "Node.js Process Events": {
-		"prefix": "node_process_events",
+		"prefix": "ProcessEvents",
 		"body": [
 		  "Event: 'exit'",
 		  "",
@@ -969,12 +969,12 @@
 	  "",
       "emitter.emit( event,  [arg],  [arg2], ...)",
 	  "",
-      "Event: 'newListener'",
+      "Event: 'newListener'"
 		],
 		"description": "Events and properties in the Node.js Process module"
 	  },
 	  "Node.js HTTP Module": {
-		"prefix": "node_http",
+		"prefix": "HTTP",
 		"body": [
 		  "http",
 		  "",
@@ -1155,7 +1155,7 @@
 		"description": "Methods and properties in the Node.js HTTP module"
 	  },
 	  "Domain": {
-		"prefix": "nodeDomain",
+		"prefix": "Domain",
 		"body": [
 		  "Domain",
 		  "",
@@ -1183,13 +1183,13 @@
 	"",
     "domain.intercept(cb)",
 	"",
-"domain.dispose()",
+"domain.dispose()"
 
 		],
 		"description": "JavaScript concepts: Domain, Additions to Error objects, Implicit Binding, Explicit Binding"
 	  },
 	  "Node.js crypto": {
-		"prefix": "node_crypto",
+		"prefix": "DomainCrypto",
 		"body": [
 		  "crypto.createCredentials(details)",
 		  "",
@@ -1280,7 +1280,7 @@
 		"description": "Classes and methods in the Node.js crypto module for cryptography"
 	  },
 	  "Node.js TSL(SSL)": {
-		"prefix": "node_tls_ssl",
+		"prefix": "DomainTSLssl",
 		"body": [
 		  "Client-initiated renegotiation attack mitigation",
 		  "",
@@ -1338,12 +1338,12 @@
 		  "",
 		  "Class: StringDecoder",
 		  "",
-		  "StringDecoder.write(buffer)",
+		  "StringDecoder.write(buffer)"
 		],
 		"description": "Classes and methods in the Node.js TSL(SSL) module for TLS/SSL functionality"
 	  },
 	  "Node.js File System (fs)": {
-		"prefix": "node_fs",
+		"prefix": "File",
 		"body": [
 		  "fs.rename(oldPath, newPath, [callback])",
 		  "",
@@ -1470,7 +1470,7 @@
 		"description": "File System (fs) module in Node.js for file operations"
 	  },
 	  "Node.js Third Party Modules": {
-		"prefix": "node_third_party",
+		"prefix": "ThirdParty",
 		"body": [
 		  "Third Party Modules",
 		  "",

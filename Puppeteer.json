@@ -26,18 +26,18 @@
 			"Coverage",
 			"TimeoutError",
 			"EventEmitter",
-			"Other",
+			"Other"
 		]
 	},
 	"PuppeteerNode.connect": {
-		"prefix": "PuppeteerNode.connect",
+		"prefix": "Connect",
 		"body": [
 			" PuppeteerNode.connect",
 			" PuppeteerNode.connect",
 			" PuppeteerNode.defaultArgs",
 			"PuppeteerNode.executablePath",
 			"PuppeteerNode.launch",
-			" PuppeteerNode.trimCache",
+			" PuppeteerNode.trimCache"
 		]
 	},
 	"Puppeteer": {
@@ -53,7 +53,7 @@
 		"description": "Puppeteer functions"
 	},
 	"Puppeteer Browser": {
-		"prefix": "Puppeteer Browser",
+		"prefix": "Browser",
 		"body": [
 			"Browser",
 			"Browser.browserContexts",
@@ -75,7 +75,7 @@
 		"description": "Puppeteer Browser"
 	},
 	"Puppeteer BrowserContext": {
-		"prefix": "Puppeteer BrowserContext",
+		"prefix": "BrowserContext",
 		"body": [
 			"BrowserContext",
 			"BrowserContext.browser",
@@ -91,7 +91,7 @@
 		"description": "Puppeteer BrowserContext"
 	},
 	"PuppeteerPage": {
-		"prefix": "Puppeteer Page",
+		"prefix": "Page",
 		"body": [
 			"Page",
 			"Page.$",
@@ -189,7 +189,7 @@
 		"description": "Puppeteer page"
 	},
 	"Puppeteer WebWorker": {
-		"prefix": "Puppeteer WebWorker",
+		"prefix": "WebWorker",
 		"body": [
 			"WebWorker",
 			"WebWorker.evaluate",
@@ -199,7 +199,7 @@
 		"description": "Puppeteer WebWorker"
 	},
 	"Puppeteer Accessibility": {
-		"prefix": "Puppeteer Accessibility",
+		"prefix": "Accessibility",
 		"body": [
 			"Accessibility",
 			"Accessibility.snapshot"
@@ -207,7 +207,7 @@
 		"description": "PuppeteerAccessibility"
 	},
 	"Puppeteer Keyboard": {
-		"prefix": "Puppeteer Keyboard",
+		"prefix": "Keyboard",
 		"body": [
 			"Keyboard",
 			"Keyboard.down",
@@ -219,7 +219,7 @@
 		"description": "Puppeteer Keyboard"
 	},
 	"Puppeteer Mouse": {
-		"prefix": "Puppetee Mouse",
+		"prefix": "Mouse",
 		"body": [
 			"Mouse",
 			"Mouse.click",
@@ -237,7 +237,7 @@
 		"description": "Puppeteer Mouse"
 	},
 	"Puppeteer Touchscreen": {
-		"prefix": "Puppetee Touchscreen",
+		"prefix": "Touchscreen",
 		"body": [
 			"Touchscreen",
 			"Touchscreen.tap",
@@ -248,7 +248,7 @@
 		"description": "Puppeteer Touchscreen"
 	},
 	"Puppeteer Tracing": {
-		"prefix": "Puppetee Tracing",
+		"prefix": "Tracing",
 		"body": [
 			"Tracing",
 			"Tracing.start",
@@ -257,7 +257,7 @@
 		"description": "Puppeteer Tracing"
 	},
 	"Puppeteer FileChooser": {
-		"prefix": "Puppetee FileChooser",
+		"prefix": "FileChooser",
 		"body": [
 			"FileChooser",
 			"FileChooser.accept",
@@ -267,7 +267,7 @@
 		"description": "Puppeteer FileChooser"
 	},
 	"Puppeteer Dialog": {
-		"prefix": "Puppetee Dialog",
+		"prefix": "Dialog",
 		"body": [
 			"Dialog",
 			"Dialog.accept",
@@ -279,7 +279,7 @@
 		"description": "Puppeteer Dialog"
 	},
 	"Puppeteer ConsoleMessage": {
-		"prefix": "Puppetee ConsoleMessage",
+		"prefix": "ConsoleMessage",
 		"body": [
 			"ConsoleMessage",
 			"ConsoleMessage.(constructor)",
@@ -292,7 +292,7 @@
 		"description": "Puppeteer ConsoleMessage"
 	},
 	"Puppeteer Frame": {
-		"prefix": "Puppetee Frame",
+		"prefix": "Frame",
 		"body": [
 			"Frame",
 			"Frame.$",
@@ -334,7 +334,7 @@
 		"description": "Puppeteer Frame"
 	},
 	"Puppeteer JSHandle": {
-		"prefix": "Puppetee JSHandle",
+		"prefix": "JSHandle",
 		"body": [
 			"JSHandle",
 			"JSHandle.asElement",
@@ -352,7 +352,7 @@
 		"description": "Puppeteer JSHandle"
 	},
 	"Puppeteer ElementHandle": {
-		"prefix": "Puppetee ElementHandle",
+		"prefix": "ElementHandle",
 		"body": [
 			"ElementHandle",
 			"ElementHandle.$",
@@ -394,7 +394,7 @@
 		"description": "Puppeteer ElementHandle"
 	},
 	"Puppeteer HTTPRequest": {
-		"prefix": "Puppetee HTTPRequest",
+		"prefix": "HTTPRequest",
 		"body": [
 			"HTTPRequest",
 			"HTTPRequest.abort",
@@ -422,7 +422,7 @@
 		"description": "Puppeteer HTTPRequest"
 	},
 	"Puppeteer HTTPResponse": {
-		"prefix": "Puppetee HTTPResponse",
+		"prefix": "HTTPResponse",
 		"body": [
 			"HTTPResponse",
 			"HTTPResponse.buffer",
@@ -444,7 +444,7 @@
 		"description": "Puppeteer HTTPResponse"
 	},
 	"Puppeteer SecurityDetails": {
-		"prefix": "Puppetee SecurityDetails",
+		"prefix": "SecurityDetails",
 		"body": [
 			"SecurityDetails",
 			"SecurityDetails.issuer",
@@ -457,7 +457,7 @@
 		"description": "Puppeteer SecurityDetails"
 	},
 	"Puppeteer Target": {
-		"prefix": "Puppetee Target",
+		"prefix": "Target",
 		"body": [
 			"Target",
 			"Target.browser",
@@ -472,7 +472,7 @@
 		"description": "Puppeteer Target"
 	},
 	"Puppeteer CDPSession": {
-		"prefix": "Puppetee CDPSession",
+		"prefix": "CDPSession",
 		"body": [
 			"CDPSession",
 			"CDPSession.connection",
@@ -483,7 +483,7 @@
 		"description": "Puppeteer CDPSession"
 	},
 	"Puppeteer Coverage": {
-		"prefix": "Puppetee Coverage",
+		"prefix": "Coverage",
 		"body": [
 			"Coverage",
 			"Coverage.(constructor)",
@@ -496,7 +496,7 @@
 		"description": "Puppeteer Coverage"
 	},
 	"Puppeteer EventEmitter": {
-		"prefix": "Puppetee EventEmitter",
+		"prefix": "EventEmitter",
 		"body": [
 			"EventEmitter",
 			"EventEmitter.addListener",
@@ -511,7 +511,7 @@
 		"description": "Puppeteer EventEmitter"
 	},
 	"Puppeteer Other": {
-		"prefix": "Puppetee Other",
+		"prefix": "Other",
 		"body": [
 			"Other",
 			"ActionOptions",
@@ -641,5 +641,5 @@
 			"WaitTimeoutOptions"
 		],
 		"description": "Puppeteer Other"
-	},
+	}
 }
