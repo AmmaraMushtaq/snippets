@@ -1,0 +1,2934 @@
+{
+	"MYSQL": {
+		"prefix": "MYSQL",
+		"body": [
+			"Resource",
+			"Information",
+			"Miscellaneous",
+			"Data Types",
+			"Operators",
+			"String",
+			"Numeric",
+			"Samples",
+			"Date",
+			"Group",
+			"Encrypt"
+		],
+		"description": "MYSQL "
+	},
+	" Resources": {
+		"prefix": "Resources",
+		"body": [
+		  "Resource",
+		  "Online",
+		  "Official Website",
+		  "Download",
+		  "MySQL Cheat Sheet [.pdf]",
+		  "MySQL Database Quick Reference [.pdf]",
+		  "Related",
+		  "Db2",
+		  "Oracle",
+		  "PostgreSQL",
+		  "SQL",
+		  "SQLite",
+		  "Sybase"
+		],
+		"description": "Database Resources "
+	  },
+	   
+	  "MySQL Information Functions": {
+		"prefix": "Information",
+		"body": [
+		  "Information Functions",
+		  "BENCHMARK()",
+		  "CHARSET()",
+		  "COERCIBILITY()",
+		  "COLLATION()",
+		  "CONNECTION_ID()",
+		  "CURRENT_USER(), CURRENT_USER",
+		  "DATABASE()",
+		  "FOUND_ROWS()",
+		  "LAST_INSERT_ID()",
+		  "ROW_COUNT()",
+		  "SCHEMA()",
+		  "SESSION_USER()",
+		  "SYSTEM_USER()",
+		  "USER()",
+		  "VERSION()"
+		],
+		"description": "MySQL Information Functions "
+	  },
+	  "MySQL BENCHMARK Function": {
+		"prefix": "InformationBenchmark",
+		"body": [
+			"mysql> SELECT BENCHMARK(1000000,AES_ENCRYPT('hello','goodbye'));",
+			"+---------------------------------------------------+",
+			"| BENCHMARK(1000000,AES_ENCRYPT('hello','goodbye')) |",
+			"+---------------------------------------------------+",
+			"|                                                 0 |",
+			"+---------------------------------------------------+",
+			"1 row in set (4.74 sec)"
+		],
+		"description": "MySQL BENCHMARK Function "
+	  },
+	
+	  "MySQL CHARSET Function": {
+		"prefix": "InformationCharset",
+		"body": [
+			"mysql> SELECT CHARSET('abc');",
+			"-> 'utf8mb3'",
+	"mysql> SELECT CHARSET(CONVERT('abc' USING latin1));",
+			"-> 'latin1'",
+	"mysql> SELECT CHARSET(USER());",
+			"-> 'utf8mb3'"
+		],
+		"description": "MySQL CHARSET Function "
+	  },
+	
+	  "MySQL COERCIBILITY Function": {
+		"prefix": "InformationCoercibility",
+		"body": [
+			"mysql> SELECT COERCIBILITY('abc' COLLATE utf8mb4_swedish_ci);",
+			"-> 0",
+	"mysql> SELECT COERCIBILITY(USER());",
+			"-> 3",
+	"mysql> SELECT COERCIBILITY('abc');",
+			"-> 4",
+	"mysql> SELECT COERCIBILITY(1000);",
+			"-> 5"
+		],
+		"description": "MySQL COERCIBILITY Function "
+	  },
+	
+	  "MySQL COLLATION Function": {
+		"prefix": "InformationCollation",
+		"body": [
+			"mysql> SELECT COLLATION('abc');",
+			"-> 'utf8mb4_0900_ai_ci'",
+	"mysql> SELECT COLLATION(_utf8mb4'abc');",
+			"-> 'utf8mb4_0900_ai_ci'",
+	"mysql> SELECT COLLATION(_latin1'abc');",
+			"-> 'latin1_swedish_ci'"
+		],
+		"description": "MySQL COLLATION Function "
+	  },
+	
+	  "MySQL CONNECTION_ID Function": {
+		"prefix": "InformationConnectionId",
+		"body": [
+			"mysql> SELECT CONNECTION_ID();",
+			"-> 23786"
+		],
+		"description": "MySQL CONNECTION_ID Function "
+	  },
+	
+	  "MySQL CURRENT_USER Function": {
+		"prefix": "InformationCurrentUser",
+		"body": [
+			"mysql> SELECT USER();",
+			"-> 'davida@localhost'",
+	"mysql> SELECT * FROM mysql.user;",
+	"ERROR 1044: Access denied for user ''@'localhost' to",
+	"database 'mysql'",
+	"mysql> SELECT CURRENT_USER();",
+			"-> '@localhost'"
+		],
+		"description": "MySQL CURRENT_USER Function "
+	  },
+	
+	  "MySQL DATABASE Function": {
+		"prefix": "InformationDatabase",
+		"body": [
+			"mysql> SELECT DATABASE();",
+			"-> 'test'"
+		],
+		"description": "MySQL DATABASE Function "
+	  },
+	
+	  "MySQL FOUND_ROWS Function": {
+		"prefix": "InformationFoundRows",
+		"body": [
+			"mysql> SELECT SQL_CALC_FOUND_ROWS * FROM tbl_name",
+			"-> WHERE id > 100 LIMIT 10;",
+		"mysql> SELECT FOUND_ROWS();"
+		],
+		"description": "MySQL FOUND_ROWS Function "
+	  },
+	
+	  "MySQL LAST_INSERT_ID Function": {
+		"prefix": "InformationLastInsertId",
+		"body": [
+		  "https://dev.mysql.com/doc/refman/8.0/en/information-functions.html#function_last-insert-id"
+		],
+		"description": "MySQL LAST_INSERT_ID Function "
+	  },
+	
+	  "MySQL ROW_COUNT Function": {
+		"prefix": "InformationRowCount",
+		"body": [
+		  "https://dev.mysql.com/doc/refman/8.0/en/information-functions.html#function_row-count"
+		],
+		"description": "MySQL ROW_COUNT Function "
+	  },
+	
+	  "MySQL SCHEMA Function": {
+		"prefix": "InformationSchema",
+		"body": [
+		 "CREATE TABLE t (c VARCHAR(288) DEFAULT (SESSION_USER()));"
+		],
+		"description": "MySQL SCHEMA Function "
+	  },
+	
+	  "MySQL SESSION_USER Function": {
+		"prefix": "InformationSessionUser",
+		"body": [
+		 "mysql> SELECT USER();",
+		 "-> 'davida@localhost'"
+		],
+		"description": "MySQL SESSION_USER Function "
+	  },
+	
+	  "MySQL SYSTEM_USER Function": {
+		"prefix": "InformationSystemUser",
+		"body": [
+		"https://dev.mysql.com/doc/refman/8.0/en/information-functions.html#function_system-user"
+		],
+		"description": "MySQL SYSTEM_USER Function "
+	  },
+	
+	  "MySQL USER Function": {
+		"prefix": "InformationUser",
+		"body": [
+			"mysql> SELECT USER();"
+			"-> 'davida@localhost'"
+		],
+		"description": "MySQL USER Function "
+	  },
+	
+	  "MySQL VERSION Function": {
+		"prefix": "InformationVersion",
+		"body": [
+			"mysql> SELECT VERSION();",
+			"-> '8.0.34-standard'"
+		],
+		"description": "MySQL VERSION Function "
+	  },
+	  "MySQL Miscellaneous Functions": {
+		"prefix": "Miscellaneous",
+		"body": [
+		  "Miscellaneous Functions",
+		  "DEFAULT()",
+		  "GET_LOCK()",
+		  "INET_ATON()",
+		  "INET_NTOA()",
+		  "IS_FREE_LOCK()",
+		  "IS_USED_LOCK()",
+		  "MASTER_POS_WAIT()",
+		  "NAME_CONST()",
+		  "RAND()",
+		  "RELEASE_LOCK()",
+		  "SLEEP()",
+		  "UUID_SHORT()",
+		  "UUID()",
+		  "VALUES()"
+		],
+		"description": "MySQL Miscellaneous Functions "
+	  },
+	  "MySQL DEFAULT Function": {
+		"prefix": "MiscellaneousDefault",
+		"body": [
+		 "mysql> UPDATE t SET i = DEFAULT(i)+1 WHERE id < 100;"
+		],
+		"description": "MySQL DEFAULT Function "
+	  },
+	
+	  "MySQL GET_LOCK Function": {
+		"prefix": "MiscellaneousGetLock",
+		"body": [
+		"https://dev.mysql.com/doc/refman/8.0/en/miscellaneous-functions.html#function_get-lock"
+		],
+		"description": "MySQL GET_LOCK Function "
+	  },
+	
+	  "MySQL INET_ATON Function": {
+		"prefix": "MiscellaneousInetAton",
+		"body": [
+			"mysql> SELECT INET_NTOA(167773449);",
+			"-> '10.0.5.9'"
+		],
+		"description": "MySQL INET_ATON Function "
+	  },
+	
+	  "MySQL INET_NTOA Function": {
+		"prefix": "MiscellaneousInetNtoa",
+		"body": [
+			"mysql> SELECT INET_NTOA(167773449);",
+			"-> '10.0.5.9'"
+		],
+		"description": "MySQL INET_NTOA Function "
+	  },
+	
+	  "MySQL IS_FREE_LOCK Function": {
+		"prefix": "MiscellaneousIsFreeLock",
+		"body": [
+		"https://dev.mysql.com/doc/refman/8.0/en/miscellaneous-functions.html#function_is-free-lock"
+		],
+		"description": "MySQL IS_FREE_LOCK Function "
+	  },
+	
+	  "MySQL IS_USED_LOCK Function": {
+		"prefix": "MiscellaneousIsUsedLock",
+		"body": [
+		 "https://dev.mysql.com/doc/refman/8.0/en/miscellaneous-functions.html#function_is-used-lock"
+		],
+		"description": "MySQL IS_USED_LOCK Function "
+	  },
+	
+	  "MySQL MASTER_POS_WAIT Function": {
+		"prefix": "MiscellaneousMasterPosWait",
+		"body": [
+		 "https://dev.mysql.com/doc/refman/8.0/en/miscellaneous-functions.html#function_master-pos-wait"
+		],
+		"description": "MySQL MASTER_POS_WAIT Function "
+	  },
+	
+	  "MySQL NAME_CONST Function": {
+		"prefix": "MiscellaneousNameConst",
+		"body": [
+			"mysql> SELECT NAME_CONST('myname', 14);",
+			"+--------+",
+			"| myname |",
+			"+--------+",
+			"|     14 |",
+			"+--------+"
+		],
+		"description": "MySQL NAME_CONST Function "
+	  },
+	
+	  "MySQL RAND Function": {
+		"prefix": "MiscellaneousRand",
+		"body": [
+		  "SELECT FLOOR(7 + (RAND() * 5));"
+		],
+		"description": "MySQL RAND Function "
+	  },
+	
+	  "MySQL RELEASE_LOCK Function": {
+		"prefix": "MiscellaneousReleaseLock",
+		"body": [
+		  "https://dev.mysql.com/doc/refman/8.0/en/miscellaneous-functions.html#function_release-lock"
+		],
+		"description": "MySQL RELEASE_LOCK Function "
+	  },
+	
+	  "MySQL SLEEP Function": {
+		"prefix": "MiscellaneousSleep",
+		"body": [
+			"mysql> SELECT 1 FROM t1 WHERE SLEEP(1000);",
+			"ERROR 1317 (70100): Query execution was interrupted"
+		],
+		"description": "MySQL SLEEP Function "
+	  },
+	
+	  "MySQL UUID_SHORT Function": {
+		"prefix": "MiscellaneousUuidShort",
+		"body": [
+			"(server_id & 255) << 56",
+			"+ (server_startup_time_in_seconds << 24)",
+			"+ incremented_variable++;"
+		],
+		"description": "MySQL UUID_SHORT Function "
+	  },
+	
+	  "MySQL UUID Function": {
+		"prefix": "MiscellaneousUuid",
+		"body": [
+			"mysql> SELECT UUID();",
+			"-> '6ccd780c-baba-1026-9564-5b8c656024db'"
+		],
+		"description": "MySQL UUID Function "
+	  },
+	
+	  "MySQL VALUES Function": {
+		"prefix": "MiscellaneousValues",
+		"body": [
+			"mysql> INSERT INTO table (a,b,c) VALUES (1,2,3),(4,5,6)",
+			"-> ON DUPLICATE KEY UPDATE c=VALUES(a)+VALUES(b);"
+		],
+		"description": "MySQL VALUES Function "
+	  },
+	  "MySQL Data Types": {
+		"prefix": "DataTypes",
+		"body": [
+		  "Data Types",
+		  "CHAR",
+		  "String (0 - 255)",
+		  "VARCHAR",
+		  "String (0 - 255)",
+		  "TINYTEXT",
+		  "String (0 - 255)",
+		  "TEXT",
+		  "String (0 - 65535)",
+		  "BLOB",
+		  "String (0 - 65535)",
+		  "MEDIUMTEXT",
+		  "String (0 - 16777215)",
+		  "MEDIUMBLOB",
+		  "String (0 - 16777215)",
+		  "LONGTEXT",
+		  "String (0 - 4294967295)",
+		  "LONGBLOB",
+		  "String (0 - 4294967295)",
+		  "TINYINT x",
+		  "Integer (-128 to 127)",
+		  "SMALLINT x",
+		  "Integer (-32768 to 32767)",
+		  "MEDIUMINT x",
+		  "Integer (-8388608 to 8388607)",
+		  "INT x",
+		  "Integer (-2147483648 to 2147483647)",
+		  "BIGINT x",
+		  "Integer (-9223372036854775808 to 9223372036854775807)",
+		  "FLOAT",
+		  "Decimal (precise to 23 digits)",
+		  "DOUBLE",
+		  "Decimal (24 to 53 digits)",
+		  "DECIMAL",
+		  "\"-DOU-BLE-\" stored as string",
+		  "DATE",
+		  "YYYY-MM-DD",
+		  "DATETIME",
+		  "YYYY-MM-DD HH:MM:SS",
+		  "TIMESTAMP",
+		  "YYYYMM-DDHH:MM:SS",
+		  "TIME",
+		  "HH:MM:SS",
+		  "ENUM",
+		  "One of preset options",
+		  "SET",
+		  "Selection of preset options"
+		],
+		"description": "MySQL Data Types "
+	  },
+	  "MySQL Operators": {
+		"prefix": "Operators",
+		"body": [
+		  "Operators",
+		  "Assignment Operators",
+		  "=",
+		  ":=",
+		  "Logical Operators",
+		  "AND, &&",
+		  "NOT, !",
+		  "||, OR",
+		  "XOR",
+		  "Comparison Operators",
+		  "BETWEEN ... AND ...",
+		  "BINARY",
+		  "&",
+		  "~",
+		  "|",
+		  "^",
+		  "CASE",
+		  "DIV",
+		  "/",
+		  "<=>",
+		  "=",
+		  ">=",
+		  ">",
+		  "IS NOT NULL",
+		  "IS NOT",
+		  "IS NULL",
+		  "IS",
+		  "<<",
+		  "<=",
+		  "<",
+		  "LIKE",
+		  "-",
+		  "% or MOD",
+		  "NOT BETWEEN ... AND ...",
+		  "!=, <>",
+		  "NOT LIKE",
+		  "NOT REGEXP",
+		  "+",
+		  "REGEXP",
+		  ">>",
+		  "RLIKE",
+		  "SOUNDS LIKE",
+		  "*",
+		  "-"
+		],
+		"description": "MySQL Operators "
+	  },
+	  "MySQL Assignment Operator =": {
+		"prefix": "OperatorsAssign",
+		"body": [
+		  "https://dev.mysql.com/doc/refman/8.0/en/assignment-operators.html#operator_assign-equal"
+		],
+		"description": "MySQL Assignment Operator (=) "
+	  },
+	  
+	  "MySQL Assignment Operator :=": {
+		"prefix": "OperatorsAssignShortcut",
+		"body": [
+		 "https://dev.mysql.com/doc/refman/8.0/en/assignment-operators.html#operator_assign-value"
+		],
+		"description": "MySQL Assignment Operator (:=) "},
+		"MySQL Logical Operator AND": {
+			"prefix": "OperatorsLogicalAnd",
+			"body": [
+			 "https://dev.mysql.com/doc/refman/8.0/en/logical-operators.html#operator_and"
+			],
+			"description": "MySQL Logical Operator (AND, &&) "
+		  },
+		  
+		  "MySQL Logical Operator NOT": {
+			"prefix": "OperatorsLogicalNot",
+			"body": [
+			 "https://dev.mysql.com/doc/refman/8.0/en/logical-operators.html#operator_not"
+			],
+			"description": "MySQL Logical Operator (NOT, !) "
+		  },
+		  
+		  "MySQL Logical Operator OR": {
+			"prefix": "OperatorsLogicalOr",
+			"body": [
+			  "https://dev.mysql.com/doc/refman/8.0/en/logical-operators.html#operator_or"
+			],
+			"description": "MySQL Logical Operator (OR, ||) "
+		  },
+		  
+		  "MySQL Logical Operator XOR": {
+			"prefix": "OperatorsLogicalXor",
+			"body": [
+			 "https://dev.mysql.com/doc/refman/8.0/en/logical-operators.html#operator_xor"
+			],
+			"description": "MySQL Logical Operator (XOR) "
+		  },
+		  "MySQL Comparison Operator BETWEEN ... AND ...": {
+			"prefix": "OperatorsComparisonBetween",
+			"body": [
+			  "https://dev.mysql.com/doc/refman/8.0/en/comparison-operators.html#operator_between"
+			],
+			"description": "MySQL Comparison Operator (BETWEEN ... AND ...) "
+		  },
+		  
+		  "MySQL Comparison Operator BINARY": {
+			"prefix": "OperatorsComparisonBinary",
+			"body": [
+			 "https://dev.mysql.com/doc/refman/8.0/en/cast-functions.html#operator_binary"
+			],
+			"description": "MySQL Comparison Operator (BINARY) "
+		  },
+		  
+		  "MySQL Comparison Operator &": {
+			"prefix": "OperatorsComparisonBitwiseAnd",
+			"body": [
+			  "https://dev.mysql.com/doc/refman/8.0/en/bit-functions.html#operator_bitwise-and"
+			],
+			"description": "MySQL Comparison Operator (&) "
+		  },
+		  
+		  "MySQL Comparison Operator ~": {
+			"prefix": "OperatorsComparisonBitwiseNot",
+			"body": [
+			 "https://dev.mysql.com/doc/refman/8.0/en/bit-functions.html#operator_bitwise-invert"
+			],
+			"description": "MySQL Comparison Operator (~) "
+		  },
+		  
+		  "MySQL Comparison Operator |": {
+			"prefix": "OperatorsComparisonBitwiseOr",
+			"body": [
+			  "https://dev.mysql.com/doc/refman/8.0/en/bit-functions.html#operator_bitwise-or"
+			],
+			"description": "MySQL Comparison Operator (|) "
+		  },
+		  
+		  "MySQL Comparison Operator ^": {
+			"prefix": "OperatorsComparisonBitwiseXor",
+			"body": [
+			  "https://dev.mysql.com/doc/refman/8.0/en/bit-functions.html#operator_bitwise-xor"
+			],
+			"description": "MySQL Comparison Operator (^) "
+		  },
+		  
+		  "MySQL Comparison Operator CASE": {
+			"prefix": "OperatorsComparisonCase",
+			"body": [
+			  "https://dev.mysql.com/doc/refman/5.5/en/control-flow-functions.html#operator_case"
+			],
+			"description": "MySQL Comparison Operator (CASE) "
+		  },
+		  
+		  "MySQL Comparison Operator DIV": {
+			"prefix": "OperatorsComparisonDiv",
+			"body": [
+			  "https://dev.mysql.com/doc/refman/8.0/en/arithmetic-functions.html#operator_div"
+			],
+			"description": "MySQL Comparison Operator (DIV) "
+		  },
+		  
+		  "MySQL Comparison Operator /": {
+			"prefix": "OperatorsComparisonDivide",
+			"body": [
+			  "https://dev.mysql.com/doc/refman/8.0/en/arithmetic-functions.html#operator_divide"
+			],
+			"description": "MySQL Comparison Operator (/) "
+		  },
+		  
+		  "MySQL Comparison Operator <=>": {
+			"prefix": "OperatorsComparisonEqualNullSafe",
+			"body": [
+			  "https://dev.mysql.com/doc/refman/8.0/en/comparison-operators.html#operator_equal-to"
+			],
+			"description": "MySQL Comparison Operator (<=>) "
+		  },
+		  
+		  "MySQL Comparison Operator =": {
+			"prefix": "OperatorsComparisonEqual",
+			"body": [
+			  "https://dev.mysql.com/doc/refman/8.0/en/comparison-operators.html#operator_equal"
+			],
+			"description": "MySQL Comparison Operator (=) "
+		  },
+		  
+		  "MySQL Comparison Operator >=": {
+			"prefix": "OperatorsComparisonGreaterOrEqual",
+			"body": [
+			  "https://dev.mysql.com/doc/refman/8.0/en/comparison-operators.html#operator_greater-than-or-equal"
+			],
+			"description": "MySQL Comparison Operator (>=) "
+		  },
+		  
+		  "MySQL Comparison Operator >": {
+			"prefix": "OperatorsComparisonGreater",
+			"body": [
+			  "https://dev.mysql.com/doc/refman/8.0/en/comparison-operators.html#operator_greater-than"
+			],
+			"description": "MySQL Comparison Operator (>) "
+		  },
+		  
+		  "MySQL Comparison Operator IS NOT NULL": {
+			"prefix": "OperatorsComparisonIsNotNull",
+			"body": [
+			  "https://dev.mysql.com/doc/refman/8.0/en/comparison-operators.html#operator_is-not-null"
+			],
+			"description": "MySQL Comparison Operator (IS NOT NULL) "
+		  },
+		  
+		  "MySQL Comparison Operator IS NOT": {
+			"prefix": "OperatorsComparisonIsNot",
+			"body": [
+			  "https://dev.mysql.com/doc/refman/8.0/en/comparison-operators.html#operator_is-not"
+			],
+			"description": "MySQL Comparison Operator (IS NOT) "
+		  },
+		  
+		  "MySQL Comparison Operator IS NULL": {
+			"prefix": "OperatorsComparisonIsNull",
+			"body": [
+			  "https://dev.mysql.com/doc/refman/8.0/en/comparison-operators.html#operator_is-null"
+			],
+			"description": "MySQL Comparison Operator (IS NULL) "
+		  },
+		  
+		  "MySQL Comparison Operator IS": {
+			"prefix": "OperatorsComparisonIs",
+			"body": [
+			  "https://dev.mysql.com/doc/refman/8.0/en/comparison-operators.html#operator_is"
+			],
+			"description": "MySQL Comparison Operator (IS) "
+		  },
+		  
+		  "MySQL Comparison Operator <<": {
+			"prefix": "OperatorsComparisonLeftShift",
+			"body": [
+			  "https://dev.mysql.com/doc/refman/8.0/en/bit-functions.html#operator_left-shift"
+			],
+			"description": "MySQL Comparison Operator (<<) "
+		  },
+		  
+		  "MySQL Comparison Operator <=": {
+			"prefix": "OperatorsComparisonLessOrEqual",
+			"body": [
+			  "https://dev.mysql.com/doc/refman/8.0/en/comparison-operators.html#operator_less-than-or-equal"
+			],
+			"description": "MySQL Comparison Operator (<=) "
+		  },
+		  
+		  "MySQL Comparison Operator <": {
+			"prefix": "OperatorsComparisonLess",
+			"body": [
+			  "https://dev.mysql.com/doc/refman/8.0/en/comparison-operators.html#operator_less-than"
+			],
+			"description": "MySQL Comparison Operator (<) "
+		  },
+		  
+		  "MySQL Comparison Operator LIKE": {
+			"prefix": "OperatorsComparisonLike",
+			"body": [
+			  "https://dev.mysql.com/doc/refman/8.0/en/string-comparison-functions.html#operator_like"
+			],
+			"description": "MySQL Comparison Operator (LIKE) "
+		  },
+		  
+		  "MySQL Comparison Operator -": {
+			"prefix": "OperatorsComparisonMinus",
+			"body": [
+			  "https://dev.mysql.com/doc/refman/8.0/en/arithmetic-functions.html#operator_minus"
+			],
+			"description": "MySQL Comparison Operator (-) "
+		  },
+		  
+		  "MySQL Comparison Operator % or MOD": {
+			"prefix": "OperatorsComparisonMod",
+			"body": [
+			  "https://dev.mysql.com/doc/refman/8.0/en/arithmetic-functions.html#operator_mod"
+			],
+			"description": "MySQL Comparison Operator (% or MOD) "
+		  },
+		  
+		  "MySQL Comparison Operator NOT BETWEEN ... AND ...": {
+			"prefix": "OperatorsComparisonNotBetween",
+			"body": [
+			  "https://dev.mysql.com/doc/refman/8.0/en/comparison-operators.html#operator_not-between"
+			],
+			"description": "MySQL Comparison Operator (NOT BETWEEN ... AND ...) "
+		  },
+		  
+		  "MySQL Comparison Operator !=, <>": {
+			"prefix": "OperatorsComparisonNotEqual",
+			"body": [
+			  "https://dev.mysql.com/doc/refman/8.0/en/comparison-operators.html#operator_not-equal"
+			],
+			"description": "MySQL Comparison Operator (!=, <>) "
+		  },
+		  
+		  "MySQL Comparison Operator NOT LIKE": {
+			"prefix": "OperatorsComparisonNotLike",
+			"body": [
+			  "https://dev.mysql.com/doc/refman/8.0/en/string-comparison-functions.html#operator_not-like"
+			],
+			"description": "MySQL Comparison Operator (NOT LIKE) "
+		  },
+		  
+		  "MySQL Comparison Operator NOT REGEXP": {
+			"prefix": "OperatorsComparisonNotRegexp",
+			"body": [
+			  "https://dev.mysql.com/doc/refman/8.0/en/regexp.html#operator_not-regexp"
+			],
+			"description": "MySQL Comparison Operator (NOT REGEXP) "
+		  },
+		  
+		  "MySQL Comparison Operator +": {
+			"prefix": "OperatorsComparisonPlus",
+			"body": [
+			  "https://dev.mysql.com/doc/refman/8.0/en/arithmetic-functions.html#operator_plus"
+			],
+			"description": "MySQL Comparison Operator (+) "
+		  },
+		  
+		  "MySQL Comparison Operator REGEXP": {
+			"prefix": "OperatorsComparisonRegexp",
+			"body": [
+			  "https://dev.mysql.com/doc/refman/8.0/en/bit-functions.html#operator_right-shift"
+			],
+			"description": "MySQL Comparison Operator (REGEXP) "
+		  },
+		  
+		  "MySQL Comparison Operator >>": {
+			"prefix": "OperatorsComparisonRightShift",
+			"body": [
+			  "https://dev.mysql.com/doc/refman/8.0/en/bit-functions.html#operator_right-shift"
+			],
+			"description": "MySQL Comparison Operator (>>) "
+		  },
+		  
+		  "MySQL Comparison Operator RLIKE": {
+			"prefix": "OperatorsComparisonRlike",
+			"body": [
+			  "https://dev.mysql.com/doc/refman/8.0/en/regexp.html#operator_regexp"
+			],
+			"description": "MySQL Comparison Operator (RLIKE) "
+		  },
+		  
+		  "MySQL Comparison Operator SOUNDS LIKE": {
+			"prefix": "OperatorsComparisonSoundsLike",
+			"body": [
+			  "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#operator_sounds-like"
+			],
+			"description": "MySQL Comparison Operator (SOUNDS LIKE) "
+		  },
+		  
+		  "MySQL Comparison Operator *": {
+			"prefix": "OperatorsComparisonMultiply",
+			"body": [
+			  "https://dev.mysql.com/doc/refman/8.0/en/arithmetic-functions.html#operator_times"
+			],
+			"description": "MySQL Comparison Operator (*) "
+		  },
+		  
+		  "MySQL Comparison Operator -": {
+			"prefix": "OperatorsComparisonSubtract",
+			"body": [
+			  "https://dev.mysql.com/doc/refman/8.0/en/arithmetic-functions.html#operator_unary-minus"
+			],
+			"description": "MySQL Comparison Operator (-) "
+		  },
+	  "MySQL String Functions and Operations": {
+		"prefix": "Strings",
+		"body": [
+		  "String",
+		  "String Comparison",
+		  "LIKE",
+		  "NOT LIKE",
+		  "STRCMP()",
+		  "Regular Expressions",
+		  "NOT REGEXP",
+		  "REGEXP",
+		  "RLIKE",
+		  "String Functions",
+		  "ASCII()",
+		  "BIN()",
+		  "BIT_LENGTH()",
+		  "CHAR_LENGTH()",
+		  "CHAR()",
+		  "CHARACTER_LENGTH()",
+		  "CONCAT_WS()",
+		  "CONCAT()",
+		  "ELT()",
+		  "EXPORT_SET()",
+		  "FIELD()",
+		  "FIND_IN_SET()",
+		  "FORMAT()",
+		  "HEX()",
+		  "INSERT()",
+		  "INSTR()",
+		  "LCASE()",
+		  "LEFT()",
+		  "LENGTH()",
+		  "LIKE",
+		  "LOAD_FILE()",
+		  "LOCATE()",
+		  "LOWER()",
+		  "LPAD()",
+		  "LTRIM()",
+		  "MAKE_SET()",
+		  "MATCH",
+		  "MID()",
+		  "NOT LIKE",
+		  "NOT REGEXP",
+		  "OCTET_LENGTH()",
+		  "ORD()",
+		  "POSITION()",
+		  "QUOTE()",
+		  "REGEXP",
+		  "REPEAT()",
+		  "REPLACE()",
+		  "REVERSE()",
+		  "RIGHT()",
+		  "RLIKE",
+		  "RPAD()",
+		  "RTRIM()",
+		  "SOUNDEX()",
+		  "SOUNDS LIKE",
+		  "SPACE()",
+		  "STRCMP()",
+		  "SUBSTR()",
+		  "SUBSTRING_INDEX()",
+		  "SUBSTRING()",
+		  "TRIM()",
+		  "UCASE()",
+		  "UNHEX()",
+		  "UPPER()"
+		],
+		"description": "MySQL String Functions and Operations "
+	  },
+	  "MySQL String Comparison LIKE": {
+		"prefix": "StringLike",
+		"body": [
+			"mysql> SELECT 'David!' LIKE 'David_';",
+			"-> 1",
+	"mysql> SELECT 'David!' LIKE '%D%v%';",
+			"-> 1"
+		],
+		"description": "MySQL String Comparison (LIKE) "
+	  },
+	  
+	  "MySQL String Comparison NOT LIKE": {
+		"prefix": "StringNotLike",
+		"body": [
+		"https://dev.mysql.com/doc/refman/8.0/en/string-comparison-functions.html#operator_not-like"
+		],
+		"description": "MySQL String Comparison (NOT LIKE) "
+	  },
+	  
+	  "MySQL String Comparison STRCMP()": {
+		"prefix": "StringStrcmp",
+		"body": [
+			"mysql> SELECT STRCMP('text', 'text2');",
+			"-> -1",
+	"mysql> SELECT STRCMP('text2', 'text');",
+			"-> 1",
+	"mysql> SELECT STRCMP('text', 'text');",
+			"-> 0"
+		],
+		"description": "MySQL String Comparison (STRCMP()) "
+	  },
+	  
+	  "MySQL String Comparison Regular Expressions (REGEXP)": {
+		"prefix": "StringRegexp",
+		"body": [
+		  "https://dev.mysql.com/doc/refman/8.0/en/regexp.html#operator_regexp"
+		],
+		"description": "MySQL String Comparison (REGEXP) "
+	  },
+	  
+	  "MySQL String Comparison Regular Expressions (NOT REGEXP)": {
+		"prefix": "StringNotRegexp",
+		"body": [
+			"https://dev.mysql.com/doc/refman/8.0/en/regexp.html#operator_not-regexp"
+		],
+		"description": "MySQL String Comparison (NOT REGEXP) "
+	  },
+	  
+	  "MySQL String Comparison Regular Expressions (RLIKE)": {
+		"prefix": "StringRlike",
+		"body": [
+		 "https://dev.mysql.com/doc/refman/8.0/en/regexp.html#operator_regexp"
+		],
+		"description": "MySQL String Comparison (RLIKE) "
+	  },
+	  "MySQL String Function ASCII()": {
+		"prefix": "StringAscii",
+		"body": [
+			"mysql> SELECT ASCII('2');",
+			"-> 50",
+	"mysql> SELECT ASCII(2);",
+			"-> 50",
+	"mysql> SELECT ASCII('dx');",
+			"-> 100"
+		],
+		"description": "MySQL String Function (ASCII) "
+	  },
+	  
+	  "MySQL String Function BIN()": {
+		"prefix": "StringBin",
+		"body": [
+			"mysql> SELECT BIN(12);",
+			"-> '1100'"
+		],
+		"description": "MySQL String Function (BIN) "
+	  },
+	  
+	  "MySQL String Function BIT_LENGTH()": {
+		"prefix": "StringBitLength",
+		"body": [
+			"mysql> SELECT BIT_LENGTH('text');",
+			"-> 32"
+		],
+		"description": "MySQL String Function (BIT_LENGTH) "
+	  },
+	  
+	  "MySQL String Function CHAR_LENGTH()": {
+		"prefix": "StringCharLength",
+		"body": [
+			"mysql> SET @dolphin:='海豚';",
+			"Query OK, 0 rows affected (0.01 sec)",
+			
+			"mysql> SELECT LENGTH(@dolphin), CHAR_LENGTH(@dolphin);"
+		],
+		"description": "MySQL String Function (CHAR_LENGTH) "
+	  },
+	  
+	  "MySQL String Function CHAR()": {
+		"prefix": "StringChar",
+		"body": [
+		  "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_char"
+		],
+		"description": "MySQL String Function (CHAR) "
+	  },
+	  
+	  "MySQL String Function CHARACTER_LENGTH()": {
+		"prefix": "StringCharacterLength",
+		"body": [
+		 "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_char-length"
+		],
+		"description": "MySQL String Function (CHARACTER_LENGTH) "
+	  },
+	  
+	  "MySQL String Function CONCAT_WS()": {
+		"prefix": "StringConcatWs",
+		"body": [
+		  "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_concat-ws"
+		],
+		"description": "MySQL String Function (CONCAT_WS) "
+	  },
+	  
+	  "MySQL String Function CONCAT()": {
+		"prefix": "StringConcat",
+		"body": [
+			"mysql> SELECT CONCAT('My', 'S', 'QL');",
+			"-> 'MySQL'",
+	"mysql> SELECT CONCAT('My', NULL, 'QL');",
+			"-> NULL",
+	"mysql> SELECT CONCAT(14.3);",
+			"-> '14.3'"
+		],
+		"description": "MySQL String Function (CONCAT) "
+	  },
+	  
+	  "MySQL String Function ELT()": {
+		"prefix": "StringElt",
+		"body": [
+			"mysql> SELECT ELT(1, 'Aa', 'Bb', 'Cc', 'Dd');",
+			"-> 'Aa'",
+	"mysql> SELECT ELT(4, 'Aa', 'Bb', 'Cc', 'Dd');",
+			"-> 'Dd'"
+		],
+		"description": "MySQL String Function (ELT) "
+	  },
+	  
+	  "MySQL String Function EXPORT_SET()": {
+		"prefix": "StringExportSet",
+		"body": [
+			"mysql> SELECT EXPORT_SET(5,'Y','N',',',4);",
+			"-> 'Y,N,Y,N'",
+	"mysql> SELECT EXPORT_SET(6,'1','0',',',10);",
+			"-> '0,1,1,0,0,0,0,0,0,0'"
+		],
+		"description": "MySQL String Function (EXPORT_SET) "
+	  },
+	  
+	  "MySQL String Function FIELD()": {
+		"prefix": "StringField",
+		"body": [
+			"mysql> SELECT FIELD('Bb', 'Aa', 'Bb', 'Cc', 'Dd', 'Ff');",
+			"-> 2",
+	"mysql> SELECT FIELD('Gg', 'Aa', 'Bb', 'Cc', 'Dd', 'Ff');",
+			"-> 0"
+		],
+		"description": "MySQL String Function (FIELD) "
+	  },
+	  
+	  "MySQL String Function FIND_IN_SET()": {
+		"prefix": "StringFindInSet",
+		"body": [
+			"mysql> SELECT FIND_IN_SET('b','a,b,c,d');",
+			"-> 2"
+		],
+		"description": "MySQL String Function (FIND_IN_SET) "
+	  },
+	  
+	  "MySQL String Function FORMAT()": {
+		"prefix": "StringFormat",
+		"body": [
+			"mysql> SELECT FORMAT(12332.123456, 4);",
+			"-> '12,332.1235'",
+	"mysql> SELECT FORMAT(12332.1,4);",
+			"-> '12,332.1000'",
+"mysql> SELECT FORMAT(12332.2,0);",
+			"-> '12,332'",
+	"mysql> SELECT FORMAT(12332.2,2,'de_DE');",
+			"-> '12.332,20'"
+		],
+		"description": "MySQL String Function (FORMAT) "
+	  },
+	  
+	  "MySQL String Function HEX()": {
+		"prefix": "StringHex",
+		"body": [
+			"mysql> SELECT X'616263', HEX('abc'), UNHEX(HEX('abc'));",
+			"-> 'abc', 616263, 'abc'",
+	"mysql> SELECT HEX(255), CONV(HEX(255),16,10);",
+			"-> 'FF', 255"
+		],
+		"description": "MySQL String Function (HEX) "
+	  },
+	  
+	  "MySQL String Function INSERT()": {
+		"prefix": "StringInsert",
+		"body": [
+			"mysql> SELECT INSERT('Quadratic', 3, 4, 'What');",
+			"-> 'QuWhattic'",
+	"mysql> SELECT INSERT('Quadratic', -1, 4, 'What');",
+			"-> 'Quadratic'",
+	"mysql> SELECT INSERT('Quadratic', 3, 100, 'What');",
+			"-> 'QuWhat'"
+		],
+		"description": "MySQL String Function (INSERT) "
+	  },
+	  
+	  "MySQL String Function INSTR()": {
+		"prefix": "StringInstr",
+		"body": [
+			"mysql> SELECT INSTR('foobarbar', 'bar');",
+			"-> 4",
+	"mysql> SELECT INSTR('xbar', 'foobar');",
+			"-> 0"
+		],
+		"description": "MySQL String Function (INSTR) "
+	  },
+	  
+	  "MySQL String Function LCASE()": {
+		"prefix": "StringLcase",
+		"body": [
+		  "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_lcase"
+		],
+		"description": "MySQL String Function (LCASE) "
+	  },
+	  
+	  "MySQL String Function LEFT()": {
+		"prefix": "StringLeft",
+		"body": [
+			"mysql> SELECT LEFT('foobarbar', 5);",
+			"-> 'fooba'"
+		],
+		"description": "MySQL String Function (LEFT) "
+	  },
+	  
+	  "MySQL String Function LENGTH()": {
+		"prefix": "StringLength",
+		"body": [
+			"mysql> SELECT LENGTH('text');",
+			"-> 4"
+		],
+		"description": "MySQL String Function (LENGTH) "
+	  },
+	  
+	  "MySQL String Function LOAD_FILE()": {
+		"prefix": "StringLoadFile",
+		"body": [
+			"mysql> UPDATE t",
+            "SET blob_col=LOAD_FILE('/tmp/picture')",
+            "WHERE id=1;"
+		],
+		"description": "MySQL String Function (LOAD_FILE) "
+	  },
+	  
+	  "MySQL String Function LOCATE()": {
+		"prefix": "StringLocate",
+		"body": [
+			"mysql> SELECT LOCATE('bar', 'foobarbar');",
+			"-> 4",
+	"mysql> SELECT LOCATE('xbar', 'foobar');",
+			"-> 0",
+	"mysql> SELECT LOCATE('bar', 'foobarbar', 5);",
+			"-> 7"
+		],
+		"description": "MySQL String Function (LOCATE) "
+	  },
+	  
+	  "MySQL String Function LOWER()": {
+		"prefix": "StringLower",
+		"body": [
+			"mysql> SELECT LOWER('QUADRATICALLY');",
+			"-> 'quadratically'"
+		],
+		"description": "MySQL String Function (LOWER) "
+	  },
+	  
+	  "MySQL String Function LPAD()": {
+		"prefix": "StringLpad",
+		"body": [
+			"mysql> SELECT LPAD('hi',4,'??');",
+			"-> '??hi'",
+	"mysql> SELECT LPAD('hi',1,'??');",
+			"-> 'h'"
+		],
+		"description": "MySQL String Function (LPAD) "
+	  },
+	  
+	  "MySQL String Function LTRIM()": {
+		"prefix": "StringLtrim",
+		"body": [
+			"mysql> SELECT LTRIM('  barbar');",
+			"-> 'barbar'"
+		],
+		"description": "MySQL String Function (LTRIM) "
+	  },
+	  
+	  "MySQL String Function MAKE_SET()": {
+		"prefix": "StringMakeSet",
+		"body": [
+			"mysql> SELECT MAKE_SET(1,'a','b','c');",
+			"-> 'a'",
+	"mysql> SELECT MAKE_SET(1 | 4,'hello','nice','world');",
+			"-> 'hello,world'",
+	"mysql> SELECT MAKE_SET(1 | 4,'hello','nice',NULL,'world');",
+			"-> 'hello'",
+	"mysql> SELECT MAKE_SET(0,'a','b','c');",
+			"-> ''"
+		],
+		"description": "MySQL String Function (MAKE_SET) "
+	  },
+	  
+	  "MySQL String Function MATCH": {
+		"prefix": "StringMatch",
+		"body": [
+		  "https://dev.mysql.com/doc/refman/8.0/en/fulltext-search.html#function_match"
+		],
+		"description": "MySQL String Function (MATCH) "
+	  },
+	  
+	  "MySQL String Function MID()": {
+		"prefix": "StringMid",
+		"body": [
+			"mysql> SELECT OCT(12);",
+			"-> '14'"
+		],
+		"description": "MySQL String Function (MID) "
+	  },
+	  
+	  "MySQL String Function NOT LIKE": {
+		"prefix": "StringNotLike",
+		"body": [
+			"https://dev.mysql.com/doc/refman/8.0/en/string-comparison-functions.html#operator_not-like"
+		],
+		"description": "MySQL String Function (NOT LIKE) "
+	  },
+	  
+	  "MySQL String Function NOT REGEXP": {
+		"prefix": "StringNotRegexp",
+		"body": [
+		  "https://dev.mysql.com/doc/refman/8.0/en/regexp.html#operator_not-regexp"
+		],
+		"description": "MySQL String Function (NOT REGEXP) "
+	  },
+	  
+	  "MySQL String Function OCTET_LENGTH()": {
+		"prefix": "StringOctetLength",
+		"body": [
+		 "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_octet-length"
+		],
+		"description": "MySQL String Function (OCTET_LENGTH) "
+	  },
+	  
+	  "MySQL String Function ORD()": {
+		"prefix": "StringOrd",
+		"body": [
+			"mysql> SELECT ORD('2');",
+			"-> 50"
+		],
+		"description": "MySQL String Function (ORD) "
+	  },
+	  
+	  "MySQL String Function POSITION()": {
+		"prefix": "StringPosition",
+		"body": [
+			"https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_position"
+		],
+		"description": "MySQL String Function (POSITION) "
+	  },
+	  
+	  "MySQL String Function QUOTE()": {
+		"prefix": "StringQuote",
+		"body": [
+			"mysql> SELECT QUOTE('Don\t!');",
+			"-> 'Don\t!'",
+	"mysql> SELECT QUOTE(NULL);",
+			"-> NULL"
+		],
+		"description": "MySQL String Function (QUOTE) "
+	  },
+	  
+	  "MySQL String Function REGEXP": {
+		"prefix": "StringRegexp",
+		"body": [
+		  "https://dev.mysql.com/doc/refman/8.0/en/regexp.html#operator_regexp"
+		],
+		"description": "MySQL String Function (REGEXP) "
+	  },
+	  
+	  "MySQL String Function REPEAT()": {
+		"prefix": "StringRepeat",
+		"body": [
+			"mysql> SELECT REPEAT('MySQL', 3);",
+			"-> 'MySQLMySQLMySQL'"
+		],
+		"description": "MySQL String Function (REPEAT) "
+	  },
+	  
+	  "MySQL String Function REPLACE()": {
+		"prefix": "StringReplace",
+		"body": [
+			"mysql> SELECT REPLACE('www.mysql.com', 'w', 'Ww');",
+			"-> 'WwWwWw.mysql.com'"
+		],
+		"description": "MySQL String Function (REPLACE) "
+	  },
+	  
+	  "MySQL String Function REVERSE()": {
+		"prefix": "StringReverse",
+		"body": [
+			"mysql> SELECT REVERSE('abc');",
+			"-> 'cba'"
+		],
+		"description": "MySQL String Function (REVERSE) "
+	  },
+	  
+	  "MySQL String Function RIGHT()": {
+		"prefix": "StringRight",
+		"body": [
+			"mysql> SELECT RIGHT('foobarbar', 4);",
+			"-> 'rbar'"
+		],
+		"description": "MySQL String Function (RIGHT) "
+	  },
+	  
+	  "MySQL String Function RLIKE": {
+		"prefix": "StringRlike",
+		"body": [
+		  "https://dev.mysql.com/doc/refman/8.0/en/regexp.html#operator_regexp"
+		],
+		"description": "MySQL String Function (RLIKE) "
+	  },
+	  
+	  "MySQL String Function RPAD()": {
+		"prefix": "StringRpad",
+		"body": [
+			"mysql> SELECT RPAD('hi',5,'?');",
+			"-> 'hi???'",
+	"mysql> SELECT RPAD('hi',1,'?');",
+			"-> 'h'"
+		],
+		"description": "MySQL String Function (RPAD) "
+	  },
+	  
+	  "MySQL String Function RTRIM()": {
+		"prefix": "StringRtrim",
+		"body": [
+			"mysql> SELECT RTRIM('barbar   ');",
+			"-> 'barbar'"
+		],
+		"description": "MySQL String Function (RTRIM) "
+	  },
+	  
+	  "MySQL String Function SOUNDEX()": {
+		"prefix": "StringSoundex",
+		"body": [
+			"mysql> SELECT SOUNDEX('Hello');",
+			"-> 'H400'",
+	"mysql> SELECT SOUNDEX('Quadratically');",
+			"-> 'Q36324'"
+		],
+		"description": "MySQL String Function (SOUNDEX) "
+	  },
+	  
+	  "MySQL String Function SOUNDS LIKE": {
+		"prefix": "StringSoundsLike",
+		"body": [
+		  "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#operator_sounds-like"
+		],
+		"description": "MySQL String Function (SOUNDS LIKE) "
+	  },
+	  
+	  "MySQL String Function SPACE()": {
+		"prefix": "StringSpace",
+		"body": [
+			"mysql> SELECT SPACE(6);",
+			"-> '      '"
+		],
+		"description": "MySQL String Function (SPACE) "
+	  },
+	  
+	  "MySQL String Function STRCMP()": {
+		"prefix": "StringStrcmp",
+		"body": [
+			"mysql> SELECT STRCMP('text', 'text2');",
+			"-> -1",
+	"mysql> SELECT STRCMP('text2', 'text');",
+			"-> 1",
+	"mysql> SELECT STRCMP('text', 'text');",
+			"-> 0"
+		],
+		"description": "MySQL String Function (STRCMP) "
+	  },
+	  
+	  "MySQL String Function SUBSTR()": {
+		"prefix": "StringSubstr",
+		"body": [
+		 "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_substr"
+		],
+		"description": "MySQL String Function (SUBSTR) "
+	  },
+	  
+	  "MySQL String Function SUBSTRING_INDEX()": {
+		"prefix": "StringSubstringIndex",
+		"body": [
+			"mysql> SELECT SUBSTRING_INDEX('www.mysql.com', '.', 2);",
+			"-> 'www.mysql'",
+	"mysql> SELECT SUBSTRING_INDEX('www.mysql.com', '.', -2);",
+			"-> 'mysql.com'"
+		],
+		"description": "MySQL String Function (SUBSTRING_INDEX) "
+	  },
+	  
+	  "MySQL String Function SUBSTRING()": {
+		"prefix": "StringSubstring",
+		"body": [
+			"mysql> SELECT SUBSTRING('Quadratically',5);",
+			"-> 'ratically'",
+	"mysql> SELECT SUBSTRING('foobarbar' FROM 4);",
+			"-> 'barbar'",
+	"mysql> SELECT SUBSTRING('Quadratically',5,6);",
+			"-> 'ratica'",
+	"mysql> SELECT SUBSTRING('Sakila', -3);",
+			"-> 'ila'",
+	"mysql> SELECT SUBSTRING('Sakila', -5, 3);",
+			"-> 'aki'",
+"mysql> SELECT SUBSTRING('Sakila' FROM -4 FOR 2);",
+			"-> 'ki'"
+		],
+		"description": "MySQL String Function (SUBSTRING) "
+	  },
+	  
+	  "MySQL String Function TRIM()": {
+		"prefix": "StringTrim",
+		"body": [
+			"mysql> SELECT TRIM('  bar   ');",
+			"-> 'bar'",
+	"mysql> SELECT TRIM(LEADING 'x' FROM 'xxxbarxxx');",
+			"-> 'barxxx'",
+	"mysql> SELECT TRIM(BOTH 'x' FROM 'xxxbarxxx');",
+			"-> 'bar'",
+	"mysql> SELECT TRIM(TRAILING 'xyz' FROM 'barxxyz');",
+			"-> 'barx'"
+		],
+		"description": "MySQL String Function (TRIM) "
+	  },
+	  
+	  "MySQL String Function UCASE()": {
+		"prefix": "StringUcase",
+		"body": [
+		 "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_ucase"
+		],
+		"description": "MySQL String Function (UCASE) "
+	  },
+	  
+	  "MySQL String Function UNHEX()": {
+		"prefix": "StringUnhex",
+		"body": [
+			"mysql> SELECT UNHEX('4D7953514C');",
+			"-> 'MySQL'",
+	"mysql> SELECT X'4D7953514C';",
+			"-> 'MySQL'",
+	"mysql> SELECT UNHEX(HEX('string'));",
+			"-> 'string'",
+	"mysql> SELECT HEX(UNHEX('1267'));",
+			"-> '1267'"
+		],
+		"description": "MySQL String Function (UNHEX) "
+	  },
+	  
+	  "MySQL String Function UPPER()": {
+		"prefix": "StringUpper",
+		"body": [
+			"mysql> SELECT UPPER('Hej');"
+			"-> 'HEJ'"
+		],
+		"description": "MySQL String Function (UPPER) "
+	  },
+	  
+	  
+	  "MySQL Numeric Functions and Operators": {
+		"prefix": "Numeric",
+		"body": [
+		  "Numeric",
+		  "Arithmetic Operators",
+		  "DIV",
+		  "/",
+		  "-",
+		  "% or MOD",
+		  "+",
+		  "*",
+		  "-",
+		  "Mathematical Functions",
+		  "ABS()",
+		  "ACOS()",
+		  "ASIN()",
+		  "ATAN2(), ATAN()",
+		  "ATAN()",
+		  "CEIL()",
+		  "CEILING()",
+		  "CONV()",
+		  "COS()",
+		  "COT()",
+		  "CRC32()",
+		  "DEGREES()",
+		  "EXP()",
+		  "FLOOR()",
+		  "LN()",
+		  "LOG10()",
+		  "LOG2()",
+		  "LOG()",
+		  "MOD()",
+		  "OCT()",
+		  "PI()",
+		  "POW()",
+		  "POWER()",
+		  "RADIANS()",
+		  "RAND()",
+		  "ROUND()",
+		  "SIGN()",
+		  "SIN()",
+		  "SQRT()",
+		  "TAN()",
+		  "TRUNCATE()"
+		],
+		"description": "MySQL Numeric Functions and Operators "
+	  },
+	  "MySQL Division Operator DIV": {
+		"prefix": "NumericDiv",
+		"body": [
+			"mysql> SELECT 3/5;",
+			"-> 0.60"
+		],
+		"description": "MySQL Division Operator (DIV) "
+	  },
+	  
+	  "MySQL Division Operator /": {
+		"prefix": "NumericDivision",
+		"body": [
+			"mysql> SELECT 3/5;",
+			"-> 0.60"
+		],
+		"description": "MySQL Division Operator (/) "
+	  },
+	  
+	  "MySQL Subtraction Operator -": {
+		"prefix": "NumericSubtraction",
+		"body": [
+			"mysql> SELECT 3-5;",
+			"-> -2"
+		],
+		"description": "MySQL Subtraction Operator (-) "
+	  },
+	  
+	  "MySQL Modulus Operator % or MOD": {
+		"prefix": "NumericModulus",
+		"body": [
+		 "https://dev.mysql.com/doc/refman/8.0/en/arithmetic-functions.html#operator_mod"
+		],
+		"description": "MySQL Modulus Operator (% or MOD) "
+	  },
+	  
+	  "MySQL Addition Operator +": {
+		"prefix": "NumericAddition",
+		"body": [
+			"mysql> SELECT 3+5;",
+			"-> 8"
+		],
+		"description": "MySQL Addition Operator (+) "
+	  },
+	  
+	  "MySQL Multiplication Operator *": {
+		"prefix": "NumericMultiplication",
+		"body": [
+			"mysql> SELECT 3*5;",
+			"-> 15",
+	"mysql> SELECT 18014398509481984*18014398509481984.0;",
+			"-> 324518553658426726783156020576256.0",
+	"mysql> SELECT 18014398509481984*18014398509481984;",
+			"-> out-of-range error"
+		],
+		"description": "MySQL Multiplication Operator (*) "
+	  },
+	  
+	  "MySQL Mathematical Function ABS()": {
+		"prefix": "NumericAbs",
+		"body": [
+			"mysql> SELECT ABS(2);",
+			"-> 2",
+	"mysql> SELECT ABS(-32);",
+			"-> 32"
+		],
+		"description": "MySQL Mathematical Function (ABS) "
+	  },
+	  
+	  "MySQL Mathematical Function ACOS()": {
+		"prefix": "NumericAcos",
+		"body": [
+			"mysql> SELECT ACOS(1);",
+			"-> 0",
+	"mysql> SELECT ACOS(1.0001);",
+			"-> NULL",
+	"mysql> SELECT ACOS(0);",
+			"-> 1.5707963267949"
+		],
+		"description": "MySQL Mathematical Function (ACOS) "
+	  },
+	  
+	  "MySQL Mathematical Function ASIN()": {
+		"prefix": "NumericAsin",
+		"body": [
+			"mysql> SELECT ASIN(0.2);",
+			"-> 0.20135792079033",
+	"mysql> SELECT ASIN('foo');"
+		],
+		"description": "MySQL Mathematical Function (ASIN) "
+	  },
+	  
+	  "MySQL Mathematical Function ATAN2()": {
+		"prefix": "NumericAtan2",
+		"body": [
+			"mysql> SELECT ATAN(-2,2);",
+			"-> -0.78539816339745",
+	"mysql> SELECT ATAN2(PI(),0);",
+			"-> 1.5707963267949"
+		],
+		"description": "MySQL Mathematical Function (ATAN2) "
+	  },
+	  
+	  "MySQL Mathematical Function ATAN()": {
+		"prefix": "NumericAtan",
+		"body": [
+			"mysql> SELECT ATAN(2);",
+			"-> 1.1071487177941",
+	"mysql> SELECT ATAN(-2);",
+			"-> -1.1071487177941"
+		],
+		"description": "MySQL Mathematical Function (ATAN) "
+	  },
+	  
+	  "MySQL Mathematical Function CEIL()": {
+		"prefix": "NumericCeil",
+		"body": [
+		  "https://dev.mysql.com/doc/refman/8.0/en/mathematical-functions.html#function_ceil"
+		],
+		"description": "MySQL Mathematical Function (CEIL) "
+	  },
+	  
+	  "MySQL Mathematical Function CEILING()": {
+		"prefix": "NumericCeiling",
+		"body": [
+			"mysql> SELECT CEILING(1.23);",
+			"-> 2",
+	"mysql> SELECT CEILING(-1.23);",
+			"-> -1"
+		],
+		"description": "MySQL Mathematical Function (CEILING) "
+	  },
+	  
+	  "MySQL Mathematical Function CONV()": {
+		"prefix": "NumericConv",
+		"body": [
+			"mysql> SELECT CONV('a',16,2);",
+			"-> '1010'",
+	"mysql> SELECT CONV('6E',18,8);",
+			"-> '172'",
+	"mysql> SELECT CONV(-17,10,-18);",
+			"-> '-H'",
+	"mysql> SELECT CONV(10+'10'+'10'+X'0a',10,10);",
+			"-> '40'"
+		],
+		"description": "MySQL Mathematical Function (CONV) "
+	  },
+	  
+	  "MySQL Mathematical Function COS()": {
+		"prefix": "NumericCos",
+		"body": [
+			"mysql> SELECT COS(PI());"
+			"-> -1"
+		],
+		"description": "MySQL Mathematical Function (COS) "
+	  },
+	  
+	  "MySQL Mathematical Function COT()": {
+		"prefix": "NumericCot",
+		"body": [
+			"mysql> SELECT COT(12);",
+			"-> -1.5726734063977",
+	"mysql> SELECT COT(0);",
+			"-> out-of-range error"
+		],
+		"description": "MySQL Mathematical Function (COT) "
+	  },
+	  
+	  "MySQL Mathematical Function CRC32()": {
+		"prefix": "NumericCrc32",
+		"body": [
+			"mysql> SELECT CRC32('MySQL');",
+			"-> 3259397556",
+	"mysql> SELECT CRC32('mysql');",
+			"-> 2501908538"
+		],
+		"description": "MySQL Mathematical Function (CRC32) "
+	  },
+	  
+	  "MySQL Mathematical Function DEGREES()": {
+		"prefix": "NumericDegrees",
+		"body": [
+			"mysql> SELECT DEGREES(PI());",
+			"-> 180",
+	"mysql> SELECT DEGREES(PI() / 2);",
+			"-> 90"
+		],
+		"description": "MySQL Mathematical Function (DEGREES) "
+	  },
+	  
+	  "MySQL Mathematical Function EXP()": {
+		"prefix": "NumericExp",
+		"body": [
+			"mysql> SELECT EXP(2);",
+			"-> 7.3890560989307",
+	"mysql> SELECT EXP(-2);",
+			"-> 0.13533528323661",
+	"mysql> SELECT EXP(0);",
+			"-> 1"
+		],
+		"description": "MySQL Mathematical Function (EXP) "
+	  },
+	  
+	  "MySQL Mathematical Function FLOOR()": {
+		"prefix": "NumericFloor",
+		"body": [
+			"mysql> SELECT FLOOR(1.23), FLOOR(-1.23);",
+			"-> 1, -2"
+		],
+		"description": "MySQL Mathematical Function (FLOOR) "
+	  },
+	  
+	  "MySQL Mathematical Function LN()": {
+		"prefix": "NumericLn",
+		"body": [
+			"mysql> SELECT LN(2);"
+			"-> 0.69314718055995"
+	"mysql> SELECT LN(-2);"
+			"-> NULL"
+		],
+		"description": "MySQL Mathematical Function (LN) "
+	  },
+	  
+	  "MySQL Mathematical Function LOG10()": {
+		"prefix": "NumericLog10",
+		"body": [
+			"mysql> SELECT LOG10(2);"
+			"-> 0.30102999566398"
+	"mysql> SELECT LOG10(100);"
+			"-> 2"
+	"mysql> SELECT LOG10(-100);"
+			"-> NULL"
+		],
+		"description": "MySQL Mathematical Function (LOG10) "
+	  },
+	  
+	  "MySQL Mathematical Function LOG2()": {
+		"prefix": "NumericLog2",
+		"body": [
+			"mysql> SELECT LOG2(65536);",
+			"-> 16",
+	"mysql> SELECT LOG2(-100);",
+			"-> NULL"
+		],
+		"description": "MySQL Mathematical Function (LOG2) "
+	  },
+	  
+	  "MySQL Mathematical Function LOG()": {
+		"prefix": "NumericLog",
+		"body": [
+			"mysql> SELECT LOG(2);",
+			"-> 0.69314718055995",
+	"mysql> SELECT LOG(-2);",
+			"-> NULL"
+		],
+		"description": "MySQL Mathematical Function (LOG) "
+	  },
+	  
+	  "MySQL Mathematical Function MOD()": {
+		"prefix": "NumericMod",
+		"body": [
+			"mysql> SELECT MOD(234, 10);",
+			"-> 4",
+	"mysql> SELECT 253 % 7;",
+			"-> 1",
+	"mysql> SELECT MOD(29,9);",
+			"-> 2",
+	"mysql> SELECT 29 MOD 9;",
+			"-> 2"
+		],
+		"description": "MySQL Mathematical Function (MOD) "
+	  },
+	  
+	  "MySQL Mathematical Function OCT()": {
+		"prefix": "NumericOct",
+		"body": [
+		  "https://dev.mysql.com/doc/refman/8.0/en/mathematical-functions.html#function_oct"
+		],
+		"description": "MySQL Mathematical Function (OCT) "
+	  },
+	  
+	  "MySQL Mathematical Function PI()": {
+		"prefix": "NumericPi",
+		"body": [
+			"mysql> SELECT PI();",
+			"-> 3.141593",
+	"mysql> SELECT PI()+0.000000000000000000;",
+			"-> 3.141592653589793000"
+		],
+		"description": "MySQL Mathematical Function (PI) "
+	  },
+	  
+	  "MySQL Mathematical Function POW()": {
+		"prefix": "NumericPow",
+		"body": [
+			"mysql> SELECT POW(2,2);",
+			"-> 4",
+	"mysql> SELECT POW(2,-2);",
+			"-> 0.25"
+		],
+		"description": "MySQL Mathematical Function (POW) "
+	  },
+	  
+	  "MySQL Mathematical Function POWER()": {
+		"prefix": "NumericPower",
+		"body": [
+		  "https://dev.mysql.com/doc/refman/8.0/en/mathematical-functions.html#function_power"
+		],
+		"description": "MySQL Mathematical Function (POWER) "
+	  },
+	  
+	  "MySQL Mathematical Function RADIANS()": {
+		"prefix": "NumericRadians",
+		"body": [
+			"mysql> SELECT RADIANS(90);",
+			"-> 1.5707963267949"
+		],
+		"description": "MySQL Mathematical Function (RADIANS) "
+	  },
+	  
+	  "MySQL Mathematical Function RAND()": {
+		"prefix": "NumericRand",
+		"body": [
+		  "SELECT FLOOR(7 + (RAND() * 5));"
+		],
+		"description": "MySQL Mathematical Function (RAND) "
+	  },
+	  
+	  "MySQL Mathematical Function ROUND()": {
+		"prefix": "NumericRound",
+		"body": [
+			"mysql> SELECT ROUND(-1.23);",
+			"-> -1",
+	"mysql> SELECT ROUND(-1.58);",
+			"-> -2",
+	"mysql> SELECT ROUND(1.58);",
+			"-> 2",
+	"mysql> SELECT ROUND(1.298, 1);",
+			"-> 1.3",
+	"mysql> SELECT ROUND(1.298, 0);",
+			"-> 1",
+	"mysql> SELECT ROUND(23.298, -1);",
+			"-> 20",
+	"mysql> SELECT ROUND(.12345678901234567890123456789012345, 35);",
+			"-> 0.123456789012345678901234567890"
+		],
+		"description": "MySQL Mathematical Function (ROUND) "
+	  },
+	  
+	  "MySQL Mathematical Function SIGN()": {
+		"prefix": "NumericSign",
+		"body": [
+			"mysql> SELECT SIGN(-32);",
+			"-> -1",
+	"mysql> SELECT SIGN(0);",
+			"-> 0",
+	"mysql> SELECT SIGN(234);",
+			"-> 1"
+		],
+		"description": "MySQL Mathematical Function (SIGN) "
+	  },
+	  
+	  "MySQL Mathematical Function SIN()": {
+		"prefix": "NumericSin",
+		"body": [
+			"mysql> SELECT SIN(PI());",
+			"-> 1.2246063538224e-16",
+	"mysql> SELECT ROUND(SIN(PI()));",
+			"-> 0"
+		],
+		"description": "MySQL Mathematical Function (SIN) "
+	  },
+	  
+	  "MySQL Mathematical Function SQRT()": {
+		"prefix": "NumericSqrt",
+		"body": [
+			"mysql> SELECT SQRT(4);",
+			"-> 2",
+	"mysql> SELECT SQRT(20);",
+			"-> 4.4721359549996",
+	"mysql> SELECT SQRT(-16);",
+			"-> NULL"
+		],
+		"description": "MySQL Mathematical Function (SQRT) "
+	  },
+	  
+	  "MySQL Mathematical Function TAN()": {
+		"prefix": "NumericTan",
+		"body": [
+			"mysql> SELECT TAN(PI());",
+			"-> -1.2246063538224e-16",
+	"mysql> SELECT TAN(PI()+1);",
+			"-> 1.5574077246549"
+		],
+		"description": "MySQL Mathematical Function (TAN) "
+	  },
+	  
+	  "MySQL Mathematical Function TRUNCATE()": {
+		"prefix": "NumericTruncate",
+		"body": [
+			"mysql> SELECT TRUNCATE(1.223,1);",
+			"-> 1.2",
+	"mysql> SELECT TRUNCATE(1.999,1);",
+			"-> 1.9",
+	"mysql> SELECT TRUNCATE(1.999,0);",
+			"-> 1",
+	"mysql> SELECT TRUNCATE(-1.999,1);",
+			"-> -1.9",
+	"mysql> SELECT TRUNCATE(122,-2);",
+		  " -> 100",
+	"mysql> SELECT TRUNCATE(10.28*100,0);",
+		  " -> 1028"
+		],
+		"description": "MySQL Mathematical Function (TRUNCATE) "
+	  },
+	  
+	  
+	  "MySQL Select Queries": {
+		"prefix": "Select",
+		"body": [
+		  "Samples",
+		  "Select Queries",
+		  "Returns all columns",
+		  "SELECT * FROM table",
+		  "Returns specific columns",
+		  "SELECT field1, field2, ... FROM table1, table2, ...",
+		  "Returns rows that match condition",
+		  "SELECT ... FROM ... WHERE condition",
+		  "Returns with orders",
+		  "SELECT ... FROM ... WHERE condition GROUP BY field",
+		  "Returns with orders and matches condition",
+		  "SELECT ... FROM ... WHERE condition GROUP BY field HAVING condition2",
+		  "Returns first 10 rows",
+		  "SELECT ... FROM ... WHERE condition LIMIT 10",
+		  "Returns with no repeats",
+		  "SELECT DISTINCT field1 FROM ...",
+		  "Returns and joins",
+		  "SELECT ... FROM t1 JOIN t2 ON t1.id1 = t2.id2 WHERE condition"
+		],
+		"description": "MySQL Select Queries "
+	  },
+	
+	  
+	  "MySQL Date and Time Functions": {
+		"prefix": "DateTime",
+		"body": [
+		  "Date",
+		  "Date and Time",
+		  "ADDDATE()",
+		  "ADDTIME()",
+		  "CONVERT_TZ()",
+		  "CURDATE()",
+		  "CURRENT_DATE(), CURRENT_DATE",
+		  "CURRENT_TIME(), CURRENT_TIME",
+		  "CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP",
+		  "CURTIME()",
+		  "DATE_ADD()",
+		  "DATE_FORMAT()",
+		  "DATE_SUB()",
+		  "DATE()",
+		  "DATEDIFF()",
+		  "DAY()",
+		  "DAYNAME()",
+		  "DAYOFMONTH()",
+		  "DAYOFWEEK()",
+		  "DAYOFYEAR()",
+		  "EXTRACT()",
+		  "FROM_DAYS()",
+		  "FROM_UNIXTIME()",
+		  "GET_FORMAT()",
+		  "HOUR()",
+		  "LAST_DAY",
+		  "LOCALTIME(), LOCALTIME",
+		  "LOCALTIMESTAMP, LOCALTIMESTAMP()",
+		  "MAKEDATE()",
+		  "MAKETIME()",
+		  "MICROSECOND()",
+		  "MINUTE()",
+		  "MONTH()",
+		  "MONTHNAME()",
+		  "NOW()",
+		  "PERIOD_ADD()",
+		  "PERIOD_DIFF()",
+		  "QUARTER()",
+		  "SEC_TO_TIME()",
+		  "SECOND()",
+		  "STR_TO_DATE()",
+		  "SUBDATE()",
+		  "SUBTIME()",
+		  "SYSDATE()",
+		  "TIME_FORMAT()",
+		  "TIME_TO_SEC()",
+		  "TIME()",
+		  "TIMEDIFF()",
+		  "TIMESTAMP()",
+		  "TIMESTAMPADD()",
+		  "TIMESTAMPDIFF()",
+		  "TO_DAYS()",
+		  "TO_SECONDS()",
+		  "UNIX_TIMESTAMP()",
+		  "UTC_DATE()",
+		  "UTC_TIME()",
+		  "UTC_TIMESTAMP()",
+		  "WEEK()",
+		  "WEEKDAY()",
+		  "WEEKOFYEAR()",
+		  "YEAR()",
+		  "YEARWEEK()"
+		],
+		"description": "MySQL Date and Time Functions "
+	  },
+	  "MySQL Date Function ADDDATE()": {
+		"prefix": "DateAddDate",
+		"body": [
+			"mysql> SELECT DATE_ADD('2008-01-02', INTERVAL 31 DAY);"
+			"-> '2008-02-02'"
+	"mysql> SELECT ADDDATE('2008-01-02', INTERVAL 31 DAY);"
+			"-> '2008-02-02'"
+		],
+		"description": "MySQL Date Function (ADDDATE) "
+	  },
+	  
+	  "MySQL Date Function ADDTIME()": {
+		"prefix": "DateAddTime",
+		"body": [
+			"mysql> SELECT ADDTIME('2007-12-31 23:59:59.999999', '1 1:1:1.000002');",
+			"-> '2008-01-02 01:01:01.000001'",
+	"mysql> SELECT ADDTIME('01:00:00.999999', '02:00:00.999998');",
+			"-> '03:00:01.999997'"
+		],
+		"description": "MySQL Date Function (ADDTIME) "
+	  },
+	  
+	  "MySQL Date Function CONVERT_TZ()": {
+		"prefix": "DateConvertTz",
+		"body": [
+			"mysql> SELECT CONVERT_TZ('2004-01-01 12:00:00','GMT','MET');",
+			"-> '2004-01-01 13:00:00'",
+	"mysql> SELECT CONVERT_TZ('2004-01-01 12:00:00','+00:00','+10:00');",
+			"-> '2004-01-01 22:00:00'"
+		],
+		"description": "MySQL Date Function (CONVERT_TZ) "
+	  },
+	  
+	  "MySQL Date Function CURDATE()": {
+		"prefix": "DateCurDate",
+		"body": [
+			"mysql> SELECT CURDATE();",
+			"-> '2008-06-13'",
+	"mysql> SELECT CURDATE() + 0;",
+			"-> 20080613"
+		],
+		"description": "MySQL Date Function (CURDATE) "
+	  },
+	  
+	  "MySQL Date Function CURRENT_DATE()": {
+		"prefix": "DateCurrentDate",
+		"body": [
+		  "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_current-date"
+		],
+		"description": "MySQL Date Function (CURRENT_DATE) "
+	  },
+	  
+	  "MySQL Date Function CURRENT_TIME()": {
+		"prefix": "DateCurrentTime",
+		"body": [
+		 "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_current-time"
+		],
+		"description": "MySQL Date Function (CURRENT_TIME) "
+	  },
+	  
+	  "MySQL Date Function CURRENT_TIMESTAMP()": {
+		"prefix": "DateCurrentTimestamp",
+		"body": [
+		  "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_current-timestamp"
+		],
+		"description": "MySQL Date Function (CURRENT_TIMESTAMP) "
+	  },
+	  
+	  "MySQL Date Function CURTIME()": {
+		"prefix": "DateCurTime",
+		"body": [
+		  "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_curtime"
+		],
+		"description": "MySQL Date Function (CURTIME) "
+	  },
+	  
+	  "MySQL Date Function DATE_ADD()": {
+		"prefix": "DateAdd",
+		"body": [
+			"mysql> SELECT DATE('2003-12-31 01:02:03');",
+			"-> '2003-12-31'"
+		],
+		"description": "MySQL Date Function (DATE_ADD) "
+	  },
+	  
+	  "MySQL Date Function DATE_FORMAT()": {
+		"prefix": "DateFormat",
+		"body": [
+		   "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_date-format"
+		],
+		"description": "MySQL Date Function (DATE_FORMAT) "
+	  },
+	  
+	  "MySQL Date Function DATE_SUB()": {
+		"prefix": "DateSub",
+		"body": [
+		  "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_date-sub"
+		],
+		"description": "MySQL Date Function (DATE_SUB) "
+	  },
+	  
+	  "MySQL Date Function DATE()": {
+		"prefix": "Date",
+		"body": [
+			"mysql> SELECT DATE('2003-12-31 01:02:03');",
+			"-> '2003-12-31'"
+		],
+		"description": "MySQL Date Function (DATE) "
+	  },
+	  
+	  "MySQL Date Function DATEDIFF()": {
+		"prefix": "DateDiff",
+		"body": [
+			"mysql> SELECT DATEDIFF('2007-12-31 23:59:59','2007-12-30');",
+			"-> 1",
+	"mysql> SELECT DATEDIFF('2010-11-30 23:59:59','2010-12-31');",
+			"-> -31"
+		],
+		"description": "MySQL Date Function (DATEDIFF) "
+	  },
+	  
+	  "MySQL Date Function DAY()": {
+		"prefix": "DateDay",
+		"body": [
+		 "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_day"
+		],
+		"description": "MySQL Date Function (DAY) "
+	  },
+	  
+	  "MySQL Date Function DAYNAME()": {
+		"prefix": "DateDayName",
+		"body": [
+		  "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_dayname"
+		],
+		"description": "MySQL Date Function (DAYNAME) "
+	  },
+	  
+	  "MySQL Date Function DAYOFMONTH()": {
+		"prefix": "DateDayOfMonth",
+		"body": [
+			"mysql> SELECT DAYOFMONTH('2007-02-03');",
+			"-> 3"
+		],
+		"description": "MySQL Date Function (DAYOFMONTH) "
+	  },
+	  
+	  "MySQL Date Function DAYOFWEEK()": {
+		"prefix": "DateDayOfWeek",
+		"body": [
+			"mysql> SELECT DAYOFWEEK('2007-02-03');",
+			"-> 7"
+		],
+		"description": "MySQL Date Function (DAYOFWEEK) "
+	  },
+	  
+	  "MySQL Date Function DAYOFYEAR()": {
+		"prefix": "DateDayOfYear",
+		"body": [
+			"mysql> SELECT DAYOFYEAR('2007-02-03');",
+			"-> 34"
+		],
+		"description": "MySQL Date Function (DAYOFYEAR) "
+	  },
+	  
+	  "MySQL Date Function EXTRACT()": {
+		"prefix": "DateExtract",
+		"body": [
+			"mysql> SELECT EXTRACT(YEAR FROM '2019-07-02');",
+			"-> 2019",
+	"mysql> SELECT EXTRACT(YEAR_MONTH FROM '2019-07-02 01:02:03');",
+			"-> 201907",
+	"mysql> SELECT EXTRACT(DAY_MINUTE FROM '2019-07-02 01:02:03');",
+			"-> 20102",
+	"mysql> SELECT EXTRACT(MICROSECOND",
+		"->                FROM '2003-01-02 10:30:00.000123');",
+			"-> 123"
+		],
+		"description": "MySQL Date Function (EXTRACT) "
+	  },
+	  
+	  "MySQL Date Function FROM_DAYS()": {
+		"prefix": "DateFromDays",
+		"body": [
+			"mysql> SELECT FROM_DAYS(730669);",
+			"-> '2000-07-03'"
+		],
+		"description": "MySQL Date Function (FROM_DAYS) "
+	  },
+	  
+	  "MySQL Date Function FROM_UNIXTIME()": {
+		"prefix": "DateFromUnixtime",
+		"body": [
+			"mysql> SELECT FROM_UNIXTIME(1447430881);",
+			"-> '2015-11-13 10:08:01'",
+	"mysql> SELECT FROM_UNIXTIME(1447430881) + 0;",
+			"-> 20151113100801",
+	"mysql> SELECT FROM_UNIXTIME(1447430881,",
+		"->                      '%Y %D %M %h:%i:%s %x');",
+			"-> '2015 13th November 10:08:01 2015'"
+		],
+		"description": "MySQL Date Function (FROM_UNIXTIME) "
+	  },
+	  
+	  "MySQL Date Function GET_FORMAT()": {
+		"prefix": "DateGetFormat",
+		"body": [
+		  "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_get-format"
+		],
+		"description": "MySQL Date Function (GET_FORMAT) "
+	  },
+	  
+	  "MySQL Date Function HOUR()": {
+		"prefix": "DateHour",
+		"body": [
+			"mysql> SELECT HOUR('10:05:03');",
+			"-> 10",
+	"mysql> SELECT HOUR('272:59:59');",
+			"-> 272"
+		],
+		"description": "MySQL Date Function (HOUR) "
+	  },
+	  
+	  "MySQL Date Function LAST_DAY": {
+		"prefix": "DateLastDay",
+		"body": [
+			"mysql> SELECT LAST_DAY('2003-02-05');",
+			"-> '2003-02-28'",
+	"mysql> SELECT LAST_DAY('2004-02-05');",
+			"-> '2004-02-29'",
+	"mysql> SELECT LAST_DAY('2004-01-01 01:01:01');",
+			"-> '2004-01-31'",
+	"mysql> SELECT LAST_DAY('2003-03-32');",
+			"-> NULL"
+		],
+		"description": "MySQL Date Function (LAST_DAY) "
+	  },
+	  
+	  "MySQL Date Function LOCALTIME()": {
+		"prefix": "DateLocaltime",
+		"body": [
+		"https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_localtime"
+		],
+		"description": "MySQL Date Function (LOCALTIME) "
+	  },
+	  
+	  "MySQL Date Function LOCALTIMESTAMP()": {
+		"prefix": "DateLocaltimestamp",
+		"body": [
+			"https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_localtimestamp"
+		],
+		"description": "MySQL Date Function (LOCALTIMESTAMP) "
+	  },
+	  
+	  "MySQL Date Function MAKEDATE()": {
+		"prefix": "DateMakeDate",
+		"body": [
+			"mysql> SELECT MAKEDATE(2011,31), MAKEDATE(2011,32);",
+			"-> '2011-01-31', '2011-02-01'",
+	"mysql> SELECT MAKEDATE(2011,365), MAKEDATE(2014,365);",
+			"-> '2011-12-31', '2014-12-31'",
+	"mysql> SELECT MAKEDATE(2011,0);",
+			"-> NULL"
+		],
+		"description": "MySQL Date Function (MAKEDATE) "
+	  },
+	  
+	  "MySQL Date Function MAKETIME()": {
+		"prefix": "DateMaketime",
+		"body": [
+			"mysql> SELECT MAKETIME(12,15,30);",
+			"-> '12:15:30'"
+		],
+		"description": "MySQL Date Function (MAKETIME) "
+	  },
+	  
+	  "MySQL Date Function MICROSECOND()": {
+		"prefix": "DateMicrosecond",
+		"body": [
+			"mysql> SELECT MICROSECOND('12:00:00.123456');",
+			"-> 123456",
+	"mysql> SELECT MICROSECOND('2019-12-31 23:59:59.000010');",
+			"-> 10"
+		],
+		"description": "MySQL Date Function (MICROSECOND) "
+	  },
+	  
+	  "MySQL Date Function MINUTE()": {
+		"prefix": "DateMinute",
+		"body": [
+		  "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_maketime"
+		],
+		"description": "MySQL Date Function (MINUTE) "
+	  },
+	  
+	  "MySQL Date Function MONTH()": {
+		"prefix": "DateMonth",
+		"body": [
+			"mysql> SELECT MONTH('2008-02-03');"
+			"-> 2"
+		],
+		"description": "MySQL Date Function (MONTH) "
+	  },
+	  
+	  "MySQL Date Function MONTHNAME()": {
+		"prefix": "DateMonthName",
+		"body": [
+			"mysql> SELECT MONTHNAME('2008-02-03');",
+			"-> 'February'"
+		],
+		"description": "MySQL Date Function (MONTHNAME) "
+	  },
+	  
+	  "MySQL Date Function NOW()": {
+		"prefix": "DateNow",
+		"body": [
+		  "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_now"
+		],
+		"description": "MySQL Date Function (NOW) "
+	  },
+	  
+	  "MySQL Date Function PERIOD_ADD()": {
+		"prefix": "DatePeriodAdd",
+		"body": [
+			"mysql> SELECT PERIOD_ADD(200801,2);",
+			"-> 200803"
+		],
+		"description": "MySQL Date Function (PERIOD_ADD) "
+	  },
+	  
+	  "MySQL Date Function PERIOD_DIFF()": {
+		"prefix": "DatePeriodDiff",
+		"body": [
+			"mysql> SELECT PERIOD_DIFF(200802,200703);",
+			"-> 11"
+		],
+		"description": "MySQL Date Function (PERIOD_DIFF) "
+	  },
+	  
+	  "MySQL Date Function QUARTER()": {
+		"prefix": "DateQuarter",
+		"body": [
+			"mysql> SELECT QUARTER('2008-04-01');",
+			"-> 2"
+		],
+		"description": "MySQL Date Function (QUARTER) "
+	  },
+	  
+	  "MySQL Date Function SEC_TO_TIME()": {
+		"prefix": "DateSecToTime",
+		"body": [
+			"mysql> SELECT SEC_TO_TIME(2378);",
+			"-> '00:39:38'",
+	"mysql> SELECT SEC_TO_TIME(2378) + 0;",
+			"-> 3938"
+		],
+		"description": "MySQL Date Function (SEC_TO_TIME) "
+	  },
+	  
+	  "MySQL Date Function SECOND()": {
+		"prefix": "DateSecond",
+		"body": [
+			"mysql> SELECT SECOND('10:05:03');",
+			"-> 3"
+		],
+		"description": "MySQL Date Function (SECOND) "
+	  },
+	  
+	  "MySQL Date Function STR_TO_DATE()": {
+		"prefix": "DateStrToDate",
+		"body": [
+			"mysql> SELECT STR_TO_DATE('01,5,2013','%d,%m,%Y');",
+			"-> '2013-05-01'",
+	"mysql> SELECT STR_TO_DATE('May 1, 2013','%M %d,%Y');",
+			"-> '2013-05-01'"
+		],
+		"description": "MySQL Date Function (STR_TO_DATE) "
+	  },
+	  
+	  "MySQL Date Function SUBDATE()": {
+		"prefix": "DateSubdate",
+		"body": [
+			"mysql> SELECT DATE_SUB('2008-01-02', INTERVAL 31 DAY);",
+		"	-> '2007-12-02'",
+	"mysql> SELECT SUBDATE('2008-01-02', INTERVAL 31 DAY);",
+			"-> '2007-12-02'"
+		],
+		"description": "MySQL Date Function (SUBDATE) "
+	  },
+	  
+	  "MySQL Date Function SUBTIME()": {
+		"prefix": "DateSubtime",
+		"body": [
+			"mysql> SELECT SUBTIME('2007-12-31 23:59:59.999999','1 1:1:1.000002');",
+			"-> '2007-12-30 22:58:58.999997'",
+	"mysql> SELECT SUBTIME('01:00:00.999999', '02:00:00.999998');",
+			"-> '-00:59:59.999999'"
+		],
+		"description": "MySQL Date Function (SUBTIME) "
+	  },
+	  
+	  "MySQL Date Function SYSDATE()": {
+		"prefix": "DateSysdate",
+		"body": [
+		 "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_sysdate"
+		],
+		"description": "MySQL Date Function (SYSDATE) "
+	  },
+	  
+	  "MySQL Date Function TIME_FORMAT()": {
+		"prefix": "DateTimeFormat",
+		"body": [
+			"mysql> SELECT TIME_FORMAT('100:00:00', '%H %k %h %I %l');",
+			"-> '100 100 04 04 4'"
+		],
+		"description": "MySQL Date Function (TIME_FORMAT) "
+	  },
+	  
+	  "MySQL Date Function TIME_TO_SEC()": {
+		"prefix": "DateTimeToSec",
+		"body": [
+			"mysql> SELECT TIME_TO_SEC('22:23:00');",
+			"-> 80580",
+	"mysql> SELECT TIME_TO_SEC('00:39:38');",
+			"-> 2378"
+		],
+		"description": "MySQL Date Function (TIME_TO_SEC) "
+	  },
+	  
+	  "MySQL Date Function TIME()": {
+		"prefix": "DateTime",
+		"body": [
+			"mysql> SELECT TIME('2003-12-31 01:02:03');",
+			"-> '01:02:03'",
+	"mysql> SELECT TIME('2003-12-31 01:02:03.000123');",
+			"-> '01:02:03.000123'"
+		],
+		"description": "MySQL Date Function (TIME) "
+	  },
+	  
+	  "MySQL Date Function TIMEDIFF()": {
+		"prefix": "DateTimediff",
+		"body": [
+			"mysql> SELECT TIMEDIFF('2000-01-01 00:00:00',",
+			"->                 '2000-01-01 00:00:00.000001');",
+				"-> '-00:00:00.000001'",
+		"mysql> SELECT TIMEDIFF('2008-12-31 23:59:59.000001',",
+			"->                 '2008-12-30 01:01:01.000002');",
+				"-> '46:58:57.999999'"
+		],
+		"description": "MySQL Date Function (TIMEDIFF) "
+	  },
+	  
+	  "MySQL Date Function TIMESTAMP()": {
+		"prefix": "DateTimestamp",
+		"body": [
+			"mysql> SELECT TIMESTAMP('2003-12-31');",
+			"-> '2003-12-31 00:00:00'",
+	"mysql> SELECT TIMESTAMP('2003-12-31 12:00:00','12:00:00');",
+			"-> '2004-01-01 00:00:00'"
+		],
+		"description": "MySQL Date Function (TIMESTAMP) "
+	  },
+	  
+	  "MySQL Date Function TIMESTAMPADD()": {
+		"prefix": "DateTimestampAdd",
+		"body": [
+			"mysql> SELECT TIMESTAMPADD(MINUTE, 1, '2003-01-02');",
+			"-> '2003-01-02 00:01:00'",
+	"mysql> SELECT TIMESTAMPADD(WEEK,1,'2003-01-02');",
+			"-> '2003-01-09'"
+		],
+		"description": "MySQL Date Function (TIMESTAMPADD) "
+	  },
+	  
+	  "MySQL Date Function TIMESTAMPDIFF()": {
+		"prefix": "DateTimestampDiff",
+		"body": [
+			"mysql> SELECT TIMESTAMPDIFF(MONTH,'2003-02-01','2003-05-01');",
+			"-> 3",
+	"mysql> SELECT TIMESTAMPDIFF(YEAR,'2002-05-01','2001-01-01');",
+			"-> -1",
+	"mysql> SELECT TIMESTAMPDIFF(MINUTE,'2003-02-01','2003-05-01 12:05:55');",
+			"-> 128885"
+		],
+		"description": "MySQL Date Function (TIMESTAMPDIFF) "
+	  },
+	  
+	  "MySQL Date Function TO_DAYS()": {
+		"prefix": "DateToDays",
+		"body": [
+			"mysql> SELECT TO_DAYS(950501);",
+			"-> 728779",
+	"mysql> SELECT TO_DAYS('2007-10-07');",
+			"-> 733321"
+		],
+		"description": "MySQL Date Function (TO_DAYS) "
+	  },
+	  
+	  "MySQL Date Function TO_SECONDS()": {
+		"prefix": "DateToSeconds",
+		"body": [
+			"mysql> SELECT TO_SECONDS(950501);",
+			"-> 62966505600",
+	"mysql> SELECT TO_SECONDS('2009-11-29');",
+			"-> 63426672000",
+	"mysql> SELECT TO_SECONDS('2009-11-29 13:43:32');",
+			"-> 63426721412",
+	"mysql> SELECT TO_SECONDS( NOW() );",
+			"-> 63426721458"
+		],
+		"description": "MySQL Date Function (TO_SECONDS) "
+	  },
+	  
+	  "MySQL Date Function UNIX_TIMESTAMP()": {
+		"prefix": "DateUnixTimestamp",
+		"body": [
+			"mysql> SELECT UNIX_TIMESTAMP();",
+			"-> 1447431666",
+	"mysql> SELECT UNIX_TIMESTAMP('2015-11-13 10:20:19');",
+			"-> 1447431619",
+	"mysql> SELECT UNIX_TIMESTAMP('2015-11-13 10:20:19.012');",
+			"-> 1447431619.012"
+		],
+		"description": "MySQL Date Function (UNIX_TIMESTAMP) "
+	  },
+	  
+	  "MySQL Date Function UTC_DATE()": {
+		"prefix": "DateUtcDate",
+		"body": [
+			"mysql> SELECT UTC_DATE(), UTC_DATE() + 0;",
+			"-> '2003-08-14', 20030814"
+		],
+		"description": "MySQL Date Function (UTC_DATE) "
+	  },
+	  
+	  "MySQL Date Function UTC_TIME()": {
+		"prefix": "DateUtcTime",
+		"body": [
+			"mysql> SELECT UTC_TIME(), UTC_TIME() + 0;",
+			"-> '18:07:53', 180753.000000"
+		],
+		"description": "MySQL Date Function (UTC_TIME) "
+	  },
+	  
+	  "MySQL Date Function UTC_TIMESTAMP()": {
+		"prefix": "DateUtcTimestamp",
+		"body": [
+			"mysql> SELECT UTC_TIMESTAMP(), UTC_TIMESTAMP() + 0;",
+			"-> '2003-08-14 18:08:04', 20030814180804.000000"
+		],
+		"description": "MySQL Date Function (UTC_TIMESTAMP) "
+	  },
+	  
+	  "MySQL Date Function WEEK()": {
+		"prefix": "DateWeek",
+		"body": [
+			"mysql> SELECT WEEK('2008-02-20');",
+			"-> 7",
+	"mysql> SELECT WEEK('2008-02-20',0);",
+			"-> 7",
+	"mysql> SELECT WEEK('2008-02-20',1);",
+			"-> 8",
+	"mysql> SELECT WEEK('2008-12-31',1);",
+			"-> 53"
+		],
+		"description": "MySQL Date Function (WEEK) "
+	  },
+	  
+	  "MySQL Date Function WEEKDAY()": {
+		"prefix": "DateWeekday",
+		"body": [
+			"mysql> SELECT WEEKDAY('2008-02-03 22:23:00');",
+			"-> 6",
+	"mysql> SELECT WEEKDAY('2007-11-06');",
+			"-> 1"
+		],
+		"description": "MySQL Date Function (WEEKDAY) "
+	  },
+	  
+	  "MySQL Date Function WEEKOFYEAR()": {
+		"prefix": "DateWeekOfYear",
+		"body": [
+			"mysql> SELECT WEEKOFYEAR('2008-02-20');",
+			"-> 8"
+		],
+		"description": "MySQL Date Function (WEEKOFYEAR) "
+	  },
+	  
+	  "MySQL Date Function YEAR()": {
+		"prefix": "DateYear",
+		"body": [
+			"mysql> SELECT YEAR('1987-01-01');",
+			"-> 1987"
+		],
+		"description": "MySQL Date Function (YEAR) "
+	  },
+	  
+	  "MySQL Date Function YEARWEEK()": {
+		"prefix": "DateYearweek",
+		"body": [
+			"mysql> SELECT YEARWEEK('1987-01-01');",
+			"-> 198652"
+		],
+		"description": "MySQL Date Function (YEARWEEK) "
+	  },
+	  "MySQL GROUP BY Functions": {
+		"prefix": "GroupBy",
+		"body": [
+		  "Group",
+		  "GROUP BY Functions",
+		  "AVG()",
+		  "BIT_AND()",
+		  "BIT_OR()",
+		  "BIT_XOR()",
+		  "COUNT(DISTINCT)",
+		  "COUNT()",
+		  "GROUP_CONCAT()",
+		  "MAX()",
+		  "MIN()",
+		  "STD()",
+		  "STDDEV_POP()",
+		  "STDDEV_SAMP()",
+		  "STDDEV()",
+		  "SUM()",
+		  "VAR_POP()",
+		  "VAR_SAMP()",
+		  "VARIANCE()"
+		],
+		"description": "MySQL GROUP BY Functions "
+	  },
+	  "MySQL Aggregate Function AVG()": {
+		"prefix": "GroupAvg",
+		"body": [
+		 "https://dev.mysql.com/doc/refman/5.5/en/group-by-functions.html#function_avg"
+		],
+		"description": "MySQL Aggregate Function (AVG) "
+	  },
+	  
+	  "MySQL Aggregate Function BIT_AND()": {
+		"prefix": "GroupBitAnd",
+		"body": [
+		"https://dev.mysql.com/doc/refman/5.5/en/group-by-functions.html#function_bit-and"
+		],
+		"description": "MySQL Aggregate Function (BIT_AND) "
+	  },
+	  
+	  "MySQL Aggregate Function BIT_OR()": {
+		"prefix": "GroupBitOr",
+		"body": [
+		"https://dev.mysql.com/doc/refman/5.5/en/group-by-functions.html#function_bit-and"
+		 
+		],
+		"description": "MySQL Aggregate Function (BIT_OR) "
+	  },
+	  
+	  "MySQL Aggregate Function BIT_XOR()": {
+		"prefix": "GroupBitXor",
+		"body": [
+		"https://dev.mysql.com/doc/refman/5.5/en/group-by-functions.html#function_bit-and"
+		  
+		],
+		"description": "MySQL Aggregate Function (BIT_XOR) "
+	  },
+	  
+	  "MySQL Aggregate Function COUNT(DISTINCT)": {
+		"prefix": "GroupCountDistinct",
+		"body": [
+		"https://dev.mysql.com/doc/refman/5.5/en/group-by-functions.html#function_bit-and"
+		  
+		],
+		"description": "MySQL Aggregate Function (COUNT DISTINCT) "
+	  },
+	  
+	  "MySQL Aggregate Function COUNT()": {
+		"prefix": "GroupCount",
+		"body": [
+		"https://dev.mysql.com/doc/refman/5.5/en/group-by-functions.html#function_bit-and"
+		 
+		],
+		"description": "MySQL Aggregate Function (COUNT) "
+	  },
+	  
+	  "MySQL Aggregate Function GROUP_CONCAT()": {
+		"prefix": "GroupConcat",
+		"body": [
+			"https://dev.mysql.com/doc/refman/5.5/en/group-by-functions.html#function_bit-and"
+		
+		],
+		"description": "MySQL Aggregate Function (GROUP_CONCAT) "
+	  },
+	  
+	  "MySQL Aggregate Function MAX()": {
+		"prefix": "GroupMax",
+		"body": [
+		"https://dev.mysql.com/doc/refman/5.5/en/group-by-functions.html#function_bit-and"
+		  
+		],
+		"description": "MySQL Aggregate Function (MAX) "
+	  },
+	  
+	  "MySQL Aggregate Function MIN()": {
+		"prefix": "GroupMin",
+		"body": [
+		"https://dev.mysql.com/doc/refman/5.5/en/group-by-functions.html#function_bit-and"
+		 
+		],
+		"description": "MySQL Aggregate Function (MIN) "
+	  },
+	  
+	  "MySQL Aggregate Function STD()": {
+		"prefix": "GroupStd",
+		"body": [
+		"https://dev.mysql.com/doc/refman/5.5/en/group-by-functions.html#function_bit-and"
+		  
+		],
+		"description": "MySQL Aggregate Function (STD) "
+	  },
+	  
+	  "MySQL Aggregate Function STDDEV_POP()": {
+		"prefix": "GroupStddevPop",
+		"body": [
+			"https://dev.mysql.com/doc/refman/5.5/en/group-by-functions.html#function_bit-and"
+		
+		],
+		"description": "MySQL Aggregate Function (STDDEV_POP) "
+	  },
+	  
+	  "MySQL Aggregate Function STDDEV_SAMP()": {
+		"prefix": "GroupStddevSamp",
+		"body": [
+		"https://dev.mysql.com/doc/refman/5.5/en/group-by-functions.html#function_bit-and"
+		 
+		],
+		"description": "MySQL Aggregate Function (STDDEV_SAMP) "
+	  },
+	  
+	  "MySQL Aggregate Function STDDEV()": {
+		"prefix": "GroupStddev",
+		"body": [
+		"https://dev.mysql.com/doc/refman/5.5/en/group-by-functions.html#function_bit-and"
+		  
+		],
+		"description": "MySQL Aggregate Function (STDDEV) "
+	  },
+	  
+	  "MySQL Aggregate Function SUM()": {
+		"prefix": "GroupSum",
+		"body": [
+		"https://dev.mysql.com/doc/refman/5.5/en/group-by-functions.html#function_bit-and"
+		  
+		],
+		"description": "MySQL Aggregate Function (SUM) "
+	  },
+	  
+	  "MySQL Aggregate Function VAR_POP()": {
+		"prefix": "GroupVarPop",
+		"body": [
+			"https://dev.mysql.com/doc/refman/5.5/en/group-by-functions.html#function_bit-and"
+		
+		],
+		"description": "MySQL Aggregate Function (VAR_POP) "
+	  },
+	  
+	  "MySQL Aggregate Function VAR_SAMP()": {
+		"prefix": "GroupVarSamp",
+		"body": [
+		"https://dev.mysql.com/doc/refman/5.5/en/group-by-functions.html#function_bit-and"
+		 
+		],
+		"description": "MySQL Aggregate Function (VAR_SAMP) "
+	  },
+	  
+	  "MySQL Aggregate Function VARIANCE()": {
+		"prefix": "GroupVariance",
+		"body": [
+		"https://dev.mysql.com/doc/refman/5.5/en/group-by-functions.html#function_bit-and"
+		 
+		],
+		"description": "MySQL Aggregate Function (VARIANCE) "
+	  },
+	  
+	  "MySQL Encryption and Compression Functions": {
+		"prefix": "EncryptionCompression",
+		"body": [
+		  "Encrypt",
+		  "Encryption and Compression",
+		  "AES_DECRYPT()",
+		  "AES_ENCRYPT()",
+		  "COMPRESS()",
+		  "DECODE()",
+		  "DES_DECRYPT()",
+		  "DES_ENCRYPT()",
+		  "ENCODE()",
+		  "ENCRYPT()",
+		  "MD5()",
+		  "OLD_PASSWORD()",
+		  "PASSWORD()",
+		  "SHA1(), SHA()",
+		  "SHA2()",
+		  "UNCOMPRESS()",
+		  "UNCOMPRESSED_LENGTH()"
+		],
+		"description": "MySQL Encryption and Compression Functions  "
+	  },
+	  "MySQL Encryption/Compression Function AES_DECRYPT()": {
+		"prefix": "EncryptAesDecrypt",
+		"body": [
+		  "https://dev.mysql.com/doc/refman/8.0/en/encryption-functions.html#function_aes-decrypt"
+		],
+		"description": "MySQL Encryption/Compression Function (AES_DECRYPT) "
+	  },
+	  
+	  "MySQL Encryption/Compression Function AES_ENCRYPT()": {
+		"prefix": "EncryptAesEncrypt",
+		"body": [
+		  "https://dev.mysql.com/doc/refman/8.0/en/encryption-functions.html#function_aes-encrypt"
+		],
+		"description": "MySQL Encryption/Compression Function (AES_ENCRYPT) "
+	  },
+	  
+	  "MySQL Encryption/Compression Function COMPRESS()": {
+		"prefix": "EncryptCompress",
+		"body": [
+			"mysql> SELECT LENGTH(COMPRESS(REPEAT('a',1000)));",
+			"-> 21",
+	"mysql> SELECT LENGTH(COMPRESS(''));",
+			"-> 0",
+	"mysql> SELECT LENGTH(COMPRESS('a'));",
+			"-> 13",
+	"mysql> SELECT LENGTH(COMPRESS(REPEAT('a',16)));",
+		"-> 15"
+		],
+		"description": "MySQL Encryption/Compression Function (COMPRESS) "
+	  },
+	  
+	  "MySQL Encryption/Compression Function DECODE()": {
+		"prefix": "EncryptDecode",
+		"body": [
+		  "https://dev.mysql.com/doc/refman/8.0/en/encryption-functions.html#function_decode"
+		],
+		"description": "MySQL Encryption/Compression Function (DECODE) "
+	  },
+	  
+	  "MySQL Encryption/Compression Function DES_DECRYPT()": {
+		"prefix": "EncryptDesDecrypt",
+		"body": [
+		  "https://dev.mysql.com/doc/refman/8.0/en/encryption-functions.html#function_des-decrypt"
+		],
+		"description": "MySQL Encryption/Compression Function (DES_DECRYPT) "
+	  },
+	  
+	  "MySQL Encryption/Compression Function DES_ENCRYPT()": {
+		"prefix": "EncryptDesEncrypt",
+		"body": [
+		  "https://dev.mysql.com/doc/refman/8.0/en/encryption-functions.html#function_des-encrypt"
+		],
+		"description": "MySQL Encryption/Compression Function (DES_ENCRYPT) "
+	  },
+	  
+	  "MySQL Encryption/Compression Function ENCODE()": {
+		"prefix": "EncryptEncode",
+		"body": [
+		"https://dev.mysql.com/doc/refman/8.0/en/encryption-functions.html#function_encode"
+		],
+		"description": "MySQL Encryption/Compression Function (ENCODE) "
+	  },
+	  
+	  "MySQL Encryption/Compression Function ENCRYPT()": {
+		"prefix": "EncryptEncrypt",
+		"body": [
+		  "https://dev.mysql.com/doc/refman/8.0/en/encryption-functions.html#function_encrypt"
+		],
+		"description": "MySQL Encryption/Compression Function (ENCRYPT) "
+	  },
+	  
+	  "MySQL Encryption/Compression Function MD5()": {
+		"prefix": "EncryptMd5",
+		"body": [
+			"mysql> SELECT MD5('testing');",
+			"-> 'ae2b1fca515949e5d54fb22b8ed95575'"
+		],
+		"description": "MySQL Encryption/Compression Function (MD5) "
+	  },
+	  
+	  "MySQL Encryption/Compression Function OLD_PASSWORD()": {
+		"prefix": "EncryptOldPassword",
+		"body": [
+		  "https://dev.mysql.com/doc/refman/8.0/en/encryption-functions.html#function_old-password"
+		],
+		"description": "MySQL Encryption/Compression Function (OLD_PASSWORD) "
+	  },
+	  
+	  "MySQL Encryption/Compression Function PASSWORD()": {
+		"prefix": "EncryptPassword",
+		"body": [
+		"https://dev.mysql.com/doc/refman/8.0/en/encryption-functions.html#function_password"
+		],
+		"description": "MySQL Encryption/Compression Function (PASSWORD) "
+	  },
+	  
+	  "MySQL Encryption/Compression Function SHA1()": {
+		"prefix": "EncryptSha1",
+		"body": [
+			"mysql> SELECT SHA1('abc');",
+			"-> 'a9993e364706816aba3e25717850c26c9cd0d89d'"
+		],
+		"description": "MySQL Encryption/Compression Function (SHA1) "
+	  },
+	  
+	  "MySQL Encryption/Compression Function SHA2()": {
+		"prefix": "EncryptSha2",
+		"body": [
+			"mysql> SELECT SHA2('abc', 224);",
+			"-> '23097d223405d8228642a477bda255b32aadbce4bda0b3f7e36c9da7'"
+		],
+		"description": "MySQL Encryption/Compression Function (SHA2) "
+	  },
+	  
+	  "MySQL Encryption/Compression Function UNCOMPRESS()": {
+		"prefix": "EncryptUncompress",
+		"body": [
+			"mysql> SELECT UNCOMPRESS(COMPRESS('any string'));",
+			"-> 'any string'",
+	"mysql> SELECT UNCOMPRESS('any string');",
+			"-> NULL"
+		],
+		"description": "MySQL Encryption/Compression Function (UNCOMPRESS) "
+	  },
+	  
+	  "MySQL Encryption/Compression Function UNCOMPRESSED_LENGTH()": {
+		"prefix": "EncryptUncompressedLength",
+		"body": [
+			"mysql> SELECT UNCOMPRESSED_LENGTH(COMPRESS(REPEAT('a',30)));",
+			"-> 30"
+		],
+		"description": "MySQL Encryption/Compression Function (UNCOMPRESSED_LENGTH) "
+	  }
+	  
+
+
+
+
+}
