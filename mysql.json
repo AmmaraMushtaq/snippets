@@ -199,7 +199,7 @@
 	  "MySQL USER Function": {
 		"prefix": "InformationUser",
 		"body": [
-			"mysql> SELECT USER();"
+			"mysql> SELECT USER();",
 			"-> 'davida@localhost'"
 		],
 		"description": "MySQL USER Function "
@@ -1425,7 +1425,7 @@
 	  "MySQL String Function UPPER()": {
 		"prefix": "StringUpper",
 		"body": [
-			"mysql> SELECT UPPER('Hej');"
+			"mysql> SELECT UPPER('Hej');",
 			"-> 'HEJ'"
 		],
 		"description": "MySQL String Function (UPPER) "
@@ -1629,7 +1629,7 @@
 	  "MySQL Mathematical Function COS()": {
 		"prefix": "NumericCos",
 		"body": [
-			"mysql> SELECT COS(PI());"
+			"mysql> SELECT COS(PI());",
 			"-> -1"
 		],
 		"description": "MySQL Mathematical Function (COS) "
@@ -1693,9 +1693,9 @@
 	  "MySQL Mathematical Function LN()": {
 		"prefix": "NumericLn",
 		"body": [
-			"mysql> SELECT LN(2);"
-			"-> 0.69314718055995"
-	"mysql> SELECT LN(-2);"
+			"mysql> SELECT LN(2);",
+			"-> 0.69314718055995",
+	"mysql> SELECT LN(-2);",
 			"-> NULL"
 		],
 		"description": "MySQL Mathematical Function (LN) "
@@ -1704,11 +1704,11 @@
 	  "MySQL Mathematical Function LOG10()": {
 		"prefix": "NumericLog10",
 		"body": [
-			"mysql> SELECT LOG10(2);"
-			"-> 0.30102999566398"
-	"mysql> SELECT LOG10(100);"
-			"-> 2"
-	"mysql> SELECT LOG10(-100);"
+			"mysql> SELECT LOG10(2);",
+			"-> 0.30102999566398",
+	"mysql> SELECT LOG10(100);",
+			"-> 2",
+	"mysql> SELECT LOG10(-100);",
 			"-> NULL"
 		],
 		"description": "MySQL Mathematical Function (LOG10) "
@@ -1992,9 +1992,9 @@
 	  "MySQL Date Function ADDDATE()": {
 		"prefix": "DateAddDate",
 		"body": [
-			"mysql> SELECT DATE_ADD('2008-01-02', INTERVAL 31 DAY);"
-			"-> '2008-02-02'"
-	"mysql> SELECT ADDDATE('2008-01-02', INTERVAL 31 DAY);"
+			"mysql> SELECT DATE_ADD('2008-01-02', INTERVAL 31 DAY);",
+			"-> '2008-02-02'",
+	"mysql> SELECT ADDDATE('2008-01-02', INTERVAL 31 DAY);",
 			"-> '2008-02-02'"
 		],
 		"description": "MySQL Date Function (ADDDATE) "
@@ -2286,7 +2286,7 @@
 	  "MySQL Date Function MONTH()": {
 		"prefix": "DateMonth",
 		"body": [
-			"mysql> SELECT MONTH('2008-02-03');"
+			"mysql> SELECT MONTH('2008-02-03');",
 			"-> 2"
 		],
 		"description": "MySQL Date Function (MONTH) "
@@ -2371,7 +2371,7 @@
 		"prefix": "DateSubdate",
 		"body": [
 			"mysql> SELECT DATE_SUB('2008-01-02', INTERVAL 31 DAY);",
-		"	-> '2007-12-02'",
+		"-> '2007-12-02'",
 	"mysql> SELECT SUBDATE('2008-01-02', INTERVAL 31 DAY);",
 			"-> '2007-12-02'"
 		],
