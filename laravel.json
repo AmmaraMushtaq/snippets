@@ -1,0 +1,947 @@
+   {
+	"Laravel": {
+		"prefix": "Laravel",
+		"body": [
+"Tutorial",
+"Home",
+"Overview",
+"Installation",
+"Application Structure",
+"Configuration",
+"Routing",
+"Middleware",
+"Namespaces",
+"Controllers",
+"Request",
+"Cookie",
+"Response",
+"Views",
+"Blade Templates",
+"Redirections",
+"Working With Database",
+"Errors & Logging",
+"Forms",
+"Localization",
+"Session",
+"Validation",
+"File Uploading",
+"Sending Email",
+"Ajax",
+"Error Handling",
+"Event Handling",
+"Facades",
+"Contracts",
+"CSRF Protection",
+"Authentication",
+"Authorization",
+"Artisan Console",
+"Encryption",
+"Hashing",
+"Understanding Release Process",
+"Guest User Gates",
+"Artisan Commands",
+"Pagination Customizations",
+"Dump Server",
+"Action URL",
+"Useful Resources",
+"Quick Guide",
+"Useful Resources",
+"Discussion"
+		],
+		"description": "Laravel "
+	},
+	" Routing": {
+		"prefix": "Routing",
+		"body": [
+			"Basic Routing",
+			"Route parameters",
+			"Named Routes"
+		],
+		"description": "Laravel Routing "
+	  },
+	  " Routing Basic Routing" : {
+		"prefix": "RoutingBasicRouting",
+		"body": [
+			"Route::get('/', function () {",
+				"return view('welcome');",
+			 "});"
+		],
+		"description": "Laravel Routing Basic Routing "
+	  },
+	  " Routing Route parameters" : {
+		"prefix": "RoutingRouteparameters",
+		"body": [
+			"Route::get('ID/{id}',function($id) {",
+				"echo 'ID: '.$id;",
+			 "});"
+		],
+		"description": "Laravel Routing Route parameters "
+	  },
+	  " Routing Named Routes" : {
+		"prefix": "RoutingNamedRoutes",
+		"body": [
+			"use Illuminate\"Support\"Facades\"Route;",
+"Route::get('/home', 'HomeController@index')->name('home');",
+"Route::get('/dashboard', function () {",
+  "$url = route('home'); ",
+   " return redirect()->route('home');",
+"});"
+		],
+		"description": "Laravel Routing Named Routes "
+	  },
+
+	  " Middleware": {
+		"prefix": "Middleware",
+		"body": [
+			"Registering Middleware",
+			"Middleware Parameters",
+			"Terminable Middleware"
+		],
+		"description": "Laravel Middleware "
+	  },
+	  " Middleware Registering Middleware" : {
+		"prefix": "MiddlewareRegisteringMiddleware",
+		"body": [
+			"Global Middleware",
+       "Route Middleware"
+		],
+		"description": "Laravel Middleware Registering Middleware "
+	  },
+	  " Middleware Registering Middleware" : {
+		"prefix": "RegisteringMiddlewareGlobal",
+		"body": [
+			
+		],
+		"description": "Laravel Middleware Registering Middleware Global"
+	  },
+	  " Middleware Registering Middleware" : {
+		"prefix": "RegisteringMiddlewareRoute",
+		"body": [
+			
+		],
+		"description": "Laravel Middleware Registering Middleware Route"
+	  },
+
+
+	  " Middleware Middleware Parameters" : {
+		"prefix": "MiddlewareMiddlewareParameters",
+		"body": [
+			"namespace App\"Http\"Middleware;",
+"use Closure;",
+
+"class RoleMiddleware {",
+  " public function handle($request, Closure $next, $role) {",
+      "echo 'Role: '.$role;",
+      "return $next($request);",
+   "}",
+"}"
+		],
+		"description": "Laravel Middleware Middleware Parameters "
+	  },
+	  " Middleware Terminable Middleware" : {
+		"prefix": "MiddlewareTerminableMiddleware",
+		"body": [
+			"namespace App\"Http\"Middleware;",
+"use Closure;",
+
+"class TerminateMiddleware {",
+   "public function handle($request, Closure $next) {",
+      "echo 'Executing statements of handle method of TerminateMiddleware.';",
+      "return $next($request);",
+   "}",
+   
+   "public function terminate($request, $response) {",
+     " echo '<br>Executing statements of terminate method of TerminateMiddleware.';",
+   "}",
+"}"
+		],
+		"description": "Laravel Middleware Terminable Middleware "
+	  },
+	  "Laravel Controller Namespace": {
+		"prefix": "NamespaceController",
+		"body": [
+		  "namespace App\\Http\\Controllers;",
+		  "",
+		  "use Illuminate\\Http\\Request;",
+		  "",
+		  "class ${1:MyController} extends Controller",
+		  "{",
+		  "    public function index()",
+		  "    {",
+		  "        // Controller action logic",
+		  "    }",
+		  "}"
+		],
+		"description": "Create a Laravel Controller with Namespace"
+	  },
+	  
+	  "Laravel Model Namespace": {
+		"prefix": "NamespaceModel",
+		"body": [
+		  "namespace App\\Models;",
+		  "",
+		  "use Illuminate\\Database\\Eloquent\\Model;",
+		  "",
+		  "class ${1:MyModel} extends Model",
+		  "{",
+		  "    // Model properties and methods",
+		  "}"
+		],
+		"description": "Create a Laravel Model with Namespace"
+	  },
+	  
+	  "Laravel Custom Namespace": {
+		"prefix": "NamespaceCustom",
+		"body": [
+		  "namespace App\\Custom;",
+		  "",
+		  "class ${1:MyClass}",
+		  "{",
+		  "    // Class properties and methods",
+		  "}"
+		],
+		"description": " Custom Namespace Class in Laravel"
+	  },
+	  "Laravel Controller": {
+		"prefix": "Controller",
+		"body": [
+		  "<?php",
+		  "",
+		  "namespace App\\Http\\Controllers;",
+		  "",
+		  "use Illuminate\\Http\\Request;",
+		  "",
+		  "class ${1:MyController} extends Controller",
+		  "{",
+		  "    //",
+		  "    // Define your controller methods here",
+		  "    //",
+		  "    public function index()",
+		  "    {",
+		  "        // Controller action logic for displaying data",
+		  "    }",
+		  "",
+		  "    public function create()",
+		  "    {",
+		  "        // Controller action logic for displaying a form",
+		  "    }",
+		  "",
+		  "    public function store(Request $request)",
+		  "    {",
+		  "        // Controller action logic for processing form data",
+		  "    }",
+		  "",
+		  "    public function show($id)",
+		  "    {",
+		  "        // Controller action logic for displaying a single record",
+		  "    }",
+		  "",
+		  "    public function edit($id)",
+		  "    {",
+		  "        // Controller action logic for displaying a form to edit a record",
+		  "    }",
+		  "",
+		  "    public function update(Request $request, $id)",
+		  "    {",
+		  "        // Controller action logic for updating a record",
+		  "    }",
+		  "",
+		  "    public function destroy($id)",
+		  "    {",
+		  "        // Controller action logic for deleting a record",
+		  "    }",
+		  "}"
+		],
+		"description": " Laravel Controller"
+	  },
+	  "Laravel Request": {
+		"prefix": "Request",
+		"body": [
+		  "<?php",
+		  "",
+		  "namespace App\\Http\\Requests;",
+		  "",
+		  "use Illuminate\\Foundation\\Http\\FormRequest;",
+		  "",
+		  "class ${1:MyRequest} extends FormRequest",
+		  "{",
+		  "    /**",
+		  "     * Determine if the user is authorized to make this request.",
+		  "     *",
+		  "     * @return bool",
+		  "     */",
+		  "    public function authorize()",
+		  "    {",
+		  "        // Define authorization logic here",
+		  "        return true;",
+		  "    }",
+		  "",
+		  "    /**",
+		  "     * Get the validation rules that apply to the request.",
+		  "     *",
+		  "     * @return array",
+		  "     */",
+		  "    public function rules()",
+		  "    {",
+		  "        // Define validation rules here",
+		  "        return [",
+		  "            'field' => 'required|type',",
+		  "        ];",
+		  "    }",
+		  "}"
+		],
+		"description": " Laravel Request"
+	  },
+	  "Laravel Cookie": {
+		"prefix": "Cookie",
+		"body": [
+		  "use Illuminate\\Http\\Response;",
+		  "",
+		  "class ${1:MyController}",
+		  "{",
+		  "    public function setCookie()",
+		  "    {",
+		  "        $response = new Response('Set Cookie');",
+		  "        $response->withCookie(cookie('${2:cookie_name}', '${3:cookie_value}', ${4:minutes_to_expire}));",
+		  "        return $response;",
+		  "    }",
+		  "",
+		  "    public function getCookie(Request $request)",
+		  "    {",
+		  "        $value = $request->cookie('${5:cookie_name}');",
+		  "        return $value;",
+		  "    }",
+		  "}"
+		],
+		"description": " Laravel Controller with Cookie Handling"
+	  },
+	  "Laravel Response": {
+		"prefix": "Response",
+		"body": [
+		  "use Illuminate\\Http\\Response;",
+		  "",
+		  "class ${1:MyController}",
+		  "{",
+		  "    public function jsonResponse()",
+		  "    {",
+		  "        $data = [",
+		  "            'message' => 'This is a JSON response',",
+		  "        ];",
+		  "        return response()->json($data);",
+		  "    }",
+		  "",
+		  "    public function viewResponse()",
+		  "    {",
+		  "        return view('${2:view_name}');",
+		  "    }",
+		  "",
+		  "    public function redirectResponse()",
+		  "    {",
+		  "        return redirect('${3:target_url}');",
+		  "    }",
+		  "}"
+		],
+		"description": " Laravel Controller with Response Handling"
+	  },
+	  "Laravel View": {
+		"prefix": "View",
+		"body": [
+		  "use Illuminate\\Http\\Response;",
+		  "",
+		  "class ${1:MyController}",
+		  "{",
+		  "    public function showView()",
+		  "    {",
+		  "        return view('${2:view_name}');",
+		  "    }",
+		  "}"
+		],
+		"description": "Laravel Controller for Showing a View"
+	  },
+	  "Laravel Blade Template": {
+		"prefix": "BladeTemplate",
+		"body": [
+		  "<!DOCTYPE html>",
+		  "<html>",
+		  "<head>",
+		  "    <title>${1:Page Title}</title>",
+		  "</head>",
+		  "<body>",
+		  "    @if (${2:condition})",
+		  "        <p>This is true.</p>",
+		  "    @else",
+		  "        <p>This is false.</p>",
+		  "    @endif",
+		  "",
+		  "    <ul>",
+		  "        @foreach ($${3:items} as $${4:item})",
+		  "            <li>{{ $${4:item} }}</li>",
+		  "        @endforeach",
+		  "    </ul>",
+		  "",
+		  "    <p>{{ $${5:variable} }}</p>",
+		  "",
+		  "    @include('${6:partials.header}')",
+		  "</body>",
+		  "</html>"
+		],
+		"description": "Laravel Blade Template"
+	  },
+	  "Laravel Redirections": {
+		"prefix": "Redirections",
+		"body": [
+		  "use Illuminate\\Http\\Response;",
+		  "",
+		  "class ${1:MyController}",
+		  "{",
+		  "    public function redirectToRoute()",
+		  "    {",
+		  "        return redirect()->route('${2:route_name}');",
+		  "    }",
+		  "",
+		  "    public function redirectToAction()",
+		  "    {",
+		  "        return redirect()->action('${3:controller@action}');",
+		  "    }",
+		  "",
+		  "    public function redirectToExternal()",
+		  "    {",
+		  "        return redirect('${4:https://example.com}');",
+		  "    }",
+		  "}"
+		],
+		"description": "Laravel Controller for Redirections"
+	  },
+	  "Laravel Working With Database": {
+		"prefix": "WorkingWithDatabase",
+		"body": [
+			"MySQL",
+			"Postgres",
+			"SQLite",
+			"SQL Server"
+		],
+		"description": " Laravel Controller for Working With Database"
+	  },
+	  "Laravel Errors and Logging": {
+		"prefix": "ErrorsLogging",
+		"body": [
+		  "use Illuminate\\Http\\Response;",
+		  "use Illuminate\\Support\\Facades\\Log;",
+		  "",
+		  "class ${1:MyController}",
+		  "{",
+		  "    public function logError()",
+		  "    {",
+		  "        try {",
+		  "            // Some code that may throw an exception",
+		  "        } catch (Exception $e) {",
+		  "            Log::error($e->getMessage());",
+		  "        }",
+		  "    }",
+		  "}"
+		],
+		"description": "Laravel Controller for Error Logging"
+	  },
+	  "Laravel Forms": {
+		"prefix": "Forms",
+		"body": [
+		  "use Illuminate\\Http\\Response;",
+		  "use Illuminate\\Support\\Facades\\Validator;",
+		  "",
+		  "class ${1:MyController}",
+		  "{",
+		  "    public function showForm()",
+		  "    {",
+		  "        return view('${2:form_view}');",
+		  "    }",
+		  "",
+		  "    public function processForm(Request $request)",
+		  "    {",
+		  "        $validator = Validator::make($request->all(), [",
+		  "            '${3:field_name}' => 'required|${4:validation_rules}',",
+		  "        ]);",
+		  "",
+		  "        if ($validator->fails()) {",
+		  "            return redirect()->route('${5:form_route}')->withErrors($validator)->withInput();",
+		  "        }",
+		  "",
+		  "        // Process the form data",
+		  "    }",
+		  "}"
+		],
+		"description": "Laravel Controller for Form Handling"
+	  },
+	  "Laravel Localization": {
+		"prefix": "Localization",
+		"body": [
+		  "use Illuminate\\Http\\Response;",
+		  "use Illuminate\\Support\\Facades\\Lang;",
+		  "",
+		  "class ${1:MyController}",
+		  "{",
+		  "    public function switchLocale($locale)",
+		  "    {",
+		  "        if (in_array($locale, config('app.locales'))) {",
+		  "            Lang::setLocale($locale);",
+		  "        }",
+		  "        return redirect()->back();",
+		  "    }",
+		  "}"
+		],
+		"description": "Laravel Controller for Localization"
+	  },
+	  "Laravel Session": {
+		"prefix": "Session",
+		"body": [
+		  "use Illuminate\\Http\\Response;",
+		  "",
+		  "class ${1:MyController}",
+		  "{",
+		  "    public function storeSessionData($key, $value)",
+		  "    {",
+		  "        session(['${2:key}' => '${3:value}']);",
+		  "    }",
+		  "",
+		  "    public function retrieveSessionData($key)",
+		  "    {",
+		  "        $data = session('${4:key}');",
+		  "        return $data;",
+		  "    }",
+		  "",
+		  "    public function deleteSessionData($key)",
+		  "    {",
+		  "        session()->forget('${5:key}');",
+		  "    }",
+		  "}"
+		],
+		"description": "Laravel Controller for Session Handling"
+	  },
+	  "Laravel Validation": {
+		"prefix": "Validation",
+		"body": [
+		  "use Illuminate\\Http\\Response;",
+		  "use Illuminate\\Http\\Request;",
+		  "use Illuminate\\Support\\Facades\\Validator;",
+		  "",
+		  "class ${1:MyController}",
+		  "{",
+		  "    public function validateData(Request $request)",
+		  "    {",
+		  "        $validator = Validator::make($request->all(), [",
+		  "            '${2:field}' => '${3:validation_rules}',",
+		  "        ]);",
+		  "",
+		  "        if ($validator->fails()) {",
+		  "            return response()->json(['errors' => $validator->errors()], 400);",
+		  "        }",
+		  "",
+		  "        // Process the valid data",
+		  "    }",
+		  "}"
+		],
+		"description": "Laravel Controller for Data Validation"
+	  },
+	  "Laravel File Uploading": {
+		"prefix": "FileUploading",
+		"body": [
+		  "use Illuminate\\Http\\Response;",
+		  "use Illuminate\\Http\\Request;",
+		  "",
+		  "class ${1:MyController}",
+		  "{",
+		  "    public function uploadFile(Request $request)",
+		  "    {",
+		  "        $request->validate([",
+		  "            'file' => 'required|file',",
+		  "        ]);",
+		  "",
+		  "        if ($request->file('file')->isValid()) {",
+		  "            $file = $request->file('file');",
+		  "            $file->storeAs('${2:storage_path}', '${3:file_name}.${4:extension}');",
+		  "            return 'File uploaded successfully.';",
+		  "        } else {",
+		  "            return 'Invalid file.';",
+		  "        }",
+		  "    }",
+		  "}"
+		],
+		"description": "Laravel Controller for File Uploading"
+	  },
+	  "Laravel Sending Email": {
+		"prefix": "SendingEmail",
+		"body": [
+		  "use Illuminate\\Http\\Response;",
+		  "use Illuminate\\Support\\Facades\\Mail;",
+		  "use App\\Mail\\${1:MyMail};",
+		  "",
+		  "class ${2:MyController}",
+		  "{",
+		  "    public function sendEmail()",
+		  "    {",
+		  "        $email = '${3:recipient_email}';",
+		  "        $data = ['key' => 'value'];",
+		  "        Mail::to($email)->send(new ${1:MyMail}($data));",
+		  "        return 'Email sent successfully.';",
+		  "    }",
+		  "}"
+		],
+		"description": "Laravel Controller for Sending Email"
+	  },
+	  "Laravel Ajax": {
+		"prefix": "Ajax",
+		"body": [
+		  "use Illuminate\\Http\\Response;",
+		  "use Illuminate\\Http\\Request;",
+		  "",
+		  "class ${1:MyController}",
+		  "{",
+		  "    public function ajaxRequest()",
+		  "    {",
+		  "        return view('${2:view_name}');",
+		  "    }",
+		  "",
+		  "    public function ajaxResponse(Request $request)",
+		  "    {",
+		  "        // Process the AJAX request data",
+		  "        $data = $request->all();",
+		  "        // Perform actions based on the data",
+		  "        // Return an AJAX response",
+		  "        return response()->json(['message' => 'Response from server']);",
+		  "    }",
+		  "}"
+		],
+		"description": "Laravel Controller for Ajax Requests"
+	  },
+	  "Laravel Error Handling": {
+		"prefix": "ErrorHandling",
+		"body": [
+		  "use Illuminate\\Http\\Response;",
+		  "use Exception;",
+		  "use Illuminate\\Validation\\ValidationException;",
+		  "",
+		  "class ${1:MyController}",
+		  "{",
+		  "    public function handleError()",
+		  "    {",
+		  "        try {",
+		  "            // Code that may throw exceptions",
+		  "        } catch (ValidationException $e) {",
+		  "            return response()->json(['errors' => $e->validator->errors()], 422);",
+		  "        } catch (Exception $e) {",
+		  "            return response()->json(['error' => 'An error occurred.'], 500);",
+		  "        }",
+		  "    }",
+		  "}"
+		],
+		"description": "Laravel Controller for Error Handling"
+	  },
+	  "Laravel Event Handling": {
+		"prefix": "EventHandling",
+		"body": [
+		  "use Illuminate\\Http\\Response;",
+		  "use Illuminate\\Support\\Facades\\Event;",
+		  "use App\\Events\\${1:MyEvent};",
+		  "use App\\Listeners\\${2:MyListener};",
+		  "",
+		  "class ${3:MyController}",
+		  "{",
+		  "    public function fireEvent()",
+		  "    {",
+		  "        Event::dispatch(new ${1:MyEvent}());",
+		  "        return 'Event dispatched.';",
+		  "    }",
+		  "}"
+		],
+		"description": "Laravel Controller for Event Handling"
+	  },
+	  "Laravel Facades": {
+		"prefix": "Facades",
+		"body": [
+		  "use Illuminate\\Support\\Facades\\${1:FACADE_NAME};",
+		  "",
+		  "class ${2:MyController}",
+		  "{",
+		  "    public function useFacade()",
+		  "    {",
+		  "        ${1:FACADE_NAME}::${3:method}();",
+		  "    }",
+		  "}"
+		],
+		"description": "Laravel Controller for Using Facades"
+	  },
+	  "Laravel Contracts": {
+		"prefix": "Contracts",
+		"body": [
+		  "use Illuminate\\Contracts\\${1:ContractName};",
+		  "",
+		  "class ${2:MyController}",
+		  "{",
+		  "    public function useContract(${1:ContractName} $${3:instance})",
+		  "    {",
+		  "        // Implement methods defined in the contract",
+		  "    }",
+		  "}"
+		],
+		"description": "Laravel Controller for Using Contracts"
+	  },
+	  "Laravel CSRF Protection": {
+		"prefix": "CSRFProtection",
+		"body": [
+		  "use Illuminate\\Http\\Response;",
+		  "use Illuminate\\Http\\Request;",
+		  "",
+		  "class ${1:MyController}",
+		  "{",
+		  "    public function csrfForm()",
+		  "    {",
+		  "        return view('${2:form_view}');",
+		  "    }",
+		  "",
+		  "    public function handleForm(Request $request)",
+		  "    {",
+		  "        // Verify the CSRF token before processing the form data",
+		  "        $request->validate([csrf_token => 'required|csrf']);",
+		  "        // Process the form data",
+		  "        return 'Form data processed.';",
+		  "    }",
+		  "}"
+		],
+		"description": "Laravel Controller with CSRF Protection"
+	  },
+	  "Laravel Authentication": {
+		"prefix": "Authentication",
+		"body": [
+		  "use Illuminate\\Http\\Response;",
+		  "use Illuminate\\Http\\Request;",
+		  "use Illuminate\\Support\\Facades\\Auth;",
+		  "",
+		  "class ${1:MyController}",
+		  "{",
+		  "    public function showLoginForm()",
+		  "    {",
+		  "        return view('auth.login');",
+		  "    }",
+		  "",
+		  "    public function login(Request $request)",
+		  "    {",
+		  "        $credentials = $request->only('email', 'password');",
+		  "        if (Auth::attempt($credentials)) {",
+		  "            return redirect()->intended('/dashboard');",
+		  "        }",
+		  "        return back()->withErrors(['loginError' => 'Login failed.']);",
+		  "    }",
+		  "}"
+		],
+		"description": "Laravel Controller for Authentication"
+	  },
+	  "Laravel Authorization": {
+		"prefix": "Authorization",
+		"body": [
+		  "use Illuminate\\Http\\Response;",
+		  "use Illuminate\\Http\\Request;",
+		  "use Illuminate\\Support\\Facades\\Gate;",
+		  "",
+		  "class ${1:MyController}",
+		  "{",
+		  "    public function authorizeAction()",
+		  "    {",
+		  "        if (Gate::allows('${2:policy}', $${3:model})) {",
+		  "            // User is authorized to perform the action",
+		  "            return 'Authorized.';",
+		  "        }",
+		  "        return 'Unauthorized.';",
+		  "    }",
+		  "}"
+		],
+		"description": "Laravel Controller for Authorization"
+	  },
+	  "Laravel Artisan Console": {
+		"prefix": "ArtisanConsole",
+		"body": [
+		  "use Illuminate\\Console\\Command;",
+		  "",
+		  "class ${1:MyCommand} extends Command",
+		  "{",
+		  "    protected $signature = 'command:name';",
+		  "    protected $description = 'Description of the command';",
+		  "",
+		  "    public function __construct()",
+		  "    {",
+		  "        parent::__construct();",
+		  "    }",
+		  "",
+		  "    public function handle()",
+		  "    {",
+		  "        // Command logic goes here",
+		  "        $this->info('Command executed successfully.');",
+		  "    }",
+		  "}"
+		],
+		"description": "Laravel Artisan Console Command"
+	  },
+	  "Laravel Encryption": {
+		"prefix": "Encryption",
+		"body": [
+		  "use Illuminate\\Encryption\\Encrypter;",
+		  "",
+		  "$encrypter = new Encrypter('$key', '$cipher');",
+		  "$encrypted = $encrypter->encrypt('$data');",
+		  "$decrypted = $encrypter->decrypt('$encrypted');",
+		  "",
+		  "// Encrypted data: $encrypted",
+		  "// Decrypted data: $decrypted"
+		],
+		"description": "Laravel Encryption and Decryption Example"
+	  },
+	  "Laravel Hashing": {
+		"prefix": "Hashing",
+		"body": [
+		  "use Illuminate\\Support\\Facades\\Hash;",
+		  "",
+		  "$password = 'my_secure_password';",
+		  "$hashedPassword = Hash::make($password);",
+		  "",
+		  "if (Hash::check('$password', $hashedPassword)) {",
+		  "    // Password is correct",
+		  "} else {",
+		  "    // Password is incorrect",
+		  "}"
+		],
+		"description": "Laravel Password Hashing and Verification Example"
+	  },
+	  "Laravel Release Process": {
+		"prefix": "ReleaseProcess",
+		"body": [
+		  "Step 1: Code Review",
+		  "   - Review and test new features or changes.",
+		  "   - Ensure code quality and adherence to coding standards.",
+		  "Step 2: Testing",
+		  "   - Perform unit tests, integration tests, and user acceptance tests.",
+		  "   - Fix and address any issues found during testing.",
+		  "Step 3: Version Control",
+		  "   - Tag the release in your version control system (e.g., Git).",
+		  "Step 4: Update Dependencies",
+		  "   - Update Composer dependencies with 'composer update'.",
+		  "Step 5: Environment Configuration",
+		  "   - Configure the environment for the new release (e.g., .env file).",
+		  "Step 6: Database Migration",
+		  "   - Run database migrations with 'php artisan migrate'.",
+		  "Step 7: Asset Compilation",
+		  "   - Compile assets (if using tools like Mix) with 'npm run prod'.",
+		  "Step 8: Caching",
+		  "   - Clear and cache configuration with 'php artisan optimize'.",
+		  "Step 9: Deployment",
+		  "   - Deploy the updated code to the production server.",
+		  "Step 10: Final Testing",
+		  "   - Test the application in the production environment.",
+		  "   - Monitor for any issues or errors.",
+		  "Step 11: Rollback Plan",
+		  "   - Have a plan in case the release encounters issues.",
+		  "Step 12: Release",
+		  "   - Update the live site with the new release.",
+		  "Step 13: Post-Release Testing",
+		  "   - Continue testing in the live environment.",
+		  "   - Monitor server performance and logs.",
+		  "Step 14: Documentation",
+		  "   - Update documentation and release notes.",
+		  "Step 15: Communication",
+		  "   - Communicate the release to stakeholders and users.",
+		  "Step 16: Celebrate",
+		  "   - Celebrate a successful release!"
+		],
+		"description": "Laravel Release Process Steps"
+	  },
+	  "Laravel Guest User Gates": {
+		"prefix": "GuestUserGates",
+		"body": [
+		  "use Illuminate\\Support\\Facades\\Gate;",
+		  "",
+		  "Gate::define('view-page', function ($user = null) {",
+		  "    // Guest users can view the page",
+		  "    return is_null($user);",
+		  "});"
+		],
+		"description": "Define Laravel Guest User Gate"
+	  },
+	  "Laravel Artisan Commands": {
+		"prefix": "ArtisanCommands",
+		"body": [
+		  "php artisan ${1:commandName}"
+		],
+		"description": "Run Laravel Artisan Command"
+	  },
+	  "Laravel Pagination Customizations": {
+		"prefix": "PaginationCustomizations",
+		"body": [
+		  "use Illuminate\\Pagination\\LengthAwarePaginator;",
+		  "use Illuminate\\Paginator\\LengthAwarePaginator as Paginator;",
+		  "",
+		  "// Customize pagination view and options",
+		  "$paginator = new LengthAwarePaginator($items, $total, $perPage, $currentPage, [",
+		  "    'path' => 'custom/page',",
+		  "    'query' => ['custom' => 'parameter'],",
+		  "    'fragment' => 'custom-fragment',",
+		  "    'pageName' => 'custom-page-name',",
+		  "]);",
+		  "",
+		  "// Render custom pagination view",
+		  "$paginator->render();"
+		],
+		"description": "Customize Laravel Pagination"
+	  },
+	  "Laravel Dump Server": {
+		"prefix": "DumpServer",
+		"body": [
+		  "php artisan dump-server"
+		],
+		"description": "Run Laravel Dump Server"
+	  },
+	  "Laravel Action URL": {
+		"prefix": "ActionURL",
+		"body": [
+		  "$url = action('${1:controllerMethod}', ['${2:params}']);"
+		],
+		"description": "Generate Laravel Action URL"
+	  }
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+
+	  
+
+
+
+
+}
