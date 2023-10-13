@@ -1,24 +1,24 @@
 {
 	" CSS": {
-		"prefix": "Css",
+		"prefix": ["css"],
 		"body": [
-			"Resource",
+			"Resource(cssres,cssr)" ,
 			"",
-			"Page",
+			"Page(cssp,csspag)",
 			"",
-			"Box Model",
+			"Box Model(cssbm)",
 			"",
-			"Selectors",
+			"Selectors (cssslct,csss)",
 			"",
-			"Style",
+			"Style (csssty,csss)",
 			"",
-			"Elements",
+			"Elements (cssel,csse)",
 			"",
-			"CSS3 Box",
+			"CSS3 Box (csscb,csscbx)",
 			"",
-			"Animation",
+			"Animation (cssani,cssa)",
 			"",
-			"Miscellaneous",
+			"Miscellaneous (cssmic,cssm)",
 			""
 		],
 		"description": "CSS options"
@@ -26,9 +26,9 @@
 
 
 	" Resources": {
-		"prefix": "Resources",
+		"prefix": ["cssresources","cssr"],
 		"body": [
-			"Download",
+			"Download (cssr ,cssrd)",
 			"1:CSS in one page http://www.cheat-sheets.org/sites/css.su/",
 			"",
 			"2:CSS Cheat Sheet [.png] https://overapi.com/static/cs/css_cheat_sheet.png",
@@ -39,7 +39,7 @@
 			"",
 			"5:CSS Level 2 Quick Reference Benjamin Jung [.pdf]",
 			"",
-			"Online",
+			"Online (cssr ,cssro)",
 			"",
 			"6:Official Website https://www.w3.org/Style/CSS/",
 			"",
@@ -65,7 +65,7 @@
 
 
 	" Page": {
-		"prefix": "Page",
+		"prefix": ["csspage","cssp"],
 		"body": [
 			"Content for Page Media",
 			"1:bookmark-label",
@@ -127,7 +127,7 @@
 		"description": "CSS page options"
 	},
 	"Box Model": {
-		"prefix": "Boxmodel",
+		"prefix": ["cssboxmodel","cssbm"],
 		"body": [
 		"Margin",
 		"",
@@ -246,7 +246,7 @@
 		"description": "CSS boxmodel options"
 	},
 	"Selectors": {
-		"prefix": "Selectors",
+		"prefix": ["cssselectors","csss"],
 		"body": [
 		"Basic Selectors",
 		"",
@@ -341,7 +341,7 @@
 		"description": "CSS Selectors options"
 	},
 		"Style": {
-			"prefix": "Style",
+			"prefix": ["cssstyle","csss"],
 			"body": [
 				
 				"background",
@@ -428,7 +428,7 @@
 		},
 
 		"Elements": {
-			"prefix": "Elements",
+			"prefix": ["csselements","csse"],
 			"body": [
 			"Hyperlink",
 			"",
@@ -516,7 +516,7 @@
 		
 		},
 		"CSS3 Box":{
-			"prefix": "CSS3box",
+			"prefix": ["csscss3box","csscb"],
 			"body": [
 			"Box",
 			"",
@@ -608,7 +608,7 @@
 		},
 
 		"Animation":{
-			"prefix": "Animation",
+			"prefix": ["cssanimation","cssa"],
 			"body": [
 			"Animation",
 			"",
@@ -663,7 +663,7 @@
 			"description": "CSS Animation Properties" 
 		},
 		"Miscellaneous":{
-			"prefix": "Miscellaneous",
+			"prefix": ["cssmiscellaneous","cssm"],
 			"body": [
 		"Print",
 		"",

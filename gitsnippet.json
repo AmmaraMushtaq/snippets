@@ -1,26 +1,26 @@
 {
 	"Git": {
-		"prefix": "Git",
+		"prefix": ["git"],
 		"body": [
-		  "Resource",
-		  "Useful Commands",
+		  "Resource (gitres)",
+		  "Useful Commands (gituc)",
 		  "",
-		  "Create Git",
+		  "Create Git (gitcg)",
 		  "",
-		  "Branching/Tagging",
+		  "Branching/Tagging(gitb)",
 		  "",
-		  "Local Changes",
+		  "Local Changes (gitlc)",
 		  "",
-		  "History",
+		  "History (gith)",
 		  "",
-		  "Merge/Rebase",
+		  "Merge/Rebase(gitm)",
 		  "",
-		  "Remote Update / Publish"
+		  "Remote Update / Publish (gitru)"
 		],
 		"description": "Git"
 	  },
 	"Git Resources": {
-	  "prefix": "resources",
+	  "prefix":[ "gitresources","gitres"],
 	  "body": [
 		"Resource",
 		"Online",
@@ -49,7 +49,7 @@
 	  "description": "Related Version Control Systems"
 	},
 	"Git Useful Commands": {
-		"prefix": "usefulcommands",
+		"prefix": ["gitusefulcommands","gituc"],
 		"body": [
 		  "Useful Commands",
 		  "Finding Regressions",
@@ -73,7 +73,7 @@
 		"description": "Useful Git Commands"
 	  },
 	  "Create Git Repository": {
-		"prefix": "createrepo",
+		"prefix": ["gitcreaterepo","gitcg"],
 		"body": [
 		  "From existing directory",
 		  "cd project_dir",
@@ -89,7 +89,7 @@
 		"description": "Create a Git repository from an existing directory"
 	  },
 	  "Branching and Tagging": {
-		"prefix": "branchtag",
+		"prefix": ["gitbranchtag","gitb"],
 		"body": [
 		  "List branches",
 		  "git branch",
@@ -107,7 +107,7 @@
 		"description": "Git commands for branching and tagging"
 	  },
 	  "Local Changes": {
-		"prefix": "localchanges",
+		"prefix": ["gitlocalchanges","gitlc"],
 		"body": [
 		  "Changed in working directory",
 		  "git status",
@@ -138,7 +138,7 @@
 		"description": "Git commands for handling local changes"
 	  },
 	  "Commit History": {
-		"prefix": "commithistory",
+		"prefix": ["gitcommithistory","gith"],
 		"body": [
 		  "Show all commits",
 		  "git log",
@@ -158,7 +158,7 @@
 		"description": "Git commands for viewing commit history"
 	  },
 	  "Merge and Rebase": {
-		"prefix": "mergerebase",
+		"prefix": ["gitmergerebase","gitm"],
 		"body": [
 		  "Merge branch into current",
 		  "git merge ",
@@ -189,7 +189,7 @@
 		"description": "Git commands for merging and rebasing"
 	  },
 	  "Remote Update / Publish": {
-		"prefix": "remotepublish",
+		"prefix": ["gitremotepublish","gitru"],
 		"body": [
 		  "List remotes",
 		  "git remote -v",

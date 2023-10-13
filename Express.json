@@ -1,43 +1,43 @@
 {
 	"Express": {
-		"prefix": "Express",
+		"prefix": ["express","exp"],
 		"body": [
-			"Application",
-			"Request",
-			"Response",
-			"Router",
-			"Middleware"
+			"Application(expa,expapp)",
+			"Request(expr,expreq)",
+			"Response(expr,expres)",
+			"Router(expr,exprout)",
+			"Middleware(expm,expmid)"
 			
 		],
 		"description": "Express"
 	},
 
 	"Application": {
-		"prefix": "ExpressApplication",
+		"prefix": ["expapplication","expa"],
 		"body": [
-			"express()",
-			"application settings",
-			"app.set()",
-			"app.get()",
-			"app.enable()",
-			"app.disable()",
-			"app.enabled()",
-			"app.disabled()",
-			"app.use()",
-			"app.engine()",
-			"app.param()",
-			"application routing",
-			"app.all()",
-			"app.route()",
-			"app.locals",
-			"app.render()",
-			"app.listen()"
+			"express()(expaexpress)",
+			"application settings(expaappsetng)",
+			"app.set()(expaappset)",
+			"app.get()(expaappget)",
+			"app.enable()(expaappenable)",
+			"app.disable()(expaappdisable)",
+			"app.enabled()(expaappenabled)",
+			"app.disabled()(expaappdisabled)",
+			"app.use()(expaappuse)",
+			"app.engine()(expaappengine)",
+			"app.param()(expaappparam)",
+			"application routing (expaapprout)",
+			"app.all()(expaappall)",
+			"app.route()(expaapprout)",
+			"app.locals(expaapplocals)",
+			"app.render()(expaapprender)",
+			"app.listen()(expaapplisten)"
 			
 		],
 		"description": "Application"
 	},
 	"express()": {
-		"prefix": "Applicationexpress",
+		"prefix": ["expapplicationexpress","expaexpress"],
 		"body":[
 			"var options = {",
 				"dotfiles: 'ignore',",
@@ -56,7 +56,7 @@
 		"description": "Create an Express application"
 	  },
 	  "app.set()": {
-		"prefix": "Applicationexpressappset",
+		"prefix": ["expapplicationexpressappset","expaappset"],
 		"body": [
 			"app.set('trust proxy', function (ip) {",
 				"if (ip === '127.0.0.1' || ip === '123.123.123.123') return true // trusted IPs",
@@ -66,7 +66,7 @@
 		"description": "Set application settings"
 	  },
 	  "app.get()": {
-		"prefix": "Applicationexpressappget",
+		"prefix": ["expapplicationexpressappget","expaappget"],
 		"body": [
 			"app.get('/', function (req, res) {",
 				"res.send('GET request to homepage')",
@@ -75,7 +75,7 @@
 		"description": "Define a route for GET requests"
 	  },
 	  "app.enable()": {
-		"prefix": "Applicationexpressappenable",
+		"prefix": ["expapplicationexpressappenable","expaappenable"],
 		"body": [
 			"app.enable('trust proxy')",
 "app.get('trust proxy')"
@@ -83,7 +83,7 @@
 		"description": "Enable an application setting"
 	  },
 	  "app.disable()": {
-		"prefix": "Applicationexpressappdisable",
+		"prefix": ["expapplicationexpressappdisable","expaappdisable"],
 		"body": [
 			"app.disable('trust proxy')",
 "app.get('trust proxy')"
@@ -91,7 +91,7 @@
 		"description": "Disable an application setting"
 	  },
 	  "app.enabled()": {
-		"prefix": "Applicationexpressappenabled",
+		"prefix": ["expapplicationexpressappenabled","expaappenabled "],
 		"body": [
 			"var engines = require('consolidate')",
 "app.engine('haml', engines.haml)",
@@ -100,7 +100,7 @@
 		"description": "Check if an application setting is enabled"
 	  },
 	  "app.disabled()": {
-		"prefix": "Applicationexpressappdisabled",
+		"prefix": ["expapplicationexpressappdisabled","expaappdisabled"],
 		"body": [
 			"app.disabled('trust proxy')",
 "// => true",
@@ -111,7 +111,7 @@
 		"description": "Check if an application setting is disabled"
 	  },
 	  "app.use()": {
-		"prefix": "Applicationexpressappuse",
+		"prefix": ["expapplicationexpressappuse","expaappuse"],
 		"body": [
 			"app.use(function (req, res, next) {",
 				"console.log('Time: %d', Date.now())",
@@ -121,7 +121,7 @@
 		"description": "Use middleware functions"
 	  },
 	  "app.engine()": {
-		"prefix": "Applicationexpressappengine",
+		"prefix": ["applicationexpressappengine","expaappengine"],
 		"body": [
 			"app.get('title')",
 "// => undefined",
@@ -133,7 +133,7 @@
 		"description": "Register a template engine"
 	  },
 	  "app.param()": {
-		"prefix": "Applicationexpressappparam",
+		"prefix": ["expapplicationexpressappparam","expaappparam"],
 		"body": [
 			"app.param(function (param, validator) {",
 				"return function (req, res, next, val) {",
@@ -152,7 +152,7 @@
 		"description": "Define middleware for route parameters"
 	  },
 	  "app.all()": {
-		"prefix": "Applicationexpressappall",
+		"prefix": ["expapplicationexpressappall","expaappall"],
 		"body": [
 			"app.all('/secret', function (req, res, next) {",
 				"console.log('Accessing the secret section ...')",
@@ -162,7 +162,7 @@
 		"description": "Define a route that matches all HTTP methods"
 	  },
 	  "app.route()": {
-		"prefix": "Applicationexpressapproute",
+		"prefix": ["expapplicationexpressapproute","expaapprout"],
 		"body": [
 			"var app = express()",
 
@@ -181,7 +181,7 @@
 		"description": "Create a route handler using a Router instance"
 	  },
 	  "app.locals": {
-		"prefix": "Applicationexpressapplocals",
+		"prefix": ["expapplicationexpressapplocals","expaapplocals"],
 		"body": [
 			"app.locals.title = 'My App'",
 "app.locals.strftime = require('strftime')",
@@ -190,7 +190,7 @@
 		"description": "Set properties on the app's local variables"
 	  },
 	  "app.render()": {
-		"prefix": "Applicationexpressapprender",
+		"prefix": ["expapplicationexpressapprender","expaapprender"],
 		"body": [
 			"app.put('/', function (req, res) {",
 				"res.send('PUT request to homepage')",
@@ -199,7 +199,7 @@
 		"description": "Render a view and send the rendered HTML to the client"
 	  },
 	  "app.listen()": {
-		"prefix": "Applicationexpressapplisten",
+		"prefix": ["expapplicationexpressapplisten","expaapplisten"],
 		"body": [
 			"app.listen = function () {",
 				"var server = http.createServer(this)",
@@ -209,36 +209,37 @@
 		"description": "Start the Express application to listen on a port"
 	  },
 	"Request": {
-		"prefix": "ExpressRequest",
+		"prefix": ["exprequest","expr"],
 		"body": [
 
-			"req.params","req.query",
-			"req.param()",
-			"req.route",
-			"req.cookies",
-			"req.signedCookies",
-			"req.get()",
-			"req.accepts()",
-			"req.acceptsCharset()",
-			"req.acceptsLanguage()",
-			"req.is()",
-			"req.ip",
-			"req.ips",
-			"req.path",
-			"req.host",
-			"req.fresh",
-			"req.stale",
-			"req.xhr",
-			"req.protocol",
-			"req.secure",
-			"req.subdomains",
-			"req.originalUrl"
+			"req.params (exprparams)",
+			"req.query(exprquery)",
+			"req.param()(exprparam)",
+			"req.route (exprroute)",
+			"req.cookies (exprcookies)",
+			"req.signedCookies (exprsignedc)",
+			"req.get() (exprget)",
+			"req.accepts()(expraccepts)",
+			"req.acceptsCharset()(expracceptsCharset)",
+			"req.acceptsLanguage() (expracceptsLanguage)",
+			"req.is() (expris)",
+			"req.ip (exprip)",
+			"req.ips (exprips)",
+			"req.path(exprpath)",
+			"req.host(exprhost)",
+			"req.fresh(exprfresh)",
+			"req.stale(exprstale)",
+			"req.xhr(exprxhr)",
+			"req.protocol(exprprotocol)",
+			"req.secure(exprsecure)",
+			"req.subdomains(exprsubdomains)",
+			"req.originalUrl(exproriginalUrl)"
 			
 		],
 		"description": " Express Request"
 	},
 	"req.params": {
-		"prefix": "Requestreqparams",
+		"prefix": ["exprequestreqparams","exprparams"],
 		"body": [
 			"const express = require('express');",
 			"const app = express();",
@@ -255,7 +256,7 @@
 		"description": "Access route parameters"
 	  },
 	  "req.query": {
-		"prefix": "Requestreqquery",
+		"prefix": ["exprequestreqquery","exprquery"],
 		"body": [
 			"var qs = require('qs')",
 "app.setting('query parser', function (str) {",
@@ -265,7 +266,7 @@
 		"description": "Access query string parameters"
 	  },
 	  "req.param()": {
-		"prefix": "Requestreqparam",
+		"prefix": ["exprequestreqparam","exprparam"],
 		"body":[
 			"app.get('/user/:userId', (req, res) => {",
 				"const userId = req.params.userId;",
@@ -275,7 +276,7 @@
 		"description": "Access request parameters"
 	  },
 	  "req.route": {
-		"prefix": "Requestreqroute",
+		"prefix": ["exprequestreqroute","exprroute"],
 		"body": [
 			"app.get('/user/:id?', function userIdHandler (req, res) {",
 				"console.log(req.route)",
@@ -285,7 +286,7 @@
 		"description": "Access route information"
 	  },
 	  "req.cookies": {
-		"prefix": "Requestreqcookies",
+		"prefix": ["exprequestreqcookies","exprcookies"],
 		"body": [
 			"const express = require('express');",
 "const cookieParser = require('cookie-parser');",
@@ -316,7 +317,7 @@
 		"description": "Access signed cookies"
 	  },
 	  "req.signedCookies": {
-		"prefix": "RequestreqsignedCookies",
+		"prefix": ["requestreqsignedCookies","exprsignedc"],
 		"body": [
 			"const express = require('express');",
 "const cookieParser = require('cookie-parser');",
@@ -347,7 +348,7 @@
 		"description": "Access cookies signed with the secret"
 	  },
 	  "req.get()": {
-		"prefix": "Requestreqget",
+		"prefix": ["exprequestreqget","exprget"],
 		"body": [
 			"const express = require('express');",
 "const app = express();",
@@ -369,7 +370,7 @@
 		"description": "Get the value of an HTTP request header"
 	  },
 	  "req.accepts()": {
-		"prefix": "Requestreqaccepts",
+		"prefix": ["exprequestreqaccepts","expraccepts"],
 		"body": [
 			"const express = require('express');",
 			"const app = express();",
@@ -392,7 +393,7 @@
 		"description": "Check if the requested MIME type is acceptable"
 	  },
 	  "req.acceptsCharset()": {
-		"prefix": "RequestreqacceptsCharset",
+		"prefix": ["exprequestreqacceptsCharset","exprexpracceptscharset"],
 		"body": [
 			"const express = require('express');",
 "const app = express();",
@@ -413,7 +414,7 @@
 		"description": "Check if the requested charset is acceptable"
 	  },
 	  "req.acceptsLanguage()": {
-		"prefix": "RequestreqacceptsLanguage",
+		"prefix": ["exprequestreqacceptsLanguage","exprexpracceptslanguage"],
 		"body": [
 			"const express = require('express');",
 			"const app = express();",
@@ -436,7 +437,7 @@
 		"description": "Check if the requested language is acceptable"
 	  },
 	  "req.is()": {
-		"prefix": "Requestreqis",
+		"prefix": ["exprequestreqis","expris"],
 		"body":[
 			"const express = require('express');",
 			"const app = express();",
@@ -466,7 +467,7 @@
 		"description": "Check the request type"
 	  },
 	  "req.ip": {
-		"prefix": "Requestreqip",
+		"prefix": ["exprequestreqip","exprip"],
 		"body": [
 			"const express = require('express');",
 			"const app = express();",
@@ -483,7 +484,7 @@
 		"description": "Get the remote IP address of the request"
 	  },
 	  "req.ips": {
-		"prefix": "Requestreqips",
+		"prefix":["exprequestreqips","exprips"],
 		"body": [
 			"const express = require('express');",
 "const app = express();",
@@ -500,7 +501,7 @@
 		"description": "Get the list of IP addresses from the 'X-Forwarded-For' header"
 	  },
 	  "req.path": {
-		"prefix": "Requestreqpath",
+		"prefix": ["exprequestreqpath","exprpath"],
 		"body": [
 			"const express = require('express');",
 "const app = express();",
@@ -519,7 +520,7 @@
 		"description": "Get the path portion of the request URL"
 	  },
 	  "req.host": {
-		"prefix": "Requestreqhost",
+		"prefix": ["exprequestreqhost","exprhost"],
 		"body": [
 			"const express = require('express');",
 "const app = express();",
@@ -537,7 +538,7 @@
 		"description": "Get the hostname of the request"
 	  },
 	  "req.fresh": {
-		"prefix": "Requestreqfresh",
+		"prefix": ["exprequestreqfresh","exprfresh"],
 		"body": [
 			"const express = require('express');",
 "const app = express();",
@@ -559,7 +560,7 @@
 		"description": "Check if the request is 'fresh'"
 	  },
 	  "req.stale": {
-		"prefix": "Requestreqstale",
+		"prefix": ["exprequestreqstale","exprstale"],
 		"body": [
 			"const express = require('express');",
 "const app = express();",
@@ -581,7 +582,7 @@
 		"description": "Check if the request is 'stale'"
 	  },
 	  "req.xhr": {
-		"prefix": "Requestreqxhr",
+		"prefix": ["exprequestreqxhr","exprxhr"],
 		"body": [
 			"const express = require('express');",
 "const app = express();",
@@ -602,7 +603,7 @@
 		"description": "Check if the request was made with XMLHttpRequest"
 	  },
 	  "req.protocol": {
-		"prefix": "Requestreqprotocol",
+		"prefix": ["exprequestreqprotocol","exprprotocol"],
 		"body": [
 			"const express = require('express');",
 "const app = express();",
@@ -619,7 +620,7 @@
 		"description": "Get the protocol of the request"
 	  },
 	  "req.secure": {
-		"prefix": "Requestreqsecure",
+		"prefix": ["exprequestreqsecure","exprsecure"],
 		"body": [
 			"const express = require('express');",
 "const app = express();",
@@ -636,7 +637,7 @@
 		"description": "Check if the request is secure (HTTPS)"
 	  },
 	  "req.subdomains": {
-		"prefix": "Requestreqsubdomains",
+		"prefix": ["exprequestreqsubdomains","exprsubdomains"],
 		"body": [
 			"const express = require('express');",
 "const app = express();",
@@ -653,7 +654,7 @@
 		"description": "Get the subdomains of the request"
 	  },
 	  "req.originalUrl": {
-		"prefix": "RequestreqoriginalUrl",
+		"prefix": ["exprequestreqoriginalUrl","exproriginalUrl"],
 		"body": [
 			"const express = require('express');",
 "const app = express();",
@@ -670,32 +671,33 @@
 		"description": "Get the original URL of the request"
 	  },
 	"Response": {
-		"prefix": "ExpressResponse",
+		"prefix": ["expresresponse","expres"],
 		"body": [
 
-			"res.status()","res.set()",
-			"res.get()",
-			"res.cookie()",
-			"res.clearCookie()",
-			"res.redirect()",
-			"res.location()",
-			"res.send()",
-			"res.json()",
-			"res.jsonp()",
-			"res.type()",
-			"res.format()",
-			"res.attachment()",
-			"res.sendfile()",
-			"res.download()",
-			"res.links()",
-			"res.locals",
-			"res.render()"
+			"res.status() (expresstatus)",
+			"res.set() (expresset)",
+			"res.get() (expresget)",
+			"res.cookie() (exprescookie)",
+			"res.clearCookie() (expresclearCookie)",
+			"res.redirect() (expresredirect)",
+			"res.location() (expreslocation)",
+			"res.send() (expressend)",
+			"res.json() (expresjson)",
+			"res.jsonp() (expresjsonp)",
+			"res.type() (exprestype)",
+			"res.format() (expresformat)",
+			"res.attachment() (expresattachment)",
+			"res.sendfile() (expressendfile)",
+			"res.download() (expresdownload)",
+			"res.links() (expreslinks)",
+			"res.locals (expreslocals)",
+			"res.render() (expresrender)"
 			
 		],
 		"description": " Express Response"
 	},
 	"res.status()": {
-		"prefix": "Responseresstatus",
+		"prefix": ["expresponseresstatus","expresstatus)"],
 		"body": [
 			"const express = require('express');",
 "const app = express();",
@@ -717,7 +719,7 @@
 		"description": "Sets the HTTP response status code"
 	  },
 	  "res.set()": {
-		"prefix": "Responseresset",
+		"prefix": ["expresponseresset","expresset"],
 		"body": [
 			"const express = require('express');",
 "const app = express();",
@@ -738,7 +740,7 @@
 		"description": "Sets an HTTP response header"
 	  },
 	  "res.get()": {
-		"prefix": "Responseresget",
+		"prefix": ["expresponseresget","expresget"],
 		"body": [
 			"const express = require('express');",
 "const app = express();",
@@ -763,7 +765,7 @@
 		"description": "Gets an HTTP request header"
 	  },
 	  "res.cookie()": {
-		"prefix": "Responserescookie",
+		"prefix": ["expresponserescookie","exprescookie"],
 		"body": [
 			"const express = require('express');",
 "const app = express();",
@@ -783,7 +785,7 @@
 		"description": "Sets an HTTP response cookie"
 	  },
 	  "res.clearCookie()": {
-		"prefix": "ResponseresclearCookie",
+		"prefix": ["expresponseresclearCookie","expresclearCookie"],
 		"body": [
 			"const express = require('express');",
 "const app = express();",
@@ -803,7 +805,7 @@
 		"description": "Clears an HTTP response cookie"
 	  },
 	  "res.redirect()": {
-		"prefix": "Responseresredirect",
+		"prefix": ["expresponseresredirect","expresredirect"],
 		"body": [
 			"const express = require('express');",
 "const app = express();",
@@ -820,7 +822,7 @@
 		"description": "Redirects the client to a different URL"
 	  },
 	  "res.location()": {
-		"prefix": "Responsereslocation",
+		"prefix":["expresponsereslocation","expreslocation"],
 		"body": [
 			"const express = require('express');",
 "const app = express();",
@@ -838,7 +840,7 @@
 		"description": "Sets the response Location HTTP header"
 	  },
 	  "res.send()": {
-		"prefix": "Responseressend",
+		"prefix": ["expresponseressend","expressend"],
 		"body": [
 			"const express = require('express');",
 "const app = express();",
@@ -867,7 +869,7 @@
 		"description": "Sends an HTTP response"
 	  },
 	  "res.json()": {
-		"prefix": "Responseresjson",
+		"prefix": ["expresponseresjson","expresjson"],
 		"body": [
 			"const express = require('express');",
 "const app = express();",
@@ -889,7 +891,7 @@
 		"description": "Sends a JSON response"
 	  },
 	  "res.jsonp()": {
-		"prefix": "Responseresjsonp",
+		"prefix": ["expresponseresjsonp","expresjsonp"],
 		"body": [
 			"const express = require('express');",
 "const app = express();",
@@ -911,7 +913,7 @@
 		"description": "Sends a JSONP response"
 	  },
 	  "res.type()": {
-		"prefix": "Responserestype",
+		"prefix": ["expresponserestype","exprestype"],
 		"body": [
 			"const express = require('express');",
 "const app = express();",
@@ -943,7 +945,7 @@
 		"description": "Sets the Content-Type of the response"
 	  },
 	  "res.format()": {
-		"prefix": "Responseresformat",
+		"prefix": ["expresponseresformat","expresformat"],
 		"body": [
 			"const express = require('express');",
 "const app = express();",
@@ -974,7 +976,7 @@
 		"description": "Sets the response type based on the accept header"
 	  },
 	  "res.attachment()": {
-		"prefix": "Responseresattachment",
+		"prefix": ["expresponseresattachment","expresattachment"],
 		"body": [
 			"const express = require('express');",
 "const app = express();",
@@ -994,7 +996,7 @@
 		"description": "Sets the Content-Disposition header to 'attachment'"
 	  },
 	  "res.sendfile()": {
-		"prefix": "Responseressendfile",
+		"prefix": ["expresponseressendfile","expressendfile"],
 		"body": [
 			"const express = require('express');",
 "const app = express();",
@@ -1014,7 +1016,7 @@
 		"description": "Sends a file as an octet stream"
 	  },
 	  "res.download()": {
-		"prefix": "Responseresdownload",
+		"prefix": ["expresponseresdownload","expresdownload"],
 		"body": [
 			"const express = require('express');",
 "const app = express();",
@@ -1034,7 +1036,7 @@
 		"description": "Sends a file as an attachment"
 	  },
 	  "res.links()": {
-		"prefix": "Responsereslinks",
+		"prefix": ["expresponsereslinks","expreslinks"],
 		"body": [
 			"const express = require('express');",
 "const app = express();",
@@ -1056,7 +1058,7 @@
 		"description": "Sends Link headers"
 	  },
 	  "res.locals": {
-		"prefix": "Responsereslocals",
+		"prefix": ["expresponsereslocals","expreslocals"],
 		"body": [
 			"const express = require('express');",
 "const app = express();",
@@ -1079,7 +1081,7 @@
 		"description": "An object that contains response local variables"
 	  },
 	  "res.render()": {
-		"prefix": "Responseresrender",
+		"prefix": ["expresponseresrender","expresrender"],
 		"body":[
 			"app.get('/', (req, res) => {",
 				"const pageTitle = 'Home';",
@@ -1092,20 +1094,20 @@
 		"description": "Renders a view and sends the HTML response"
 	  },
 	"Router": {
-		"prefix": "ExpressRouter",
+		"prefix": ["exprouter","exprout"],
 		"body": [
 			
-			"Router()",
-		    "router.use()",
-			"router.param()",
-			"router.route()",
-			"router.VERB()"
+			"Router()(exprout)",
+		    "router.use()(exproutuse)",
+			"router.param()(exproutparam)",
+			"router.route()(exproutroute)",
+			"router.VERB()(exproutverb)"
 			
 		],
 		"description": " Express Router"
 	},
 	"Router()": {
-		"prefix": "Router",
+		"prefix": ["exprouter","exprouter"],
 		"body": [
 			"const express = require('express');",
 "const app = express();",
@@ -1128,7 +1130,7 @@
 		"description": "Creates an instance of Express.js Router"
 	  },
 	  "router.use()": {
-		"prefix": "Routerrouteruse",
+		"prefix": ["exproutrouteruse","exproutuse"],
 		"body": [
 			"router.use('/restricted', requireAuthentication); // Middleware only for routes under /main/restricted",
 "router.get('/restricted/resource', (req, res) => {",
@@ -1138,7 +1140,7 @@
 		"description": "Mounts a middleware function on the router"
 	  },
 	  "router.param()": {
-		"prefix": "Routerrouterparam",
+		"prefix": ["exproutparam","exproutparam"],
 		"body": [
 			"const express = require('express');",
 			"const app = express();",
@@ -1166,7 +1168,7 @@
 		"description": "Defines a parameter middleware on the router"
 	  },
 	  "router.route()": {
-		"prefix": "Routerrouterroute",
+		"prefix": ["exproutrouterroute","exproutroute"],
 		"body": [
 			"const express = require('express');",
 			"const app = express();",
@@ -1192,7 +1194,7 @@
 		"description": "Creates a route handler for a specific path on the router"
 	  },
 	  "router.VERB()": {
-		"prefix": "RouterrouterVERB",
+		"prefix": ["exproutrouterverb","exproutverb"],
 		"body": [
 			"const express = require('express');",
 			"const app = express();",
@@ -1219,31 +1221,31 @@
 		"description": "Defines a route handler for a specific HTTP VERB on the router"
 	  },
 	"Middleware": {
-		"prefix": "ExpressMiddleware",
+		"prefix": ["expmiddleware","expm"],
 		"body": [
 			
 
-			"bodyParser()",
-			"compress()",
-			"cookieParser()",
-			"cookieSession()",
-			"csrf()",
-		    "errorhandler()",
-			"methodOverride()",
-			"morgan()",
-			"responseTime()",
-			"favicon()",
-			"directory()",
-			"serveStatic()",
-			"timeout()",
-			"vhost()",
-		    "session()"
+			"bodyParser()(expmbP)",
+			"compress()(expmcompress)",
+			"cookieParser()(expmcookieParser)",
+			"cookieSession()(expmcookieSession)",
+			"csrf()(expmcsrf)",
+		    "errorhandler()(expmerrorhandler)",
+			"methodOverride()(expmmethodOverride)",
+			"morgan()(expmmorgan)",
+			"responseTime()(expmresponsetime)",
+			"favicon()(expmfavicon)",
+			"directory()(expmdirectory)",
+			"serveStatic()(expmserveStatic)",
+			"timeout()(expmtimeout)",
+			"vhost()(expmvhost)",
+		    "session()(expmsession)"
 		
 		],
 		"description": " Express Middleware"
 	},
 	"bodyParser()": {
-		"prefix": "MiddlewarebodyParser",
+		"prefix": ["expmbodyparser","expmbP)"],
 		"body":[
 			"const express = require('express');",
 "const bodyParser = require('body-parser');",
@@ -1269,7 +1271,7 @@
 		"description": "Parses incoming request bodies in JSON and URL-encoded formats"
 	  },
 	  "compress()": {
-		"prefix": "Middlewarecompress",
+		"prefix": ["expmcompress"],
 		"body": [
 			"const express = require('express');",
 "const compression = require('compression');",
@@ -1290,7 +1292,7 @@
 		"description": "Compresses HTTP responses"
 	  },
 	  "cookieParser()": {
-		"prefix": "MiddlewarecookieParser",
+		"prefix": ["expmcookieparser"],
 		"body": [
 			"const express = require('express');",
 			"const cookieParser = require('cookie-parser');",
@@ -1315,7 +1317,7 @@
 		"description": "Parses cookies in the request headers"
 	  },
 	  "cookieSession()": {
-		"prefix": "MiddlewarecookieSession",
+		"prefix": ["expmecookiesession","expmcookieSession"],
 		"body": [
 			"const express = require('express');",
 			"const cookieSession = require('cookie-session');",
@@ -1347,7 +1349,7 @@
 		"description": "Stores session data in cookies"
 	  },
 	  "csrf()": {
-		"prefix": "Middlewarecsrf",
+		"prefix": ["expmcsrf"],
 		"body": [
 			"const express = require('express');",
 			"const csrf = require('csurf');",
@@ -1383,7 +1385,7 @@
 		"description": "Implements Cross-Site Request Forgery protection"
 	  },
 	  "errorhandler()": {
-		"prefix": "Middlewareerrorhandler",
+		"prefix": ["expmerrorhandler"],
 		"body": [
 			"const express = require('express');",
 			"const errorhandler = require('errorhandler');",
@@ -1407,7 +1409,7 @@
 		"description": "Handles errors and displays a stack trace"
 	  },
 	  "methodOverride()": {
-		"prefix": "MiddlewaremethodOverride",
+		"prefix": ["expmmethodoverride"],
 		"body": [
 			"const express = require('express');",
 			"const methodOverride = require('method-override');",
@@ -1440,7 +1442,7 @@
 		"description": "Simulates HTTP PUT and DELETE methods"
 	  },
 	  "morgan()": {
-		"prefix": "Middlewaremorgan",
+		"prefix":[ "expmmorgan"],
 		"body":[
 			"const express = require('express');",
 			"const morgan = require('morgan');",
@@ -1461,7 +1463,7 @@
 		"description": "Logs HTTP requests"
 	  },
 	  "responseTime()": {
-		"prefix": "MiddlewareresponseTime",
+		"prefix": ["expmresponseTime"],
 		"body":[
 			"const express = require('express');",
 			"const responseTime = require('response-time');",
@@ -1482,7 +1484,7 @@
 		"description": "Measures response time"
 	  },
 	  "favicon()": {
-		"prefix": "Middlewarefavicon",
+		"prefix": ["expmrefavicon"],
 		"body": [
 			"const express = require('express');",
 			"const favicon = require('serve-favicon');",
@@ -1504,7 +1506,7 @@
 		"description": "Serves a favicon"
 	  },
 	  "directory()": {
-		"prefix": "Middlewaredirectory",
+		"prefix": ["expmdirectory"],
 		"body": [
 			"const express = require('express');",
 			"const path = require('path');",
@@ -1525,7 +1527,7 @@
 		"description": "Serves directory listings"
 	  },
 	  "serveStatic()": {
-		"prefix": "MiddlewareserveStatic",
+		"prefix": ["expmserveStatic"],
 		"body": [
 			"const serveStatic = require('serve-static');",
 			"const path = require('path');",
@@ -1546,7 +1548,7 @@
 		"description": "Serves static files"
 	  },
 	  "timeout()": {
-		"prefix": "Middlewaretimeout",
+		"prefix": ["expmtimeout"],
 		"body": [
 			"const express = require('express');",
 
@@ -1574,7 +1576,7 @@
 		"description": "Sets a timeout for requests"
 	  },
 	  "vhost()": {
-		"prefix": "Middlewarevhost",
+		"prefix": ["expmvhost"],
 		"body":[
 			"const express = require('express');",
 "const vhost = require('vhost');",
@@ -1603,7 +1605,7 @@
 		"description": "Routes requests based on the hostname"
 	  },
 	  "session()": {
-		"prefix": "session",
+		"prefix": ["expmsession"],
 		"body": [],
 		"description": "Routes requests based on the hostname"
 	  }
