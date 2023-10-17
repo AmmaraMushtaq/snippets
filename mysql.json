@@ -1,23 +1,23 @@
 {
 	"MYSQL": {
-		"prefix": "MYSQL",
+		"prefix": ["mysql","ms"],
 		"body": [
-			"Resource",
-			"Information",
-			"Miscellaneous",
-			"Data Types",
-			"Operators",
-			"String",
-			"Numeric",
-			"Samples",
-			"Date",
-			"Group",
-			"Encrypt"
+			"Resource (msres)",
+			"Information (msinfo)",
+			"Miscellaneous (msmisc)",
+			"Data Types (msdtype)",
+			"Operators (msoper)",
+			"String (msstr)",
+			"Numeric (msmun)",
+			"Samples (mssamp)",
+			"Date (msdate)",
+			"Group (msgrp)",
+			"Encrypt (msenc)"
 		],
 		"description": "MYSQL "
 	},
 	" Resources": {
-		"prefix": "Resources",
+		"prefix": ["msesources","msres"],
 		"body": [
 		  "Resource",
 		  "Online",
@@ -37,29 +37,29 @@
 	  },
 	   
 	  "MySQL Information Functions": {
-		"prefix": "Information",
+		"prefix": ["msinformation","msinfo"],
 		"body": [
 		  "Information Functions",
-		  "BENCHMARK()",
-		  "CHARSET()",
-		  "COERCIBILITY()",
-		  "COLLATION()",
-		  "CONNECTION_ID()",
-		  "CURRENT_USER(), CURRENT_USER",
-		  "DATABASE()",
-		  "FOUND_ROWS()",
-		  "LAST_INSERT_ID()",
-		  "ROW_COUNT()",
-		  "SCHEMA()",
-		  "SESSION_USER()",
-		  "SYSTEM_USER()",
-		  "USER()",
-		  "VERSION()"
+		  "BENCHMARK() (msinfobench)",
+		  "CHARSET() (msinfochar)",
+		  "COERCIBILITY() (msinfocoer)",
+		  "COLLATION() (msinfocoll)",
+		  "CONNECTION_ID() (msinfoconnid)",
+		  "CURRENT_USER() (msinfocurruser)",
+		  "DATABASE() (msinfodb)",
+		  "FOUND_ROWS() (msinfofr)",
+		  "LAST_INSERT_ID() (msinfoliid)",
+		  "ROW_COUNT() (msinforc)",
+		  "SCHEMA() (msinfosrch)",
+		  "SESSION_USER() (msinfosuser)",
+		  "SYSTEM_USER() (msinfosysuser)",
+		  "USER() (msinfouser)",
+		  "VERSION() (msinfover)"
 		],
 		"description": "MySQL Information Functions "
 	  },
 	  "MySQL BENCHMARK Function": {
-		"prefix": "InformationBenchmark",
+		"prefix": ["misinfobenchmark","msinfobench"],
 		"body": [
 			"mysql> SELECT BENCHMARK(1000000,AES_ENCRYPT('hello','goodbye'));",
 			"+---------------------------------------------------+",
@@ -73,7 +73,7 @@
 	  },
 	
 	  "MySQL CHARSET Function": {
-		"prefix": "InformationCharset",
+		"prefix": ["msinfocharset","msinfochar"],
 		"body": [
 			"mysql> SELECT CHARSET('abc');",
 			"-> 'utf8mb3'",
@@ -86,7 +86,7 @@
 	  },
 	
 	  "MySQL COERCIBILITY Function": {
-		"prefix": "InformationCoercibility",
+		"prefix":[ "msinfocoercibility","msinfocoer"],
 		"body": [
 			"mysql> SELECT COERCIBILITY('abc' COLLATE utf8mb4_swedish_ci);",
 			"-> 0",
@@ -101,7 +101,7 @@
 	  },
 	
 	  "MySQL COLLATION Function": {
-		"prefix": "InformationCollation",
+		"prefix": ["msinfocollation","msinfocoll"],
 		"body": [
 			"mysql> SELECT COLLATION('abc');",
 			"-> 'utf8mb4_0900_ai_ci'",
@@ -114,7 +114,7 @@
 	  },
 	
 	  "MySQL CONNECTION_ID Function": {
-		"prefix": "InformationConnectionId",
+		"prefix": ["msinfoconnectionid","msinfoconnid"],
 		"body": [
 			"mysql> SELECT CONNECTION_ID();",
 			"-> 23786"
@@ -123,7 +123,7 @@
 	  },
 	
 	  "MySQL CURRENT_USER Function": {
-		"prefix": "InformationCurrentUser",
+		"prefix": ["msinfocurrentuser","msinfocurruser"],
 		"body": [
 			"mysql> SELECT USER();",
 			"-> 'davida@localhost'",
@@ -137,7 +137,7 @@
 	  },
 	
 	  "MySQL DATABASE Function": {
-		"prefix": "InformationDatabase",
+		"prefix": ["msinfodatabase","msinfodb"],
 		"body": [
 			"mysql> SELECT DATABASE();",
 			"-> 'test'"
@@ -146,7 +146,7 @@
 	  },
 	
 	  "MySQL FOUND_ROWS Function": {
-		"prefix": "InformationFoundRows",
+		"prefix": ["msinfofoundrows","msinfofr"],
 		"body": [
 			"mysql> SELECT SQL_CALC_FOUND_ROWS * FROM tbl_name",
 			"-> WHERE id > 100 LIMIT 10;",
@@ -156,7 +156,7 @@
 	  },
 	
 	  "MySQL LAST_INSERT_ID Function": {
-		"prefix": "InformationLastInsertId",
+		"prefix": ["msinfolastinsertid","msinfoliid"],
 		"body": [
 		  "https://dev.mysql.com/doc/refman/8.0/en/information-functions.html#function_last-insert-id"
 		],
@@ -164,7 +164,7 @@
 	  },
 	
 	  "MySQL ROW_COUNT Function": {
-		"prefix": "InformationRowCount",
+		"prefix": ["msinforowcount","msinforc"],
 		"body": [
 		  "https://dev.mysql.com/doc/refman/8.0/en/information-functions.html#function_row-count"
 		],
@@ -172,7 +172,7 @@
 	  },
 	
 	  "MySQL SCHEMA Function": {
-		"prefix": "InformationSchema",
+		"prefix": ["msinfoschema","msinfosrch"],
 		"body": [
 		 "CREATE TABLE t (c VARCHAR(288) DEFAULT (SESSION_USER()));"
 		],
@@ -180,7 +180,7 @@
 	  },
 	
 	  "MySQL SESSION_USER Function": {
-		"prefix": "InformationSessionUser",
+		"prefix": ["msinfosessionuser","msinfosuser"],
 		"body": [
 		 "mysql> SELECT USER();",
 		 "-> 'davida@localhost'"
@@ -189,7 +189,7 @@
 	  },
 	
 	  "MySQL SYSTEM_USER Function": {
-		"prefix": "InformationSystemUser",
+		"prefix": ["msinfosystemuser","msinfosysuser)"],
 		"body": [
 		"https://dev.mysql.com/doc/refman/8.0/en/information-functions.html#function_system-user"
 		],
@@ -197,7 +197,7 @@
 	  },
 	
 	  "MySQL USER Function": {
-		"prefix": "InformationUser",
+		"prefix": ["msinfouser","msinfouser"],
 		"body": [
 			"mysql> SELECT USER();",
 			"-> 'davida@localhost'"
@@ -206,7 +206,7 @@
 	  },
 	
 	  "MySQL VERSION Function": {
-		"prefix": "InformationVersion",
+		"prefix": ["msinfoversion","msinfover"],
 		"body": [
 			"mysql> SELECT VERSION();",
 			"-> '8.0.34-standard'"
@@ -214,28 +214,28 @@
 		"description": "MySQL VERSION Function "
 	  },
 	  "MySQL Miscellaneous Functions": {
-		"prefix": "Miscellaneous",
+		"prefix": ["msmiscellaneous","msmisc"],
 		"body": [
 		  "Miscellaneous Functions",
-		  "DEFAULT()",
-		  "GET_LOCK()",
-		  "INET_ATON()",
-		  "INET_NTOA()",
-		  "IS_FREE_LOCK()",
-		  "IS_USED_LOCK()",
-		  "MASTER_POS_WAIT()",
-		  "NAME_CONST()",
-		  "RAND()",
-		  "RELEASE_LOCK()",
-		  "SLEEP()",
-		  "UUID_SHORT()",
-		  "UUID()",
-		  "VALUES()"
+		  "DEFAULT() (msmiscdef)",
+		  "GET_LOCK() (msmisclock)",
+		  "INET_ATON() (msmisciaton)",
+		  "INET_NTOA() (msmiscif)",
+		  "IS_FREE_LOCK() (msmisciflock)",
+		  "IS_USED_LOCK() (msmisciulock)",
+		  "MASTER_POS_WAIT() (msmiscmpwait)",
+		  "NAME_CONST() (msmiscmconst)",
+		  "RAND() (msmiscrand)",
+		  "RELEASE_LOCK() (msmiscrlock)",
+		  "SLEEP() (msmiscsleep)",
+		  "UUID_SHORT() (msmiscushort)",
+		  "UUID() (msmiscuuid)",
+		  "VALUES() (msmiscvalues)"
 		],
 		"description": "MySQL Miscellaneous Functions "
 	  },
 	  "MySQL DEFAULT Function": {
-		"prefix": "MiscellaneousDefault",
+		"prefix": ["msmiscdefault","msmiscdef"],
 		"body": [
 		 "mysql> UPDATE t SET i = DEFAULT(i)+1 WHERE id < 100;"
 		],
@@ -243,7 +243,7 @@
 	  },
 	
 	  "MySQL GET_LOCK Function": {
-		"prefix": "MiscellaneousGetLock",
+		"prefix": ["msmiscgetLock","msmisclock"],
 		"body": [
 		"https://dev.mysql.com/doc/refman/8.0/en/miscellaneous-functions.html#function_get-lock"
 		],
@@ -251,7 +251,7 @@
 	  },
 	
 	  "MySQL INET_ATON Function": {
-		"prefix": "MiscellaneousInetAton",
+		"prefix": ["msmiscinetAton","msmisciaton"],
 		"body": [
 			"mysql> SELECT INET_NTOA(167773449);",
 			"-> '10.0.5.9'"
@@ -260,7 +260,7 @@
 	  },
 	
 	  "MySQL INET_NTOA Function": {
-		"prefix": "MiscellaneousInetNtoa",
+		"prefix": ["msmiscinetntoa","msmiscif"],
 		"body": [
 			"mysql> SELECT INET_NTOA(167773449);",
 			"-> '10.0.5.9'"
@@ -269,7 +269,7 @@
 	  },
 	
 	  "MySQL IS_FREE_LOCK Function": {
-		"prefix": "MiscellaneousIsFreeLock",
+		"prefix": ["msmiscisfreelock","msmisciflock"],
 		"body": [
 		"https://dev.mysql.com/doc/refman/8.0/en/miscellaneous-functions.html#function_is-free-lock"
 		],
@@ -277,7 +277,7 @@
 	  },
 	
 	  "MySQL IS_USED_LOCK Function": {
-		"prefix": "MiscellaneousIsUsedLock",
+		"prefix": ["msmiscisusedlock","msmisciulock"],
 		"body": [
 		 "https://dev.mysql.com/doc/refman/8.0/en/miscellaneous-functions.html#function_is-used-lock"
 		],
@@ -285,7 +285,7 @@
 	  },
 	
 	  "MySQL MASTER_POS_WAIT Function": {
-		"prefix": "MiscellaneousMasterPosWait",
+		"prefix": ["msmiscmasterposwait","msmiscmpwait"],
 		"body": [
 		 "https://dev.mysql.com/doc/refman/8.0/en/miscellaneous-functions.html#function_master-pos-wait"
 		],
@@ -293,7 +293,7 @@
 	  },
 	
 	  "MySQL NAME_CONST Function": {
-		"prefix": "MiscellaneousNameConst",
+		"prefix": ["msmiscnameconst","msmiscmconst"],
 		"body": [
 			"mysql> SELECT NAME_CONST('myname', 14);",
 			"+--------+",
@@ -306,7 +306,7 @@
 	  },
 	
 	  "MySQL RAND Function": {
-		"prefix": "MiscellaneousRand",
+		"prefix": ["msmiscrand"],
 		"body": [
 		  "SELECT FLOOR(7 + (RAND() * 5));"
 		],
@@ -314,7 +314,7 @@
 	  },
 	
 	  "MySQL RELEASE_LOCK Function": {
-		"prefix": "MiscellaneousReleaseLock",
+		"prefix": ["msmiscreleaselock","msmiscrlock"],
 		"body": [
 		  "https://dev.mysql.com/doc/refman/8.0/en/miscellaneous-functions.html#function_release-lock"
 		],
@@ -322,7 +322,7 @@
 	  },
 	
 	  "MySQL SLEEP Function": {
-		"prefix": "MiscellaneousSleep",
+		"prefix": ["msmiscsleep"],
 		"body": [
 			"mysql> SELECT 1 FROM t1 WHERE SLEEP(1000);",
 			"ERROR 1317 (70100): Query execution was interrupted"
@@ -331,7 +331,7 @@
 	  },
 	
 	  "MySQL UUID_SHORT Function": {
-		"prefix": "MiscellaneousUuidShort",
+		"prefix": ["msmiscuuidshort","msmiscushort"],
 		"body": [
 			"(server_id & 255) << 56",
 			"+ (server_startup_time_in_seconds << 24)",
@@ -341,7 +341,7 @@
 	  },
 	
 	  "MySQL UUID Function": {
-		"prefix": "MiscellaneousUuid",
+		"prefix": ["msmiscuuid"],
 		"body": [
 			"mysql> SELECT UUID();",
 			"-> '6ccd780c-baba-1026-9564-5b8c656024db'"
@@ -350,7 +350,7 @@
 	  },
 	
 	  "MySQL VALUES Function": {
-		"prefix": "MiscellaneousValues",
+		"prefix": ["msmiscvalues"],
 		"body": [
 			"mysql> INSERT INTO table (a,b,c) VALUES (1,2,3),(4,5,6)",
 			"-> ON DUPLICATE KEY UPDATE c=VALUES(a)+VALUES(b);"
@@ -358,110 +358,110 @@
 		"description": "MySQL VALUES Function "
 	  },
 	  "MySQL Data Types": {
-		"prefix": "DataTypes",
+		"prefix": ["msdatatypes","msdtype","msdt"],
 		"body": [
 		  "Data Types",
-		  "CHAR",
+		  "CHAR (msdtch)",
 		  "String (0 - 255)",
-		  "VARCHAR",
+		  "VARCHAR (msdtvar)",
 		  "String (0 - 255)",
-		  "TINYTEXT",
+		  "TINYTEXT (msdttt)",
 		  "String (0 - 255)",
-		  "TEXT",
-		  "String (0 - 65535)",
-		  "BLOB",
-		  "String (0 - 65535)",
-		  "MEDIUMTEXT",
-		  "String (0 - 16777215)",
-		  "MEDIUMBLOB",
-		  "String (0 - 16777215)",
-		  "LONGTEXT",
+		  "TEXT (msdttxt)",
+		  "String (0 - 65535) ",
+		  "BLOB (msdtblb)",
+		  "String (0 - 65535) ",
+		  "MEDIUMTEXT (msdtmt)",
+		  "String (0 - 16777215) ",
+		  "MEDIUMBLOB (msdtmb)",
+		  "String (0 - 16777215) ",
+		  "LONGTEXT (msdtlt)",
 		  "String (0 - 4294967295)",
-		  "LONGBLOB",
+		  "LONGBLOB (msdtlb)",
 		  "String (0 - 4294967295)",
-		  "TINYINT x",
+		  "TINYINT x (msdtti)",
 		  "Integer (-128 to 127)",
-		  "SMALLINT x",
+		  "SMALLINT x (msdtsi)",
 		  "Integer (-32768 to 32767)",
-		  "MEDIUMINT x",
-		  "Integer (-8388608 to 8388607)",
-		  "INT x",
+		  "MEDIUMINT x (msdtmi)",
+		  "Integer (-8388608 to 8388607) ",
+		  "INT x (msdtix)",
 		  "Integer (-2147483648 to 2147483647)",
-		  "BIGINT x",
+		  "BIGINT x (msdtmbi)",
 		  "Integer (-9223372036854775808 to 9223372036854775807)",
-		  "FLOAT",
+		  "FLOAT (msdtflot)",
 		  "Decimal (precise to 23 digits)",
-		  "DOUBLE",
+		  "DOUBLE (msdtdbl)",
 		  "Decimal (24 to 53 digits)",
-		  "DECIMAL",
+		  "DECIMAL (msdtdec)",
 		  "\"-DOU-BLE-\" stored as string",
-		  "DATE",
-		  "YYYY-MM-DD",
-		  "DATETIME",
-		  "YYYY-MM-DD HH:MM:SS",
-		  "TIMESTAMP",
-		  "YYYYMM-DDHH:MM:SS",
-		  "TIME",
-		  "HH:MM:SS",
-		  "ENUM",
+		  "DATE (msdtdte)",
+		  "YYYY-MM-DD (msdt)",
+		  "DATETIME (msdtdt)",
+		  "YYYY-MM-DD HH:MM:SS (msdtymdms)",
+		  "TIMESTAMP (msdtts)",
+		  "YYYYMM-DDHH:MM:SS (msdt)",
+		  "TIME (msdttim)",
+		  "HH:MM:SS (msdthms)",
+		  "ENUM (msdtenum)",
 		  "One of preset options",
-		  "SET",
+		  "SET (msdtset)",
 		  "Selection of preset options"
 		],
 		"description": "MySQL Data Types "
 	  },
 	  "MySQL Operators": {
-		"prefix": "Operators",
+		"prefix": ["Operators","msoper","mso"],
 		"body": [
 		  "Operators",
-		  "Assignment Operators",
-		  "=",
-		  ":=",
+		  "Assignment Operators  (msoaop)",
+		  "= (mso=)",
+		  ":=  (mso:=)",
 		  "Logical Operators",
-		  "AND, &&",
-		  "NOT, !",
-		  "||, OR",
-		  "XOR",
+		  "AND, &&  (mso&&)",
+		  "NOT, !  (mso!)",
+		  "||, OR  (mso||)",
+		  "XOR  (msoXOR)",
 		  "Comparison Operators",
-		  "BETWEEN ... AND ...",
-		  "BINARY",
-		  "&",
-		  "~",
-		  "|",
-		  "^",
-		  "CASE",
-		  "DIV",
-		  "/",
-		  "<=>",
-		  "=",
-		  ">=",
-		  ">",
-		  "IS NOT NULL",
-		  "IS NOT",
-		  "IS NULL",
-		  "IS",
-		  "<<",
-		  "<=",
-		  "<",
-		  "LIKE",
-		  "-",
-		  "% or MOD",
-		  "NOT BETWEEN ... AND ...",
-		  "!=, <>",
-		  "NOT LIKE",
-		  "NOT REGEXP",
-		  "+",
-		  "REGEXP",
-		  ">>",
-		  "RLIKE",
-		  "SOUNDS LIKE",
-		  "*",
-		  "-"
+		  "BETWEEN ... AND ...  (msoba)",
+		  "BINARY  (msobnry)",
+		  "&  (mso&)",
+		  "~  (mso~)",
+		  "|  (mso|)",
+		  "^  (mso^)",
+		  "CASE  (msocse)",
+		  "DIV  (msodv)",
+		  "/  (mso/)",
+		  "<=>  (mso<=>)",
+		  
+		  ">= (mso>=)",
+		  ">  (mso>)",
+		  "IS NOT NULL (msoinn)",
+		  "IS NOT  (msoin)",
+		  "IS NULL  (msoinll)",
+		  "IS  (mso)is",
+		  "<<  (mso<<)",
+		  "<=  (mso<=)",
+		  "<  (mso<)",
+		  "LIKE  (msolike)",
+		  "-  (mso-)",
+		  "% or MOD  (mso%)",
+		  "NOT BETWEEN ... AND ... (msonba)",
+		  "!=, <>  (mso!=)",
+		  "NOT LIKE  (msonl)",
+		  "NOT REGEXP  (msonreg)",
+		  "+  (mso+)",
+		  "REGEXP  (msoreg)",
+		  ">>  (mso>>)",
+		  "RLIKE  (msorl)",
+		  "SOUNDS LIKE  (msosl)",
+		  "*  (mso*)",
+		  "-  (mso-)"
 		],
 		"description": "MySQL Operators "
 	  },
 	  "MySQL Assignment Operator =": {
-		"prefix": "OperatorsAssign",
+		"prefix": ["OperatorsAssign","msoaop"],
 		"body": [
 		  "https://dev.mysql.com/doc/refman/8.0/en/assignment-operators.html#operator_assign-equal"
 		],
@@ -469,13 +469,13 @@
 	  },
 	  
 	  "MySQL Assignment Operator :=": {
-		"prefix": "OperatorsAssignShortcut",
+		"prefix": ["OperatorsAssignShortcut","mso:="],
 		"body": [
 		 "https://dev.mysql.com/doc/refman/8.0/en/assignment-operators.html#operator_assign-value"
 		],
 		"description": "MySQL Assignment Operator (:=) "},
 		"MySQL Logical Operator AND": {
-			"prefix": "OperatorsLogicalAnd",
+			"prefix": ["OperatorsLogicalAnd","msoAND"],
 			"body": [
 			 "https://dev.mysql.com/doc/refman/8.0/en/logical-operators.html#operator_and"
 			],
@@ -483,7 +483,7 @@
 		  },
 		  
 		  "MySQL Logical Operator NOT": {
-			"prefix": "OperatorsLogicalNot",
+			"prefix": ["OperatorsLogicalNot","mso!"],
 			"body": [
 			 "https://dev.mysql.com/doc/refman/8.0/en/logical-operators.html#operator_not"
 			],
@@ -491,7 +491,7 @@
 		  },
 		  
 		  "MySQL Logical Operator OR": {
-			"prefix": "OperatorsLogicalOr",
+			"prefix": ["OperatorsLogicalOr","mso||"],
 			"body": [
 			  "https://dev.mysql.com/doc/refman/8.0/en/logical-operators.html#operator_or"
 			],
@@ -499,14 +499,14 @@
 		  },
 		  
 		  "MySQL Logical Operator XOR": {
-			"prefix": "OperatorsLogicalXor",
+			"prefix": ["OperatorsLogicalXor","msoXOR"],
 			"body": [
 			 "https://dev.mysql.com/doc/refman/8.0/en/logical-operators.html#operator_xor"
 			],
 			"description": "MySQL Logical Operator (XOR) "
 		  },
 		  "MySQL Comparison Operator BETWEEN ... AND ...": {
-			"prefix": "OperatorsComparisonBetween",
+			"prefix": ["OperatorsComparisonBetween","msoba"],
 			"body": [
 			  "https://dev.mysql.com/doc/refman/8.0/en/comparison-operators.html#operator_between"
 			],
@@ -514,7 +514,7 @@
 		  },
 		  
 		  "MySQL Comparison Operator BINARY": {
-			"prefix": "OperatorsComparisonBinary",
+			"prefix": ["OperatorsComparisonBinary","msobnry"],
 			"body": [
 			 "https://dev.mysql.com/doc/refman/8.0/en/cast-functions.html#operator_binary"
 			],
@@ -522,7 +522,7 @@
 		  },
 		  
 		  "MySQL Comparison Operator &": {
-			"prefix": "OperatorsComparisonBitwiseAnd",
+			"prefix": ["OperatorsComparisonBitwiseAnd","mso&"],
 			"body": [
 			  "https://dev.mysql.com/doc/refman/8.0/en/bit-functions.html#operator_bitwise-and"
 			],
@@ -530,7 +530,7 @@
 		  },
 		  
 		  "MySQL Comparison Operator ~": {
-			"prefix": "OperatorsComparisonBitwiseNot",
+			"prefix": ["OperatorsComparisonBitwiseNot","mso~"],
 			"body": [
 			 "https://dev.mysql.com/doc/refman/8.0/en/bit-functions.html#operator_bitwise-invert"
 			],
@@ -538,7 +538,7 @@
 		  },
 		  
 		  "MySQL Comparison Operator |": {
-			"prefix": "OperatorsComparisonBitwiseOr",
+			"prefix": ["OperatorsComparisonBitwiseOr","mso|"],
 			"body": [
 			  "https://dev.mysql.com/doc/refman/8.0/en/bit-functions.html#operator_bitwise-or"
 			],
@@ -546,7 +546,7 @@
 		  },
 		  
 		  "MySQL Comparison Operator ^": {
-			"prefix": "OperatorsComparisonBitwiseXor",
+			"prefix": ["OperatorsComparisonBitwiseXor","mso^"],
 			"body": [
 			  "https://dev.mysql.com/doc/refman/8.0/en/bit-functions.html#operator_bitwise-xor"
 			],
@@ -554,7 +554,7 @@
 		  },
 		  
 		  "MySQL Comparison Operator CASE": {
-			"prefix": "OperatorsComparisonCase",
+			"prefix": ["OperatorsComparisonCase","msocse"],
 			"body": [
 			  "https://dev.mysql.com/doc/refman/5.5/en/control-flow-functions.html#operator_case"
 			],
@@ -562,7 +562,7 @@
 		  },
 		  
 		  "MySQL Comparison Operator DIV": {
-			"prefix": "OperatorsComparisonDiv",
+			"prefix": ["OperatorsComparisonDiv","msodv"],
 			"body": [
 			  "https://dev.mysql.com/doc/refman/8.0/en/arithmetic-functions.html#operator_div"
 			],
@@ -570,7 +570,7 @@
 		  },
 		  
 		  "MySQL Comparison Operator /": {
-			"prefix": "OperatorsComparisonDivide",
+			"prefix": ["OperatorsComparisonDivide","mso/"],
 			"body": [
 			  "https://dev.mysql.com/doc/refman/8.0/en/arithmetic-functions.html#operator_divide"
 			],
@@ -578,7 +578,7 @@
 		  },
 		  
 		  "MySQL Comparison Operator <=>": {
-			"prefix": "OperatorsComparisonEqualNullSafe",
+			"prefix": ["OperatorsComparisonEqualNullSafe","mso<=>"],
 			"body": [
 			  "https://dev.mysql.com/doc/refman/8.0/en/comparison-operators.html#operator_equal-to"
 			],
@@ -586,7 +586,7 @@
 		  },
 		  
 		  "MySQL Comparison Operator =": {
-			"prefix": "OperatorsComparisonEqual",
+			"prefix": ["OperatorsComparisonEqual","mso="],
 			"body": [
 			  "https://dev.mysql.com/doc/refman/8.0/en/comparison-operators.html#operator_equal"
 			],
@@ -594,7 +594,7 @@
 		  },
 		  
 		  "MySQL Comparison Operator >=": {
-			"prefix": "OperatorsComparisonGreaterOrEqual",
+			"prefix": ["OperatorsComparisonGreaterOrEqual","mso>="],
 			"body": [
 			  "https://dev.mysql.com/doc/refman/8.0/en/comparison-operators.html#operator_greater-than-or-equal"
 			],
@@ -602,7 +602,7 @@
 		  },
 		  
 		  "MySQL Comparison Operator >": {
-			"prefix": "OperatorsComparisonGreater",
+			"prefix": ["OperatorsComparisonGreater","mso>"],
 			"body": [
 			  "https://dev.mysql.com/doc/refman/8.0/en/comparison-operators.html#operator_greater-than"
 			],
@@ -610,7 +610,7 @@
 		  },
 		  
 		  "MySQL Comparison Operator IS NOT NULL": {
-			"prefix": "OperatorsComparisonIsNotNull",
+			"prefix": ["OperatorsComparisonIsNotNull","msoinn"],
 			"body": [
 			  "https://dev.mysql.com/doc/refman/8.0/en/comparison-operators.html#operator_is-not-null"
 			],
@@ -618,7 +618,7 @@
 		  },
 		  
 		  "MySQL Comparison Operator IS NOT": {
-			"prefix": "OperatorsComparisonIsNot",
+			"prefix": ["OperatorsComparisonIsNot","msoin"],
 			"body": [
 			  "https://dev.mysql.com/doc/refman/8.0/en/comparison-operators.html#operator_is-not"
 			],
@@ -626,7 +626,7 @@
 		  },
 		  
 		  "MySQL Comparison Operator IS NULL": {
-			"prefix": "OperatorsComparisonIsNull",
+			"prefix": ["OperatorsComparisonIsNull","msoinn"],
 			"body": [
 			  "https://dev.mysql.com/doc/refman/8.0/en/comparison-operators.html#operator_is-null"
 			],
@@ -634,7 +634,7 @@
 		  },
 		  
 		  "MySQL Comparison Operator IS": {
-			"prefix": "OperatorsComparisonIs",
+			"prefix": ["OperatorsComparisonIs","msois"],
 			"body": [
 			  "https://dev.mysql.com/doc/refman/8.0/en/comparison-operators.html#operator_is"
 			],
@@ -642,7 +642,7 @@
 		  },
 		  
 		  "MySQL Comparison Operator <<": {
-			"prefix": "OperatorsComparisonLeftShift",
+			"prefix": ["OperatorsComparisonLeftShift","mso<<"],
 			"body": [
 			  "https://dev.mysql.com/doc/refman/8.0/en/bit-functions.html#operator_left-shift"
 			],
@@ -650,7 +650,7 @@
 		  },
 		  
 		  "MySQL Comparison Operator <=": {
-			"prefix": "OperatorsComparisonLessOrEqual",
+			"prefix": ["OperatorsComparisonLessOrEqual","mso<="],
 			"body": [
 			  "https://dev.mysql.com/doc/refman/8.0/en/comparison-operators.html#operator_less-than-or-equal"
 			],
@@ -658,7 +658,7 @@
 		  },
 		  
 		  "MySQL Comparison Operator <": {
-			"prefix": "OperatorsComparisonLess",
+			"prefix": ["OperatorsComparisonLess","mso<"],
 			"body": [
 			  "https://dev.mysql.com/doc/refman/8.0/en/comparison-operators.html#operator_less-than"
 			],
@@ -666,7 +666,7 @@
 		  },
 		  
 		  "MySQL Comparison Operator LIKE": {
-			"prefix": "OperatorsComparisonLike",
+			"prefix": ["OperatorsComparisonLike","msolike"],
 			"body": [
 			  "https://dev.mysql.com/doc/refman/8.0/en/string-comparison-functions.html#operator_like"
 			],
@@ -674,7 +674,7 @@
 		  },
 		  
 		  "MySQL Comparison Operator -": {
-			"prefix": "OperatorsComparisonMinus",
+			"prefix": ["OperatorsComparisonMinus","mso-"],
 			"body": [
 			  "https://dev.mysql.com/doc/refman/8.0/en/arithmetic-functions.html#operator_minus"
 			],
@@ -682,7 +682,7 @@
 		  },
 		  
 		  "MySQL Comparison Operator % or MOD": {
-			"prefix": "OperatorsComparisonMod",
+			"prefix": ["OperatorsComparisonMod","mso%"],
 			"body": [
 			  "https://dev.mysql.com/doc/refman/8.0/en/arithmetic-functions.html#operator_mod"
 			],
@@ -690,7 +690,7 @@
 		  },
 		  
 		  "MySQL Comparison Operator NOT BETWEEN ... AND ...": {
-			"prefix": "OperatorsComparisonNotBetween",
+			"prefix": ["OperatorsComparisonNotBetween","msonba"],
 			"body": [
 			  "https://dev.mysql.com/doc/refman/8.0/en/comparison-operators.html#operator_not-between"
 			],
@@ -698,7 +698,7 @@
 		  },
 		  
 		  "MySQL Comparison Operator !=, <>": {
-			"prefix": "OperatorsComparisonNotEqual",
+			"prefix": ["OperatorsComparisonNotEqual","mso!="],
 			"body": [
 			  "https://dev.mysql.com/doc/refman/8.0/en/comparison-operators.html#operator_not-equal"
 			],
@@ -706,7 +706,7 @@
 		  },
 		  
 		  "MySQL Comparison Operator NOT LIKE": {
-			"prefix": "OperatorsComparisonNotLike",
+			"prefix": ["OperatorsComparisonNotLike","msoonl"],
 			"body": [
 			  "https://dev.mysql.com/doc/refman/8.0/en/string-comparison-functions.html#operator_not-like"
 			],
@@ -714,7 +714,7 @@
 		  },
 		  
 		  "MySQL Comparison Operator NOT REGEXP": {
-			"prefix": "OperatorsComparisonNotRegexp",
+			"prefix": ["OperatorsComparisonNotRegexp","msoonr"],
 			"body": [
 			  "https://dev.mysql.com/doc/refman/8.0/en/regexp.html#operator_not-regexp"
 			],
@@ -722,7 +722,7 @@
 		  },
 		  
 		  "MySQL Comparison Operator +": {
-			"prefix": "OperatorsComparisonPlus",
+			"prefix": ["OperatorsComparisonPlus","mso+"],
 			"body": [
 			  "https://dev.mysql.com/doc/refman/8.0/en/arithmetic-functions.html#operator_plus"
 			],
@@ -730,7 +730,7 @@
 		  },
 		  
 		  "MySQL Comparison Operator REGEXP": {
-			"prefix": "OperatorsComparisonRegexp",
+			"prefix": ["OperatorsComparisonRegexp","msoreg"],
 			"body": [
 			  "https://dev.mysql.com/doc/refman/8.0/en/bit-functions.html#operator_right-shift"
 			],
@@ -738,7 +738,7 @@
 		  },
 		  
 		  "MySQL Comparison Operator >>": {
-			"prefix": "OperatorsComparisonRightShift",
+			"prefix": ["OperatorsComparisonRightShift","mso>>"],
 			"body": [
 			  "https://dev.mysql.com/doc/refman/8.0/en/bit-functions.html#operator_right-shift"
 			],
@@ -746,7 +746,7 @@
 		  },
 		  
 		  "MySQL Comparison Operator RLIKE": {
-			"prefix": "OperatorsComparisonRlike",
+			"prefix": ["OperatorsComparisonRlike","msorl"],
 			"body": [
 			  "https://dev.mysql.com/doc/refman/8.0/en/regexp.html#operator_regexp"
 			],
@@ -754,7 +754,7 @@
 		  },
 		  
 		  "MySQL Comparison Operator SOUNDS LIKE": {
-			"prefix": "OperatorsComparisonSoundsLike",
+			"prefix": ["OperatorsComparisonSoundsLike","mso"],
 			"body": [
 			  "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#operator_sounds-like"
 			],
@@ -762,7 +762,7 @@
 		  },
 		  
 		  "MySQL Comparison Operator *": {
-			"prefix": "OperatorsComparisonMultiply",
+			"prefix": ["OperatorsComparisonMultiply","mso*"],
 			"body": [
 			  "https://dev.mysql.com/doc/refman/8.0/en/arithmetic-functions.html#operator_times"
 			],
@@ -770,83 +770,83 @@
 		  },
 		  
 		  "MySQL Comparison Operator -": {
-			"prefix": "OperatorsComparisonSubtract",
+			"prefix": ["msoperatorscomparisonsubtract","mso-"],
 			"body": [
 			  "https://dev.mysql.com/doc/refman/8.0/en/arithmetic-functions.html#operator_unary-minus"
 			],
 			"description": "MySQL Comparison Operator (-) "
 		  },
 	  "MySQL String Functions and Operations": {
-		"prefix": "Strings",
+		"prefix": ["msstrings","msstr"],
 		"body": [
 		  "String",
 		  "String Comparison",
-		  "LIKE",
-		  "NOT LIKE",
-		  "STRCMP()",
-		  "Regular Expressions",
-		  "NOT REGEXP",
-		  "REGEXP",
-		  "RLIKE",
-		  "String Functions",
-		  "ASCII()",
-		  "BIN()",
-		  "BIT_LENGTH()",
-		  "CHAR_LENGTH()",
-		  "CHAR()",
-		  "CHARACTER_LENGTH()",
-		  "CONCAT_WS()",
-		  "CONCAT()",
-		  "ELT()",
-		  "EXPORT_SET()",
-		  "FIELD()",
-		  "FIND_IN_SET()",
-		  "FORMAT()",
-		  "HEX()",
-		  "INSERT()",
-		  "INSTR()",
-		  "LCASE()",
-		  "LEFT()",
-		  "LENGTH()",
-		  "LIKE",
-		  "LOAD_FILE()",
-		  "LOCATE()",
-		  "LOWER()",
-		  "LPAD()",
-		  "LTRIM()",
-		  "MAKE_SET()",
-		  "MATCH",
-		  "MID()",
-		  "NOT LIKE",
-		  "NOT REGEXP",
-		  "OCTET_LENGTH()",
-		  "ORD()",
-		  "POSITION()",
-		  "QUOTE()",
-		  "REGEXP",
-		  "REPEAT()",
-		  "REPLACE()",
-		  "REVERSE()",
-		  "RIGHT()",
-		  "RLIKE",
-		  "RPAD()",
-		  "RTRIM()",
-		  "SOUNDEX()",
-		  "SOUNDS LIKE",
-		  "SPACE()",
-		  "STRCMP()",
-		  "SUBSTR()",
-		  "SUBSTRING_INDEX()",
-		  "SUBSTRING()",
-		  "TRIM()",
-		  "UCASE()",
-		  "UNHEX()",
-		  "UPPER()"
+		  "LIKE (msstrlike)",
+		  "NOT LIKE (msstrnl)",
+		  "STRCMP() (msstrstrcmp)",
+		  "Regular Expressions (msstrrex)",
+		  "NOT REGEXP (msstrnreg)",
+		  "REGEXP (msstrreg)",
+		  "RLIKE (msstrrl)",
+		  "String Functions (msstrsfun)",
+		  "ASCII() (msstras)",
+		  "BIN() (msstrbin)",
+		  "BIT_LENGTH() (msstrblenght)",
+		  "CHAR_LENGTH() (msstrclenght)",
+		  "CHAR() (msstrch)",
+		  "CHARACTER_LENGTH() (msstrchlenght)",
+		  "CONCAT_WS() (msstrcws)",
+		  "CONCAT() (msstrcon)",
+		  "ELT() (msstrelt)",
+		  "EXPORT_SET() (msstrexset)",
+		  "FIELD() (msstrfei)",
+		  "FIND_IN_SET() (msstrfiset)",
+		  "FORMAT() (msstrfor)",
+		  "HEX() (msstrhex)",
+		  "INSERT() (msstrinsert)",
+		  "INSTR() (msstrinstr)",
+		  "LCASE() (msstrlcase)",
+		  "LEFT() (msstrleft)",
+		  "LENGTH() (msstrlength)",
+		  "LIKE (msstrlike)",
+		  "LOAD_FILE() (msstrlfile)",
+		  "LOCATE() (msstrlocate)",
+		  "LOWER() (msstrlower)",
+		  "LPAD() (msstrlpad)",
+		  "LTRIM() (msstrltrim)",
+		  "MAKE_SET() (msstrmset)",
+		  "MATCH (msstrmatch)",
+		  "MID() (msstrmid)",
+		  "NOT LIKE (msstrnlike)",
+		  "NOT REGEXP (msstrnregexp)",
+		  "OCTET_LENGTH() (msstroclenght)",
+		  "ORD() (msstrord)",
+		  "POSITION() (msstrposition)",
+		  "QUOTE() (msstrquote)",
+		  "REGEXP (msstrregexp)",
+		  "REPEAT() (msstrrepeat)",
+		  "REPLACE() (msstrreplace)",
+		  "REVERSE() (msstrreverse)",
+		  "RIGHT() (msstrright)",
+		  "RLIKE (msstrrlike)",
+		  "RPAD() (msstrrpad)",
+		  "RTRIM() (msstrrtrim)",
+		  "SOUNDEX() (msstrsoundex)",
+		  "SOUNDS LIKE (msstrslike)",
+		  "SPACE() (msstrspace)",
+		  "STRCMP() (msstrstrcmp)",
+		  "SUBSTR() (msstrsubstr)",
+		  "SUBSTRING_INDEX() (msstrsubindex)",
+		  "SUBSTRING() (msstrsubstring)",
+		  "TRIM() (msstrtrim)",
+		  "UCASE() (msstrucase)",
+		  "UNHEX() (msstrunhex)",
+		  "UPPER() (msstrupper)"
 		],
 		"description": "MySQL String Functions and Operations "
 	  },
 	  "MySQL String Comparison LIKE": {
-		"prefix": "StringLike",
+		"prefix": ["msstringlike","msstrlike"],
 		"body": [
 			"mysql> SELECT 'David!' LIKE 'David_';",
 			"-> 1",
@@ -857,7 +857,7 @@
 	  },
 	  
 	  "MySQL String Comparison NOT LIKE": {
-		"prefix": "StringNotLike",
+		"prefix": ["msstringNotlike","msstrnl"],
 		"body": [
 		"https://dev.mysql.com/doc/refman/8.0/en/string-comparison-functions.html#operator_not-like"
 		],
@@ -865,7 +865,7 @@
 	  },
 	  
 	  "MySQL String Comparison STRCMP()": {
-		"prefix": "StringStrcmp",
+		"prefix": ["msstringStrcmp","msstrstrcmp"],
 		"body": [
 			"mysql> SELECT STRCMP('text', 'text2');",
 			"-> -1",
@@ -878,7 +878,7 @@
 	  },
 	  
 	  "MySQL String Comparison Regular Expressions (REGEXP)": {
-		"prefix": "StringRegexp",
+		"prefix": ["msstringregexp","msstrrex"],
 		"body": [
 		  "https://dev.mysql.com/doc/refman/8.0/en/regexp.html#operator_regexp"
 		],
@@ -886,7 +886,7 @@
 	  },
 	  
 	  "MySQL String Comparison Regular Expressions (NOT REGEXP)": {
-		"prefix": "StringNotRegexp",
+		"prefix": ["stringnotregexp","msstrnreg"],
 		"body": [
 			"https://dev.mysql.com/doc/refman/8.0/en/regexp.html#operator_not-regexp"
 		],
@@ -894,14 +894,14 @@
 	  },
 	  
 	  "MySQL String Comparison Regular Expressions (RLIKE)": {
-		"prefix": "StringRlike",
+		"prefix": ["msstringrlike","msstrreg"],
 		"body": [
 		 "https://dev.mysql.com/doc/refman/8.0/en/regexp.html#operator_regexp"
 		],
 		"description": "MySQL String Comparison (RLIKE) "
 	  },
 	  "MySQL String Function ASCII()": {
-		"prefix": "StringAscii",
+		"prefix": ["stringascii","msstrrl"],
 		"body": [
 			"mysql> SELECT ASCII('2');",
 			"-> 50",
@@ -914,7 +914,7 @@
 	  },
 	  
 	  "MySQL String Function BIN()": {
-		"prefix": "StringBin",
+		"prefix": ["msstringbin","msstrbin"],
 		"body": [
 			"mysql> SELECT BIN(12);",
 			"-> '1100'"
@@ -923,7 +923,7 @@
 	  },
 	  
 	  "MySQL String Function BIT_LENGTH()": {
-		"prefix": "StringBitLength",
+		"prefix": ["stringbitlength","msstrblenght"],
 		"body": [
 			"mysql> SELECT BIT_LENGTH('text');",
 			"-> 32"
@@ -932,7 +932,7 @@
 	  },
 	  
 	  "MySQL String Function CHAR_LENGTH()": {
-		"prefix": "StringCharLength",
+		"prefix": ["msstringcharlength","msstrclenght"],
 		"body": [
 			"mysql> SET @dolphin:='海豚';",
 			"Query OK, 0 rows affected (0.01 sec)",
@@ -943,7 +943,7 @@
 	  },
 	  
 	  "MySQL String Function CHAR()": {
-		"prefix": "StringChar",
+		"prefix": ["msstringchar","msstrch"],
 		"body": [
 		  "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_char"
 		],
@@ -951,15 +951,15 @@
 	  },
 	  
 	  "MySQL String Function CHARACTER_LENGTH()": {
-		"prefix": "StringCharacterLength",
+		"prefix":["msstringcharacterlength","msstrchlenght"],
 		"body": [
 		 "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_char-length"
 		],
 		"description": "MySQL String Function (CHARACTER_LENGTH) "
 	  },
 	  
-	  "MySQL String Function CONCAT_WS()": {
-		"prefix": "StringConcatWs",
+	  "MySQL String Function CONCAT_WS( )": {
+		"prefix": ["msstringconcatws","msstrcws"],
 		"body": [
 		  "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_concat-ws"
 		],
@@ -967,7 +967,7 @@
 	  },
 	  
 	  "MySQL String Function CONCAT()": {
-		"prefix": "StringConcat",
+		"prefix": ["msstringconcat","msstrcon"],
 		"body": [
 			"mysql> SELECT CONCAT('My', 'S', 'QL');",
 			"-> 'MySQL'",
@@ -980,7 +980,7 @@
 	  },
 	  
 	  "MySQL String Function ELT()": {
-		"prefix": "StringElt",
+		"prefix": ["msstringelt","msstrelt"],
 		"body": [
 			"mysql> SELECT ELT(1, 'Aa', 'Bb', 'Cc', 'Dd');",
 			"-> 'Aa'",
@@ -991,7 +991,7 @@
 	  },
 	  
 	  "MySQL String Function EXPORT_SET()": {
-		"prefix": "StringExportSet",
+		"prefix": ["msstringexportset","msstrexset"],
 		"body": [
 			"mysql> SELECT EXPORT_SET(5,'Y','N',',',4);",
 			"-> 'Y,N,Y,N'",
@@ -1002,7 +1002,7 @@
 	  },
 	  
 	  "MySQL String Function FIELD()": {
-		"prefix": "StringField",
+		"prefix": ["msstringfield","msstrfei"],
 		"body": [
 			"mysql> SELECT FIELD('Bb', 'Aa', 'Bb', 'Cc', 'Dd', 'Ff');",
 			"-> 2",
@@ -1013,7 +1013,7 @@
 	  },
 	  
 	  "MySQL String Function FIND_IN_SET()": {
-		"prefix": "StringFindInSet",
+		"prefix": ["msstringfindInset","msstrfiset"],
 		"body": [
 			"mysql> SELECT FIND_IN_SET('b','a,b,c,d');",
 			"-> 2"
@@ -1022,7 +1022,7 @@
 	  },
 	  
 	  "MySQL String Function FORMAT()": {
-		"prefix": "StringFormat",
+		"prefix": ["msstringformat","msstrfor"],
 		"body": [
 			"mysql> SELECT FORMAT(12332.123456, 4);",
 			"-> '12,332.1235'",
@@ -1037,7 +1037,7 @@
 	  },
 	  
 	  "MySQL String Function HEX()": {
-		"prefix": "StringHex",
+		"prefix": ["msstringhex","msstrhex"],
 		"body": [
 			"mysql> SELECT X'616263', HEX('abc'), UNHEX(HEX('abc'));",
 			"-> 'abc', 616263, 'abc'",
@@ -1048,7 +1048,7 @@
 	  },
 	  
 	  "MySQL String Function INSERT()": {
-		"prefix": "StringInsert",
+		"prefix": ["msstringinsert","msstrhex"],
 		"body": [
 			"mysql> SELECT INSERT('Quadratic', 3, 4, 'What');",
 			"-> 'QuWhattic'",
@@ -1061,7 +1061,7 @@
 	  },
 	  
 	  "MySQL String Function INSTR()": {
-		"prefix": "StringInstr",
+		"prefix": ["msstringinstr","msstrinstr"],
 		"body": [
 			"mysql> SELECT INSTR('foobarbar', 'bar');",
 			"-> 4",
@@ -1072,7 +1072,7 @@
 	  },
 	  
 	  "MySQL String Function LCASE()": {
-		"prefix": "StringLcase",
+		"prefix": ["msstringlcase","msstrlcase"],
 		"body": [
 		  "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_lcase"
 		],
@@ -1080,7 +1080,7 @@
 	  },
 	  
 	  "MySQL String Function LEFT()": {
-		"prefix": "StringLeft",
+		"prefix": ["msstringleft","msstrleft"],
 		"body": [
 			"mysql> SELECT LEFT('foobarbar', 5);",
 			"-> 'fooba'"
@@ -1089,7 +1089,7 @@
 	  },
 	  
 	  "MySQL String Function LENGTH()": {
-		"prefix": "StringLength",
+		"prefix": ["msstringlength","msstrlength"],
 		"body": [
 			"mysql> SELECT LENGTH('text');",
 			"-> 4"
@@ -1098,7 +1098,7 @@
 	  },
 	  
 	  "MySQL String Function LOAD_FILE()": {
-		"prefix": "StringLoadFile",
+		"prefix": ["msstringloadfile","msstrlfile"],
 		"body": [
 			"mysql> UPDATE t",
             "SET blob_col=LOAD_FILE('/tmp/picture')",
@@ -1108,7 +1108,7 @@
 	  },
 	  
 	  "MySQL String Function LOCATE()": {
-		"prefix": "StringLocate",
+		"prefix": ["msstringlocate","msstrlocate"],
 		"body": [
 			"mysql> SELECT LOCATE('bar', 'foobarbar');",
 			"-> 4",
@@ -1121,7 +1121,7 @@
 	  },
 	  
 	  "MySQL String Function LOWER()": {
-		"prefix": "StringLower",
+		"prefix": ["msstringlower","msstrlower"],
 		"body": [
 			"mysql> SELECT LOWER('QUADRATICALLY');",
 			"-> 'quadratically'"
@@ -1130,7 +1130,7 @@
 	  },
 	  
 	  "MySQL String Function LPAD()": {
-		"prefix": "StringLpad",
+		"prefix": ["msstringlpad","msstrlpad"],
 		"body": [
 			"mysql> SELECT LPAD('hi',4,'??');",
 			"-> '??hi'",
@@ -1141,7 +1141,7 @@
 	  },
 	  
 	  "MySQL String Function LTRIM()": {
-		"prefix": "StringLtrim",
+		"prefix": ["msstringltrim","msstrltrim"],
 		"body": [
 			"mysql> SELECT LTRIM('  barbar');",
 			"-> 'barbar'"
@@ -1150,7 +1150,7 @@
 	  },
 	  
 	  "MySQL String Function MAKE_SET()": {
-		"prefix": "StringMakeSet",
+		"prefix": ["msstringmakeset","msstrmset"],
 		"body": [
 			"mysql> SELECT MAKE_SET(1,'a','b','c');",
 			"-> 'a'",
@@ -1165,7 +1165,7 @@
 	  },
 	  
 	  "MySQL String Function MATCH": {
-		"prefix": "StringMatch",
+		"prefix": ["msstringmatch","msstrmatch"],
 		"body": [
 		  "https://dev.mysql.com/doc/refman/8.0/en/fulltext-search.html#function_match"
 		],
@@ -1173,7 +1173,7 @@
 	  },
 	  
 	  "MySQL String Function MID()": {
-		"prefix": "StringMid",
+		"prefix": ["msstringmid","msstrmid"],
 		"body": [
 			"mysql> SELECT OCT(12);",
 			"-> '14'"
@@ -1182,7 +1182,7 @@
 	  },
 	  
 	  "MySQL String Function NOT LIKE": {
-		"prefix": "StringNotLike",
+		"prefix": ["msstringnotlike","msstrnlike"],
 		"body": [
 			"https://dev.mysql.com/doc/refman/8.0/en/string-comparison-functions.html#operator_not-like"
 		],
@@ -1190,7 +1190,7 @@
 	  },
 	  
 	  "MySQL String Function NOT REGEXP": {
-		"prefix": "StringNotRegexp",
+		"prefix": ["msstringnotregexp","msstrnregexp"],
 		"body": [
 		  "https://dev.mysql.com/doc/refman/8.0/en/regexp.html#operator_not-regexp"
 		],
@@ -1198,7 +1198,7 @@
 	  },
 	  
 	  "MySQL String Function OCTET_LENGTH()": {
-		"prefix": "StringOctetLength",
+		"prefix": ["msstringoctetlength","msstroclenght"],
 		"body": [
 		 "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_octet-length"
 		],
@@ -1206,7 +1206,7 @@
 	  },
 	  
 	  "MySQL String Function ORD()": {
-		"prefix": "StringOrd",
+		"prefix": ["msstringord","msstrord"],
 		"body": [
 			"mysql> SELECT ORD('2');",
 			"-> 50"
@@ -1215,7 +1215,7 @@
 	  },
 	  
 	  "MySQL String Function POSITION()": {
-		"prefix": "StringPosition",
+		"prefix": ["msstringposition","msstrposition"],
 		"body": [
 			"https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_position"
 		],
@@ -1223,7 +1223,7 @@
 	  },
 	  
 	  "MySQL String Function QUOTE()": {
-		"prefix": "StringQuote",
+		"prefix": ["msstringquote","msstrquote"],
 		"body": [
 			"mysql> SELECT QUOTE('Don\t!');",
 			"-> 'Don\t!'",
@@ -1234,7 +1234,7 @@
 	  },
 	  
 	  "MySQL String Function REGEXP": {
-		"prefix": "StringRegexp",
+		"prefix": ["msstringregexp","msstrregexp"],
 		"body": [
 		  "https://dev.mysql.com/doc/refman/8.0/en/regexp.html#operator_regexp"
 		],
@@ -1242,7 +1242,7 @@
 	  },
 	  
 	  "MySQL String Function REPEAT()": {
-		"prefix": "StringRepeat",
+		"prefix": ["msstringrepeat","msstrrepeat"],
 		"body": [
 			"mysql> SELECT REPEAT('MySQL', 3);",
 			"-> 'MySQLMySQLMySQL'"
@@ -1251,7 +1251,7 @@
 	  },
 	  
 	  "MySQL String Function REPLACE()": {
-		"prefix": "StringReplace",
+		"prefix": ["msstringreplace","msstrreplace"],
 		"body": [
 			"mysql> SELECT REPLACE('www.mysql.com', 'w', 'Ww');",
 			"-> 'WwWwWw.mysql.com'"
@@ -1260,7 +1260,7 @@
 	  },
 	  
 	  "MySQL String Function REVERSE()": {
-		"prefix": "StringReverse",
+		"prefix": ["msstringreverse","msstrreverse"],
 		"body": [
 			"mysql> SELECT REVERSE('abc');",
 			"-> 'cba'"
@@ -1269,7 +1269,7 @@
 	  },
 	  
 	  "MySQL String Function RIGHT()": {
-		"prefix": "StringRight",
+		"prefix": ["msstringright","msstrright"],
 		"body": [
 			"mysql> SELECT RIGHT('foobarbar', 4);",
 			"-> 'rbar'"
@@ -1278,7 +1278,7 @@
 	  },
 	  
 	  "MySQL String Function RLIKE": {
-		"prefix": "StringRlike",
+		"prefix": ["msstringrlike","msstrrlike"],
 		"body": [
 		  "https://dev.mysql.com/doc/refman/8.0/en/regexp.html#operator_regexp"
 		],
@@ -1286,7 +1286,7 @@
 	  },
 	  
 	  "MySQL String Function RPAD()": {
-		"prefix": "StringRpad",
+		"prefix": ["msstringrpad","msstrrpad"],
 		"body": [
 			"mysql> SELECT RPAD('hi',5,'?');",
 			"-> 'hi???'",
@@ -1297,7 +1297,7 @@
 	  },
 	  
 	  "MySQL String Function RTRIM()": {
-		"prefix": "StringRtrim",
+		"prefix": ["msstringrtrim","msstrrtrim"],
 		"body": [
 			"mysql> SELECT RTRIM('barbar   ');",
 			"-> 'barbar'"
@@ -1306,7 +1306,7 @@
 	  },
 	  
 	  "MySQL String Function SOUNDEX()": {
-		"prefix": "StringSoundex",
+		"prefix": ["msstringsoundex","msstrsoundex"],
 		"body": [
 			"mysql> SELECT SOUNDEX('Hello');",
 			"-> 'H400'",
@@ -1317,7 +1317,7 @@
 	  },
 	  
 	  "MySQL String Function SOUNDS LIKE": {
-		"prefix": "StringSoundsLike",
+		"prefix": ["msstringsoundslike","msstrslike"],
 		"body": [
 		  "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#operator_sounds-like"
 		],
@@ -1325,7 +1325,7 @@
 	  },
 	  
 	  "MySQL String Function SPACE()": {
-		"prefix": "StringSpace",
+		"prefix": ["msstringspace","msstrspace"],
 		"body": [
 			"mysql> SELECT SPACE(6);",
 			"-> '      '"
@@ -1334,7 +1334,7 @@
 	  },
 	  
 	  "MySQL String Function STRCMP()": {
-		"prefix": "StringStrcmp",
+		"prefix": ["msstringstrcmp","msstrstrcmp"],
 		"body": [
 			"mysql> SELECT STRCMP('text', 'text2');",
 			"-> -1",
@@ -1347,7 +1347,7 @@
 	  },
 	  
 	  "MySQL String Function SUBSTR()": {
-		"prefix": "StringSubstr",
+		"prefix": ["msstringsubstr","msstrsubstr"],
 		"body": [
 		 "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_substr"
 		],
@@ -1355,7 +1355,7 @@
 	  },
 	  
 	  "MySQL String Function SUBSTRING_INDEX()": {
-		"prefix": "StringSubstringIndex",
+		"prefix": ["msstringsubstringindex","msstrsubindex"],
 		"body": [
 			"mysql> SELECT SUBSTRING_INDEX('www.mysql.com', '.', 2);",
 			"-> 'www.mysql'",
@@ -1366,7 +1366,7 @@
 	  },
 	  
 	  "MySQL String Function SUBSTRING()": {
-		"prefix": "StringSubstring",
+		"prefix": ["msstringsubstring","msstrsubstring"],
 		"body": [
 			"mysql> SELECT SUBSTRING('Quadratically',5);",
 			"-> 'ratically'",
@@ -1385,7 +1385,7 @@
 	  },
 	  
 	  "MySQL String Function TRIM()": {
-		"prefix": "StringTrim",
+		"prefix": ["msstringtrim","msstrtrim"],
 		"body": [
 			"mysql> SELECT TRIM('  bar   ');",
 			"-> 'bar'",
@@ -1400,7 +1400,7 @@
 	  },
 	  
 	  "MySQL String Function UCASE()": {
-		"prefix": "StringUcase",
+		"prefix": ["msstringucase","msstrucase"],
 		"body": [
 		 "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_ucase"
 		],
@@ -1408,7 +1408,7 @@
 	  },
 	  
 	  "MySQL String Function UNHEX()": {
-		"prefix": "StringUnhex",
+		"prefix": ["msstringunhex","msstrunhex"],
 		"body": [
 			"mysql> SELECT UNHEX('4D7953514C');",
 			"-> 'MySQL'",
@@ -1423,7 +1423,7 @@
 	  },
 	  
 	  "MySQL String Function UPPER()": {
-		"prefix": "StringUpper",
+		"prefix": ["msstringupper","msstrupper"],
 		"body": [
 			"mysql> SELECT UPPER('Hej');",
 			"-> 'HEJ'"
@@ -1433,54 +1433,54 @@
 	  
 	  
 	  "MySQL Numeric Functions and Operators": {
-		"prefix": "Numeric",
+		"prefix": ["msnumeric","msmun",""],
 		"body": [
 		  "Numeric",
 		  "Arithmetic Operators",
-		  "DIV",
-		  "/",
-		  "-",
-		  "% or MOD",
-		  "+",
-		  "*",
-		  "-",
+		  "DIV (msmundiv)",
+		  "/  (msmun/)",
+		  "-  (msmun-)",
+		  "% or MOD  (msmun%)",
+		  "+ (msmun+)",
+		  "*  (msmun*)",
+		  "-  (msmun-)",
 		  "Mathematical Functions",
-		  "ABS()",
-		  "ACOS()",
-		  "ASIN()",
-		  "ATAN2(), ATAN()",
-		  "ATAN()",
-		  "CEIL()",
-		  "CEILING()",
-		  "CONV()",
-		  "COS()",
-		  "COT()",
-		  "CRC32()",
-		  "DEGREES()",
-		  "EXP()",
-		  "FLOOR()",
-		  "LN()",
-		  "LOG10()",
-		  "LOG2()",
-		  "LOG()",
-		  "MOD()",
-		  "OCT()",
-		  "PI()",
-		  "POW()",
-		  "POWER()",
-		  "RADIANS()",
-		  "RAND()",
-		  "ROUND()",
-		  "SIGN()",
-		  "SIN()",
-		  "SQRT()",
-		  "TAN()",
-		  "TRUNCATE()"
+		  "ABS()  (msmunabc)",
+		  "ACOS()  (msmunacos)",
+		  "ASIN()  (msmunasin)",
+		  "ATAN2(), ATAN()  (msmunatan2)",
+		  "ATAN()  (msmunatan)",
+		  "CEIL()  (msmunceil)",
+		  "CEILING()  (msmunceli)",
+		  "CONV()  (msmunconv)",
+		  "COS() (msmuncos)",
+		  "COT()  (msmuncot)",
+		  "CRC32()  (msmuncrc32)",
+		  "DEGREES()  (msmundegrees)",
+		  "EXP()  (msmunexp)",
+		  "FLOOR()  (msmunfloor)",
+		  "LN()  (msmunln)",
+		  "LOG10()  (msmunlog10)",
+		  "LOG2()  (msmunlog2)",
+		  "LOG()  (msmunlog)",
+		  "MOD()  (msmunmod)",
+		  "OCT()  (msmunoct)",
+		  "PI()  (msmunpi)",
+		  "POW()  (msmunpow)",
+		  "POWER()  (msmunpower)",
+		  "RADIANS()  (msmunpadians)",
+		  "RAND() (msmunrand)",
+		  "ROUND() (msmunround)",
+		  "SIGN() (msmunsign)",
+		  "SIN() (msmunsin)",
+		  "SQRT() (msmunsqrt)",
+		  "TAN() (msmuntan)",
+		  "TRUNCATE() (msmuntruncate)"
 		],
 		"description": "MySQL Numeric Functions and Operators "
 	  },
 	  "MySQL Division Operator DIV": {
-		"prefix": "NumericDiv",
+		"prefix": ["msnumericdiv","msmundiv"],
 		"body": [
 			"mysql> SELECT 3/5;",
 			"-> 0.60"
@@ -1489,7 +1489,7 @@
 	  },
 	  
 	  "MySQL Division Operator /": {
-		"prefix": "NumericDivision",
+		"prefix": ["msnumericdivision","msmun/"],
 		"body": [
 			"mysql> SELECT 3/5;",
 			"-> 0.60"
@@ -1498,7 +1498,7 @@
 	  },
 	  
 	  "MySQL Subtraction Operator -": {
-		"prefix": "NumericSubtraction",
+		"prefix": ["msnumericsubtraction","msmun-"],
 		"body": [
 			"mysql> SELECT 3-5;",
 			"-> -2"
@@ -1507,7 +1507,7 @@
 	  },
 	  
 	  "MySQL Modulus Operator % or MOD": {
-		"prefix": "NumericModulus",
+		"prefix": ["msnumericmodulus","msmun%"],
 		"body": [
 		 "https://dev.mysql.com/doc/refman/8.0/en/arithmetic-functions.html#operator_mod"
 		],
@@ -1515,7 +1515,7 @@
 	  },
 	  
 	  "MySQL Addition Operator +": {
-		"prefix": "NumericAddition",
+		"prefix": ["msnumericaddition","msmun+"],
 		"body": [
 			"mysql> SELECT 3+5;",
 			"-> 8"
@@ -1524,7 +1524,7 @@
 	  },
 	  
 	  "MySQL Multiplication Operator *": {
-		"prefix": "NumericMultiplication",
+		"prefix": ["msnumericmultiplication","msmun*"],
 		"body": [
 			"mysql> SELECT 3*5;",
 			"-> 15",
@@ -1537,7 +1537,7 @@
 	  },
 	  
 	  "MySQL Mathematical Function ABS()": {
-		"prefix": "NumericAbs",
+		"prefix": ["msnumericabs","msmunabs"],
 		"body": [
 			"mysql> SELECT ABS(2);",
 			"-> 2",
@@ -1548,7 +1548,7 @@
 	  },
 	  
 	  "MySQL Mathematical Function ACOS()": {
-		"prefix": "NumericAcos",
+		"prefix": ["msnumericacos","msmunacos"],
 		"body": [
 			"mysql> SELECT ACOS(1);",
 			"-> 0",
@@ -1561,7 +1561,7 @@
 	  },
 	  
 	  "MySQL Mathematical Function ASIN()": {
-		"prefix": "NumericAsin",
+		"prefix": ["msnumericasin","msmunasin"],
 		"body": [
 			"mysql> SELECT ASIN(0.2);",
 			"-> 0.20135792079033",
@@ -1571,7 +1571,7 @@
 	  },
 	  
 	  "MySQL Mathematical Function ATAN2()": {
-		"prefix": "NumericAtan2",
+		"prefix": ["msnumericatan2","msmunatan2"],
 		"body": [
 			"mysql> SELECT ATAN(-2,2);",
 			"-> -0.78539816339745",
@@ -1582,7 +1582,7 @@
 	  },
 	  
 	  "MySQL Mathematical Function ATAN()": {
-		"prefix": "NumericAtan",
+		"prefix": ["msnumericatan","msmunatan"],
 		"body": [
 			"mysql> SELECT ATAN(2);",
 			"-> 1.1071487177941",
@@ -1593,7 +1593,7 @@
 	  },
 	  
 	  "MySQL Mathematical Function CEIL()": {
-		"prefix": "NumericCeil",
+		"prefix": ["msnumericceil","msmunceil"],
 		"body": [
 		  "https://dev.mysql.com/doc/refman/8.0/en/mathematical-functions.html#function_ceil"
 		],
@@ -1601,7 +1601,7 @@
 	  },
 	  
 	  "MySQL Mathematical Function CEILING()": {
-		"prefix": "NumericCeiling",
+		"prefix": ["msnumericceiling","msmunceiling"],
 		"body": [
 			"mysql> SELECT CEILING(1.23);",
 			"-> 2",
@@ -1612,7 +1612,7 @@
 	  },
 	  
 	  "MySQL Mathematical Function CONV()": {
-		"prefix": "NumericConv",
+		"prefix": ["msnumericconv","msmunconv"],
 		"body": [
 			"mysql> SELECT CONV('a',16,2);",
 			"-> '1010'",
@@ -1627,7 +1627,7 @@
 	  },
 	  
 	  "MySQL Mathematical Function COS()": {
-		"prefix": "NumericCos",
+		"prefix": ["msnumericcos","msmuncos"],
 		"body": [
 			"mysql> SELECT COS(PI());",
 			"-> -1"
@@ -1636,7 +1636,7 @@
 	  },
 	  
 	  "MySQL Mathematical Function COT()": {
-		"prefix": "NumericCot",
+		"prefix": ["msnumericcot","msmuncot"],
 		"body": [
 			"mysql> SELECT COT(12);",
 			"-> -1.5726734063977",
@@ -1647,7 +1647,7 @@
 	  },
 	  
 	  "MySQL Mathematical Function CRC32()": {
-		"prefix": "NumericCrc32",
+		"prefix": ["msnumericcrc32","msmuncrc32"],
 		"body": [
 			"mysql> SELECT CRC32('MySQL');",
 			"-> 3259397556",
@@ -1658,7 +1658,7 @@
 	  },
 	  
 	  "MySQL Mathematical Function DEGREES()": {
-		"prefix": "NumericDegrees",
+		"prefix": ["msnumericdegrees","msmundegrees"],
 		"body": [
 			"mysql> SELECT DEGREES(PI());",
 			"-> 180",
@@ -1669,7 +1669,7 @@
 	  },
 	  
 	  "MySQL Mathematical Function EXP()": {
-		"prefix": "NumericExp",
+		"prefix": ["msnumericexp","msmunexp"],
 		"body": [
 			"mysql> SELECT EXP(2);",
 			"-> 7.3890560989307",
@@ -1682,7 +1682,7 @@
 	  },
 	  
 	  "MySQL Mathematical Function FLOOR()": {
-		"prefix": "NumericFloor",
+		"prefix": ["msnumericfloor","msmunfloor"],
 		"body": [
 			"mysql> SELECT FLOOR(1.23), FLOOR(-1.23);",
 			"-> 1, -2"
@@ -1691,7 +1691,7 @@
 	  },
 	  
 	  "MySQL Mathematical Function LN()": {
-		"prefix": "NumericLn",
+		"prefix": ["msnumericln","msmunln"],
 		"body": [
 			"mysql> SELECT LN(2);",
 			"-> 0.69314718055995",
@@ -1702,7 +1702,7 @@
 	  },
 	  
 	  "MySQL Mathematical Function LOG10()": {
-		"prefix": "NumericLog10",
+		"prefix": ["msnumericlog10","msmunlog10"],
 		"body": [
 			"mysql> SELECT LOG10(2);",
 			"-> 0.30102999566398",
@@ -1715,7 +1715,7 @@
 	  },
 	  
 	  "MySQL Mathematical Function LOG2()": {
-		"prefix": "NumericLog2",
+		"prefix": ["msnumericlog2","msmunlog2"],
 		"body": [
 			"mysql> SELECT LOG2(65536);",
 			"-> 16",
@@ -1726,7 +1726,7 @@
 	  },
 	  
 	  "MySQL Mathematical Function LOG()": {
-		"prefix": "NumericLog",
+		"prefix": ["msnumericlog","msmunlog"],
 		"body": [
 			"mysql> SELECT LOG(2);",
 			"-> 0.69314718055995",
@@ -1737,7 +1737,7 @@
 	  },
 	  
 	  "MySQL Mathematical Function MOD()": {
-		"prefix": "NumericMod",
+		"prefix": ["msnumericmod","msmunmod"],
 		"body": [
 			"mysql> SELECT MOD(234, 10);",
 			"-> 4",
@@ -1752,7 +1752,7 @@
 	  },
 	  
 	  "MySQL Mathematical Function OCT()": {
-		"prefix": "NumericOct",
+		"prefix": ["msnumericoct","msmunoct"],
 		"body": [
 		  "https://dev.mysql.com/doc/refman/8.0/en/mathematical-functions.html#function_oct"
 		],
@@ -1760,7 +1760,7 @@
 	  },
 	  
 	  "MySQL Mathematical Function PI()": {
-		"prefix": "NumericPi",
+		"prefix": ["msnumericpi","msmunpi"],
 		"body": [
 			"mysql> SELECT PI();",
 			"-> 3.141593",
@@ -1771,7 +1771,7 @@
 	  },
 	  
 	  "MySQL Mathematical Function POW()": {
-		"prefix": "NumericPow",
+		"prefix": ["msnumericpow","msmunpow"],
 		"body": [
 			"mysql> SELECT POW(2,2);",
 			"-> 4",
@@ -1782,7 +1782,7 @@
 	  },
 	  
 	  "MySQL Mathematical Function POWER()": {
-		"prefix": "NumericPower",
+		"prefix": ["msnumericpower","msmunpower"],
 		"body": [
 		  "https://dev.mysql.com/doc/refman/8.0/en/mathematical-functions.html#function_power"
 		],
@@ -1790,7 +1790,7 @@
 	  },
 	  
 	  "MySQL Mathematical Function RADIANS()": {
-		"prefix": "NumericRadians",
+		"prefix": ["msnumericradians","msmunradians"],
 		"body": [
 			"mysql> SELECT RADIANS(90);",
 			"-> 1.5707963267949"
@@ -1799,7 +1799,7 @@
 	  },
 	  
 	  "MySQL Mathematical Function RAND()": {
-		"prefix": "NumericRand",
+		"prefix": ["msnumericrand","msmunrand"],
 		"body": [
 		  "SELECT FLOOR(7 + (RAND() * 5));"
 		],
@@ -1807,7 +1807,7 @@
 	  },
 	  
 	  "MySQL Mathematical Function ROUND()": {
-		"prefix": "NumericRound",
+		"prefix": ["msnumericround","msmunround"],
 		"body": [
 			"mysql> SELECT ROUND(-1.23);",
 			"-> -1",
@@ -1828,7 +1828,7 @@
 	  },
 	  
 	  "MySQL Mathematical Function SIGN()": {
-		"prefix": "NumericSign",
+		"prefix": ["msnumericsign","msmunround"],
 		"body": [
 			"mysql> SELECT SIGN(-32);",
 			"-> -1",
@@ -1841,7 +1841,7 @@
 	  },
 	  
 	  "MySQL Mathematical Function SIN()": {
-		"prefix": "NumericSin",
+		"prefix": ["msnumericsin","msmunsin"],
 		"body": [
 			"mysql> SELECT SIN(PI());",
 			"-> 1.2246063538224e-16",
@@ -1852,7 +1852,7 @@
 	  },
 	  
 	  "MySQL Mathematical Function SQRT()": {
-		"prefix": "NumericSqrt",
+		"prefix": ["msnumericsqrt","msmunsqrt"],
 		"body": [
 			"mysql> SELECT SQRT(4);",
 			"-> 2",
@@ -1865,7 +1865,7 @@
 	  },
 	  
 	  "MySQL Mathematical Function TAN()": {
-		"prefix": "NumericTan",
+		"prefix": ["msnumerictan","msmuntan"],
 		"body": [
 			"mysql> SELECT TAN(PI());",
 			"-> -1.2246063538224e-16",
@@ -1876,7 +1876,7 @@
 	  },
 	  
 	  "MySQL Mathematical Function TRUNCATE()": {
-		"prefix": "NumericTruncate",
+		"prefix": ["msnumerictruncate","msmuntruncate"],
 		"body": [
 			"mysql> SELECT TRUNCATE(1.223,1);",
 			"-> 1.2",
@@ -1896,7 +1896,7 @@
 	  
 	  
 	  "MySQL Select Queries": {
-		"prefix": "Select",
+		"prefix": ["Sample","mssamp"],
 		"body": [
 		  "Samples",
 		  "Select Queries",
@@ -1922,75 +1922,75 @@
 	
 	  
 	  "MySQL Date and Time Functions": {
-		"prefix": "DateTime",
+		"prefix": ["msdatetime","msdate","msdt"],
 		"body": [
 		  "Date",
 		  "Date and Time",
-		  "ADDDATE()",
-		  "ADDTIME()",
-		  "CONVERT_TZ()",
-		  "CURDATE()",
-		  "CURRENT_DATE(), CURRENT_DATE",
-		  "CURRENT_TIME(), CURRENT_TIME",
-		  "CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP",
-		  "CURTIME()",
-		  "DATE_ADD()",
-		  "DATE_FORMAT()",
-		  "DATE_SUB()",
-		  "DATE()",
-		  "DATEDIFF()",
-		  "DAY()",
-		  "DAYNAME()",
-		  "DAYOFMONTH()",
-		  "DAYOFWEEK()",
-		  "DAYOFYEAR()",
-		  "EXTRACT()",
-		  "FROM_DAYS()",
-		  "FROM_UNIXTIME()",
-		  "GET_FORMAT()",
-		  "HOUR()",
-		  "LAST_DAY",
-		  "LOCALTIME(), LOCALTIME",
-		  "LOCALTIMESTAMP, LOCALTIMESTAMP()",
-		  "MAKEDATE()",
-		  "MAKETIME()",
-		  "MICROSECOND()",
-		  "MINUTE()",
-		  "MONTH()",
-		  "MONTHNAME()",
-		  "NOW()",
-		  "PERIOD_ADD()",
-		  "PERIOD_DIFF()",
-		  "QUARTER()",
-		  "SEC_TO_TIME()",
-		  "SECOND()",
-		  "STR_TO_DATE()",
-		  "SUBDATE()",
-		  "SUBTIME()",
-		  "SYSDATE()",
-		  "TIME_FORMAT()",
-		  "TIME_TO_SEC()",
-		  "TIME()",
-		  "TIMEDIFF()",
-		  "TIMESTAMP()",
-		  "TIMESTAMPADD()",
-		  "TIMESTAMPDIFF()",
-		  "TO_DAYS()",
-		  "TO_SECONDS()",
-		  "UNIX_TIMESTAMP()",
-		  "UTC_DATE()",
-		  "UTC_TIME()",
-		  "UTC_TIMESTAMP()",
-		  "WEEK()",
-		  "WEEKDAY()",
-		  "WEEKOFYEAR()",
-		  "YEAR()",
-		  "YEARWEEK()"
+		  "ADDDATE() (msdtaddd)",
+		  "ADDTIME()  (msdtaddt)",
+		  "CONVERT_TZ() (msdtctz)",
+		  "CURDATE() (msdtcurdate)",
+		  "CURRENT_DATE(), CURRENT_DATE  (msdtcurrdate)",
+		  "CURRENT_TIME(), CURRENT_TIME (msdtcurrtime)",
+		  "CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP (msdtcurrtimestamp)",
+		  "CURTIME() (msdtcurtime)",
+		  "DATE_ADD() (msdtdadd)",
+		  "DATE_FORMAT() (msdtdformat)",
+		  "DATE_SUB() (msdtdsub)",
+		  "DATE() (msdtdate)",
+		  "DATEDIFF() (msdtdatediff)",
+		  "DAY() (msdtday)",
+		  "DAYNAME() (msdtdayname)",
+		  "DAYOFMONTH() (msdtdayofmonth)",
+		  "DAYOFWEEK() (msdtdayofweek)",
+		  "DAYOFYEAR() (msdtdayofyear)",
+		  "EXTRACT() (msdtextract)",
+		  "FROM_DAYS() (msdtfdays)",
+		  "FROM_UNIXTIME() (msdtfunixtime)",
+		  "GET_FORMAT() (msdtgformat)",
+		  "HOUR() (msdthour)",
+		  "LAST_DAY (msdtlday)",
+		  "LOCALTIME(), LOCALTIME (msdtlocltime)",
+		  "LOCALTIMESTAMP, LOCALTIMESTAMP() (msdtlocaltimestamp)",
+		  "MAKEDATE() (msdtmakedate)",
+		  "MAKETIME() (msdtmaketime)",
+		  "MICROSECOND() (msdtmicrosecond)",
+		  "MINUTE() (msdtminute)",
+		  "MONTH() (msdtmonth)",
+		  "MONTHNAME() (msdtmonthname)",
+		  "NOW() (msdtnow)",
+		  "PERIOD_ADD() (msdtperadd)",
+		  "PERIOD_DIFF() (msdtperdiff)",
+		  "QUARTER() (msdtquarter)",
+		  "SEC_TO_TIME() (msdtsttime)",
+		  "SECOND() (msdtsecond)",
+		  "STR_TO_DATE() (msdtstdate)",
+		  "SUBDATE() (msdtsubdate)",
+		  "SUBTIME() (msdtsubtime)",
+		  "SYSDATE() (msdtsysdate)",
+		  "TIME_FORMAT() (msdttimeformat)",
+		  "TIME_TO_SEC() (msdtttsec)",
+		  "TIME() (msdttime)",
+		  "TIMEDIFF() (msdttimediff)",
+		  "TIMESTAMP() (msdttimestamp)",
+		  "TIMESTAMPADD() (msdttimestampadd)",
+		  "TIMESTAMPDIFF() (msdttimestampdiff)",
+		  "TO_DAYS() (msdttoday)",
+		  "TO_SECONDS() (msdttosecond)",
+		  "UNIX_TIMESTAMP() (msdtutimestamp)",
+		  "UTC_DATE() (msdtudate)",
+		  "UTC_TIME() (msdtutctime)",
+		  "UTC_TIMESTAMP() (msdtutctimestamp)",
+		  "WEEK() (msdtweek)",
+		  "WEEKDAY() (msdtweekday)",
+		  "WEEKOFYEAR() (msdtweekofyear)",
+		  "YEAR() (msdtyear)",
+		  "YEARWEEK() (msdtyearweek)"
 		],
 		"description": "MySQL Date and Time Functions "
 	  },
 	  "MySQL Date Function ADDDATE()": {
-		"prefix": "DateAddDate",
+		"prefix": ["msdateadddate","msdtaddd"],
 		"body": [
 			"mysql> SELECT DATE_ADD('2008-01-02', INTERVAL 31 DAY);",
 			"-> '2008-02-02'",
@@ -2001,7 +2001,7 @@
 	  },
 	  
 	  "MySQL Date Function ADDTIME()": {
-		"prefix": "DateAddTime",
+		"prefix": ["msdateaddtime","msdtaddt"],
 		"body": [
 			"mysql> SELECT ADDTIME('2007-12-31 23:59:59.999999', '1 1:1:1.000002');",
 			"-> '2008-01-02 01:01:01.000001'",
@@ -2012,7 +2012,7 @@
 	  },
 	  
 	  "MySQL Date Function CONVERT_TZ()": {
-		"prefix": "DateConvertTz",
+		"prefix": ["msdateconverttz","msdtctz"],
 		"body": [
 			"mysql> SELECT CONVERT_TZ('2004-01-01 12:00:00','GMT','MET');",
 			"-> '2004-01-01 13:00:00'",
@@ -2023,7 +2023,7 @@
 	  },
 	  
 	  "MySQL Date Function CURDATE()": {
-		"prefix": "DateCurDate",
+		"prefix": ["msdatecurdate","msdtcurdate"],
 		"body": [
 			"mysql> SELECT CURDATE();",
 			"-> '2008-06-13'",
@@ -2034,7 +2034,7 @@
 	  },
 	  
 	  "MySQL Date Function CURRENT_DATE()": {
-		"prefix": "DateCurrentDate",
+		"prefix": ["msdatecurrentdate","msdtcurrdate"],
 		"body": [
 		  "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_current-date"
 		],
@@ -2042,7 +2042,7 @@
 	  },
 	  
 	  "MySQL Date Function CURRENT_TIME()": {
-		"prefix": "DateCurrentTime",
+		"prefix": ["msdatecurrenttime","msdtcurrtime"],
 		"body": [
 		 "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_current-time"
 		],
@@ -2050,7 +2050,7 @@
 	  },
 	  
 	  "MySQL Date Function CURRENT_TIMESTAMP()": {
-		"prefix": "DateCurrentTimestamp",
+		"prefix": ["msdatecurrenttimestamp","msdtcurrtimestamp"],
 		"body": [
 		  "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_current-timestamp"
 		],
@@ -2058,7 +2058,7 @@
 	  },
 	  
 	  "MySQL Date Function CURTIME()": {
-		"prefix": "DateCurTime",
+		"prefix": ["msdatecurtime","msdtcurtime"],
 		"body": [
 		  "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_curtime"
 		],
@@ -2066,7 +2066,7 @@
 	  },
 	  
 	  "MySQL Date Function DATE_ADD()": {
-		"prefix": "DateAdd",
+		"prefix": ["msdateadd","msdtdadd"],
 		"body": [
 			"mysql> SELECT DATE('2003-12-31 01:02:03');",
 			"-> '2003-12-31'"
@@ -2075,7 +2075,7 @@
 	  },
 	  
 	  "MySQL Date Function DATE_FORMAT()": {
-		"prefix": "DateFormat",
+		"prefix": ["msdateformat","msdtdformat"],
 		"body": [
 		   "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_date-format"
 		],
@@ -2083,7 +2083,7 @@
 	  },
 	  
 	  "MySQL Date Function DATE_SUB()": {
-		"prefix": "DateSub",
+		"prefix": ["msdatesub","msdtdsub"],
 		"body": [
 		  "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_date-sub"
 		],
@@ -2091,7 +2091,7 @@
 	  },
 	  
 	  "MySQL Date Function DATE()": {
-		"prefix": "Date",
+		"prefix": ["msdate","msdtdate"],
 		"body": [
 			"mysql> SELECT DATE('2003-12-31 01:02:03');",
 			"-> '2003-12-31'"
@@ -2100,7 +2100,7 @@
 	  },
 	  
 	  "MySQL Date Function DATEDIFF()": {
-		"prefix": "DateDiff",
+		"prefix": ["msdatediff","msdtdatediff"],
 		"body": [
 			"mysql> SELECT DATEDIFF('2007-12-31 23:59:59','2007-12-30');",
 			"-> 1",
@@ -2111,7 +2111,7 @@
 	  },
 	  
 	  "MySQL Date Function DAY()": {
-		"prefix": "DateDay",
+		"prefix": ["msdateday","msdtday"],
 		"body": [
 		 "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_day"
 		],
@@ -2119,7 +2119,7 @@
 	  },
 	  
 	  "MySQL Date Function DAYNAME()": {
-		"prefix": "DateDayName",
+		"prefix": ["msdatedayname","msdtdayname"],
 		"body": [
 		  "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_dayname"
 		],
@@ -2127,7 +2127,7 @@
 	  },
 	  
 	  "MySQL Date Function DAYOFMONTH()": {
-		"prefix": "DateDayOfMonth",
+		"prefix": ["msdatedayofmonth","msdtdayofmonth"],
 		"body": [
 			"mysql> SELECT DAYOFMONTH('2007-02-03');",
 			"-> 3"
@@ -2136,7 +2136,7 @@
 	  },
 	  
 	  "MySQL Date Function DAYOFWEEK()": {
-		"prefix": "DateDayOfWeek",
+		"prefix": ["msdatedayofweek","msdtdayofweek"],
 		"body": [
 			"mysql> SELECT DAYOFWEEK('2007-02-03');",
 			"-> 7"
@@ -2145,7 +2145,7 @@
 	  },
 	  
 	  "MySQL Date Function DAYOFYEAR()": {
-		"prefix": "DateDayOfYear",
+		"prefix": ["msDateDayOfYear","msdtdayofyear"],
 		"body": [
 			"mysql> SELECT DAYOFYEAR('2007-02-03');",
 			"-> 34"
@@ -2154,7 +2154,7 @@
 	  },
 	  
 	  "MySQL Date Function EXTRACT()": {
-		"prefix": "DateExtract",
+		"prefix": ["msdateextract","msdtextract"],
 		"body": [
 			"mysql> SELECT EXTRACT(YEAR FROM '2019-07-02');",
 			"-> 2019",
@@ -2170,7 +2170,7 @@
 	  },
 	  
 	  "MySQL Date Function FROM_DAYS()": {
-		"prefix": "DateFromDays",
+		"prefix": ["msdatefromdays","msdtfdays"],
 		"body": [
 			"mysql> SELECT FROM_DAYS(730669);",
 			"-> '2000-07-03'"
@@ -2179,7 +2179,7 @@
 	  },
 	  
 	  "MySQL Date Function FROM_UNIXTIME()": {
-		"prefix": "DateFromUnixtime",
+		"prefix": ["msdatefromunixtime","msdtfunixtime"],
 		"body": [
 			"mysql> SELECT FROM_UNIXTIME(1447430881);",
 			"-> '2015-11-13 10:08:01'",
@@ -2193,7 +2193,7 @@
 	  },
 	  
 	  "MySQL Date Function GET_FORMAT()": {
-		"prefix": "DateGetFormat",
+		"prefix": ["msdategetformat","msdtgformat"],
 		"body": [
 		  "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_get-format"
 		],
@@ -2201,7 +2201,7 @@
 	  },
 	  
 	  "MySQL Date Function HOUR()": {
-		"prefix": "DateHour",
+		"prefix": ["msdatehour","msdthour"],
 		"body": [
 			"mysql> SELECT HOUR('10:05:03');",
 			"-> 10",
@@ -2212,7 +2212,7 @@
 	  },
 	  
 	  "MySQL Date Function LAST_DAY": {
-		"prefix": "DateLastDay",
+		"prefix": ["msdatelastday","msdtlday"],
 		"body": [
 			"mysql> SELECT LAST_DAY('2003-02-05');",
 			"-> '2003-02-28'",
@@ -2227,7 +2227,7 @@
 	  },
 	  
 	  "MySQL Date Function LOCALTIME()": {
-		"prefix": "DateLocaltime",
+		"prefix": ["msdatelocaltime","msdtlocltime"],
 		"body": [
 		"https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_localtime"
 		],
@@ -2235,7 +2235,7 @@
 	  },
 	  
 	  "MySQL Date Function LOCALTIMESTAMP()": {
-		"prefix": "DateLocaltimestamp",
+		"prefix": ["msdatelocaltimestamp","msdtlocaltimestamp"],
 		"body": [
 			"https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_localtimestamp"
 		],
@@ -2243,7 +2243,7 @@
 	  },
 	  
 	  "MySQL Date Function MAKEDATE()": {
-		"prefix": "DateMakeDate",
+		"prefix": ["msdatemakedate","msdtmakedate"],
 		"body": [
 			"mysql> SELECT MAKEDATE(2011,31), MAKEDATE(2011,32);",
 			"-> '2011-01-31', '2011-02-01'",
@@ -2256,7 +2256,7 @@
 	  },
 	  
 	  "MySQL Date Function MAKETIME()": {
-		"prefix": "DateMaketime",
+		"prefix": ["msdatemaketime","msdtmaketime"],
 		"body": [
 			"mysql> SELECT MAKETIME(12,15,30);",
 			"-> '12:15:30'"
@@ -2265,7 +2265,7 @@
 	  },
 	  
 	  "MySQL Date Function MICROSECOND()": {
-		"prefix": "DateMicrosecond",
+		"prefix": ["msdatemicrosecond","msdtmicrosecond"],
 		"body": [
 			"mysql> SELECT MICROSECOND('12:00:00.123456');",
 			"-> 123456",
@@ -2276,7 +2276,7 @@
 	  },
 	  
 	  "MySQL Date Function MINUTE()": {
-		"prefix": "DateMinute",
+		"prefix": ["msdateminute","msdtminute"],
 		"body": [
 		  "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_maketime"
 		],
@@ -2284,7 +2284,7 @@
 	  },
 	  
 	  "MySQL Date Function MONTH()": {
-		"prefix": "DateMonth",
+		"prefix": ["msdatemonth","msdtmonth"],
 		"body": [
 			"mysql> SELECT MONTH('2008-02-03');",
 			"-> 2"
@@ -2293,7 +2293,7 @@
 	  },
 	  
 	  "MySQL Date Function MONTHNAME()": {
-		"prefix": "DateMonthName",
+		"prefix": ["msdatemonthname","msdtmonthname"],
 		"body": [
 			"mysql> SELECT MONTHNAME('2008-02-03');",
 			"-> 'February'"
@@ -2302,7 +2302,7 @@
 	  },
 	  
 	  "MySQL Date Function NOW()": {
-		"prefix": "DateNow",
+		"prefix": ["msdatenow","msdtnow"],
 		"body": [
 		  "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_now"
 		],
@@ -2310,7 +2310,7 @@
 	  },
 	  
 	  "MySQL Date Function PERIOD_ADD()": {
-		"prefix": "DatePeriodAdd",
+		"prefix": ["msdateperiodadd","msdtperadd"],
 		"body": [
 			"mysql> SELECT PERIOD_ADD(200801,2);",
 			"-> 200803"
@@ -2319,7 +2319,7 @@
 	  },
 	  
 	  "MySQL Date Function PERIOD_DIFF()": {
-		"prefix": "DatePeriodDiff",
+		"prefix": ["msdateperioddiff","msdtperdiff"],
 		"body": [
 			"mysql> SELECT PERIOD_DIFF(200802,200703);",
 			"-> 11"
@@ -2328,7 +2328,7 @@
 	  },
 	  
 	  "MySQL Date Function QUARTER()": {
-		"prefix": "DateQuarter",
+		"prefix": ["msdatequarter","msdtquarter"],
 		"body": [
 			"mysql> SELECT QUARTER('2008-04-01');",
 			"-> 2"
@@ -2337,7 +2337,7 @@
 	  },
 	  
 	  "MySQL Date Function SEC_TO_TIME()": {
-		"prefix": "DateSecToTime",
+		"prefix": ["msdatesectotime","msdtsttime"],
 		"body": [
 			"mysql> SELECT SEC_TO_TIME(2378);",
 			"-> '00:39:38'",
@@ -2348,7 +2348,7 @@
 	  },
 	  
 	  "MySQL Date Function SECOND()": {
-		"prefix": "DateSecond",
+		"prefix": ["msdatesecond","msdtsecond"],
 		"body": [
 			"mysql> SELECT SECOND('10:05:03');",
 			"-> 3"
@@ -2357,7 +2357,7 @@
 	  },
 	  
 	  "MySQL Date Function STR_TO_DATE()": {
-		"prefix": "DateStrToDate",
+		"prefix": ["msdatestrtodate","msdtstdate"],
 		"body": [
 			"mysql> SELECT STR_TO_DATE('01,5,2013','%d,%m,%Y');",
 			"-> '2013-05-01'",
@@ -2368,7 +2368,7 @@
 	  },
 	  
 	  "MySQL Date Function SUBDATE()": {
-		"prefix": "DateSubdate",
+		"prefix": ["msdatesubdate","msdtsubdate"],
 		"body": [
 			"mysql> SELECT DATE_SUB('2008-01-02', INTERVAL 31 DAY);",
 		"-> '2007-12-02'",
@@ -2379,7 +2379,7 @@
 	  },
 	  
 	  "MySQL Date Function SUBTIME()": {
-		"prefix": "DateSubtime",
+		"prefix": ["msdatesubtime","msdtsubtime"],
 		"body": [
 			"mysql> SELECT SUBTIME('2007-12-31 23:59:59.999999','1 1:1:1.000002');",
 			"-> '2007-12-30 22:58:58.999997'",
@@ -2390,7 +2390,7 @@
 	  },
 	  
 	  "MySQL Date Function SYSDATE()": {
-		"prefix": "DateSysdate",
+		"prefix": ["msdatesysdate","msdtsysdate"],
 		"body": [
 		 "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_sysdate"
 		],
@@ -2398,7 +2398,7 @@
 	  },
 	  
 	  "MySQL Date Function TIME_FORMAT()": {
-		"prefix": "DateTimeFormat",
+		"prefix": ["msdatetimeformat","msdttimeformat"],
 		"body": [
 			"mysql> SELECT TIME_FORMAT('100:00:00', '%H %k %h %I %l');",
 			"-> '100 100 04 04 4'"
@@ -2407,7 +2407,7 @@
 	  },
 	  
 	  "MySQL Date Function TIME_TO_SEC()": {
-		"prefix": "DateTimeToSec",
+		"prefix": ["msdatetimetosec","msdtttsec"],
 		"body": [
 			"mysql> SELECT TIME_TO_SEC('22:23:00');",
 			"-> 80580",
@@ -2418,7 +2418,7 @@
 	  },
 	  
 	  "MySQL Date Function TIME()": {
-		"prefix": "DateTime",
+		"prefix": ["msdatetime","msdttime"],
 		"body": [
 			"mysql> SELECT TIME('2003-12-31 01:02:03');",
 			"-> '01:02:03'",
@@ -2429,7 +2429,7 @@
 	  },
 	  
 	  "MySQL Date Function TIMEDIFF()": {
-		"prefix": "DateTimediff",
+		"prefix": ["msdatetimediff","msdttimediff"],
 		"body": [
 			"mysql> SELECT TIMEDIFF('2000-01-01 00:00:00',",
 			"->                 '2000-01-01 00:00:00.000001');",
@@ -2442,7 +2442,7 @@
 	  },
 	  
 	  "MySQL Date Function TIMESTAMP()": {
-		"prefix": "DateTimestamp",
+		"prefix": ["msdatetimestamp","msdttimestamp"],
 		"body": [
 			"mysql> SELECT TIMESTAMP('2003-12-31');",
 			"-> '2003-12-31 00:00:00'",
@@ -2453,7 +2453,7 @@
 	  },
 	  
 	  "MySQL Date Function TIMESTAMPADD()": {
-		"prefix": "DateTimestampAdd",
+		"prefix": ["msdatetimestampAdd","msdttimestampadd"],
 		"body": [
 			"mysql> SELECT TIMESTAMPADD(MINUTE, 1, '2003-01-02');",
 			"-> '2003-01-02 00:01:00'",
@@ -2464,7 +2464,7 @@
 	  },
 	  
 	  "MySQL Date Function TIMESTAMPDIFF()": {
-		"prefix": "DateTimestampDiff",
+		"prefix": ["msdatetimestampdiff","msdttimestampdiff"],
 		"body": [
 			"mysql> SELECT TIMESTAMPDIFF(MONTH,'2003-02-01','2003-05-01');",
 			"-> 3",
@@ -2477,7 +2477,7 @@
 	  },
 	  
 	  "MySQL Date Function TO_DAYS()": {
-		"prefix": "DateToDays",
+		"prefix": ["msdatetodays","msdttoday"],
 		"body": [
 			"mysql> SELECT TO_DAYS(950501);",
 			"-> 728779",
@@ -2488,7 +2488,7 @@
 	  },
 	  
 	  "MySQL Date Function TO_SECONDS()": {
-		"prefix": "DateToSeconds",
+		"prefix": ["msdatetoseconds","msdttosecond"],
 		"body": [
 			"mysql> SELECT TO_SECONDS(950501);",
 			"-> 62966505600",
@@ -2503,7 +2503,7 @@
 	  },
 	  
 	  "MySQL Date Function UNIX_TIMESTAMP()": {
-		"prefix": "DateUnixTimestamp",
+		"prefix": ["msdateunixtimestamp","msdtutimestamp"],
 		"body": [
 			"mysql> SELECT UNIX_TIMESTAMP();",
 			"-> 1447431666",
@@ -2516,7 +2516,7 @@
 	  },
 	  
 	  "MySQL Date Function UTC_DATE()": {
-		"prefix": "DateUtcDate",
+		"prefix": ["msdateutcdate","msdtudate"],
 		"body": [
 			"mysql> SELECT UTC_DATE(), UTC_DATE() + 0;",
 			"-> '2003-08-14', 20030814"
@@ -2525,7 +2525,7 @@
 	  },
 	  
 	  "MySQL Date Function UTC_TIME()": {
-		"prefix": "DateUtcTime",
+		"prefix": ["msdateutctime","msdtutime"],
 		"body": [
 			"mysql> SELECT UTC_TIME(), UTC_TIME() + 0;",
 			"-> '18:07:53', 180753.000000"
@@ -2534,7 +2534,7 @@
 	  },
 	  
 	  "MySQL Date Function UTC_TIMESTAMP()": {
-		"prefix": "DateUtcTimestamp",
+		"prefix": ["msdateutctimestamp","msdtutimestamp"],
 		"body": [
 			"mysql> SELECT UTC_TIMESTAMP(), UTC_TIMESTAMP() + 0;",
 			"-> '2003-08-14 18:08:04', 20030814180804.000000"
@@ -2543,7 +2543,7 @@
 	  },
 	  
 	  "MySQL Date Function WEEK()": {
-		"prefix": "DateWeek",
+		"prefix": ["msdateweek","msdtweek"],
 		"body": [
 			"mysql> SELECT WEEK('2008-02-20');",
 			"-> 7",
@@ -2558,7 +2558,7 @@
 	  },
 	  
 	  "MySQL Date Function WEEKDAY()": {
-		"prefix": "DateWeekday",
+		"prefix": ["msdateweekday","msdtweekday"],
 		"body": [
 			"mysql> SELECT WEEKDAY('2008-02-03 22:23:00');",
 			"-> 6",
@@ -2569,7 +2569,7 @@
 	  },
 	  
 	  "MySQL Date Function WEEKOFYEAR()": {
-		"prefix": "DateWeekOfYear",
+		"prefix": ["msdateweekofyear","msdtweekofyear"],
 		"body": [
 			"mysql> SELECT WEEKOFYEAR('2008-02-20');",
 			"-> 8"
@@ -2578,7 +2578,7 @@
 	  },
 	  
 	  "MySQL Date Function YEAR()": {
-		"prefix": "DateYear",
+		"prefix": ["msdateyear","msdtyear"],
 		"body": [
 			"mysql> SELECT YEAR('1987-01-01');",
 			"-> 1987"
@@ -2587,7 +2587,7 @@
 	  },
 	  
 	  "MySQL Date Function YEARWEEK()": {
-		"prefix": "DateYearweek",
+		"prefix": ["msdateyearweek","msdtyearweek"],
 		"body": [
 			"mysql> SELECT YEARWEEK('1987-01-01');",
 			"-> 198652"
@@ -2595,32 +2595,32 @@
 		"description": "MySQL Date Function (YEARWEEK) "
 	  },
 	  "MySQL GROUP BY Functions": {
-		"prefix": "GroupBy",
+		"prefix": ["group","msgrp"],
 		"body": [
 		  "Group",
 		  "GROUP BY Functions",
-		  "AVG()",
-		  "BIT_AND()",
-		  "BIT_OR()",
-		  "BIT_XOR()",
-		  "COUNT(DISTINCT)",
-		  "COUNT()",
-		  "GROUP_CONCAT()",
-		  "MAX()",
-		  "MIN()",
-		  "STD()",
-		  "STDDEV_POP()",
-		  "STDDEV_SAMP()",
-		  "STDDEV()",
-		  "SUM()",
-		  "VAR_POP()",
-		  "VAR_SAMP()",
-		  "VARIANCE()"
+		  "AVG() (msgrpavg)",
+		  "BIT_AND() (msgrpband)",
+		  "BIT_OR() (msgrpbor)",
+		  "BIT_XOR() (msgrpbxor)",
+		  "COUNT(DISTINCT) (msgrpcountdis)",
+		  "COUNT() (msgrpcount)",
+		  "GROUP_CONCAT() (msgrpgrpcon)",
+		  "MAX() (msgrpmax)",
+		  "MIN() (msgrpmin)",
+		  "STD() (msgrpstd)",
+		  "STDDEV_POP() (msgrpstdpop)",
+		  "STDDEV_SAMP() (msgrpstdsamp)",
+		  "STDDEV() (msgrpstddev)",
+		  "SUM() (msgrpsum)",
+		  "VAR_POP() (msgrpvpop)",
+		  "VAR_SAMP() (msgrpvsamp)",
+		  "VARIANCE() (msgrpvari)"
 		],
 		"description": "MySQL GROUP BY Functions "
 	  },
 	  "MySQL Aggregate Function AVG()": {
-		"prefix": "GroupAvg",
+		"prefix": ["msgroupavg","msgrpavg"],
 		"body": [
 		 "https://dev.mysql.com/doc/refman/5.5/en/group-by-functions.html#function_avg"
 		],
@@ -2628,7 +2628,7 @@
 	  },
 	  
 	  "MySQL Aggregate Function BIT_AND()": {
-		"prefix": "GroupBitAnd",
+		"prefix": ["msgroupbitand","msgrpband"],
 		"body": [
 		"https://dev.mysql.com/doc/refman/5.5/en/group-by-functions.html#function_bit-and"
 		],
@@ -2636,7 +2636,7 @@
 	  },
 	  
 	  "MySQL Aggregate Function BIT_OR()": {
-		"prefix": "GroupBitOr",
+		"prefix": ["msgroupbitor","msgrpbor"],
 		"body": [
 		"https://dev.mysql.com/doc/refman/5.5/en/group-by-functions.html#function_bit-and"
 		 
@@ -2645,7 +2645,7 @@
 	  },
 	  
 	  "MySQL Aggregate Function BIT_XOR()": {
-		"prefix": "GroupBitXor",
+		"prefix": ["msgroupbitxor","msgrpbxor"],
 		"body": [
 		"https://dev.mysql.com/doc/refman/5.5/en/group-by-functions.html#function_bit-and"
 		  
@@ -2654,7 +2654,7 @@
 	  },
 	  
 	  "MySQL Aggregate Function COUNT(DISTINCT)": {
-		"prefix": "GroupCountDistinct",
+		"prefix":["msgroupcountdistinct","msgrpcountdis"],
 		"body": [
 		"https://dev.mysql.com/doc/refman/5.5/en/group-by-functions.html#function_bit-and"
 		  
@@ -2663,7 +2663,7 @@
 	  },
 	  
 	  "MySQL Aggregate Function COUNT()": {
-		"prefix": "GroupCount",
+		"prefix": ["msgroupcount","msgrpcount"],
 		"body": [
 		"https://dev.mysql.com/doc/refman/5.5/en/group-by-functions.html#function_bit-and"
 		 
@@ -2672,7 +2672,7 @@
 	  },
 	  
 	  "MySQL Aggregate Function GROUP_CONCAT()": {
-		"prefix": "GroupConcat",
+		"prefix": ["msgroupconcat","msgrpgrpcon"],
 		"body": [
 			"https://dev.mysql.com/doc/refman/5.5/en/group-by-functions.html#function_bit-and"
 		
@@ -2681,7 +2681,7 @@
 	  },
 	  
 	  "MySQL Aggregate Function MAX()": {
-		"prefix": "GroupMax",
+		"prefix": ["msgroupmax","msgrpmax"],
 		"body": [
 		"https://dev.mysql.com/doc/refman/5.5/en/group-by-functions.html#function_bit-and"
 		  
@@ -2690,7 +2690,7 @@
 	  },
 	  
 	  "MySQL Aggregate Function MIN()": {
-		"prefix": "GroupMin",
+		"prefix": ["msgroupmin","msgrpmin"],
 		"body": [
 		"https://dev.mysql.com/doc/refman/5.5/en/group-by-functions.html#function_bit-and"
 		 
@@ -2699,7 +2699,7 @@
 	  },
 	  
 	  "MySQL Aggregate Function STD()": {
-		"prefix": "GroupStd",
+		"prefix":[ "msgroupstd","msgrpstd"],
 		"body": [
 		"https://dev.mysql.com/doc/refman/5.5/en/group-by-functions.html#function_bit-and"
 		  
@@ -2708,7 +2708,7 @@
 	  },
 	  
 	  "MySQL Aggregate Function STDDEV_POP()": {
-		"prefix": "GroupStddevPop",
+		"prefix": ["msgroupstddevpop","msgrpstdpop"],
 		"body": [
 			"https://dev.mysql.com/doc/refman/5.5/en/group-by-functions.html#function_bit-and"
 		
@@ -2717,7 +2717,7 @@
 	  },
 	  
 	  "MySQL Aggregate Function STDDEV_SAMP()": {
-		"prefix": "GroupStddevSamp",
+		"prefix": ["msgroupstddevsamp","msgrpstdsamp"],
 		"body": [
 		"https://dev.mysql.com/doc/refman/5.5/en/group-by-functions.html#function_bit-and"
 		 
@@ -2726,7 +2726,7 @@
 	  },
 	  
 	  "MySQL Aggregate Function STDDEV()": {
-		"prefix": "GroupStddev",
+		"prefix": ["msgroupstddev","msgrpstddev"],
 		"body": [
 		"https://dev.mysql.com/doc/refman/5.5/en/group-by-functions.html#function_bit-and"
 		  
@@ -2735,7 +2735,7 @@
 	  },
 	  
 	  "MySQL Aggregate Function SUM()": {
-		"prefix": "GroupSum",
+		"prefix": ["msgroupsum","msgrpsum"],
 		"body": [
 		"https://dev.mysql.com/doc/refman/5.5/en/group-by-functions.html#function_bit-and"
 		  
@@ -2744,7 +2744,7 @@
 	  },
 	  
 	  "MySQL Aggregate Function VAR_POP()": {
-		"prefix": "GroupVarPop",
+		"prefix": ["msgroupvarpop","msgrpvpop"],
 		"body": [
 			"https://dev.mysql.com/doc/refman/5.5/en/group-by-functions.html#function_bit-and"
 		
@@ -2753,7 +2753,7 @@
 	  },
 	  
 	  "MySQL Aggregate Function VAR_SAMP()": {
-		"prefix": "GroupVarSamp",
+		"prefix": ["msgroupVarSamp","msgrpvsamp"],
 		"body": [
 		"https://dev.mysql.com/doc/refman/5.5/en/group-by-functions.html#function_bit-and"
 		 
@@ -2762,7 +2762,7 @@
 	  },
 	  
 	  "MySQL Aggregate Function VARIANCE()": {
-		"prefix": "GroupVariance",
+		"prefix": ["msgroupvariance","msgrpvari"],
 		"body": [
 		"https://dev.mysql.com/doc/refman/5.5/en/group-by-functions.html#function_bit-and"
 		 
@@ -2771,7 +2771,7 @@
 	  },
 	  
 	  "MySQL Encryption and Compression Functions": {
-		"prefix": "EncryptionCompression",
+		"prefix": ["msencryptioncompression","msenc"],
 		"body": [
 		  "Encrypt",
 		  "Encryption and Compression",
