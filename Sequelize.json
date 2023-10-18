@@ -1,34 +1,34 @@
  {
 	"Sequelize": {
-		"prefix": "Sequelize",
+		"prefix": ["sequelize","seq"],
 		"body": [
-			"Introduction",
-			"Getting Started",
-			"Core Concepts",
-			"Advanced Association Concepts",
-			"Other topics",
-			"Moved"
+			"Introduction (seqintro)",
+			"Getting Started (seqgetst)",
+			"Core Concepts (seqcc)",
+			"Advanced Association Concepts (seqadascn)",
+			"Other topics (seqotop)",
+			"Moved (seqmov)"
 		],
 		"description": "Sequelize"
 	},
 	"Core Concepts": {
-		"prefix": "CoreConcepts",
+		"prefix": ["seqcoreconcepts","seqcc"],
 		"body": [
-			"Model Basics",
-			"Model Instances",
-			"Model Querying - Basics",
-			"Model Querying - Finders",
-			"Getters, Setters & Virtuals",
-			"Validations & Constraints",
-			"Raw Queries",
-			"Associations",
-			"Paranoid"
+			"Model Basics (seqccmbas)",
+			"Model Instances  (seqccmins)",
+			"Model Querying - Basics (seqccmqu)",
+			"Model Querying - Finders (seqccmqfin)",
+			"Getters, Setters & Virtuals (seqccgsevir)",
+			"Validations & Constraints (seqccvalicon)",
+			"Raw Queries (seqccraqu)",
+			"Associations (seqccass)",
+			"Paranoid (seqccpar)"
 			
 		],
 		"description": "Sequelize Core Concepts"
 	},
 	"Model Basics": {
-		"prefix": "CoreConceptsmodelbasics",
+		"prefix": ["seqcoreconceptsmodelbasics","seqccmbas"],
 		"body": [
 			"const { Sequelize, DataTypes } = require('sequelize');",
 "const sequelize = new Sequelize('sqlite::memory:');",
@@ -53,7 +53,7 @@
 		"description": "Basic model definition in Sequelize"
 	  },
 	  "Model Instances": {
-		"prefix": "CoreConceptsmodelinstances",
+		"prefix": ["seqcoreconceptsmodelinstances","seqccmins"],
 		"body": [
 			"const { Sequelize, Model, DataTypes } = require('sequelize');",
 "const sequelize = new Sequelize('sqlite::memory:');",
@@ -76,7 +76,7 @@
 		"description": "Creating and working with model instances"
 	  },
 	  "Model Querying - Basics": {
-		"prefix": "CoreConceptsmodelqueryingbasics",
+		"prefix": ["seqcoreconceptsmodelqueryingbasics","seqccmqu"],
 		"body": [
 			"const user = await User.create({",
 				"username: 'alice123',",
@@ -89,7 +89,7 @@
 		"description": "Basic querying with Sequelize models"
 	  },
 	  "Model Querying - Finders": {
-		"prefix": "CoreConceptsmodelqueryingfinders",
+		"prefix": ["seqcoreconceptsmodelqueryingfinders","seqccmqfin"],
 		"body":[
 			"const project = await Project.findOne({ where: { title: 'My Title' } });",
 "if (project === null) {",
@@ -102,7 +102,7 @@
 		"description": "Using finders to retrieve data with Sequelize"
 	  },
 	  "Getters, Setters & Virtuals": {
-		"prefix": "CoreConceptsgetterssettersvirtuals",
+		"prefix": ["seqcoreconceptsgetterssettersvirtuals","seqccgsevir"],
 		"body": [
 			"const User = sequelize.define('user', {",
 				"// Let's say we wanted to see every username in uppercase, even",
@@ -119,7 +119,7 @@
 		"description": "Defining getters, setters, and virtual fields in Sequelize"
 	  },
 	  "Validations & Constraints": {
-		"prefix": "CoreConceptsvalidationsconstraints",
+		"prefix": ["seqcoreconceptsvalidationsconstraints","seqccvalicon"],
 		"body": [
 			"const { Sequelize, Op, Model, DataTypes } = require('sequelize');",
 "const sequelize = new Sequelize('sqlite::memory:');",
@@ -146,7 +146,7 @@
 		"description": "Adding validations and constraints to Sequelize models"
 	  },
 	  "Raw Queries": {
-		"prefix": "CoreConceptsrawqueries",
+		"prefix": ["seqcoreconceptsrawqueries","seqccraqu"],
 		"body":[
 			"const [results, metadata] = await sequelize.query('UPDATE users SET y = 42 WHERE x = 12');",
 "// Results will be an empty array and metadata will contain the number of affected rows.",
@@ -157,7 +157,7 @@
 		"description": "Executing raw SQL queries with Sequelize"
 	  },
 	  "Associations": {
-		"prefix": "CoreConceptsassociations",
+		"prefix": ["seqcoreconceptsassociations","seqccass"],
 		"body": [
 			"const A = sequelize.define('A', /* ... */);",
 "const B = sequelize.define('B', /* ... */);",
@@ -170,7 +170,7 @@
 		"description": "Defining and working with model associations in Sequelize"
 	  },
 	  "Paranoid": {
-		"prefix": "CoreConceptsparanoid",
+		"prefix": ["seqcoreconceptsparanoid","seqccpar"],
 		"body": [
 			"class Post extends Model {}",
 "Post.init({ /* attributes here */ }, {",
@@ -184,17 +184,17 @@
 		"description": "Using paranoid mode to implement soft deletes in Sequelize"
 	  },
 	"Advanced Association Concepts": {
-		"prefix": "AdvancedAssociationConcepts",
+		"prefix": ["seqadvancedassociationconcepts","seqadascn"],
 		"body": [
-			"Eager Loading",
-			"Creating with Associations",
-			"Advanced M:N Associations",
-			"Association Scopes"
+			"Eager Loading (seqadascnelod)",
+			"Creating with Associations (seqadascncrwass)",
+			"Advanced M:N Associations (seqadascnadass)",
+			"Association Scopes (seqadascnasssc)"
 		],
 		"description": "  Advanced Association Concepts"
 	},
 	"Eager Loading": {
-		"prefix": "Advancedeagerloading",
+		"prefix": ["seqadvancedeagerloading","seqadascnelod"],
 		"body": [
 			"const User = sequelize.define('user', { name: DataTypes.STRING }, { timestamps: false });",
 "const Task = sequelize.define('task', { name: DataTypes.STRING }, { timestamps: false });",
@@ -209,7 +209,7 @@
 		"description": "Eager loading associations in Sequelize queries"
 	  },
 	  "Creating with Associations": {
-		"prefix": "Advancedcreatingwithassociations",
+		"prefix": ["seqadvancedcreatingwithassociations","seqadascncrwass"],
 		"body": [
 			"class Product extends Model {}",
 "Product.init({",
@@ -238,7 +238,7 @@
 		"description": "Creating records with associated data using Sequelize"
 	  },
 	  "Advanced M:N Associations": {
-		"prefix": "Advancedmnassociations",
+		"prefix": ["seqadvancedmnassociations","seqadascnadass"],
 		"body": [
 			"const User = sequelize.define('user', {",
 				"username: DataTypes.STRING,",
@@ -251,7 +251,7 @@
 		"description": "Defining advanced many-to-many associations in Sequelize"
 	  },
 	  "Association Scopes": {
-		"prefix": "Advancedassociationscopes",
+		"prefix": ["seqadvancedassociationscopes","seqadascnasssc"],
 		"body":[
 			"const Foo = sequelize.define('foo', { name: DataTypes.STRING });",
 "const Bar = sequelize.define('bar', { status: DataTypes.STRING });",
@@ -286,34 +286,34 @@
 		"description": "Implementing polymorphic associations in Sequelize"
 	  },
 	"Other topics": {
-		"prefix": "Othertopics",
+		"prefix": ["seqothertopics","seqoto"],
 		"body": [
-			"Other Data Types",
-			"Using sequelize in AWS Lambda",
-			"Connection Pool",
-			"Constraints & Circularities",
-			"Dialect-Specific Things",
-			"Extending Data Types",
-			"Hooks",
-			"Indexes",
-			"Working with Legacy Tables",
-			"Legal Notice",
-			"Migrations",
-			"Naming Strategies",
-			"Optimistic Locking",
-			"Query Interface",
-			"Read Replication",
-			"Resources",
-			"Scopes",
-			"Sub Queries",
-			"Transactions",
-			"TypeScript",
-			"Upgrade to v6"
+			"Other Data Types (seqotoodt)",
+			"Using sequelize in AWS Lambda (seqotousql)",
+			"Connection Pool (seqotocp)",
+			"Constraints & Circularities (seqotocc)",
+			"Dialect-Specific Things (seqotodst)",
+			"Extending Data Types (seqotoedt)",
+			"Hooks (seqotoho)",
+			"Indexes (seqotoin)",
+			"Working with Legacy Tables (seqotowlt)",
+			"Legal Notice (seqotoln)",
+			"Migrations (seqotomi)",
+			"Naming Strategies (seqotonst)",
+			"Optimistic Locking (seqotoopl)",
+			"Query Interface (seqotoqin)",
+			"Read Replication (seqotorr)",
+			"Resources (seqotores)",
+			"Scopes (seqotosc)",
+			"Sub Queries (seqotosq)",
+			"Transactions (seqototr)",
+			"TypeScript (seqototy)",
+			"Upgrade to v6 (seqotoup)"
 		],
 		"description": " Sequelize TOther topics"
 	},
 	"Other Data Types": {
-		"prefix": "Othertopicsdatatypes",
+		"prefix": ["seqothertopicsdatatypes","seqotoodt"],
 		"body": [
 			"DataTypes.RANGE(DataTypes.INTEGER)    // int4range",
 "DataTypes.RANGE(DataTypes.BIGINT)     // int8range",
@@ -324,7 +324,7 @@
 		"description": "Defining and using other data types in Sequelize models"
 	  },
 	  "Using Sequelize in AWS Lambda": {
-		"prefix": "Othertopicsawslambda",
+		"prefix": ["seqothertopicsawslambda","seqotousql"],
 		"body": [
 			"const { Sequelize } = require('sequelize');",
 
@@ -361,7 +361,7 @@
 		"description": "Using Sequelize in AWS Lambda functions"
 	  },
 	  "Connection Pool": {
-		"prefix": "Othertopicsconnectionpool",
+		"prefix": ["seqothertopicsconnectionpool","seqotocp"],
 		"body": [
 			"const sequelize = new Sequelize(/* ... */, {",
 				"// ...",
@@ -376,7 +376,7 @@
 		"description": "Configuring and using a connection pool in Sequelize"
 	  },
 	  "Constraints & Circularities": {
-		"prefix": "Othertopicsconstraintscircularities",
+		"prefix": ["seqothertopicsconstraintscircularities","seqotocc"],
 		"body": [
 			"const { Sequelize, Model, DataTypes } = require('sequelize');",
 
@@ -399,7 +399,7 @@
 		"description": "Handling constraints and circularities in Sequelize models"
 	  },
 	  "Dialect-Specific Things": {
-		"prefix": "Othertopicsdialectspecific",
+		"prefix": ["seqothertopicsdialectspecific","seqotodst"],
 		"body": [
 			"const sequelize = new Sequelize('database', 'username', 'password', {",
 				"dialect: 'mysql',",
@@ -411,7 +411,7 @@
 		"description": "Dealing with dialect-specific behaviors in Sequelize"
 	  },
 	  "Extending Data Types": {
-		"prefix": "Othertopicsextendingdatatypes",
+		"prefix": ["seqothertopicsextendingdatatypes","seqotoedt"],
 		"body": [
 			"const { Sequelize, DataTypes, Utils } = require('Sequelize');",
 "createTheNewDataType();",
@@ -447,12 +447,12 @@
 		"description": "Extending Sequelize's data types for custom functionality"
 	  },
 	  "Hooks": {
-		"prefix": "Othertopicshooks",
+		"prefix": ["seqothertopicshooks","seqotoho"],
 		"body": "// Using hooks to add functionality to Sequelize operations\n// ...",
 		"description": "Using hooks to add functionality to Sequelize operations"
 	  },
 	  "Indexes": {
-		"prefix": "Othertopicsindexes",
+		"prefix": ["Othertopicsindexes","seqotoin"],
 		"body": [
 			"const User = sequelize.define('User', { /* attributes */ }, {",
 			"indexes: [",
@@ -496,7 +496,7 @@
 		"description": "Defining and using indexes in Sequelize models"
 	  },
 	  "Working with Legacy Tables": {
-		"prefix": "Othertopicslegacytables",
+		"prefix": ["seqothertopicslegacytables","seqotowlt"],
 		"body": [
 			"class User extends Model {}",
 "User.init({",
@@ -510,12 +510,12 @@
 		"description": "Integrating Sequelize with legacy database tables"
 	  },
 	  "Legal Notice": {
-		"prefix": "Othertopicslegalnotice",
+		"prefix": ["seqothertopicslegalnotice","seqotoln"],
 		"body": "// Including legal notice and licensing information in Sequelize\n// ...",
 		"description": "Including legal notice and licensing information in Sequelize"
 	  },
 	  "Migrations": {
-		"prefix": "Othertopicsmigrations",
+		"prefix": ["seqothertopicsmigrations","seqotomi"],
 		"body": ["const User = sequelize.define('user', { username: Sequelize.STRING }, {",
 			"underscored: true",
 		"  });",
@@ -527,17 +527,17 @@
 		"description": "Managing database migrations with Sequelize"
 	  },
 	  "Naming Strategies": {
-		"prefix": "Othertopicsnamingstrategies",
+		"prefix": ["seqothertopicsnamingstrategies","seqotonst"],
 		"body": "// Customizing naming strategies for Sequelize models\n// ...",
 		"description": "Customizing naming strategies for Sequelize models"
 	  },
 	  "Optimistic Locking": {
-		"prefix": "Othertopicsoptimisticlocking",
+		"prefix": ["seqothertopicsoptimisticlocking","seqotoopl"],
 		"body": "// Implementing optimistic locking with Sequelize\n// ...",
 		"description": "Implementing optimistic locking with Sequelize"
 	  },
 	  "Query Interface": {
-		"prefix": "Othertopicsqueryinterface",
+		"prefix": ["seqothertopicsqueryinterface","seqotoqin"],
 		"body": [
 			"const { Sequelize, DataTypes } = require('sequelize');",
 "const sequelize = new Sequelize(/* ... */);",
@@ -546,7 +546,7 @@
 		"description": "Using Sequelize's query interface for custom queries"
 	  },
 	  "Read Replication": {
-		"prefix": "Othertopicsreadreplication",
+		"prefix": ["seqothertopicsreadreplication","seqotorr"],
 		"body":[
 			"const sequelize = new Sequelize('database', null, null, {",
 				"dialect: 'mysql',",
@@ -567,12 +567,12 @@
 		"description": "Setting up and using read replication with Sequelize"
 	  },
 	  "Resources": {
-		"prefix": "resources",
+		"prefix": ["seqotoresources","seqotores"],
 		"body": "// Referencing resources and tutorials for Sequelize development\n// ...",
 		"description": "Referencing resources and tutorials for Sequelize development"
 	  },
 	  "Scopes": {
-		"prefix": "Resourcesscopes",
+		"prefix": ["seqresourcesscopes","seqotoressco"],
 		"body": [
 			"class Project extends Model {}",
 "Project.init({",
@@ -618,7 +618,7 @@
 		"description": "Defining and using scopes in Sequelize models"
 	  },
 	  "Sub Queries": {
-		"prefix": "Resourcessubqueries",
+		"prefix": ["seqresourcessubqueries","seqotoressqu"],
 		"body": [
 			"const Post = sequelize.define('post', {",
 				"content: DataTypes.STRING",
@@ -635,7 +635,7 @@
 	  },
 	  
 	  "Transactions": {
-		"prefix": "Resourcestransactions",
+		"prefix": ["seqresourcestransactions","seqotorestran"],
 		"body": [
 			"Unmanaged transactions",
 			"Managed transactions"
@@ -643,7 +643,7 @@
 		"description": " transactions in Sequelize for data consistency"
 	  },
 	  "Unmanaged transactions": {
-		"prefix": "ResourcesUnmanagedtransactions",
+		"prefix": ["seqresourcesUnmanagedtransactions","seqotoutran"],
 		"body": [
 			"const t = await sequelize.transaction();",
 
@@ -669,7 +669,7 @@
 		"description": " Unmanaged transactions in Sequelize for data consistency"
 	  },
 	  "Managed transactions": {
-		"prefix": "ResourcesManagedtransactions",
+		"prefix": ["seqresourcesManagedtransactions","seqotomtra"],
 		"body": [
 			"try {",
 
@@ -696,7 +696,7 @@
 		"description": " Managed transactions in Sequelize for data consistency"
 	  },
 	  "TypeScript": {
-		"prefix": "Resourcestypescript",
+		"prefix": ["seqresourcestypescript"],
 		"body": [
 			"import { Model, Optional } from 'sequelize';",
 
@@ -722,7 +722,7 @@
 		"description": "Guidelines for upgrading to Sequelize v6"
 	  },
 	"Moved": {
-		"prefix": "Moved",
+		"prefix": ["seqmoved"],
 		"body": [
 			"Associations",
 			"Data Types",

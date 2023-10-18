@@ -1,51 +1,51 @@
 {
 	"Nest": {
-		"prefix": "Nest",
+		"prefix": ["nest","nst"],
 		"body": [
-			"OVERVIEW",
-			"FUNDAMENTALS",
-			"TECHNIQUES",
-			"SECURITY",
-			"GRAPHQL",
-			"WEBSOCKETS",
-			"MICROSERVICES",
-			"STANDALONE APPS",
-			"CLI",
-			"OPENAPI",
-			"RECIPES",
-			"FAQ",
-			"NEWDEVTOOLS",
-			"MIGRATION GUIDE",
-			"OFFICIAL COURSES",
-			"DISCOVER"
+			"OVERVIEW (nstover)",
+			"FUNDAMENTALS (nstfun)",
+			"TECHNIQUES (nsttech)",
+			"SECURITY (nstsec)",
+			"GRAPHQL (nstgrap)",
+			"WEBSOCKETS (nstweb)",
+			"MICROSERVICES (nstmicr)",
+			"STANDALONE APPS (nststnd)",
+			"CLI (nstcli)",
+			"OPENAPI (nstopen)",
+			"RECIPES (nstrec)",
+			"FAQ (nstfaq)",
+			"NEWDEVTOOLS (nstdev)",
+			"MIGRATION GUIDE (nstmig)",
+			"OFFICIAL COURSES (nstoff)",
+			"DISCOVER (nstdis)"
 		],
 		"description": "Nest"
 	},
 	"OVERVIEW": {
-		"prefix": "OVERVIEW",
+		"prefix": ["nstoverview","nstover"],
 		"body": [
-			"First steps",
-			"Controllers",
-			"Providers",
-			"Modules",
-			"Middleware",
-			"Exception filters",
-			"Pipes",
-			"Guards",
-			"Interceptors",
-			"Custom decorators"
+			"First steps (nstoverfs)",
+			"Controllers (nstovercont)",
+			"Providers (nstoverprov)",
+			"Modules (nstovermod)",
+			"Middleware (nstovermidd)",
+			"Exception filters (nstoverexfil)",
+			"Pipes (nstoverpip)",
+			"Guards (nstovergur)",
+			"Interceptors (nstoverinter)",
+			"Custom decorators (nstovercusdec)"
 		],
 		"description": "Nest OVERVIEW"
 	},
 	"First steps": {
-		"prefix": "OVERVIEWfirststeps",
+		"prefix": ["nstoverviewfirststeps","nstoverfs"],
 		"body": [
 
 		],
 		"description": "Getting started with web development"
 	  },
 	  "Controllers": {
-		"prefix": "OVERVIEWcontrollers",
+		"prefix": ["nstoverviewcontrollers","nstovercont"],
 		"body": [
 			"import { Controller, Get, Post, Body } from '@nestjs/common';",
 "import { UserService } from './user.service';",
@@ -68,7 +68,7 @@
 		"description": "Create controller classes"
 	  },
 	  "Providers": {
-		"prefix": "OVERVIEWproviders",
+		"prefix": ["nstoverviewproviders","nstoverprov"],
 		"body": [
 			"import { Injectable, Inject } from '@nestjs/common';",
 			"import { UserService } from './user.service';",
@@ -81,7 +81,7 @@
 		"description": "Implement provider classes"
 	  },
 	  "Modules": {
-		"prefix": "OVERVIEWmodules",
+		"prefix": ["nstoverviewmodules","nstovermod"],
 		"body":[
 			"import { Module } from '@nestjs/common';",
 			"import { CatsController } from './cats.controller';",
@@ -96,7 +96,7 @@
 		"description": "Define application modules"
 	  },
 	  "Middleware": {
-		"prefix": "OVERVIEWmiddleware",
+		"prefix": ["nstoverviewmiddleware","nstovermidd"],
 		"body": [
 			"import { MiddlewareConsumer, Module } from '@nestjs/common';",
 			"import { LoggerMiddleware } from './logger.middleware';",
@@ -114,7 +114,7 @@
 		"description": "Create custom middleware"
 	  },
 	  "Exception filters": {
-		"prefix": "OVERVIEWexceptionfilters",
+		"prefix": ["nstoverviewexceptionfilters","nstoverexfil"],
 		"body": [
 			"async findAll() {",
 				"try {",
@@ -132,7 +132,7 @@
 		"description": "Implement exception filters"
 	  },
 	  "Pipes": {
-		"prefix": "OVERVIEWpipes",
+		"prefix": ["nstoverviewpipes","nstoverpip"],
 		"body":[
 			"ValidationPipe",
 "ParseIntPipe",
@@ -147,7 +147,7 @@
 		"description": "Create custom pipes"
 	  },
 	  "Guards": {
-		"prefix": "OVERVIEWguards",
+		"prefix": ["nstoverviewguards","nstovergur"],
 		"body": [
 			"import { Injectable, CanActivate, ExecutionContext } from '@nestjs/common';",
 "import { Observable } from 'rxjs';",
@@ -165,7 +165,7 @@
 		"description": "Implement route guards"
 	  },
 	  "Interceptors": {
-		"prefix": "OVERVIEWinterceptors",
+		"prefix": ["nstoverviewinterceptors","nstoverinter"],
 		"body": [
 			"import { Injectable, NestInterceptor, ExecutionContext, CallHandler } from '@nestjs/common';",
 "import { Observable } from 'rxjs';",
@@ -188,7 +188,7 @@
 		"description": "Create custom interceptors"
 	  },
 	  "Custom decorators": {
-		"prefix": "OVERVIEWdecorators",
+		"prefix": ["nstoverviewdecorators","nstovercusdec"],
 		"body": [
 			"import { createParamDecorator, ExecutionContext } from '@nestjs/common';",
 
@@ -202,24 +202,25 @@
 		"description": "Define custom decorators"
 	  },
 	"FUNDAMENTALS": {
-		"prefix": "NestFUNDAMENTALS",
+		"prefix":["nstfundamentals","nstfun"],
+		
 		"body": [
-			"Custom providers",
-			"Asynchronous providers",
-			"Dynamic modules",
-			"Injection scopes",
-			"Circular dependency",
-			"Module reference",
-			"Lazy-loading modules",
-			"Execution context",
-			"Lifecycle events",
-			"Platform agnosticism",
-			"Testing"
+			"Custom providers (nstfuncpr)",
+			"Asynchronous providers (nstfunasp)",
+			"Dynamic modules (nstfundmo)",
+			"Injection scopes (nstfuninsc)",
+			"Circular dependency (nstfuncirde)",
+			"Module reference (nstfunmoref)",
+			"Lazy-loading modules (nstfunllmo)",
+			"Execution context (nstfuncpexco)",
+			"Lifecycle events (nstfunlev)",
+			"Platform agnosticism (nstfunplag)",
+			"Testing (nstfuntest)"
 		],
 		"description": "  FUNDAMENTALS"
 	},
 	"Custom providers": {
-		"prefix": "FUNDAMENTALScustomproviders",
+		"prefix": ["nstfundamentalscustomproviders","nstfuncpr"],
 		"body": [
 			"Value providers",
 			"Class providers",
@@ -230,7 +231,7 @@
 		"description": "Create custom providers"
 	  },
 	  "Asynchronous providers": {
-		"prefix": "FUNDAMENTALSasyncproviders",
+		"prefix": ["nstfundamentalsasyncproviders","nstfunasp"],
 		"body": [
 			"{",
 				"provide: 'ASYNC_CONNECTION',",
@@ -243,7 +244,7 @@
 		"description": "Implement asynchronous providers"
 	  },
 	  "Dynamic modules": {
-		"prefix": "FUNDAMENTALSdynamicmodules",
+		"prefix": ["nstfundamentalsdynamicmodules","nstfundmo"],
 		"body": [
 			"import { Module } from '@nestjs/common';",
 "import { UsersService } from './users.service';",
@@ -257,7 +258,7 @@
 		"description": "Create dynamic modules"
 	  },
 	  "Injection scopes": {
-		"prefix": "FUNDAMENTALSinjectionscopes",
+		"prefix": ["nstfundamentalsinjectionscopes","nstfuninsc"],
 		"body": [
 			"Usage",
 		"Controller scope",
@@ -268,7 +269,7 @@
 		"description": "Define injection scopes"
 	  },
 	  "Circular dependency": {
-		"prefix": "FUNDAMENTALScirculardependency",
+		"prefix": ["nstfundamentalscirculardependency","nstfuncirde"],
 		"body": [
 			"Forward reference",
 			"ModuleRef class alternative",
@@ -277,7 +278,7 @@
 		"description": "Resolve circular dependencies"
 	  },
 	  "Module reference": {
-		"prefix": "FUNDAMENTALSmodulereference",
+		"prefix": ["nstfundamentalsmodulereference","nstfunmoref"],
 		"body": [
 			"Retrieving instances",
 			"Resolving scoped providers",
@@ -289,7 +290,7 @@
 		"description": "Access the module reference"
 	  },
 	  "Lazy-loading modules": {
-		"prefix": "FUNDAMENTALSlazyloading",
+		"prefix": ["nstfundamentalslazyloading","nstfunllmo"],
 		"body": [
 			"const { LazyModule } = await import('./lazy.module');",
 "const moduleRef = await this.lazyModuleLoader.load(() => LazyModule);",
@@ -303,7 +304,7 @@
 		"description": "Lazy-load modules"
 	  },
 	  "Execution context": {
-		"prefix": "FUNDAMENTALSexecutioncontext",
+		"prefix": ["nstfundamentalsexecutioncontext","nstfuncpexco"],
 		"body": [
 			"Current application context",
 			"Host handler arguments",
@@ -312,7 +313,7 @@
 		"description": "Access the execution context"
 	  },
 	  "Lifecycle events": {
-		"prefix": "FUNDAMENTALSlifecycleevents",
+		"prefix": ["nstfundamentalslifecycleevents","nstfunlev"],
 		"body": [
 			"Usage",
 			"Asynchronous initialization",
@@ -321,12 +322,12 @@
 		"description": "Use lifecycle events"
 	  },
 	  "Platform agnosticism": {
-		"prefix": "FUNDAMENTALSplatformagnostic",
+		"prefix": ["nstfundamentalsplatformagnostic","nstfunplag"],
 		"body": "// Write platform-agnostic code",
 		"description": "Ensure platform agnosticism"
 	  },
 	  "Testing": {
-		"prefix": "FUNDAMENTALStesting",
+		"prefix": ["nstfundamentalstesting","nstfuntest"],
 		"body": [
 			"Installation",
 			"Unit testing",
@@ -338,32 +339,32 @@
 		"description": "Write tests using TestingModule"
 	  },
 	"TECHNIQUES": {
-		"prefix": "NestTECHNIQUES",
+		"prefix": ["nsttechniques","nsttech"],
 		"body": [
-			"Configuration",
-			"Database",
-			"Mongo",
-			"Validation",
-			"Caching",
-			"Serialization",
-			"Versioning",
-			"Task scheduling",
-			"Queues",
-			"Logging",
-			"Cookies",
-			"Events",
-			"Compression",
-			"File upload",
-			"Streaming files",
-			"HTTP module",
-			"Model-View-Controller",
-			"Performance (Fastify)",
-			"Server-Sent Events"
+			"Configuration (nsttecon)",
+			"Database (nsttechdb)",
+			"Mongo (nsttechmon)",
+			"Validation (nsttechvali)",
+			"Caching (nsttechcac)",
+			"Serialization (nsttechser)",
+			"Versioning (nsttechver)",
+			"Task scheduling (nsttechtsch)",
+			"Queues (nsttechqueu)",
+			"Logging (nsttechlog)",
+			"Cookies (nsttechcoki)",
+			"Events (nsttecheve)",
+			"Compression (nsttechcomp)",
+			"File upload (nsttechfupl)",
+			"Streaming files (nsttechstrf)",
+			"HTTP module (nsttechhttpm)",
+			"Model-View-Controller (nsttechmvcont)",
+			"Performance (Fastify) (nsttechper)",
+			"Server-Sent Events (nsttechserse)"
 		],
 		"description": " Nest TECHNIQUES"
 	},
 	"Configuration": {
-		"prefix": "TECHNIQUESconfiguration",
+		"prefix": ["nsttechniquesconfiguration","nsttechcon"],
 		"body": [
 			"Installation",
 			"Getting started",
@@ -375,7 +376,7 @@
 		"description": "Define configuration settings"
 	  },
 	  "Database": {
-		"prefix": "TECHNIQUESdatabase",
+		"prefix": ["nsttechniquesdatabase","nsttechdb"],
 		"body": [
 			"TypeORM Integration",
 			"Repository pattern",
@@ -393,14 +394,14 @@
 		"description": "Connect to the database"
 	  },
 	  "Mongo": {
-		"prefix": "TECHNIQUESmongo",
+		"prefix": ["nsttechniquesmongo","nsttechmon"],
 		"body": [
 			
 		],
 		"description": "Connect to MongoDB"
 	  },
 	  "Validation": {
-		"prefix": "TECHNIQUESvalidation",
+		"prefix": ["nsttechniquesvalidation","nsttechvali"],
 		"body": [
 			"ValidationPipe",
 "ParseIntPipe",
@@ -411,7 +412,7 @@
 		"description": "Create validation schema"
 	  },
 	  "Caching": {
-		"prefix": "TECHNIQUEScaching",
+		"prefix": ["nsttechniquescaching","nsttechcac"],
 		"body": [
 			"In-memory cache",
 			"Interacting with the Cache store",
@@ -421,7 +422,7 @@
 		"description": "Cache data"
 	  },
 	  "Serialization": {
-		"prefix": "TECHNIQUESserialization",
+		"prefix": ["nsttechniquesserialization","nsttechser"],
 		"body": [
 			"Exclude properties",
 			"Expose properties",
@@ -430,7 +431,7 @@
 		"description": "Serialize data"
 	  },
 	  "Versioning": {
-		"prefix": "TECHNIQUESversioning",
+		"prefix": ["nsttechniquesversioning","nsttechver"],
 		"body": [
 			"URI Versioning Type",
 			"Header Versioning Type",
@@ -445,7 +446,7 @@
 		"description": "Implement API versioning"
 	  },
 	  "Task scheduling": {
-		"prefix": "TECHNIQUEStaskscheduling",
+		"prefix": ["nsttechniquestaskscheduling","nsttechtsch"],
 		"body": [
 			"import { Module } from '@nestjs/common';",
 "import { ScheduleModule } from '@nestjs/schedule';",
@@ -460,7 +461,7 @@
 		"description": "Schedule tasks"
 	  },
 	  "Queues": {
-		"prefix": "TECHNIQUESqueues",
+		"prefix": ["nsttechniquesqueues","nsttechqueu"],
 		"body": [
 			"import { Module } from '@nestjs/common';",
 "import { BullModule } from '@nestjs/bull';",
@@ -479,7 +480,7 @@
 		"description": "Add tasks to queues"
 	  },
 	  "Logging": {
-		"prefix": "TECHNIQUESlogging",
+		"prefix": ["nsttechniqueslogging","nsttechlog"],
 		"body": [
 			"Basic customization",
 			"Custom implementation",
@@ -490,7 +491,7 @@
 		"description": "Log messages"
 	  },
 	  "Cookies": {
-		"prefix": "TECHNIQUEScookies",
+		"prefix": ["nsttechniquescookies","nsttechcoki"],
 		"body": [
 			"Use with Express (default)",
 			"Use with Fastify",
@@ -499,7 +500,7 @@
 		"description": "Set cookies in the response"
 	  },
 	  "Events": {
-		"prefix": "TECHNIQUESevents",
+		"prefix": ["nsttechniquesevents","nsttecheve"],
 		"body": [
 			"Dispatching Events",
 			"Listening to Events"
@@ -507,7 +508,7 @@
 		"description": "Emit events"
 	  },
 	  "Compression": {
-		"prefix": "TECHNIQUEScompression",
+		"prefix": ["nsttechniquescompression","nstcomp"],
 		"body": [
 			"import compression from '@fastify/compress';",
 "// somewhere in your initialization file",
@@ -516,7 +517,7 @@
 		"description": "Enable response compression"
 	  },
 	  "File upload": {
-		"prefix": "TECHNIQUESfileupload",
+		"prefix": ["nsttechniquesfileupload","nsttechfupl"],
 		"body": [
 			"@Post('upload')",
 "@UseInterceptors(FileInterceptor('file'))",
@@ -527,7 +528,7 @@
 		"description": "Handle file uploads"
 	  },
 	  "Streaming files": {
-		"prefix": "TECHNIQUESstreamingfiles",
+		"prefix": ["nsttechniquesstreamingfiles","nsttechstrf"],
 		"body": [
 			"@Controller('file')",
 "export class FileController {",
@@ -541,7 +542,7 @@
 		"description": "Stream files in responses"
 	  },
 	  "HTTP module": {
-		"prefix": "TECHNIQUEShttpmodule",
+		"prefix": ["nsttechniqueshttpmodule","nsttechhttpm"],
 		"body":[
 			"import { catchError, firstValueFrom } from 'rxjs';",
 
@@ -566,7 +567,7 @@
 		"description": "Create an HTTP server"
 	  },
 	  "Session": {
-		"prefix": "TECHNIQUESsession",
+		"prefix": ["nsttechniquessession","nsttechmvsess"],
 		"body": [
 			
 "import * as session from 'express-session';",
@@ -582,7 +583,7 @@
 		"description": "Manage user sessions"
 	  },
 	  "Model-View-Controller": {
-		"prefix": "TECHNIQUESmvc",
+		"prefix": ["nsttechniquesmvc","nsttechper"],
 		"body": [
 			"import { Get, Controller, Render } from '@nestjs/common';",
 
@@ -598,7 +599,7 @@
 		"description": "Implement Model-View-Controller (MVC) architecture"
 	  },
 	  "Performance (Fastify)": {
-		"prefix": "TECHNIQUESfastifyperformance",
+		"prefix": ["nsttechniquesfastifyperformance","nsttechper"],
 		"body": [
 			"async function bootstrap() {",
 				"const app = await NestFactory.create<NestFastifyApplication>(",
@@ -612,7 +613,7 @@
 		"description": "Optimize performance using Fastify"
 	  },
 	  "Server-Sent Events": {
-		"prefix": "TECHNIQUESsse",
+		"prefix": ["nsttechniquessse","nsttechserse"],
 		"body": [
 			"@Sse('sse')",
 "sse(): Observable<MessageEvent> {",
@@ -622,20 +623,20 @@
 		"description": "Implement Server-Sent Events"
 	  },
 	"SECURITY": {
-		"prefix": "NestSECURITY",
+		"prefix": ["nstsecurity","nstsec"],
 		"body": [
-			"Authentication",
-			"Authorization",
-			"Encryption and Hashing",
-			"Helmet",
-			"CORS",
-			"CSRF Protection",
-			"Rate limiting"
+			"Authentication (nstsecauthen)",
+			"Authorization (nstsecauthoriz)",
+			"Encryption and Hashing (nstsecenchas)",
+			"Helmet (nstsechel)",
+			"CORS (nstseccors)",
+			"CSRF Protection (nstseccsrfp)",
+			"Rate limiting (nstsecrali)"
 		],
 		"description": " Nest SECURITY"
 	},
 	"Authentication": {
-		"prefix": "SECURITYauthentication",
+		"prefix": ["nstsecurityauthentication","nstsecauthen"],
 		"body": [
 			"Creating an authentication module",
 			"Implementing the 'Sign in' endpoint"
@@ -643,7 +644,7 @@
 		"description": "Authenticate user"
 	  },
 	  "Authorization": {
-		"prefix": "SECURITYauthorization",
+		"prefix": ["nstsecurityauthorization","nstsecauthoriz"],
 		"body": [
 			"Basic RBAC implementation",
 			"Claims-based authorization",
@@ -653,7 +654,7 @@
 		"description": "Authorize user"
 	  },
 	  "Encryption and Hashing": {
-		"prefix": "SECURITYencryptionhashing",
+		"prefix": ["nstsecurityencryptionhashing","nstsecenchas"],
 		"body": [
 			"import { createDecipheriv } from 'crypto';",
 
@@ -672,7 +673,7 @@
 		"description": "Encrypt data and hash passwords"
 	  },
 	  "Helmet": {
-		"prefix": "SECURITYhelmet",
+		"prefix": ["nstsecurityhelmet","nstsechel"],
 		"body": [
 			"app.use(helmet({",
 				"crossOriginEmbedderPolicy: false,",
@@ -689,7 +690,7 @@
 		"description": "Enable Helmet middleware for security headers"
 	  },
 	  "CORS": {
-		"prefix": "SECURITYcors",
+		"prefix": ["nstsecuritycors","nstseccors"],
 		"body": [
 			"const app = await NestFactory.create(AppModule);",
 "app.enableCors();",
@@ -698,7 +699,7 @@
 		"description": "Enable Cross-Origin Resource Sharing"
 	  },
 	  "CSRF Protection": {
-		"prefix": "SECURITYcsrf",
+		"prefix": ["nstsecuritycsrf","nstseccsrfp"],
 		"body": [
 			"import * as csurf from 'csurf';",
 
@@ -709,7 +710,7 @@
 		"description": "Enable Cross-Site Request Forgery protection"
 	  },
 	  "Rate limiting": {
-		"prefix": "SECURITYratelimiting",
+		"prefix": ["nstsecurityratelimiting","nstsecrali"],
 		"body": [
 			"@Module({",
 				"imports: [",
@@ -723,37 +724,37 @@
 		"description": "Implement rate limiting to prevent abuse"
 	  },
 	"GRAPHQL": {
-		"prefix": "NestGRAPHQL",
+		"prefix": ["nstgraphql","nstgrap"],
 		"body": [
-			"Quick start",
-			"Resolvers",
-			"Mutations",
-			"Subscriptions",
-			"Scalars",
-			"Directives",
-			"Interfaces",
-			"Unions and Enums",
-			"Field middleware",
-			"Mapped types",
-			"Plugins",
-			"Complexity",
-			"Extensions",
-			"CLI Plugin",
-			"Generating SDL",
-			"Sharing models",
-			"Other features",
-			"Federation",
-			"Migration guide"
+			"Quick start (nstgrapqstrt)",
+			"Resolvers (nstgrapres)",
+			"Mutations (nstgrapmut)",
+			"Subscriptions (nstgrapsub)",
+			"Scalars (nstgrapscal)",
+			"Directives (nstgrapdir)",
+			"Interfaces (nstgrapinter)",
+			"Unions and Enums (nstgrapunenu)",
+			"Field middleware (nstgrapfmid)",
+			"Mapped types (nstgrapmapt)",
+			"Plugins (nstgrapplu)",
+			"Complexity (nstgrapcomp)",
+			"Extensions (nstgrapex)",
+			"CLI Plugin (nstgrapclipl)",
+			"Generating SDL (nstgrapgensdl)",
+			"Sharing models (nstgrapshar)",
+			"Other features (nstgrapofea)",
+			"Federation (nstgrapfed)",
+			"Migration guide (nstgrapmigg)"
 		],
 		"description": " Nest GRAPHQL"
 	},
 	"Quick start": {
-		"prefix": "GRAPHQLquickstart",
+		"prefix": ["nstgraphqlquickstart","nstgrapqstrt"],
 		"body": "// Quick start with GraphQL\nconst { ${1:graphql}, ${2:buildSchema} } = require('graphql');\n\nconst schema = ${3:buildSchema}(`\n  type Query {\n    hello: String\n  }\n`);\n\nconst root = {\n  hello: () => 'Hello, world!'\n};",
 		"description": "Quick start with GraphQL"
 	  },
 	  "Resolvers": {
-		"prefix": "GRAPHQLresolvers",
+		"prefix": ["nstgraphqlresolvers","nstgrapres"],
 		"body": [
 			"Code first",
 			"Object types"
@@ -761,7 +762,7 @@
 		"description": "Define GraphQL resolvers"
 	  },
 	  "Mutations": {
-		"prefix": "GRAPHQLmutations",
+		"prefix": ["nstgraphqlmutations","nstgrapmut"],
 		"body": [
 			"import { InputType, Field } from '@nestjs/graphql';",
 
@@ -774,7 +775,7 @@
 		"description": "Define GraphQL mutations"
 	  },
 	  "Subscriptions": {
-		"prefix": "GRAPHQLsubscriptions",
+		"prefix": ["nstgraphqlsubscriptions","nstgrapsub"],
 		"body": [
 			"@Subscription(returns => Comment, {",
 				"name: 'commentAdded',",
@@ -786,7 +787,7 @@
 		"description": "Define GraphQL subscriptions"
 	  },
 	  "Scalars": {
-		"prefix": "GRAPHQLscalars",
+		"prefix": ["nstgraphqlscalars","nstgrapscal"],
 		"body": [
 			"import { Scalar, CustomScalar } from '@nestjs/graphql';",
 "import { Kind, ValueNode } from 'graphql';",
@@ -814,7 +815,7 @@
 		"description": "Define custom GraphQL scalar type"
 	  },
 	  "Directives": {
-		"prefix": "GRAPHQLdirectives",
+		"prefix": ["nstgraphqldirectives","nstgrapdir"],
 		"body": [
 			"export function upperDirectiveTransformer(",
  " schema: GraphQLSchema,",
@@ -843,7 +844,7 @@
 		"description": "Define custom GraphQL directive"
 	  },
 	  "Interfaces": {
-		"prefix": "GRAPHQLinterfaces",
+		"prefix": ["nstgraphqlinterfaces","nstgrapinter"],
 		"body": [
 			"import { Field, ID, InterfaceType } from '@nestjs/graphql';",
 
@@ -859,7 +860,7 @@
 		"description": "Define GraphQL interface"
 	  },
 	  "Unions and Enums": {
-		"prefix": "GRAPHQLunionsenums",
+		"prefix": ["nstgraphqlunionsenums","nstgrapunenu"],
 		"body": [
 			"import { Field, ObjectType } from '@nestjs/graphql';",
 
@@ -872,7 +873,7 @@
 		"description": "Define GraphQL union and enum"
 	  },
 	  "Field middleware": {
-		"prefix": "GRAPHQLieldmiddleware",
+		"prefix":["nstgraphqlieldmiddleware","nstgrapfmid"],
 		"body": [
 			"import { FieldMiddleware, MiddlewareContext, NextFn } from '@nestjs/graphql';",
 
@@ -888,7 +889,7 @@
 		"description": "Define field middleware for GraphQL fields"
 	  },
 	  "Mapped types": {
-		"prefix": "GRAPHQLmappedtypes",
+		"prefix": ["nstgraphqlmappedtypes","nstgrapmapt"],
 		"body": [
 			"Partia",
 			"Pick",
@@ -899,7 +900,7 @@
 		"description": "Define GraphQL mapped type"
 	  },
 	  "Plugins": {
-		"prefix": "GRAPHQLplugins",
+		"prefix": ["nstgraphqlplugins","nstgrapplu"],
 		"body": [
 			"Custom plugins",
 			"Using external plugins",
@@ -908,7 +909,7 @@
 		"description": "Define and use GraphQL plugins"
 	  },
 	  "Complexity": {
-		"prefix": "GRAPHQLcomplexity",
+		"prefix": ["nstgraphqlcomplexity","nstgrapcomp"],
 		"body": [
 			"Field-level complexity",
 			"Query/Mutation-level complexity"
@@ -916,7 +917,7 @@
 		"description": "Implement complexity analysis for queries"
 	  },
 	  "Extensions": {
-		"prefix": "GRAPHQLextensions",
+		"prefix": ["nstgraphqlextensions","nstgrapex"],
 		"body": [
 			"Adding custom metadata",
 			"Using custom metadata"
@@ -924,19 +925,19 @@
 		"description": "Define and use GraphQL extensions"
 	  },
 	  "CLI Plugin": {
-		"prefix": "GRAPHQLcliplugin",
+		"prefix": ["nstgraphqlcliplugin","nstgrapclipl"],
 		"body": [
 			
 		],
 		"description": "Define a CLI plugin for GraphQL"
 	  },
 	  "Generating SDL": {
-		"prefix": "GRAPHQLgeneratingsdl",
+		"prefix": ["nstgraphqlgeneratingsdl","nstgrapgensdl"],
 		"body": [],
 		"description": "Generate GraphQL SDL from schema"
 	  },
 	  "Sharing models": {
-		"prefix": "GRAPHQLsharingmodels",
+		"prefix": ["nstgraphqlsharingmodels","nstgrapshar"],
 		"body": [
 			"resolve: { // see: https://webpack.js.org/configuration/resolve/",
 		"alias: {",
@@ -947,7 +948,7 @@
 		"description": "Share models between GraphQL and database"
 	  },
 	  "Other features": {
-		"prefix": "GRAPHQLotherfeatures",
+		"prefix": ["nstgraphqlotherfeatures","nstgrapofea"],
 		"body": [
 			"import { CanActivate, ExecutionContext, Injectable } from '@nestjs/common';",
 			"import { GqlExecutionContext } from '@nestjs/graphql';",
@@ -963,7 +964,7 @@
 		"description": "Implement other GraphQL features"
 	  },
 	  "Federation": {
-		"prefix": "GRAPHQLfederation",
+		"prefix": ["nstgraphqlfederation","nstgrapfed"],
 		"body": [
 			"import { Args, Query, Resolver, ResolveReference } from '@nestjs/graphql';",
 "import { UsersService } from './users.service';",
@@ -986,7 +987,7 @@
 		"description": "Implement Apollo Federation for microservices"
 	  },
 	  "Migration guide": {
-		"prefix": "GRAPHQLmigrationguide",
+		"prefix": ["nstgraphqlmigrationguide","nstgrapmigg"],
 		"body":[
 			"$ npm uninstall apollo-server-express",
 "$ npm install @apollo/server",
@@ -997,24 +998,24 @@
 		"description": "Migration guide for GraphQL"
 	  },
 	"WEBSOCKETSL": {
-		"prefix": "NestWEBSOCKETSL",
+		"prefix": ["nstwebsocketsl","nstweb"],
 		"body": [
-			"Gateways",
-			"Exception filters",
-			"Pipes",
-			"Guards",
-			"Interceptors",
-			"Adapters"
+			"Gateways (nstwebgat)",
+			"Exception filters (nstwebexpfil)",
+			"Pipes (nstwebpip)",
+			"Guards (nstwebguar)",
+			"Interceptors (nstwebinter)",
+			"Adapters (nstwebadap)"
 		],
 		"description": " Nest WEBSOCKETSL"
 	},
 	"Gateways": {
-		"prefix": "WEBSOCKETSLgateways",
+		"prefix": ["nstwebsocketslgateways","nstwebgat"],
 		"body": "// Define gateway\nclass ${1:GatewayName}Gateway {\n  // Implement gateway logic\n}",
 		"description": "Define gateway for backend"
 	  },
 	  "Exceptionfilters": {
-		"prefix": "WEBSOCKETSLexceptionfilters",
+		"prefix": ["nstwebsocketslexceptionfilters","nstwebexpfil"],
 		"body": [
 			"import { Catch, ArgumentsHost } from '@nestjs/common';",
 "import { BaseWsExceptionFilter } from '@nestjs/websockets';",
@@ -1029,7 +1030,7 @@
 		"description": "Define exception filter for backend"
 	  },
 	  "Pipes": {
-		"prefix": "WEBSOCKETSLpipes",
+		"prefix": ["nstwebsocketslpipes","nstwebpip"],
 		"body": [
 			"@UsePipes(new ValidationPipe())",
 "@SubscribeMessage('events')",
@@ -1041,7 +1042,7 @@
 		"description": "Define pipe for backend"
 	  },
 	  "Guards": {
-		"prefix": "WEBSOCKETSLguards",
+		"prefix": ["nstwebsocketslguards","nstwebguar"],
 		"body": [
 			"@UseGuards(AuthGuard)",
 "@SubscribeMessage('events')",
@@ -1053,7 +1054,7 @@
 		"description": "Define guard for backend"
 	  },
 	  "Interceptors": {
-		"prefix": "WEBSOCKETSLinterceptors",
+		"prefix": ["nstwebsocketslinterceptors","nstwebinter"],
 		"body": [
 			"@UseInterceptors(new TransformInterceptor())",
 "@SubscribeMessage('events')",
@@ -1065,7 +1066,7 @@
 		"description": "Define interceptor for backend"
 	  },
 	  "Adapters": {
-		"prefix": "WEBSOCKETSLadapters",
+		"prefix": ["nstwebsocketsladapters","nstwebadap"],
 		"body": [
 			"create"	,
 "bindClientConnect",
@@ -1077,31 +1078,31 @@
 		"description": "Define adapter for backend"
 	  },
 	  "Other backend concepts": {
-		"prefix": "WEBSOCKETSLotherbackendconcepts",
+		"prefix": "nstwebsocketslotherbackendconcepts",
 		"body": [],
 		"description": "Implement other backend concepts"
 	  },
 	
 	"MICROSERVICES": {
-		"prefix": "Nest MICROSERVICES",
+		"prefix": ["nstmicroservices","nstmicr"],
 		"body": [
-			"Overview",
-			"Redis",
-			"MQTT",
-			"NATS",
-			"RabbitMQ",
-			"Kafka",
-			"gRPC",
-			"Custom transporters",
-			"Exception filters",
-			"Pipes",
-			"Guards",
-			"Interceptors"
+			"Overview (nstmicrover)",
+			"Redis (nstmicrred)",
+			"MQTT (nstmicrmqtt)",
+			"NATS (nstmicrnats)",
+			"RabbitMQ (nstmicrrab)",
+			"Kafka (nstmicrkaf)",
+			"gRPC (nstmicrgrpc)",
+			"Custom transporters (nstmicrctran)",
+			"Exception filters (nstmicrexfil)",
+			"Pipes (nstmicrpip)",
+			"Guards (nstmicrguar)",
+			"Interceptors (nstmicrintr)"
 		],
 		"description": " Nest MICROSERVICES"
 	},
 	"Overview": {
-		"prefix": "MICROSERVICESoverview",
+		"prefix": ["nstmicroservicesoverview","nstmicrover"],
 		"body": [
 			"import { NestFactory } from '@nestjs/core';",
 "import { Transport, MicroserviceOptions } from '@nestjs/microservices';",
@@ -1121,7 +1122,7 @@
 		"description": "Overview of messaging and communication concepts"
 	  },
 	  "Redis": {
-		"prefix": "MICROSERVICESredis",
+		"prefix": ["nstmicroservicesredis","nstmicrred"],
 		"body": [
 			"@Module({",
 				"imports: [",
@@ -1142,7 +1143,7 @@
 		"description": "Using Redis for messaging"
 	  },
 	  "MQTT": {
-		"prefix": "MICROSERVICESmqtt",
+		"prefix": ["nstmicroservicesmqtt","nstmicrmqtt"],
 		"body": [
 			"const app = await NestFactory.createMicroservice<MicroserviceOptions>(AppModule, {",
 				"transport: Transport.MQTT,",
@@ -1154,7 +1155,7 @@
 		"description": "Using MQTT for messaging"
 	  },
 	  "NATS": {
-		"prefix": "MICROSERVICESNestnats",
+		"prefix": ["nstmicroservicesnestnats","nstmicrnats"],
 		"body": [
 			"const app = await NestFactory.createMicroservice<MicroserviceOptions>(AppModule, {",
 				"transport: Transport.NATS,",
@@ -1166,7 +1167,7 @@
 		"description": "Using NATS for messaging"
 	  },
 	  "RabbitMQ": {
-		"prefix": "MICROSERVICESrabbitmq",
+		"prefix": ["nstmicroservicesrabbitmq","nstmicrrab"],
 		"body": [
 			"const app = await NestFactory.createMicroservice<MicroserviceOptions>(AppModule, {",
 				"transport: Transport.RMQ,",
@@ -1182,7 +1183,7 @@
 		"description": "Using RabbitMQ for messaging"
 	  },
 	  "Kafka": {
-		"prefix": "MICROSERVICESkafka",
+		"prefix": ["nstmicroserviceskafka","nstmicrkaf"],
 		"body": [
 			"const app = await NestFactory.createMicroservice<MicroserviceOptions>(AppModule, {",
 				"transport: Transport.KAFKA,",
@@ -1196,7 +1197,7 @@
 		"description": "Using Kafka for messaging"
 	  },
 	  "gRPC": {
-		"prefix": "MICROSERVICESgrpc",
+		"prefix": ["nstmicroservicesgrpc","nstmicrgrpc"],
 		"body": [
 			"const app = await NestFactory.createMicroservice<MicroserviceOptions>(AppModule, {",
 				"transport: Transport.GRPC,",
@@ -1209,7 +1210,7 @@
 		"description": "Using gRPC for communication"
 	  },
 	  "Custom transporters": {
-		"prefix": "MICROSERVICEScustomtransporters",
+		"prefix": ["nstmicroservicescustomtransporters","nstmicrctran"],
 		"body": [
 			"import { CustomTransportStrategy, Server } from '@nestjs/microservices';",
 
@@ -1228,7 +1229,7 @@
 		"description": "Implementing custom transporters"
 	  },
 	  "Exception filters": {
-		"prefix": "MICROSERVICESexceptionfilters",
+		"prefix": ["nstmicroservicesexceptionfilters","nstmicrexfil"],
 		"body": [
 			"import { Catch, RpcExceptionFilter, ArgumentsHost } from '@nestjs/common';",
 "import { Observable, throwError } from 'rxjs';",
@@ -1244,7 +1245,7 @@
 		"description": "Define exception filter for messaging"
 	  },
 	  "Pipes": {
-		"prefix": "MICROSERVICESpipes",
+		"prefix": ["nstmicroservicespipes","nstmicrpip"],
 		"body": [
 			"@UsePipes(new ValidationPipe())",
 "@MessagePattern({ cmd: 'sum' })",
@@ -1255,7 +1256,7 @@
 		"description": "Define pipe for messaging"
 	  },
 	  "Guards": {
-		"prefix": "MICROSERVICESguards",
+		"prefix":[ "nstmicroservicesguards","nstmicrguar"],
 		"body": [
 			"@UseGuards(AuthGuard)",
 "@MessagePattern({ cmd: 'sum' })",
@@ -1266,7 +1267,7 @@
 		"description": "Define guard for messaging"
 	  },
 	  "Interceptors": {
-		"prefix": "MICROSERVICESinterceptors",
+		"prefix": ["nstmicroservicesinterceptors","nstmicrintr"],
 		"body": [
 			"@UseInterceptors(new TransformInterceptor())",
 "@MessagePattern({ cmd: 'sum' })",
@@ -1278,7 +1279,7 @@
 	  },
 	
 	"CLI": {
-		"prefix": "Nest Nest CLI",
+		"prefix": ["nstcli","nstcli"],
 		"body": [
 			"Overview",
 			"Workspaces",
@@ -1324,22 +1325,22 @@
 		"description": "Defining and running scripts in projects"
 	  },
 	"OPENAPI": {
-		"prefix": "Nest OPENAPI",
+		"prefix": ["nstopenapi","nstopen"],
 		"body": [
-			"Introduction",
-			"Types and Parameters",
-			"Operations",
-			"Security",
-			"Mapped Types",
-			"Decorators",
-			"CLI Plugin",
-			"Other features",
-			"Migration guide"
+			"Introduction (nstopenintro)",
+			"Types and Parameters(nstopentypara)",
+			"Operations (nstopenoper)",
+			"Security (nstopensec)",
+			"Mapped Types (nstopenmapty)",
+			"Decorators (nstopendec)",
+			"CLI Plugin (nstopencliplu)",
+			"Other features (nstopenothfea)",
+			"Migration guide (nstopenmig)"
 		],
 		"description": " Nest OPENAPI"
 	},
 	"Introduction": {
-		"prefix": "OPENAPIintroduction",
+		"prefix": ["nstopenapiintroduction","nstopenintro"],
 		"body": [
 			"import { NestFactory } from '@nestjs/core';",
 "import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';",
@@ -1364,7 +1365,7 @@
 		"description": "Introduction to GraphQL"
 	  },
 	  "Types and Parameters": {
-		"prefix": "OPENAPItypesparameters",
+		"prefix": ["nstopenapitypesparameters","nstopentypara"],
 		"body": [
 			"@Post()",
 "async create(@Body() createCatDto: CreateCatDto) {",
@@ -1374,7 +1375,7 @@
 		"description": "GraphQL types and parameters"
 	  },
 	  "Operations": {
-		"prefix": "OPENAPIoperations",
+		"prefix": ["nstopenapioperations","nstopenoper"],
 		"body": [
 			"@ApiHeader({",
 				"name: 'X-MyHeader',",
@@ -1387,7 +1388,7 @@
 		"description": "Performing operations in GraphQL"
 	  },
 	  "Security": {
-		"prefix": "OPENAPIsecurity",
+		"prefix": ["nstopenapisecurity","nstopensec"],
 		"body": [
 			"const options = new DocumentBuilder().addSecurity('basic', {",
 				"type: 'http',",
@@ -1397,7 +1398,7 @@
 		"description": "Security considerations in GraphQL"
 	  },
 	  "Mapped Types": {
-		"prefix": "OPENAPImappedtypes",
+		"prefix": ["nstopenapimappedtypes","nstopenmapty"],
 		"body": [
 			"import { ApiProperty } from '@nestjs/swagger';",
 
@@ -1415,7 +1416,7 @@
 		"description": "Using mapped types in GraphQL"
 	  },
 	  "Decorators": {
-		"prefix": "OPENAPIdecorators",
+		"prefix": ["nstopenapidecorators","nstopendec"],
 		"body": [
 			"import { ApiProperty } from '@nestjs/swagger';",
 
@@ -1433,7 +1434,7 @@
 		"description": "Applying decorators in GraphQL"
 	  },
 	  "CLI Plugin": {
-		"prefix": "OPENAPIcliplugin",
+		"prefix":[ "nstopenapicliplugin","nstopencliplu"],
 		"body": [
 			"export class CreateUserDto {",
 				"@ApiProperty()",
@@ -1452,7 +1453,7 @@
 		"description": "Working with the GraphQL CLI plugin"
 	  },
 	  "Other features": {
-		"prefix": "OPENAPIotherfeatures",
+		"prefix": ["nstopenapiotherfeatures","nstopenothfea"],
 		"body": [
 			"Global prefix",
 			"Global parameters",
@@ -1461,36 +1462,36 @@
 		"description": "Exploring other features of GraphQL"
 	  },
 	  "Migration guide": {
-		"prefix": "OPENAPImigrationguide",
+		"prefix": ["nstopenapimigrationguide","nstopenmig"],
 		"body": "// Migrating to new GraphQL versions\n// ...",
 		"description": "Migrating to new GraphQL versions"
 	  },
 	"RECIPES": {
-		"prefix": "Nest RECIPES",
+		"prefix": ["nstrecipes","nstrec"],
 		"body": [
-			"REPL",
-			"CRUD generator",
-			"SWC (fast compiler)",
-			"Passport (auth)",
-			"Hot reload",
-			"MikroORM",
-			"TypeORM",
-			"Mongoose",
-			"Sequelize",
-			"Router module",
-			"Swagger",
-			"Health checks",
-			"CQRSCompodoc",
-			"Prisma",
-			"Serve static",
-			"Commander",
-			"Async local storage",
-			"Automock"
+			"REPL (nstrecrepl)",
+			"CRUD generator (nstreccrud)",
+			"SWC (fast compiler) (nstrecswc)",
+			"Passport (auth) (nstrecpass)",
+			"Hot reload (nstrechotre)",
+			"MikroORM (nstrecmik)",
+			"TypeORM (nstrectyp)",
+			"Mongoose (nstrecmon)",
+			"Sequelize (nstrecseq)",
+			"Router module (nstrecrou)",
+			"Swagger (nstrecswa)",
+			"Health checks (nstrecheach)",
+			"CQRSCompodoc (nstreccqrsc)",
+			"Prisma (nstrecpri)",
+			"Serve static (nstrecserv)",
+			"Commander (nstreccomm)",
+			"Async local storage (nstrecasylo)",
+			"Automock (nstrecaut)"
 		],
 		"description": " Nest RECIPES"
 	},
 	"REPL": {
-		"prefix": "RECIPESrepl",
+		"prefix": ["nstrecipesrepl","nstrecrepl"],
 		"body":[ 
 			"import { repl } from '@nestjs/core';",
 		"import { AppModule } from './app.module';",
@@ -1502,14 +1503,14 @@
 		"description": "Working with Node.js REPL"
 	  },
 	  "CRUD generator": {
-		"prefix": "RECIPEScrudgenerator",
+		"prefix": ["nstrecipescrudgenerator","nstreccrud"],
 		"body":[
 			
 		],
 		"description": "Generating CRUD operations"
 	  },
 	  "SWC (fast compiler)": {
-		"prefix": "RECIPESswccompiler",
+		"prefix": ["nstrecipesswccompiler","nstrecswc"],
 		"body": [
 			"'compilerOptions': {",
 				"'builder': {",
@@ -1523,7 +1524,7 @@
 		"description": "Using SWC (fast compiler)"
 	  },
 	  "Passport (auth)": {
-		"prefix": "RECIPESpassportauth",
+		"prefix": ["nstrecipespassportauth","nstrecpass"],
 		"body":[
 			"import { Module } from '@nestjs/common';",
 "import { UsersService } from './users.service';",
@@ -1537,7 +1538,7 @@
 		"description": "Implementing authentication with Passport"
 	  },
 	  "Hot reload": {
-		"prefix": "RECIPEShotreload",
+		"prefix": ["nstrecipeshotreload","nstrechotre"],
 		"body": [
 			"declare const module: any;",
 
@@ -1555,7 +1556,7 @@
 		"description": "Enabling hot reloading in Node.js"
 	  },
 	  "MikroORM": {
-		"prefix": "RECIPESmikroorm",
+		"prefix": ["nstrecipesmikroorm","nstrecmik"],
 		"body": [
 			"@Module({",
 				"imports: [",
@@ -1574,7 +1575,7 @@
 		"description": "Using MikroORM for database operations"
 	  },
 	  "TypeORM": {
-		"prefix": "RECIPEStypeorm",
+		"prefix": ["nstrecipesStypeorm","nstrectyp"],
 		"body": [
 			"import { DataSource } from 'typeorm';",
 "import { Photo } from './photo.entity';",
@@ -1590,7 +1591,7 @@
 		"description": "Working with TypeORM for database tasks"
 	  },
 	  "Mongoose": {
-		"prefix": "RECIPESmongoose",
+		"prefix": ["nstrecipesmongoose","nstrecmon"],
 		"body": [
 			"import * as mongoose from 'mongoose';",
 
@@ -1605,7 +1606,7 @@
 		"description": "Using Mongoose for MongoDB interactions"
 	  },
 	  "Sequelize": {
-		"prefix": "RECIPESsequelize",
+		"prefix": ["nstrecipessequelize","nstrecseq"],
 		"body": [
 			"import { Module } from '@nestjs/common';",
 "import { databaseProviders } from './database.providers';",
@@ -1619,7 +1620,7 @@
 		"description": "Integrating Sequelize ORM in Node.js"
 	  },
 	  "Router module": {
-		"prefix": "RECIPESroutermodule",
+		"prefix": ["nstrecipesroutermodule","nstrecrou"],
 		"body": [
 			"@Module({",
 				"imports: [",
@@ -1637,7 +1638,7 @@
 		"description": "Creating and using router modules"
 	  },
 	  "Swagger": {
-		"prefix": "RECIPESswagger",
+		"prefix": ["nstrecipesswagger","nstrecswa"],
 		"body": [
 			"import { NestFactory } from '@nestjs/core';",
 "import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';",
@@ -1662,7 +1663,7 @@
 		"description": "Adding Swagger documentation to API"
 	  },
 	  "Health checks": {
-		"prefix": "RECIPEShealthchecks",
+		"prefix": ["nstrecipeshealthchecks","nstrecheach"],
 		"body": [
 			"import { Module } from '@nestjs/common';",
 "import { TerminusModule } from '@nestjs/terminus';",
@@ -1675,7 +1676,7 @@
 		"description": "Implementing health checks in Node.js"
 	  },
 	  "CQRS": {
-		"prefix": "RECIPEScqrs",
+		"prefix": ["nstrecipescqrs","nstreccqrsc"],
 		"body":[
 			"@Injectable()",
 "export class HeroesGameService {",
@@ -1691,7 +1692,7 @@
 		"description": "Applying CQRS pattern in Node.js"
 	  },
 	  "Compodoc": {
-		"prefix": "RECIPEScompodoc",
+		"prefix": ["nstrecipescompodoc","nstrecpri"],
 		"body": [
 			"import { Module } from '@nestjs/common';",
 "import { AppController } from './app.controller';",
@@ -1713,27 +1714,27 @@
 		"description": "Generating documentation using Compodoc"
 	  },
 	  "Prisma": {
-		"prefix": "RECIPESprisma",
+		"prefix": ["nstrecipesprisma","nstrecserv"],
 		"body": "// Using Prisma ORM for database operations\n// ...",
 		"description": "Using Prisma ORM for database operations"
 	  },
 	  "Serve static": {
-		"prefix": "RECIPESservestatic",
+		"prefix": ["nstrecipesservestatic","nstreccomm"],
 		"body": "// Serving static files in Node.js\n// ...",
 		"description": "Serving static files in Node.js"
 	  },
 	  "Commander": {
-		"prefix": "RECIPEScommander",
+		"prefix": ["nstrecipescommander","nstrecasylo"],
 		"body": "// Building command-line applications with Commander\n// ...",
 		"description": "Building command-line applications with Commander"
 	  },
 	  "Async local storage": {
-		"prefix": "RECIPESasynclocalstorage",
+		"prefix": ["nstrecipesasynclocalstorage","nstrecaut"],
 		"body": "// Managing async local storage in Node.js\n// ...",
 		"description": "Managing async local storage in Node.js"
 	  },
 	  "Automock": {
-		"prefix": "RECIPESautomock",
+		"prefix": "nstrecipesautomock",
 		"body": [
 			"import { Injectable } from '@nestjs/core';",
 
@@ -1756,22 +1757,22 @@
 		"description": "Automocking dependencies in Node.js tests"
 	  },
 	"FAQ": {
-		"prefix": "RECIPESFAQ",
+		"prefix": ["nstfaq","nstfq"],
 		"body": [
-			"Serverless",
-			"HTTP adapter",
-			"Global path prefix",
-			"Raw body",
-			"Hybrid application",
-			"HTTPS & multiple servers",
-			"Request lifecycle",
-			"Common errors",
-			"Examples"
+			"Serverless (nstfqser)",
+			"HTTP adapter (nstfqhttpad)",
+			"Global path prefix (nstfqgppre)",
+			"Raw body (nstfqrbo)",
+			"Hybrid application (nstfqhyapp)",
+			"HTTPS & multiple servers (nstfqhttpmul)",
+			"Request lifecycle (nstfqreqlif)",
+			"Common errors (nstfqcomerr)",
+			"Examples (nstfqex)"
 		],
 		"description": " Nest FAQ"
 	},
 	"Serverless": {
-		"prefix": "FAQserverless",
+		"prefix": ["FAQserverless","nstfqser"],
 		"body": [
 			"import * as express from 'express';",
 
@@ -1813,7 +1814,7 @@
 		"description": "Setting up a Serverless application"
 	  },
 	  "HTTP adapter": {
-		"prefix": "FAQhttpadapter",
+		"prefix": ["FAQhttpadapter","nstfqhttpad"],
 		"body": [
 			"export class CatsService {",
 				"constructor(private adapterHost: HttpAdapterHost) {}",
@@ -1822,7 +1823,7 @@
 		"description": "Creating an HTTP adapter for Serverless"
 	  },
 	  "Global path prefix": {
-		"prefix": "FAQglobalpathprefix",
+		"prefix": ["FAQglobalpathprefix","nstfqgppre"],
 		"body": [
 			"app.setGlobalPrefix('v1', {",
 				"exclude: [{ path: 'health', method: RequestMethod.GET }],",
@@ -1831,7 +1832,7 @@
 		"description": "Configuring a global path prefix in Serverless"
 	  },
 	  "Raw body": {
-		"prefix": "FAQrawbody",
+		"prefix": ["FAQrawbody","nstfqrbo"],
 		"body": [
 			"import { NestFactory } from '@nestjs/core';",
 "import type { NestExpressApplication } from '@nestjs/platform-express';",
@@ -1846,7 +1847,7 @@
 		"description": "Accessing the raw request body in Serverless"
 	  },
 	  "Hybrid application": {
-		"prefix": "FAQhybridapp",
+		"prefix": ["FAQhybridapp","nstfqhyapp"],
 		"body": [
 			"const app = await NestFactory.create(AppModule);",
 "const microservice = app.connectMicroservice<MicroserviceOptions>({",
@@ -1858,7 +1859,7 @@
 		"description": "Building a hybrid Serverless application"
 	  },
 	  "HTTPS & multiple servers": {
-		"prefix": "FAQhttpsmultipleservers",
+		"prefix": ["FAQhttpsmultipleservers","nstfqhttpmul"],
 		"body": [
 			"const httpsOptions = {",
 				"key: fs.readFileSync('./secrets/private-key.pem'),",
@@ -1872,7 +1873,7 @@
 		"description": "Using HTTPS and multiple servers in Serverless"
 	  },
 	  "Request lifecycle": {
-		"prefix": "FAQrequestlifecycle",
+		"prefix": ["FAQrequestlifecycle","nstfqreqlif"],
 		"body": [
 			"@UseGuards(Guard1, Guard2)",
 "@Controller('cats')",
@@ -1889,17 +1890,17 @@
 		"description": "Understanding the request lifecycle in Serverless"
 	  },
 	  "Common errors": {
-		"prefix": "FAQcommonerrors",
+		"prefix": ["FAQcommonerrors","nstfqcomerr"],
 		"body": "// Handling common errors in Serverless applications\n// ...",
 		"description": "Handling common errors in Serverless applications"
 	  },
 	  "Examples": {
-		"prefix": "FAQexamples",
+		"prefix": ["FAQexamples","nstfqex"],
 		"body": "// Practical examples of Serverless applications\n// ...",
 		"description": "Practical examples of Serverless applications"
 	  },
 	"DEVTOOLS": {
-		"prefix": "DEVTOOLS",
+		"prefix": ["nstdev"],
 		"body": [
 			"Overview",
 			"CI/CD integration"
@@ -1907,7 +1908,7 @@
 		"description": "RECIPESDEVTOOLS"
 	},
 	"DISCOVER": {
-		"prefix": "DEVTOOLSDISCOVER",
+		"prefix": ["nstdis"],
 		"body": [
 			"Who is using Nest?"
 		],

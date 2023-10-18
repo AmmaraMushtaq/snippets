@@ -1,40 +1,40 @@
 
 {
 	"nodejs": {
-		"prefix": "node",
+		"prefix": ["node","nod"],
 		"body": [
-			"Resource",
+			"Resource (nodres)",
 			"",
-			"Net",
+			"Net (nodnet)",
 			"",
-			"Basic",
+			"Basic (nodbsic)",
 			"",
-			"Code",
+			"Code (nodcod)",
 			"",
-			"Module",
+			"Module (nodmod)",
 			"",
-			"Text",
+			"Text (nodtxt)",
 			"",
-			"System",
+			"System (nodsys)",
 			"",
-			"Buffer/Stream",
+			"Buffer/Stream (nodbuf)",
 			"",
-			"Process/Events",
+			"Process/Events (nodproev)",
 			"",
-			"HTTP",
+			"HTTP (nodhttp)",
 			"",
-			"Domain",
+			"Domain (noddom)",
 			"",
-			"File",
+			"File (ilil)",
 			"",
-			"3rd Party",
+			"3rd Party (nod3rd)",
 			""
 			
 
 		]},
 
 	"JavaScript Resources": {
-	  "prefix": "Resources",
+	  "prefix": ["nodresources","nodres"],
 	  "body": [
 		"Resource",
 		"Online",
@@ -47,7 +47,7 @@
 	  "description": "JavaScript resources"
 	},
 	"Net": {
-		"prefix": "Net",
+		"prefix": ["nodnet"],
 		"body": [
 		  "net",
 		  "net.createServer([options], [connectionListener])",
@@ -206,7 +206,7 @@
 		"description": "Net functions and classes"
 	  },
 	  "JavaScript Basics": {
-		"prefix": "Basics",
+		"prefix": ["nodbasics","nodbsic"],
 		"body": [
 		  "Global Objects",
 		  "",
@@ -303,7 +303,7 @@
 		"description": "Basic JavaScript concepts and global objects"
 	  },
 	  "code": {
-		"prefix": "Code",
+		"prefix": ["nodcode","nodcod"],
 		"body": [
 		  "Executing JS",
 		  "",
@@ -392,7 +392,7 @@
 		"description": "Node.js VM module methods"
 	  },
 	  "Node.js Modules": {
-		"prefix": "Modules",
+		"prefix": ["nodmodules","nodmod"],
 		"body": [
 		  "Modules",
 		  "",
@@ -459,7 +459,7 @@
 		"description": "Common topics related to Node.js modules and module loading"
 	  },
 	  "Node.js Text, Path, and QueryString": {
-		"prefix": "Text",
+		"prefix": ["nostext","nodtxt"],
 		"body": [
 		  "Text",
 		  "",
@@ -560,7 +560,7 @@
 		"description": "Common methods in Node.js for Text, Path, and QueryString processing"
 	  },
 	  "Node.js System": {
-		"prefix": "System",
+		"prefix": ["nodsystem","nodsys"],
 		"body": [
 			"Zlib",
 			"",
@@ -724,7 +724,7 @@
 		"description": "Methods and classes in the Node.js zlib module"
 	  },
 	  "Node.js Buffer Class": {
-		"prefix": "Buffer",
+		"prefix": ["nodbuffer","nodbuf"],
 		"body": [
 		  "Buffer",
 		  "",
@@ -887,7 +887,7 @@
 		"description": "Methods and properties in the Node.js Buffer class"
 	  },
 	  "Node.js Process Events": {
-		"prefix": "ProcessEvents",
+		"prefix": ["nodrocessevents","nodproev"],
 		"body": [
 		  "Event: 'exit'",
 		  "",
@@ -974,7 +974,7 @@
 		"description": "Events and properties in the Node.js Process module"
 	  },
 	  "Node.js HTTP Module": {
-		"prefix": "HTTP",
+		"prefix": ["nodhttp"],
 		"body": [
 		  "http",
 		  "",
@@ -1155,7 +1155,7 @@
 		"description": "Methods and properties in the Node.js HTTP module"
 	  },
 	  "Domain": {
-		"prefix": "Domain",
+		"prefix": ["noddomain","noddom"],
 		"body": [
 		  "Domain",
 		  "",
@@ -1189,7 +1189,7 @@
 		"description": "JavaScript concepts: Domain, Additions to Error objects, Implicit Binding, Explicit Binding"
 	  },
 	  "Node.js crypto": {
-		"prefix": "DomainCrypto",
+		"prefix": ["noddomaincrypto","nodcry"],
 		"body": [
 		  "crypto.createCredentials(details)",
 		  "",
@@ -1280,7 +1280,7 @@
 		"description": "Classes and methods in the Node.js crypto module for cryptography"
 	  },
 	  "Node.js TSL(SSL)": {
-		"prefix": "DomainTSLssl",
+		"prefix": ["nodomaintslssl"],
 		"body": [
 		  "Client-initiated renegotiation attack mitigation",
 		  "",
@@ -1343,7 +1343,7 @@
 		"description": "Classes and methods in the Node.js TSL(SSL) module for TLS/SSL functionality"
 	  },
 	  "Node.js File System (fs)": {
-		"prefix": "File",
+		"prefix": ["nodfil"],
 		"body": [
 		  "fs.rename(oldPath, newPath, [callback])",
 		  "",
@@ -1470,7 +1470,7 @@
 		"description": "File System (fs) module in Node.js for file operations"
 	  },
 	  "Node.js Third Party Modules": {
-		"prefix": "ThirdParty",
+		"prefix": ["nodthirdparty","nod3rd"],
 		"body": [
 		  "Third Party Modules",
 		  "",
