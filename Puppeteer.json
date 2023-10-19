@@ -1,81 +1,82 @@
 {
 	"PuppeteerNode": {
-		"prefix": "PuppeteerNode",
+		"prefix": ["puppeteernode","pup","ptr"],
 		"body": [
-			"Puppeteer",
-			"Browser",
-			"BrowserContext",
-			"Page",
-			"WebWorker",
-			"Accessibility",
-			"Keyboard",
-			"Mouse",
-			"Touchscreen",
-			"Tracing",
-			"FileChooser",
-			"Dialog",
-			"ConsoleMessage",
-			"Frame",
-			"JSHandle",
-			"ElementHandle",
-			"HTTPRequest",
-			"HTTPResponse",
-			"SecurityDetails",
-			"Target",
-			"CDPSession",
-			"Coverage",
-			"TimeoutError",
-			"EventEmitter",
-			"Other"
+			"Puppeteerconnect (ptrconn)",
+			"Puppeteer (ptrpup)",
+			"Browser  (ptrbrw)",
+			"BrowserContext (ptrbcon)",
+			"Page (ptrpge)",
+			"WebWorker (ptrwwork)",
+			"Accessibility (ptracc)",
+			"Keyboard (ptrkeyb)",
+			"Mouse (ptrmse)",
+			"Touchscreen (ptrtsc)",
+			"Tracing (ptrtr)",
+			"FileChooser (ptrfch)",
+			"Dialog (ptrdi)",
+			"ConsoleMessage (ptrconm)",
+			"Frame (ptrfr)",
+			"JSHandle (ptrjsh)",
+			"ElementHandle (ptrele)",
+			"HTTPRequest (ptrhttpr)",
+			"HTTPResponse (ptrhttpres)",
+			"SecurityDetails (ptrsede)",
+			"Target (ptrtar)",
+			"CDPSession (ptrcdse)",
+			"Coverage (ptrcov)",
+			"TimeoutError (ptrtime)",
+			"EventEmitter (ptreve)",
+			"Other (ptrot)"
 		]
 	},
 	"PuppeteerNode.connect": {
-		"prefix": "Connect",
+		"prefix": ["ptrconnect","ptrconn"],
 		"body": [
-			" PuppeteerNode.connect",
-			" PuppeteerNode.connect",
-			" PuppeteerNode.defaultArgs",
-			"PuppeteerNode.executablePath",
-			"PuppeteerNode.launch",
-			" PuppeteerNode.trimCache"
+			
+			" PuppeteerNode.connect (ptrconn)",
+			" PuppeteerNode.defaultArgs (ptrdearg)",
+			"PuppeteerNode.executablePath (ptrexepa)",
+			"PuppeteerNode.launch (ptrlaun)",
+			" PuppeteerNode.trimCache (ptrtrim)"
 		]
 	},
 	"Puppeteer": {
-		"prefix": "Puppeteer",
+		"prefix": ["ptrpuppeteer","ptrpup"],
 		"body": [
-			"Puppeteer",
-			"Puppeteer.clearCustomQueryHandlers",
-			"Puppeteer.connect",
-			"Puppeteer.customQueryHandlerNames",
-			"Puppeteer.registerCustomQueryHandler",
-			"Puppeteer.unregisterCustomQueryHandler"
+			
+			"Puppeteer.clearcustomqueryhandlers (ptrpupccqh)",
+			"Puppeteer.connect (ptrpupconn)",
+			"Puppeteer.customqueryhandlernames (ptrpupcqhn)",
+			"Puppeteer.registercustomqueryhandler (ptrpuprcqh)",
+			"Puppeteer.unregistercustomqueryhandler (ptrpupucqh)"
 		],
 		"description": "Puppeteer functions"
 	},
 	"Puppeteer Browser": {
-		"prefix": "Browser",
+		"prefix": ["ptrbrowser","ptrbrw"],
 		"body": [
-			"Browser",
-			"Browser.browserContexts",
-			"Browser.close",
-			"Browser.createIncognitoBrowserContext",
-			"Browser.defaultBrowserContext",
-			"Browser.disconnect",
-			"Browser.isConnected",
-			"Browser.newPage",
-			"Browser.pages",
-			"Browser.process",
-			"Browser.target",
-			"Browser.targets",
-			"Browser.userAgent",
-			"Browser.version",
-			"Browser.waitForTarget",
-			"Browser.wsEndpoint"
+			
+			"Browser.browserContexts (ptrbrwcon)",
+			"Browser.close (ptrbrwclo)",
+			"Browser.createincognitobrowsercontext (ptrbrwcibb)",
+			"Browser.defaultbrowsercontext (ptrbrwdbcon)",
+			"Browser.disconnect (ptrbrwdis)",
+			"Browser.isconnected (ptrbrwiscon)",
+			"Browser.newPage (ptrbrwnewpag)",
+			"Browser.pages (ptrbrwpgs)",
+			"Browser.process (ptrbrwpro)",
+			"Browser.target (ptrbrwtar)",
+			"Browser.targets (ptrbrwtrgts)",
+			"Browser.userAgent (ptrbrwuagen)",
+			"Browser.version (ptrbrwver)",
+			"Browser.waitForTarget (ptrbrwwftar)",
+			"Browser.wsEndpoint (ptrbrwwsepo)"
 		],
 		"description": "Puppeteer Browser"
 	},
 	"Puppeteer BrowserContext": {
-		"prefix": "BrowserContext",
+		"prefix": ["ptrbrowsercontext","ptrbcon"],
 		"body": [
 			"BrowserContext",
 			"BrowserContext.browser",
@@ -91,7 +92,7 @@
 		"description": "Puppeteer BrowserContext"
 	},
 	"PuppeteerPage": {
-		"prefix": "Page",
+		"prefix": ["ptrpage","ptrpge"],
 		"body": [
 			"Page",
 			"Page.$",
@@ -189,7 +190,7 @@
 		"description": "Puppeteer page"
 	},
 	"Puppeteer WebWorker": {
-		"prefix": "WebWorker",
+		"prefix": ["ptrwebworker","ptrwwork"],
 		"body": [
 			"WebWorker",
 			"WebWorker.evaluate",
@@ -199,7 +200,7 @@
 		"description": "Puppeteer WebWorker"
 	},
 	"Puppeteer Accessibility": {
-		"prefix": "Accessibility",
+		"prefix": ["ptraccessibility","ptracc"],
 		"body": [
 			"Accessibility",
 			"Accessibility.snapshot"
@@ -207,7 +208,7 @@
 		"description": "PuppeteerAccessibility"
 	},
 	"Puppeteer Keyboard": {
-		"prefix": "Keyboard",
+		"prefix": ["keyboard","ptrkeyb"],
 		"body": [
 			"Keyboard",
 			"Keyboard.down",
@@ -219,7 +220,7 @@
 		"description": "Puppeteer Keyboard"
 	},
 	"Puppeteer Mouse": {
-		"prefix": "Mouse",
+		"prefix": ["ptrmouse","ptrmse"],
 		"body": [
 			"Mouse",
 			"Mouse.click",
@@ -237,7 +238,7 @@
 		"description": "Puppeteer Mouse"
 	},
 	"Puppeteer Touchscreen": {
-		"prefix": "Touchscreen",
+		"prefix": ["ptrtouchscreen","ptrtsc"],
 		"body": [
 			"Touchscreen",
 			"Touchscreen.tap",
@@ -248,7 +249,7 @@
 		"description": "Puppeteer Touchscreen"
 	},
 	"Puppeteer Tracing": {
-		"prefix": "Tracing",
+		"prefix": ["ptrtracing","ptrtr"],
 		"body": [
 			"Tracing",
 			"Tracing.start",
@@ -257,7 +258,7 @@
 		"description": "Puppeteer Tracing"
 	},
 	"Puppeteer FileChooser": {
-		"prefix": "FileChooser",
+		"prefix": ["filechooser","ptrfch"],
 		"body": [
 			"FileChooser",
 			"FileChooser.accept",
@@ -267,7 +268,7 @@
 		"description": "Puppeteer FileChooser"
 	},
 	"Puppeteer Dialog": {
-		"prefix": "Dialog",
+		"prefix": ["ptrdialog","ptrdi"],
 		"body": [
 			"Dialog",
 			"Dialog.accept",
@@ -279,7 +280,7 @@
 		"description": "Puppeteer Dialog"
 	},
 	"Puppeteer ConsoleMessage": {
-		"prefix": "ConsoleMessage",
+		"prefix": ["ptrconsolemessage","ptrconm"],
 		"body": [
 			"ConsoleMessage",
 			"ConsoleMessage.(constructor)",
@@ -292,7 +293,7 @@
 		"description": "Puppeteer ConsoleMessage"
 	},
 	"Puppeteer Frame": {
-		"prefix": "Frame",
+		"prefix": ["ptrframe","ptrfr"],
 		"body": [
 			"Frame",
 			"Frame.$",
@@ -334,7 +335,7 @@
 		"description": "Puppeteer Frame"
 	},
 	"Puppeteer JSHandle": {
-		"prefix": "JSHandle",
+		"prefix": ["ptrjshandle","ptrjsh"],
 		"body": [
 			"JSHandle",
 			"JSHandle.asElement",
@@ -352,7 +353,7 @@
 		"description": "Puppeteer JSHandle"
 	},
 	"Puppeteer ElementHandle": {
-		"prefix": "ElementHandle",
+		"prefix": ["ptrelementhandle","ptrele"],
 		"body": [
 			"ElementHandle",
 			"ElementHandle.$",
@@ -394,7 +395,7 @@
 		"description": "Puppeteer ElementHandle"
 	},
 	"Puppeteer HTTPRequest": {
-		"prefix": "HTTPRequest",
+		"prefix": ["ptrhttprequest","ptrhttpr"],
 		"body": [
 			"HTTPRequest",
 			"HTTPRequest.abort",
@@ -422,7 +423,7 @@
 		"description": "Puppeteer HTTPRequest"
 	},
 	"Puppeteer HTTPResponse": {
-		"prefix": "HTTPResponse",
+		"prefix": ["ptrhttpresponse","ptrhttpres"],
 		"body": [
 			"HTTPResponse",
 			"HTTPResponse.buffer",
@@ -444,7 +445,7 @@
 		"description": "Puppeteer HTTPResponse"
 	},
 	"Puppeteer SecurityDetails": {
-		"prefix": "SecurityDetails",
+		"prefix": ["ptrsecuritydetails","ptrsede"],
 		"body": [
 			"SecurityDetails",
 			"SecurityDetails.issuer",
@@ -457,7 +458,7 @@
 		"description": "Puppeteer SecurityDetails"
 	},
 	"Puppeteer Target": {
-		"prefix": "Target",
+		"prefix": ["ptrparget","ptrtar"],
 		"body": [
 			"Target",
 			"Target.browser",
@@ -472,7 +473,7 @@
 		"description": "Puppeteer Target"
 	},
 	"Puppeteer CDPSession": {
-		"prefix": "CDPSession",
+		"prefix": ["ptrcdpsession","ptrcdse"],
 		"body": [
 			"CDPSession",
 			"CDPSession.connection",
@@ -483,7 +484,7 @@
 		"description": "Puppeteer CDPSession"
 	},
 	"Puppeteer Coverage": {
-		"prefix": "Coverage",
+		"prefix": ["ptrcoverage","ptrcov"],
 		"body": [
 			"Coverage",
 			"Coverage.(constructor)",
@@ -496,7 +497,7 @@
 		"description": "Puppeteer Coverage"
 	},
 	"Puppeteer EventEmitter": {
-		"prefix": "EventEmitter",
+		"prefix": ["ptreventemitter","ptreve"],
 		"body": [
 			"EventEmitter",
 			"EventEmitter.addListener",
@@ -511,7 +512,7 @@
 		"description": "Puppeteer EventEmitter"
 	},
 	"Puppeteer Other": {
-		"prefix": "Other",
+		"prefix": ["ptrother","ptrot"],
 		"body": [
 			"Other",
 			"ActionOptions",
