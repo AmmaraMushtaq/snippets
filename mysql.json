@@ -166,7 +166,12 @@
 	  "MySQL ROW_COUNT Function": {
 		"prefix": ["msinforowcount","msinforc"],
 		"body": [
-		  "https://dev.mysql.com/doc/refman/8.0/en/information-functions.html#function_row-count"
+			"UPDATE products",
+			"SET price = price * 1.1",
+			"WHERE category = 'Electronics';",
+			
+			"SELECT ROW_COUNT();"
+			
 		],
 		"description": "MySQL ROW_COUNT Function "
 	  },
@@ -245,7 +250,8 @@
 	  "MySQL GET_LOCK Function": {
 		"prefix": ["msmiscgetLock","msmisclock"],
 		"body": [
-		"https://dev.mysql.com/doc/refman/8.0/en/miscellaneous-functions.html#function_get-lock"
+			"SELECT GET_LOCK('my_lock_name', 10);"
+
 		],
 		"description": "MySQL GET_LOCK Function "
 	  },
@@ -271,7 +277,8 @@
 	  "MySQL IS_FREE_LOCK Function": {
 		"prefix": ["msmiscisfreelock","msmisciflock"],
 		"body": [
-		"https://dev.mysql.com/doc/refman/8.0/en/miscellaneous-functions.html#function_is-free-lock"
+			"SELECT IS_FREE_LOCK('my_lock_name');"
+
 		],
 		"description": "MySQL IS_FREE_LOCK Function "
 	  },
@@ -279,7 +286,8 @@
 	  "MySQL IS_USED_LOCK Function": {
 		"prefix": ["msmiscisusedlock","msmisciulock"],
 		"body": [
-		 "https://dev.mysql.com/doc/refman/8.0/en/miscellaneous-functions.html#function_is-used-lock"
+			"SELECT IS_USED_LOCK('my_lock_name');"
+
 		],
 		"description": "MySQL IS_USED_LOCK Function "
 	  },
@@ -287,7 +295,8 @@
 	  "MySQL MASTER_POS_WAIT Function": {
 		"prefix": ["msmiscmasterposwait","msmiscmpwait"],
 		"body": [
-		 "https://dev.mysql.com/doc/refman/8.0/en/miscellaneous-functions.html#function_master-pos-wait"
+		"MASTER_POS_WAIT(master_log_name, master_log_pos[, timeout])"
+
 		],
 		"description": "MySQL MASTER_POS_WAIT Function "
 	  },
@@ -463,7 +472,8 @@
 	  "MySQL Assignment Operator =": {
 		"prefix": ["OperatorsAssign","msoaop"],
 		"body": [
-		  "https://dev.mysql.com/doc/refman/8.0/en/assignment-operators.html#operator_assign-equal"
+			"SELECT * FROM table WHERE column = value;"
+
 		],
 		"description": "MySQL Assignment Operator (=) "
 	  },
@@ -471,13 +481,17 @@
 	  "MySQL Assignment Operator :=": {
 		"prefix": ["OperatorsAssignShortcut","mso:="],
 		"body": [
-		 "https://dev.mysql.com/doc/refman/8.0/en/assignment-operators.html#operator_assign-value"
+			"SET @variable_name := value;"
+
 		],
 		"description": "MySQL Assignment Operator (:=) "},
 		"MySQL Logical Operator AND": {
 			"prefix": ["OperatorsLogicalAnd","msoAND"],
 			"body": [
-			 "https://dev.mysql.com/doc/refman/8.0/en/logical-operators.html#operator_and"
+				"SELECT columns",
+				"FROM table",
+				"WHERE condition1 AND condition2 AND ...;"
+				
 			],
 			"description": "MySQL Logical Operator (AND, &&) "
 		  },
@@ -485,7 +499,10 @@
 		  "MySQL Logical Operator NOT": {
 			"prefix": ["OperatorsLogicalNot","mso!"],
 			"body": [
-			 "https://dev.mysql.com/doc/refman/8.0/en/logical-operators.html#operator_not"
+				"SELECT first_name, last_name",
+				"FROM employees",
+				"WHERE NOT department = 'Finance';"
+				
 			],
 			"description": "MySQL Logical Operator (NOT, !) "
 		  },
@@ -493,7 +510,10 @@
 		  "MySQL Logical Operator OR": {
 			"prefix": ["OperatorsLogicalOr","mso||"],
 			"body": [
-			  "https://dev.mysql.com/doc/refman/8.0/en/logical-operators.html#operator_or"
+				"SELECT first_name, last_name",
+				"FROM employees",
+				"WHERE department = 'HR' OR department = 'IT';"
+				
 			],
 			"description": "MySQL Logical Operator (OR, ||) "
 		  },
@@ -501,14 +521,20 @@
 		  "MySQL Logical Operator XOR": {
 			"prefix": ["OperatorsLogicalXor","msoXOR"],
 			"body": [
-			 "https://dev.mysql.com/doc/refman/8.0/en/logical-operators.html#operator_xor"
+				"SELECT first_name, last_name",
+				"FROM employees",
+				"WHERE department = 'HR' XOR salary > 50000;"
+				
 			],
 			"description": "MySQL Logical Operator (XOR) "
 		  },
 		  "MySQL Comparison Operator BETWEEN ... AND ...": {
 			"prefix": ["OperatorsComparisonBetween","msoba"],
 			"body": [
-			  "https://dev.mysql.com/doc/refman/8.0/en/comparison-operators.html#operator_between"
+				"SELECT product_name, price",
+				"FROM products",
+				"WHERE price BETWEEN 10.00 AND 20.00;"
+				
 			],
 			"description": "MySQL Comparison Operator (BETWEEN ... AND ...) "
 		  },
@@ -516,7 +542,10 @@
 		  "MySQL Comparison Operator BINARY": {
 			"prefix": ["OperatorsComparisonBinary","msobnry"],
 			"body": [
-			 "https://dev.mysql.com/doc/refman/8.0/en/cast-functions.html#operator_binary"
+				"SELECT username",
+				"FROM users",
+				"WHERE BINARY password = 'Secret123';"
+				
 			],
 			"description": "MySQL Comparison Operator (BINARY) "
 		  },
@@ -524,7 +553,8 @@
 		  "MySQL Comparison Operator &": {
 			"prefix": ["OperatorsComparisonBitwiseAnd","mso&"],
 			"body": [
-			  "https://dev.mysql.com/doc/refman/8.0/en/bit-functions.html#operator_bitwise-and"
+				"integer1 & integer2"
+
 			],
 			"description": "MySQL Comparison Operator (&) "
 		  },
@@ -532,7 +562,8 @@
 		  "MySQL Comparison Operator ~": {
 			"prefix": ["OperatorsComparisonBitwiseNot","mso~"],
 			"body": [
-			 "https://dev.mysql.com/doc/refman/8.0/en/bit-functions.html#operator_bitwise-invert"
+				"SELECT ~5;"
+
 			],
 			"description": "MySQL Comparison Operator (~) "
 		  },
@@ -540,7 +571,8 @@
 		  "MySQL Comparison Operator |": {
 			"prefix": ["OperatorsComparisonBitwiseOr","mso|"],
 			"body": [
-			  "https://dev.mysql.com/doc/refman/8.0/en/bit-functions.html#operator_bitwise-or"
+				"SELECT 5 | 3;"
+
 			],
 			"description": "MySQL Comparison Operator (|) "
 		  },
@@ -548,7 +580,8 @@
 		  "MySQL Comparison Operator ^": {
 			"prefix": ["OperatorsComparisonBitwiseXor","mso^"],
 			"body": [
-			  "https://dev.mysql.com/doc/refman/8.0/en/bit-functions.html#operator_bitwise-xor"
+				"SELECT 5 ^ 3;"
+
 			],
 			"description": "MySQL Comparison Operator (^) "
 		  },
@@ -556,7 +589,15 @@
 		  "MySQL Comparison Operator CASE": {
 			"prefix": ["OperatorsComparisonCase","msocse"],
 			"body": [
-			  "https://dev.mysql.com/doc/refman/5.5/en/control-flow-functions.html#operator_case"
+				"SELECT",
+				"product_name,",
+				"CASE category_id",
+					"WHEN 1 THEN 'Electronics'",
+					"WHEN 2 THEN 'Clothing'",
+					"ELSE 'Other'",
+				"END AS category",
+			"FROM products;"
+			
 			],
 			"description": "MySQL Comparison Operator (CASE) "
 		  },
@@ -564,7 +605,8 @@
 		  "MySQL Comparison Operator DIV": {
 			"prefix": ["OperatorsComparisonDiv","msodv"],
 			"body": [
-			  "https://dev.mysql.com/doc/refman/8.0/en/arithmetic-functions.html#operator_div"
+				"SELECT 10 DIV 3;"
+
 			],
 			"description": "MySQL Comparison Operator (DIV) "
 		  },
@@ -572,7 +614,8 @@
 		  "MySQL Comparison Operator /": {
 			"prefix": ["OperatorsComparisonDivide","mso/"],
 			"body": [
-			  "https://dev.mysql.com/doc/refman/8.0/en/arithmetic-functions.html#operator_divide"
+				"SELECT 10 / 3;"
+
 			],
 			"description": "MySQL Comparison Operator (/) "
 		  },
@@ -580,7 +623,8 @@
 		  "MySQL Comparison Operator <=>": {
 			"prefix": ["OperatorsComparisonEqualNullSafe","mso<=>"],
 			"body": [
-			  "https://dev.mysql.com/doc/refman/8.0/en/comparison-operators.html#operator_equal-to"
+				"SELECT 10 <=> 10, NULL <=> NULL, 5 <=> NULL, 10 <=> 15;"
+
 			],
 			"description": "MySQL Comparison Operator (<=>) "
 		  },
@@ -588,7 +632,10 @@
 		  "MySQL Comparison Operator =": {
 			"prefix": ["OperatorsComparisonEqual","mso="],
 			"body": [
-			  "https://dev.mysql.com/doc/refman/8.0/en/comparison-operators.html#operator_equal"
+				"SELECT employee_name",
+				"FROM employees",
+				"WHERE department = 'HR';"
+				
 			],
 			"description": "MySQL Comparison Operator (=) "
 		  },
@@ -596,7 +643,10 @@
 		  "MySQL Comparison Operator >=": {
 			"prefix": ["OperatorsComparisonGreaterOrEqual","mso>="],
 			"body": [
-			  "https://dev.mysql.com/doc/refman/8.0/en/comparison-operators.html#operator_greater-than-or-equal"
+				"SELECT product_name",
+				"FROM products",
+				"WHERE price >= 50.00;"
+				
 			],
 			"description": "MySQL Comparison Operator (>=) "
 		  },
@@ -604,7 +654,10 @@
 		  "MySQL Comparison Operator >": {
 			"prefix": ["OperatorsComparisonGreater","mso>"],
 			"body": [
-			  "https://dev.mysql.com/doc/refman/8.0/en/comparison-operators.html#operator_greater-than"
+				"SELECT product_name",
+				"FROM products",
+				"WHERE price > 50.00;"
+				
 			],
 			"description": "MySQL Comparison Operator (>) "
 		  },
@@ -612,7 +665,10 @@
 		  "MySQL Comparison Operator IS NOT NULL": {
 			"prefix": ["OperatorsComparisonIsNotNull","msoinn"],
 			"body": [
-			  "https://dev.mysql.com/doc/refman/8.0/en/comparison-operators.html#operator_is-not-null"
+				"SELECT product_name",
+				"FROM products",
+				"WHERE expiration_date IS NOT NULL;"
+				
 			],
 			"description": "MySQL Comparison Operator (IS NOT NULL) "
 		  },
@@ -620,7 +676,10 @@
 		  "MySQL Comparison Operator IS NOT": {
 			"prefix": ["OperatorsComparisonIsNot","msoin"],
 			"body": [
-			  "https://dev.mysql.com/doc/refman/8.0/en/comparison-operators.html#operator_is-not"
+				"SELECT product_name",
+				"FROM products",
+				"WHERE NOT (price > 50.00);"
+				
 			],
 			"description": "MySQL Comparison Operator (IS NOT) "
 		  },
@@ -628,7 +687,10 @@
 		  "MySQL Comparison Operator IS NULL": {
 			"prefix": ["OperatorsComparisonIsNull","msoinn"],
 			"body": [
-			  "https://dev.mysql.com/doc/refman/8.0/en/comparison-operators.html#operator_is-null"
+				"SELECT product_name",
+				"FROM products",
+				"WHERE expiration_date IS NULL;"
+				
 			],
 			"description": "MySQL Comparison Operator (IS NULL) "
 		  },
@@ -636,7 +698,10 @@
 		  "MySQL Comparison Operator IS": {
 			"prefix": ["OperatorsComparisonIs","msois"],
 			"body": [
-			  "https://dev.mysql.com/doc/refman/8.0/en/comparison-operators.html#operator_is"
+				"SELECT product_name",
+				"FROM products",
+				"WHERE expiration_date IS NULL;"
+				
 			],
 			"description": "MySQL Comparison Operator (IS) "
 		  },
@@ -644,7 +709,8 @@
 		  "MySQL Comparison Operator <<": {
 			"prefix": ["OperatorsComparisonLeftShift","mso<<"],
 			"body": [
-			  "https://dev.mysql.com/doc/refman/8.0/en/bit-functions.html#operator_left-shift"
+				"SELECT 10 << 2;"
+
 			],
 			"description": "MySQL Comparison Operator (<<) "
 		  },
@@ -652,7 +718,10 @@
 		  "MySQL Comparison Operator <=": {
 			"prefix": ["OperatorsComparisonLessOrEqual","mso<="],
 			"body": [
-			  "https://dev.mysql.com/doc/refman/8.0/en/comparison-operators.html#operator_less-than-or-equal"
+				"SELECT product_name",
+				"FROM products",
+				"WHERE price <= 50.00;"
+				
 			],
 			"description": "MySQL Comparison Operator (<=) "
 		  },
@@ -660,7 +729,10 @@
 		  "MySQL Comparison Operator <": {
 			"prefix": ["OperatorsComparisonLess","mso<"],
 			"body": [
-			  "https://dev.mysql.com/doc/refman/8.0/en/comparison-operators.html#operator_less-than"
+				"SELECT product_name",
+				"FROM products",
+				"WHERE price < 50.00;"
+				
 			],
 			"description": "MySQL Comparison Operator (<) "
 		  },
@@ -668,7 +740,10 @@
 		  "MySQL Comparison Operator LIKE": {
 			"prefix": ["OperatorsComparisonLike","msolike"],
 			"body": [
-			  "https://dev.mysql.com/doc/refman/8.0/en/string-comparison-functions.html#operator_like"
+				"SELECT username",
+				"FROM users",
+				"WHERE username LIKE 'user_';"
+				
 			],
 			"description": "MySQL Comparison Operator (LIKE) "
 		  },
@@ -684,7 +759,10 @@
 		  "MySQL Comparison Operator % or MOD": {
 			"prefix": ["OperatorsComparisonMod","mso%"],
 			"body": [
-			  "https://dev.mysql.com/doc/refman/8.0/en/arithmetic-functions.html#operator_mod"
+				"SELECT number",
+				"FROM numbers",
+				"WHERE number % 2 = 0;"
+				
 			],
 			"description": "MySQL Comparison Operator (% or MOD) "
 		  },
@@ -692,7 +770,10 @@
 		  "MySQL Comparison Operator NOT BETWEEN ... AND ...": {
 			"prefix": ["OperatorsComparisonNotBetween","msonba"],
 			"body": [
-			  "https://dev.mysql.com/doc/refman/8.0/en/comparison-operators.html#operator_not-between"
+				"SELECT product_name",
+				"FROM products",
+				"WHERE price NOT BETWEEN 20.00 AND 50.00;"
+				
 			],
 			"description": "MySQL Comparison Operator (NOT BETWEEN ... AND ...) "
 		  },
@@ -700,7 +781,10 @@
 		  "MySQL Comparison Operator !=, <>": {
 			"prefix": ["OperatorsComparisonNotEqual","mso!="],
 			"body": [
-			  "https://dev.mysql.com/doc/refman/8.0/en/comparison-operators.html#operator_not-equal"
+				"SELECT product_name",
+				"FROM products",
+				"WHERE price <> 50.00;"
+				
 			],
 			"description": "MySQL Comparison Operator (!=, <>) "
 		  },
@@ -708,7 +792,10 @@
 		  "MySQL Comparison Operator NOT LIKE": {
 			"prefix": ["OperatorsComparisonNotLike","msoonl"],
 			"body": [
-			  "https://dev.mysql.com/doc/refman/8.0/en/string-comparison-functions.html#operator_not-like"
+				"SELECT product_name",
+				"FROM products",
+				"WHERE product_name NOT LIKE '%obsolete%';"
+				
 			],
 			"description": "MySQL Comparison Operator (NOT LIKE) "
 		  },
@@ -716,7 +803,10 @@
 		  "MySQL Comparison Operator NOT REGEXP": {
 			"prefix": ["OperatorsComparisonNotRegexp","msoonr"],
 			"body": [
-			  "https://dev.mysql.com/doc/refman/8.0/en/regexp.html#operator_not-regexp"
+				"SELECT column_name",
+				"FROM table_name",
+				"WHERE column_name NOT REGEXP 'pattern';"
+				
 			],
 			"description": "MySQL Comparison Operator (NOT REGEXP) "
 		  },
@@ -724,7 +814,8 @@
 		  "MySQL Comparison Operator +": {
 			"prefix": ["OperatorsComparisonPlus","mso+"],
 			"body": [
-			  "https://dev.mysql.com/doc/refman/8.0/en/arithmetic-functions.html#operator_plus"
+				"value1 + value2"
+
 			],
 			"description": "MySQL Comparison Operator (+) "
 		  },
@@ -732,7 +823,10 @@
 		  "MySQL Comparison Operator REGEXP": {
 			"prefix": ["OperatorsComparisonRegexp","msoreg"],
 			"body": [
-			  "https://dev.mysql.com/doc/refman/8.0/en/bit-functions.html#operator_right-shift"
+				"SELECT product_name",
+				"FROM products",
+				"WHERE product_name REGEXP '^(discontinued|obsolete)$';"
+				
 			],
 			"description": "MySQL Comparison Operator (REGEXP) "
 		  },
@@ -740,7 +834,8 @@
 		  "MySQL Comparison Operator >>": {
 			"prefix": ["OperatorsComparisonRightShift","mso>>"],
 			"body": [
-			  "https://dev.mysql.com/doc/refman/8.0/en/bit-functions.html#operator_right-shift"
+				"SELECT 8 >> 2;"
+
 			],
 			"description": "MySQL Comparison Operator (>>) "
 		  },
@@ -748,7 +843,10 @@
 		  "MySQL Comparison Operator RLIKE": {
 			"prefix": ["OperatorsComparisonRlike","msorl"],
 			"body": [
-			  "https://dev.mysql.com/doc/refman/8.0/en/regexp.html#operator_regexp"
+				"SELECT product_name",
+				"FROM products",
+				"WHERE product_name RLIKE '^(discontinued|obsolete)$';"
+				
 			],
 			"description": "MySQL Comparison Operator (RLIKE) "
 		  },
@@ -756,7 +854,10 @@
 		  "MySQL Comparison Operator SOUNDS LIKE": {
 			"prefix": ["OperatorsComparisonSoundsLike","mso"],
 			"body": [
-			  "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#operator_sounds-like"
+				"SELECT name",
+				"FROM names",
+				"WHERE name SOUNDS LIKE 'John';"
+				
 			],
 			"description": "MySQL Comparison Operator (SOUNDS LIKE) "
 		  },
@@ -764,7 +865,8 @@
 		  "MySQL Comparison Operator *": {
 			"prefix": ["OperatorsComparisonMultiply","mso*"],
 			"body": [
-			  "https://dev.mysql.com/doc/refman/8.0/en/arithmetic-functions.html#operator_times"
+				"value1 * value2"
+
 			],
 			"description": "MySQL Comparison Operator (*) "
 		  },
@@ -772,7 +874,8 @@
 		  "MySQL Comparison Operator -": {
 			"prefix": ["msoperatorscomparisonsubtract","mso-"],
 			"body": [
-			  "https://dev.mysql.com/doc/refman/8.0/en/arithmetic-functions.html#operator_unary-minus"
+				"SELECT 10 - 5;"
+
 			],
 			"description": "MySQL Comparison Operator (-) "
 		  },
@@ -859,7 +962,10 @@
 	  "MySQL String Comparison NOT LIKE": {
 		"prefix": ["msstringNotlike","msstrnl"],
 		"body": [
-		"https://dev.mysql.com/doc/refman/8.0/en/string-comparison-functions.html#operator_not-like"
+			"SELECT column1, column2",
+			"FROM table",
+			"WHERE column1 NOT LIKE '%example%';"
+			
 		],
 		"description": "MySQL String Comparison (NOT LIKE) "
 	  },
@@ -880,7 +986,10 @@
 	  "MySQL String Comparison Regular Expressions (REGEXP)": {
 		"prefix": ["msstringregexp","msstrrex"],
 		"body": [
-		  "https://dev.mysql.com/doc/refman/8.0/en/regexp.html#operator_regexp"
+			"SELECT column1, column2",
+			"FROM table",
+			"WHERE column1 REGEXP '^[A-Za-z0-9]*$';"
+			
 		],
 		"description": "MySQL String Comparison (REGEXP) "
 	  },
@@ -888,7 +997,10 @@
 	  "MySQL String Comparison Regular Expressions (NOT REGEXP)": {
 		"prefix": ["stringnotregexp","msstrnreg"],
 		"body": [
-			"https://dev.mysql.com/doc/refman/8.0/en/regexp.html#operator_not-regexp"
+			"SELECT column1, column2",
+"FROM table",
+"WHERE column1 NOT REGEXP '^[0-9]+$';"
+
 		],
 		"description": "MySQL String Comparison (NOT REGEXP) "
 	  },
@@ -896,7 +1008,10 @@
 	  "MySQL String Comparison Regular Expressions (RLIKE)": {
 		"prefix": ["msstringrlike","msstrreg"],
 		"body": [
-		 "https://dev.mysql.com/doc/refman/8.0/en/regexp.html#operator_regexp"
+			"SELECT column1, column2",
+			"FROM table",
+			"WHERE column1 RLIKE '^[A-Za-z0-9]*$';"
+			
 		],
 		"description": "MySQL String Comparison (RLIKE) "
 	  },
@@ -945,7 +1060,8 @@
 	  "MySQL String Function CHAR()": {
 		"prefix": ["msstringchar","msstrch"],
 		"body": [
-		  "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_char"
+			"SELECT CHAR(65) AS character;"
+
 		],
 		"description": "MySQL String Function (CHAR) "
 	  },
@@ -953,7 +1069,8 @@
 	  "MySQL String Function CHARACTER_LENGTH()": {
 		"prefix":["msstringcharacterlength","msstrchlenght"],
 		"body": [
-		 "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_char-length"
+			"SELECT CHARACTER_LENGTH('Hello, World!') AS character_length;"
+
 		],
 		"description": "MySQL String Function (CHARACTER_LENGTH) "
 	  },
@@ -961,7 +1078,8 @@
 	  "MySQL String Function CONCAT_WS( )": {
 		"prefix": ["msstringconcatws","msstrcws"],
 		"body": [
-		  "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_concat-ws"
+			"SELECT CONCAT_WS(', ', 'John', 'Doe', '123 Main Street') AS full_name_address;"
+
 		],
 		"description": "MySQL String Function (CONCAT_WS) "
 	  },
@@ -1074,7 +1192,8 @@
 	  "MySQL String Function LCASE()": {
 		"prefix": ["msstringlcase","msstrlcase"],
 		"body": [
-		  "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_lcase"
+			"SELECT LCASE('Hello, World!') AS lowercase_string;"
+
 		],
 		"description": "MySQL String Function (LCASE) "
 	  },
@@ -1167,7 +1286,10 @@
 	  "MySQL String Function MATCH": {
 		"prefix": ["msstringmatch","msstrmatch"],
 		"body": [
-		  "https://dev.mysql.com/doc/refman/8.0/en/fulltext-search.html#function_match"
+			"SELECT column1, column2",
+			"FROM table",
+			"WHERE MATCH(column1, column2) AGAINST('search term');"
+			
 		],
 		"description": "MySQL String Function (MATCH) "
 	  },
@@ -1184,7 +1306,10 @@
 	  "MySQL String Function NOT LIKE": {
 		"prefix": ["msstringnotlike","msstrnlike"],
 		"body": [
-			"https://dev.mysql.com/doc/refman/8.0/en/string-comparison-functions.html#operator_not-like"
+			"SELECT column1, column2",
+"FROM table",
+"WHERE column1 NOT LIKE 'abc%';"
+
 		],
 		"description": "MySQL String Function (NOT LIKE) "
 	  },
@@ -1192,7 +1317,10 @@
 	  "MySQL String Function NOT REGEXP": {
 		"prefix": ["msstringnotregexp","msstrnregexp"],
 		"body": [
-		  "https://dev.mysql.com/doc/refman/8.0/en/regexp.html#operator_not-regexp"
+			"SELECT column1, column2",
+			"FROM table",
+			"WHERE column1 NOT REGEXP '^abc.*[0-9]$';"
+			
 		],
 		"description": "MySQL String Function (NOT REGEXP) "
 	  },
@@ -1200,7 +1328,8 @@
 	  "MySQL String Function OCTET_LENGTH()": {
 		"prefix": ["msstringoctetlength","msstroclenght"],
 		"body": [
-		 "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_octet-length"
+			"SELECT OCTET_LENGTH('Hello, world!') AS byte_length;"
+
 		],
 		"description": "MySQL String Function (OCTET_LENGTH) "
 	  },
@@ -1217,7 +1346,8 @@
 	  "MySQL String Function POSITION()": {
 		"prefix": ["msstringposition","msstrposition"],
 		"body": [
-			"https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_position"
+			"SELECT POSITION('world' IN 'Hello, world!') AS position;"
+
 		],
 		"description": "MySQL String Function (POSITION) "
 	  },
@@ -1236,7 +1366,10 @@
 	  "MySQL String Function REGEXP": {
 		"prefix": ["msstringregexp","msstrregexp"],
 		"body": [
-		  "https://dev.mysql.com/doc/refman/8.0/en/regexp.html#operator_regexp"
+			"SELECT column1, column2",
+			"FROM table",
+			"WHERE column1 REGEXP '^abc.*[0-9]$';"
+			
 		],
 		"description": "MySQL String Function (REGEXP) "
 	  },
@@ -1280,7 +1413,10 @@
 	  "MySQL String Function RLIKE": {
 		"prefix": ["msstringrlike","msstrrlike"],
 		"body": [
-		  "https://dev.mysql.com/doc/refman/8.0/en/regexp.html#operator_regexp"
+			"SELECT column1, column2",
+			"FROM table",
+			"WHERE column1 RLIKE '^abc.*[0-9]$';"
+			
 		],
 		"description": "MySQL String Function (RLIKE) "
 	  },
@@ -1319,7 +1455,10 @@
 	  "MySQL String Function SOUNDS LIKE": {
 		"prefix": ["msstringsoundslike","msstrslike"],
 		"body": [
-		  "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#operator_sounds-like"
+			"SELECT column1, column2",
+			"FROM table",
+			"WHERE SOUNDEX(column1) SOUNDS LIKE SOUNDEX('search_term');"
+			
 		],
 		"description": "MySQL String Function (SOUNDS LIKE) "
 	  },
@@ -1349,7 +1488,8 @@
 	  "MySQL String Function SUBSTR()": {
 		"prefix": ["msstringsubstr","msstrsubstr"],
 		"body": [
-		 "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_substr"
+			"SELECT SUBSTR('Hello, World!', 7, 5) AS extracted_text;"
+
 		],
 		"description": "MySQL String Function (SUBSTR) "
 	  },
@@ -1402,7 +1542,8 @@
 	  "MySQL String Function UCASE()": {
 		"prefix": ["msstringucase","msstrucase"],
 		"body": [
-		 "https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_ucase"
+			"SELECT UCASE('hello, world!') AS uppercase_string;"
+
 		],
 		"description": "MySQL String Function (UCASE) "
 	  },
@@ -1509,7 +1650,8 @@
 	  "MySQL Modulus Operator % or MOD": {
 		"prefix": ["msnumericmodulus","msmun%"],
 		"body": [
-		 "https://dev.mysql.com/doc/refman/8.0/en/arithmetic-functions.html#operator_mod"
+		 "SELECT MOD(17, 5) AS remainder;"
+
 		],
 		"description": "MySQL Modulus Operator (% or MOD) "
 	  },
@@ -1595,7 +1737,8 @@
 	  "MySQL Mathematical Function CEIL()": {
 		"prefix": ["msnumericceil","msmunceil"],
 		"body": [
-		  "https://dev.mysql.com/doc/refman/8.0/en/mathematical-functions.html#function_ceil"
+			"SELECT CEIL(3.14159) AS rounded_up_value;"
+
 		],
 		"description": "MySQL Mathematical Function (CEIL) "
 	  },
@@ -1754,7 +1897,8 @@
 	  "MySQL Mathematical Function OCT()": {
 		"prefix": ["msnumericoct","msmunoct"],
 		"body": [
-		  "https://dev.mysql.com/doc/refman/8.0/en/mathematical-functions.html#function_oct"
+			"SELECT OCT(23) AS octal_value;"
+
 		],
 		"description": "MySQL Mathematical Function (OCT) "
 	  },
@@ -1784,7 +1928,8 @@
 	  "MySQL Mathematical Function POWER()": {
 		"prefix": ["msnumericpower","msmunpower"],
 		"body": [
-		  "https://dev.mysql.com/doc/refman/8.0/en/mathematical-functions.html#function_power"
+			"POWER(base, exponent)",
+			"SELECT POWER(2, 3) AS result;"
 		],
 		"description": "MySQL Mathematical Function (POWER) "
 	  },
@@ -2036,7 +2181,8 @@
 	  "MySQL Date Function CURRENT_DATE()": {
 		"prefix": ["msdatecurrentdate","msdtcurrdate"],
 		"body": [
-		  "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_current-date"
+			"SELECT CURRENT_DATE() AS current_date;"
+
 		],
 		"description": "MySQL Date Function (CURRENT_DATE) "
 	  },
@@ -2044,7 +2190,8 @@
 	  "MySQL Date Function CURRENT_TIME()": {
 		"prefix": ["msdatecurrenttime","msdtcurrtime"],
 		"body": [
-		 "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_current-time"
+			"SELECT CURRENT_TIME() AS current_time;"
+
 		],
 		"description": "MySQL Date Function (CURRENT_TIME) "
 	  },
@@ -2052,7 +2199,8 @@
 	  "MySQL Date Function CURRENT_TIMESTAMP()": {
 		"prefix": ["msdatecurrenttimestamp","msdtcurrtimestamp"],
 		"body": [
-		  "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_current-timestamp"
+		  "SELECT CURRENT_TIMESTAMP() AS current_datetime;"
+		  
 		],
 		"description": "MySQL Date Function (CURRENT_TIMESTAMP) "
 	  },
@@ -2060,7 +2208,8 @@
 	  "MySQL Date Function CURTIME()": {
 		"prefix": ["msdatecurtime","msdtcurtime"],
 		"body": [
-		  "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_curtime"
+		  "SELECT CURTIME() AS current_time;"
+		  
 		],
 		"description": "MySQL Date Function (CURTIME) "
 	  },
@@ -2077,7 +2226,9 @@
 	  "MySQL Date Function DATE_FORMAT()": {
 		"prefix": ["msdateformat","msdtdformat"],
 		"body": [
-		   "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_date-format"
+		   "DATE_FORMAT(date, format)",
+		   "SELECT DATE_FORMAT('2023-09-20 14:30:45', '%Y-%m-%d %H:%i:%s') AS formatted_datetime;"
+		   
 		],
 		"description": "MySQL Date Function (DATE_FORMAT) "
 	  },
@@ -2085,7 +2236,8 @@
 	  "MySQL Date Function DATE_SUB()": {
 		"prefix": ["msdatesub","msdtdsub"],
 		"body": [
-		  "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_date-sub"
+		  "DATE_SUB(date, INTERVAL expression unit)",
+		  "SELECT DATE_SUB('2023-09-20', INTERVAL 3 DAY) AS new_date;"
 		],
 		"description": "MySQL Date Function (DATE_SUB) "
 	  },
@@ -2113,7 +2265,8 @@
 	  "MySQL Date Function DAY()": {
 		"prefix": ["msdateday","msdtday"],
 		"body": [
-		 "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_day"
+		 "SELECT DAY('2023-09-20') AS day_of_month;"
+		 
 		],
 		"description": "MySQL Date Function (DAY) "
 	  },
@@ -2121,7 +2274,7 @@
 	  "MySQL Date Function DAYNAME()": {
 		"prefix": ["msdatedayname","msdtdayname"],
 		"body": [
-		  "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_dayname"
+		  "SELECT DAYNAME('2023-09-20') AS day_of_week;"
 		],
 		"description": "MySQL Date Function (DAYNAME) "
 	  },
@@ -2195,7 +2348,8 @@
 	  "MySQL Date Function GET_FORMAT()": {
 		"prefix": ["msdategetformat","msdtgformat"],
 		"body": [
-		  "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_get-format"
+		  "SELECT LOCALTIME() AS current_local_time;",
+		  "SELECT GET_FORMAT(NAMED 'DATE', ITEM 'Y');"
 		],
 		"description": "MySQL Date Function (GET_FORMAT) "
 	  },
@@ -2229,7 +2383,7 @@
 	  "MySQL Date Function LOCALTIME()": {
 		"prefix": ["msdatelocaltime","msdtlocltime"],
 		"body": [
-		"https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_localtime"
+		"SELECT LOCALTIME() AS current_local_time;"
 		],
 		"description": "MySQL Date Function (LOCALTIME) "
 	  },
@@ -2237,7 +2391,7 @@
 	  "MySQL Date Function LOCALTIMESTAMP()": {
 		"prefix": ["msdatelocaltimestamp","msdtlocaltimestamp"],
 		"body": [
-			"https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_localtimestamp"
+			"SELECT LOCALTIMESTAMP() AS current_local_datetime;"
 		],
 		"description": "MySQL Date Function (LOCALTIMESTAMP) "
 	  },
@@ -2278,7 +2432,7 @@
 	  "MySQL Date Function MINUTE()": {
 		"prefix": ["msdateminute","msdtminute"],
 		"body": [
-		  "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_maketime"
+		  "SELECT MINUTE(NOW()) AS current_minute;"
 		],
 		"description": "MySQL Date Function (MINUTE) "
 	  },
@@ -2304,7 +2458,7 @@
 	  "MySQL Date Function NOW()": {
 		"prefix": ["msdatenow","msdtnow"],
 		"body": [
-		  "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_now"
+		  "SELECT NOW() AS current_datetime;"
 		],
 		"description": "MySQL Date Function (NOW) "
 	  },
@@ -2392,7 +2546,7 @@
 	  "MySQL Date Function SYSDATE()": {
 		"prefix": ["msdatesysdate","msdtsysdate"],
 		"body": [
-		 "https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html#function_sysdate"
+			"SELECT SYSDATE() AS current_datetime;"
 		],
 		"description": "MySQL Date Function (SYSDATE) "
 	  },
@@ -2622,7 +2776,8 @@
 	  "MySQL Aggregate Function AVG()": {
 		"prefix": ["msgroupavg","msgrpavg"],
 		"body": [
-		 "https://dev.mysql.com/doc/refman/5.5/en/group-by-functions.html#function_avg"
+			"SELECT AVG(score) AS average_score",
+			"FROM grades;"
 		],
 		"description": "MySQL Aggregate Function (AVG) "
 	  },
@@ -2630,7 +2785,8 @@
 	  "MySQL Aggregate Function BIT_AND()": {
 		"prefix": ["msgroupbitand","msgrpband"],
 		"body": [
-		"https://dev.mysql.com/doc/refman/5.5/en/group-by-functions.html#function_bit-and"
+			"SELECT BIT_AND(bit_value) AS bitwise_and_result",
+			"FROM bitwise_data;"
 		],
 		"description": "MySQL Aggregate Function (BIT_AND) "
 	  },
@@ -2638,7 +2794,8 @@
 	  "MySQL Aggregate Function BIT_OR()": {
 		"prefix": ["msgroupbitor","msgrpbor"],
 		"body": [
-		"https://dev.mysql.com/doc/refman/5.5/en/group-by-functions.html#function_bit-and"
+			"SELECT BIT_OR(bit_value) AS bitwise_or_result",
+			"FROM bitwise_data;"
 		 
 		],
 		"description": "MySQL Aggregate Function (BIT_OR) "
@@ -2647,7 +2804,8 @@
 	  "MySQL Aggregate Function BIT_XOR()": {
 		"prefix": ["msgroupbitxor","msgrpbxor"],
 		"body": [
-		"https://dev.mysql.com/doc/refman/5.5/en/group-by-functions.html#function_bit-and"
+			"SELECT BIT_XOR(bit_value) AS bitwise_xor_result",
+			"FROM bitwise_data;"
 		  
 		],
 		"description": "MySQL Aggregate Function (BIT_XOR) "
@@ -2656,7 +2814,8 @@
 	  "MySQL Aggregate Function COUNT(DISTINCT)": {
 		"prefix":["msgroupcountdistinct","msgrpcountdis"],
 		"body": [
-		"https://dev.mysql.com/doc/refman/5.5/en/group-by-functions.html#function_bit-and"
+			"SELECT COUNT(DISTINCT product_id) AS unique_products_ordered",
+			"FROM orders;"
 		  
 		],
 		"description": "MySQL Aggregate Function (COUNT DISTINCT) "
@@ -2665,7 +2824,9 @@
 	  "MySQL Aggregate Function COUNT()": {
 		"prefix": ["msgroupcount","msgrpcount"],
 		"body": [
-		"https://dev.mysql.com/doc/refman/5.5/en/group-by-functions.html#function_bit-and"
+			"SELECT COUNT(*) AS active_users",
+			"FROM users",
+			"WHERE status = 'active';"
 		 
 		],
 		"description": "MySQL Aggregate Function (COUNT) "
@@ -2674,7 +2835,10 @@
 	  "MySQL Aggregate Function GROUP_CONCAT()": {
 		"prefix": ["msgroupconcat","msgrpgrpcon"],
 		"body": [
-			"https://dev.mysql.com/doc/refman/5.5/en/group-by-functions.html#function_bit-and"
+			"SELECT department_name, GROUP_CONCAT(employee_name) AS employees",
+"FROM employees",
+"WHERE department_name = 'Sales'",
+"GROUP BY department_name;"
 		
 		],
 		"description": "MySQL Aggregate Function (GROUP_CONCAT) "
@@ -2683,7 +2847,8 @@
 	  "MySQL Aggregate Function MAX()": {
 		"prefix": ["msgroupmax","msgrpmax"],
 		"body": [
-		"https://dev.mysql.com/doc/refman/5.5/en/group-by-functions.html#function_bit-and"
+			"SELECT MAX(price) AS highest_price",
+			"FROM products;"
 		  
 		],
 		"description": "MySQL Aggregate Function (MAX) "
@@ -2692,7 +2857,8 @@
 	  "MySQL Aggregate Function MIN()": {
 		"prefix": ["msgroupmin","msgrpmin"],
 		"body": [
-		"https://dev.mysql.com/doc/refman/5.5/en/group-by-functions.html#function_bit-and"
+			"SELECT MIN(price) AS lowest_price",
+			"FROM products;"
 		 
 		],
 		"description": "MySQL Aggregate Function (MIN) "
@@ -2701,7 +2867,8 @@
 	  "MySQL Aggregate Function STD()": {
 		"prefix":[ "msgroupstd","msgrpstd"],
 		"body": [
-		"https://dev.mysql.com/doc/refman/5.5/en/group-by-functions.html#function_bit-and"
+			"SELECT STDDEV_POP(height) AS population_standard_deviation",
+			"FROM heights;"
 		  
 		],
 		"description": "MySQL Aggregate Function (STD) "
@@ -2710,7 +2877,8 @@
 	  "MySQL Aggregate Function STDDEV_POP()": {
 		"prefix": ["msgroupstddevpop","msgrpstdpop"],
 		"body": [
-			"https://dev.mysql.com/doc/refman/5.5/en/group-by-functions.html#function_bit-and"
+			"SELECT STDDEV_POP(height) AS population_standard_deviation",
+"FROM heights;"
 		
 		],
 		"description": "MySQL Aggregate Function (STDDEV_POP) "
@@ -2719,7 +2887,8 @@
 	  "MySQL Aggregate Function STDDEV_SAMP()": {
 		"prefix": ["msgroupstddevsamp","msgrpstdsamp"],
 		"body": [
-		"https://dev.mysql.com/doc/refman/5.5/en/group-by-functions.html#function_bit-and"
+			"SELECT STDDEV_SAMP(height) AS sample_standard_deviation",
+			"FROM heights;"
 		 
 		],
 		"description": "MySQL Aggregate Function (STDDEV_SAMP) "
@@ -2728,7 +2897,8 @@
 	  "MySQL Aggregate Function STDDEV()": {
 		"prefix": ["msgroupstddev","msgrpstddev"],
 		"body": [
-		"https://dev.mysql.com/doc/refman/5.5/en/group-by-functions.html#function_bit-and"
+			"SELECT STDDEV(score) AS standard_deviation",
+			"FROM scores;"
 		  
 		],
 		"description": "MySQL Aggregate Function (STDDEV) "
@@ -2737,7 +2907,9 @@
 	  "MySQL Aggregate Function SUM()": {
 		"prefix": ["msgroupsum","msgrpsum"],
 		"body": [
-		"https://dev.mysql.com/doc/refman/5.5/en/group-by-functions.html#function_bit-and"
+			"SELECT category, SUM(amount) AS total_sales",
+			"FROM sales",
+			"GROUP BY category;"
 		  
 		],
 		"description": "MySQL Aggregate Function (SUM) "
@@ -2746,7 +2918,8 @@
 	  "MySQL Aggregate Function VAR_POP()": {
 		"prefix": ["msgroupvarpop","msgrpvpop"],
 		"body": [
-			"https://dev.mysql.com/doc/refman/5.5/en/group-by-functions.html#function_bit-and"
+			"SELECT VAR_POP(height) AS population_variance",
+			"FROM heights;"
 		
 		],
 		"description": "MySQL Aggregate Function (VAR_POP) "
@@ -2755,7 +2928,8 @@
 	  "MySQL Aggregate Function VAR_SAMP()": {
 		"prefix": ["msgroupVarSamp","msgrpvsamp"],
 		"body": [
-		"https://dev.mysql.com/doc/refman/5.5/en/group-by-functions.html#function_bit-and"
+			"SELECT VAR_SAMP(score) AS sample_variance",
+			"FROM scores;"
 		 
 		],
 		"description": "MySQL Aggregate Function (VAR_SAMP) "
@@ -2764,7 +2938,8 @@
 	  "MySQL Aggregate Function VARIANCE()": {
 		"prefix": ["msgroupvariance","msgrpvari"],
 		"body": [
-		"https://dev.mysql.com/doc/refman/5.5/en/group-by-functions.html#function_bit-and"
+			"SELECT VARIANCE(amount) AS variance",
+			"FROM sales;"
 		 
 		],
 		"description": "MySQL Aggregate Function (VARIANCE) "
