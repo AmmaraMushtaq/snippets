@@ -1,0 +1,554 @@
+   {
+	"Unix / Linux": {
+		"prefix": ["Unix/Linux","lin"],
+		"body": [
+			" Home (linhom)",
+			" Getting Started (lings)",
+			" File Management (ngng)",
+			" Directories (lindir)",
+			" File Permission (fper)",
+			" Environment (env)",
+			" Basic Utilities (linbasut)",
+			" Pipes & Filters (linpfil)",
+			" Processes (linpro)",
+			" Communication (lincomm)",
+			" The vi Editor (linedi)",
+			"Shell Programming (linshpro)",
+			" Shell Scripting (linshscr)",
+			" What is Shell? (linshel)",
+			" Using Variables (linshuvar)",
+			" Special Variables (linshspvar)",
+			" Using Arrays (linshuarr)",
+			" Basic Operators (linshbope)",
+			" Decision Making (linshdema)",
+			" Shell Loops type (linshloopt)",
+			" Loop Control (linshlopcon)",
+			" Shell Substitutions (linshsub)",
+			" Quoting Mechanisms (linshqm)",
+			" IO Redirections (linshiored)",
+			" Shell Functions (linshefun)",
+			" Manpage Help (linshman)",
+			" Advanced Unix / Linux (lina)",
+			" Regular Expressions (linarex)",
+			" File System Basics (linafisbas)",
+			" User Administration (linauser)",
+			" System Performance (linasysper)",
+			" System Logging (linasylo)",
+			" Signals and Traps (linasigtr)",
+			"Useful Resources (linuseres)",
+			" Questions & Answers (linrqa)",
+			" Useful Commands (linrucomm)",
+			" Quick Guide (linrqg)",
+			" Builtin Functions (linrbfun)",
+			" System Calls (linrsyscal)",
+			" Commands List (linrcomlis)",
+			" Useful Resources (linrusres)",
+			" Discussion (linrdis)"
+		],
+		"description": "Unix / Linux "
+	},
+	" Home": {
+		"prefix": ["linhome","linhom"],
+		"body": [
+			"Audience",
+			"Prerequisites",
+			"Execute Unix Shell Programs"
+		],
+		"description": "Unix / Linux Home "
+	  },
+	  " Getting Started ": {
+		"prefix": ["lingettingstarted","lings"],
+		"body": [
+			"Unix Architecture",
+			"System Bootup",
+			"Login Unix"
+		],
+		"description": "Unix / Linux Getting Started "
+	  },
+	  
+	  "File Management": {
+		"prefix": ["linfilemanagement","linfmng"],
+		"body": [
+			"Listing Files",
+			"Metacharacters",
+			"Creating Files",
+			"Editing Files",
+			"Display Content of a File",
+			"Copying Files",
+			"Renaming Files",
+			"Deleting Files",
+			"Standard Unix Streams"
+
+		],
+		"description": "Unix / Linux File Management "
+	  },
+	  "Directory Management": {
+		"prefix": ["lindirectorymanagement","lindir"],
+		"body": [
+			"Home Directory",
+			"Absolute/Relative Pathnames",
+			"Listing Directories",
+			"Creating Directories",
+			"Creating Parent Directories",
+			"Removing Directories",
+			"Changing Directories",
+			"Renaming Directories",
+			"The directories . (dot) and .. (dot dot)"
+
+		],
+		"description": "Unix / Linux Directory Management "
+	  },
+	  "File Permission": {
+		"prefix": ["linfilepermission","linfper"],
+		"body": [
+			"The Permission Indicators",
+			"File Access Modes",
+			"Directory Access Modes",
+			"Changing Permissions",
+			"Using chmod with Absolute Permissions",
+			"Changing Owners and Groups",
+			"Changing Ownership",
+			"SUID and SGID File Permission"
+
+		],
+		"description": "Unix / Linux File Permission "
+	  },
+	  "Environment": {
+		"prefix": ["linenvironment","linenv"],
+		"body": [
+			"The .profile File",
+			"Setting the Terminal Type",
+			"Setting the PATH",
+			"PS1 and PS2 Variables",
+			"Environment Variables"
+
+		],
+		"description": "Unix / Linux Environment "
+	  },
+	  "Basic Utilities": {
+		"prefix": ["linbasicutilities","linbasut"],
+		"body": [
+			"Printing Files",
+			"The pr Command",
+			"The lp and lpr Commands",
+			"The lpstat and lpq Commands",
+			"The cancel and lprm Commands"
+
+		],
+		"description": "Unix / Linux Basic Utilities "
+	  },
+	  "Pipes and Filters": {
+		"prefix": ["linpipesandfilters","linpfil"],
+		"body": [
+			"The grep Command",
+			"The sort Command",
+			"The pg and more Commands"
+
+		],
+		"description": "Unix / Linux Pipes and Filters "
+	  },
+	  "Processes Management": {
+		"prefix": ["linprocessesmanagement","linpro"],
+		"body": [
+			"Starting a Process",
+			"Listing Running Processes",
+			"Stopping Processes",
+			"Parent and Child Processes",
+			"Zombie and Orphan Processes",
+			"Daemon Processes",
+			"The top Command"
+
+
+		],
+		"description": "Unix / Linux Processes Management "
+	  },
+	  "Network Communication Utilities": {
+		"prefix": ["lincommunication","lincomm"],
+		"body": [
+			"The ping Utility",
+			"The ftp Utility",
+			"The telnet Utility",
+			"The finger Utility"
+			
+		],
+		"description": "Unix / Linux Network Communication Utilities "
+	  },
+	  "The vi Editor Tutorial": {
+		"prefix": ["lineditor","linedi"],
+		"body": [
+			"Starting the vi Editor",
+			"Operation Modes",
+			"Getting Out of vi",
+			"Moving within a File",
+			"Control Commands",
+			"Editing Files",
+			"Deleting Characters",
+			"Copy and Paste Commands",
+			"Word and Character Searching",
+			"Set Commands",
+			"Running Commands"
+			
+		],
+		"description": "Unix / Linux The vi Editor Tutorial "
+	  },
+	  "Shell Programming":
+	   {
+		"prefix": ["linshellprogramming","linshpro"],
+		"body": [
+			" Shell Scripting (linshscr)",
+			" What is Shell? (linshel)",
+			" Using Variables (linshuvar)",
+			" Special Variables (linshspvar)",
+			" Using Arrays (linshuarr)",
+			" Basic Operators (linshbope)",
+			" Decision Making (linshdema)",
+			" Shell Loops (linshloop)",
+			" Loop Control (linshlopcon)",
+			" Shell Substitutions (linshsub)",
+			" Quoting Mechanisms (linshqm)",
+			" IO Redirections (linshiored)",
+			" Shell Functions (linshefun)",
+			" Manpage Help (linshman)"
+			
+		],
+		"description": "Unix / Linux Shell Programming "
+	  },
+	  "Shell Scripting ":
+	   {
+		"prefix": ["linshellscripting","linshscr"],
+		"body": [
+			" The Bourne Shell",
+			" The C Shell",
+			" The Korn Shell",
+			" The GNU Bourne-Again Shell"
+			
+			
+		],
+		"description": "Unix / Linux Shell Scripting  "
+	  },
+	  "Shells ":
+	   {
+		"prefix": ["linshell","linshsel"],
+		"body": [
+			" Shell Prompt",
+			" Shell Types",
+			" Shell Scripts",
+			" Extended Shell Scripts"
+			
+			
+		],
+		"description": "Unix / Linux Shells  "
+	  },
+	  "Using Shell Variables ":
+	   {
+		"prefix": ["linusingshellvariables","linshuvar"],
+		"body": [
+			" Variable Names",
+			" Defining Variables",
+			" Accessing Values",
+			" Read-only Variables",
+			"Unsetting Variables",
+			"Variable Types"
+			
+			
+		],
+		"description": "Unix / Linux Using Shell Variables  "
+	  },
+	  "Special Variables ":
+	   {
+		"prefix": ["linspecialvariables","linshspvar"],
+		"body": [
+			" Command-Line Arguments",
+			" Special Parameters $* and $@",
+			" Exit Status"
+			
+		],
+		"description": "Unix / Linux Special Variables  "
+	  },
+	  "Using Shell Arrays ":
+	   {
+		"prefix": ["linusingshellarrays","linshuarr"],
+		"body": [
+			" Defining Array Values",
+			" Accessing Array Values"
+			
+		],
+		"description": "Unix / Linux Using Shell Arrays  "
+	  },
+	  "Shell Basic Operators ":
+	   {
+		"prefix": ["linshellbasicoperators","linshbope"],
+		"body": [
+			" Arithmetic Operators",
+			" Relational Operators",
+			"Boolean Operators",
+			"String Operators",
+			"File Test Operators"
+			
+		],
+		"description": "Unix / Linux Shell Basic Operators  "
+	  },
+	  "Shell Decision Making ":
+	  {
+	  "prefix": ["linshelldecisionmaking","linshdema"],
+	  "body": [
+		  " The if...else statements",
+		  " The case...esac Statement",
+		  "Boolean Operators",
+		  "String Operators",
+		  "File Test Operators"
+		  
+	  ],
+	  "description": "Unix / Linux Shell Decision Making  "
+	},
+	"Shell Loop Types":
+	{
+	"prefix": ["linshelllooptypes","linshloopt"],
+	"body": [
+		" The while loop",
+		" The for loop",
+		"The until loop",
+		"The select loop"
+		
+	],
+	"description": "Unix / Linux Shell Loop Types "
+  },
+  "Shell  Loop Control":
+	{
+	"prefix": ["linshellloopcontrol","linshlopcon"],
+	"body": [
+		" The infinite Loop",
+		" The break Statement",
+		"The continue statement"
+		
+	],
+	"description": "Unix / Linux Shell  Loop Control "
+  },
+  "Shell  Substitution":
+	{
+	"prefix": ["linshellsubstitution","linshsub"],
+	"body": [
+		"The shell performs substitution when it encounters an expression that contains one or more special characters.",
+
+		"#!/bin/sh",
+
+"a=10",
+"echo -e ",
+"Value of a is $a \n"
+		
+	],
+	"description": "Unix / Linux Shell  Substitution "
+  },
+  "Shell Quoting Mechanisms":
+	{
+	"prefix": ["linshellquotingmechanisms","linshqm"],
+	"body": [
+		"Hello",
+"./test.sh: line 2: Word: command not found",
+
+"shell returned 127"
+		
+	],
+	"description": "Unix / Linux Shell  Quoting Mechanisms "
+  },
+  "Shell Input/Output Redirections":
+	{
+	"prefix": ["linshellinputoutputredirections","linshiored"],
+	"body": [
+		"Output Redirection",
+		"Input Redirection"
+		
+	],
+	"description": "Unix / Linux Shell Input/Output Redirections "
+  },
+  "Shell Functions":
+	{
+	"prefix": ["linshellfunctions","linshefun"],
+	"body": [
+		
+"# Define your function here",
+"Hello () {",
+  " echo 'Hello World'",
+"}",
+
+"# Invoke your function",
+"Hello"
+		
+	],
+	"description": "Unix / Linux Shell Functions "
+  },
+  "Shell Manpage Help":
+	{
+	"prefix": ["linshellmanpagehelp","linshman"],
+	"body": [
+		
+"Unix's version of Help files are called man pages. If there is a command name and you are not sure how to use it, then Man Pages help you out with every step."
+		
+	],
+	"description": "Unix / Linux Shell Manpage Help"
+  },
+  
+"Advanced Unix / Linux":
+  {
+  "prefix": ["linadvancedunixlinux","lina"],
+  "body": [
+	" Regular Expressions (linarex)",
+	" File System Basics (linafisbas)",
+	" User Administration (linauser)",
+	" System Performance (linasysper)",
+	" System Logging (linasylo)",
+	" Signals and Traps (linasigtr)"
+  ],
+  "description": "Unix / Linux Shell Advanced Unix / Linux "
+},
+"Regular Expressions with SED":
+  {
+  "prefix": ["linadvancedunixlinux","linarex"],
+  "body": [
+	  "Invoking sed",
+	  "The sed General Syntax",
+	  "Deleting All Lines with sed",
+	  "The sed Addresses",
+	  "The sed Address Ranges",
+	  "The Substitution Command",
+	  "Substitution Flags",
+	  "Using an Alternative String Separator",
+	  "Replacing with Empty Space",
+	  "Address Substitution",
+	  "The Matching Command",
+	  "Using Regular Expression",
+	  "Using Multiple sed Commands"
+
+  ],
+  "description": "Unix / Linux Shell Advanced Unix / Linux "
+},
+"File System Basics":
+  {
+  "prefix": ["linfilesystembasics","linafisbas"],
+  "body": [
+	
+	"Directory Structure",
+	"Navigating the File System",
+	"The df Command",
+	"The du Command",
+	"Mounting the File System",
+	"Unmounting the File System",
+	"User and Group Quotas"
+  ],
+  "description": "Unix / Linux File System Basics "
+},
+"User Administration":
+  {
+  "prefix": ["linuseradministration","linauser"],
+  "body": [
+	 
+	"Managing Users and Groups",
+	"Create a Group",
+	"Modify a Group",
+	"Delete a Group",
+	"Create an Account",
+	"Modify an Account",
+	"Delete an Account"
+  ],
+  "description": "Unix / Linux User Administration"
+},
+"System Performance":
+  {
+  "prefix": ["linadvancedunixlinux","linasysper"],
+  "body": [
+	"CPU",
+	"Memory",
+	"Disk space",
+	"Communications lines",
+	"I/O Time",
+	"Network Time",
+	"Applications programs"
+
+  ],
+  "description": "Unix / Linux System Performance"
+},
+"System Logging":
+  {
+  "prefix": ["linsystemlogging","linasylo"],
+  "body": [
+	"Syslog Facilities",
+	"Syslog Priorities",
+	"The /etc/syslog.conf file",
+	"Logging Actions",
+	"The logger Command",
+	"Log Rotation"
+
+  ],
+  "description": "Unix / Linux System Logging"
+},
+"Signals and Traps":
+  {
+  "prefix": ["linasignalsandtraps","linasigtr"],
+  "body": [
+	 
+	"List of Signals",
+	"Default Actions",
+	"Sending Signals",
+	"Trapping Signals",
+	"Cleaning Up Temporary Files",
+	"Ignoring Signals",
+	"Resetting Traps"
+  ],
+  "description": "Unix / Linux Signals and Traps "
+},
+"Unix / Linux Useful Resources":
+  {
+  "prefix": ["linusefulresources","linuseres"],
+  "body": [
+	"Questions & Answers (linrqa)",
+	" Useful Commands (linrucomm)",
+	" Quick Guide (linrqg)",
+	" Builtin Functions (linrbfun)",
+	" System Calls (linrsyscal)",
+	" Commands List (linrcomlis)",
+	" Useful Resources (linrusres)",
+	" Discussion (linrdis)"
+  ],
+  "description": "Unix / Linux Unix / Linux Useful Resources "
+},
+"Questions and Answers":
+  {
+  "prefix": ["linquestionsandanswers","linrqa"],
+  "body": [
+	     
+	"https://www.tutorialspoint.com/unix/unix_questions_answers.htm"
+  ],
+  "description": "Unix / Linux Questions and Answers "
+},
+" Useful Commands":
+  {
+  "prefix": ["linusefulcommands","linrucomm"],
+  "body": [
+	"Files and Directories",
+	"Manipulating data",
+	"Compressed Files",
+	"Getting Information",
+	"Network Communication",
+	"Programming Utilities",
+	"Misc Commands"
+  ],
+  "description": "Unix / Linux  Useful Commands "
+},
+"Quick Guide":
+  {
+  "prefix": ["linquickguide","linrqg"],
+  "body": [
+		"https://www.tutorialspoint.com/unix/unix-quick-guide.htm"
+  ],
+  "description": "Unix / Linux Quick Guide "
+},
+"Shell Builtin Mathematical Functions":
+  {
+  "prefix": ["linbuiltinmathematicalfunctions","linrbfun"],
+  "body": [
+		"https://www.tutorialspoint.com/unix/unix-builtin-functions.htm"
+  ],
+  "description": "Unix / Linux Shell Builtin Mathematical Functions "
+}
+
+}
