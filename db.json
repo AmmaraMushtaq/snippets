@@ -1,0 +1,4178 @@
+   {
+	"DynamoDB": {
+		"prefix": ["DynamoDB","dynd"],
+		"body": [
+			"Quickstart"
+   "A Sample Tutorial"
+"Code Examples (dyndcodex)"
+"Developer Guide (dynddevg)"
+"Security (dyndsec)"
+"Available Services (dyndavails) "
+"Core References (dyndcref)" 
+"Customization References (dyndceuref)"
+		],
+		"description": "DynamoDB"
+	},
+	" Code Examples": {
+		"prefix": ["dyndcodeexamples","dyndcodex"],
+		"body": [
+			
+			"Amazon CloudWatch examples (dyndcodexacex)"
+"Amazon DynamoDB (dyndcodexaddb)"
+"Amazon EC2 examples (dyndcodexaec2e)"
+"AWS Identity and Access Management examples (dyndcodexaiaman)"
+"AWS Key Management Service (AWS KMS) examples (dyndcodexakmser)"
+"Amazon S3 examples (dyndcodexas3)"
+"AWS Secrets Manager (dyndcodexasman)"
+"Amazon SES examples (dyndcodexases)" 
+"Amazon SQS examples (dyndcodexasqs)"
+		],
+		"description": "Code Examples"
+	  },
+
+	  
+	  "Amazon CloudWatch examples": {
+		"prefix": ["dyndamazoncloudWatchexamples","dyndcodexacex"],
+		"body": [
+			
+		],
+		"description": "Amazon CloudWatch examples"
+	  },
+	  "Create CloudWatch Alarm": {
+		"prefix": "dyndcodexacexcwcreatealarm",
+		"body": [
+			"import boto3",
+
+"# Create CloudWatch client",
+"cloudwatch = boto3.client('cloudwatch')",
+
+"# Create alarm",
+"cloudwatch.put_metric_alarm(",
+    "AlarmName='Web_Server_CPU_Utilization',",
+    "ComparisonOperator='GreaterThanThreshold',",
+   " EvaluationPeriods=1,",
+   " MetricName='CPUUtilization',",
+   " Namespace='AWS/EC2',",
+    "Period=60,",
+   " Statistic='Average',",
+   " Threshold=70.0,",
+   " ActionsEnabled=False,",
+    "AlarmDescription='Alarm when server CPU exceeds 70%',",
+   " Dimensions=[",
+        "{",
+          "'Name': 'InstanceId',",
+          "'Value': 'INSTANCE_ID'",
+        "},",
+    "],",
+    "Unit='Seconds'",
+")"
+		],
+		"description": "Amazon CloudWatch examples Create CloudWatch Alarm"
+	  },
+	  "CloudWatch Alarm Actions": {
+		"prefix": "dyndcodexacexcwalarmactions",
+		"body": [
+			"import boto3",
+
+"# Create CloudWatch client",
+"cloudwatch = boto3.client('cloudwatch')",
+
+"# Create alarm with actions enabled",
+"cloudwatch.put_metric_alarm(",
+    "AlarmName='Web_Server_CPU_Utilization',",
+    "ComparisonOperator='GreaterThanThreshold',",
+    "EvaluationPeriods=1,",
+   " MetricName='CPUUtilization',",
+    "Namespace='AWS/EC2',",
+    "Period=60,",
+   " Statistic='Average',",
+    "Threshold=70.0,",
+   " ActionsEnabled=True,",
+   " AlarmActions=[",
+      "'arn:aws:swf:us-west-2:{CUSTOMER_ACCOUNT}:action/actions/AWS_EC2.InstanceId.Reboot/1.0'",
+   " ],",
+   " AlarmDescription='Alarm when server CPU exceeds 70%',",
+   " Dimensions=[",
+       " {",
+         " 'Name': 'InstanceId',",
+          "'Value': 'INSTANCE_ID'",
+        "},",
+    "],",
+   " Unit='Seconds'",
+")"
+	],
+	"description": "Amazon CloudWatch examples CloudWatch Alarm Actions"
+	  },
+	  "Get CloudWatch Metrics": {
+		"prefix": "dyndcodexacexcwgetmetrics",
+		"body": [
+			"import boto3",
+
+"# Create CloudWatch client",
+"cloudwatch = boto3.client('cloudwatch')",
+
+"# Put custom metrics",
+"cloudwatch.put_metric_data(",
+   " MetricData=[",
+        "{",
+            "'MetricName': 'PAGES_VISITED',",
+            "'Dimensions': [",
+                "{",
+                    "'Name': 'UNIQUE_PAGES',",
+                    "'Value': 'URLS'",
+                "},",
+            "],",
+            "'Unit': 'None',",
+            "'Value': 1.0",
+        "},",
+    "],",
+   " Namespace='SITE/TRAFFIC'",
+")"
+	],
+	"description": "Amazon CloudWatch examples Get CloudWatch Metrics"
+	  },
+	  "Send Events to CloudWatch": {
+		"prefix": "dyndcodexacexcodexcwsendevents",
+		"body": [
+			"import boto3",
+
+
+			"# Create CloudWatchEvents client",
+			"cloudwatch_events = boto3.client('events')",
+			
+			"# Put an event rule",
+			"response = cloudwatch_events.put_rule(",
+				"Name='DEMO_EVENT',",
+				"RoleArn='IAM_ROLE_ARN',",
+				"ScheduleExpression='rate(5 minutes)',",
+				"State='ENABLED'",
+			")",
+			"print(response['RuleArn'])"
+		],
+		"description": "Amazon CloudWatch examples Send Events to CloudWatch"
+	  },
+	  "Subscription Filters in CloudWatch Logs": {
+		"prefix": "dyndcodexacexcwsubscriptionfilters",
+		"body": [
+			"import boto3",
+
+"# Create CloudWatchLogs client",
+"cloudwatch_logs = boto3.client('logs')",
+
+"# List subscription filters through the pagination interface",
+"paginator = cloudwatch_logs.get_paginator('describe_subscription_filters')",
+"for response in paginator.paginate(logGroupName='GROUP_NAME'):",
+    "print(response['subscriptionFilters'])"
+	],
+	"description": "Amazon CloudWatch examples Subscription Filters in CloudWatch Logs"
+	  },
+
+
+
+
+
+
+	  "Amazon DynamoDB": {
+		"prefix": ["dyndamazonDynamoDB","dyndcodexaddb"],
+		"body": [
+			"import boto3",
+
+"# Get the service resource.",
+"dynamodb = boto3.resource('dynamodb')",
+
+"# Create the DynamoDB table.",
+"table = dynamodb.create_table(",
+   " TableName='users',",
+   " KeySchema=[",
+        "{",
+            "'AttributeName': 'username',",
+            "'KeyType': 'HASH'",
+        "},",
+       " {",
+           " 'AttributeName': 'last_name',",
+            "'KeyType': 'RANGE'",
+       " }",
+   " ],",
+   " AttributeDefinitions=[",
+        "{",
+           " 'AttributeName': 'username',",
+           " 'AttributeType': 'S'",
+        "},",
+       " {",
+            "'AttributeName': 'last_name',",
+           " 'AttributeType': 'S'",
+       " },",
+   " ],"
+   " ProvisionedThroughput={",
+       " 'ReadCapacityUnits': 5,",
+        "'WriteCapacityUnits': 5",
+   " }",
+")"
+
+		],
+		"description": "Amazon DynamoDB"
+	  },
+
+
+// Amazon EC2 Examples
+
+	  "EC2 Manage Instances": {
+		"prefix": "dyndcodexacexec2manageinstances",
+		"body": [
+			"import sys",
+"import boto3",
+
+
+"ec2 = boto3.client('ec2')",
+"if sys.argv[1] == 'ON':",
+    "response = ec2.monitor_instances(InstanceIds=['INSTANCE_ID'])",
+"else:",
+    "response = ec2.unmonitor_instances(InstanceIds=['INSTANCE_ID'])",
+"print(response)"
+		]
+		,
+	"description": "Amazon CloudWatch examples EC2 Manage Instances"
+	  },
+	  "EC2 Key Pairs": {
+		"prefix": "dyndcodexacexec2keypairs",
+		"body": [
+			"import boto3",
+
+			"ec2 = boto3.client('ec2')",
+			"response = ec2.create_key_pair(KeyName='KEY_PAIR_NAME')",
+			"print(response)"
+		]
+		,
+	"description": "Amazon CloudWatch examples EC2 Key Pairs"
+	  },
+	  "EC2 Describe Regions and AZs": {
+		"prefix": "dyndcodexacexec2describeregionsazs",
+		"body": [
+			"import boto3",
+
+"ec2 = boto3.client('ec2')",
+
+"# Retrieves all regions/endpoints that work with EC2"
+"response = ec2.describe_regions()",
+"print('Regions:', response['Regions'])",
+
+"# Retrieves availability zones only for region of the ec2 object",
+"response = ec2.describe_availability_zones()",
+"print('Availability Zones:', response['AvailabilityZones'])"
+		]
+		,
+	"description": "Amazon CloudWatch examples EC2 Describe Regions and AZs"
+	  },
+	  "EC2 Security Groups": {
+		"prefix": "dyndcodexacexec2securitygroups",
+		"body": [
+			"import boto3",
+"from botocore.exceptions import ClientError",
+
+"ec2 = boto3.client('ec2')",
+
+"try:",
+   " response = ec2.describe_security_groups(GroupIds=['SECURITY_GROUP_ID'])",
+   " print(response)",
+"except ClientError as e:",
+    "print(e)"
+		]
+		,
+	"description": "Amazon CloudWatch examples EC2 Security Groups"
+	  },
+	  "EC2 Elastic IP": {
+		"prefix": "dyndcodexacexec2elasticip",
+		"body":[
+			"import boto3",
+
+
+"ec2 = boto3.client('ec2')",
+"filters = [",
+    "{'Name': 'domain', 'Values': ['vpc']}",
+"]",
+"response = ec2.describe_addresses(Filters=filters)",
+"print(response)"
+		]
+		,
+	"description": "Amazon CloudWatch examples EC2 Elastic IP"
+	  },
+	//   AWS IAM Examples
+	"IAM Manage Users": {
+		"prefix": "dyndcodexacexiammanageusers",
+		"body": [
+			"import boto3",
+
+"# Create IAM client",
+"iam = boto3.client('iam')",
+
+"# Create user",
+"response = iam.create_user(",
+    "UserName='IAM_USER_NAME'",
+")",
+
+"print(response)"
+		]
+		,
+	"description": "Amazon CloudWatch examples IAM Manage Users"
+	  },
+	  "IAM Policies": {
+		"prefix": "dyndcodexacexiampolicies",
+		"body": ["import boto3",
+
+
+		"# Create IAM client",
+		"iam = boto3.client('iam')",
+		
+		"# Get a policy",
+		"response = iam.get_policy(",
+			"PolicyArn='arn:aws:iam::aws:policy/AWSLambdaExecute'",
+		")",
+		"print(response['Policy'])"
+	  ],
+		
+		
+	"description": "Amazon CloudWatch examples IAM Policies"
+	  },
+	 
+	  "IAM Access Keys": {
+		"prefix": "dyndcodexacexiamaccesskeys",
+		"body": [
+			"import boto3",
+
+"# Create IAM client",
+"iam = boto3.client('iam')",
+
+"# List access keys through the pagination interface.",
+"paginator = iam.get_paginator('list_access_keys')",
+"for response in paginator.paginate(UserName='IAM_USER_NAME'):",
+   " print(response)"
+		]
+		,
+	"description": "Amazon CloudWatch examples IAM Access Keys"
+	  },
+	  "IAM Server Certificates": {
+		"prefix": "dyndcodexacexiamservercertificates",
+		"body": [
+			"import boto3",
+
+"# Create IAM client",
+"iam = boto3.client('iam')",
+
+"# List server certificates through the pagination interface",
+"paginator = iam.get_paginator('list_server_certificates')",
+"for response in paginator.paginate():",
+    "print(response['ServerCertificateMetadataList'])"
+		]
+		,
+	"description": "Amazon CloudWatch examples IAM Server Certificates"
+	  },
+	 
+	  "IAM Account Aliases": {
+		"prefix": "dyndcodexacexiamaccountaliases",
+		"body": [
+			"import boto3",
+
+"# Create IAM client",
+"iam = boto3.client('iam')",
+
+"# Create an account alias",
+"iam.create_account_alias(",
+    "AccountAlias='ALIAS'",
+")"
+		]
+		,
+	"description": "Amazon CloudWatch examples IAM Account Aliases"
+	  },
+	//   AWS KMS Examples
+	"KMS Basic Operations": {
+		"prefix": "dyndcodexacexkmsbasicoperations",
+		"body":[
+			"https://boto3.amazonaws.com/v1/documentation/api/latest/guide/kms-example-encrypt-decrypt-file.html"
+		]
+		,
+	"description": "Amazon CloudWatch examples KMS Basic Operations"
+	  },
+	//   Amazon S3 Examples
+	"S3 Bucket Operations": {
+		"prefix": "dyndcodexacexs3bucketoperations",
+		"body": [
+			"# Retrieve the list of existing buckets",
+"s3 = boto3.client('s3')",
+"response = s3.list_buckets()",
+
+"# Output the bucket names",
+"print('Existing buckets:')",
+"for bucket in response['Buckets']:",
+    "print(f'  {bucket[Name]}')"
+		]
+		,
+	"description": "Amazon CloudWatch examples S3 Bucket Operations"
+	  },
+	  "S3 File Operations": {
+		"prefix": "dyndcodexacexs3fileoperations",
+		"body": []
+		,
+	"description": "Amazon CloudWatch examples S3 File Operations"
+	  },
+	  "S3 Bucket Policies": {
+		"prefix": "dyndcodexacexs3bucketpolicies",
+		"body": [
+			"import boto3",
+
+"# Retrieve the policy of the specified bucket",
+"s3 = boto3.client('s3')",
+"result = s3.get_bucket_policy(Bucket='BUCKET_NAME')",
+"print(result['Policy'])"
+		]
+		,
+	"description": "Amazon CloudWatch examples S3 Bucket Policies"
+	  },
+	  "S3 Access Permissions": {
+		"prefix": "dyndcodexacexs3accesspermissions",
+		"body": [
+			"import boto3",
+
+"# Retrieve a bucket's ACL",
+"s3 = boto3.client('s3')",
+"result = s3.get_bucket_acl(Bucket='my-bucket')",
+"print(result)"
+		]
+		,
+	"description": "Amazon CloudWatch examples S3 Access Permissions"
+	  },
+	  "S3 Static Web Host": {
+		"prefix": "dyndcodexacexs3staticwebhost",
+		"body":[
+			"https://boto3.amazonaws.com/v1/documentation/api/latest/guide/s3-example-static-web-host.html"
+			"import boto3",
+
+"# Retrieve the website configuration",
+"s3 = boto3.client('s3')",
+"result = s3.get_bucket_website(Bucket='BUCKET_NAME')"
+		]
+		,
+	"description": "Amazon CloudWatch examples S3 Static Web Host"
+	  },
+	  "S3 CORS Configuration": {
+		"prefix": "dyndcodexacexs3corsconfiguration",
+		"body": [
+			"import logging",
+"import boto3",
+"from botocore.exceptions import ClientError",
+
+
+"def get_bucket_cors(bucket_name):",
+    "Retrieve the CORS configuration rules of an Amazon S3 bucket",
+
+    ":param bucket_name: string",
+    ":return: List of the bucket's CORS configuration rules. If no CORS",
+   " configuration exists, return empty list. If error, return None.",
+    
+
+    "# Retrieve the CORS configuration",
+   " s3 = boto3.client('s3')",
+   " try:",
+        "response = s3.get_bucket_cors(Bucket=bucket_name)",
+   " except ClientError as e:",
+       " if e.response['Error']['Code'] == 'NoSuchCORSConfiguration':",
+            "return []",
+        "else:",
+           " # AllAccessDisabled error == bucket not found",
+           " logging.error(e)",
+            "return None",
+    "return response['CORSRules']"
+		]
+		,
+	"description": "Amazon CloudWatch examples S3 CORS Configuration"
+	  },
+	//   AWS Secrets Manager Examples
+	"Secrets Manager Basic Operations": {
+		"prefix": "dyndcodexacexsecretsmanagerbasicoperations",
+		"body": [
+			"https://boto3.amazonaws.com/v1/documentation/api/latest/guide/secrets-manager.html"
+		]
+		,
+	"description": "Amazon CloudWatch examples Secrets Manager Basic Operations"
+	  },
+	//   Amazon SES Examples
+	"SES Verify Email": {
+		"prefix": "dyndcodexacexsesverifyemail",
+		"body": [
+			"import boto3",
+
+"# Create SES client",
+"ses = boto3.client('ses')",
+
+"response = ses.verify_domain_identity(",
+ " Domain='DOMAIN_NAME'",
+")",
+
+"print(response)"
+		]
+		,
+	"description": "Amazon CloudWatch examples SES Verify Email"
+	  },
+	  "SES Email Templates": {
+		"prefix": "dyndcodexacexsesemailtemplates",
+		"body": [
+			"import boto3",
+
+"# Create SES client",
+"ses = boto3.client('ses')",
+
+"response = ses.get_template(",
+  "TemplateName = 'TEMPLATE_NAME'",
+")",
+
+"print(response)"
+		]
+		,
+	"description": "Amazon CloudWatch examples SES Email Templates"
+	  },
+	  "SES Email Filters": {
+		"prefix": "dyndcodexacexsesemailfilters",
+		"body": [
+			"import boto3",
+
+"# Create SES client",
+"ses = boto3.client('ses')",
+
+"response = ses.list_receipt_filters()",
+
+"print(response)"
+		]
+		,
+	"description": "Amazon CloudWatch examples SES Email Filters"
+	  },
+	  "SES Email Rules": {
+		"prefix": "dyndcodexacexsesemailrules",
+		"body": [
+			"import boto3",
+
+"# Create SES client",
+"ses = boto3.client('ses')",
+
+"response = ses.create_receipt_rule_set(",
+  "RuleSetName = 'RULE_SET_NAME',",
+")",
+
+"print(response)"
+		]
+		,
+	"description": "Amazon CloudWatch examples SES Email Rules"
+	  },
+	//   Amazon SQS Examples
+	"SQS Basic Operations": {
+		"prefix": "dyndcodexacexsqsbasicoperations",
+		"body": [
+			"import boto3",
+
+"# Create SQS client",
+"sqs = boto3.client('sqs')",
+
+"# Create a SQS queue",
+"response = sqs.create_queue(",
+   " QueueName='SQS_QUEUE_NAME',",
+   " Attributes={",
+        "'DelaySeconds': '60',",
+        "'MessageRetentionPeriod': '86400'",
+    "}",
+")",
+
+"print(response['QueueUrl'])"
+		]
+		,
+	"description": "Amazon CloudWatch examples SQS Basic Operations"
+	  },
+	  "SQS Send/Receive Messages": {
+		"prefix": "dyndcodexacexsqssendreceivemessages",
+		"body": [
+			"import boto3",
+
+"# Create SQS client",
+"sqs = boto3.client('sqs')",
+
+"queue_url = 'SQS_QUEUE_URL'",
+
+"# Send message to SQS queue",
+"response = sqs.send_message(",
+   " QueueUrl=queue_url,",
+    "DelaySeconds=10,",
+   " MessageAttributes={",
+     "   'Title': {",
+            "'DataType': 'String',",
+            "'StringValue': 'The Whistler'",
+        "},",
+       " 'Author': {",
+            "'DataType': 'String',",
+            "'StringValue': 'John Grisham'",
+       " },",
+        "'WeeksOn': {",
+            "'DataType': 'Number',",
+            "'StringValue': '6'",
+       " }"
+    "},"
+  "  MessageBody=("
+       " 'Information about current NY Times fiction bestseller for '"
+       " 'week of 12/11/2016.'"
+   " )"
+")"
+
+"print(response['MessageId'])"
+		]
+		,
+	"description": "Amazon CloudWatch examples SQS Send/Receive Messages"
+	  },
+	  "SQS Visibility Timeout": {
+		"prefix": "dyndcodexacexsqsvisibilitytimeout",
+		"body": [
+			"import boto3",
+
+"# Create SQS client"
+"sqs = boto3.client('sqs')",
+
+"queue_url = 'SQS_QUEUE_URL'",
+
+"# Receive message from SQS queue",
+"response = sqs.receive_message(",
+    "QueueUrl=queue_url,",
+    "AttributeNames=[",
+        "'SentTimestamp'",
+    "],",
+   " MaxNumberOfMessages=1,",
+  "  MessageAttributeNames=[",
+       " 'All'",
+   " ],",
+")",
+
+"message = response['Messages'][0]",
+"receipt_handle = message['ReceiptHandle']",
+
+"# Change visibility timeout of message from queue",
+"sqs.change_message_visibility(",
+   " QueueUrl=queue_url,",
+   " ReceiptHandle=receipt_handle,",
+   " VisibilityTimeout=20",
+")",
+"print('Received and changed visibility timeout of message: %s' % message)"
+		]
+		,
+	"description": "Amazon CloudWatch examples SQS Visibility Timeout"
+	  },
+	  "SQS Long Polling": {
+		"prefix": "dyndcodexacexsqslongpolling",
+		"body": [
+			"import boto3",
+
+"# Create SQS client",
+"sqs = boto3.client('sqs')",
+
+"# Create a SQS queue with long polling enabled",
+"response = sqs.create_queue(",
+   " QueueName='SQS_QUEUE_NAME',",
+  "  Attributes={'ReceiveMessageWaitTimeSeconds': '20'}",
+")",
+
+"print(response['QueueUrl'])"
+		]
+		,
+	"description": "Amazon CloudWatch examples SQS Long Polling"
+	  },
+	
+	  "SQS Dead-Letter Queues": {
+		"prefix": "dyndcodexacexsqsdeadletterqueues",
+		"body": [
+			"import json",
+
+"import boto3",
+
+"# Create SQS client",
+"sqs = boto3.client('sqs')",
+
+"queue_url = 'SOURCE_QUEUE_URL'",
+"dead_letter_queue_arn = 'DEAD_LETTER_QUEUE_ARN'",
+
+"redrive_policy = {",
+    "'deadLetterTargetArn': dead_letter_queue_arn,",
+    "'maxReceiveCount': '10'",
+"}",
+
+
+"# Configure queue to send messages to dead letter queue",
+"sqs.set_queue_attributes(",
+    "QueueUrl=queue_url,",
+    "Attributes={",
+       " 'RedrivePolicy': json.dumps(redrive_policy)",
+   " }",
+") "
+		]
+		,
+	"description": "Amazon CloudWatch examples SQS Dead-Letter Queues"
+	  },
+	  
+	  
+	  
+	  
+
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+
+
+
+
+
+
+
+
+	  "Configuration": {
+		"prefix": ["dynddevgconfiguration","dynddevgcon"],
+		"body": [
+			
+			"import boto3",
+"from botocore.config import Config",
+
+"my_config = Config(",
+    "region_name = 'us-west-2',",
+   " signature_version = 'v4',",
+   " retries = {",
+        "'max_attempts': 10,",
+        "'mode': 'standard'",
+   " }",
+")",
+
+"client = boto3.client('kinesis', config=my_config)"
+		],
+		"description": "Configuration "
+	  },
+	  "Credentials": {
+		"prefix": ["dynddevgcredentials","dynddevgcre"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client(",
+    "'s3',",
+   " aws_access_key_id=ACCESS_KEY,",
+    "aws_secret_access_key=SECRET_KEY,",
+    "aws_session_token=SESSION_TOKEN",
+")"
+		],
+		"description": "Credentials "
+	  },"Low-level clients": {
+		"prefix": ["dynddevglowlevelclients","dynddevgllc"],
+		"body": [
+			"import boto3",
+
+"s3 = boto3.client('s3')",
+"sqs = boto3.client('sqs')",
+
+"# List all of the possible waiters for both clients",
+"print(s3 waiters:)",
+"s3.waiter_names",
+
+"print(sqs waiters:)",
+"sqs.waiter_names"
+		],
+		"description": "Low-level clients "
+	  },"Resources": {
+		"prefix": ["dynddevgresources","dynddevgres"],
+		"body": [
+			"https://boto3.amazonaws.com/v1/documentation/api/latest/guide/resources.html"
+		],
+		"description": "Resources "
+	  },"Session": {
+		"prefix": ["dynddevgsession","dynddevgsess"],
+		"body": [
+			"import boto3",
+"import boto3",
+".session
+",
+"# Create your own session",
+"my_session = boto3.session.Session()",
+
+"# Now we can create low-level clients or resource clients from our custom session",
+"sqs = my_session.client('sqs')",
+"s3 = my_session.resource('s3')"
+		],
+		"description": "Session "
+	  },"Collections": {
+		"prefix": ["dynddevgcollections","dynddevgcoll"],
+		"body": [
+			"# SQS list all queues",
+"sqs = boto3.resource('sqs')",
+"for queue in sqs.queues.all():",
+    "print(queue.url)"
+		],
+		"description": "Collections "
+	  },"Error handling": {
+		"prefix": ["dynddevgerrorhandling","dynddevgeveha"],
+		"body": [
+			"import botocore",
+"import boto3",
+
+"client = boto3.client('aws_service_name')",
+
+"try:",
+    "client.some_api_call(SomeParam='some_param')",
+
+"except botocore.exceptions.ClientError as error:",
+    "# Put your error handling logic here",
+    "raise error",
+
+"except botocore.exceptions.ParamValidationError as error:",
+    "raise ValueError('The parameters you provided are incorrect: {}'.format(error))"
+		],
+		"description": "Error handling "
+	  },"Paginators": {
+		"prefix": ["dynddevgpaginators","dynddevgpag"],
+		"body": [
+			"import boto3",
+
+"# Create a client",
+"client = boto3.client('s3', region_name='us-west-2')",
+
+"# Create a reusable Paginator",
+"paginator = client.get_paginator('list_objects')",
+
+"# Create a PageIterator from the Paginator",
+"page_iterator = paginator.paginate(Bucket='my-bucket')",
+
+"for page in page_iterator:",
+   " print(page['Contents'])"
+		],
+		"description": "Paginators "
+
+	  },"Retries": {
+		"prefix": ["dynddevgretries","dynddevgret"],
+		"body": [
+			"import boto3",
+"from botocore.config import Config",
+
+"config = Config(",
+   "retries = {",
+      "'max_attempts': 10,",
+      "mode: standard",
+  " }",
+")",
+
+"ec2 = boto3.client('ec2', config=config)"
+		],
+		"description": "Retries "
+	  },
+
+	  "Extensibility guide": {
+		"prefix": ["dynddevgextensibilityguide","dynddevgexg"],
+		"body": [
+			"from boto3.session import Session",
+
+"def custom_method(self):",
+   " print('This is my custom method')",
+
+"def add_custom_method(class_attributes, **kwargs):",
+   " class_attributes['my_method'] = custom_method",
+
+"session = Session()",
+"session.events.register('creating-resource-class.s3.ServiceResource',",
+                       " add_custom_method)",
+
+"resource = session.resource('s3')",
+"resource.my_method()"
+		],
+		"description": "Extensibility guide "
+	  },
+	  "Cloud9": {
+		"prefix": ["dynddevgcloud9","dynddevgcl9"],
+		"body": [
+			"https://boto3.amazonaws.com/v1/documentation/api/latest/guide/cloud9.html"
+		],
+		"description": "Cloud9 "
+	  },
+	  "Amazon S3": {
+		"prefix": ["dynddevgamazonS3","dynddevgamzs3"],
+		"body": [
+			"# Boto 2.x",
+"import boto",
+"s3_connection = boto.connect_s3()",
+
+"# Boto3",
+"import boto3",
+"s3 = boto3.resource('s3')"
+		],
+		"description": "Amazon S3 "
+	  }, 
+	  "Amazon EC2": {
+		"prefix": ["dynddevgamazonec2","dynddevgamec2"],
+		"body": [
+			"import boto",
+"ec2_connection = boto.connect_ec2()",
+"vpc_connection = boto.connect_vpc()",
+
+"# Boto3",
+"import boto3",
+"ec2 = boto3.resource('ec2')"
+		],
+		"description": "Amazon EC2"
+	  },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	  "Security": {
+		"prefix": ["dyndsecurity","dyndsec"],
+		"body": [
+		"https://boto3.amazonaws.com/v1/documentation/api/latest/guide/security.html",
+			"import urllib3",
+"URL = 'https://localhost:4433/'",
+
+"http = urllib3.PoolManager(",
+    "ca_certs='cert.pem',",
+    "cert_reqs='CERT_REQUIRED',",
+")",
+"r = http.request('GET', URL)",
+"print(r.data.decode('utf-8'))"
+		],
+		"description": "Security"
+	  },
+	  "Available Services": {
+		"prefix": ["dyndavailableservices","dyndavails"],
+		"body": [
+			
+
+		],
+		"description": "Available Services "
+	  },  "AccessAnalyzer": {
+		"prefix": ["dyndavailsaccessanalyzer"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('accessanalyzer')"
+		],
+		"description": "AccessAnalyzer "
+	  },  "Account": {
+		"prefix": ["dyndavailsAccount"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('account')"
+
+		],
+		"description": "Account "
+	  },  "ACM": {
+		"prefix": ["dyndavailsacm"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('acm')"
+
+		],
+		"description": "ACM "
+	  },  "ACMPCA": {
+		"prefix": ["dyndavailsacmpca"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('acm-pca')"
+		],
+		"description": "ACMPCA "
+	  },  "AlexaForBusiness": {
+		"prefix": ["dyndavailsalexaforbusiness"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('alexaforbusiness')"
+
+		],
+		"description": "AlexaForBusiness "
+	  },  "PrometheusService": {
+		"prefix": ["dyndavailsprometheusservice"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('PrometheusService')"
+		],
+		"description": "PrometheusService "
+	  },  "Amplify": {
+		"prefix": ["dyndavailsamplify"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('amp')"
+
+		],
+		"description": "Amplify "
+	  }, 
+	  
+	   "AmplifyBackend": {
+		"prefix": ["dyndavailsamplifybackend"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('amplifyuibackend')"
+		],
+		"description": "AmplifyBackend"
+	  },  "AmplifyUIBuilder": {
+		"prefix": ["dyndavailsamplifyuibuilder"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('amplifyuibuilder')"
+
+		],
+		"description": "AmplifyUIBuilder "
+	  },  "APIGateway": {
+		"prefix": ["dyndavailsapigateway"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('apigatewaymanagementapi')"
+
+		],
+		"description": "APIGateway "
+	  },  "ApiGatewayManagementApi": {
+		"prefix": ["dyndavailsapigatewaymanagementapi"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('apigatewayapi')"
+		],
+		"description": "ApiGatewayManagementApi "
+	  },  "ApiGatewayV2": {
+		"prefix": ["dyndavailsapigatewayv2"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('apigatewayv2')"
+
+		],
+		"description": "ApiGatewayV2 "
+	  },  "AppConfig": {
+		"prefix": ["dyndavailsappconfig"],
+		"body": [
+			
+"https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appconfig.html"
+		],
+		"description": "AppConfig "
+	  },  "AppConfigData": {
+		"prefix": ["dyndavailsappconfigData"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('appconfigdata')"
+
+		],
+		"description": "AppConfigData "
+	  },  "AppFabric": {
+		"prefix": ["dyndavailsappfabric"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('appfabric')"
+		],
+		"description": "AppFabric "
+	  },  "Appflow": {
+		"prefix": ["dyndavailsappflow"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('appflow')"
+		],
+		"description": "Appflow "
+	  },  "AppIntegrationsService": {
+		"prefix": ["dyndavailsappintegrationsservice"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('appintegrations')"
+		],
+		"description": "AppIntegrationsService "
+	  },  "ApplicationAutoScaling": {
+		"prefix": ["dyndavailsapplicationautoscaling"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('application-autoscaling')"
+		],
+		"description": "ApplicationAutoScaling "
+	  },  "ApplicationInsights": {
+		"prefix": ["dyndavailsapplicationinsights"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('application-insights')"
+
+		],
+		"description": "ApplicationInsights "
+	  },  "ApplicationCostProfiler": {
+		"prefix": ["dyndavailsapplicationcostprofiler"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('applicationcostprofiler')"
+
+		],
+		"description": "ApplicationCostProfiler "
+	  },  "AppMesh": {
+		"prefix": ["dyndavailsappmesh"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('appmesh')"
+		],
+		"description": "AppMesh "
+	  },
+	  "AppRunner": {
+		"prefix": ["dyndavailsapprunner"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('apprunner')"
+
+		],
+		"description": "AppRunner "
+	  }, "AppStream": {
+		"prefix": ["dyndavailsappstream"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('appstream')"
+
+		],
+		"description": "AppStream "
+	  }, "AppSync": {
+		"prefix": ["dyndavailsappsync"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('appsync')"
+		],
+		"description": "AppSync "
+	  }, "ARCZonalShift": {
+		"prefix": ["dyndavailsarczonalshift"],
+		"body": [
+			"import boto3",
+
+			"client = boto3.client('arc-zonal-shift')"	
+
+		],
+		"description": "ARCZonalShift "
+	  }, "Athena": {
+		"prefix": ["dyndavailsathena"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('athena')"
+		],
+		"description": "Athena "
+	  }, "AuditManager": {
+		"prefix": ["dyndavailsauditmanager"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('auditmanager')"
+
+		],
+		"description": "AuditManager "
+	  }, "AutoScaling": {
+		"prefix": ["dyndavailsautoscaling"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('autoscaling')"
+		],
+		"description": "AutoScaling "
+	  }, "AutoScalingPlans": {
+		"prefix": ["dyndavailsautoscalingplans"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('autoscaling-plans')"
+
+		],
+		"description": "AutoScalingPlans "
+	  }, "Backup": {
+		"prefix": ["dyndavailsbackup"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('backup')"
+
+		],
+		"description": "Backup "
+	  }, "BackupGateway": {
+		"prefix": ["dyndavailsbackupgateway"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('backup-gateway')"
+
+		],
+		"description": "BackupGateway "
+	  }, "BackupStorage": {
+		"prefix": ["dyndavailsbackupstorage"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('backupstorage')"
+
+		],
+		"description": "BackupStorage "
+	  }, "Batch": {
+		"prefix": ["dyndavailsbatch"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('batch')"
+
+		],
+		"description": "Batch "
+	  }, "Bedrock": {
+		"prefix": ["dyndavailsbedrock"],
+		"body": [
+			"import boto3",
+
+			"client = boto3.client('bedrock')"	
+
+		],
+		"description": "Bedrock "
+	  }, "BedrockRuntime": {
+		"prefix": ["dyndavailsBedrockRuntime"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('bedrock-runtime')"
+
+		],
+		"description": "BedrockRuntime "
+	  }, "BillingConductor": {
+		"prefix": ["dyndavailsbillingconductor"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('billingconductor')"
+
+		],
+		"description": "BillingConductor "
+	  }, "Braket": {
+		"prefix": ["dyndavailsbraket"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('braket')"
+
+		],
+		"description": "Braket "
+	  }, "Budgets": {
+		"prefix": ["dyndavailsbudgets"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('budgets')"
+
+		],
+		"description": "Budgets "
+	  }, "CostExplorer": {
+		"prefix": ["dyndavailscostexplorer"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('ce')"
+
+		],
+		"description": "CostExplorer "
+	  }, "Chime": {
+		"prefix": ["dyndavailschime"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('chime')"
+		],
+		"description": "Chime "
+	  }, "ChimeSDKIdentity": {
+		"prefix": ["dyndavailschimesdkidentity"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('chime-sdk-identity')"
+		],
+		"description": "ChimeSDKIdentity "
+	  },
+	  "ChimeSDKMediaPipelines": {
+		"prefix": ["dyndavailschimesdkmediapipelines"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('chime-sdk-media-pipelines')"
+		],
+		"description": "ChimeSDKMediaPipelines "
+	  }, "ChimeSDKMeetings": {
+		"prefix": ["dyndavailschimesdkmeetings"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('chime-sdk-meetings')"
+
+		],
+		"description": "ChimeSDKMeetings "
+	  }, "ChimeSDKMessaging": {
+		"prefix": ["dyndavailschimesdkmessaging"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('chime-sdk-messaging')"
+
+		],
+		"description": "ChimeSDKMessaging "
+	  }, "ChimeSDKVoice": {
+		"prefix": ["dyndavailschimesdkvoice"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('chime-sdk-voice')"
+		],
+		"description": "ChimeSDKVoice "
+	  }, "CleanRoomsService": {
+		"prefix": ["dyndavailscleanroomsservice"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('cleanrooms')"
+		],
+		"description": "CleanRoomsService "
+	  }, "Cloud9": {
+		"prefix": ["dyndavailscloud9"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('cloud9')"
+		],
+		"description": "Cloud9 "
+	  }, "CloudControlApi": {
+		"prefix": ["dyndavailscloudcontrolapi"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('cloud9')"
+
+		],
+		"description": "CloudControlApi "
+	  }, "CloudDirectory": {
+		"prefix": ["dyndavailsclouddirectory"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('clouddirectory')"
+
+		],
+		"description": "CloudDirectory "
+	  }, "CloudFormation": {
+		"prefix": ["dyndavailscloudformation"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('cloudformation')"
+		],
+		"description": "CloudFormation "
+	  }, "CloudFront": {
+		"prefix": ["dyndavailscloudfront"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('cloudfront')"
+
+		],
+		"description": "CloudFront "
+	  }, "CloudHSM": {
+		"prefix": ["dyndavailscloudhsm"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('cloudhsm')"
+
+		],
+		"description": "CloudHSM "
+	  }, "CloudHSMV2": {
+		"prefix": ["dyndavailscloudhsmv2"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('cloudhsmv2')"
+		],
+		"description": "CloudHSMV2 "
+	  }, "CloudSearch": {
+		"prefix": ["dyndavailscloudsearch"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('cloudsearch')"
+		],
+		"description": "CloudSearch "
+	  }, "CloudSearchDomain": {
+		"prefix": ["dyndavailscloudsearchdomain"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('cloudsearchdomain')"
+
+		],
+		"description": "CloudSearchDomain "
+	  }, "CloudTrail": {
+		"prefix": ["dyndavailscloudtrail"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('cloudtrail')"
+		],
+		"description": "CloudTrail "
+	  }, 
+	  "CloudTrailDataService": {
+		"prefix": ["dyndavailscloudtraildataservice"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('cloudtrail-data')"
+
+		],
+		"description": "CloudTrailDataService "
+	  }, "CloudWatch": {
+		"prefix": ["dyndavailscloudwatch"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('cloudwatch')"
+		],
+		"description": "CloudWatch "
+	  }, "CodeArtifact": {
+		"prefix": ["dyndavailscodeartifact"],
+		"body": [
+			"https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeartifact.html"
+
+		],
+		"description": "CodeArtifact "
+	  }, "CodeBuild": {
+		"prefix": ["dyndavailscodebuild"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('codebuild')"
+		],
+		"description": "CodeBuild "
+	  }, "CodeCatalyst": {
+		"prefix": ["dyndavailscodecatalyst"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('codecatalyst')"
+
+		],
+		"description": "CodeCatalyst "
+	  }, "CodeCommit": {
+		"prefix": ["dyndavailscodecommit"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('codecommit')"
+		],
+		"description": "CodeCommit "
+	  }, "CodeDeploy": {
+		"prefix": ["dyndavailscodedeploy"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('codedeploy')"
+
+		],
+		"description": "CodeDeploy "
+	  }, "CodeGuruReviewer": {
+		"prefix": ["dyndavailscodegurureviewer"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('codeguru-reviewer')"
+		],
+		"description": "CodeGuruReviewer "
+	  }, "CodeGuruSecurity": {
+		"prefix": ["dyndavailscodegurusecurity"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('codeguru-security')"
+
+		],
+		"description": "CodeGuruSecurity "
+	  }, "CodeGuruProfiler": {
+		"prefix": ["dyndavailscodeguruprofiler"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('codeguruprofiler')"
+
+		],
+		"description": "CodeGuruProfiler "
+	  }, "CodePipeline": {
+		"prefix": ["dyndavailscodepipeline"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('codepipeline')"
+		],
+		"description": "CodePipeline "
+	  }, "CodeStar": {
+		"prefix": ["dyndavailscodestar"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('codestar')"
+		],
+		"description": "CodeStar "
+	  }, "CodeStarconnections": {
+		"prefix": ["dyndavailscodestarconnections"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('codestar-connections')"
+
+		],
+		"description": "CodeStarconnections "
+	  }, "CodeStarNotifications": {
+		"prefix": ["dyndavailscodestarnotifications"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('codestar-notifications')"
+		],
+		"description": "CodeStarNotifications "
+	  }, "CognitoIdentity": {
+		"prefix": ["dyndavailscognitoidentity"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('cognito-identity')"
+
+		],
+		"description": "CognitoIdentity "
+	  }, "CognitoIdentityProvider": {
+		"prefix": ["dyndavailscognitoidentityprovider"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('cognitoidentityprovider')"
+
+		],
+		"description": "CognitoIdentityProvider "
+	  }, "CognitoSync": {
+		"prefix": ["dyndavailscognitosync"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('cognito-sync')"
+		],
+		"description": "CognitoSync "
+	  }, 
+	  "Comprehend": {
+		"prefix": ["dyndavailscomprehend"],
+		"body": [
+			
+			"import boto3",
+
+		"	client = boto3.client('comprehend')"
+		],
+		"description": "Comprehend "
+	  },"ComprehendMedical": {
+		"prefix": ["dyndavailscomprehendmedical"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('comprehendmedical')"
+		],
+		"description": "ComprehendMedical "
+	  },"ComputeOptimizer": {
+		"prefix": ["dyndavailscomputeoptimizer"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('compute-optimizer')"
+
+		],
+		"description": "ComputeOptimizer "
+	  },"ConfigService": {
+		"prefix": ["dyndavailsconfigservice"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('config')"
+
+		],
+		"description": "ConfigService "
+	  },"Connect": {
+		"prefix": ["dyndavailsconnect"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('connect')"
+		],
+		"description": "Connect "
+	  },"ConnectContactLens": {
+		"prefix": ["dyndavailsconnectcontactlens"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('connect-contact-lens')"
+
+		],
+		"description": "ConnectContactLens "
+	  },"ConnectCampaignService": {
+		"prefix": ["dyndavailsconnectcampaignservice"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('connectcampaigns')"
+		],
+		"description": "ConnectCampaignService "
+	  },"ConnectCases": {
+		"prefix": ["dyndavailsconnectcases"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('connectcases')"
+
+		],
+		"description": "ConnectCases "
+	  },"ConnectParticipant": {
+		"prefix": ["dyndavailsconnectparticipant"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('connectparticipant')"
+		],
+		"description": "ConnectParticipant "
+	  },"ControlTower": {
+		"prefix": ["dyndavailscontroltower"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('controltower')"
+		],
+		"description": "ControlTower "
+	  },"CostandUsageReportService": {
+		"prefix": ["dyndavailscostandusagereportservice"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('cur')"
+		],
+		"description": "CostandUsageReportService "
+	  },"CustomerProfiles": {
+		"prefix": ["dyndavailscustomerprofiles"],
+		"body": [
+			"import boto3",
+
+			"client = boto3.client('customer-profiles')	"
+
+		],
+		"description": "CustomerProfiles "
+	  },"GlueDataBrew": {
+		"prefix": ["dyndavailsgluedatabrew"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('databrew')"
+
+		],
+		"description": "GlueDataBrew "
+	  },"DataExchange": {
+		"prefix": ["dyndavailsdataexchange"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('dataexchange')"
+
+		],
+		"description": "DataExchange "
+	  },"DataPipeline": {
+		"prefix": ["dyndavailsdatapipeline"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('datapipeline')"
+
+		],
+		"description": "DataPipeline "
+	  },"DataSync": {
+		"prefix": ["dyndavailsdatasync"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('datasync')"
+
+		],
+		"description": "DataSync "
+	  },"DataZone": {
+		"prefix": ["dyndavailsdatazone"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('datazone')"
+
+		],
+		"description": "DataZone "
+	  },"DAX": {
+		"prefix": ["dyndavailsdax"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('dax')"
+		],
+		"description": "DAX "
+	  },"Detective": {
+		"prefix": ["dyndavailsdetective"],
+		"body": [
+			
+			"import boto3",
+
+		"	client = boto3.client('detective')"
+		],
+		"description": "Detective "
+	  },"DeviceFarm": {
+		"prefix": ["dyndavailsdevicefarm"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('devicefarm')"
+
+		],
+		"description": "DeviceFarm "
+	  },"DevOpsGuru": {
+		"prefix": ["dyndavailsdevopsguru"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('devops-guru')"
+
+		],
+		"description": "DevOpsGuru "
+	  },"DirectConnect": {
+		"prefix": ["dyndavailsdirectconnect"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('directconnect')"
+
+		],
+		"description": "DirectConnect "
+	  },"ApplicationDiscoveryService": {
+		"prefix": ["dyndavailsapplicationdiscoveryservice"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('discovery')"
+
+		],
+		"description": "ApplicationDiscoveryService "
+	  },"DLM": {
+		"prefix": ["dyndavailsdlm"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('dlm')"
+		],
+		"description": "DLM "
+	  },"DatabaseMigrationService": {
+		"prefix": ["dyndavailsdatabasemigrationservice"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('dms')"
+
+		],
+		"description": "DatabaseMigrationService "
+	  },
+	  "DocDB": {
+		"prefix": ["dyndavailsdocdb"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('docdb')"
+		],
+		"description": "DocDB "
+	  },"DocDBElastic": {
+		"prefix": ["dyndavailsdocdbelastic"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('docdb-elastic')"
+
+		],
+		"description": "DocDBElastic "
+	  },"drs": {
+		"prefix": ["dyndavailsdrs"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('drs')"
+
+		],
+		"description": "drs "
+	  },"DirectoryService": {
+		"prefix": ["dyndavailsdirectoryservice"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('ds')"
+
+		],
+		"description": "DirectoryService "
+	  },"DynamoDB": {
+		"prefix": ["dyndavailsdynamodb"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('dynamodb')"
+
+		],
+		"description": "DynamoDB "
+	  },"DynamoDBStreams": {
+		"prefix": ["dyndavailsdynamodbstreams"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('dynamodbstreams')"
+		],
+		"description": "DynamoDBStreams "
+	  },"EBS": {
+		"prefix": ["dyndavailsebs"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('ebs')"
+		],
+		"description": "EBS "
+	  },"EC2": {
+		"prefix": ["dyndavailsec2"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('ec2')"
+		],
+		"description": "EC2 "
+	  },"EC2InstanceConnect": {
+		"prefix": ["dyndavailsec2Instanceconnect"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('ec2-instance-connect')"
+
+		],
+		"description": "EC2InstanceConnect "
+	  },"ecr": {
+		"prefix": ["dyndavailsecr"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('ecr')"
+
+		],
+		"description": "ecr "
+	  },"ECRPublic": {
+		"prefix": ["dyndavailsecrpublic"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('ecr-public')"
+
+		],
+		"description": "ECRPublic "
+	  },"ECS": {
+		"prefix": ["dyndavailsesc"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('ecs')"
+
+		],
+		"description": "ECS "
+	  },"EFS": {
+		"prefix": ["dyndavailsefs"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('efs')"
+
+		],
+		"description": "EFS "
+	  },"EKS": {
+		"prefix": ["dyndavailseks"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('eks')"
+		],
+		"description": "EKS "
+	  },"ElasticInference": {
+		"prefix": ["dyndavailselasticinference"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('elastic-inference')"
+		],
+		"description": "ElasticInference "
+	  },"ElastiCache": {
+		"prefix": ["dyndavailselasticache"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('elasticache')"
+		],
+		"description": "ElastiCache "
+	  },"ElasticBeanstalk": {
+		"prefix": ["dyndavailselasticbeanstalk"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('elasticbeanstalk')"
+
+		],
+		"description": "ElasticBeanstalk "
+	  },"ElasticTranscoder": {
+		"prefix": ["dyndavailsElasticTranscoder"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('elastictranscoder')"
+
+		],
+		"description": "ElasticTranscoder "
+	  },"ElasticLoadBalancing": {
+		"prefix": ["dyndavailselasticloadbalancing"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('elb')"
+		],
+		"description": "ElasticLoadBalancing "
+	  },
+	  "ElasticLoadBalancingv2": {
+		"prefix": ["dyndavailselasticloadbalancingv2"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('elbv2')"
+
+		],
+		"description": "ElasticLoadBalancingv2 "
+	  },"EMR": {
+		"prefix": ["dyndavailsemr"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('emr')"
+
+		],
+		"description": "EMR "
+	  },"EMRContainers": {
+		"prefix": ["dyndavailsemrcontainers"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('emr-containers')"
+
+		],
+		"description": "EMRContainers "
+	  },"EMRServerless": {
+		"prefix": ["dyndavailsemrserverless"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('emr-serverless')"
+		],
+		"description": "EMRServerless "
+	  },"EntityResolution": {
+		"prefix": ["dyndavailsentityresolution"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('entityresolution')"
+		],
+		"description": "EntityResolution "
+	  },"ElasticsearchService": {
+		"prefix": ["dyndavailselasticsearchservice"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('es')"
+		],
+		"description": "ElasticsearchService "
+	  },"EventBridge": {
+		"prefix": ["dyndavailseventbridge"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('events')"
+
+		],
+		"description": "EventBridge "
+	  },"CloudWatchEvidently": {
+		"prefix": ["dyndavailscloudwatchevidently"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('evidently')"
+		],
+		"description": "CloudWatchEvidently "
+	  },"finspace": {
+		"prefix": ["dyndavailsfinspace"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('finspace')"
+
+		],
+		"description": "finspace "
+	  },"FinSpaceData": {
+		"prefix": ["dyndavailsfinspacedata"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('finspace-data')"
+		],
+		"description": "FinSpaceData "
+	  },"Firehose": {
+		"prefix": ["dyndavailsfirehose"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('firehose')"
+		],
+		"description": "Firehose "
+	  },"FIS": {
+		"prefix": ["dyndavailsfis"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('fis')"
+
+		],
+		"description": "FIS "
+	  },"FMS": {
+		"prefix": ["dyndavailsfms"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('fms')"
+
+		],
+		"description": "FMS "
+	  },"ForecastService": {
+		"prefix": ["dyndavailsforecastservice"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('forecast')"
+		],
+		"description": "ForecastService "
+	  },"ForecastQueryService": {
+		"prefix": ["dyndavailsforecastqueryservice"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('forecastquery')"
+
+		],
+		"description": "ForecastQueryService "
+	  },"FraudDetector": {
+		"prefix": ["dyndavailsfrauddetector"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('frauddetector')"
+
+		],
+		"description": "FraudDetector "
+	  },"FSx": {
+		"prefix": ["dyndavailsfsx"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('fsx')"
+
+		],
+		"description": "FSx "
+	  },"GameLift": {
+		"prefix": ["dyndavailsgamelift"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('gamelift')"
+
+		],
+		"description": "GameLift "
+	  },"Glacier": {
+		"prefix": ["dyndavailsglacier"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('glacier')"
+		],
+		"description": "Glacier "
+	  },"GlobalAccelerator": {
+		"prefix": ["dyndavailsglobalaccelerator"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('globalaccelerator')"
+		],
+		"description": "GlobalAccelerator "
+	  },"Glue": {
+		"prefix": ["dyndavailsglue"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('glue')"
+		],
+		"description": "Glue "
+	  },"ManagedGrafana": {
+		"prefix": ["dyndavailsmanagedgrafana"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('grafana')"
+		],
+		"description": "ManagedGrafana "
+	  },"Greengrass": {
+		"prefix": ["dyndavailsgreengrass"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('greengrass')"
+
+		],
+		"description": "Greengrass "
+	  },"GreengrassV2": {
+		"prefix": ["dyndavailsgreengrassv2"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('greengrassv2')"
+		],
+		"description": "GreengrassV2 "
+	  },"GroundStation": {
+		"prefix": ["dyndavailsgroundstation"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('groundstation')"
+		],
+		"description": "GroundStation "
+	  },"GuardDuty": {
+		"prefix": ["dyndavailsguardduty"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('guardduty')"
+		],
+		"description": "GuardDuty "
+	  },"Health": {
+		"prefix": ["dyndavailshealth"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('health')"
+		],
+		"description": "Health "
+	  },"HealthLake": {
+		"prefix": ["dyndavailshealthlake"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('healthlake')"
+
+		],
+		"description": "HealthLake "
+	  },
+	  "Honeycode": {
+		"prefix": ["dyndavailshoneycode"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('honeycode')"
+		],
+		"description": "Honeycode "
+	  },"IAM": {
+		"prefix": ["dyndavailsiam"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('iam')"
+
+		],
+		"description": "IAM "
+	  },"IdentityStore": {
+		"prefix": ["dyndavailsidentitystore"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('identitystore')"
+
+		],
+		"description": "IdentityStore "
+	  },"imagebuilder": {
+		"prefix": ["dyndavailsimagebuilder"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('imagebuilder')"
+		],
+		"description": "imagebuilder "
+	  },"ImportExport": {
+		"prefix": ["dyndavailsimportexport"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('importexport')"
+
+		],
+		"description": "ImportExport "
+	  },"Inspector": {
+		"prefix": ["dyndavailsinspector"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('inspector')"
+
+		],
+		"description": "Inspector "
+	  },"Inspector2": {
+		"prefix": ["dyndavailsinspector2"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('inspector2')"
+
+		],
+		"description": "Inspector2 "
+	  },"CloudWatchInternetMonitor": {
+		"prefix": ["dyndavailscloudWatchinternetmonitor"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('internetmonitor')"
+		],
+		"description": "CloudWatchInternetMonitor "
+	  },"IoT": {
+		"prefix": ["dyndavailsiot"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('iot')"
+		],
+		"description": "IoT "
+	  },"IoTDataPlane": {
+		"prefix": ["dyndavailsiotdataplane"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('iot-data')"
+
+		],
+		"description": "IoTDataPlane "
+	  },"IoTJobsDataPlane": {
+		"prefix": ["dyndavailsotJobsdataplane"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('iot-jobs-data')"
+		],
+		"description": "IoTJobsDataPlane "
+	  },"IoTRoboRunner": {
+		"prefix": ["dyndavailsiotroborunner"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('iot-roborunner')"
+
+		],
+		"description": "IoTRoboRunner "
+	  },"IoT1ClickDevicesService": {
+		"prefix": ["dyndavailsiot1clickdevicesservice"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('iot1click-devices')"
+		],
+		"description": "IoT1ClickDevicesService "
+	  },"IoT1ClickProjects": {
+		"prefix": ["dyndavailsiot1clickprojects"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('iot1click-projects')"
+
+		],
+		"description": "IoT1ClickProjects "
+	  },"IoTThingsGraph": {
+		"prefix": ["dyndavailsiotthingsgraph"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('iotanalytics')"
+		],
+		"description": "IoTThingsGraph "
+	  },"IoTTwinMaker": {
+		"prefix": ["dyndavailsiottwinmaker"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('iotevents')"
+
+		],
+		"description": "IoTTwinMaker "
+	  },"IoTWireless": {
+		"prefix": ["dyndavaiisIotwireless"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('iottwinmaker')"
+		],
+		"description": "IoTWireless "
+	  },"IVS": {
+		"prefix": ["dyndavailsivs"],
+		"body": [
+			"https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ivs.html"
+
+		],
+		"description": "IVS "
+	  },"ivsrealtime": {
+		"prefix": ["dyndavaiisivsrealtime"],
+		"body": [
+			"https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ivs-realtime.html",
+"import boto3",
+
+"client = boto3.client('ivs-realtime')"
+		],
+		"description": "ivsrealtime "
+	  },"ivschat": {
+		"prefix": ["dyndavailsivschat"],
+		"body": [
+			"https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ivschat.html"
+			"import boto3",
+
+			"client = boto3.client('ivschat')"
+		],
+		"description": "ivschat "
+	  },
+	  "Kafka": {
+		"prefix": ["dyndavailskafka"],
+		"body": [
+			"https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kafka.html"
+			"import boto3",
+
+			"client = boto3.client('kafka')"
+		],
+		"description": "Kafka "
+	  },"KafkaConnect": {
+		"prefix": ["dyndavailskafkaconnect"],
+		"body": [
+			"https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kafkaconnect.html"
+			"import boto3",
+
+"client = boto3.client('kafkaconnect')"
+
+		],
+		"description": "KafkaConnect "
+	  },"kendra": {
+		"prefix": ["dyndavailskendra"],
+		"body": [
+			"https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra-ranking.html"
+			"import boto3",
+
+			"client = boto3.client('kendra')"
+		],
+		"description": "kendra "
+	  },"KendraRanking": {
+		"prefix": ["dyndavailskendraranking"],
+		"body": [
+			"https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/keyspaces.html"
+			"import boto3",
+
+"client = boto3.client('keyspaces')"
+
+		],
+		"description": "KendraRanking "
+	  },"Keyspaces": {
+		"prefix": ["dyndavailskeyspaces"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('kinesis')"
+
+		],
+		"description": "Keyspaces "
+	  },"Kinesis": {
+		"prefix": ["dyndavailskinesis"],
+		"body": [
+			"https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesis-video-archived-media.html"
+			"import boto3",
+
+"client = boto3.client('kinesis-video-archived-media')"
+
+		],
+		"description": "Kinesis "
+	  },"KinesisVideoArchivedMedia": {
+		"prefix": ["dyndavailskinesisvideoarchivedmedia"],
+		"body": [
+			"https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesis-video-media.html"
+			"import boto3",
+
+			"client = boto3.client('kinesis-video-media')"
+		],
+		"description": "KinesisVideoArchivedMedia "
+	  },"KinesisVideoMedia": {
+		"prefix": ["dyndavailskinesisvideomedia"],
+		"body": [
+			"https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesis-video-signaling.html"
+			"import boto3",
+
+			"client = boto3.client('kinesis-video-signaling')"
+		],
+		"description": "KinesisVideoMedia "
+	  },"KinesisVideoSignalingChannels": {
+		"prefix": ["dyndavailsKinesisVideoSignalingChannels"],
+		"body": [
+			"https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesis-video-webrtc-storage.html"
+			"import boto3",
+
+			"client = boto3.client('kinesis-video-webrtc-storage')"
+		],
+		"description": "KinesisVideoSignalingChannels "
+	  },"KinesisVideoSignalingChannels": {
+		"prefix": ["dyndavailskinesisvideoSignalingchannels"],
+		"body": [
+			"https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesisanalytics.html"
+			"import boto3",
+
+			"client = boto3.client('kinesisanalytics')"
+		],
+		"description": "KinesisVideoSignalingChannels "
+	  },"KinesisVideoWebRTCStorage": {
+		"prefix": ["dyndavailskinesisVideoWebrtcstorage"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('kinesisanalyticsv2')"
+"https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesisanalyticsv2.html"
+
+		],
+		"description": "KinesisVideoWebRTCStorage "
+	  },"KinesisAnalytics": {
+		"prefix": ["dyndavailskinesisanalytics"],
+		"body": [
+			"https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesisvideo.html"
+			"import boto3",
+
+			"client = boto3.client('kinesisvideo')"
+		],
+		"description": "KinesisAnalytics "
+	  },"KinesisAnalyticsV2": {
+		"prefix": ["dyndavailskinesisanalyticsv2"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('kms')"
+"https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kms.html"
+
+		],
+		"description": "KinesisAnalyticsV2 "
+	  },"KinesisVideo": {
+		"prefix": ["dyndavailskinesisvideo"],
+		"body": [
+			"https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lakeformation.html"
+			"import boto3",
+
+			"client = boto3.client('lakeformation')"
+			
+		],
+		"description": "KinesisVideo "
+	  },"KMS": {
+		"prefix": ["dyndavailskms"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('lambda')"
+			"https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html"
+		],
+		"description": "KMS "
+	  },"LakeFormation": {
+		"prefix": ["dyndavailslakeformation"],
+		"body": [
+			
+			"import boto3",
+
+		"	client = boto3.client('launch-wizard')"
+			"https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/launch-wizard.html"
+		],
+		"description": "LakeFormation "
+	  },"Lambda": {
+		"prefix": ["dyndavailslambda"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('lex-models')"
+"https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lex-models.html"
+
+		],
+		"description": "Lambda "
+	  },"LaunchWizard": {
+		"prefix": ["dyndavailslaunchwizard"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('lex-runtime')"
+"https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lex-runtime.html"
+
+		],
+		"description": "LaunchWizard "
+	  },"LexModelBuildingService": {
+		"prefix": ["dyndavailslexmodelbuildingservice"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('lexv2-models')"
+			"https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lexv2-models.html"
+		],
+		"description": "LexModelBuildingService "
+	  },"LexRuntimeService": {
+		"prefix": ["dyndavailslexruntimeservice"],
+		"body": [
+			"https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lex-runtime.html"
+			"import boto3",
+
+			"client = boto3.client('lex-runtime')"
+		],
+		"description": "LexRuntimeService "
+	  },"LexModelsV2": {
+		"prefix": ["dyndavailslexmodelsv2"],
+		"body": [
+			"https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lexv2-models.html"
+			"import boto3",
+
+			"client = boto3.client('lexv2-models')"
+		],
+		"description": "LexModelsV2 "
+	  },"LexRuntimeV2": {
+		"prefix": ["dyndavailslexruntimev2"],
+		"body": [
+			"https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lexv2-runtime.html"
+			"import boto3",
+
+			"client = boto3.client('lexv2-runtime')"
+		],
+		"description": "LexRuntimeV2 "
+	  },"LicenseManager": {
+		"prefix": ["dyndavailslicensemanager"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('license-manager')"
+			"https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/license-manager.html"
+		],
+		"description": "LicenseManager "
+	  },"LicenseManagerLinuxSubscriptions": {
+		"prefix": ["dyndavailslicensemanagelinuxsubscriptions"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('license-manager-linux-subscriptions')"
+			"https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/license-manager-linux-subscriptions.html"
+		],
+		"description": "LicenseManagerLinuxSubscriptions "
+	  },"LicenseManagerUserSubscriptions": {
+		"prefix": ["dyndavailslicensemanagerusersubscriptions"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('license-manager-user-subscriptions')"
+			"https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/license-manager-user-subscriptions.html"
+		],
+		"description": "LicenseManagerUserSubscriptions "
+	  },"Lightsail": {
+		"prefix": ["dyndavailslightsail"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('lightsail')"
+			"https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html"
+		],
+		"description": "Lightsail "
+	  },
+	  "LocationService": {
+		"prefix": ["dyndavailslocationservice"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('location')"
+		],
+		"description": "LocationService "
+	  },"CloudWatchLogs": {
+		"prefix": ["dyndavailscloudwatchlogs"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('logs')"
+		],
+		"description": "CloudWatchLogs "
+	  },"LookoutEquipment": {
+		"prefix": ["dyndavailslookoutequipment"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('LookoutEquipment')"
+		],
+		"description": "LookoutEquipment "
+	  },"LookoutMetrics": {
+		"prefix": ["dyndavailslookoutmetrics"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('lookoutmetrics')"
+		],
+		"description": "LookoutMetrics "
+	  },"LookoutforVision": {
+		"prefix": ["dyndavailslookoutforvision"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('lookoutvision')"
+		],
+		"description": "LookoutforVision "
+	  },"MainframeModernization": {
+		"prefix": ["dyndavailsmainframemodernization"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('m2')"
+		],
+		"description": "MainframeModernization "
+	  },"MachineLearning": {
+		"prefix": ["dyndavailsmachinelearning"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('machinelearning')"
+		],
+		"description": "MachineLearning "
+	  },"Macie": {
+		"prefix": ["dyndavailsmacie"],
+		"body": [
+			
+			"import boto3",
+
+		"	client = boto3.client('machinelearning')"
+		],
+		"description": "Macie "
+	  },"Macie2": {
+		"prefix": ["dyndavailsmacie2"],
+		"body": [
+			
+			"import boto3",
+
+		"	client = boto3.client('macie2')"
+		],
+		"description": "Macie2 "
+	  },"ManagedBlockchain": {
+		"prefix": ["dyndavailsmanagedblockchain"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('managedblockchain')"
+		],
+		"description": "ManagedBlockchain "
+	  },"ManagedBlockchainQuery": {
+		"prefix": ["dyndavailsmanagedblockchainquery"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('managedblockchain-query')"
+		],
+		"description": "ManagedBlockchainQuery "
+	  },"MarketplaceCatalog": {
+		"prefix": ["dyndavailsmarketplacecatalog"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('marketplace-catalog')"
+		],
+		"description": "MarketplaceCatalog "
+	  },"MarketplaceEntitlementService": {
+		"prefix": ["dyndavailsmarketplaceentitlementservice"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('marketplace-entitlement')"
+		],
+		"description": "MarketplaceEntitlementService "
+	  },"MarketplaceCommerceAnalytics": {
+		"prefix": ["dyndavailsmarketplacecommerceanalytics"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('marketplacecommerceanalytics')"
+
+		],
+		"description": "MarketplaceCommerceAnalytics "
+	  },"MediaConnect": {
+		"prefix": ["dyndavailsmediaconnect"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('mediaconnect')"
+		],
+		"description": "MediaConnect "
+	  },"MediaConvert": {
+		"prefix": ["dyndavailsmediaconvert"],
+		"body": [
+			
+			"import boto3",
+
+		"	client = boto3.client('mediaconvert')"
+		],
+		"description": "MediaConvert "
+	  },"MediaLive": {
+		"prefix": ["dyndavailsmedialive"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('medialive')"
+		],
+		"description": "MediaLive "
+	  },"MediaPackage": {
+		"prefix": ["dyndavailsmediapackage"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('mediapackage')"
+
+		],
+		"description": "MediaPackage "
+	  },"MediaPackageVod": {
+		"prefix": ["dyndavailsmediapackagevod"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('mediapackage-vod')"
+
+		],
+		"description": "MediaPackageVod "
+	  },"mediapackagev2": {
+		"prefix": ["dyndavailsmediapackagev2"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('mediapackagev2')"
+
+		],
+		"description": "mediapackagev2 "
+	  },"MediaStore": {
+		"prefix": ["dyndavailsmediastore"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('mediastore')"
+		],
+		"description": "MediaStore "
+	  },"MediaStoreData": {
+		"prefix": ["dyndavailsmediastoredata"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('mediastore-data')"
+
+		],
+		"description": "MediaStoreData "
+	  },"MediaTailor": {
+		"prefix": ["dyndavailsmediatailor"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('mediatailor')"
+
+		],
+		"description": "MediaTailor "
+	  },
+	  "HealthImaging": {
+		"prefix": ["dyndavailshealthimaging"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('medical-imaging')"
+
+		],
+		"description": "HealthImaging "
+	  },"MemoryDB": {
+		"prefix": ["dyndavailsmemorydb"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('memorydb')"
+		],
+		"description": "MemoryDB "
+	  },"MarketplaceMetering": {
+		"prefix": ["dyndavailsmarketplacemetering"],
+		"body": [
+			
+			"import boto3",
+
+		"	client = boto3.client('meteringmarketplace')"
+		],
+		"description": "MarketplaceMetering "
+	  },"MigrationHub": {
+		"prefix": ["dyndavailsmigrationhub"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('mgh')"
+
+		],
+		"description": "MigrationHub "
+	  },"mgn": {
+		"prefix": ["dyndavailsmgn"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('mgn')"
+		],
+		"description": "mgn "
+	  },"MigrationHubRefactorSpaces": {
+		"prefix": ["dyndavailsmigrationhubRefactorSpaces"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('migration-hub-refactor-spaces')"
+		],
+		"description": "MigrationHubRefactorSpaces"
+	  },"MigrationHubConfig": {
+		"prefix": ["dyndavailsmigrationhubconfig"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('migrationhub-config')"
+		],
+		"description": "MigrationHubConfig "
+	  },"MigrationHubOrchestrator": {
+		"prefix": ["dyndavailsmigrationhubOrchestrator"],
+		"body": [
+			
+			"import boto3",
+
+		"	client = boto3.client('migrationhuborchestrator')"
+		],
+		"description": "MigrationHubOrchestrator "
+	  },"MigrationHubStrategyRecommendations": {
+		"prefix": ["dyndavailsmigrationhubstrategyrecommendations"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('migrationhubstrategy')"
+
+		],
+		"description": "MigrationHubStrategyRecommendations "
+	  },"Mobile": {
+		"prefix": ["dyndavailsmobile"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('mobile')"
+		],
+		"description": "Mobile "
+	  },"MQ": {
+		"prefix": ["dyndavailsmq"],
+		"body": [
+			
+			"import boto3",
+
+		"	client = boto3.client('mq')"
+		],
+		"description": "MQ "
+	  },"MTurk": {
+		"prefix": ["dyndavailsmturk"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('mturk')"
+		],
+		"description": "MTurk "
+	  },"MWAA": {
+		"prefix": ["dyndavailsmwaa"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('mwaa')"
+
+		],
+		"description": "MWAA "
+	  },"Neptune": {
+		"prefix": ["dyndavailsneptune"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('neptune')"
+		],
+		"description": "Neptune "
+	  },"NeptuneData": {
+		"prefix": ["dyndavailsneptunedata"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('neptune')"
+		],
+		"description": "NeptuneData "
+	  },"NetworkFirewall": {
+		"prefix": ["dyndavailsnetworkfirewall"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('network-firewall')"
+
+		],
+		"description": "NetworkFirewall "
+	  },"NetworkManager": {
+		"prefix": ["dyndavailsnetworkmanager"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('networkmanager')"
+
+		],
+		"description": "NetworkManager "
+	  },"NimbleStudio": {
+		"prefix": ["dyndavailsnimblestudio"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('nimble')"
+		],
+		"description": "NimbleStudio "
+	  },"CloudWatchObservabilityAccessManager": {
+		"prefix": ["dyndavailsCloudWatchObservabilityaccessmanager"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('oam')"
+		],
+		"description": "CloudWatchObservabilityAccessManager "
+	  },"Omics": {
+		"prefix": ["dyndavailsomics"],
+		"body": [
+			
+			"import boto3",
+
+		"	client = boto3.client('omics')"
+		],
+		"description": "Omics "
+	  },"OpenSearchService": {
+		"prefix": ["dyndavailsopenSearchservice"],
+		"body": [
+			
+			"import boto3",
+
+		"	client = boto3.client('opensearch')"
+		],
+		"description": "OpenSearchService "
+	  },"OpenSearchServiceServerless": {
+		"prefix": ["dyndavailsopenSearchServiceserverless"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('opensearchserverless')"
+
+		],
+		"description": "OpenSearchServiceServerless "
+	  },"OpsWorks": {
+		"prefix": ["dyndavailsopsworks"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('opsworks')"
+		],
+		"description": "OpsWorks "
+	  },"OpsWorksCM": {
+		"prefix": ["dyndavailsopsworkscm"],
+		"body": [
+			
+			"import boto3",
+
+		"	client = boto3.client('opsworkscm')"
+		],
+		"description": "OpsWorksCM "
+	  },"Organizations": {
+		"prefix": ["dyndavailsorganizations"],
+		"body": [
+			
+			"import boto3",
+
+		"	client = boto3.client('organizations')"
+		],
+		"description": "Organizations "
+	  },"OpenSearchIngestion": {
+		"prefix": ["dyndavailsopensearchingestion"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('osis')"
+		],
+		"description": "OpenSearchIngestion "
+	  },"Outposts": {
+		"prefix": ["dyndavailsoutposts"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('outposts')"
+		],
+		"description": "Outposts "
+	  },"Panorama": {
+		"prefix": ["dyndavailspanorama"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('panorama')"
+		],
+		"description": "Panorama "
+	  },"PaymentCryptographyControlPlane": {
+		"prefix": ["dyndavailspaymentcryptographycontrolPlane"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('payment-cryptography')"
+		],
+		"description": "PaymentCryptographyControlPlane "
+	  },"PaymentCryptographyDataPlane": {
+		"prefix": ["dyndavailspaymentcryptographydataPlane"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('payment-cryptography-data')"
+
+		],
+		"description": "PaymentCryptographyDataPlane "
+	  },"PcaConnectorAd": {
+		"prefix": ["dyndavailspcaonnectorAd"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('pca-connector-ad')"
+		],
+		"description": "PcaConnectorAd "
+	  },"Personalize": {
+		"prefix": ["dyndavailspersonalize"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('personalize')"
+
+		],
+		"description": "Personalize "
+	  },"PersonalizeEvents": {
+		"prefix": ["dyndavailspersonalizeevents"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('personalize-events')"
+
+		],
+		"description": "PersonalizeEvents "
+	  },"PersonalizeRuntime": {
+		"prefix": ["dyndavailspersonalizeruntime"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('personalize-runtime')"
+		],
+		"description": "PersonalizeRuntime "
+	  },"PI": {
+		"prefix": ["dyndavailspi"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('pi')"
+		],
+		"description": "PI "
+	  },"Pinpoint": {
+		"prefix": ["dyndavailspinpoint"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('pinpoint')"
+		],
+		"description": "Pinpoint "
+	  },"PinpointEmail": {
+		"prefix": ["dyndavailspinpointemail"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('pinpoint-email')"
+
+		],
+		"description": "PinpointEmail "
+	  },"PinpointSMSVoice": {
+		"prefix": ["dyndavailspinpointsmsvoice"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('pinpoint-sms-voice')"
+		],
+		"description": "PinpointSMSVoice "
+	  },"PinpointSMSVoiceV2": {
+		"prefix": ["dyndavailspinpointsmsvoicev2"],
+		"body": [
+			
+			"import boto3",
+
+		"	client = boto3.client('pinpoint-sms-voice-v2')"
+		],
+		"description": "PinpointSMSVoiceV2 "
+	  },"EventBridgePipes": {
+		"prefix": ["dyndavailseventbridgepipes"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('pipes')"
+		],
+		"description": "EventBridgePipes "
+	  },"Polly": {
+		"prefix": ["dyndavailspolly"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('polly')"
+
+		],
+		"description": "Polly "
+	  },"Pricing": {
+		"prefix": ["dyndavailspricing"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('pricing')"
+		],
+		"description": "Pricing "
+	  },"Private5G": {
+		"prefix": ["dyndavailsprivate5g"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('privatenetworks')"
+		],
+		"description": "Private5G "
+	  },"Proton": {
+		"prefix": ["dyndavailsproton"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('proton')"
+		],
+		"description": "Proton "
+	  },"QLDB": {
+		"prefix": ["dyndavailsqldb"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('qldb')"
+		],
+		"description": "QLDB "
+	  },"QLDBSession": {
+		"prefix": ["dyndavailsqldnsession"],
+		"body": [
+			
+			"import boto3",
+
+		"	client = boto3.client('qldb-session')"
+		],
+		"description": "QLDBSession "
+	  },"QuickSight": {
+		"prefix": ["dyndavailsquicksight"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('quicksight')"
+		],
+		"description": "QuickSight "
+	  },"RAM": {
+		"prefix": ["dyndavailsram"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('ram')"
+		],
+		"description": "RAM "
+	  },"RecycleBin": {
+		"prefix": ["dyndavailsrecyclebin"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('rbin')"
+		],
+		"description": "RecycleBin "
+	  },"RDS": {
+		"prefix": ["dyndavailsrds"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('rds')"
+		],
+		"description": "RDS "
+	  },"RDSDataService": {
+		"prefix": ["dyndavailsrdsdataservice"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('rds-data')"
+		],
+		"description": "RDSDataService "
+	  },"Redshift": {
+		"prefix": ["dyndavailsredshift"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('redshift')"
+		],
+		"description": "Redshift "
+	  },"RedshiftDataAPIService": {
+		"prefix": ["dyndavailsredshiftdataapiservice"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('redshift-data')"
+		],
+		"description": "RedshiftDataAPIService "
+	  },"RedshiftServerless": {
+		"prefix": ["dyndavailsredshiftserverless"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('redshift-serverless')"
+		],
+		"description": "RedshiftServerless "
+	  },"Rekognition": {
+		"prefix": ["dyndavailsrekognition"],
+		"body": [
+		
+			"https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html"
+
+		],
+		"description": "Rekognition "
+	  },"ResilienceHub": {
+		"prefix": ["dyndavailsresiliencehub"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('resiliencehub')"
+
+		],
+		"description": "ResilienceHub "
+	  },"ResourceExplorer": {
+		"prefix": ["dyndavailsresourceexplorer"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('resource-explorer-2')"
+		],
+		"description": "ResourceExplorer "
+	  },"ResourceGroups": {
+		"prefix": ["dyndavailsresourcegroups"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('resource-groups')"
+		],
+		"description": "ResourceGroups "
+	  },"ResourceGroupsTaggingAPI": {
+		"prefix": ["dyndavailsresourcegroupstaggingapi"],
+		"body": [
+			
+			"import boto3",
+
+		"	client = boto3.client('robomaker')"
+		],
+		"description": "ResourceGroupsTaggingAPI "
+	  },"RoboMaker": {
+		"prefix": ["dyndavailsrobomaker"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('rolesanywhere')"
+		],
+		"description": "RoboMaker "
+	  },"IAMRolesAnywhere": {
+		"prefix": ["dyndavailsiamRolesanywhere"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('route53')"
+		],
+		"description": "IAMRolesAnywhere "
+	  },"Route53": {
+		"prefix": ["dyndavailsroute53"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('route53-recovery-cluster')"
+		],
+		"description": "Route53 "
+	  },"Route53RecoveryCluster": {
+		"prefix": ["dyndavailsroute53recoverycluster"],
+		"body": [
+			
+			"import boto3",
+
+		"	client = boto3.client('route53-recovery-control-config')"
+		],
+		"description": "Route53RecoveryCluster "
+	  },"Route53RecoveryControlConfig": {
+		"prefix": ["dyndavailsroute53recoverycontrolconfig"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('route53-recovery-readiness')"
+		],
+		"description": "Route53RecoveryControlConfig "
+	  },"Route53RecoveryReadiness": {
+		"prefix": ["dyndavailsroute53recoveryreadiness"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('route53domains')"
+		],
+		"description": "Route53RecoveryReadiness "
+	  },"Route53Domains": {
+		"prefix": ["dyndavailsroute53domains"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('route53resolver')"
+
+		],
+		"description": "Route53Domains "
+	  },"Route53Resolver": {
+		"prefix": ["dyndavailsroute53resolver"],
+		"body": [
+			
+			"import boto3",
+
+		"	client = boto3.client('rum')"
+		],
+		"description": "Route53Resolver "
+	  },"CloudWatchRUM": {
+		"prefix": ["dyndavailscloudwatchrum"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('s3')"
+		],
+		"description": "CloudWatchRUM "
+	  },"S3": {
+		"prefix": ["dyndavailss3"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('s3control')"
+
+		],
+		"description": "S3 "
+	  },"S3Control": {
+		"prefix": ["dyndavailss3control"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('s3outposts')"
+		],
+		"description": "S3Control "
+	  },"S3Outposts": {
+		"prefix": ["dyndavailss3outposts"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('sagemaker')"
+		],
+		"description": "S3Outposts "
+	  },"SageMaker": {
+		"prefix": ["dyndavailssagemaker"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('sagemaker-a2i-runtime')"
+		],
+		"description": "SageMaker "
+	  },"AugmentedAIRuntime": {
+		"prefix": ["dyndavailsaugmentedairuntime"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('sagemaker-edge')"
+		],
+		"description": "AugmentedAIRuntime "
+	  },"SageMakerFeatureStoreRuntime": {
+		"prefix": ["dyndavailssagemakerfeaturestoreruntime"],
+		"body": [
+			"import boto3",
+
+			"client = boto3.client('sagemaker-featurestore-runtime')	"
+
+		],
+		"description": "SageMakerFeatureStoreRuntime "
+	  },
+	  "SageMakergeospatialcapabilities": {
+		"prefix": ["dyndavailssagemakergeospatialcapabilities"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('sagemaker-geospatial')"
+		],
+		"description": "SageMakergeospatialcapabilities "
+	  },
+	  "SageMakerMetrics": {
+		"prefix": ["dyndavailssagemakermetrics"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('sagemaker-metrics')"
+		],
+		"description": "SageMakerMetrics "
+	  },
+	  "SageMakerRuntime": {
+		"prefix": ["dyndavailssagemakerruntime"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('sagemaker-runtime')"
+
+		],
+		"description": "SageMakerRuntime "
+	  },
+	  "SavingsPlans": {
+		"prefix": ["dyndavailssavingsplans"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('savingsplans')"
+
+		],
+		"description": "SavingsPlans "
+	  },
+	  "EventBridgeScheduler": {
+		"prefix": ["dyndavailseventbridgescheduler"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('scheduler')"
+		],
+		"description": "EventBridgeScheduler "
+	  },
+	  "Schemas": {
+		"prefix": ["dyndavailsschemas"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('schemas')"
+
+		],
+		"description": "Schemas "
+	  },
+	  "SimpleDB": {
+		"prefix": ["dyndavailssimpledb"],
+		"body": [
+			
+			"import boto3",
+
+		"	client = boto3.client('sdb')"
+		],
+		"description": "SimpleDB "
+	  },
+	  "SecretsManager": {
+		"prefix": ["dyndavailssecretsmanager"],
+		"body": [
+			
+"https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/secretsmanager.html"
+		],
+		"description": "SecretsManager "
+	  },
+	  "SecurityHub": {
+		"prefix": ["dyndavailssecurityhub"],
+		"body": [
+			
+"import boto3",
+
+"client = boto3.client('securityhub')
+"		],
+		"description": "SecurityHub "
+	  },
+	  "SecurityLake": {
+		"prefix": ["dyndavailssecuritylake"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('securitylake')"
+		],
+		"description": "SecurityLake "
+	  },
+	  "ServerlessApplicationRepository": {
+		"prefix": ["dyndavailsserverlessapplicationrepository"],
+		"body": [
+			
+			"import boto3",
+
+		"	client = boto3.client('serverlessrepo')"
+		],
+		"description": "ServerlessApplicationRepository "
+	  },
+	  "ServiceQuotas": {
+		"prefix": ["dyndavailsservicequotas"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('service-quotas')"
+		],
+		"description": "ServiceQuotas "
+	  },
+	  "ServiceCatalog": {
+		"prefix": ["dyndavailsservicecatalog"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('servicecatalog')"
+		],
+		"description": "ServiceCatalog "
+	  },
+	  "AppRegistry": {
+		"prefix": ["dyndavailsappregistry"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('servicecatalog-appregistry')"
+		],
+		"description": "AppRegistry "
+	  },
+	  "ServiceDiscovery": {
+		"prefix": ["dyndavailsservicediscovery"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('servicediscovery')"
+		],
+		"description": "ServiceDiscovery "
+	  },
+	  "SES": {
+		"prefix": ["dyndavailsses"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('ses')"
+		],
+		"description": "SES "
+	  },
+	  "SESV2": {
+		"prefix": ["dyndavailssesv2"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('sesv2')"
+		],
+		"description": "SESV2 "
+	  },
+	  "Shield": {
+		"prefix": ["dyndavailsshield"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('shield')"
+
+		],
+		"description": "Shield "
+	  },
+	  "signer": {
+		"prefix": ["dyndavailssigner"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('signer')"
+		],
+		"description": "signer "
+	  },
+	  "SimSpaceWeaver": {
+		"prefix": ["dyndavailsSimSpaceWeaver"],
+		"body": [
+			
+			"import boto3",
+
+		"	client = boto3.client('SimSpaceWeaver')"
+		],
+		"description": "SimSpaceWeaver "
+	  },
+	  "SMS": {
+		"prefix": ["dyndavailssms"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('sms')"
+		],
+		"description": "SMS "
+	  },
+	  "SnowDeviceManagement": {
+		"prefix": ["dyndavailsSnowdevicemanagement"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('snow-device-management')	"
+
+		],
+		"description": "SnowDeviceManagement "
+	  },
+	  "Snowball": {
+		"prefix": ["dyndavailssnowball"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('snowball')"
+		],
+		"description": "Snowball "
+	  },
+	  "SNS": {
+		"prefix": ["dyndavailssns"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('sns')"
+		],
+		"description": "SNS "
+	  },
+	  "SQS": {
+		"prefix": ["dyndavailssqs"],
+		"body": [
+			
+"https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sqs.html"
+		],
+		"description": "SQS "
+	  },
+	  "SSM": {
+		"prefix": ["dyndavailsssm"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('ssm')"
+		],
+		"description": "SSM "
+	  },
+	  "SSMContacts": {
+		"prefix": ["dyndavailsssmcontacts"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('ssm-contacts')"
+		],
+		"description": "SSMContacts "
+	  },
+	  "SSMIncidents": {
+		"prefix": ["dyndavailsssmincidents"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('ssm-incidents')"
+
+		],
+		"description": "SSMIncidents "
+	  },
+	  "SsmSap": {
+		"prefix": ["dyndavailsssmsap"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('ssm-sap')"
+
+		],
+		"description": "SsmSap "
+	  },"SSO": {
+		"prefix": ["dyndavailssso"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('sso')"
+
+		],
+		"description": "SSO "
+	  },"SSOAdmin": {
+		"prefix": ["dyndavailsssoadmin"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('sso-admin')"
+		],
+		"description": "SSOAdmin "
+	  },"SSOOIDC": {
+		"prefix": ["dyndavailsssooidc"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('sso-oidc')"
+		],
+		"description": "SSOOIDC "
+	  },"SFN": {
+		"prefix": ["dyndavailssfn"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('stepfunctions')"
+		],
+		"description": "SFN "
+	  },"StorageGateway": {
+		"prefix": ["dyndavailsstoragegateway"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('storagegateway')"
+		],
+		"description": "StorageGateway "
+	  },"STS": {
+		"prefix": ["dyndavailssts"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('sts')"
+
+		],
+		"description": "STS "
+	  },"Support": {
+		"prefix": ["dyndavailssupport"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('support')"
+		],
+		"description": "Support "
+	  },"SupportApp": {
+		"prefix": ["dyndavailssupportapp"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('support-app')"
+		],
+		"description": "SupportApp "
+	  },"SWF": {
+		"prefix": ["dyndavailsswf"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('swf')"
+		],
+		"description": "SWF "
+	  },"Synthetics": {
+		"prefix": ["dyndavailssynthetics"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('synthetics')"
+		],
+		"description": "Synthetics "
+	  },"Textract": {
+		"prefix": ["dyndavailstextract"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('textract')"
+		],
+		"description": "Textract "
+	  },"TimestreamQuery": {
+		"prefix": ["dyndavailstimestreamquery"],
+		"body": [
+			"import boto3",
+
+			"client = boto3.client('timestream-query')"
+
+		],
+		"description": "TimestreamQuery "
+	  },"TimestreamWrite": {
+		"prefix": ["dyndavailstimestreamWrite"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('timestream-write')"
+		],
+		"description": "TimestreamWrite "
+	  },"TelcoNetworkBuilder": {
+		"prefix": ["dyndavailstelconetworkbuilder"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('tnb')"
+		],
+		"description": "TelcoNetworkBuilder "
+	  },"TranscribeService": {
+		"prefix": ["dyndavailstranscribeservice"],
+		"body": [
+			"import boto3",
+
+			"client = boto3.client('transcribe')	"
+
+		],
+		"description": "TranscribeService "
+	  },"Translate": {
+		"prefix": ["dyndavailstranslate"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('transfer')"
+
+		],
+		"description": "Translate "
+	  },"VerifiedPermissions": {
+		"prefix": ["dyndavailsverifiedpermissions"],
+		"body": [
+			
+"import boto3",
+
+"client = boto3.client('translate')"
+		],
+		"description": "VerifiedPermissions "
+	  },"VoiceID": {
+		"prefix": ["dyndavailsvoiceid"],
+		"body": [
+			
+"https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/verifiedpermissions.html"
+		],
+		"description": "VoiceID "
+	  },"VPCLattice": {
+		"prefix": ["dyndavailsvpclattice"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('voice-id')"
+		],
+		"description": "VPCLattice "
+	  },"WAF": {
+		"prefix": ["dyndavailswaf"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('vpc-lattice')"
+		],
+		"description": "WAF "
+	  },
+	  "WAFRegional": {
+		"prefix": ["dyndavailswafregional"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('waf')"
+		],
+		"description": "WAFRegional "
+	  },"WAFV2": {
+		"prefix": ["dyndavailswafv2"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('waf-regional')"
+		],
+		"description": "WAFV2 "
+	  },"WellArchitected": {
+		"prefix": ["dyndavailswellarchitected"],
+		"body": [
+			
+"https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wafv2.html"
+		],
+		"description": "WellArchitected "
+	  },"ConnectWisdomService": {
+		"prefix": ["dyndavailsconnectwisdomservice"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('wellarchitected')"
+
+		],
+		"description": "ConnectWisdomService "
+	  },"WorkDocs": {
+		"prefix": ["dyndavailsworkdocs"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('wisdom')"
+		],
+		"description": "WorkDocs "
+	  },"WorkLink": {
+		"prefix": ["dyndavailsworklink"],
+		"body": [
+			"import boto3",
+
+"client = boto3.client('workdocs')"
+
+		],
+		"description": "WorkLink "
+	  },"WorkMail": {
+		"prefix": ["dyndavailsworkmail"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('worklink')"
+		],
+		"description": "WorkMail "
+	  },"WorkSpaces": {
+		"prefix": ["dyndavailsworkspaces"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('workmail')"
+		],
+		"description": "WorkSpaces "
+	  },"WorkSpacesWeb": {
+		"prefix": ["dyndavailsworkspacesweb"],
+		"body": [
+			
+			"import boto3",
+
+"client = boto3.client('workmailmessageflow')"
+
+		],
+		"description": "WorkSpacesWeb "
+	  },"XRay creat snippets": {
+		"prefix": ["dyndavailsxraycreatsnippets"],
+		"body": [
+			
+			"import boto3",
+
+			"client = boto3.client('workspaces')"
+		],
+		"description": "XRay creat snippets "
+	  },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// not found any example
+
+
+	//   "Core References": {
+	// 	"prefix": ["dyndcorereferences","dyndcref"],
+	// 	"body": [
+			
+
+	// 	],
+	// 	"description": "Core References "
+	//   },
+	//   "Customization References": {
+	// 	"prefix": ["dyndcustomizationreferences","dyndceuref"],
+	// 	"body": [
+		
+
+	// 	],
+	// 	"description": "Customization References"
+	//   },
+	}
